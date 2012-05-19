@@ -11,4 +11,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #import <WWLib-Foundation/WWLib-Foundation.h>
+    #import <WWLib/WWLib.h>
+    #import <WWStyle/WWStyle.h>
 #endif

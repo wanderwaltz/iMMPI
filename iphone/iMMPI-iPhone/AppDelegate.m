@@ -6,7 +6,12 @@
 //  Copyright (c) 2012 Sibers. All rights reserved.
 //
 
+#if (!__has_feature(objc_arc))
+#error "This file should be compiled with ARC support"
+#endif
+
 #import "AppDelegate.h"
+#import "HomeViewController.h"
 
 #pragma mark -
 #pragma mark AppDelegate implementation
@@ -16,7 +21,25 @@
 #pragma mark -
 #pragma mark Properties
 
-@synthesize window = _window;
+@synthesize window               =               _window;
+@synthesize navigationController = _navigationController;
+
+#pragma mark -
+#pragma mark initialization
+
+- (void) createWindow
+{
+    _window = [UIWindow createFullscreenWindow];
+    _window.rootViewController = _navigationController;
+}
+
+
+- (void) createHomeViewController
+{
+    HomeViewController *controller = [HomeViewController instance];
+    _navigationController = [controller embedInNavigationController];
+}
+
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -24,8 +47,9 @@
          - (BOOL) application: (UIApplication *) application 
 didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
 {
-    _window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
-    [self.window makeKeyAndVisible];
+    [self createHomeViewController];
+    [self createWindow];
+    [_window makeKeyAndVisible];
     
     return YES;
 }
