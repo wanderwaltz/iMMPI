@@ -12,7 +12,7 @@
 
 #import "HomeViewController.h"
 #import "BrowseRecordsViewController.h"
-#import "NewRecordFormViewController.h"
+#import "PersonRecordFormViewController.h"
 #import "RecordOverviewViewController.h"
 
 #pragma mark -
@@ -60,8 +60,8 @@
 
 - (void) presentNewRecordForm
 {
-    NewRecordFormViewController *controller = 
-    [NewRecordFormViewController instance];
+    PersonRecordFormViewController *controller = 
+    [PersonRecordFormViewController instance];
     
     controller.delegate = self;
     
@@ -71,16 +71,16 @@
 
 
 #pragma mark -
-#pragma mark NewRecordFormViewControllerDelegate
+#pragma mark PersonRecordFormViewControllerDelegate
 
-- (void) newRecordFormViewControllerDidCancel: (NewRecordFormViewController *) controller
+- (void) personRecordFormViewControllerDidCancel: (PersonRecordFormViewController *) controller
 {
     [self dismissModalViewControllerAnimated: YES];
 }
 
 
-- (void) newRecordFormViewController: (NewRecordFormViewController *) controller 
-                        didAddRecord: (id) record
+- (void) personRecordFormViewController: (PersonRecordFormViewController *) controller 
+                          didSaveRecord: (id) record
 {
     [self presentRecordOverview];
     [self dismissModalViewControllerAnimated: YES];

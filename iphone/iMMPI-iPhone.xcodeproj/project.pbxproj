@@ -22,15 +22,29 @@
 		5D115C89156765BD000FDF47 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C87156765BD000FDF47 /* HomeViewController.xib */; };
 		5D115C8E15676773000FDF47 /* BrowseRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C8C15676773000FDF47 /* BrowseRecordsViewController.m */; };
 		5D115C8F15676773000FDF47 /* BrowseRecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C8D15676773000FDF47 /* BrowseRecordsViewController.xib */; };
-		5D115C941567698C000FDF47 /* NewRecordFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C921567698C000FDF47 /* NewRecordFormViewController.m */; };
-		5D115C951567698C000FDF47 /* NewRecordFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C931567698C000FDF47 /* NewRecordFormViewController.xib */; };
+		5D115C941567698C000FDF47 /* PersonRecordFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C921567698C000FDF47 /* PersonRecordFormViewController.m */; };
+		5D115C951567698C000FDF47 /* PersonRecordFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C931567698C000FDF47 /* PersonRecordFormViewController.xib */; };
 		5D115C9A156776A8000FDF47 /* RecordOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C98156776A8000FDF47 /* RecordOverviewViewController.m */; };
 		5D115C9B156776A8000FDF47 /* RecordOverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C99156776A8000FDF47 /* RecordOverviewViewController.xib */; };
 		5D115CA0156779C7000FDF47 /* TestStatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C9E156779C7000FDF47 /* TestStatementViewController.m */; };
 		5D115CA1156779C7000FDF47 /* TestStatementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C9F156779C7000FDF47 /* TestStatementViewController.xib */; };
+		5DABDBCF1571F79900C21AC8 /* TestRecordDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBCE1571F79900C21AC8 /* TestRecordDocument.m */; };
+		5DABDBD41571F7C900C21AC8 /* PersonJsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBD31571F7C900C21AC8 /* PersonJsonData.m */; };
+		5DABDBD71571F7D400C21AC8 /* TestRecordJsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBD61571F7D400C21AC8 /* TestRecordJsonData.m */; };
+		5DABDBDB1571F7F000C21AC8 /* PersonIndexJsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBDA1571F7F000C21AC8 /* PersonIndexJsonData.m */; };
+		5DABDBE01571FB4200C21AC8 /* JsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBDF1571FB4200C21AC8 /* JsonData.m */; };
+		5DABDBE81572042A00C21AC8 /* JsonDataWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBE71572042A00C21AC8 /* JsonDataWrapper.m */; };
+		5DABDBEF1572059C00C21AC8 /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBEE1572059C00C21AC8 /* DataStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5A79C48C156E307E0034B985 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D115C6A1567627A000FDF47 /* WWLib-Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A79C3B6156E05D00034B985;
+			remoteInfo = "WWLib-Foundation-Tests";
+		};
 		5D115C631567626C000FDF47 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5D115C501567626B000FDF47 /* WWStyle.xcodeproj */;
@@ -69,6 +83,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A79C497156E316A0034B985 /* PersonRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonRecordProtocol.h; sourceTree = "<group>"; };
+		5A79C498156E320E0034B985 /* TestRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordProtocol.h; sourceTree = "<group>"; };
 		5D115BE115675EF3000FDF47 /* iMMPI-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iMMPI-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D115BE515675EF3000FDF47 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D115BE715675EF3000FDF47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,15 +110,29 @@
 		5D115C8B15676773000FDF47 /* BrowseRecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseRecordsViewController.h; sourceTree = "<group>"; };
 		5D115C8C15676773000FDF47 /* BrowseRecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseRecordsViewController.m; sourceTree = "<group>"; };
 		5D115C8D15676773000FDF47 /* BrowseRecordsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseRecordsViewController.xib; sourceTree = "<group>"; };
-		5D115C911567698C000FDF47 /* NewRecordFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRecordFormViewController.h; sourceTree = "<group>"; };
-		5D115C921567698C000FDF47 /* NewRecordFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRecordFormViewController.m; sourceTree = "<group>"; };
-		5D115C931567698C000FDF47 /* NewRecordFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewRecordFormViewController.xib; sourceTree = "<group>"; };
+		5D115C911567698C000FDF47 /* PersonRecordFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonRecordFormViewController.h; sourceTree = "<group>"; };
+		5D115C921567698C000FDF47 /* PersonRecordFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonRecordFormViewController.m; sourceTree = "<group>"; };
+		5D115C931567698C000FDF47 /* PersonRecordFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonRecordFormViewController.xib; sourceTree = "<group>"; };
 		5D115C97156776A8000FDF47 /* RecordOverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordOverviewViewController.h; sourceTree = "<group>"; };
 		5D115C98156776A8000FDF47 /* RecordOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordOverviewViewController.m; sourceTree = "<group>"; };
 		5D115C99156776A8000FDF47 /* RecordOverviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordOverviewViewController.xib; sourceTree = "<group>"; };
 		5D115C9D156779C7000FDF47 /* TestStatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestStatementViewController.h; sourceTree = "<group>"; };
 		5D115C9E156779C7000FDF47 /* TestStatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestStatementViewController.m; sourceTree = "<group>"; };
 		5D115C9F156779C7000FDF47 /* TestStatementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestStatementViewController.xib; sourceTree = "<group>"; };
+		5DABDBCD1571F79900C21AC8 /* TestRecordDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordDocument.h; sourceTree = "<group>"; };
+		5DABDBCE1571F79900C21AC8 /* TestRecordDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordDocument.m; sourceTree = "<group>"; };
+		5DABDBD21571F7C900C21AC8 /* PersonJsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonJsonData.h; sourceTree = "<group>"; };
+		5DABDBD31571F7C900C21AC8 /* PersonJsonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonJsonData.m; sourceTree = "<group>"; };
+		5DABDBD51571F7D400C21AC8 /* TestRecordJsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordJsonData.h; sourceTree = "<group>"; };
+		5DABDBD61571F7D400C21AC8 /* TestRecordJsonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordJsonData.m; sourceTree = "<group>"; };
+		5DABDBD91571F7F000C21AC8 /* PersonIndexJsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonIndexJsonData.h; sourceTree = "<group>"; };
+		5DABDBDA1571F7F000C21AC8 /* PersonIndexJsonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonIndexJsonData.m; sourceTree = "<group>"; };
+		5DABDBDE1571FB4200C21AC8 /* JsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonData.h; sourceTree = "<group>"; };
+		5DABDBDF1571FB4200C21AC8 /* JsonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonData.m; sourceTree = "<group>"; };
+		5DABDBE61572042A00C21AC8 /* JsonDataWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonDataWrapper.h; sourceTree = "<group>"; };
+		5DABDBE71572042A00C21AC8 /* JsonDataWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonDataWrapper.m; sourceTree = "<group>"; };
+		5DABDBED1572059C00C21AC8 /* DataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStorage.h; sourceTree = "<group>"; };
+		5DABDBEE1572059C00C21AC8 /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				5D115C731567627A000FDF47 /* WWLib-Foundation.framework */,
+				5A79C48D156E307E0034B985 /* WWLib-Foundation-Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +271,12 @@
 		5D115C8015676546000FDF47 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5DABDBEC1572058D00C21AC8 /* Data Storage */,
+				5DABDBEA1572054900C21AC8 /* Data Model Objects */,
+				5DABDBE91572053600C21AC8 /* Low Level Serialization */,
+				5DABDBCC1571F76900C21AC8 /* Test Record Document */,
+				5A79C497156E316A0034B985 /* PersonRecordProtocol.h */,
+				5A79C498156E320E0034B985 /* TestRecordProtocol.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -266,9 +303,9 @@
 		5D115C9015676973000FDF47 /* New Record Form View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5D115C911567698C000FDF47 /* NewRecordFormViewController.h */,
-				5D115C921567698C000FDF47 /* NewRecordFormViewController.m */,
-				5D115C931567698C000FDF47 /* NewRecordFormViewController.xib */,
+				5D115C911567698C000FDF47 /* PersonRecordFormViewController.h */,
+				5D115C921567698C000FDF47 /* PersonRecordFormViewController.m */,
+				5D115C931567698C000FDF47 /* PersonRecordFormViewController.xib */,
 			);
 			name = "New Record Form View Controller";
 			sourceTree = "<group>";
@@ -291,6 +328,88 @@
 				5D115C9F156779C7000FDF47 /* TestStatementViewController.xib */,
 			);
 			name = "Test Statement View Controller";
+			sourceTree = "<group>";
+		};
+		5DABDBCC1571F76900C21AC8 /* Test Record Document */ = {
+			isa = PBXGroup;
+			children = (
+				5DABDBCD1571F79900C21AC8 /* TestRecordDocument.h */,
+				5DABDBCE1571F79900C21AC8 /* TestRecordDocument.m */,
+			);
+			name = "Test Record Document";
+			sourceTree = "<group>";
+		};
+		5DABDBD01571F7A200C21AC8 /* Person Record Data */ = {
+			isa = PBXGroup;
+			children = (
+				5DABDBD21571F7C900C21AC8 /* PersonJsonData.h */,
+				5DABDBD31571F7C900C21AC8 /* PersonJsonData.m */,
+			);
+			name = "Person Record Data";
+			sourceTree = "<group>";
+		};
+		5DABDBD11571F7B600C21AC8 /* Test Record Data */ = {
+			isa = PBXGroup;
+			children = (
+				5DABDBD51571F7D400C21AC8 /* TestRecordJsonData.h */,
+				5DABDBD61571F7D400C21AC8 /* TestRecordJsonData.m */,
+			);
+			name = "Test Record Data";
+			sourceTree = "<group>";
+		};
+		5DABDBD81571F7D800C21AC8 /* Person Index Record Data */ = {
+			isa = PBXGroup;
+			children = (
+				5DABDBD91571F7F000C21AC8 /* PersonIndexJsonData.h */,
+				5DABDBDA1571F7F000C21AC8 /* PersonIndexJsonData.m */,
+			);
+			name = "Person Index Record Data";
+			sourceTree = "<group>";
+		};
+		5DABDBDD1571FB3000C21AC8 /* Json Data */ = {
+			isa = PBXGroup;
+			children = (
+				5DABDBDE1571FB4200C21AC8 /* JsonData.h */,
+				5DABDBDF1571FB4200C21AC8 /* JsonData.m */,
+			);
+			name = "Json Data";
+			sourceTree = "<group>";
+		};
+		5DABDBE51572041800C21AC8 /* Json Data Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				5DABDBE61572042A00C21AC8 /* JsonDataWrapper.h */,
+				5DABDBE71572042A00C21AC8 /* JsonDataWrapper.m */,
+			);
+			name = "Json Data Wrapper";
+			sourceTree = "<group>";
+		};
+		5DABDBE91572053600C21AC8 /* Low Level Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				5DABDBE51572041800C21AC8 /* Json Data Wrapper */,
+				5DABDBDD1571FB3000C21AC8 /* Json Data */,
+			);
+			name = "Low Level Serialization";
+			sourceTree = "<group>";
+		};
+		5DABDBEA1572054900C21AC8 /* Data Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5DABDBD01571F7A200C21AC8 /* Person Record Data */,
+				5DABDBD11571F7B600C21AC8 /* Test Record Data */,
+				5DABDBD81571F7D800C21AC8 /* Person Index Record Data */,
+			);
+			name = "Data Model Objects";
+			sourceTree = "<group>";
+		};
+		5DABDBEC1572058D00C21AC8 /* Data Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5DABDBED1572059C00C21AC8 /* DataStorage.h */,
+				5DABDBEE1572059C00C21AC8 /* DataStorage.m */,
+			);
+			name = "Data Storage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +473,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5A79C48D156E307E0034B985 /* WWLib-Foundation-Tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "WWLib-Foundation-Tests.app";
+			remoteRef = 5A79C48C156E307E0034B985 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5D115C641567626C000FDF47 /* WWStyle.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -399,7 +525,7 @@
 				5D115BF015675EF3000FDF47 /* InfoPlist.strings in Resources */,
 				5D115C89156765BD000FDF47 /* HomeViewController.xib in Resources */,
 				5D115C8F15676773000FDF47 /* BrowseRecordsViewController.xib in Resources */,
-				5D115C951567698C000FDF47 /* NewRecordFormViewController.xib in Resources */,
+				5D115C951567698C000FDF47 /* PersonRecordFormViewController.xib in Resources */,
 				5D115C9B156776A8000FDF47 /* RecordOverviewViewController.xib in Resources */,
 				5D115CA1156779C7000FDF47 /* TestStatementViewController.xib in Resources */,
 			);
@@ -417,9 +543,16 @@
 				5D115C8415676564000FDF47 /* BaseViewController.m in Sources */,
 				5D115C88156765BD000FDF47 /* HomeViewController.m in Sources */,
 				5D115C8E15676773000FDF47 /* BrowseRecordsViewController.m in Sources */,
-				5D115C941567698C000FDF47 /* NewRecordFormViewController.m in Sources */,
+				5D115C941567698C000FDF47 /* PersonRecordFormViewController.m in Sources */,
 				5D115C9A156776A8000FDF47 /* RecordOverviewViewController.m in Sources */,
 				5D115CA0156779C7000FDF47 /* TestStatementViewController.m in Sources */,
+				5DABDBCF1571F79900C21AC8 /* TestRecordDocument.m in Sources */,
+				5DABDBD41571F7C900C21AC8 /* PersonJsonData.m in Sources */,
+				5DABDBD71571F7D400C21AC8 /* TestRecordJsonData.m in Sources */,
+				5DABDBDB1571F7F000C21AC8 /* PersonIndexJsonData.m in Sources */,
+				5DABDBE01571FB4200C21AC8 /* JsonData.m in Sources */,
+				5DABDBE81572042A00C21AC8 /* JsonDataWrapper.m in Sources */,
+				5DABDBEF1572059C00C21AC8 /* DataStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +618,9 @@
 		5D115BFA15675EF3000FDF47 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../WWLib/dev/Products\"",
@@ -492,6 +628,14 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI-iPhone/iMMPI-iPhone-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "iMMPI-iPhone/iMMPI-iPhone-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -501,6 +645,9 @@
 		5D115BFB15675EF3000FDF47 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../WWLib/dev/Products\"",
@@ -508,6 +655,14 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI-iPhone/iMMPI-iPhone-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "iMMPI-iPhone/iMMPI-iPhone-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

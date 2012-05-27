@@ -7,14 +7,14 @@
 //
 
 #import "BaseViewController.h"
-#import "NewRecordFormViewController.h"
+#import "PersonRecordFormViewController.h"
 
 
 #pragma mark -
 #pragma mark HomeViewController interface
 
 @interface HomeViewController : BaseViewController
-<NewRecordFormViewControllerDelegate>
+<PersonRecordFormViewControllerDelegate>
 
 - (IBAction) browseRecordsAction: (id) sender;
 - (IBAction) addNewRecordAction:  (id) sender;
