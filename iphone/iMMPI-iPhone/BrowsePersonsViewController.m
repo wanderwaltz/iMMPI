@@ -12,6 +12,7 @@
 
 #import "BrowsePersonsViewController.h"
 #import "DataStorage.h"
+#import "RecordOverviewViewController.h"
 
 #pragma mark -
 #pragma mark BrowseRecordsViewController implementation
@@ -51,6 +52,34 @@
     [(BasicListModel *)_model setElements: 
      [[DataStorage shared] personsListElements]];
     [super reload];
+}
+
+
+#pragma mark -
+#pragma mark Navigation
+
+- (void) pushRecordOverviewWithDocument: (MMPIDocument *) document
+{
+    RecordOverviewViewController *controller =
+    [RecordOverviewViewController instanceWithMMPIDocument: document];
+    
+    [self.navigationController pushViewController: controller 
+                                         animated: YES];
+}
+
+
+#pragma mark -
+#pragma mark UITableViewDelegate
+
+     - (void) tableView: (UITableView *) tableView 
+didSelectRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    id object = [_model objectAtIndexPath: indexPath];
+    MMPIDocument *document = [DataStorage documentForPersonsListElement: object];
+    [self pushRecordOverviewWithDocument: document];
+    
+    [tableView deselectRowAtIndexPath: indexPath 
+                             animated: YES];
 }
 
 @end

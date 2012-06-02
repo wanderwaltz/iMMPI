@@ -106,7 +106,7 @@
 - (void) editPersonViewController: (EditPersonViewController *) controller 
                           didSavePerson: (Person *) record
 {
-    [DataStorage storePersonRecord: record];
+    [DataStorage createDocumentForPerson: record];
     
     [self presentRecordOverview];
     [self dismissModalViewControllerAnimated: YES];

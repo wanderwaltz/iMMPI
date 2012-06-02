@@ -114,6 +114,7 @@
     
     id<ListModelElement> object = [_model objectAtIndexPath: indexPath];
     
+    cell.accessoryType        = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text       = [object title];
     cell.detailTextLabel.text = [object subtitle];
     

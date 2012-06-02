@@ -51,9 +51,17 @@
 #pragma mark -
 #pragma mark Methods
 
-+ (void) storePersonRecord: (Person *) person
++ (void) createDocumentForPerson: (Person *) person
 {
-    [[self shared] storePersonRecord: person];
+    [[self shared] createDocumentForPerson: person];
+}
+
+
++ (MMPIDocument *) documentForPersonsListElement: (id) element
+{
+    NSAssert([element isKindOfClass: [PersonListDocumentWrapper class]], 
+             @"Expected person list document wrapper.");
+    return [element document];
 }
 
 

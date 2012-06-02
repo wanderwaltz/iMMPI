@@ -40,6 +40,28 @@
 
 
 #pragma mark -
+#pragma mark initialization methods
+
++ (id) instanceWithMMPIDocument: (MMPIDocument *) document
+{
+    return [[[self class] alloc] initWithMMPIDocument: document];
+}
+
+
+- (id) initWithMMPIDocument: (MMPIDocument *) document
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        _document  = document;
+        self.title = document.personIndexRecord.fullName;
+    }
+    return self;
+}
+
+
+#pragma mark -
 #pragma mark Navigation
 
 - (void) presentTestStatement

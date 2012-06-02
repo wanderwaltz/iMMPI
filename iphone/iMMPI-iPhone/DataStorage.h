@@ -8,6 +8,7 @@
 
 #import "PersonIndexRecord.h"
 #import "Person.h"
+#import "MMPIDocument.h"
 
 
 #pragma mark -
@@ -20,10 +21,12 @@
 
 @property (readonly, nonatomic) NSArray *personsListElements;
 
++ (MMPIDocument *) documentForPersonsListElement: (id) element NS_RETURNS_NOT_RETAINED;
+
 + (Person *) createPersonRecord NS_RETURNS_NOT_RETAINED; 
 + (PersonIndexRecord *) createIndexRecordForPerson: (Person *) person NS_RETURNS_NOT_RETAINED;
 
-+ (void) storePersonRecord: (Person *) person;
++ (void) createDocumentForPerson: (Person *) person;
 
 + (void) loadLocalDocuments;
 

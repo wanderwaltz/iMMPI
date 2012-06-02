@@ -14,6 +14,12 @@
 @implementation PersonListDocumentWrapper
 
 #pragma mark -
+#pragma mark Properties
+
+@synthesize document = _document;
+
+
+#pragma mark -
 #pragma mark ListModelElement
 
 - (NSString *) title

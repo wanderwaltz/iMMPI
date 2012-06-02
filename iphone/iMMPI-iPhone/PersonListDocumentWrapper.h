@@ -17,6 +17,8 @@
     __weak MMPIDocument *_document;
 }
 
+@property (weak, readonly, nonatomic) MMPIDocument *document;
+
 + (id) instanceWithMMPIDocument: (MMPIDocument *) document NS_RETURNS_NOT_RETAINED;
 - (id) initWithMMPIDocument:     (MMPIDocument *) document NS_RETURNS_RETAINED;
 
