@@ -10,7 +10,7 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "PersonJsonData.h"
+#import "Person.h"
 
 #pragma mark -
 #pragma mark Static constants
@@ -20,9 +20,9 @@ static NSString * const kLastNameJsonKey  =  @"Last Name";
 static NSString * const kBirthDateJsonKey = @"Birth Date";
 
 #pragma mark -
-#pragma mark PersonJsonData implementation
+#pragma mark Person implementation
 
-@implementation PersonJsonData
+@implementation Person
 
 - (NSString *) firstName
 {

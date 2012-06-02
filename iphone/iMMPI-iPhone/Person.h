@@ -6,13 +6,12 @@
 //  Copyright (c) 2012 Sibers. All rights reserved.
 //
 
-#import "PersonRecordProtocol.h"
 #import "JsonDataWrapper.h"
 
 #pragma mark -
-#pragma mark PersonJsonData interface
+#pragma mark Person interface
 
-@interface PersonJsonData : JsonDataWrapper<PersonRecordProtocol>
+@interface Person : JsonDataWrapper
 
 @property (strong, nonatomic) NSString *firstName;
 @property (strong, nonatomic) NSString *lastName;

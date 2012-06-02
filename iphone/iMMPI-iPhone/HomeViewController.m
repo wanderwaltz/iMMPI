@@ -11,9 +11,11 @@
 #endif
 
 #import "HomeViewController.h"
-#import "BrowseRecordsViewController.h"
+#import "BrowsePersonsViewController.h"
 #import "PersonRecordFormViewController.h"
 #import "RecordOverviewViewController.h"
+
+#import "DataStorage.h"
 
 #pragma mark -
 #pragma mark HomeViewController implementation
@@ -40,8 +42,8 @@
 
 - (void) presentRecordsBrowser
 {
-    BrowseRecordsViewController *controller = 
-    [BrowseRecordsViewController instance];
+    BrowsePersonsViewController *controller = 
+    [BrowsePersonsViewController instance];
     
     [self.navigationController pushViewController: controller 
                                          animated: YES];
@@ -60,13 +62,35 @@
 
 - (void) presentNewRecordForm
 {
+    Person *person = [DataStorage createPersonRecord];
+    
     PersonRecordFormViewController *controller = 
-    [PersonRecordFormViewController instance];
+    [PersonRecordFormViewController instanceWithPerson: person];
     
     controller.delegate = self;
     
-    [self presentModalViewController: [controller embedInNavigationController]
+    [self presentModalViewController: 
+     [controller embedInNavigationController]
                             animated: YES];
+}
+
+
+#pragma mark -
+#pragma mark View lifecycle
+
+- (void) updateVersionLabel
+{
+    NSBundle *bundle = [NSBundle mainBundle];
+    
+    _versionLabel.text = 
+    [NSString stringWithFormat: @"iMMPI ver. %@",
+     [bundle.infoDictionary objectForKey: @"CFBundleShortVersionString"]];
+}
+
+- (void) loadView
+{
+    [super loadView];
+    [self updateVersionLabel];
 }
 
 
@@ -80,8 +104,10 @@
 
 
 - (void) personRecordFormViewController: (PersonRecordFormViewController *) controller 
-                          didSaveRecord: (id) record
+                          didSaveRecord: (Person *) record
 {
+    [DataStorage storePersonRecord: record];
+    
     [self presentRecordOverview];
     [self dismissModalViewControllerAnimated: YES];
 }

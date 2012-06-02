@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A8BEE5E1575E799003AE561 /* PersonIndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8BEE5D1575E799003AE561 /* PersonIndexModel.m */; };
 		5D115BE615675EF3000FDF47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D115BE515675EF3000FDF47 /* UIKit.framework */; };
 		5D115BE815675EF3000FDF47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D115BE715675EF3000FDF47 /* Foundation.framework */; };
 		5D115BEA15675EF3000FDF47 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D115BE915675EF3000FDF47 /* CoreGraphics.framework */; };
@@ -29,10 +28,10 @@
 		5D115C9B156776A8000FDF47 /* RecordOverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C99156776A8000FDF47 /* RecordOverviewViewController.xib */; };
 		5D115CA0156779C7000FDF47 /* TestStatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C9E156779C7000FDF47 /* TestStatementViewController.m */; };
 		5D115CA1156779C7000FDF47 /* TestStatementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C9F156779C7000FDF47 /* TestStatementViewController.xib */; };
-		5DABDBCF1571F79900C21AC8 /* MMPIDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBCE1571F79900C21AC8 /* MMPIDocument.m */; };
-		5DABDBD41571F7C900C21AC8 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBD31571F7C900C21AC8 /* Person.m */; };
-		5DABDBD71571F7D400C21AC8 /* TestRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBD61571F7D400C21AC8 /* TestRecord.m */; };
-		5DABDBDB1571F7F000C21AC8 /* PersonIndexRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBDA1571F7F000C21AC8 /* PersonIndexRecord.m */; };
+		5DABDBCF1571F79900C21AC8 /* TestRecordDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBCE1571F79900C21AC8 /* TestRecordDocument.m */; };
+		5DABDBD41571F7C900C21AC8 /* PersonJsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBD31571F7C900C21AC8 /* PersonJsonData.m */; };
+		5DABDBD71571F7D400C21AC8 /* TestRecordJsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBD61571F7D400C21AC8 /* TestRecordJsonData.m */; };
+		5DABDBDB1571F7F000C21AC8 /* PersonIndexJsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBDA1571F7F000C21AC8 /* PersonIndexJsonData.m */; };
 		5DABDBE01571FB4200C21AC8 /* JsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBDF1571FB4200C21AC8 /* JsonData.m */; };
 		5DABDBE81572042A00C21AC8 /* JsonDataWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBE71572042A00C21AC8 /* JsonDataWrapper.m */; };
 		5DABDBEF1572059C00C21AC8 /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBEE1572059C00C21AC8 /* DataStorage.m */; };
@@ -84,9 +83,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A8BEE5C1575E799003AE561 /* PersonIndexModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonIndexModel.h; sourceTree = "<group>"; };
-		5A8BEE5D1575E799003AE561 /* PersonIndexModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonIndexModel.m; sourceTree = "<group>"; };
-		5A8BEE641575F3B5003AE561 /* Serializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Serializable.h; sourceTree = "<group>"; };
+		5A79C497156E316A0034B985 /* PersonRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonRecordProtocol.h; sourceTree = "<group>"; };
+		5A79C498156E320E0034B985 /* TestRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordProtocol.h; sourceTree = "<group>"; };
 		5D115BE115675EF3000FDF47 /* iMMPI-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iMMPI-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D115BE515675EF3000FDF47 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D115BE715675EF3000FDF47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,20 +119,21 @@
 		5D115C9D156779C7000FDF47 /* TestStatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestStatementViewController.h; sourceTree = "<group>"; };
 		5D115C9E156779C7000FDF47 /* TestStatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestStatementViewController.m; sourceTree = "<group>"; };
 		5D115C9F156779C7000FDF47 /* TestStatementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestStatementViewController.xib; sourceTree = "<group>"; };
-		5DABDBCD1571F79900C21AC8 /* MMPIDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MMPIDocument.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5DABDBCE1571F79900C21AC8 /* MMPIDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MMPIDocument.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		5DABDBD21571F7C900C21AC8 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		5DABDBD31571F7C900C21AC8 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		5DABDBD51571F7D400C21AC8 /* TestRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecord.h; sourceTree = "<group>"; };
-		5DABDBD61571F7D400C21AC8 /* TestRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecord.m; sourceTree = "<group>"; };
-		5DABDBD91571F7F000C21AC8 /* PersonIndexRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonIndexRecord.h; sourceTree = "<group>"; };
-		5DABDBDA1571F7F000C21AC8 /* PersonIndexRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonIndexRecord.m; sourceTree = "<group>"; };
+		5DABDBCD1571F79900C21AC8 /* TestRecordDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordDocument.h; sourceTree = "<group>"; };
+		5DABDBCE1571F79900C21AC8 /* TestRecordDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordDocument.m; sourceTree = "<group>"; };
+		5DABDBD21571F7C900C21AC8 /* PersonJsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonJsonData.h; sourceTree = "<group>"; };
+		5DABDBD31571F7C900C21AC8 /* PersonJsonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonJsonData.m; sourceTree = "<group>"; };
+		5DABDBD51571F7D400C21AC8 /* TestRecordJsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordJsonData.h; sourceTree = "<group>"; };
+		5DABDBD61571F7D400C21AC8 /* TestRecordJsonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordJsonData.m; sourceTree = "<group>"; };
+		5DABDBD91571F7F000C21AC8 /* PersonIndexJsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonIndexJsonData.h; sourceTree = "<group>"; };
+		5DABDBDA1571F7F000C21AC8 /* PersonIndexJsonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonIndexJsonData.m; sourceTree = "<group>"; };
 		5DABDBDE1571FB4200C21AC8 /* JsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonData.h; sourceTree = "<group>"; };
 		5DABDBDF1571FB4200C21AC8 /* JsonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonData.m; sourceTree = "<group>"; };
 		5DABDBE61572042A00C21AC8 /* JsonDataWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonDataWrapper.h; sourceTree = "<group>"; };
 		5DABDBE71572042A00C21AC8 /* JsonDataWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonDataWrapper.m; sourceTree = "<group>"; };
 		5DABDBED1572059C00C21AC8 /* DataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStorage.h; sourceTree = "<group>"; };
-		5DABDBEE1572059C00C21AC8 /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DataStorage.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5DABDBEE1572059C00C21AC8 /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
+		5DABDBF015720B9C00C21AC8 /* PersonIndexRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonIndexRecordProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,15 +154,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A8BEE5B1575E77E003AE561 /* Person Index Model */ = {
-			isa = PBXGroup;
-			children = (
-				5A8BEE5C1575E799003AE561 /* PersonIndexModel.h */,
-				5A8BEE5D1575E799003AE561 /* PersonIndexModel.m */,
-			);
-			name = "Person Index Model";
-			sourceTree = "<group>";
-		};
 		5D115BD615675EF3000FDF47 = {
 			isa = PBXGroup;
 			children = (
@@ -265,7 +255,7 @@
 				5D115C9C1567799F000FDF47 /* Test Statement View Controller */,
 				5D115C9615677693000FDF47 /* Record Overview View Controller */,
 				5D115C9015676973000FDF47 /* New Record Form View Controller */,
-				5D115C8A1567673A000FDF47 /* Browse Persons View Controller */,
+				5D115C8A1567673A000FDF47 /* Browse Records View Controller */,
 				5D115C7D1567650F000FDF47 /* Home View Controller */,
 			);
 			name = UI;
@@ -284,7 +274,11 @@
 			children = (
 				5DABDBE91572053600C21AC8 /* Low Level Serialization */,
 				5DABDBEC1572058D00C21AC8 /* Data Storage */,
-				5DABDBEA1572054900C21AC8 /* MMPI Model Objects */,
+				5DABDBEA1572054900C21AC8 /* Data Model Objects */,
+				5DABDBCC1571F76900C21AC8 /* Test Record Document */,
+				5A79C497156E316A0034B985 /* PersonRecordProtocol.h */,
+				5DABDBF015720B9C00C21AC8 /* PersonIndexRecordProtocol.h */,
+				5A79C498156E320E0034B985 /* TestRecordProtocol.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -298,14 +292,14 @@
 			name = "Base View Controller";
 			sourceTree = "<group>";
 		};
-		5D115C8A1567673A000FDF47 /* Browse Persons View Controller */ = {
+		5D115C8A1567673A000FDF47 /* Browse Records View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				5D115C8B15676773000FDF47 /* BrowsePersonsViewController.h */,
 				5D115C8C15676773000FDF47 /* BrowsePersonsViewController.m */,
 				5D115C8D15676773000FDF47 /* BrowsePersonsViewController.xib */,
 			);
-			name = "Browse Persons View Controller";
+			name = "Browse Records View Controller";
 			sourceTree = "<group>";
 		};
 		5D115C9015676973000FDF47 /* New Record Form View Controller */ = {
@@ -338,40 +332,40 @@
 			name = "Test Statement View Controller";
 			sourceTree = "<group>";
 		};
-		5DABDBCC1571F76900C21AC8 /* MMPI Document */ = {
+		5DABDBCC1571F76900C21AC8 /* Test Record Document */ = {
 			isa = PBXGroup;
 			children = (
-				5DABDBCD1571F79900C21AC8 /* MMPIDocument.h */,
-				5DABDBCE1571F79900C21AC8 /* MMPIDocument.m */,
+				5DABDBCD1571F79900C21AC8 /* TestRecordDocument.h */,
+				5DABDBCE1571F79900C21AC8 /* TestRecordDocument.m */,
 			);
-			name = "MMPI Document";
+			name = "Test Record Document";
 			sourceTree = "<group>";
 		};
-		5DABDBD01571F7A200C21AC8 /* Person */ = {
+		5DABDBD01571F7A200C21AC8 /* Person Record Data */ = {
 			isa = PBXGroup;
 			children = (
-				5DABDBD21571F7C900C21AC8 /* Person.h */,
-				5DABDBD31571F7C900C21AC8 /* Person.m */,
+				5DABDBD21571F7C900C21AC8 /* PersonJsonData.h */,
+				5DABDBD31571F7C900C21AC8 /* PersonJsonData.m */,
 			);
-			name = Person;
+			name = "Person Record Data";
 			sourceTree = "<group>";
 		};
-		5DABDBD11571F7B600C21AC8 /* Test Record */ = {
+		5DABDBD11571F7B600C21AC8 /* Test Record Data */ = {
 			isa = PBXGroup;
 			children = (
-				5DABDBD51571F7D400C21AC8 /* TestRecord.h */,
-				5DABDBD61571F7D400C21AC8 /* TestRecord.m */,
+				5DABDBD51571F7D400C21AC8 /* TestRecordJsonData.h */,
+				5DABDBD61571F7D400C21AC8 /* TestRecordJsonData.m */,
 			);
-			name = "Test Record";
+			name = "Test Record Data";
 			sourceTree = "<group>";
 		};
-		5DABDBD81571F7D800C21AC8 /* Person Index Record */ = {
+		5DABDBD81571F7D800C21AC8 /* Person Index Record Data */ = {
 			isa = PBXGroup;
 			children = (
-				5DABDBD91571F7F000C21AC8 /* PersonIndexRecord.h */,
-				5DABDBDA1571F7F000C21AC8 /* PersonIndexRecord.m */,
+				5DABDBD91571F7F000C21AC8 /* PersonIndexJsonData.h */,
+				5DABDBDA1571F7F000C21AC8 /* PersonIndexJsonData.m */,
 			);
-			name = "Person Index Record";
+			name = "Person Index Record Data";
 			sourceTree = "<group>";
 		};
 		5DABDBDD1571FB3000C21AC8 /* Json Data */ = {
@@ -395,28 +389,25 @@
 		5DABDBE91572053600C21AC8 /* Low Level Serialization */ = {
 			isa = PBXGroup;
 			children = (
-				5A8BEE641575F3B5003AE561 /* Serializable.h */,
 				5DABDBE51572041800C21AC8 /* Json Data Wrapper */,
 				5DABDBDD1571FB3000C21AC8 /* Json Data */,
 			);
 			name = "Low Level Serialization";
 			sourceTree = "<group>";
 		};
-		5DABDBEA1572054900C21AC8 /* MMPI Model Objects */ = {
+		5DABDBEA1572054900C21AC8 /* Data Model Objects */ = {
 			isa = PBXGroup;
 			children = (
-				5DABDBCC1571F76900C21AC8 /* MMPI Document */,
-				5DABDBD81571F7D800C21AC8 /* Person Index Record */,
-				5DABDBD01571F7A200C21AC8 /* Person */,
-				5DABDBD11571F7B600C21AC8 /* Test Record */,
+				5DABDBD01571F7A200C21AC8 /* Person Record Data */,
+				5DABDBD11571F7B600C21AC8 /* Test Record Data */,
+				5DABDBD81571F7D800C21AC8 /* Person Index Record Data */,
 			);
-			name = "MMPI Model Objects";
+			name = "Data Model Objects";
 			sourceTree = "<group>";
 		};
 		5DABDBEC1572058D00C21AC8 /* Data Storage */ = {
 			isa = PBXGroup;
 			children = (
-				5A8BEE5B1575E77E003AE561 /* Person Index Model */,
 				5DABDBED1572059C00C21AC8 /* DataStorage.h */,
 				5DABDBEE1572059C00C21AC8 /* DataStorage.m */,
 			);
@@ -433,7 +424,6 @@
 				5D115BDD15675EF3000FDF47 /* Sources */,
 				5D115BDE15675EF3000FDF47 /* Frameworks */,
 				5D115BDF15675EF3000FDF47 /* Resources */,
-				5A28E40115773E4500E55AE0 /* Show TODO's and FIXME's as warnings */,
 			);
 			buildRules = (
 			);
@@ -545,23 +535,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5A28E40115773E4500E55AE0 /* Show TODO's and FIXME's as warnings */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Show TODO's and FIXME's as warnings";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		5D115BDD15675EF3000FDF47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -575,14 +548,13 @@
 				5D115C941567698C000FDF47 /* PersonRecordFormViewController.m in Sources */,
 				5D115C9A156776A8000FDF47 /* RecordOverviewViewController.m in Sources */,
 				5D115CA0156779C7000FDF47 /* TestStatementViewController.m in Sources */,
-				5DABDBCF1571F79900C21AC8 /* MMPIDocument.m in Sources */,
-				5DABDBD41571F7C900C21AC8 /* Person.m in Sources */,
-				5DABDBD71571F7D400C21AC8 /* TestRecord.m in Sources */,
-				5DABDBDB1571F7F000C21AC8 /* PersonIndexRecord.m in Sources */,
+				5DABDBCF1571F79900C21AC8 /* TestRecordDocument.m in Sources */,
+				5DABDBD41571F7C900C21AC8 /* PersonJsonData.m in Sources */,
+				5DABDBD71571F7D400C21AC8 /* TestRecordJsonData.m in Sources */,
+				5DABDBDB1571F7F000C21AC8 /* PersonIndexJsonData.m in Sources */,
 				5DABDBE01571FB4200C21AC8 /* JsonData.m in Sources */,
 				5DABDBE81572042A00C21AC8 /* JsonDataWrapper.m in Sources */,
 				5DABDBEF1572059C00C21AC8 /* DataStorage.m in Sources */,
-				5A8BEE5E1575E799003AE561 /* PersonIndexModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

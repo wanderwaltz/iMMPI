@@ -55,7 +55,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Согласен</string>
+						<string key="IBUINormalTitle">Agree</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="442559374">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -91,7 +91,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Не согласен</string>
+						<string key="IBUINormalTitle">Disagree</string>
 						<reference key="IBUIHighlightedTitleColor" ref="442559374"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>

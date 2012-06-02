@@ -6,13 +6,12 @@
 //  Copyright (c) 2012 Sibers. All rights reserved.
 //
 
-#import "TestRecordProtocol.h"
 #import "JsonDataWrapper.h"
 
 #pragma mark -
-#pragma mark TestRecordJsonData interface
+#pragma mark TestRecord interface
 
-@interface TestRecordJsonData : JsonDataWrapper<TestRecordProtocol>
+@interface TestRecord : JsonDataWrapper
 
 @property (strong,   nonatomic) NSDate *testDate;
 @property (readonly, nonatomic) NSUInteger numberOfStatementsAnswered;

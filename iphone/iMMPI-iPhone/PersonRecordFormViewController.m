@@ -45,7 +45,7 @@ enum
 
 - (void) nextButtonAction: (id) sender
 {
-    [self saveRecord: nil];
+    [self saveRecord: _person];
 }
 
 
@@ -70,12 +70,19 @@ enum
 #pragma mark -
 #pragma mark initialization methods
 
-- (id) init
++ (id) instanceWithPerson: (Person *) person
+{
+    return [[[self class] alloc] initWithPerson: person];
+}
+
+
+- (id) initWithPerson: (Person *) person
 {
     self = [super init];
     
     if (self != nil)
     {
+        _person = person;
         [self setupModel];
     }
     return self;
@@ -111,10 +118,10 @@ enum
     for (NSUInteger section = 0; section < _tableSections.count; ++section)
     {
         NSArray *rows = [_tableSections objectAtIndex: section];
+        
         for (NSUInteger row = 0; row < rows.count; ++row)
         {
-            NSNumber *rowIDNumber = [rows objectAtIndex: row];
-            NSUInteger ID = [rowIDNumber unsignedIntValue];
+            NSUInteger ID = [[rows objectAtIndex: row] unsignedIntValue];
             
             if (rowID == ID)
             {
@@ -146,6 +153,23 @@ enum
 
 #pragma mark -
 #pragma mark UITableViewDataSource
+
+- (NSUInteger) rowIDatIndexPath: (NSIndexPath *) indexPath
+{
+    NSArray *rows = [_tableSections objectAtIndex: indexPath.section];
+    
+    NSUInteger rowID = [[rows objectAtIndex: indexPath.row] unsignedIntValue];
+
+    return rowID;
+}
+
+
+- (NSUInteger) rowIDforTableViewCell: (UITableViewCell *) cell
+{
+    NSIndexPath *indexPath = [_tableView indexPathForCell: cell];
+    return [self rowIDatIndexPath: indexPath];
+}
+
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView *) tableView
 {
@@ -179,12 +203,7 @@ enum
     cell.textField.textAlignment = UITextAlignmentLeft;
     cell.textField.textColor     = [UIColor blackColor];
     
-    NSArray  *rows = [_tableSections objectAtIndex: indexPath.section];
-    NSNumber *row  = [rows objectAtIndex: indexPath.row];
-    
-    NSUInteger rowID = [row unsignedIntValue];
-    
-    switch (rowID)
+    switch ([self rowIDatIndexPath: indexPath])
     {
         case kTableViewRowFirstName:
         {
@@ -215,22 +234,16 @@ enum
 - (void) textFieldTableViewCell: (WWTextFieldTableViewCell *) cell
                   didEndEditing: (NSString *) text
 {
-    NSIndexPath *indexPath = [_tableView indexPathForCell: cell];
-    NSArray  *rows = [_tableSections objectAtIndex: indexPath.section];
-    NSNumber *row  = [rows objectAtIndex: indexPath.row];
-    
-    NSUInteger rowID = [row unsignedIntValue];
-    
-    switch (rowID)
+    switch ([self rowIDforTableViewCell: cell])
     {
         case kTableViewRowFirstName:
         {
-            [_person setFirstName: text];
+            _person.firstName = text;
         } break;
             
         case kTableViewRowLastName:
         {
-            [_person setLastName: text];
+            _person.lastName = text;
         } break;
             
         case kTableViewRowBirthDate:
@@ -243,13 +256,7 @@ enum
 - (BOOL) textFieldTableViewCell: (WWTextFieldTableViewCell *) cell
           textFieldShouldReturn: (UITextField *) textField
 {
-    NSIndexPath *indexPath = [_tableView indexPathForCell: cell];
-    NSArray  *rows = [_tableSections objectAtIndex: indexPath.section];
-    NSNumber *row  = [rows objectAtIndex: indexPath.row];
-    
-    NSUInteger rowID = [row unsignedIntValue];
-    
-    switch (rowID)
+    switch ([self rowIDforTableViewCell: cell])
     {
         case kTableViewRowFirstName:
         {

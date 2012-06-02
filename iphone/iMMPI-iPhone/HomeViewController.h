@@ -15,6 +15,9 @@
 
 @interface HomeViewController : BaseViewController
 <PersonRecordFormViewControllerDelegate>
+{
+    IBOutlet UILabel *_versionLabel;
+}
 
 - (IBAction) browseRecordsAction: (id) sender;
 - (IBAction) addNewRecordAction:  (id) sender;

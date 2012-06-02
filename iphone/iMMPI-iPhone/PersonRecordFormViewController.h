@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "PersonRecordProtocol.h"
+#import "Person.h"
 
 #pragma mark -
 #pragma mark Forward declarations
@@ -24,7 +24,7 @@
 - (void) personRecordFormViewControllerDidCancel: (PersonRecordFormViewController *) controller;
 
 - (void) personRecordFormViewController: (PersonRecordFormViewController *) controller
-                          didSaveRecord: (id) record;
+                          didSaveRecord: (Person *) record;
 
 @end
 
@@ -40,7 +40,7 @@
     // Model
     __weak id<PersonRecordFormViewControllerDelegate> _delegate;
     
-    id<PersonRecordProtocol> _person;
+    Person *_person;
     
     NSMutableArray *_tableSections;
     
@@ -52,5 +52,8 @@
 
 - (IBAction) cancelButtonAction: (id) sender;
 - (IBAction) nextButtonAction:   (id) sender;
+
++ (id) instanceWithPerson: (Person *) person NS_RETURNS_NOT_RETAINED;
+- (id) initWithPerson:     (Person *) person NS_RETURNS_RETAINED;
 
 @end

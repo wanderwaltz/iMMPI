@@ -7,14 +7,18 @@
 //
 
 #import "BaseViewController.h"
+#import "PersonIndexModel.h"
 
 #pragma mark -
 #pragma mark BrowseRecordsViewController interface
 
-@interface BrowseRecordsViewController : BaseViewController
+@interface BrowsePersonsViewController : BaseViewController
 <UITableViewDelegate, UITableViewDataSource>
 {
     IBOutlet UISegmentedControl *_sortControl;
+    IBOutlet UITableView        *_tableView;
+    
+    PersonIndexModel *_model;
 }
 
 

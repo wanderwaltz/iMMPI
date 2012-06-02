@@ -6,10 +6,12 @@
 //  Copyright (c) 2012 Sibers. All rights reserved.
 //
 
+#import "Serializable.h"
+
 #pragma mark -
 #pragma mark JsonData interface
 
-@interface JsonData : NSObject<NSCoding>
+@interface JsonData : NSObject<Serializable>
 {
     NSMutableDictionary *_jsonData;
 }

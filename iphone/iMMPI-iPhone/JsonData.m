@@ -109,31 +109,13 @@
 #pragma mark -
 #pragma mark initialization methods
 
-- (id) init
-{
-    self = [super init];
-    
-    if (self != nil)
-    {
-        _jsonData = [NSMutableDictionary dictionary];
-    }
-    return self;
-}
-
-
-#pragma mark -
-#pragma mark NSCoding
-
-- (id) initWithCoder: (NSCoder *) aDecoder
+- (id) initWithData:(NSData *)data
 {
     NSError *error = nil;
-    
     self = [super init];
     
     if (self != nil)
     {
-        NSData *data = [aDecoder decodeObject];
-    
         _jsonData = [NSJSONSerialization JSONObjectWithData: data 
                                                     options: NSJSONReadingMutableLeaves 
                                                       error: &error];
@@ -151,19 +133,34 @@
 }
 
 
-- (void) encodeWithCoder: (NSCoder *) aCoder
+- (id) init
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        _jsonData = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
+
+- (NSData *) serialize
 {
     NSError *error = nil;
     
-    [aCoder encodeObject:
-     [NSJSONSerialization dataWithJSONObject: _jsonData 
-                                     options: NSJSONWritingPrettyPrinted 
-                                       error: &error]];
+    NSData *data = [NSJSONSerialization dataWithJSONObject: _jsonData 
+                                                   options: NSJSONWritingPrettyPrinted 
+                                                     error: &error];
      
-     if (error != nil)
-     {
-         NSLog(@"Error encoding json data: %@", error);
-     }
+     
+    if (error != nil)
+    {
+        NSLog(@"Error encoding json data: %@", error);
+        return nil;
+    }
+    else 
+        return data;
 }
 
 @end

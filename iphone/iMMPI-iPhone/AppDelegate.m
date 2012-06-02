@@ -12,6 +12,7 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import "DataStorage.h"
 
 #pragma mark -
 #pragma mark AppDelegate implementation
@@ -50,6 +51,10 @@ didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
     [self createHomeViewController];
     [self createWindow];
     [_window makeKeyAndVisible];
+    
+    OnMainThread(^{
+        [DataStorage loadLocalDocuments]; 
+    });
     
     return YES;
 }

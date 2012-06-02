@@ -10,19 +10,19 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "TestRecordJsonData.h"
+#import "TestRecord.h"
 
 #pragma mark -
 #pragma mark Static constants
 
 static NSString * const kTestDateKey           = @"Test Date";
-static NSString * const kNumberOfStatementsKey = @"Statements Answered";
 static NSString * const kAnswersKey            = @"Answers";
+static NSString * const kNumberOfStatementsKey = @"Statements Answered";
 
 #pragma mark -
-#pragma mark TestRecordJsonData implementation
+#pragma mark TestRecord implementation
 
-@implementation TestRecordJsonData
+@implementation TestRecord
 
 - (NSDate *) testDate
 {

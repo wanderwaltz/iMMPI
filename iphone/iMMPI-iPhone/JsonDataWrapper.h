@@ -7,11 +7,12 @@
 //
 
 #import "JsonData.h"
+#import "Serializable.h"
 
 #pragma mark -
 #pragma mark JsonDataWrapper interface
 
-@interface JsonDataWrapper : NSObject<NSCoding>
+@interface JsonDataWrapper : NSObject<Serializable>
 {
     JsonData *_jsonData;
 }

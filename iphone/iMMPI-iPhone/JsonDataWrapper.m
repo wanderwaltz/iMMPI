@@ -17,6 +17,20 @@
 
 @implementation JsonDataWrapper
 
+#pragma mark -
+#pragma mark initialization methods
+
+- (id) initWithData: (NSData *) data
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        _jsonData = [[JsonData alloc] initWithData: data];
+    }
+    return self;
+}
+
 - (id) init
 {
     self = [super init];
@@ -29,25 +43,9 @@
 }
 
 
-#pragma mark -
-#pragma mark NSCoding
-
-- (id) initWithCoder: (NSCoder *) aDecoder
+- (NSData *) serialize
 {
-    self = [super init];
-    
-    if (self != nil)
-    {
-        _jsonData = [[JsonData alloc] initWithCoder: aDecoder];
-    }
-    
-    return self;
-}
-
-
-- (void) encodeWithCoder: (NSCoder *) aCoder
-{
-    [aCoder encodeObject: _jsonData];
+    return [_jsonData serialize];
 }
 
 @end
