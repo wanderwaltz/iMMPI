@@ -207,19 +207,19 @@ enum
     {
         case kTableViewRowFirstName:
         {
-            cell.textLabel.text = NSLocalizedString(@"Имя", @"First Name");
+            cell.textLabel.text = NSLocalizedString(@"First Name", @"First Name");
             cell.textField.returnKeyType = UIReturnKeyNext;
         } break;
             
         case kTableViewRowLastName:
         {
-            cell.textLabel.text = NSLocalizedString(@"Фамилия", @"Last Name");
+            cell.textLabel.text = NSLocalizedString(@"Last Name", @"Last Name");
             cell.textField.returnKeyType = UIReturnKeyNext;
         } break;
             
         case kTableViewRowBirthDate:
         {
-            cell.textLabel.text = NSLocalizedString(@"Дата рождения", @"Birth Date");
+            cell.textLabel.text = NSLocalizedString(@"Birth Date", @"Birth Date");
             cell.textField.returnKeyType = UIReturnKeyDone;
         } break;
     }
