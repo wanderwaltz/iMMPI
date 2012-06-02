@@ -7,14 +7,14 @@
 //
 
 #import "BaseViewController.h"
-#import "PersonRecordFormViewController.h"
+#import "EditPersonViewController.h"
 
 
 #pragma mark -
 #pragma mark HomeViewController interface
 
 @interface HomeViewController : BaseViewController
-<PersonRecordFormViewControllerDelegate>
+<EditPersonViewControllerDelegate>
 {
     IBOutlet UILabel *_versionLabel;
 }

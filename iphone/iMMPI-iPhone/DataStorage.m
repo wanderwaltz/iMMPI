@@ -10,11 +10,29 @@
 #import "Person.h"
 #import "PersonIndexRecord.h"
 #import "MMPIDocument.h"
+#import "PersonListDocumentWrapper.h"
 
 #pragma mark -
 #pragma mark DataStorage implementation
 
 @implementation DataStorage
+
+#pragma mark -
+#pragma mark Properties
+
+- (NSArray *) personsListElements
+{
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity: _documents.count];
+    
+    for (id document in _documents)
+    {
+        [result addObject: 
+         [PersonListDocumentWrapper instanceWithMMPIDocument: document]];
+    }
+    
+    return result;
+}
+
 
 #pragma mark -
 #pragma mark Model objects factory methods
@@ -32,14 +50,6 @@
 
 #pragma mark -
 #pragma mark Methods
-
-+ (PersonIndexModel *) personIndexModel
-{
-    DataStorage *shared = [self shared];
-    
-    return shared->_personIndexModel;
-}
-
 
 + (void) storePersonRecord: (Person *) person
 {
@@ -74,6 +84,8 @@
 
 - (void) saveDocument: (MMPIDocument *) document
 {
+    [_documents addObject: document];
+    
     [document saveToURL: document.fileURL
        forSaveOperation: UIDocumentSaveForCreating 
       completionHandler:
@@ -86,10 +98,6 @@
          } 
          
          NSLog(@"File created at %@", document.fileURL);        
-         
-         OnMainThread(^{
-             [_personIndexModel addIndexRecord: document.personIndexRecord];
-         });
      }]; 
 }
 
@@ -103,33 +111,9 @@
 
 - (void) loadDocAtURL: (NSURL *) fileURL
 {    
-    // Open doc so we can read metadata
     MMPIDocument *document = [[MMPIDocument alloc] initWithFileURL: fileURL];
     [_documents addObject: document];
-    
-    [document openWithCompletionHandler:
-     ^(BOOL success) 
-     {
-         if (!success) 
-         {
-            NSLog(@"Failed to open %@", fileURL);
-            return;
-         }
-         
-         PersonIndexRecord *indexRecord = document.personIndexRecord;
-         [document closeWithCompletionHandler:
-          ^(BOOL success) 
-          {
-              if (!success) 
-              {
-                  NSLog(@"Failed to close %@", fileURL);
-              }
-              
-              OnMainThread(^{
-                  [_personIndexModel addIndexRecord: indexRecord];
-              });            
-          }];             
-     }];
+    [document openWithCompletionHandler: nil];
 }
 
 
@@ -171,7 +155,6 @@
     
     if (self != nil)
     {
-        _personIndexModel = [PersonIndexModel instance];
         _documents = [NSMutableArray array];
     }
     return self;

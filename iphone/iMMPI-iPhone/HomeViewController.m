@@ -12,7 +12,7 @@
 
 #import "HomeViewController.h"
 #import "BrowsePersonsViewController.h"
-#import "PersonRecordFormViewController.h"
+#import "EditPersonViewController.h"
 #import "RecordOverviewViewController.h"
 
 #import "DataStorage.h"
@@ -64,8 +64,8 @@
 {
     Person *person = [DataStorage createPersonRecord];
     
-    PersonRecordFormViewController *controller = 
-    [PersonRecordFormViewController instanceWithPerson: person];
+    EditPersonViewController *controller = 
+    [EditPersonViewController instanceWithPerson: person];
     
     controller.delegate = self;
     
@@ -83,7 +83,7 @@
     NSBundle *bundle = [NSBundle mainBundle];
     
     _versionLabel.text = 
-    [NSString stringWithFormat: @"iMMPI ver. %@",
+    [NSString stringWithFormat: @"iMMPI v%@",
      [bundle.infoDictionary objectForKey: @"CFBundleShortVersionString"]];
 }
 
@@ -97,14 +97,14 @@
 #pragma mark -
 #pragma mark PersonRecordFormViewControllerDelegate
 
-- (void) personRecordFormViewControllerDidCancel: (PersonRecordFormViewController *) controller
+- (void) editPersonViewControllerDidCancel: (EditPersonViewController *) controller
 {
     [self dismissModalViewControllerAnimated: YES];
 }
 
 
-- (void) personRecordFormViewController: (PersonRecordFormViewController *) controller 
-                          didSaveRecord: (Person *) record
+- (void) editPersonViewController: (EditPersonViewController *) controller 
+                          didSavePerson: (Person *) record
 {
     [DataStorage storePersonRecord: record];
     

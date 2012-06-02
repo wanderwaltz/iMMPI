@@ -264,7 +264,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">PersonRecordFormViewController</string>
+				<string key="-1.CustomClassName">EditPersonViewController</string>
 				<object class="NSMutableDictionary" key="-1.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">IBUserDefinedRuntimeAttributesPlaceholderName</string>
 					<object class="IBUIUserDefinedRuntimeAttributesPlaceholder" key="NS.object.0">
@@ -307,7 +307,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">PersonRecordFormViewController</string>
+					<string key="className">EditPersonViewController</string>
 					<string key="superclassName">BaseViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="cancelButtonAction:">id</string>
@@ -336,7 +336,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/PersonRecordFormViewController.h</string>
+						<string key="minorKey">./Classes/EditPersonViewController.h</string>
 					</object>
 				</object>
 			</array>

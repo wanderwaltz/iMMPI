@@ -6,19 +6,16 @@
 //  Copyright (c) 2012 Sibers. All rights reserved.
 //
 
-#import "BaseViewController.h"
-#import "PersonIndexModel.h"
+#import "BasicListModel.h"
+#import "ListModelViewController.h"
 
 #pragma mark -
 #pragma mark BrowseRecordsViewController interface
 
-@interface BrowsePersonsViewController : BaseViewController
+@interface BrowsePersonsViewController : ListModelViewController
 <UITableViewDelegate, UITableViewDataSource>
 {
-    IBOutlet UISegmentedControl *_sortControl;
-    IBOutlet UITableView        *_tableView;
-    
-    PersonIndexModel *_model;
+    IBOutlet UISegmentedControl *_sortControl;    
 }
 
 

@@ -27,7 +27,8 @@
     
     if (self != nil)
     {
-        _model = [DataStorage personIndexModel];
+        _model = [BasicListModel instance];
+        _needsReload = YES;
     }
     return self;
 }
@@ -41,57 +42,15 @@
     _tableView.sectionIndexMinimumDisplayRowCount = 6;
 }
 
-- (void) viewWillAppear: (BOOL) animated
-{
-    [super viewWillAppear: animated];
-    [_tableView reloadData];
-}
 
 #pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark Reloading
 
-- (NSString *) tableView: (UITableView *) tableView 
- titleForHeaderInSection: (NSInteger) section
+- (void) reload
 {
-    return [_model titleForSection: section];
-}
-
-- (NSInteger) numberOfSectionsInTableView: (UITableView *) tableView
-{
-    return [_model numberOfSections];
-}
-
-
-- (NSInteger) tableView: (UITableView *) tableView 
-  numberOfRowsInSection: (NSInteger)     section
-{
-    return [_model numberOfRowsInSection: section];
-}
-
-
-- (UITableViewCell *) tableView: (UITableView *) tableView 
-          cellForRowAtIndexPath: (NSIndexPath *) indexPath
-{
-    WWTableViewCell *cell = [WWTableViewCell cellForTableView: tableView];
-    PersonIndexRecord *record = [_model recordAtIndexPath: indexPath];
-    
-    cell.textLabel.text = [record fullName];
-    
-    return cell;
-}
-
-
-- (NSArray *) sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    return [_model sectionIndexTitles];
-}
-
-
-    - (NSInteger) tableView: (UITableView *) tableView 
-sectionForSectionIndexTitle: (NSString *) title 
-                    atIndex: (NSInteger) index
-{
-    return [_model sectionForSectionIndexTitle: title];
+    [(BasicListModel *)_model setElements: 
+     [[DataStorage shared] personsListElements]];
+    [super reload];
 }
 
 @end

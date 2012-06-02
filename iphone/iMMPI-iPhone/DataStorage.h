@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Sibers. All rights reserved.
 //
 
-#import "PersonIndexModel.h"
+#import "PersonIndexRecord.h"
 #import "Person.h"
 
 
@@ -15,19 +15,18 @@
 
 @interface DataStorage : NSObject
 {
-    PersonIndexModel *_personIndexModel;
-    
     NSMutableArray *_documents;
 }
 
-#pragma mark data objects factory methods
+@property (readonly, nonatomic) NSArray *personsListElements;
 
 + (Person *) createPersonRecord NS_RETURNS_NOT_RETAINED; 
 + (PersonIndexRecord *) createIndexRecordForPerson: (Person *) person NS_RETURNS_NOT_RETAINED;
 
-+ (PersonIndexModel *) personIndexModel NS_RETURNS_NOT_RETAINED;
 + (void) storePersonRecord: (Person *) person;
 
 + (void) loadLocalDocuments;
+
++ (id) shared NS_RETURNS_NOT_RETAINED;
 
 @end

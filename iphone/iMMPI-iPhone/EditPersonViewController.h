@@ -1,5 +1,5 @@
 //
-//  NewRecordFormViewController.h
+//  EditPersonViewController.h
 //  iMMPI-iPhone
 //
 //  Created by Egor Chiglintsev on 19.05.12.
@@ -12,33 +12,33 @@
 #pragma mark -
 #pragma mark Forward declarations
 
-@class PersonRecordFormViewController;
+@class EditPersonViewController;
 
 
 #pragma mark -
-#pragma mark PersonRecordFormViewControllerDelegate protocol
+#pragma mark EditPersonViewControllerDelegate protocol
 
-@protocol PersonRecordFormViewControllerDelegate<NSObject>
+@protocol EditPersonViewControllerDelegate<NSObject>
 @optional
 
-- (void) personRecordFormViewControllerDidCancel: (PersonRecordFormViewController *) controller;
+- (void) editPersonViewControllerDidCancel: (EditPersonViewController *) controller;
 
-- (void) personRecordFormViewController: (PersonRecordFormViewController *) controller
-                          didSaveRecord: (Person *) record;
+- (void) editPersonViewController: (EditPersonViewController *) controller
+                    didSavePerson: (Person *) record;
 
 @end
 
 
 #pragma mark -
-#pragma mark PersonRecordFormViewController interface
+#pragma mark EditPersonViewController interface
 
-@interface PersonRecordFormViewController : BaseViewController
+@interface EditPersonViewController : BaseViewController
     <UITableViewDelegate, 
      UITableViewDataSource,
      WWTextFieldTableViewCellDelegate>
 {
     // Model
-    __weak id<PersonRecordFormViewControllerDelegate> _delegate;
+    __weak id<EditPersonViewControllerDelegate> _delegate;
     
     Person *_person;
     
@@ -48,7 +48,7 @@
     IBOutlet UITableView *_tableView;
 }
 
-@property (weak, nonatomic) id<PersonRecordFormViewControllerDelegate> delegate;
+@property (weak, nonatomic) id<EditPersonViewControllerDelegate> delegate;
 
 - (IBAction) cancelButtonAction: (id) sender;
 - (IBAction) nextButtonAction:   (id) sender;

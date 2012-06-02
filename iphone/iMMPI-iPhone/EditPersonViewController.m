@@ -1,5 +1,5 @@
 //
-//  NewRecordFormViewController.m
+//  EditPersonViewController.m
 //  iMMPI-iPhone
 //
 //  Created by Egor Chiglintsev on 19.05.12.
@@ -10,7 +10,7 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "PersonRecordFormViewController.h"
+#import "EditPersonViewController.h"
 
 #pragma mark -
 #pragma mark Table View Definitions
@@ -24,9 +24,9 @@ enum
 
 
 #pragma mark -
-#pragma mark PersonRecordFormViewController implementation
+#pragma mark EditPersonViewController implementation
 
-@implementation PersonRecordFormViewController
+@implementation EditPersonViewController
 
 #pragma mark -
 #pragma mark Properties
@@ -139,15 +139,15 @@ enum
 - (void) cancel
 {
     [[(id)_delegate ifResponds] 
-     personRecordFormViewControllerDidCancel: self];
+     editPersonViewControllerDidCancel: self];
 }
 
 
 - (void) saveRecord: (id) record
 {
     [[(id)_delegate ifResponds] 
-     personRecordFormViewController: self                           
-                      didSaveRecord: record];
+     editPersonViewController: self                           
+                      didSavePerson: record];
 }
 
 

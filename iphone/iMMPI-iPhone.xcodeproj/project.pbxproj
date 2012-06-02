@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A8BEE5E1575E799003AE561 /* PersonIndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8BEE5D1575E799003AE561 /* PersonIndexModel.m */; };
 		5D115BE615675EF3000FDF47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D115BE515675EF3000FDF47 /* UIKit.framework */; };
 		5D115BE815675EF3000FDF47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D115BE715675EF3000FDF47 /* Foundation.framework */; };
 		5D115BEA15675EF3000FDF47 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D115BE915675EF3000FDF47 /* CoreGraphics.framework */; };
@@ -23,12 +22,15 @@
 		5D115C89156765BD000FDF47 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C87156765BD000FDF47 /* HomeViewController.xib */; };
 		5D115C8E15676773000FDF47 /* BrowsePersonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C8C15676773000FDF47 /* BrowsePersonsViewController.m */; };
 		5D115C8F15676773000FDF47 /* BrowsePersonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C8D15676773000FDF47 /* BrowsePersonsViewController.xib */; };
-		5D115C941567698C000FDF47 /* PersonRecordFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C921567698C000FDF47 /* PersonRecordFormViewController.m */; };
-		5D115C951567698C000FDF47 /* PersonRecordFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C931567698C000FDF47 /* PersonRecordFormViewController.xib */; };
+		5D115C941567698C000FDF47 /* EditPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C921567698C000FDF47 /* EditPersonViewController.m */; };
+		5D115C951567698C000FDF47 /* EditPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C931567698C000FDF47 /* EditPersonViewController.xib */; };
 		5D115C9A156776A8000FDF47 /* RecordOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C98156776A8000FDF47 /* RecordOverviewViewController.m */; };
 		5D115C9B156776A8000FDF47 /* RecordOverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C99156776A8000FDF47 /* RecordOverviewViewController.xib */; };
 		5D115CA0156779C7000FDF47 /* TestStatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D115C9E156779C7000FDF47 /* TestStatementViewController.m */; };
 		5D115CA1156779C7000FDF47 /* TestStatementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D115C9F156779C7000FDF47 /* TestStatementViewController.xib */; };
+		5DAA28EA157A37C00087CD0F /* ListModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAA28E9157A37BF0087CD0F /* ListModelViewController.m */; };
+		5DAA28EF157A39A50087CD0F /* BasicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAA28EE157A39A50087CD0F /* BasicListModel.m */; };
+		5DAA28F3157A3EA10087CD0F /* PersonListDocumentWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAA28F2157A3EA10087CD0F /* PersonListDocumentWrapper.m */; };
 		5DABDBCF1571F79900C21AC8 /* MMPIDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBCE1571F79900C21AC8 /* MMPIDocument.m */; };
 		5DABDBD41571F7C900C21AC8 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBD31571F7C900C21AC8 /* Person.m */; };
 		5DABDBD71571F7D400C21AC8 /* TestRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DABDBD61571F7D400C21AC8 /* TestRecord.m */; };
@@ -84,8 +86,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A8BEE5C1575E799003AE561 /* PersonIndexModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonIndexModel.h; sourceTree = "<group>"; };
-		5A8BEE5D1575E799003AE561 /* PersonIndexModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonIndexModel.m; sourceTree = "<group>"; };
 		5A8BEE641575F3B5003AE561 /* Serializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Serializable.h; sourceTree = "<group>"; };
 		5D115BE115675EF3000FDF47 /* iMMPI-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iMMPI-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D115BE515675EF3000FDF47 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -112,15 +112,23 @@
 		5D115C8B15676773000FDF47 /* BrowsePersonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowsePersonsViewController.h; sourceTree = "<group>"; };
 		5D115C8C15676773000FDF47 /* BrowsePersonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowsePersonsViewController.m; sourceTree = "<group>"; };
 		5D115C8D15676773000FDF47 /* BrowsePersonsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowsePersonsViewController.xib; sourceTree = "<group>"; };
-		5D115C911567698C000FDF47 /* PersonRecordFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonRecordFormViewController.h; sourceTree = "<group>"; };
-		5D115C921567698C000FDF47 /* PersonRecordFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonRecordFormViewController.m; sourceTree = "<group>"; };
-		5D115C931567698C000FDF47 /* PersonRecordFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonRecordFormViewController.xib; sourceTree = "<group>"; };
+		5D115C911567698C000FDF47 /* EditPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPersonViewController.h; sourceTree = "<group>"; };
+		5D115C921567698C000FDF47 /* EditPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPersonViewController.m; sourceTree = "<group>"; };
+		5D115C931567698C000FDF47 /* EditPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPersonViewController.xib; sourceTree = "<group>"; };
 		5D115C97156776A8000FDF47 /* RecordOverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordOverviewViewController.h; sourceTree = "<group>"; };
 		5D115C98156776A8000FDF47 /* RecordOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordOverviewViewController.m; sourceTree = "<group>"; };
 		5D115C99156776A8000FDF47 /* RecordOverviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordOverviewViewController.xib; sourceTree = "<group>"; };
 		5D115C9D156779C7000FDF47 /* TestStatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestStatementViewController.h; sourceTree = "<group>"; };
 		5D115C9E156779C7000FDF47 /* TestStatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestStatementViewController.m; sourceTree = "<group>"; };
 		5D115C9F156779C7000FDF47 /* TestStatementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestStatementViewController.xib; sourceTree = "<group>"; };
+		5DAA28E5157A36C40087CD0F /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
+		5DAA28E6157A373B0087CD0F /* ListModelElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelElement.h; sourceTree = "<group>"; };
+		5DAA28E8157A37BF0087CD0F /* ListModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListModelViewController.h; sourceTree = "<group>"; };
+		5DAA28E9157A37BF0087CD0F /* ListModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListModelViewController.m; sourceTree = "<group>"; };
+		5DAA28ED157A39A50087CD0F /* BasicListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicListModel.h; sourceTree = "<group>"; };
+		5DAA28EE157A39A50087CD0F /* BasicListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicListModel.m; sourceTree = "<group>"; };
+		5DAA28F1157A3EA10087CD0F /* PersonListDocumentWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListDocumentWrapper.h; sourceTree = "<group>"; };
+		5DAA28F2157A3EA10087CD0F /* PersonListDocumentWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListDocumentWrapper.m; sourceTree = "<group>"; };
 		5DABDBCD1571F79900C21AC8 /* MMPIDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MMPIDocument.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5DABDBCE1571F79900C21AC8 /* MMPIDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MMPIDocument.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5DABDBD21571F7C900C21AC8 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -155,15 +163,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A8BEE5B1575E77E003AE561 /* Person Index Model */ = {
-			isa = PBXGroup;
-			children = (
-				5A8BEE5C1575E799003AE561 /* PersonIndexModel.h */,
-				5A8BEE5D1575E799003AE561 /* PersonIndexModel.m */,
-			);
-			name = "Person Index Model";
-			sourceTree = "<group>";
-		};
 		5D115BD615675EF3000FDF47 = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +263,7 @@
 			children = (
 				5D115C9C1567799F000FDF47 /* Test Statement View Controller */,
 				5D115C9615677693000FDF47 /* Record Overview View Controller */,
-				5D115C9015676973000FDF47 /* New Record Form View Controller */,
+				5D115C9015676973000FDF47 /* Edit Person View Controller */,
 				5D115C8A1567673A000FDF47 /* Browse Persons View Controller */,
 				5D115C7D1567650F000FDF47 /* Home View Controller */,
 			);
@@ -282,6 +281,7 @@
 		5D115C8015676546000FDF47 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5DAA28E3157A36A00087CD0F /* Generic Lists Model */,
 				5DABDBE91572053600C21AC8 /* Low Level Serialization */,
 				5DABDBEC1572058D00C21AC8 /* Data Storage */,
 				5DABDBEA1572054900C21AC8 /* MMPI Model Objects */,
@@ -308,14 +308,14 @@
 			name = "Browse Persons View Controller";
 			sourceTree = "<group>";
 		};
-		5D115C9015676973000FDF47 /* New Record Form View Controller */ = {
+		5D115C9015676973000FDF47 /* Edit Person View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5D115C911567698C000FDF47 /* PersonRecordFormViewController.h */,
-				5D115C921567698C000FDF47 /* PersonRecordFormViewController.m */,
-				5D115C931567698C000FDF47 /* PersonRecordFormViewController.xib */,
+				5D115C911567698C000FDF47 /* EditPersonViewController.h */,
+				5D115C921567698C000FDF47 /* EditPersonViewController.m */,
+				5D115C931567698C000FDF47 /* EditPersonViewController.xib */,
 			);
-			name = "New Record Form View Controller";
+			name = "Edit Person View Controller";
 			sourceTree = "<group>";
 		};
 		5D115C9615677693000FDF47 /* Record Overview View Controller */ = {
@@ -338,9 +338,48 @@
 			name = "Test Statement View Controller";
 			sourceTree = "<group>";
 		};
+		5DAA28E3157A36A00087CD0F /* Generic Lists Model */ = {
+			isa = PBXGroup;
+			children = (
+				5DAA28EC157A398D0087CD0F /* Basic List Model */,
+				5DAA28E7157A37A30087CD0F /* List Model View Controller */,
+				5DAA28E5157A36C40087CD0F /* ListModel.h */,
+				5DAA28E6157A373B0087CD0F /* ListModelElement.h */,
+			);
+			name = "Generic Lists Model";
+			sourceTree = "<group>";
+		};
+		5DAA28E7157A37A30087CD0F /* List Model View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5DAA28E8157A37BF0087CD0F /* ListModelViewController.h */,
+				5DAA28E9157A37BF0087CD0F /* ListModelViewController.m */,
+			);
+			name = "List Model View Controller";
+			sourceTree = "<group>";
+		};
+		5DAA28EC157A398D0087CD0F /* Basic List Model */ = {
+			isa = PBXGroup;
+			children = (
+				5DAA28ED157A39A50087CD0F /* BasicListModel.h */,
+				5DAA28EE157A39A50087CD0F /* BasicListModel.m */,
+			);
+			name = "Basic List Model";
+			sourceTree = "<group>";
+		};
+		5DAA28F0157A3E7B0087CD0F /* Person List Document Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				5DAA28F1157A3EA10087CD0F /* PersonListDocumentWrapper.h */,
+				5DAA28F2157A3EA10087CD0F /* PersonListDocumentWrapper.m */,
+			);
+			name = "Person List Document Wrapper";
+			sourceTree = "<group>";
+		};
 		5DABDBCC1571F76900C21AC8 /* MMPI Document */ = {
 			isa = PBXGroup;
 			children = (
+				5DAA28F0157A3E7B0087CD0F /* Person List Document Wrapper */,
 				5DABDBCD1571F79900C21AC8 /* MMPIDocument.h */,
 				5DABDBCE1571F79900C21AC8 /* MMPIDocument.m */,
 			);
@@ -416,7 +455,6 @@
 		5DABDBEC1572058D00C21AC8 /* Data Storage */ = {
 			isa = PBXGroup;
 			children = (
-				5A8BEE5B1575E77E003AE561 /* Person Index Model */,
 				5DABDBED1572059C00C21AC8 /* DataStorage.h */,
 				5DABDBEE1572059C00C21AC8 /* DataStorage.m */,
 			);
@@ -537,7 +575,7 @@
 				5D115BF015675EF3000FDF47 /* InfoPlist.strings in Resources */,
 				5D115C89156765BD000FDF47 /* HomeViewController.xib in Resources */,
 				5D115C8F15676773000FDF47 /* BrowsePersonsViewController.xib in Resources */,
-				5D115C951567698C000FDF47 /* PersonRecordFormViewController.xib in Resources */,
+				5D115C951567698C000FDF47 /* EditPersonViewController.xib in Resources */,
 				5D115C9B156776A8000FDF47 /* RecordOverviewViewController.xib in Resources */,
 				5D115CA1156779C7000FDF47 /* TestStatementViewController.xib in Resources */,
 			);
@@ -572,7 +610,7 @@
 				5D115C8415676564000FDF47 /* BaseViewController.m in Sources */,
 				5D115C88156765BD000FDF47 /* HomeViewController.m in Sources */,
 				5D115C8E15676773000FDF47 /* BrowsePersonsViewController.m in Sources */,
-				5D115C941567698C000FDF47 /* PersonRecordFormViewController.m in Sources */,
+				5D115C941567698C000FDF47 /* EditPersonViewController.m in Sources */,
 				5D115C9A156776A8000FDF47 /* RecordOverviewViewController.m in Sources */,
 				5D115CA0156779C7000FDF47 /* TestStatementViewController.m in Sources */,
 				5DABDBCF1571F79900C21AC8 /* MMPIDocument.m in Sources */,
@@ -582,7 +620,9 @@
 				5DABDBE01571FB4200C21AC8 /* JsonData.m in Sources */,
 				5DABDBE81572042A00C21AC8 /* JsonDataWrapper.m in Sources */,
 				5DABDBEF1572059C00C21AC8 /* DataStorage.m in Sources */,
-				5A8BEE5E1575E799003AE561 /* PersonIndexModel.m in Sources */,
+				5DAA28EA157A37C00087CD0F /* ListModelViewController.m in Sources */,
+				5DAA28EF157A39A50087CD0F /* BasicListModel.m in Sources */,
+				5DAA28F3157A3EA10087CD0F /* PersonListDocumentWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

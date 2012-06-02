@@ -40,6 +40,8 @@ static NSString * const kPersonIndexRecordFileName = @"person-index.json";
 
 - (void) setPerson: (Person *) person
 {
+    [[self.undoManager prepareWithInvocationTarget: self] setPerson: _person];
+    
     _person = person;
     _personIndexRecord = [DataStorage createIndexRecordForPerson: person];
 }
