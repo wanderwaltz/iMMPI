@@ -22,6 +22,8 @@
 		5D48793715D69799007830D0 /* Icon-Paper-Done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D48793315D69799007830D0 /* Icon-Paper-Done@2x.png */; };
 		5D48793815D69799007830D0 /* Icon-Papers.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D48793415D69799007830D0 /* Icon-Papers.png */; };
 		5D48793915D69799007830D0 /* Icon-Papers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D48793515D69799007830D0 /* Icon-Papers@2x.png */; };
+		5D48793C15D6C0AF007830D0 /* AddTestSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D48793B15D6C0AF007830D0 /* AddTestSessionViewController.m */; };
+		5D48793F15D6C1CE007830D0 /* PersonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D48793E15D6C1CE007830D0 /* PersonsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,10 @@
 		5D48793315D69799007830D0 /* Icon-Paper-Done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Paper-Done@2x.png"; sourceTree = "<group>"; };
 		5D48793415D69799007830D0 /* Icon-Papers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Papers.png"; sourceTree = "<group>"; };
 		5D48793515D69799007830D0 /* Icon-Papers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Papers@2x.png"; sourceTree = "<group>"; };
+		5D48793A15D6C0AF007830D0 /* AddTestSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTestSessionViewController.h; sourceTree = "<group>"; };
+		5D48793B15D6C0AF007830D0 /* AddTestSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTestSessionViewController.m; sourceTree = "<group>"; };
+		5D48793D15D6C1CE007830D0 /* PersonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsListViewController.h; sourceTree = "<group>"; };
+		5D48793E15D6C1CE007830D0 /* PersonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,10 @@
 				5D48792315D639EE007830D0 /* Base View Controllers */,
 				5D48791D15D6399E007830D0 /* TestSessionsListViewController.h */,
 				5D48791E15D6399E007830D0 /* TestSessionsListViewController.m */,
+				5D48793A15D6C0AF007830D0 /* AddTestSessionViewController.h */,
+				5D48793B15D6C0AF007830D0 /* AddTestSessionViewController.m */,
+				5D48793D15D6C1CE007830D0 /* PersonsListViewController.h */,
+				5D48793E15D6C1CE007830D0 /* PersonsListViewController.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -236,6 +246,8 @@
 				5D48791915D63347007830D0 /* BaseViewController.m in Sources */,
 				5D48791F15D6399E007830D0 /* TestSessionsListViewController.m in Sources */,
 				5D48792215D639E8007830D0 /* BaseTableViewController.m in Sources */,
+				5D48793C15D6C0AF007830D0 /* AddTestSessionViewController.m in Sources */,
+				5D48793F15D6C1CE007830D0 /* PersonsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +337,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -336,6 +349,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

@@ -23,11 +23,11 @@
             </objects>
             <point key="canvasLocation" x="-1202" y="112"/>
         </scene>
-        <!--Table View Controller - Новая запись-->
+        <!--Add Test Session View Controller - Новая запись-->
         <scene sceneID="Bi8-ak-VQ4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksh-60-vG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="isK-ML-3eN" sceneMemberID="viewController">
+                <tableViewController id="isK-ML-3eN" customClass="AddTestSessionViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rpb-ud-ZyE">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,9 +134,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="WoB-t6-qaU" kind="push" id="DpU-eY-CKL"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ACd-au-fDY">
                                         <rect key="frame" x="0.0" y="209" width="320" height="45"/>
@@ -184,6 +181,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="WoB-t6-qaU" kind="push" id="VI4-Ld-Ode"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -194,27 +194,32 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Новая запись" id="kc0-z4-maK">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ss9-iV-hM0"/>
+                        <barButtonItem key="backBarButtonItem" title="Отмена" id="H5W-eA-z0a"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ss9-iV-hM0">
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="isK-ML-3eN" id="ZYy-0y-Ci3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <segue destination="xdX-b3-gaM" kind="push" id="rYU-Sx-Pyh"/>
+                        <segue destination="xdX-b3-gaM" kind="push" identifier="Persons List" id="rYU-Sx-Pyh"/>
                     </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="309" y="-418"/>
         </scene>
-        <!--Table View Controller - ФИО-->
+        <!--Persons List View Controller - ФИО-->
         <scene sceneID="8Rp-P6-BL2">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igC-AC-vMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="xdX-b3-gaM" sceneMemberID="viewController">
+                <tableViewController id="xdX-b3-gaM" customClass="PersonsListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xfF-NX-sco">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="eYj-TC-BMP" style="IBUITableViewCellStyleDefault" id="ZT4-gQ-v0M">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Person Cell" textLabel="eYj-TC-BMP" style="IBUITableViewCellStyleDefault" id="ZT4-gQ-v0M">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -306,7 +311,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="FuD-Hn-t5O">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="S3K-9Y-sFB">
+                        <barButtonItem key="leftBarButtonItem" id="S3K-9Y-sFB">
                             <view key="customView" contentMode="scaleToFill" id="6hI-xb-tSh">
                                 <rect key="frame" x="5" y="5" width="59" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -333,7 +338,7 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jri-W6-7Tj">
                             <connections>
-                                <segue destination="izb-eC-Deh" kind="modal" id="uDP-jF-TX9"/>
+                                <segue destination="izb-eC-Deh" kind="modal" identifier="Add Test Session" id="uDP-jF-TX9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -413,7 +418,7 @@
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Иван" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7ZT-7B-5cJ">
-                                                    <rect key="frame" x="83" y="12" width="41" height="19"/>
+                                                    <rect key="frame" x="83" y="12" width="38" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -536,8 +541,17 @@
         </scene>
     </scenes>
     <classes>
+        <class className="AddTestSessionViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTestSessionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonAction:"/>
+            </relationships>
+        </class>
         <class className="BaseTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
+        </class>
+        <class className="PersonsListViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonsListViewController.h"/>
         </class>
         <class className="TestSessionsListViewController" superclassName="BaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TestSessionsListViewController.h"/>

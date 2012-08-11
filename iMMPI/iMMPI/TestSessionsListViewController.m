@@ -19,12 +19,30 @@ static NSString * const kTestSessionCellIdentifier = @"Test Session Cell";
 
 static NSString * const kPersonInfoSegue      = @"Person Info";
 static NSString * const kTestSessionInfoSegue = @"Test Session Info";
+static NSString * const kAddTestSessionSegue  = @"Add Test Session";
 
 
 #pragma mark -
 #pragma mark TestSessionsListViewController implementation
 
 @implementation TestSessionsListViewController
+
+
+#pragma mark -
+#pragma mark private: navigation
+
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+{
+    if ([segue.identifier isEqualToString: kAddTestSessionSegue])
+    {
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        AddTestSessionViewController *controller =
+        [navigationController.viewControllers objectAtIndex: 0];
+        
+        controller.delegate = self;
+    }
+}
 
 
 #pragma mark -
@@ -63,6 +81,19 @@ accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
     cell.detailTextLabel.text = @"08.08.2012";
     
     return cell;
+}
+
+
+#pragma mark -
+#pragma mark AddTestSessionViewControllerDelegate
+
+- (void) addTestSessionViewControllerDidCancel: (AddTestSessionViewController *) controller
+{
+    [controller dismissViewControllerAnimated: YES
+                                   completion:
+     ^{
+                                       
+     }];
 }
 
 

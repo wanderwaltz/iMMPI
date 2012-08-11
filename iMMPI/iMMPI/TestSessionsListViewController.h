@@ -6,11 +6,13 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "BaseTableViewController.h"
+#import "AddTestSessionViewController.h"
 
 #pragma mark -
 #pragma mark TestSessionsListViewController interface
 
 @interface TestSessionsListViewController : BaseTableViewController
+<AddTestSessionViewControllerDelegate>
+
 @end
