@@ -344,12 +344,12 @@
             </objects>
             <point key="canvasLocation" x="523" y="938"/>
         </scene>
-        <!--Navigation Controller - Результаты теста-->
+        <!--Navigation Controller - Тест-->
         <scene sceneID="RWS-0R-ZxC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTf-YR-utB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="UYk-HV-ryS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Результаты теста" image="Icon-Paper-Done.png" id="fUd-ca-yg9"/>
+                    <tabBarItem key="tabBarItem" title="Тест" image="Icon-Paper-Done.png" id="fUd-ca-yg9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GC6-12-XfA">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>

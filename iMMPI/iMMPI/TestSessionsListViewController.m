@@ -27,20 +27,32 @@ static NSString * const kAddTestSessionSegue  = @"Add Test Session";
 
 @implementation TestSessionsListViewController
 
-
 #pragma mark -
 #pragma mark private: navigation
+
+- (void) prepareForAddTestSessionSegue: (UIStoryboardSegue *) segue
+{
+    NSAssert([segue.destinationViewController isKindOfClass: [UINavigationController class]],
+             @"Expected a navigation controller as the destination of the segue with id '%@'",
+             kAddTestSessionSegue);
+    
+    UINavigationController *navigationController = segue.destinationViewController;
+    
+    AddTestSessionViewController *controller =
+    [navigationController.viewControllers objectAtIndex: 0];
+    
+    NSAssert([controller isKindOfClass: [AddTestSessionViewController class]],
+             @"Expected an AddTestSessionViewController as the root of the navigation stack of the segue with id '%@'", kAddTestSessionSegue);
+    
+    controller.delegate = self;
+}
+
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
     if ([segue.identifier isEqualToString: kAddTestSessionSegue])
     {
-        UINavigationController *navigationController = segue.destinationViewController;
-        
-        AddTestSessionViewController *controller =
-        [navigationController.viewControllers objectAtIndex: 0];
-        
-        controller.delegate = self;
+        [self prepareForAddTestSessionSegue: segue];
     }
 }
 
