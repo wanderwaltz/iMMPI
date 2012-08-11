@@ -18,6 +18,10 @@
 		5D48791915D63347007830D0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D48791815D63347007830D0 /* BaseViewController.m */; };
 		5D48791F15D6399E007830D0 /* TestSessionsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D48791E15D6399E007830D0 /* TestSessionsListViewController.m */; };
 		5D48792215D639E8007830D0 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D48792115D639E8007830D0 /* BaseTableViewController.m */; };
+		5D48793615D69799007830D0 /* Icon-Paper-Done.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D48793215D69799007830D0 /* Icon-Paper-Done.png */; };
+		5D48793715D69799007830D0 /* Icon-Paper-Done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D48793315D69799007830D0 /* Icon-Paper-Done@2x.png */; };
+		5D48793815D69799007830D0 /* Icon-Papers.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D48793415D69799007830D0 /* Icon-Papers.png */; };
+		5D48793915D69799007830D0 /* Icon-Papers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D48793515D69799007830D0 /* Icon-Papers@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		5D48791E15D6399E007830D0 /* TestSessionsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSessionsListViewController.m; sourceTree = "<group>"; };
 		5D48792015D639E8007830D0 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		5D48792115D639E8007830D0 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		5D48793215D69799007830D0 /* Icon-Paper-Done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Paper-Done.png"; sourceTree = "<group>"; };
+		5D48793315D69799007830D0 /* Icon-Paper-Done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Paper-Done@2x.png"; sourceTree = "<group>"; };
+		5D48793415D69799007830D0 /* Icon-Papers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Papers.png"; sourceTree = "<group>"; };
+		5D48793515D69799007830D0 /* Icon-Papers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Papers@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,7 @@
 		5D4878FA15D62A11007830D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D48793115D69799007830D0 /* Design */,
 				5D4878FB15D62A11007830D0 /* iMMPI-Info.plist */,
 				5D4878FC15D62A11007830D0 /* InfoPlist.strings */,
 				5D4878FF15D62A11007830D0 /* main.m */,
@@ -142,6 +151,17 @@
 			);
 			name = "Base View Controllers";
 			sourceTree = "<group>";
+		};
+		5D48793115D69799007830D0 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				5D48793215D69799007830D0 /* Icon-Paper-Done.png */,
+				5D48793315D69799007830D0 /* Icon-Paper-Done@2x.png */,
+				5D48793415D69799007830D0 /* Icon-Papers.png */,
+				5D48793515D69799007830D0 /* Icon-Papers@2x.png */,
+			);
+			path = Design;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -197,6 +217,10 @@
 				5D4878FE15D62A11007830D0 /* InfoPlist.strings in Resources */,
 				5D48790715D62A12007830D0 /* MainStoryboard_iPhone.storyboard in Resources */,
 				5D48790A15D62A12007830D0 /* MainStoryboard_iPad.storyboard in Resources */,
+				5D48793615D69799007830D0 /* Icon-Paper-Done.png in Resources */,
+				5D48793715D69799007830D0 /* Icon-Paper-Done@2x.png in Resources */,
+				5D48793815D69799007830D0 /* Icon-Papers.png in Resources */,
+				5D48793915D69799007830D0 /* Icon-Papers@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
