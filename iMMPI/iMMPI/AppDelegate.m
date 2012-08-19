@@ -24,7 +24,8 @@
          - (BOOL) application: (UIApplication *) application
 didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
 {
-    [Model setupCoreData];
+    [Model  setupCoreData];
+    [self insertDebugData];
     
     return YES;
 }
@@ -33,6 +34,27 @@ didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
 - (void) applicationWillTerminate: (UIApplication *) application
 {
     [Model tearDownCoreData];
+}
+
+
+#pragma mark -
+#pragma mark private: debug info
+
+- (void) insertDebugData
+{
+    CoreDataStack *coreData = [Model coreData];
+    
+    [coreData do:^{
+       
+        NSManagedObjectContext *context = coreData.mainContext;
+        Person *person = nil;
+        
+        person = [Person insertInContext: context];
+        person.firstName = @"Глеб";
+        person.lastName  = @"Соколов";
+        
+        [coreData saveMainContext];
+    }];
 }
 
 @end
