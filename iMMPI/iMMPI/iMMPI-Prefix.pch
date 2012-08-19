@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
 
     #import "Common.h"
+    #import "Model.h"
 #endif

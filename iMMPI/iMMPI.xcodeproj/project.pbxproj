@@ -54,6 +54,9 @@
 		5DBD249E15E11781007C9134 /* libCore Data.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBD241415E0C9EB007C9134 /* libCore Data.a */; };
 		5DBD249F15E11781007C9134 /* libModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBD242A15E0CA8A007C9134 /* libModel.a */; };
 		5DBD24A315E11CFD007C9134 /* KeyboardDismissingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD24A215E11CFD007C9134 /* KeyboardDismissingNavigationController.m */; };
+		5DBD24A615E1213D007C9134 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD24A515E1213D007C9134 /* Model.m */; };
+		5DBD24A915E1221C007C9134 /* libCore Data.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBD241415E0C9EB007C9134 /* libCore Data.a */; };
+		5DBD24AA15E12388007C9134 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBD242415E0CA38007C9134 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5DBD247F15E10679007C9134;
 			remoteInfo = Common;
+		};
+		5DBD24A715E12219007C9134 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D4878E615D62A11007830D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DBD241315E0C9EB007C9134;
+			remoteInfo = "Core Data";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -186,6 +196,8 @@
 		5DBD248E15E106BE007C9134 /* Paths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paths.m; sourceTree = "<group>"; };
 		5DBD24A115E11CFD007C9134 /* KeyboardDismissingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardDismissingNavigationController.h; sourceTree = "<group>"; };
 		5DBD24A215E11CFD007C9134 /* KeyboardDismissingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardDismissingNavigationController.m; sourceTree = "<group>"; };
+		5DBD24A415E1213D007C9134 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		5DBD24A515E1213D007C9134 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DBD24AA15E12388007C9134 /* CoreData.framework in Frameworks */,
 				5DBD249D15E11781007C9134 /* libCommon.a in Frameworks */,
 				5DBD249E15E11781007C9134 /* libCore Data.a in Frameworks */,
 				5DBD249F15E11781007C9134 /* libModel.a in Frameworks */,
@@ -215,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DBD24A915E1221C007C9134 /* libCore Data.a in Frameworks */,
 				5DBD242B15E0CA8A007C9134 /* Foundation.framework in Frameworks */,
 				5DBD243715E0CAA6007C9134 /* CoreData.framework in Frameworks */,
 			);
@@ -381,6 +395,8 @@
 		5DBD242C15E0CA8A007C9134 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5DBD24A415E1213D007C9134 /* Model.h */,
+				5DBD24A515E1213D007C9134 /* Model.m */,
 				5DBD243815E0CADE007C9134 /* Model.xcdatamodeld */,
 				5DBD243615E0CA99007C9134 /* Model Objects */,
 				5DBD242D15E0CA8A007C9134 /* Supporting Files */,
@@ -546,6 +562,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5DBD24A815E12219007C9134 /* PBXTargetDependency */,
 			);
 			name = Model;
 			productName = Model;
@@ -674,6 +691,7 @@
 			files = (
 				5DBD243B15E0CADE007C9134 /* Model.xcdatamodeld in Sources */,
 				5DBD243E15E0CB40007C9134 /* Person.m in Sources */,
+				5DBD24A615E1213D007C9134 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +744,11 @@
 			isa = PBXTargetDependency;
 			target = 5DBD247F15E10679007C9134 /* Common */;
 			targetProxy = 5DBD249B15E1177E007C9134 /* PBXContainerItemProxy */;
+		};
+		5DBD24A815E12219007C9134 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DBD241315E0C9EB007C9134 /* Core Data */;
+			targetProxy = 5DBD24A715E12219007C9134 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -24,7 +24,15 @@
          - (BOOL) application: (UIApplication *) application
 didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
 {
+    [Model setupCoreData];
+    
     return YES;
+}
+
+
+- (void) applicationWillTerminate: (UIApplication *) application
+{
+    [Model tearDownCoreData];
 }
 
 @end
