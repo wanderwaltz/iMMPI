@@ -17,9 +17,9 @@
 
 static NSString * const kTestSessionCellIdentifier = @"Test Session Cell";
 
+static NSString * const kAddTestSessionSegue  = @"Add Test Session";
 static NSString * const kPersonInfoSegue      = @"Person Info";
 static NSString * const kTestSessionInfoSegue = @"Test Session Info";
-static NSString * const kAddTestSessionSegue  = @"Add Test Session";
 
 
 #pragma mark -

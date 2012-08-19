@@ -385,7 +385,7 @@
         <scene sceneID="RhO-xN-zfl">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bls-XA-gFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="A7s-uf-e4k" customClass="AddTestSessionViewController" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="formSheet" id="A7s-uf-e4k" customClass="AddTestSessionViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Foz-fv-THt">
                         <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,11 +393,11 @@
                         <sections>
                             <tableViewSection headerTitle="" id="0En-iw-CEI">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ED4-ny-lfG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ED4-ny-lfG">
                                         <rect key="frame" x="0.0" y="30" width="540" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="31" y="1" width="445" height="43"/>
+                                            <rect key="frame" x="31" y="1" width="478" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Фамилия" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="870-4M-lVI">
@@ -407,11 +407,14 @@
                                                     <color key="textColor" red="0.31764705879999999" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иванов" minimumFontSize="17" id="EF2-zH-tmk">
-                                                    <rect key="frame" x="88" y="6" width="348" height="31"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иванов" minimumFontSize="17" id="EF2-zH-tmk">
+                                                    <rect key="frame" x="88" y="6" width="381" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="A7s-uf-e4k" id="54b-HK-zm1"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -431,11 +434,14 @@
                                                     <color key="textColor" red="0.31764705879999999" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иван" minimumFontSize="17" id="vpX-It-dIj">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иван" minimumFontSize="17" id="vpX-It-dIj">
                                                     <rect key="frame" x="88" y="6" width="370" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="A7s-uf-e4k" id="VU4-E2-Ckq"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -455,11 +461,14 @@
                                                     <color key="textColor" red="0.31764705879999999" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иванович" minimumFontSize="17" id="EsG-JC-njm">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иванович" minimumFontSize="17" id="EsG-JC-njm">
                                                     <rect key="frame" x="88" y="5" width="370" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="A7s-uf-e4k" id="EOk-aZ-tkc"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -483,7 +492,7 @@
                                                     <color key="textColor" red="0.31764705879999999" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Мужской" minimumFontSize="17" id="3Ga-Yf-BRN">
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Мужской" minimumFontSize="17" id="3Ga-Yf-BRN">
                                                     <rect key="frame" x="88" y="6" width="372" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -507,7 +516,7 @@
                                                     <color key="textColor" red="0.31764705879999999" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="01.01.2000" minimumFontSize="17" id="5Cc-J7-wqr">
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="01.01.2000" minimumFontSize="17" id="5Cc-J7-wqr">
                                                     <rect key="frame" x="88" y="6" width="370" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -519,7 +528,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Результаты" id="Liy-J3-BHg">
+                            <tableViewSection headerTitle="Результаты тестирования" id="Liy-J3-BHg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="16t-MD-fj7">
                                         <rect key="frame" x="0.0" y="358" width="540" height="46"/>
@@ -534,6 +543,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.31764705879999999" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
@@ -558,11 +568,13 @@
                                 <action selector="cancelButtonAction:" destination="A7s-uf-e4k" id="lZf-U3-xwF"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="3Fw-2f-psM">
+                            <connections>
+                                <segue destination="23J-sM-zYh" kind="push" id="v7X-OX-wpV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <connections>
-                        <segue destination="23J-sM-zYh" kind="push" identifier="Persons List" id="Rgb-QI-S6c"/>
-                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="195" y="-2547"/>
@@ -582,11 +594,11 @@
             </objects>
             <point key="canvasLocation" x="1039" y="-2176"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Keyboard Dismissing Navigation Controller-->
         <scene sceneID="Gwl-Wh-NSm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agS-rl-5mF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="KT7-AI-VvR" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="formSheet" id="KT7-AI-VvR" customClass="KeyboardDismissingNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h94-3c-iPt">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
@@ -638,7 +650,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1039" y="-2918"/>
+            <point key="canvasLocation" x="1039" y="-2938"/>
         </scene>
     </scenes>
     <resources>
@@ -657,6 +669,9 @@
         </class>
         <class className="BaseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
+        </class>
+        <class className="KeyboardDismissingNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KeyboardDismissingNavigationController.h"/>
         </class>
         <class className="PersonsListViewController" superclassName="BaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonsListViewController.h"/>

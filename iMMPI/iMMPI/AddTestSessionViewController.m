@@ -12,11 +12,6 @@
 
 #import "AddTestSessionViewController.h"
 
-#pragma mark -
-#pragma mark Private constants
-
-static NSString * const kPersonsListSegue = @"Persons List";
-
 
 #pragma mark -
 #pragma mark NewTestSessionViewController implementation
@@ -33,16 +28,6 @@ static NSString * const kPersonsListSegue = @"Persons List";
 
 
 #pragma mark -
-#pragma mark UITableViewDelegate
-
-                      - (void) tableView: (UITableView *) tableView
-accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
-{
-    [self performSegueWithIdentifier: kPersonsListSegue sender: self];
-}
-
-
-#pragma mark -
 #pragma mark private: delegate callbacks
 
 - (void) delegate_cancel
@@ -51,6 +36,26 @@ accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
     {
         [_delegate addTestSessionViewControllerDidCancel: self];
     }
+}
+
+
+#pragma mark -
+#pragma mark UITextFieldDelegate
+
+- (BOOL) textFieldShouldReturn: (UITextField *) textField
+{
+    UIView *view = [self.view viewWithTag: textField.tag+1];
+    
+    if ([view isKindOfClass: [UITextField class]])
+    {
+        [view becomeFirstResponder];
+    }
+    else
+    {
+        [textField resignFirstResponder];
+    }
+    
+    return NO;
 }
 
 @end

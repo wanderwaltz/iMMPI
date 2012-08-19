@@ -29,6 +29,7 @@
 #pragma mark NewTestSessionViewController interface
 
 @interface AddTestSessionViewController : BaseTableViewController
+<UITextFieldDelegate>
 {
     __weak id<AddTestSessionViewControllerDelegate> _delegate;
 }
