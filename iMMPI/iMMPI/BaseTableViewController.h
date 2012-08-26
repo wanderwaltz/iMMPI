@@ -11,5 +11,9 @@
 #pragma mark -
 #pragma mark BaseTableViewController interface
 
+/*  Implements a proper autorotation behavior depending on the
+    user interface idiom (supporting all orientation on iPad,
+    supporting only portrait on iPhone)
+ */
 @interface BaseTableViewController : UITableViewController
 @end

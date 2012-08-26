@@ -22,6 +22,11 @@
 
 - (void) layoutSubviews
 {
+    /*  Calculate the size needed to display last name in bold font
+        at the left side of the content view, and then, if possible,
+        lay out the other names (first name and patronymic) to the
+        right.
+     */
     [super layoutSubviews];
     
     CGRect bounds = self.contentView.bounds;

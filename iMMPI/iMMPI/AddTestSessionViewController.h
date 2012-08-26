@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
+#import "PersonsListViewController.h"
 
 #pragma mark -
 #pragma mark Forward declarations
@@ -29,9 +30,16 @@
 #pragma mark NewTestSessionViewController interface
 
 @interface AddTestSessionViewController : BaseTableViewController
-<UITextFieldDelegate>
+<UITextFieldDelegate, PersonsListViewControllerDelegate>
 {
+    // Model
     __weak id<AddTestSessionViewControllerDelegate> _delegate;
+    
+    
+    // Views
+    IBOutlet UITextField *_firstNameTextField;
+    IBOutlet UITextField *_patronymicNameTextField;
+    IBOutlet UITextField *_lastNameTextField;
 }
 
 @property (weak, nonatomic) id<AddTestSessionViewControllerDelegate> delegate;

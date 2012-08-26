@@ -57,8 +57,9 @@
 		5DBD24A615E1213D007C9134 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD24A515E1213D007C9134 /* Model.m */; };
 		5DBD24AA15E12388007C9134 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBD242415E0CA38007C9134 /* CoreData.framework */; };
 		5DBD24AF15E1255F007C9134 /* NSManagedObject+Insertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD24AE15E1255F007C9134 /* NSManagedObject+Insertion.m */; };
-		5DC0EFDA15EA44B500EF6E2D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0EFD915EA44B500EF6E2D /* CoreDataTableViewController.m */; };
+		5DC0EFDA15EA44B500EF6E2D /* CoreDataTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0EFD915EA44B500EF6E2D /* CoreDataTableController.m */; };
 		5DD02D4615EA5EC90018EA13 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD02D4515EA5EC90018EA13 /* PersonTableViewCell.m */; };
+		5DD02D8F15EA8B5A0018EA13 /* PersonsListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD02D8E15EA8B5A0018EA13 /* PersonsListTableController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,10 +204,13 @@
 		5DBD24AC15E1254A007C9134 /* CoreDataCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataCategories.h; sourceTree = "<group>"; };
 		5DBD24AD15E1255F007C9134 /* NSManagedObject+Insertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Insertion.h"; sourceTree = "<group>"; };
 		5DBD24AE15E1255F007C9134 /* NSManagedObject+Insertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Insertion.m"; sourceTree = "<group>"; };
-		5DC0EFD815EA44B500EF6E2D /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
-		5DC0EFD915EA44B500EF6E2D /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		5DC0EFD815EA44B500EF6E2D /* CoreDataTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableController.h; sourceTree = "<group>"; };
+		5DC0EFD915EA44B500EF6E2D /* CoreDataTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableController.m; sourceTree = "<group>"; };
 		5DD02D4415EA5EC90018EA13 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
 		5DD02D4515EA5EC90018EA13 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
+		5DD02D8D15EA8B5A0018EA13 /* PersonsListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsListTableController.h; sourceTree = "<group>"; };
+		5DD02D8E15EA8B5A0018EA13 /* PersonsListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsListTableController.m; sourceTree = "<group>"; };
+		5DD02D9015EA92510018EA13 /* Decisions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Decisions.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,7 @@
 		5D4878E415D62A11007830D0 = {
 			isa = PBXGroup;
 			children = (
+				5DD02D9015EA92510018EA13 /* Decisions.txt */,
 				5DBD245715E0CC9D007C9134 /* Externals */,
 				5DBD248215E10679007C9134 /* Common */,
 				5D4878F915D62A11007830D0 /* iMMPI */,
@@ -341,6 +346,7 @@
 		5D48791A15D6386C007830D0 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				5DD02D8C15EA886F0018EA13 /* Table Controllers */,
 				5DD02D4215EA5EA80018EA13 /* Table View Cells */,
 				5DBD24A015E11CCE007C9134 /* UIKit Customizations */,
 				5D48792315D639EE007830D0 /* Base View Controllers */,
@@ -368,8 +374,6 @@
 				5D48791815D63347007830D0 /* BaseViewController.m */,
 				5D48792015D639E8007830D0 /* BaseTableViewController.h */,
 				5D48792115D639E8007830D0 /* BaseTableViewController.m */,
-				5DC0EFD815EA44B500EF6E2D /* CoreDataTableViewController.h */,
-				5DC0EFD915EA44B500EF6E2D /* CoreDataTableViewController.m */,
 			);
 			name = "Base View Controllers";
 			sourceTree = "<group>";
@@ -542,6 +546,17 @@
 			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
+		5DD02D8C15EA886F0018EA13 /* Table Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5DC0EFD815EA44B500EF6E2D /* CoreDataTableController.h */,
+				5DC0EFD915EA44B500EF6E2D /* CoreDataTableController.m */,
+				5DD02D8D15EA8B5A0018EA13 /* PersonsListTableController.h */,
+				5DD02D8E15EA8B5A0018EA13 /* PersonsListTableController.m */,
+			);
+			name = "Table Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -705,8 +720,9 @@
 				5D48793F15D6C1CE007830D0 /* PersonsListViewController.m in Sources */,
 				5DBD243A15E0CADE007C9134 /* Model.xcdatamodeld in Sources */,
 				5DBD24A315E11CFD007C9134 /* KeyboardDismissingNavigationController.m in Sources */,
-				5DC0EFDA15EA44B500EF6E2D /* CoreDataTableViewController.m in Sources */,
+				5DC0EFDA15EA44B500EF6E2D /* CoreDataTableController.m in Sources */,
 				5DD02D4615EA5EC90018EA13 /* PersonTableViewCell.m in Sources */,
+				5DD02D8F15EA8B5A0018EA13 /* PersonsListTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

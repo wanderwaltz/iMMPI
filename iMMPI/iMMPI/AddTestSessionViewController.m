@@ -12,6 +12,11 @@
 
 #import "AddTestSessionViewController.h"
 
+#pragma mark -
+#pragma mark Static constants
+
+static NSString * const kPersonsListSegue = @"Persons List";
+
 
 #pragma mark -
 #pragma mark NewTestSessionViewController implementation
@@ -24,6 +29,41 @@
 - (IBAction) cancelButtonAction: (id) sender
 {
     [self delegate_cancel];
+}
+
+
+#pragma mark -
+#pragma mark private: data processing
+
+- (void) loadDataFromPerson: (Person *) person
+{
+    _firstNameTextField.text      = person.firstName;
+    _lastNameTextField.text       = person.lastName;
+    _patronymicNameTextField.text = person.patronymicName;
+}
+
+
+#pragma mark -
+#pragma mark private: navigation
+
+- (void) prepareForPersonsListViewControllerSegue: (UIStoryboardSegue *) segue
+{
+    PersonsListViewController *controller = (id)segue.destinationViewController;
+    
+    NSAssert([controller isKindOfClass: [PersonsListViewController class]],
+             @"Expected PersonsListViewController instance");
+    
+    controller.delegate = self;
+}
+
+
+- (void) prepareForSegue: (UIStoryboardSegue *) segue
+                  sender: (id) sender
+{
+    if ([segue.identifier isEqualToString: kPersonsListSegue])
+    {
+        [self prepareForPersonsListViewControllerSegue: segue];
+    }
 }
 
 
@@ -56,6 +96,17 @@
     }
     
     return NO;
+}
+
+
+#pragma mark -
+#pragma mark PersonsListViewControllerDelegate
+
+- (void) personsListViewController: (PersonsListViewController *) controller
+                   didSelectPerson: (Person *) person
+{
+    [self loadDataFromPerson: person];
+    [self.navigationController popToViewController: self animated: YES];
 }
 
 @end

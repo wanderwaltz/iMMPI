@@ -212,16 +212,21 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="ClN-Oh-OTg">
                             <connections>
-                                <segue destination="xdX-b3-gaM" kind="push" id="1hC-YU-TbK"/>
+                                <segue destination="xdX-b3-gaM" kind="push" identifier="Persons List" id="1hC-YU-TbK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="_firstNameTextField" destination="YzF-aS-mbY" id="OiX-zx-Rfp"/>
+                        <outlet property="_lastNameTextField" destination="8DJ-eb-5Wb" id="vn0-Zk-ipA"/>
+                        <outlet property="_patronymicNameTextField" destination="ai1-ZY-4r4" id="LM2-3H-1cm"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="309" y="-418"/>
         </scene>
-        <!--Persons List View Controller - ФИО-->
+        <!--Persons List View Controller-->
         <scene sceneID="8Rp-P6-BL2">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igC-AC-vMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,7 +271,17 @@
                             <outlet property="delegate" destination="xdX-b3-gaM" id="2Kc-pM-NW9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ФИО" id="Cc4-mE-4Qw"/>
+                    <navigationItem key="navigationItem" id="Cc4-mE-4Qw">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DdH-Ic-HVC">
+                            <rect key="frame" x="60" y="7" width="200" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="iMMPI"/>
+                                <segment title="Контакты"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </tableViewController>
             </objects>
@@ -568,6 +583,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTestSessionViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelButtonAction:"/>
+                <relationship kind="outlet" name="_firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="_lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="_patronymicNameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="BaseTableViewController" superclassName="UITableViewController">

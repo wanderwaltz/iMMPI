@@ -10,19 +10,19 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "CoreDataTableViewController.h"
+#import "CoreDataTableController.h"
 
 #pragma mark -
 #pragma mark CoreDataTableViewController implementation
 
-@implementation CoreDataTableViewController
+@implementation CoreDataTableController
 
 #pragma mark -
 #pragma mark initialization methods
 
-- (id) initWithCoder: (NSCoder *) aDecoder
+- (id) init
 {
-    self = [super initWithCoder: aDecoder];
+    self = [super init];
     
     if (self != nil)
     {
@@ -33,28 +33,34 @@
 
 
 #pragma mark -
-#pragma mark view lifecycle
+#pragma mark public: working with data
 
-- (void) viewDidLoad
+- (id) objectAtIndexPath: (NSIndexPath *) indexPath
 {
-    [super viewDidLoad];
-    
-    NSError *error = nil;
-    [_fetchedResultsController performFetch: &error];
-    
-    if (error == nil)
-    {
-        [self.tableView reloadData];
-    }
-    else
-    {
-        [self handleFetchError: error];
-    }
+    return [_fetchedResultsController objectAtIndexPath: indexPath];
 }
 
 
 #pragma mark -
-#pragma mark public: working with data
+#pragma mark public: fetching data
+
+- (void) fetchDataWithCompletion: (CoreDataTableControllerFetchCallback) completion
+{
+    completion = [completion copy];
+    [_fetchedResultsController.managedObjectContext performBlock:
+     ^{
+         NSError *error = nil;
+         [_fetchedResultsController performFetch: &error];
+         
+         if (completion != nil)
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 completion((error == nil), error);
+             });
+         }
+     }];
+}
+
 
 - (NSFetchRequest *) fetchRequest
 {
@@ -80,14 +86,8 @@
 }
 
 
-- (void) handleFetchError: (NSError *) error
-{
-    // Do nothing, override in subclass if needed
-}
-
-
 #pragma mark -
-#pragma mark private: working with data
+#pragma mark private
 
 - (void) createFetchedResultsController
 {
@@ -172,6 +172,7 @@
 {
     return [_fetchedResultsController sectionIndexTitles];
 }
+
 
 - (NSInteger) tableView: (UITableView *) tableView
 sectionForSectionIndexTitle: (NSString *)    title

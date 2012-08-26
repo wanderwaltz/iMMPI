@@ -622,11 +622,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="3Fw-2f-psM">
                             <connections>
-                                <segue destination="23J-sM-zYh" kind="push" id="v7X-OX-wpV"/>
+                                <segue destination="23J-sM-zYh" kind="push" identifier="Persons List" id="v7X-OX-wpV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <connections>
+                        <outlet property="_firstNameTextField" destination="vpX-It-dIj" id="XtI-Cp-xLP"/>
+                        <outlet property="_lastNameTextField" destination="EF2-zH-tmk" id="AZ9-vt-Qcv"/>
+                        <outlet property="_patronymicNameTextField" destination="EsG-JC-njm" id="x4h-cQ-P2P"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="195" y="-2547"/>
@@ -664,7 +669,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-459" y="-2547"/>
         </scene>
-        <!--Persons List View Controller - ФИО-->
+        <!--Persons List View Controller-->
         <scene sceneID="E2n-ui-aBQ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYO-gA-z3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -709,7 +714,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="23J-sM-zYh" id="by5-Xa-E4s"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ФИО" id="xSv-2l-vVC"/>
+                    <navigationItem key="navigationItem" id="xSv-2l-vVC">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="5M8-eq-ImZ">
+                            <rect key="frame" x="162" y="7" width="216" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="iMMPI"/>
+                                <segment title="Контакты"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
@@ -725,6 +740,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTestSessionViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelButtonAction:"/>
+                <relationship kind="outlet" name="_firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="_lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="_patronymicNameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="BaseTableViewController" superclassName="UITableViewController">
