@@ -16,3 +16,12 @@ Decisions
         That actually just makes sense, since we do not have any data to display while the controller is fetching data (actual fetching would be performed only once at the first time the table view would be displayed - the later changes would be performed incrementally on the by-object basis without performing fetches).
         
         But the main reason why this decision had to be made is that the table view does actually call some of its dataSource methods before the CoreDataTableController even finished fetching. This is happening because we fetch data in background. A race condition actually appears in this case, so the table view could wait until the fetch finishes is one case and would not wait in another. If the table view tries to invoke data source methods before the fetch is finished, an index out of bounds exception is raised. To avoid this, we have to nullify the dataSource explicitly while the fetch is in progress.
+        
+3) Each CoreDataTableController subclass would require the corresponding table view to have a specific reuse identifier to be registered for a specific type of cell (i.e. CoreDataTableController does manage the table view cells, and expects the table view cells to be either created by storyboard, or to be loaded from nib, so that manually allocating an UITableViewCell instance is never needed).
+
+    Reason:
+        To simplify usage of the CoreDataTableController subclasses, we do no want the UIViewController which is using the CoreDataTableController instance to manage the table view cells. We would have to create some sort of delegation mechanism between the CoreDataTableController and the concrete UIViewControllers to pass the table view cells to the CoreDataTableController, which denies the initial purpose of this class to be a self-sufficient table view data source.
+        
+        Requiring a registered cell nib or a prototype cell to have a specific reuse identifier seems fairly low price for the convenience. 
+        
+        There is a design flaw in this decision though. The reuse identifier and the cell class are hardcoded in the concrete CoreDataTableController subclass and are pretty much independent from the storyboard or xibs where the cells should be contained. So we violate the encapsulation somewhat by 'knowing' the data we should not 'know' (i.e. knowing the reuse identifier and cell class which are actually encapsulated in the CoreDataTableController subclass).

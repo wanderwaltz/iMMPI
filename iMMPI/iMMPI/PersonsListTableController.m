@@ -33,8 +33,8 @@ static NSString * const kPersonCellIdentifier = @"Person Cell";
     
     NSArray *sortDescriptors =
     @[[NSSortDescriptor sortDescriptorWithKey: @"lastName"       ascending: YES],
-     [NSSortDescriptor sortDescriptorWithKey: @"firstName"      ascending: YES],
-     [NSSortDescriptor sortDescriptorWithKey: @"patronymicName" ascending: YES]
+      [NSSortDescriptor sortDescriptorWithKey: @"firstName"      ascending: YES],
+      [NSSortDescriptor sortDescriptorWithKey: @"patronymicName" ascending: YES]
     ];
     
     fetchRequest.sortDescriptors = sortDescriptors;
