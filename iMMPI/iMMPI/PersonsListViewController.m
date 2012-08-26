@@ -11,6 +11,7 @@
 #endif
 
 #import "PersonsListViewController.h"
+#import "PersonTableViewCell.h"
 
 #pragma mark -
 #pragma mark Private constants
@@ -24,29 +25,40 @@ static NSString * const kPersonCellIdentifier = @"Person Cell";
 @implementation PersonsListViewController
 
 #pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark public: CoreDataTableViewController
 
-- (NSInteger) numberOfSectionsInTableView: (UITableView *) tableView
+- (NSFetchRequest *) fetchRequest
 {
-    return 1;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName: @"Person"];
+    
+    NSArray *sortDescriptors =
+    @[[NSSortDescriptor sortDescriptorWithKey: @"lastName"       ascending: YES],
+      [NSSortDescriptor sortDescriptorWithKey: @"firstName"      ascending: YES],
+      [NSSortDescriptor sortDescriptorWithKey: @"patronymicName" ascending: YES]
+    ];
+    
+    fetchRequest.sortDescriptors = sortDescriptors;
+    
+    return fetchRequest;
 }
 
 
-- (NSInteger) tableView: (UITableView *) tableView
-  numberOfRowsInSection: (NSInteger) section
+- (NSString *) sectionNameKeyPath
 {
-    return 1;
+    return @"nameSectionID";
 }
 
 
 - (UITableViewCell *) tableView: (UITableView *) tableView
-          cellForRowAtIndexPath: (NSIndexPath *) indexPath
+           cellForManagedObject: (Person *) person
+                    atIndexPath: (NSIndexPath *) indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kPersonCellIdentifier];
-    NSAssert(cell, @"Expected a prototype cell with identifier '%@' to be loaded from storyboard",
-             kPersonCellIdentifier);
+    PersonTableViewCell *cell = (id)[tableView dequeueReusableCellWithIdentifier: kPersonCellIdentifier];
+    NSAssert([cell isKindOfClass: [PersonTableViewCell class]],
+             @"Expected a PersonTableViewCell instance for kPersonCellIdentifier");
     
-    cell.textLabel.text = @"Иванов Иван Иванович";
+    cell.lastNameLabel.text  = person.lastName;
+    cell.firstNameLabel.text = person.fullFirstName;
     
     return cell;
 }

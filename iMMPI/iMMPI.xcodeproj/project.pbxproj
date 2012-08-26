@@ -57,6 +57,8 @@
 		5DBD24A615E1213D007C9134 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD24A515E1213D007C9134 /* Model.m */; };
 		5DBD24AA15E12388007C9134 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBD242415E0CA38007C9134 /* CoreData.framework */; };
 		5DBD24AF15E1255F007C9134 /* NSManagedObject+Insertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD24AE15E1255F007C9134 /* NSManagedObject+Insertion.m */; };
+		5DC0EFDA15EA44B500EF6E2D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0EFD915EA44B500EF6E2D /* CoreDataTableViewController.m */; };
+		5DD02D4615EA5EC90018EA13 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD02D4515EA5EC90018EA13 /* PersonTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +203,10 @@
 		5DBD24AC15E1254A007C9134 /* CoreDataCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataCategories.h; sourceTree = "<group>"; };
 		5DBD24AD15E1255F007C9134 /* NSManagedObject+Insertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Insertion.h"; sourceTree = "<group>"; };
 		5DBD24AE15E1255F007C9134 /* NSManagedObject+Insertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Insertion.m"; sourceTree = "<group>"; };
+		5DC0EFD815EA44B500EF6E2D /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		5DC0EFD915EA44B500EF6E2D /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		5DD02D4415EA5EC90018EA13 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
+		5DD02D4515EA5EC90018EA13 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +341,7 @@
 		5D48791A15D6386C007830D0 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				5DD02D4215EA5EA80018EA13 /* Table View Cells */,
 				5DBD24A015E11CCE007C9134 /* UIKit Customizations */,
 				5D48792315D639EE007830D0 /* Base View Controllers */,
 				5D48791D15D6399E007830D0 /* TestSessionsListViewController.h */,
@@ -361,6 +368,8 @@
 				5D48791815D63347007830D0 /* BaseViewController.m */,
 				5D48792015D639E8007830D0 /* BaseTableViewController.h */,
 				5D48792115D639E8007830D0 /* BaseTableViewController.m */,
+				5DC0EFD815EA44B500EF6E2D /* CoreDataTableViewController.h */,
+				5DC0EFD915EA44B500EF6E2D /* CoreDataTableViewController.m */,
 			);
 			name = "Base View Controllers";
 			sourceTree = "<group>";
@@ -522,6 +531,15 @@
 				5DBD24AE15E1255F007C9134 /* NSManagedObject+Insertion.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		5DD02D4215EA5EA80018EA13 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5DD02D4415EA5EC90018EA13 /* PersonTableViewCell.h */,
+				5DD02D4515EA5EC90018EA13 /* PersonTableViewCell.m */,
+			);
+			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -687,6 +705,8 @@
 				5D48793F15D6C1CE007830D0 /* PersonsListViewController.m in Sources */,
 				5DBD243A15E0CADE007C9134 /* Model.xcdatamodeld in Sources */,
 				5DBD24A315E11CFD007C9134 /* KeyboardDismissingNavigationController.m in Sources */,
+				5DC0EFDA15EA44B500EF6E2D /* CoreDataTableViewController.m in Sources */,
+				5DD02D4615EA5EC90018EA13 /* PersonTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1039,7 @@
 				5DBD241E15E0C9EB007C9134 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DBD243315E0CA8A007C9134 /* Build configuration list for PBXNativeTarget "Model" */ = {
 			isa = XCConfigurationList;
@@ -1027,6 +1048,7 @@
 				5DBD243515E0CA8A007C9134 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DBD245415E0CC66007C9134 /* Build configuration list for PBXNativeTarget "CoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -1035,6 +1057,7 @@
 				5DBD245615E0CC66007C9134 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DBD248915E10679007C9134 /* Build configuration list for PBXNativeTarget "Common" */ = {
 			isa = XCConfigurationList;
@@ -1043,6 +1066,7 @@
 				5DBD248B15E10679007C9134 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

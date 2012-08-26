@@ -42,16 +42,47 @@ didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
 
 - (void) insertDebugData
 {
-    CoreDataStack *coreData = [Model coreData];
+    CoreDataStack         *coreData = [Model coreData];
+    NSManagedObjectContext *context = coreData.mainContext;
     
     [coreData do:^{
        
-        NSManagedObjectContext *context = coreData.mainContext;
         Person *person = nil;
         
         person = [Person insertInContext: context];
-        person.firstName = @"Глеб";
-        person.lastName  = @"Соколов";
+        person.firstName      = @"Александр";
+        person.patronymicName = @"Александрович";
+        person.lastName       = @"Блок";
+        
+        person = [Person insertInContext: context];
+        person.firstName      = @"Николай";
+        person.patronymicName = @"Васильевич";
+        person.lastName       = @"Гоголь";
+        
+        person = [Person insertInContext: context];
+        person.firstName      = @"Александр";
+        person.patronymicName = @"Сергеевич";
+        person.lastName       = @"Грибоедов";
+        
+        person = [Person insertInContext: context];
+        person.firstName      = @"Федор";
+        person.patronymicName = @"Михайлович";
+        person.lastName       = @"Достоевский";
+        
+        person = [Person insertInContext: context];
+        person.firstName      = @"Сергей";
+        person.patronymicName = @"Александрович";
+        person.lastName       = @"Есенин";
+        
+        person = [Person insertInContext: context];
+        person.firstName      = @"Михаил";
+        person.patronymicName = @"Юрьевич";
+        person.lastName       = @"Лермонтов";
+        
+        person = [Person insertInContext: context];
+        person.firstName      = @"Николай";
+        person.patronymicName = @"Алексеевич";
+        person.lastName       = @"Некрасов";
         
         [coreData saveMainContext];
     }];

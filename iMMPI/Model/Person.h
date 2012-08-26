@@ -22,4 +22,13 @@
 
 @property (strong, nonatomic) NSDate *birthDate;
 
+#pragma mark transient properties
+
+@property (strong, nonatomic) NSString *nameSectionID;
+
+#pragma mark custom properties
+
+@property (readonly, nonatomic) NSString *fullName;      // First Patronymic Last
+@property (readonly, nonatomic) NSString *fullFirstName; // First Patronymic
+
 @end
