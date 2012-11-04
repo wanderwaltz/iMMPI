@@ -12,11 +12,5 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
-    #import "Common.h"
-    #import "Model.h"
-    
-    #import "Person.h"
-    
-
-    #import "CoreDataCategories.h"
+    #import "AssertMacros.h"
 #endif

@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  TestAnswersViewController.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 27.10.12.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-
 #pragma mark -
-#pragma mark AppDelegate interface
+#pragma mark TestAnswersViewController interface
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-@property (strong, nonatomic) UIWindow *window;
+@interface TestAnswersViewController : UITableViewController
 @end

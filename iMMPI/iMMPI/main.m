@@ -2,7 +2,7 @@
 //  main.m
 //  iMMPI
 //
-//  Created by Egor Chiglintsev on 11.08.12.
+//  Created by Egor Chiglintsev on 27.10.12.
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
