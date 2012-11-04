@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
+		5D5E05B51646510700A5A704 /* mmpi.female.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B11646510700A5A704 /* mmpi.female.adult.json */; };
+		5D5E05B61646510700A5A704 /* mmpi.female.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B21646510700A5A704 /* mmpi.female.teen.json */; };
+		5D5E05B71646510700A5A704 /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B31646510700A5A704 /* mmpi.male.adult.json */; };
+		5D5E05B81646510700A5A704 /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B41646510700A5A704 /* mmpi.male.teen.json */; };
 		5DA5C9E5163B018D00CF1601 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
 		5DA5C9E7163B018D00CF1601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
 		5DA5C9E9163B018D00CF1601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
@@ -21,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		5D5E05B11646510700A5A704 /* mmpi.female.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.adult.json; sourceTree = "<group>"; };
+		5D5E05B21646510700A5A704 /* mmpi.female.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.teen.json; sourceTree = "<group>"; };
+		5D5E05B31646510700A5A704 /* mmpi.male.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.adult.json; sourceTree = "<group>"; };
+		5D5E05B41646510700A5A704 /* mmpi.male.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.teen.json; sourceTree = "<group>"; };
 		5DA5C9E0163B018D00CF1601 /* iMMPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMMPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA5C9E4163B018D00CF1601 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5DA5C9E6163B018D00CF1601 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +106,10 @@
 		5DA5C9EB163B018D00CF1601 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D5E05B11646510700A5A704 /* mmpi.female.adult.json */,
+				5D5E05B21646510700A5A704 /* mmpi.female.teen.json */,
+				5D5E05B31646510700A5A704 /* mmpi.male.adult.json */,
+				5D5E05B41646510700A5A704 /* mmpi.male.teen.json */,
 				5DA5C9EC163B018D00CF1601 /* iMMPI-Info.plist */,
 				5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */,
 				5DA5C9F0163B018D00CF1601 /* main.m */,
@@ -210,6 +222,10 @@
 			files = (
 				5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */,
 				5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */,
+				5D5E05B51646510700A5A704 /* mmpi.female.adult.json in Resources */,
+				5D5E05B61646510700A5A704 /* mmpi.female.teen.json in Resources */,
+				5D5E05B71646510700A5A704 /* mmpi.male.adult.json in Resources */,
+				5D5E05B81646510700A5A704 /* mmpi.male.teen.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
