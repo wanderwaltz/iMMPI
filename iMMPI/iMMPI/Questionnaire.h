@@ -14,15 +14,11 @@
 #pragma mark Questionnaire interface
 
 /*! 
- Questionnaire class encapsulates an ordered array of MMPI test questions.
+ Questionnaire class encapsulates an ordered array of MMPI test statements.
  
  Questionnaries are stored in json format in the application bundle. There are separate sets of questions depending on the gender and age group of the person, and these are stored in separate files.
  */
-@interface Questionnaire : NSObject
-
-/// Array of Statement objects
-@property (readonly, nonatomic) NSArray *statements;
-
+@interface Questionnaire : NSObject<Questionnaire>
 
 /*! 
  A class method for creating Questionnarie objects.
@@ -46,5 +42,17 @@
  */
 - (id) initWithGender: (Gender)   gender
              ageGroup: (AgeGroup) ageGroup;
+
+/// Returns the number of statements included in the questionnaire.
+- (NSUInteger) statementsCount;
+
+
+/*! This method return a statement with a given index.
+ 
+ @return For each index starting from 0 to statementsCount this method is expected to return an object conforming to Statement protocol. If index is outside of this range, an out of range exception is raised.
+ 
+ @param index Index of statement to return.
+ */
+- (id<Statement>) statementAtIndex: (NSUInteger) index;
 
 @end

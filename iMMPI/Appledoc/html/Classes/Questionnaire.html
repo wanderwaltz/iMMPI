@@ -38,11 +38,6 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/statements">&nbsp;&nbsp;&nbsp;&nbsp;statements</option>
-	
-	
 	
 	
 	<option value="class_methods">Class Methods</option>
@@ -55,6 +50,10 @@
 	<option value="instance_methods">Instance Methods</option>
 	
 	<option value="//api/name/initWithGender:ageGroup:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithGender:ageGroup:</option>
+	
+	<option value="//api/name/statementAtIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- statementAtIndex:</option>
+	
+	<option value="//api/name/statementsCount">&nbsp;&nbsp;&nbsp;&nbsp;- statementsCount</option>
 	
 	
 	
@@ -78,12 +77,6 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/statements">statements</a></span></li>
-	
-</ul></li>
-
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
@@ -97,6 +90,10 @@
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithGender:ageGroup:">initWithGender:ageGroup:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/statementAtIndex:">statementAtIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/statementsCount">statementsCount</a></span></li>
 	
 </ul></li>
 
@@ -124,6 +121,9 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/Questionnaire.html">Questionnaire</a></td>
+</tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">Questionnaire.h<br />Questionnaire.m</td>
 </tr>
@@ -135,7 +135,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Questionnaire class encapsulates an ordered array of MMPI test questions.</p>
+						<p>Questionnaire class encapsulates an ordered array of MMPI test statements.</p>
 
 <p>Questionnaries are stored in json format in the application bundle. There are separate sets of questions depending on the gender and age group of the person, and these are stored in separate files.</p>
 					</div>
@@ -155,13 +155,6 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/statements">&nbsp;&nbsp;statements</a></code>
-		<span class="tooltip"><p>Array of <a href="../Classes/Statement.html">Statement</a> objects</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/newForGender:ageGroup:">+&nbsp;newForGender:ageGroup:</a></code>
 		<span class="tooltip"><p>A class method for creating Questionnarie objects.</p></span>
 	</span>
@@ -174,6 +167,20 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/statementsCount">&ndash;&nbsp;statementsCount</a></code>
+		<span class="tooltip"><p>Returns the number of statements included in the questionnaire.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/statementAtIndex:">&ndash;&nbsp;statementAtIndex:</a></code>
+		<span class="tooltip"><p>This method return a statement with a given index.</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -182,53 +189,6 @@
 					
 					
 					
-					
-					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/statements" title="statements"></a>
-	<h3 class="subsubtitle method-title">statements</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Array of <a href="../Classes/Statement.html">Statement</a> objects</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSArray *statements</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Array of <a href="../Classes/Statement.html">Statement</a> objects</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Questionnaire.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
 					
 					
 					
@@ -351,6 +311,103 @@
 		<p>Initializes a Questionnarie object with the gender and age group values.</p>
 
 <p>This method does load and parse the json file corresponding the provided gender and age group values. If something goes wrong while loading data, returns nil and posts a log message to the debugger console.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Questionnaire.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/statementAtIndex:" title="statementAtIndex:"></a>
+	<h3 class="subsubtitle method-title">statementAtIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method return a statement with a given index.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id&lt;Statement&gt;)statementAtIndex:(NSUInteger)<em>index</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>index</em></dt>
+			<dd><p>Index of statement to return.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>For each index starting from 0 to <a href="#//api/name/statementsCount">statementsCount</a> this method is expected to return an object conforming to <a href="../Classes/Statement.html">Statement</a> protocol. If index is outside of this range, an out of range exception is raised.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method return a statement with a given index.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Questionnaire.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/statementsCount" title="statementsCount"></a>
+	<h3 class="subsubtitle method-title">statementsCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of statements included in the questionnaire.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)statementsCount</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the number of statements included in the questionnaire.</p>
 	</div>
 	
 	

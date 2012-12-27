@@ -6,25 +6,17 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Model.h"
 
 
 #pragma mark -
 #pragma mark Statement interface
 
-/*!
- A single statement of the Questionnaire.
+/*! A concrete implementation of Statement protocol.
  */
-@interface Statement : NSObject
+@interface Statement : NSObject<Statement>
 
-/// Text of the statement.
-@property (copy, nonatomic) NSString *text;
-
-/*! ID of the statement
- 
- Statements are sorted by ID when presented to the user. ID is also
- used when analyzing test results.
- */
+@property (copy,   nonatomic) NSString *text;
 @property (assign, nonatomic) NSInteger statementID;
 
 @end

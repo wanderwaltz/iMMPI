@@ -9,6 +9,9 @@
 #ifndef iMMPI_Model_h
 #define iMMPI_Model_h
 
+#import <Foundation/Foundation.h>
+
+
 #pragma mark -
 #pragma mark Typedefs
 
@@ -37,15 +40,23 @@ typedef enum : NSInteger
 
 
 #pragma mark -
-#pragma mark imports
+#pragma mark protocols
 
-#import <Foundation/Foundation.h>
+#import "PersonProtocol.h"
+#import "TestAnswersProtocol.h"
+#import "TestRecordProtocol.h"
+#import "StatementProtocol.h"
+#import "QuestionnaireProtocol.h"
+
+
+#pragma mark -
+#pragma mark classes
 
 #import "Questionnaire.h"
 #import "Statement.h"
 
+#import "TestRecord.h"
 #import "TestAnswers.h"
 #import "Answer.h"
-
 
 #endif

@@ -27,8 +27,8 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
 
 @interface TestAnswersViewController()<StatementTableViewCellDelegate>
 {
-    Questionnaire *_questionnaire;
-    TestAnswers   *_answers;
+    id<Questionnaire> _questionnaire;
+    id<TestAnswers>   _answers;
 }
 
 @end
@@ -60,9 +60,9 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
 #pragma mark -
 #pragma mark private
 
-- (Statement *) statementAtIndexPath: (NSIndexPath *) indexPath
+- (id<Statement>) statementAtIndexPath: (NSIndexPath *) indexPath
 {
-    return _questionnaire.statements[indexPath.row];
+    return [_questionnaire statementAtIndex: indexPath.row];
 }
 
 
@@ -72,7 +72,7 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
 - (NSInteger) tableView: (UITableView *) tableView
   numberOfRowsInSection: (NSInteger) section
 {
-    return _questionnaire.statements.count;
+    return [_questionnaire statementsCount];
 }
 
 
@@ -83,7 +83,7 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
                                         kAnswerCellIdentifier];
     FRB_AssertClass(cell, StatementTableViewCell);
     
-    Statement *statement = [self statementAtIndexPath: indexPath];
+    id<Statement> statement = [self statementAtIndexPath: indexPath];
     FRB_AssertNotNil(statement);
     
     cell.delegate                = self;

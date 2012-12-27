@@ -1,5 +1,5 @@
 //
-//  TestAnswers.h
+//  TestAnswersProtocol.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 27.12.12.
@@ -7,18 +7,18 @@
 //
 
 #import "Model.h"
-#import "Answer.h"
 
 
 #pragma mark -
-#pragma mark TestAnswers interface
+#pragma mark TestAnswers protocol
 
 /*!
  Encapsulates a mutable set of Answer objects.
  */
-@interface TestAnswers : NSObject<TestAnswers>
+@protocol TestAnswers<NSObject>
+@required
 
-/*! Sets an AnswerType for a statement with a given ID
+/*! This method should set an AnswerType for a statement with a given ID
  
  @param answerType  answer type (agree, disagree, undefined - see source for the exact enum values)
  @param statementID ID of the statement to relate the answer with
@@ -27,8 +27,8 @@
         forStatementID: (NSInteger) statementID;
 
 
-/*! Returns answer type for statement with the provided ID
-
+/*! This method should return answer type for statement with the provided ID
+ 
  @param statementID ID of the statement related to the answer
  
  @return AnswerType for a recorded answer. If the statement has not yet been answered, returns AnswerTypeUnknown.

@@ -172,6 +172,20 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
 }
 
 
+#pragma mark -
+#pragma mark methods
+
+- (NSUInteger) statementsCount
+{
+    return _statements.count;
+}
+
+
+- (id<Statement>) statementAtIndex: (NSUInteger) index
+{
+    return _statements[index];
+}
+
 @end
 
 
