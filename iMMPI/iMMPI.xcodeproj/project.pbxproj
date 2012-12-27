@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		5DC4046B168C2260000AFBAE /* Appledoc */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5DC4046C168C2260000AFBAE /* Build configuration list for PBXAggregateTarget "Appledoc" */;
+			buildPhases = (
+				5DC4046F168C2272000AFBAE /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Appledoc;
+			productName = Appledoc;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05B51646510700A5A704 /* mmpi.female.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B11646510700A5A704 /* mmpi.female.adult.json */; };
@@ -248,6 +262,7 @@
 			projectRoot = "";
 			targets = (
 				5DA5C9DF163B018D00CF1601 /* iMMPI */,
+				5DC4046B168C2260000AFBAE /* Appledoc */,
 			);
 		};
 /* End PBXProject section */
@@ -296,6 +311,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\n\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
+		5DC4046F168C2272000AFBAE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "appledoc --project-name iMMPI --project-company \"Frostbit\" --company-id com.frostbit --output Appledoc --logformat xcode --keep-intermediate-files --no-create-docset .";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -420,6 +448,20 @@
 			};
 			name = Release;
 		};
+		5DC4046D168C2260000AFBAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5DC4046E168C2260000AFBAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -440,6 +482,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5DC4046C168C2260000AFBAE /* Build configuration list for PBXAggregateTarget "Appledoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC4046D168C2260000AFBAE /* Debug */,
+				5DC4046E168C2260000AFBAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

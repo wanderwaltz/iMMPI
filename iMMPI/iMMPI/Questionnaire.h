@@ -13,6 +13,8 @@
 #pragma mark -
 #pragma mark Questionnaire interface
 
+/*! Questionnaire class encapsulates an ordered array of MMPI test questions.
+ */
 @interface Questionnaire : NSObject
 
 + (id) newForGender: (Gender) gender
