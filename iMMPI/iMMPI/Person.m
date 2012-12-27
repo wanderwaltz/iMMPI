@@ -1,5 +1,5 @@
 //
-//  TestRecord.m
+//  Person.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 27.12.12.
@@ -10,11 +10,11 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "TestRecord.h"
+#import "Person.h"
 
 
 #pragma mark -
-#pragma mark TestRecord implementation
+#pragma mark Person implementation
 
-@implementation TestRecord
+@implementation Person
 @end

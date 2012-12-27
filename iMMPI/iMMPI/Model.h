@@ -56,6 +56,8 @@ typedef enum : NSInteger
 #import "Statement.h"
 
 #import "TestRecord.h"
+#import "Person.h"
+
 #import "TestAnswers.h"
 #import "Answer.h"
 

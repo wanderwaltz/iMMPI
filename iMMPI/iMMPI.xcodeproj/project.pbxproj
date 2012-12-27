@@ -14,6 +14,7 @@
 				5DC4046F168C2272000AFBAE /* ShellScript */,
 			);
 			dependencies = (
+				5DC4048E168C4B3D000AFBAE /* PBXTargetDependency */,
 			);
 			name = Appledoc;
 			productName = Appledoc;
@@ -43,8 +44,19 @@
 		5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
 		5DC4047D168C3259000AFBAE /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4047C168C3259000AFBAE /* Answer.m */; };
 		5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40481168C41A7000AFBAE /* TestRecord.m */; };
+		5DC4048C168C4AB3000AFBAE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4048B168C4AB3000AFBAE /* Person.m */; };
 		631F7A52D295429BB0A3F386 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D76D094067F4B558239B3CE /* libPods.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DC4048D168C4B3D000AFBAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DA5C9D7163B018D00CF1601 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DA5C9DF163B018D00CF1601;
+			remoteInfo = iMMPI;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -87,6 +99,8 @@
 		5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordProtocol.h; sourceTree = "<group>"; };
 		5DC40487168C452E000AFBAE /* StatementProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatementProtocol.h; sourceTree = "<group>"; };
 		5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionnaireProtocol.h; sourceTree = "<group>"; };
+		5DC4048A168C4AB3000AFBAE /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		5DC4048B168C4AB3000AFBAE /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		6D76D094067F4B558239B3CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		886E7B631E6B483C8375754E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -114,6 +128,7 @@
 			children = (
 				5D5E05BE1646521700A5A704 /* Model.h */,
 				5DC40483168C446C000AFBAE /* Protocols */,
+				5DC40489168C4AA2000AFBAE /* Test Answers */,
 				5DC40477168C3228000AFBAE /* Test Record */,
 				5D5E05BA164651AE00A5A704 /* Questionnaire */,
 			);
@@ -257,10 +272,8 @@
 			children = (
 				5DC40480168C41A7000AFBAE /* TestRecord.h */,
 				5DC40481168C41A7000AFBAE /* TestRecord.m */,
-				5DC40478168C324F000AFBAE /* TestAnswers.h */,
-				5DC40479168C324F000AFBAE /* TestAnswers.m */,
-				5DC4047B168C3259000AFBAE /* Answer.h */,
-				5DC4047C168C3259000AFBAE /* Answer.m */,
+				5DC4048A168C4AB3000AFBAE /* Person.h */,
+				5DC4048B168C4AB3000AFBAE /* Person.m */,
 			);
 			name = "Test Record";
 			sourceTree = "<group>";
@@ -275,6 +288,17 @@
 				5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		5DC40489168C4AA2000AFBAE /* Test Answers */ = {
+			isa = PBXGroup;
+			children = (
+				5DC40478168C324F000AFBAE /* TestAnswers.h */,
+				5DC40479168C324F000AFBAE /* TestAnswers.m */,
+				5DC4047B168C3259000AFBAE /* Answer.h */,
+				5DC4047C168C3259000AFBAE /* Answer.m */,
+			);
+			name = "Test Answers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,10 +425,19 @@
 				5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */,
 				5DC4047D168C3259000AFBAE /* Answer.m in Sources */,
 				5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */,
+				5DC4048C168C4AB3000AFBAE /* Person.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DC4048E168C4B3D000AFBAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DA5C9DF163B018D00CF1601 /* iMMPI */;
+			targetProxy = 5DC4048D168C4B3D000AFBAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */ = {

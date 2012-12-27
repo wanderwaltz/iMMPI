@@ -13,5 +13,13 @@
 #pragma mark -
 #pragma mark TestRecord interface
 
-@interface TestRecord : NSObject
+/*! A concrete implementation of TestRecord protocol.
+ */
+@interface TestRecord : NSObject<TestRecord>
+
+@property (strong, nonatomic) id<Person> person;
+@property (strong, nonatomic) id<TestAnswers> testAnswers;
+
+@property (strong, nonatomic) NSDate *date;
+
 @end
