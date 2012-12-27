@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Model.h"
 #import "Statement.h"
 

@@ -9,25 +9,43 @@
 #ifndef iMMPI_Model_h
 #define iMMPI_Model_h
 
-#import "Questionnaire.h"
-#import "Statement.h"
-
 #pragma mark -
 #pragma mark Typedefs
 
-typedef enum
+typedef enum : NSInteger
 {
-    GenderMale,
-    GenderFemale,
     GenderUnknown,
+    GenderMale,
+    GenderFemale
 } Gender;
 
 
-typedef enum
+typedef enum : NSInteger
 {
+    AgeGroupUnknown,
     AgeGroupTeen,
-    AgeGroupAdult,
-    AgeGroupUnknown
+    AgeGroupAdult
 } AgeGroup;
+
+
+typedef enum : NSInteger
+{
+    AnswerTypeUnknown,
+    AnswerTypePositive,
+    AnswerTypeNegative
+} AnswerType;
+
+
+#pragma mark -
+#pragma mark imports
+
+#import <Foundation/Foundation.h>
+
+#import "Questionnaire.h"
+#import "Statement.h"
+
+#import "TestAnswers.h"
+#import "Answer.h"
+
 
 #endif
