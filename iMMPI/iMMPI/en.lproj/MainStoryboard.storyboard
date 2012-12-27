@@ -160,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnswerCell" rowHeight="53" id="iwU-6S-iub">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnswerCell" rowHeight="53" id="iwU-6S-iub" customClass="StatementTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="768" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -169,9 +169,10 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mnm-Gt-j3X">
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Mw3-Vx-Xoo"/>
                                                 <constraint firstAttribute="width" constant="39" id="WKA-WG-ZKg"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -186,6 +187,7 @@
                                         </label>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-OU-DB3">
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="FWl-Aq-JUU"/>
                                                 <constraint firstAttribute="width" constant="133" type="user" id="PEU-8E-gSB"/>
                                             </constraints>
                                             <segments>
@@ -206,6 +208,11 @@
                                     <constraint firstItem="MXh-OU-DB3" firstAttribute="leading" secondItem="0Ri-nw-zcd" secondAttribute="trailing" constant="27" type="user" id="iOw-XW-7yn"/>
                                     <constraint firstItem="MXh-OU-DB3" firstAttribute="centerY" secondItem="Mnm-Gt-j3X" secondAttribute="centerY" type="default" id="vbn-q5-KDX"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="statementIDLabel" destination="Mnm-Gt-j3X" id="lNm-mx-A6g"/>
+                                    <outlet property="statementSegmentedControl" destination="MXh-OU-DB3" id="2JV-y7-Rsk"/>
+                                    <outlet property="statementTextLabel" destination="0Ri-nw-zcd" id="s1Z-mv-DXb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -264,6 +271,14 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecordsListViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelAddingRecord:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="StatementTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatementTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="statementIDLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statementSegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="statementTextLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TestAnswersViewController" superclassName="UITableViewController">

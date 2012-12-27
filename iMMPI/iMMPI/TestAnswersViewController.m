@@ -13,6 +13,8 @@
 #import "TestAnswersViewController.h"
 #import "Questionnaire.h"
 
+#import "StatementTableViewCell.h"
+
 
 #pragma mark -
 #pragma mark Static constants
@@ -51,21 +53,38 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
     return self;
 }
 
+
+#pragma mark -
+#pragma mark private
+
+- (Statement *) statementAtIndexPath: (NSIndexPath *) indexPath
+{
+    return _questionnaire.statements[indexPath.row];
+}
+
+
 #pragma mark -
 #pragma mark UITableViewDataSource
 
 - (NSInteger) tableView: (UITableView *) tableView
   numberOfRowsInSection: (NSInteger) section
 {
-    return 10;
+    return _questionnaire.statements.count;
 }
 
 
 - (UITableViewCell *) tableView: (UITableView *) tableView
           cellForRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kAnswerCellIdentifier];
-    FRB_AssertNotNil(cell);
+    StatementTableViewCell *cell = (id)[tableView dequeueReusableCellWithIdentifier:
+                                        kAnswerCellIdentifier];
+    FRB_AssertClass(cell, StatementTableViewCell);
+    
+    Statement *statement = [self statementAtIndexPath: indexPath];
+    FRB_AssertNotNil(statement);
+    
+    cell.statementIDLabel.text   = [NSString stringWithFormat: @"%d", statement.statementID];
+    cell.statementTextLabel.text = statement.text;
     
     return cell;
 }

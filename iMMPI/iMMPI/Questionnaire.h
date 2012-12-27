@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Model.h"
+#import "Statement.h"
 
 
 #pragma mark -
@@ -19,6 +20,10 @@
  Questionnaries are stored in json format in the application bundle. There are separate sets of questions depending on the gender and age group of the person, and these are stored in separate files.
  */
 @interface Questionnaire : NSObject
+
+/// Array of Statement objects
+@property (readonly, nonatomic) NSArray *statements;
+
 
 /*! 
  A class method for creating Questionnarie objects.

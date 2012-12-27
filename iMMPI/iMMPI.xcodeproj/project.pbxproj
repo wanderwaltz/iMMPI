@@ -38,6 +38,8 @@
 		5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
+		5DC40472168C2596000AFBAE /* Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40471168C2596000AFBAE /* Statement.m */; };
+		5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */; };
 		631F7A52D295429BB0A3F386 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D76D094067F4B558239B3CE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,10 @@
 		5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersViewController.m; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		5DC40470168C2596000AFBAE /* Statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
+		5DC40471168C2596000AFBAE /* Statement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statement.m; sourceTree = "<group>"; };
+		5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementTableViewCell.h; sourceTree = "<group>"; };
+		5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatementTableViewCell.m; sourceTree = "<group>"; };
 		6D76D094067F4B558239B3CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		886E7B631E6B483C8375754E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -103,6 +109,8 @@
 			children = (
 				5D5E05BB164651FD00A5A704 /* Questionnaire.h */,
 				5D5E05BC164651FD00A5A704 /* Questionnaire.m */,
+				5DC40470168C2596000AFBAE /* Statement.h */,
+				5DC40471168C2596000AFBAE /* Statement.m */,
 			);
 			name = Questionnaire;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 			children = (
 				5D5E05B9164651A800A5A704 /* Model */,
 				5DC4046A168C21F7000AFBAE /* Views */,
+				5DC40473168C2D49000AFBAE /* Table View Cells */,
 				5DA5CA0C163B04D200CF1601 /* View Controllers */,
 				5DA5C9F3163B018D00CF1601 /* AppDelegate.h */,
 				5DA5C9F4163B018D00CF1601 /* AppDelegate.m */,
@@ -216,6 +225,15 @@
 			children = (
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */,
+				5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */,
+			);
+			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +355,8 @@
 				5DA5CA13163B061000CF1601 /* RecordsListViewController.m in Sources */,
 				5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */,
 				5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */,
+				5DC40472168C2596000AFBAE /* Statement.m in Sources */,
+				5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

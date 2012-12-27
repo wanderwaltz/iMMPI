@@ -10,6 +10,7 @@
 #define iMMPI_Model_h
 
 #import "Questionnaire.h"
+#import "Statement.h"
 
 #pragma mark -
 #pragma mark Typedefs
