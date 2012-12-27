@@ -160,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnswerCell" rowHeight="53" id="iwU-6S-iub" customClass="StatementTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnswerCell" rowHeight="53" id="iwU-6S-iub" customClass="StatementTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="768" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -169,14 +169,14 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mnm-Gt-j3X">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="Mw3-Vx-Xoo"/>
-                                                <constraint firstAttribute="width" constant="39" id="WKA-WG-ZKg"/>
+                                                <constraint firstAttribute="height" constant="21" id="K5o-Gx-Qjp"/>
+                                                <constraint firstAttribute="width" constant="39" type="user" id="WKA-WG-ZKg"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="532" translatesAutoresizingMaskIntoConstraints="NO" id="0Ri-nw-zcd">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="527" translatesAutoresizingMaskIntoConstraints="NO" id="0Ri-nw-zcd">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="36" id="fXa-L4-qKg"/>
                                             </constraints>
@@ -187,7 +187,6 @@
                                         </label>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-OU-DB3">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="43" id="FWl-Aq-JUU"/>
                                                 <constraint firstAttribute="width" constant="133" type="user" id="PEU-8E-gSB"/>
                                             </constraints>
                                             <segments>
@@ -199,14 +198,15 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="baseline" secondItem="Mnm-Gt-j3X" secondAttribute="baseline" type="default" id="AzY-WF-7vi"/>
-                                    <constraint firstAttribute="trailing" secondItem="MXh-OU-DB3" secondAttribute="trailing" constant="10" type="user" id="CvN-JT-mpr"/>
-                                    <constraint firstItem="0Ri-nw-zcd" firstAttribute="leading" secondItem="iwU-6S-iub" secondAttribute="leading" constant="66" type="user" id="ODs-P7-54Q"/>
-                                    <constraint firstAttribute="centerY" secondItem="Mnm-Gt-j3X" secondAttribute="centerY" type="user" id="WeH-RR-i0A"/>
-                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="leading" secondItem="iwU-6S-iub" secondAttribute="leading" constant="10" type="user" id="X86-0C-hlC"/>
-                                    <constraint firstItem="0Ri-nw-zcd" firstAttribute="top" secondItem="iwU-6S-iub" secondAttribute="top" constant="9" id="gkT-Pe-iHm"/>
-                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="leading" secondItem="0Ri-nw-zcd" secondAttribute="trailing" constant="27" type="user" id="iOw-XW-7yn"/>
-                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="centerY" secondItem="Mnm-Gt-j3X" secondAttribute="centerY" type="default" id="vbn-q5-KDX"/>
+                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="leading" secondItem="MXh-OU-DB3" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="D1M-Ej-92W"/>
+                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="baseline" secondItem="MXh-OU-DB3" secondAttribute="baseline" type="default" id="KLs-Uj-kJQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Ri-nw-zcd" secondAttribute="trailing" constant="20" type="user" id="NDb-w5-1sV"/>
+                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="bottom" secondItem="0Ri-nw-zcd" secondAttribute="bottom" type="default" id="Wvx-x4-lsn"/>
+                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="centerY" secondItem="iwU-6S-iub" secondAttribute="centerY" type="default" id="i56-Fm-Uff"/>
+                                    <constraint firstItem="0Ri-nw-zcd" firstAttribute="leading" secondItem="Mnm-Gt-j3X" secondAttribute="trailing" constant="21" type="user" id="jgw-Ft-Iqn"/>
+                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="leading" secondItem="MXh-OU-DB3" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="m9C-Rd-H0i"/>
+                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="top" secondItem="iwU-6S-iub" secondAttribute="top" constant="19" id="vl7-Rv-OHM"/>
+                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="leading" secondItem="iwU-6S-iub" secondAttribute="leading" constant="20" type="user" id="vub-Or-Xfx"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="statementIDLabel" destination="Mnm-Gt-j3X" id="lNm-mx-A6g"/>
