@@ -1,0 +1,3 @@
+platform :ios
+
+pod 'Frostbit/Common', :git => 'https://github.com/wanderwaltz/Frostbit.git'

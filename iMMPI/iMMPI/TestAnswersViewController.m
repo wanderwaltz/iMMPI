@@ -32,6 +32,20 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
 @implementation TestAnswersViewController
 
 #pragma mark -
+#pragma mark initialization methods
+
+- (id) initWithCoder: (NSCoder *) aDecoder
+{
+    self = [super initWithCoder: aDecoder];
+    
+    if (self != nil)
+    {
+        
+    }
+    return self;
+}
+
+#pragma mark -
 #pragma mark UITableViewDataSource
 
 - (NSInteger) tableView: (UITableView *) tableView
@@ -45,7 +59,7 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
           cellForRowAtIndexPath: (NSIndexPath *) indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kAnswerCellIdentifier];
-    AssertExists(cell);
+    FRB_AssertNotNil(cell);
     
     return cell;
 }

@@ -60,7 +60,7 @@ static NSString * const kRecordCellIdentifier = @"RecordCell";
           cellForRowAtIndexPath: (NSIndexPath *) indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kRecordCellIdentifier];
-    AssertExists(cell);
+    FRB_AssertNotNil(cell);
     
     return cell;
 }

@@ -1,0 +1,15 @@
+
+PODS: 
+- Frostbit/Common (0.0.1)
+
+DEPENDENCIES: 
+- Frostbit/Common (from `https://github.com/wanderwaltz/Frostbit.git')
+
+EXTERNAL SOURCES: 
+  Frostbit/Common: 
+    :git: https://github.com/wanderwaltz/Frostbit.git
+
+SPEC CHECKSUMS: 
+  Frostbit/Common: b1dfc104318f4b5ee9abeef2b35abe682aaf4877
+
+COCOAPODS: 0.16.0

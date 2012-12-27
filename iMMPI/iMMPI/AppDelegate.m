@@ -23,6 +23,8 @@
          - (BOOL) application: (UIApplication *) application
 didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
 {
+    NSLog(@"%@", kABPersonPhoneMobileLabel);
+
     return YES;
 }
 
