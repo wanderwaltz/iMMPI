@@ -14,4 +14,7 @@
     #import <AddressBook/AddressBook.h>
 
     #import "FRBCommon.h"
+    #import "FRBDispatch.h"
+
+    #import "Strings.h"
 #endif

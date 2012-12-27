@@ -1,5 +1,5 @@
 //
-//  NewRecordViewController.h
+//  EditTestRecordViewController.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 27.12.12.
@@ -10,7 +10,7 @@
 
 
 #pragma mark -
-#pragma mark NewRecordViewController interface
+#pragma mark EditTestRecordViewController interface
 
 @interface EditTestRecordViewController : UITableViewController
 @end

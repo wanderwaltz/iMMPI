@@ -19,6 +19,8 @@
 
 static NSString * const kRecordCellIdentifier = @"RecordCell";
 
+static NSString * const kSegueAddRecord = @"com.immpi.segue.addRecord";
+
 
 #pragma mark -
 #pragma mark RecordsListViewController private
@@ -74,7 +76,10 @@ static NSString * const kRecordCellIdentifier = @"RecordCell";
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
-    
+    if ([segue.identifier isEqualToString: kSegueAddRecord])
+    {
+
+    }
 }
 
 

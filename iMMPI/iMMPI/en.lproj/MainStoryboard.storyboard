@@ -35,6 +35,7 @@
                                 </view>
                                 <connections>
                                     <segue destination="yLl-co-mCt" kind="push" id="gv3-rj-vhd"/>
+                                    <segue destination="Pb1-6N-Afb" kind="push" trigger="accessoryAction" id="ubi-MX-6ab"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -46,7 +47,7 @@
                     <navigationItem key="navigationItem" title="Все записи" id="gtE-pR-cVv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oJO-KV-quv">
                             <connections>
-                                <segue destination="hIa-aR-c5k" kind="modal" modalPresentationStyle="pageSheet" id="pzp-1q-KmK"/>
+                                <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.addRecord" modalPresentationStyle="formSheet" id="pzp-1q-KmK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -86,7 +87,6 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иванов Иван Иванович" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FiK-Lg-ERb">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="508" type="user" id="Zhz-tA-PZf"/>
                                                         <constraint firstAttribute="height" constant="30" id="cJb-FT-Llj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -103,7 +103,7 @@
                                             <constraint firstItem="WIw-Eq-pRb" firstAttribute="leading" secondItem="9bC-p2-ocw" secondAttribute="leading" constant="65" type="user" id="hr1-Qg-JEN"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5aa-FY-mjS">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5aa-FY-mjS">
                                         <rect key="frame" x="0.0" y="75" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -138,7 +138,7 @@
                                             <constraint firstItem="qyt-tw-dSH" firstAttribute="leading" secondItem="5aa-FY-mjS" secondAttribute="leading" constant="65" type="user" id="uOQ-8G-xMp"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GS1-in-4a8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GS1-in-4a8">
                                         <rect key="frame" x="0.0" y="119" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -173,7 +173,7 @@
                                             <constraint firstItem="Qpt-Mq-XOC" firstAttribute="centerY" secondItem="GS1-in-4a8" secondAttribute="centerY" type="default" id="ySV-X6-2k1"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Yny-Pd-Q65">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Yny-Pd-Q65">
                                         <rect key="frame" x="0.0" y="163" width="768" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -425,13 +425,13 @@
         <class className="TestAnswersViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersViewController.h"/>
         </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="ubi-MX-6ab"/>
+    </inferredMetricsTieBreakers>
 </document>

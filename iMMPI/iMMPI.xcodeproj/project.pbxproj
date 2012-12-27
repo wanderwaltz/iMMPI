@@ -85,6 +85,7 @@
 		5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersViewController.m; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		5DC0B2C4168CDB790035A910 /* Strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
 		5DC40470168C2596000AFBAE /* Statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
 		5DC40471168C2596000AFBAE /* Statement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statement.m; sourceTree = "<group>"; };
 		5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementTableViewCell.h; sourceTree = "<group>"; };
@@ -184,6 +185,7 @@
 		5DA5C9EA163B018D00CF1601 /* iMMPI */ = {
 			isa = PBXGroup;
 			children = (
+				5DC0B2C4168CDB790035A910 /* Strings.h */,
 				5D5E05B9164651A800A5A704 /* Model */,
 				5DC4046A168C21F7000AFBAE /* Views */,
 				5DC40473168C2D49000AFBAE /* Table View Cells */,
@@ -529,6 +531,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -546,6 +549,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
