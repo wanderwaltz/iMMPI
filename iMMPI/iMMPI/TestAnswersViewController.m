@@ -25,9 +25,10 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
 #pragma mark -
 #pragma mark TestAnswersViewController private
 
-@interface TestAnswersViewController ()
+@interface TestAnswersViewController()<StatementTableViewCellDelegate>
 {
     Questionnaire *_questionnaire;
+    TestAnswers   *_answers;
 }
 
 @end
@@ -49,6 +50,8 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
     {
         _questionnaire = [Questionnaire newForGender: GenderMale
                                             ageGroup: AgeGroupAdult];
+        
+        _answers = [TestAnswers new];
     }
     return self;
 }
@@ -83,10 +86,48 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
     Statement *statement = [self statementAtIndexPath: indexPath];
     FRB_AssertNotNil(statement);
     
+    cell.delegate                = self;
     cell.statementIDLabel.text   = [NSString stringWithFormat: @"%d", statement.statementID];
     cell.statementTextLabel.text = statement.text;
     
+    switch ([_answers answerTypeForStatementID: statement.statementID])
+    {
+        case AnswerTypePositive: cell.statementSegmentedControl.selectedSegmentIndex = 1; break;
+        case AnswerTypeNegative: cell.statementSegmentedControl.selectedSegmentIndex = 0; break;
+            
+        case AnswerTypeUnknown:
+            cell.statementSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment; break;
+    }
+    
     return cell;
+}
+
+
+#pragma mark -
+#pragma mark StatementTableViewCellDelegate
+
+- (void) statementTableViewCell: (StatementTableViewCell *) cell
+        segmentedControlChanged: (NSInteger) selectedSegmentIndex
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell: cell];
+    
+    if (indexPath)
+    {
+        Statement *statement = [self statementAtIndexPath: indexPath];
+        FRB_AssertNotNil(statement);
+        
+        switch (selectedSegmentIndex)
+        {
+            case 0: [_answers setAnswerType: AnswerTypeNegative
+                             forStatementID: statement.statementID]; break;
+                
+            case 1: [_answers setAnswerType: AnswerTypePositive
+                             forStatementID: statement.statementID]; break;
+                
+            default: [_answers setAnswerType: AnswerTypeUnknown
+                              forStatementID: statement.statementID]; break;
+        }
+    }
 }
 
 @end

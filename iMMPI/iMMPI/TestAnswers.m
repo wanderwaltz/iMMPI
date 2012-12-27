@@ -14,6 +14,17 @@
 
 
 #pragma mark -
+#pragma mark TestAnswers private
+
+@interface TestAnswers()
+{
+    NSMutableDictionary *_answersByID;
+}
+
+@end
+
+
+#pragma mark -
 #pragma mark TestAnswers implementation
 
 @implementation TestAnswers
@@ -27,7 +38,7 @@
     
     if (self != nil)
     {
-        
+        _answersByID = [NSMutableDictionary new];
     }
     return self;
 }
@@ -39,13 +50,27 @@
 - (void) setAnswerType: (AnswerType) answerType
         forStatementID: (NSInteger) statementID
 {
+    Answer *answer = _answersByID[@(statementID)];
     
+    if (answer == nil)
+    {
+        answer = [Answer new];
+        answer.statementID = statementID;
+        
+        _answersByID[@(statementID)] = answer;
+    }
+    
+    answer.answerType = answerType;
 }
 
 
 - (AnswerType) answerTypeForStatementID: (NSInteger) statementID
 {
-    return AnswerTypeUnknown;
+    Answer *answer = _answersByID[@(statementID)];
+    
+    if (answer != nil) return answer.answerType;
+    else
+        return AnswerTypeUnknown;
 }
 
 @end
