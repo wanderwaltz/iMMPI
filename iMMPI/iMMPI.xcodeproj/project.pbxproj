@@ -129,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				5D5E05B9164651A800A5A704 /* Model */,
+				5DC4046A168C21F7000AFBAE /* Views */,
 				5DA5CA0C163B04D200CF1601 /* View Controllers */,
 				5DA5C9F3163B018D00CF1601 /* AppDelegate.h */,
 				5DA5C9F4163B018D00CF1601 /* AppDelegate.m */,
@@ -196,6 +197,13 @@
 			name = "Analytics View Controller";
 			sourceTree = "<group>";
 		};
+		5DC4046A168C21F7000AFBAE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,6 +215,7 @@
 				5DA5C9DD163B018D00CF1601 /* Frameworks */,
 				5DA5C9DE163B018D00CF1601 /* Resources */,
 				56A64F55F50B40D0BA46153C /* Copy Pods Resources */,
+				5DC40469168C217D000AFBAE /* Show TODO's and FIXME's as warnings */,
 			);
 			buildRules = (
 			);
@@ -273,6 +282,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		5DC40469168C217D000AFBAE /* Show TODO's and FIXME's as warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Show TODO's and FIXME's as warnings";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\n\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

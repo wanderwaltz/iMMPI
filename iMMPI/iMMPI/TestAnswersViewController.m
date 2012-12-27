@@ -11,6 +11,7 @@
 #endif
 
 #import "TestAnswersViewController.h"
+#import "Questionnaire.h"
 
 
 #pragma mark -
@@ -23,6 +24,10 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
 #pragma mark TestAnswersViewController private
 
 @interface TestAnswersViewController ()
+{
+    Questionnaire *_questionnaire;
+}
+
 @end
 
 
@@ -40,7 +45,8 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
     
     if (self != nil)
     {
-        
+        _questionnaire = [Questionnaire newForGender: GenderMale
+                                            ageGroup: AgeGroupAdult];
     }
     return self;
 }
