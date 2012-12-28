@@ -15,6 +15,7 @@
 
     #import "FRBCommon.h"
     #import "FRBDispatch.h"
+    #import "FRBDatePickerPopover.h"
 
     #import "Strings.h"
 #endif

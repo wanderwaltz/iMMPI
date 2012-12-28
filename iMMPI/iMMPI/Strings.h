@@ -17,4 +17,6 @@
 
 #define ___Unknown @"Неизвестно"
 
+#define ___Select_Date @"Выберите дату"
+
 #endif

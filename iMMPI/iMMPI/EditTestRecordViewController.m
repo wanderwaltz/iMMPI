@@ -29,7 +29,7 @@ enum
 #pragma mark -
 #pragma mark EditTestRecordViewController private
 
-@interface EditTestRecordViewController()
+@interface EditTestRecordViewController()<FRBDatePickerPopoverDateDelegate>
 {
     IBOutlet UITextField *_fullNameTextField;
     IBOutlet UILabel     *_genderLabel;
@@ -47,6 +47,7 @@ enum
     NSDateFormatter *_dateFormatter;
     
     FRBKeyedTargetAction *_cellSelectActions;
+    FRBDatePickerPopover *_datePickerPopover;
 }
 
 @end
@@ -96,6 +97,10 @@ enum
 {
     [super viewDidLoad];
     [self updateUI];
+    
+    _datePickerPopover = [FRBDatePickerPopover new];
+    _datePickerPopover.title        = ___Select_Date;
+    _datePickerPopover.dateDelegate = self;
 }
 
 - (void) viewDidAppear: (BOOL) animated
@@ -152,7 +157,11 @@ enum
 
 - (void) selectDate
 {
-    
+    [_datePickerPopover dismissPopoverAnimated: NO];
+    [_datePickerPopover presentPopoverFromRect: _dateTableViewCell.bounds
+                                        inView: _dateTableViewCell
+                      permittedArrowDirections: UIPopoverArrowDirectionAny
+                                      animated: YES];
 }
 
 
@@ -163,6 +172,17 @@ enum
 didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
     [_cellSelectActions doActionForKey: @(indexPath.row)];
+}
+
+
+#pragma mark -
+#pragma mark FRBDatePickerPopoverDateDelegate
+
+- (void) FRBDatePickerPopover: (FRBDatePickerPopover *) popover
+                didSelectDate: (NSDate *) date
+{
+    _selectedDate = date;
+    [self updateUI];
 }
 
 
