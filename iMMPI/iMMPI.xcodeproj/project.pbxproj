@@ -413,7 +413,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "appledoc --project-name iMMPI --project-company \"Frostbit\" --company-id com.frostbit --output Appledoc --logformat xcode --keep-intermediate-files --no-create-docset .";
+			shellScript = "appledoc --project-name iMMPI --project-company \"Frostbit\" --company-id com.frostbit --output Appledoc --logformat xcode --keep-intermediate-files --no-create-docset iMMPI";
 		};
 /* End PBXShellScriptBuildPhase section */
 

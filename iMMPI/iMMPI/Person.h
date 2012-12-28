@@ -13,6 +13,8 @@
 #pragma mark Person interface
 
 /*! A concrete implementation of Person protocol.
+ 
+ Note that when initializing a Person instance with -init method, default gender value will be GenderMale and default ageGroup value will be AgeGroupAdult; name property defaults to nil.
  */
 @interface Person : NSObject<Person>
 
