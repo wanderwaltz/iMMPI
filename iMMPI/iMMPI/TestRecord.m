@@ -17,4 +17,21 @@
 #pragma mark TestRecord implementation
 
 @implementation TestRecord
+
+#pragma mark -
+#pragma mark initialization methods
+
+- (id) init
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        _person = [Person new];
+        _date   = [NSDate date];
+    }
+    
+    return self;
+}
+
 @end

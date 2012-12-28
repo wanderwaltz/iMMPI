@@ -11,6 +11,7 @@
 #endif
 
 #import "RecordsListViewController.h"
+#import "EditTestRecordViewController.h"
 #import "Model.h"
 
 
@@ -19,13 +20,14 @@
 
 static NSString * const kRecordCellIdentifier = @"RecordCell";
 
-static NSString * const kSegueAddRecord = @"com.immpi.segue.addRecord";
+static NSString * const kSegueAddRecord  = @"com.immpi.segue.addRecord";
+static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
 
 
 #pragma mark -
 #pragma mark RecordsListViewController private
 
-@interface RecordsListViewController ()
+@interface RecordsListViewController()<EditTestRecordViewControllerDelegate>
 {
     NSMutableArray *_testRecords;
     
@@ -62,23 +64,35 @@ static NSString * const kSegueAddRecord = @"com.immpi.segue.addRecord";
 #pragma mark -
 #pragma mark navigation
 
-- (IBAction) cancelAddingRecord: (UIStoryboardSegue *) segue
-{
-    [self dismissViewControllerAnimated: YES completion: nil];
-}
-
-
-- (IBAction) confirmAddingRecord: (UIStoryboardSegue *) segue
-{
-    [self dismissViewControllerAnimated: YES completion: nil];
-}
-
-
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
     if ([segue.identifier isEqualToString: kSegueAddRecord])
     {
-
+        EditTestRecordViewController *controller =
+        (id)[segue.destinationViewController viewControllers][0];
+        
+        FRB_AssertClass(controller, EditTestRecordViewController);
+        
+        controller.delegate = self;
+        controller.record   = [TestRecord new];
+        controller.title    = ___New_Record;
+    }
+    else if ([segue.identifier isEqualToString: kSegueEditRecord])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        
+        FRB_AssertNotNil(indexPath);
+        
+        id<TestRecord> record = [self testRecordAtIndexPath: indexPath];
+        
+        
+        EditTestRecordViewController *controller = segue.destinationViewController;
+        
+        FRB_AssertClass(controller, EditTestRecordViewController);
+        
+        controller.delegate = self;
+        controller.title    = ___Edit_Record;
+        controller.record   = record;
     }
 }
 
@@ -121,6 +135,33 @@ static NSString * const kSegueAddRecord = @"com.immpi.segue.addRecord";
     cell.detailTextLabel.text = [_dateFormatter stringFromDate: record.date];
     
     return cell;
+}
+
+
+#pragma mark -
+#pragma mark EditTestRecordViewControllerDelegate
+
+- (void) editTestRecordViewController: (EditTestRecordViewController *) controller
+               didFinishEditingRecord: (id<TestRecord>) record
+{
+    // In this case, we've adding a new record (form is presented modally)
+    if (controller.navigationController.presentingViewController != nil)
+    {
+        [self dismissViewControllerAnimated: YES
+                                 completion: nil];
+        
+        if (record != nil)
+        {
+            [_testRecords addObject: record];
+            [self.tableView reloadData];
+        }
+    }
+    else
+    {
+        [self.navigationController popToViewController: self
+                                              animated: YES];
+        [self.tableView reloadData];
+    }
 }
 
 @end

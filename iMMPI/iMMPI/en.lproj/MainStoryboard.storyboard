@@ -35,7 +35,7 @@
                                 </view>
                                 <connections>
                                     <segue destination="yLl-co-mCt" kind="push" id="gv3-rj-vhd"/>
-                                    <segue destination="Pb1-6N-Afb" kind="push" trigger="accessoryAction" id="ubi-MX-6ab"/>
+                                    <segue destination="Pb1-6N-Afb" kind="push" identifier="com.immpi.segue.editRecord" trigger="accessoryAction" id="ubi-MX-6ab"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -54,7 +54,6 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83j-qF-MIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="0Oy-eu-bc5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1166" y="-245"/>
         </scene>
@@ -219,12 +218,12 @@
                     <navigationItem key="navigationItem" title="Новая запись" id="aHm-LL-G1J">
                         <barButtonItem key="leftBarButtonItem" title="Отмена" id="k3N-dx-OVP">
                             <connections>
-                                <segue destination="hcX-uC-MSe" kind="unwind" unwindAction="cancelAddingRecord:" id="ZIl-vf-ZYH"/>
+                                <action selector="cancelButtonAction:" destination="Pb1-6N-Afb" id="8Mb-cb-yEr"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Сохранить" style="done" id="Gt3-hM-01L">
                             <connections>
-                                <segue destination="0Oy-eu-bc5" kind="unwind" unwindAction="confirmAddingRecord:" id="Vpp-K5-gHJ"/>
+                                <action selector="saveButtonAction:" destination="Pb1-6N-Afb" id="Oja-1g-Abp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -239,7 +238,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTN-tL-7KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="hcX-uC-MSe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3027" y="-1015"/>
         </scene>
@@ -395,6 +393,8 @@
         <class className="EditTestRecordViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTestRecordViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cancelButtonAction:"/>
+                <relationship kind="action" name="saveButtonAction:"/>
                 <relationship kind="outlet" name="_ageGroupLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="_ageGroupTableViewCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="_dateLabel" candidateClass="UILabel"/>
@@ -409,10 +409,6 @@
         </class>
         <class className="RecordsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecordsListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelAddingRecord:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="confirmAddingRecord:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
         </class>
         <class className="StatementTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StatementTableViewCell.h"/>

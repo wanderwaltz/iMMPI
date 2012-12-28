@@ -17,4 +17,20 @@
 #pragma mark Person implementation
 
 @implementation Person
+
+#pragma mark -
+#pragma mark initialization methods
+
+- (id) init
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        _ageGroup = AgeGroupAdult;
+        _gender   = GenderMale;
+    }
+    return self;
+}
+
 @end

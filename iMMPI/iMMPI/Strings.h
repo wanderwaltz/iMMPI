@@ -19,4 +19,7 @@
 
 #define ___Select_Date @"Выберите дату"
 
+#define ___New_Record  @"Новая запись"
+#define ___Edit_Record @"Редактировать запись"
+
 #endif

@@ -39,10 +39,11 @@ enum
     IBOutlet UITableViewCell *_genderTableViewCell;
     IBOutlet UITableViewCell *_ageGroupTableViewCell;
     IBOutlet UITableViewCell *_dateTableViewCell;
-    
-    Gender   _selectedGender;
-    AgeGroup _selectedAgeGroup;
-    NSDate  *_selectedDate;
+        
+    Gender    _selectedGender;
+    AgeGroup  _selectedAgeGroup;
+    NSDate   *_selectedDate;
+    NSString *_personName;
     
     NSDateFormatter *_dateFormatter;
     
@@ -57,6 +58,51 @@ enum
 #pragma mark EditTestRecordViewController implementation
 
 @implementation EditTestRecordViewController
+
+#pragma mark -
+#pragma mark properties
+
+- (void) setRecord:(id<TestRecord>)record
+{
+    _record = record;
+    
+    _personName       = record.person.name;
+    _selectedGender   = record.person.gender;
+    _selectedAgeGroup = record.person.ageGroup;
+    _selectedDate     = record.date;
+    
+    [self updateUI];
+}
+
+
+#pragma mark -
+#pragma mark actions
+
+- (IBAction) cancelButtonAction: (id) sender
+{
+    if ([_delegate respondsToSelector: @selector(editTestRecordViewController:didFinishEditingRecord:)])
+    {
+        [_delegate editTestRecordViewController: self
+                         didFinishEditingRecord: nil];
+    }
+}
+
+
+- (IBAction) saveButtonAction: (id) sender
+{
+    _record.person.name     = _personName;
+    _record.person.gender   = _selectedGender;
+    _record.person.ageGroup = _selectedAgeGroup;
+    _record.date            = _selectedDate;
+    
+    if ([_delegate respondsToSelector: @selector(editTestRecordViewController:didFinishEditingRecord:
+                                                 )])
+    {
+        [_delegate editTestRecordViewController: self
+                         didFinishEditingRecord: _record];
+    }
+}
+
 
 #pragma mark -
 #pragma mark initialization methods
@@ -89,7 +135,6 @@ enum
 }
 
 
-
 #pragma mark -
 #pragma mark view lifecycle
 
@@ -101,6 +146,10 @@ enum
     _datePickerPopover = [FRBDatePickerPopover new];
     _datePickerPopover.title        = ___Select_Date;
     _datePickerPopover.dateDelegate = self;
+    
+    [_fullNameTextField addTarget: self
+                           action: @selector(textFieldDidChange:)
+                 forControlEvents: UIControlEventEditingChanged];
 }
 
 - (void) viewDidAppear: (BOOL) animated
@@ -129,8 +178,17 @@ enum
         default: _genderLabel.text = ___Unknown; break;
     }
     
-    
-    _dateLabel.text = [_dateFormatter stringFromDate: _selectedDate];
+    _fullNameTextField.text = _personName;
+    _dateLabel.text         = [_dateFormatter stringFromDate: _selectedDate];
+}
+
+
+#pragma mark -
+#pragma mark actions
+
+- (void) textFieldDidChange: (id) sender
+{
+    _personName = _fullNameTextField.text;
 }
 
 
