@@ -29,8 +29,7 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
 
 @interface RecordsListViewController()<EditTestRecordViewControllerDelegate>
 {
-    NSMutableArray *_testRecords;
-    
+    JSONTestRecordsModel    *_model;
     NSDateFormatter *_dateFormatter;
 }
 
@@ -51,7 +50,7 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
     
     if (self != nil)
     {
-        _testRecords = [NSMutableArray new];
+        _model = [JSONTestRecordsModel new];
         
         _dateFormatter = [NSDateFormatter new];
         _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
@@ -102,7 +101,7 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
 
 - (id<TestRecord>) testRecordAtIndexPath: (NSIndexPath *) indexPath
 {
-    return _testRecords[indexPath.row];
+    return [_model objectAtIndexPath: indexPath];
 }
 
 
@@ -111,14 +110,14 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView *) tableView
 {
-    return 1;
+    return [_model numberOfSections];
 }
 
 
 - (NSInteger) tableView: (UITableView *) tableView
   numberOfRowsInSection: (NSInteger) section
 {
-    return _testRecords.count;
+    return [_model numberOfRowsInSection: section];
 }
 
 
@@ -152,7 +151,7 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
         
         if (record != nil)
         {
-            [_testRecords addObject: record];
+            [_model addNewObject: record];
             [self.tableView reloadData];
         }
     }
@@ -160,7 +159,12 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
     {
         [self.navigationController popToViewController: self
                                               animated: YES];
-        [self.tableView reloadData];
+        
+        if (record != nil)
+        {
+            [_model updateObject: record];
+            [self.tableView reloadData];
+        }
     }
 }
 

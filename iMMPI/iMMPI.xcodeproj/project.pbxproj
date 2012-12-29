@@ -46,6 +46,10 @@
 		5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40481168C41A7000AFBAE /* TestRecord.m */; };
 		5DC4048C168C4AB3000AFBAE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4048B168C4AB3000AFBAE /* Person.m */; };
 		5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */; };
+		5DC973B0168F08D200C496F0 /* JSONTestRecordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973AF168F08D200C496F0 /* JSONTestRecordsModel.m */; };
+		5DC973B3168F0CD200C496F0 /* JSONTestRecordModelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973B2168F0CD200C496F0 /* JSONTestRecordModelElement.m */; };
+		5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
+		5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
 		631F7A52D295429BB0A3F386 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D76D094067F4B558239B3CE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +109,15 @@
 		5DC4048B168C4AB3000AFBAE /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTestRecordViewController.h; sourceTree = "<group>"; };
 		5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTestRecordViewController.m; sourceTree = "<group>"; };
+		5DC973AC168F085100C496F0 /* MutableTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutableTableViewModel.h; sourceTree = "<group>"; };
+		5DC973AE168F08D200C496F0 /* JSONTestRecordsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordsModel.h; sourceTree = "<group>"; };
+		5DC973AF168F08D200C496F0 /* JSONTestRecordsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordsModel.m; sourceTree = "<group>"; };
+		5DC973B1168F0CD200C496F0 /* JSONTestRecordModelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordModelElement.h; sourceTree = "<group>"; };
+		5DC973B2168F0CD200C496F0 /* JSONTestRecordModelElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordModelElement.m; sourceTree = "<group>"; };
+		5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityFunctions.h; sourceTree = "<group>"; };
+		5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
+		5DCC9647168DC1D8004F8D4E /* JSONTestRecordSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordSerialization.h; sourceTree = "<group>"; };
+		5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordSerialization.m; sourceTree = "<group>"; };
 		6D76D094067F4B558239B3CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		886E7B631E6B483C8375754E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -132,9 +145,8 @@
 			children = (
 				5D5E05BE1646521700A5A704 /* Model.h */,
 				5DC40483168C446C000AFBAE /* Protocols */,
-				5DC40489168C4AA2000AFBAE /* Test Answers */,
-				5DC40477168C3228000AFBAE /* Test Record */,
-				5D5E05BA164651AE00A5A704 /* Questionnaire */,
+				5DC973AD168F08B600C496F0 /* JSON Test Records Model */,
+				5DC973AB168F082200C496F0 /* Data Model Objects */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -186,8 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				5DC0B2C4168CDB790035A910 /* Strings.h */,
+				5DCC9642168DC12B004F8D4E /* Utils */,
 				5D5E05B9164651A800A5A704 /* Model */,
-				5DC4046A168C21F7000AFBAE /* Views */,
 				5DC40473168C2D49000AFBAE /* Table View Cells */,
 				5DA5CA0C163B04D200CF1601 /* View Controllers */,
 				5DA5C9F3163B018D00CF1601 /* AppDelegate.h */,
@@ -258,13 +270,6 @@
 			name = "Analytics View Controller";
 			sourceTree = "<group>";
 		};
-		5DC4046A168C21F7000AFBAE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +282,7 @@
 		5DC40477168C3228000AFBAE /* Test Record */ = {
 			isa = PBXGroup;
 			children = (
+				5DCC9646168DC1BD004F8D4E /* Test Record Serialization */,
 				5DC40480168C41A7000AFBAE /* TestRecord.h */,
 				5DC40481168C41A7000AFBAE /* TestRecord.m */,
 				5DC4048A168C4AB3000AFBAE /* Person.h */,
@@ -293,6 +299,7 @@
 				5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */,
 				5DC40487168C452E000AFBAE /* StatementProtocol.h */,
 				5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */,
+				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -306,6 +313,53 @@
 				5DC4047C168C3259000AFBAE /* Answer.m */,
 			);
 			name = "Test Answers";
+			sourceTree = "<group>";
+		};
+		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5DC40489168C4AA2000AFBAE /* Test Answers */,
+				5DC40477168C3228000AFBAE /* Test Record */,
+				5D5E05BA164651AE00A5A704 /* Questionnaire */,
+			);
+			name = "Data Model Objects";
+			sourceTree = "<group>";
+		};
+		5DC973AD168F08B600C496F0 /* JSON Test Records Model */ = {
+			isa = PBXGroup;
+			children = (
+				5DC973B4168F0D5F00C496F0 /* private */,
+				5DC973AE168F08D200C496F0 /* JSONTestRecordsModel.h */,
+				5DC973AF168F08D200C496F0 /* JSONTestRecordsModel.m */,
+			);
+			name = "JSON Test Records Model";
+			sourceTree = "<group>";
+		};
+		5DC973B4168F0D5F00C496F0 /* private */ = {
+			isa = PBXGroup;
+			children = (
+				5DC973B1168F0CD200C496F0 /* JSONTestRecordModelElement.h */,
+				5DC973B2168F0CD200C496F0 /* JSONTestRecordModelElement.m */,
+			);
+			name = private;
+			sourceTree = "<group>";
+		};
+		5DCC9642168DC12B004F8D4E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */,
+				5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		5DCC9646168DC1BD004F8D4E /* Test Record Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				5DCC9647168DC1D8004F8D4E /* JSONTestRecordSerialization.h */,
+				5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */,
+			);
+			name = "Test Record Serialization";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +488,10 @@
 				5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */,
 				5DC4048C168C4AB3000AFBAE /* Person.m in Sources */,
 				5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */,
+				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
+				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
+				5DC973B0168F08D200C496F0 /* JSONTestRecordsModel.m in Sources */,
+				5DC973B3168F0CD200C496F0 /* JSONTestRecordModelElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
