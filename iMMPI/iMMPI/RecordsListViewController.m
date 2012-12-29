@@ -52,17 +52,29 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
     
     if (self != nil)
     {
-        _storage = [JSONTestRecordsStorage new];
-        [_storage loadStoredTestRecords];
-        
         _model = [TestRecordModelByDate new];
-        [_model addObjectsFromArray: [_storage allTestRecords]];
-        
+    
         _dateFormatter = [NSDateFormatter new];
         _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
         _dateFormatter.timeStyle = NSDateFormatterNoStyle;
     }
     return self;
+}
+
+
+#pragma mark -
+#pragma mark view lifecycle
+
+- (void) viewWillAppear: (BOOL) animated
+{
+    [super viewWillAppear: animated];
+    
+    // We do init storage here since if the view never appears
+    // there is no sense loading the records anyway.
+    //
+    // Once the storage has been initialized, this method does
+    // nothing.
+    [self initStorageInBackgroundIfNeeded];
 }
 
 
@@ -104,6 +116,28 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
 
 #pragma mark -
 #pragma mark private
+
+- (void) initStorageInBackgroundIfNeeded
+{
+    if (_storage == nil)
+    {
+        _storage = [JSONTestRecordsStorage new];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [_storage loadStoredTestRecords];
+            NSArray *allRecords = [_storage allTestRecords];
+            
+            if (allRecords.count > 0)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_model addObjectsFromArray: allRecords];
+                    [self.tableView reloadData];
+                });
+            }
+        });
+    }
+}
+
 
 - (id<TestRecord>) testRecordAtIndexPath: (NSIndexPath *) indexPath
 {
