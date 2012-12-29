@@ -22,4 +22,8 @@
 - (BOOL) addNewObject: (id<TestRecord>) record;
 - (BOOL) updateObject: (id<TestRecord>) record;
 
+
+
+- (void) loadRecordsFromDisk;
+
 @end

@@ -15,6 +15,13 @@
 
 
 #pragma mark -
+#pragma mark Static constants
+
+static NSString * const kPathExtension = @"json";
+static NSString * const kRecordsFolder = @"Records";
+
+
+#pragma mark -
 #pragma mark JSONTestRecordsModel private
 
 @interface JSONTestRecordsModel()
@@ -39,21 +46,76 @@
 
 - (id) init
 {
+    NSArray *directories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *storedRecordsPath = [[directories lastObject] stringByAppendingPathComponent:
+                          kRecordsFolder];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath: storedRecordsPath])
+    {
+        NSError *error = nil;
+        
+        BOOL created =
+        [fileManager createDirectoryAtPath: storedRecordsPath
+               withIntermediateDirectories: YES
+                                attributes: nil
+                                     error: &error];
+        
+        if (!created)
+        {
+            NSLog(@"Failed to create directory at path '%@' with error: %@",
+                  storedRecordsPath, error);
+            return nil;
+        }
+    }
+    
     self = [super init];
     
     if (self != nil)
     {
         _elements = [NSMutableArray array];
         
-        NSArray *directories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        
-        _storedRecordsPath = [directories lastObject];
+        _storedRecordsPath = storedRecordsPath;
         
         _dateFormatter = [NSDateFormatter new];
         _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
         _dateFormatter.timeStyle = NSDateFormatterNoStyle;
     }
     return self;
+}
+
+
+#pragma mark -
+#pragma mark methods
+
+- (void) loadRecordsFromDisk
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    NSArray *subpaths = [fileManager subpathsAtPath: _storedRecordsPath];
+    
+    for (NSString *fileName in subpaths)
+    {
+        if ([[fileName pathExtension] isEqualToString: kPathExtension])
+        {
+            NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
+            
+            NSData *data = [NSData dataWithContentsOfFile: path];
+            
+            id<TestRecord> record = [JSONTestRecordSerialization testRecordFromData: data];
+            
+            if (record != nil)
+            {
+                JSONTestRecordModelElement *element = [JSONTestRecordModelElement new];
+                element.record   = record;
+                element.fileName = fileName;
+                
+                [_elements addObject: element];
+            }
+        }
+    }
 }
 
 
@@ -145,15 +207,21 @@
 {
     NSString *candidate = [NSString stringWithFormat: @"%@ - %@",
                            record.person.name, [_dateFormatter stringFromDate: record.date]];
-    NSString *extension = @"json";
-    NSString *fileName  = [candidate stringByAppendingPathExtension: extension];
+    
+    NSCharacterSet *illegalFileNameCharacters =
+    [NSCharacterSet characterSetWithCharactersInString: @"/\\?%*|\"<>$&@"];
+
+    candidate = [[candidate componentsSeparatedByCharactersInSet: illegalFileNameCharacters]
+                 componentsJoinedByString: @""];
+    
+    NSString *fileName  = [candidate stringByAppendingPathExtension: kPathExtension];
     NSInteger attempts  = 0;
     
     while (![self fileNameIsAvailable: fileName])
     {
         attempts++;
         fileName = [[candidate stringByAppendingFormat: @" %d", attempts]
-                    stringByAppendingPathExtension: extension];
+                    stringByAppendingPathExtension: kPathExtension];
     }
     
     return fileName;

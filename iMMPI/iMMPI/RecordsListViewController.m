@@ -50,7 +50,10 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
     
     if (self != nil)
     {
-        _model = [JSONTestRecordsModel new];
+        JSONTestRecordsModel *model = [JSONTestRecordsModel new];
+        [model loadRecordsFromDisk];
+        
+        _model = model;
         
         _dateFormatter = [NSDateFormatter new];
         _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
