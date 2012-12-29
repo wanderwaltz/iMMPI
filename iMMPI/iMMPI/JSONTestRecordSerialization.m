@@ -34,6 +34,9 @@ static NSString * const kJSONValueAgeGroupTeen  = @"teen";
 
 static NSString * const kJSONValueUnknown = @"unknown";
 
+static NSString * const kJSONValueAnswerTypePositive = @"YES";
+static NSString * const kJSONValueAnswerTypeNegative = @"NO";
+
 
 #pragma mark -
 #pragma mark JSONTestRecordSerialization implementation
@@ -52,6 +55,18 @@ static NSString * const kJSONValueUnknown = @"unknown";
     json[kJSONKeyGender]   = nil2Null([self   encodeGender: testRecord.person.gender]);
     json[kJSONKeyAgeGroup] = nil2Null([self encodeAgeGroup: testRecord.person.ageGroup]);
     json[kJSONKeyDate]     = nil2Null([[self dateFormatter] stringFromDate: testRecord.date]);
+    
+    NSMutableArray *answers = [NSMutableArray array];
+    
+    json[kJSONKeyAnswers] = answers;
+    
+    [testRecord.testAnswers enumerateAnswers:
+     ^(NSInteger statementID, AnswerType answer) {
+         [answers addObject: @{
+       kJSONKeyStatementID : @(statementID),
+    kJSONKeyStatementAnswer: [self encodeAnswerType: answer]
+          }];
+     }];
     
     NSError *error = nil;
     NSData  *data  = [NSJSONSerialization dataWithJSONObject: json
@@ -78,6 +93,25 @@ static NSString * const kJSONValueUnknown = @"unknown";
         record.person.ageGroup = [self decodeAgeGroup: dictionary[kJSONKeyAgeGroup]];
         record.date            = [[self dateFormatter] dateFromString: null2Nil(
                                                                                 dictionary[kJSONKeyDate])];
+        
+        NSArray *answers = dictionary[kJSONKeyAnswers];
+        
+        if ((answers != nil) && [answers isKindOfClass: [NSArray class]])
+        {
+            for (NSDictionary *answer in answers)
+            {
+                if ([answer isKindOfClass: [NSDictionary class]])
+                {
+                    id statementIDJSON = null2Nil(answer[kJSONKeyStatementID]);
+                    
+                    if ([statementIDJSON isKindOfClass: [NSNumber class]])
+                    {
+                        [record.testAnswers setAnswerType: [self decodeAnswerType: answer[kJSONKeyStatementAnswer]]
+                                           forStatementID: [statementIDJSON integerValue]];
+                    }
+                }
+            }
+        }
     }
     
     return record;
@@ -150,6 +184,36 @@ static NSString * const kJSONValueUnknown = @"unknown";
             return AgeGroupUnknown;
     }
     else return AgeGroupUnknown;
+}
+
+
++ (id) encodeAnswerType: (AnswerType) answerType
+{
+    switch (answerType)
+    {
+        case AnswerTypePositive: return kJSONValueAnswerTypePositive; break;
+        case AnswerTypeNegative: return kJSONValueAnswerTypeNegative; break;
+        case AnswerTypeUnknown:  return kJSONValueUnknown;            break;
+    }
+}
+
+
++ (AnswerType) decodeAnswerType: (id) answerTypeJSON
+{
+    answerTypeJSON = null2Nil(answerTypeJSON);
+    
+    if ([answerTypeJSON isKindOfClass: [NSString class]])
+    {
+        if ([answerTypeJSON isEqualToString: kJSONValueAnswerTypePositive])
+            return AnswerTypePositive;
+        
+        else if ([answerTypeJSON isEqualToString: kJSONValueAnswerTypeNegative])
+            return AnswerTypeNegative;
+        
+        else
+            return AnswerTypeUnknown;
+    }
+    else return AnswerTypeUnknown;
 }
 
 

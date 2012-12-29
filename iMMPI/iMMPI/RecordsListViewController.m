@@ -12,6 +12,7 @@
 
 #import "RecordsListViewController.h"
 #import "EditTestRecordViewController.h"
+#import "TestAnswersViewController.h"
 #import "Model.h"
 
 
@@ -20,8 +21,9 @@
 
 static NSString * const kRecordCellIdentifier = @"RecordCell";
 
-static NSString * const kSegueAddRecord  = @"com.immpi.segue.addRecord";
-static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
+static NSString * const kSegueAddRecord   = @"com.immpi.segue.addRecord";
+static NSString * const kSegueEditRecord  = @"com.immpi.segue.editRecord";
+static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 
 
 #pragma mark -
@@ -83,6 +85,7 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
+    // Creating a new test record
     if ([segue.identifier isEqualToString: kSegueAddRecord])
     {
         EditTestRecordViewController *controller =
@@ -94,6 +97,8 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
         controller.record   = [TestRecord new];
         controller.title    = ___New_Record;
     }
+    
+    // Editing existing test record
     else if ([segue.identifier isEqualToString: kSegueEditRecord])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
@@ -110,6 +115,24 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
         controller.delegate = self;
         controller.title    = ___Edit_Record;
         controller.record   = record;
+    }
+    
+    // Editing test answers for a record
+    else if ([segue.identifier isEqualToString: kSegueEditAnswers])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        
+        FRB_AssertNotNil(indexPath);
+        
+        id<TestRecord> record = [self testRecordAtIndexPath: indexPath];
+        
+        
+        TestAnswersViewController *controller = segue.destinationViewController;
+        
+        FRB_AssertClass(controller, TestAnswersViewController);
+        
+        controller.record  =   record;
+        controller.storage = _storage;
     }
 }
 

@@ -35,4 +35,14 @@
  */
 - (AnswerType) answerTypeForStatementID: (NSInteger) statementID;
 
+
+
+/*! This method enumerates all answers with type != AnswerTypeUnknown.
+ 
+ Ordering of the enumerating answers is undefined.
+ 
+ @param block Block to be called on each answer/statementID pair where answer != AnswerTypeUnknown
+ */
+- (void) enumerateAnswers: (void(^)(NSInteger statementID, AnswerType answer)) block;
+
 @end

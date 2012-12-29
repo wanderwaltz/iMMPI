@@ -231,15 +231,21 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 
 - (JSONTestRecordStorageElement *) elementForRecord: (id<TestRecord>) record
 {
-    for (JSONTestRecordStorageElement *element in _elements)
+    JSONTestRecordStorageElement *found = nil;
+    
+    if (record != nil)
     {
-        if (element.record == record)
+        for (JSONTestRecordStorageElement *element in _elements)
         {
-            return element;
+            if (element.record == record)
+            {
+                found = element;
+                break;
+            }
         }
     }
     
-    return nil;
+    return found;
 }
 
 

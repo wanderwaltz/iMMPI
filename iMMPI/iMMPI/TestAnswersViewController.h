@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
+
 
 #pragma mark -
 #pragma mark TestAnswersViewController interface
 
 @interface TestAnswersViewController : UITableViewController
+@property (strong, nonatomic) id<TestRecord> record;
+@property (strong, nonatomic) id<TestRecordStorage> storage;
+
 @end

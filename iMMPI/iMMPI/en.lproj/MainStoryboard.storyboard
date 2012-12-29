@@ -34,7 +34,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="yLl-co-mCt" kind="push" id="gv3-rj-vhd"/>
+                                    <segue destination="yLl-co-mCt" kind="push" identifier="com.immpi.segue.editAnswers" id="gv3-rj-vhd"/>
                                     <segue destination="Pb1-6N-Afb" kind="push" identifier="com.immpi.segue.editRecord" trigger="accessoryAction" id="ubi-MX-6ab"/>
                                 </connections>
                             </tableViewCell>

@@ -60,6 +60,8 @@
         _answersByID[@(statementID)] = answer;
     }
     
+    FRB_AssertClass(answer, Answer);
+    
     answer.answerType = answerType;
 }
 
@@ -68,9 +70,29 @@
 {
     Answer *answer = _answersByID[@(statementID)];
     
+    FRB_AssertClassOrNil(answer, Answer);
+    
     if (answer != nil) return answer.answerType;
     else
         return AnswerTypeUnknown;
+}
+
+
+- (void) enumerateAnswers: (void(^)(NSInteger statementID, AnswerType answer)) block
+{
+    if (block)
+    {
+        [_answersByID enumerateKeysAndObjectsUsingBlock:
+         ^(id key, Answer *answer, BOOL *stop) {
+             
+             FRB_AssertClass(answer, Answer);
+             
+             if (answer.answerType != AnswerTypeUnknown)
+             {
+                 block(answer.statementID, answer.answerType);
+             }
+        }];
+    }
 }
 
 @end

@@ -15,7 +15,7 @@
 
 /*! A concrete implementation of TestRecord protocol.
  
- Initializing this class instance with -init method will also create a Person object and set it as the person property value. Note that testAnswers will not be created by default, and this property value will be nil; date property defaults to the current date/time.
+ Initializing this class instance with -init method will also create a Person object and set it as the person property value. testAnswers property will be initialized with empty TestAnswers object; date property defaults to the current date/time.
  */
 @interface TestRecord : NSObject<TestRecord>
 

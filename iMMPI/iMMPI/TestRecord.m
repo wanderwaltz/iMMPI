@@ -29,6 +29,8 @@
     {
         _person = [Person new];
         _date   = [NSDate date];
+        
+        _testAnswers = [TestAnswers new];
     }
     
     return self;

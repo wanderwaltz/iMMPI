@@ -11,8 +11,6 @@
 #endif
 
 #import "TestAnswersViewController.h"
-#import "Questionnaire.h"
-
 #import "StatementTableViewCell.h"
 
 
@@ -40,20 +38,35 @@ static NSString * const kAnswerCellIdentifier = @"AnswerCell";
 @implementation TestAnswersViewController
 
 #pragma mark -
-#pragma mark initialization methods
+#pragma mark properties
 
-- (id) initWithCoder: (NSCoder *) aDecoder
+- (void) setRecord: (id<TestRecord>) record
 {
-    self = [super initWithCoder: aDecoder];
+    _record = record;
     
-    if (self != nil)
+    if (_record)
     {
-        _questionnaire = [Questionnaire newForGender: GenderMale
-                                            ageGroup: AgeGroupAdult];
-        
-        _answers = [TestAnswers new];
+        _questionnaire = [Questionnaire newForGender: record.person.gender
+                                            ageGroup: record.person.ageGroup];
+        _answers = record.testAnswers;
     }
-    return self;
+    else
+    {
+        _questionnaire = nil;
+        _answers       = nil;
+    }
+    
+    [self.tableView reloadData];
+}
+
+
+#pragma mark -
+#pragma mark view lifecycle
+
+- (void) viewWillDisappear: (BOOL) animated
+{
+    [super viewWillDisappear:  animated];
+    [_storage updateTestRecord: _record];
 }
 
 
