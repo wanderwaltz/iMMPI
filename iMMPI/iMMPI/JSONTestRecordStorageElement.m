@@ -1,5 +1,5 @@
 //
-//  JSONTestRecordModelElement.m
+//  JSONTestRecordStorageElement.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 29.12.12.
@@ -10,11 +10,11 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "JSONTestRecordModelElement.h"
+#import "JSONTestRecordStorageElement.h"
 
 
 #pragma mark -
-#pragma mark JSONTestRecordModelElement implementation
+#pragma mark JSONTestRecordStorageElement implementation
 
-@implementation JSONTestRecordModelElement
+@implementation JSONTestRecordStorageElement
 @end

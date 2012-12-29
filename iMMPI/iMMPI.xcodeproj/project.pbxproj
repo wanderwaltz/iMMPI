@@ -46,8 +46,9 @@
 		5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40481168C41A7000AFBAE /* TestRecord.m */; };
 		5DC4048C168C4AB3000AFBAE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4048B168C4AB3000AFBAE /* Person.m */; };
 		5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */; };
-		5DC973B0168F08D200C496F0 /* JSONTestRecordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973AF168F08D200C496F0 /* JSONTestRecordsModel.m */; };
-		5DC973B3168F0CD200C496F0 /* JSONTestRecordModelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973B2168F0CD200C496F0 /* JSONTestRecordModelElement.m */; };
+		5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */; };
+		5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
+		5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */; };
 		5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
 		5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
 		631F7A52D295429BB0A3F386 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D76D094067F4B558239B3CE /* libPods.a */; };
@@ -110,10 +111,13 @@
 		5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTestRecordViewController.h; sourceTree = "<group>"; };
 		5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTestRecordViewController.m; sourceTree = "<group>"; };
 		5DC973AC168F085100C496F0 /* MutableTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutableTableViewModel.h; sourceTree = "<group>"; };
-		5DC973AE168F08D200C496F0 /* JSONTestRecordsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordsModel.h; sourceTree = "<group>"; };
-		5DC973AF168F08D200C496F0 /* JSONTestRecordsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordsModel.m; sourceTree = "<group>"; };
-		5DC973B1168F0CD200C496F0 /* JSONTestRecordModelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordModelElement.h; sourceTree = "<group>"; };
-		5DC973B2168F0CD200C496F0 /* JSONTestRecordModelElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordModelElement.m; sourceTree = "<group>"; };
+		5DC973B1168F0CD200C496F0 /* JSONTestRecordStorageElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordStorageElement.h; sourceTree = "<group>"; };
+		5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordStorageElement.m; sourceTree = "<group>"; };
+		5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordStorageProtocol.h; sourceTree = "<group>"; };
+		5DC973BF168F214A00C496F0 /* JSONTestRecordsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordsStorage.h; sourceTree = "<group>"; };
+		5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordsStorage.m; sourceTree = "<group>"; };
+		5DC973C4168F243800C496F0 /* TestRecordModelByDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordModelByDate.h; sourceTree = "<group>"; };
+		5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordModelByDate.m; sourceTree = "<group>"; };
 		5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityFunctions.h; sourceTree = "<group>"; };
 		5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
 		5DCC9647168DC1D8004F8D4E /* JSONTestRecordSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordSerialization.h; sourceTree = "<group>"; };
@@ -145,7 +149,8 @@
 			children = (
 				5D5E05BE1646521700A5A704 /* Model.h */,
 				5DC40483168C446C000AFBAE /* Protocols */,
-				5DC973AD168F08B600C496F0 /* JSON Test Records Model */,
+				5DC973BC168F20C200C496F0 /* JSON Test Records Storage */,
+				5DC973C2168F240D00C496F0 /* Test Record Table Models */,
 				5DC973AB168F082200C496F0 /* Data Model Objects */,
 			);
 			name = Model;
@@ -300,6 +305,7 @@
 				5DC40487168C452E000AFBAE /* StatementProtocol.h */,
 				5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */,
 				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
+				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -325,23 +331,40 @@
 			name = "Data Model Objects";
 			sourceTree = "<group>";
 		};
-		5DC973AD168F08B600C496F0 /* JSON Test Records Model */ = {
-			isa = PBXGroup;
-			children = (
-				5DC973B4168F0D5F00C496F0 /* private */,
-				5DC973AE168F08D200C496F0 /* JSONTestRecordsModel.h */,
-				5DC973AF168F08D200C496F0 /* JSONTestRecordsModel.m */,
-			);
-			name = "JSON Test Records Model";
-			sourceTree = "<group>";
-		};
 		5DC973B4168F0D5F00C496F0 /* private */ = {
 			isa = PBXGroup;
 			children = (
-				5DC973B1168F0CD200C496F0 /* JSONTestRecordModelElement.h */,
-				5DC973B2168F0CD200C496F0 /* JSONTestRecordModelElement.m */,
+				5DC973B1168F0CD200C496F0 /* JSONTestRecordStorageElement.h */,
+				5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */,
 			);
 			name = private;
+			sourceTree = "<group>";
+		};
+		5DC973BC168F20C200C496F0 /* JSON Test Records Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5DC973B4168F0D5F00C496F0 /* private */,
+				5DC973BF168F214A00C496F0 /* JSONTestRecordsStorage.h */,
+				5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */,
+			);
+			name = "JSON Test Records Storage";
+			sourceTree = "<group>";
+		};
+		5DC973C2168F240D00C496F0 /* Test Record Table Models */ = {
+			isa = PBXGroup;
+			children = (
+				5DC973C3168F241C00C496F0 /* Test Record Model By Date */,
+			);
+			name = "Test Record Table Models";
+			sourceTree = "<group>";
+		};
+		5DC973C3168F241C00C496F0 /* Test Record Model By Date */ = {
+			isa = PBXGroup;
+			children = (
+				5DC973C4168F243800C496F0 /* TestRecordModelByDate.h */,
+				5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */,
+			);
+			name = "Test Record Model By Date";
 			sourceTree = "<group>";
 		};
 		5DCC9642168DC12B004F8D4E /* Utils */ = {
@@ -490,8 +513,9 @@
 				5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
-				5DC973B0168F08D200C496F0 /* JSONTestRecordsModel.m in Sources */,
-				5DC973B3168F0CD200C496F0 /* JSONTestRecordModelElement.m in Sources */,
+				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
+				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
+				5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

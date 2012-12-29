@@ -49,7 +49,7 @@ typedef enum : NSInteger
 #import "QuestionnaireProtocol.h"
 
 #import "MutableTableViewModel.h"
-
+#import "TestRecordStorageProtocol.h"
 
 #pragma mark -
 #pragma mark classes
@@ -65,6 +65,8 @@ typedef enum : NSInteger
 
 #import "JSONTestRecordSerialization.h"
 
-#import "JSONTestRecordsModel.h"
+#import "JSONTestRecordsStorage.h"
+
+#import "TestRecordModelByDate.h"
 
 #endif

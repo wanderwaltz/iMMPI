@@ -1,5 +1,5 @@
 //
-//  JSONTestRecordModelElement.h
+//  JSONTestRecordStorageElement.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 29.12.12.
@@ -10,9 +10,9 @@
 
 
 #pragma mark -
-#pragma mark JSONTestRecordModelElement interface
+#pragma mark JSONTestRecordStorageElement interface
 
-@interface JSONTestRecordModelElement : NSObject
+@interface JSONTestRecordStorageElement : NSObject
 
 @property (strong, nonatomic) id<TestRecord> record;
 @property (strong, nonatomic) NSString *fileName;

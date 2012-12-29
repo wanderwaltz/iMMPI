@@ -29,8 +29,10 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
 
 @interface RecordsListViewController()<EditTestRecordViewControllerDelegate>
 {
-    JSONTestRecordsModel    *_model;
-    NSDateFormatter *_dateFormatter;
+    id<TestRecordStorage>   _storage;
+    id<MutableTableViewModel> _model;
+    
+    NSDateFormatter  *_dateFormatter;
 }
 
 @end
@@ -50,10 +52,11 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
     
     if (self != nil)
     {
-        JSONTestRecordsModel *model = [JSONTestRecordsModel new];
-        [model loadRecordsFromDisk];
+        _storage = [JSONTestRecordsStorage new];
+        [_storage loadStoredTestRecords];
         
-        _model = model;
+        _model = [TestRecordModelByDate new];
+        [_model addObjectsFromArray: [_storage allTestRecords]];
         
         _dateFormatter = [NSDateFormatter new];
         _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
@@ -154,7 +157,8 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
         
         if (record != nil)
         {
-            [_model addNewObject: record];
+            [_model       addNewObject: record];
+            [_storage addNewTestRecord: record];
             [self.tableView reloadData];
         }
     }
@@ -165,7 +169,8 @@ static NSString * const kSegueEditRecord = @"com.immpi.segue.editRecord";
         
         if (record != nil)
         {
-            [_model updateObject: record];
+            [_model       updateObject: record];
+            [_storage updateTestRecord: record];
             [self.tableView reloadData];
         }
     }

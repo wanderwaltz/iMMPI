@@ -1,5 +1,5 @@
 //
-//  JSONTestRecordsModel.m
+//  JSONTestRecordsStorage.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 29.12.12.
@@ -10,21 +10,21 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "JSONTestRecordsModel.h"
-#import "JSONTestRecordModelElement.h"
+#import "JSONTestRecordsStorage.h"
+#import "JSONTestRecordStorageElement.h"
 
 
 #pragma mark -
 #pragma mark Static constants
 
-static NSString * const kPathExtension = @"json";
-static NSString * const kRecordsFolder = @"Records";
+static NSString * const kJSONPathExtension = @"json";
+static NSString * const kJSONRecordsFolder = @"JSONRecords";
 
 
 #pragma mark -
-#pragma mark JSONTestRecordsModel private
+#pragma mark JSONTestRecordStorage private
 
-@interface JSONTestRecordsModel()
+@interface JSONTestRecordsStorage()
 {
     NSMutableArray *_elements;
     
@@ -36,10 +36,9 @@ static NSString * const kRecordsFolder = @"Records";
 
 
 #pragma mark -
-#pragma mark JSONTestRecordsModel implementation
+#pragma mark JSONTestRecordsStorage implementation
 
-@implementation JSONTestRecordsModel
-
+@implementation JSONTestRecordsStorage
 
 #pragma mark -
 #pragma mark initialization methods
@@ -49,7 +48,7 @@ static NSString * const kRecordsFolder = @"Records";
     NSArray *directories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
     NSString *storedRecordsPath = [[directories lastObject] stringByAppendingPathComponent:
-                          kRecordsFolder];
+                                   kJSONRecordsFolder];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
@@ -88,67 +87,14 @@ static NSString * const kRecordsFolder = @"Records";
 
 
 #pragma mark -
-#pragma mark methods
+#pragma mark TestRecordStorage
 
-- (void) loadRecordsFromDisk
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    NSArray *subpaths = [fileManager subpathsAtPath: _storedRecordsPath];
-    
-    for (NSString *fileName in subpaths)
-    {
-        if ([[fileName pathExtension] isEqualToString: kPathExtension])
-        {
-            NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
-            
-            NSData *data = [NSData dataWithContentsOfFile: path];
-            
-            id<TestRecord> record = [JSONTestRecordSerialization testRecordFromData: data];
-            
-            if (record != nil)
-            {
-                JSONTestRecordModelElement *element = [JSONTestRecordModelElement new];
-                element.record   = record;
-                element.fileName = fileName;
-                
-                [_elements addObject: element];
-            }
-        }
-    }
-}
-
-
-#pragma mark -
-#pragma mark MutableTableViewModel
-
-- (NSUInteger) numberOfSections
-{
-    return 1;
-}
-
-
-- (NSUInteger) numberOfRowsInSection: (NSUInteger) section
-{
-    return _elements.count;
-}
-
-
-- (id<TestRecord>) objectAtIndexPath: (NSIndexPath *) indexPath
-{
-    JSONTestRecordModelElement *element = _elements[indexPath.row];
-    FRB_AssertClass(element, JSONTestRecordModelElement);
-    
-    return element.record;
-}
-
-
-- (BOOL) addNewObject: (id<TestRecord>) record
+- (BOOL) addNewTestRecord: (id<TestRecord>) testRecord
 {
     BOOL didAdd = NO;
     
-    JSONTestRecordModelElement *element = [JSONTestRecordModelElement new];
-    element.record = record;
+    JSONTestRecordStorageElement *element = [JSONTestRecordStorageElement new];
+    element.record = testRecord;
     
     [_elements addObject: element];
     didAdd = [self storeElement: element];
@@ -157,11 +103,11 @@ static NSString * const kRecordsFolder = @"Records";
 }
 
 
-- (BOOL) updateObject: (id<TestRecord>) record
+- (BOOL) updateTestRecord: (id<TestRecord>) testRecord
 {
     BOOL didUpdate = NO;
     
-    JSONTestRecordModelElement *element = [self elementForRecord: record];
+    JSONTestRecordStorageElement *element = [self elementForRecord: testRecord];
     
     if (element != nil)
     {
@@ -172,10 +118,55 @@ static NSString * const kRecordsFolder = @"Records";
 }
 
 
-#pragma mark -
-#pragma mark private: records persistent storage
+- (BOOL) loadStoredTestRecords
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    NSArray *subpaths = [fileManager subpathsAtPath: _storedRecordsPath];
+    
+    for (NSString *fileName in subpaths)
+    {
+        if ([[fileName pathExtension] isEqualToString: kJSONPathExtension])
+        {
+            NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
+            
+            NSData *data = [NSData dataWithContentsOfFile: path];
+            
+            id<TestRecord> record = [JSONTestRecordSerialization testRecordFromData: data];
+            
+            if (record != nil)
+            {
+                JSONTestRecordStorageElement *element = [JSONTestRecordStorageElement new];
+                element.record   = record;
+                element.fileName = fileName;
+                
+                [_elements addObject: element];
+            }
+        }
+    }
+    
+    return YES;
+}
 
-- (BOOL) storeElement: (JSONTestRecordModelElement *) element
+
+- (NSArray *) allTestRecords
+{
+    NSMutableArray *records = [NSMutableArray arrayWithCapacity: _elements.count];
+    
+    for (JSONTestRecordStorageElement *element in _elements)
+    {
+        if (element.record != nil)
+            [records addObject: element.record];
+    }
+    
+    return records;
+}
+
+
+#pragma mark -
+#pragma mark private
+
+- (BOOL) storeElement: (JSONTestRecordStorageElement *) element
 {
     BOOL didStore = NO;
     
@@ -210,18 +201,18 @@ static NSString * const kRecordsFolder = @"Records";
     
     NSCharacterSet *illegalFileNameCharacters =
     [NSCharacterSet characterSetWithCharactersInString: @"/\\?%*|\"<>$&@"];
-
+    
     candidate = [[candidate componentsSeparatedByCharactersInSet: illegalFileNameCharacters]
                  componentsJoinedByString: @""];
     
-    NSString *fileName  = [candidate stringByAppendingPathExtension: kPathExtension];
+    NSString *fileName  = [candidate stringByAppendingPathExtension: kJSONPathExtension];
     NSInteger attempts  = 0;
     
     while (![self fileNameIsAvailable: fileName])
     {
         attempts++;
         fileName = [[candidate stringByAppendingFormat: @" %d", attempts]
-                    stringByAppendingPathExtension: kPathExtension];
+                    stringByAppendingPathExtension: kJSONPathExtension];
     }
     
     return fileName;
@@ -238,9 +229,9 @@ static NSString * const kRecordsFolder = @"Records";
 }
 
 
-- (JSONTestRecordModelElement *) elementForRecord: (id<TestRecord>) record
+- (JSONTestRecordStorageElement *) elementForRecord: (id<TestRecord>) record
 {
-    for (JSONTestRecordModelElement *element in _elements)
+    for (JSONTestRecordStorageElement *element in _elements)
     {
         if (element.record == record)
         {
@@ -250,5 +241,6 @@ static NSString * const kRecordsFolder = @"Records";
     
     return nil;
 }
+
 
 @end

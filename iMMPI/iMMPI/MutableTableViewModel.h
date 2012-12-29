@@ -20,6 +20,8 @@
 
 - (id) objectAtIndexPath: (NSIndexPath *) indexPath;
 
+- (void) addObjectsFromArray: (NSArray *) array;
+
 - (BOOL) addNewObject: (id) object;
 - (BOOL) updateObject: (id) object;
 
