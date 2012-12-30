@@ -17,7 +17,7 @@
 #pragma mark -
 #pragma mark Static constants
 
-static NSString * const kAnswerCellIdentifier = @"AnswerCell";
+static NSString * const kAnswerCellIdentifier = @"com.immpi.cells.answer";
 
 
 #pragma mark -

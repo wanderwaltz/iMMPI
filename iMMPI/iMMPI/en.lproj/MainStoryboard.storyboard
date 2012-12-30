@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordCell" textLabel="GOF-40-pqb" detailTextLabel="KZo-xJ-oe5" rowHeight="44" style="IBUITableViewCellStyleValue1" id="WFc-UM-AKy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.record" textLabel="GOF-40-pqb" detailTextLabel="KZo-xJ-oe5" rowHeight="44" style="IBUITableViewCellStyleValue1" id="WFc-UM-AKy">
                                 <rect key="frame" x="0.0" y="22" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -286,7 +286,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnswerCell" rowHeight="53" id="iwU-6S-iub" customClass="StatementTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.answer" rowHeight="53" id="iwU-6S-iub" customClass="StatementTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="768" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -358,23 +358,39 @@
             </objects>
             <point key="canvasLocation" x="2235" y="236"/>
         </scene>
-        <!--Table View Controller - Анализ-->
+        <!--Analysis View Controller - Анализ-->
         <scene sceneID="O4d-EX-KCt">
             <objects>
-                <tableViewController id="F49-RI-GVa" sceneMemberID="viewController">
+                <tableViewController id="F49-RI-GVa" customClass="AnalysisViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pKI-E6-RgH">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="r2c-mq-F81">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.analyzerGroup" id="r2c-mq-F81" customClass="AnalyserTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fer-fQ-825">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="fer-fQ-825" firstAttribute="top" secondItem="r2c-mq-F81" secondAttribute="top" constant="11" id="0P7-jK-lEb"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fer-fQ-825" secondAttribute="trailing" constant="144" type="user" id="4ni-37-Jz0"/>
+                                    <constraint firstItem="fer-fQ-825" firstAttribute="leading" secondItem="r2c-mq-F81" secondAttribute="leading" constant="20" type="user" id="8s6-Bf-r38"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="_groupNameLabel" destination="fer-fQ-825" id="7A8-cR-bL3"/>
+                                    <outlet property="_lcGroupNameLabelLeft" destination="8s6-Bf-r38" id="k3M-oA-jz6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -390,11 +406,19 @@
         </scene>
     </scenes>
     <classes>
+        <class className="AnalyserTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyserTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_groupNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_lcGroupNameLabelLeft" candidateClass="NSLayoutConstraint"/>
+            </relationships>
+        </class>
+        <class className="AnalysisViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalysisViewController.h"/>
+        </class>
         <class className="EditTestRecordViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTestRecordViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="saveButtonAction:"/>
                 <relationship kind="outlet" name="_ageGroupLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="_ageGroupTableViewCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="_dateLabel" candidateClass="UILabel"/>

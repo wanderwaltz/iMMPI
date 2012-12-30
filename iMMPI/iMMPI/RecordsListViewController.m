@@ -19,7 +19,7 @@
 #pragma mark -
 #pragma mark Static constants
 
-static NSString * const kRecordCellIdentifier = @"RecordCell";
+static NSString * const kRecordCellIdentifier = @"com.immpi.cells.record";
 
 static NSString * const kSegueAddRecord   = @"com.immpi.segue.addRecord";
 static NSString * const kSegueEditRecord  = @"com.immpi.segue.editRecord";

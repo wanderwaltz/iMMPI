@@ -46,6 +46,11 @@
 		5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40481168C41A7000AFBAE /* TestRecord.m */; };
 		5DC4048C168C4AB3000AFBAE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4048B168C4AB3000AFBAE /* Person.m */; };
 		5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */; };
+		5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
+		5DC4ABF716902E9900E835B7 /* AnalyserGroupBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF616902E9900E835B7 /* AnalyserGroupBase.m */; };
+		5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */; };
+		5DC4ABFF16902FAF00E835B7 /* Analyser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABFE16902FAF00E835B7 /* Analyser.m */; };
+		5DC4AC0516903EA400E835B7 /* AnalyserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0416903EA400E835B7 /* AnalyserTableViewCell.m */; };
 		5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */; };
 		5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
 		5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */; };
@@ -110,6 +115,16 @@
 		5DC4048B168C4AB3000AFBAE /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTestRecordViewController.h; sourceTree = "<group>"; };
 		5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTestRecordViewController.m; sourceTree = "<group>"; };
+		5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.analysis.json; sourceTree = "<group>"; };
+		5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroup.h; sourceTree = "<group>"; };
+		5DC4ABF516902E9900E835B7 /* AnalyserGroupBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserGroupBase.h; sourceTree = "<group>"; };
+		5DC4ABF616902E9900E835B7 /* AnalyserGroupBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserGroupBase.m; sourceTree = "<group>"; };
+		5DC4ABF816902F2C00E835B7 /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
+		5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
+		5DC4ABFD16902FAF00E835B7 /* Analyser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analyser.h; sourceTree = "<group>"; };
+		5DC4ABFE16902FAF00E835B7 /* Analyser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analyser.m; sourceTree = "<group>"; };
+		5DC4AC0316903EA400E835B7 /* AnalyserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserTableViewCell.h; sourceTree = "<group>"; };
+		5DC4AC0416903EA400E835B7 /* AnalyserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserTableViewCell.m; sourceTree = "<group>"; };
 		5DC973AC168F085100C496F0 /* MutableTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutableTableViewModel.h; sourceTree = "<group>"; };
 		5DC973B1168F0CD200C496F0 /* JSONTestRecordStorageElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordStorageElement.h; sourceTree = "<group>"; };
 		5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordStorageElement.m; sourceTree = "<group>"; };
@@ -218,6 +233,7 @@
 		5DA5C9EB163B018D00CF1601 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */,
 				5D5E05B11646510700A5A704 /* mmpi.female.adult.json */,
 				5D5E05B21646510700A5A704 /* mmpi.female.teen.json */,
 				5D5E05B31646510700A5A704 /* mmpi.male.adult.json */,
@@ -233,7 +249,7 @@
 		5DA5CA0C163B04D200CF1601 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5DA5CA10163B050700CF1601 /* Analytics View Controller */,
+				5DA5CA10163B050700CF1601 /* Analysis View Controller */,
 				5DA5CA0F163B04F200CF1601 /* Test Answers View Controller */,
 				5DA5CA0E163B04E800CF1601 /* Edit Test Record View Controller */,
 				5DA5CA0D163B04DB00CF1601 /* Records List View Controller */,
@@ -268,11 +284,13 @@
 			name = "Test Answers View Controller";
 			sourceTree = "<group>";
 		};
-		5DA5CA10163B050700CF1601 /* Analytics View Controller */ = {
+		5DA5CA10163B050700CF1601 /* Analysis View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5DC4ABF816902F2C00E835B7 /* AnalysisViewController.h */,
+				5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */,
 			);
-			name = "Analytics View Controller";
+			name = "Analysis View Controller";
 			sourceTree = "<group>";
 		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
@@ -280,6 +298,8 @@
 			children = (
 				5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */,
 				5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */,
+				5DC4AC0316903EA400E835B7 /* AnalyserTableViewCell.h */,
+				5DC4AC0416903EA400E835B7 /* AnalyserTableViewCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -306,6 +326,7 @@
 				5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */,
 				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
 				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
+				5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -321,9 +342,29 @@
 			name = "Test Answers";
 			sourceTree = "<group>";
 		};
+		5DC4ABF416902E8200E835B7 /* private */ = {
+			isa = PBXGroup;
+			children = (
+				5DC4ABF516902E9900E835B7 /* AnalyserGroupBase.h */,
+				5DC4ABF616902E9900E835B7 /* AnalyserGroupBase.m */,
+			);
+			name = private;
+			sourceTree = "<group>";
+		};
+		5DC4ABFB16902F9500E835B7 /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				5DC4ABF416902E8200E835B7 /* private */,
+				5DC4ABFD16902FAF00E835B7 /* Analyser.h */,
+				5DC4ABFE16902FAF00E835B7 /* Analyser.m */,
+			);
+			name = Analysis;
+			sourceTree = "<group>";
+		};
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
 			isa = PBXGroup;
 			children = (
+				5DC4ABFB16902F9500E835B7 /* Analysis */,
 				5DC40489168C4AA2000AFBAE /* Test Answers */,
 				5DC40477168C3228000AFBAE /* Test Record */,
 				5D5E05BA164651AE00A5A704 /* Questionnaire */,
@@ -445,6 +486,7 @@
 				5D5E05B61646510700A5A704 /* mmpi.female.teen.json in Resources */,
 				5D5E05B71646510700A5A704 /* mmpi.male.adult.json in Resources */,
 				5D5E05B81646510700A5A704 /* mmpi.male.teen.json in Resources */,
+				5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +558,10 @@
 				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
 				5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */,
+				5DC4ABF716902E9900E835B7 /* AnalyserGroupBase.m in Sources */,
+				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
+				5DC4ABFF16902FAF00E835B7 /* Analyser.m in Sources */,
+				5DC4AC0516903EA400E835B7 /* AnalyserTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
