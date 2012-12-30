@@ -19,6 +19,8 @@
 @interface AnalyserTableViewCell()
 {
     IBOutlet UILabel *_groupNameLabel;
+    IBOutlet UILabel *_scoreLabel;
+    
     IBOutlet NSLayoutConstraint *_lcGroupNameLabelLeft;
 }
 

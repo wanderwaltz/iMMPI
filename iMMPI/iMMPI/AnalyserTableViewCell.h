@@ -14,6 +14,7 @@
 
 @interface AnalyserTableViewCell : UITableViewCell
 @property (readonly, nonatomic) UILabel *groupNameLabel;
+@property (readonly, nonatomic) UILabel *scoreLabel;
 
 @property (assign, nonatomic) CGFloat groupNameOffset;
 

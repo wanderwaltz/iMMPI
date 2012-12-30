@@ -123,6 +123,8 @@ static NSString * const kAnalyserGroupCellIdentifer = @"com.immpi.cells.analyzer
         } break;
     }
     
+    cell.scoreLabel.font = cell.groupNameLabel.font;
+    
     return cell;
 }
 

@@ -379,17 +379,29 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-p9-gNT">
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" type="user" id="Q0d-uC-juO"/>
+                                                <constraint firstAttribute="height" constant="21" id="dos-Lt-VAq"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.31764705879999999" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="fer-fQ-825" firstAttribute="top" secondItem="r2c-mq-F81" secondAttribute="top" constant="11" id="0P7-jK-lEb"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fer-fQ-825" secondAttribute="trailing" constant="144" type="user" id="4ni-37-Jz0"/>
                                     <constraint firstItem="fer-fQ-825" firstAttribute="leading" secondItem="r2c-mq-F81" secondAttribute="leading" constant="20" type="user" id="8s6-Bf-r38"/>
+                                    <constraint firstItem="h1a-p9-gNT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fer-fQ-825" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="JGV-4S-hYS"/>
+                                    <constraint firstItem="h1a-p9-gNT" firstAttribute="top" secondItem="fer-fQ-825" secondAttribute="top" type="default" id="SUS-C7-M37"/>
+                                    <constraint firstAttribute="trailing" secondItem="h1a-p9-gNT" secondAttribute="trailing" constant="20" type="user" id="wRP-IC-Dv9"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="_groupNameLabel" destination="fer-fQ-825" id="7A8-cR-bL3"/>
                                     <outlet property="_lcGroupNameLabelLeft" destination="8s6-Bf-r38" id="k3M-oA-jz6"/>
+                                    <outlet property="_scoreLabel" destination="h1a-p9-gNT" id="vxf-I6-35s"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -411,6 +423,7 @@
             <relationships>
                 <relationship kind="outlet" name="_groupNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="_lcGroupNameLabelLeft" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="_scoreLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="AnalysisViewController" superclassName="UITableViewController">
