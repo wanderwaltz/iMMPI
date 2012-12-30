@@ -63,6 +63,7 @@ static NSString * const kAnalyserGroupCellIdentifer = @"com.immpi.cells.analyzer
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [_analyzer loadGroups];
+            [_analyzer computeScoresForRecord: _record];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
@@ -124,6 +125,22 @@ static NSString * const kAnalyserGroupCellIdentifer = @"com.immpi.cells.analyzer
     }
     
     cell.scoreLabel.font = cell.groupNameLabel.font;
+    
+    if (isnan(group.score))
+    {
+        cell.scoreLabel.text = @"";
+    }
+    else
+    {
+        if (group.score >= 0.0)
+        {
+            cell.scoreLabel.text = [NSString stringWithFormat: @"%.0lf", group.score];
+        }
+        else
+        {
+            cell.scoreLabel.text = ___Score_Invalid;
+        }
+    }
     
     return cell;
 }

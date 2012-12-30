@@ -51,6 +51,9 @@
 		5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */; };
 		5DC4ABFF16902FAF00E835B7 /* Analyser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABFE16902FAF00E835B7 /* Analyser.m */; };
 		5DC4AC0516903EA400E835B7 /* AnalyserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0416903EA400E835B7 /* AnalyserTableViewCell.m */; };
+		5DC4AC091690448A00E835B7 /* AnalyserFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC081690448A00E835B7 /* AnalyserFGroup.m */; };
+		5DC4AC0D16905ACB00E835B7 /* AnalyserFGroupFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0C16905ACB00E835B7 /* AnalyserFGroupFM.m */; };
+		5DC4AC111690626800E835B7 /* AnalyserPGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC101690626800E835B7 /* AnalyserPGroup.m */; };
 		5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */; };
 		5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
 		5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */; };
@@ -116,7 +119,7 @@
 		5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTestRecordViewController.h; sourceTree = "<group>"; };
 		5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTestRecordViewController.m; sourceTree = "<group>"; };
 		5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.analysis.json; sourceTree = "<group>"; };
-		5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroup.h; sourceTree = "<group>"; };
+		5DC4ABF216902E5200E835B7 /* AnalyserGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyserGroup.h; sourceTree = "<group>"; };
 		5DC4ABF516902E9900E835B7 /* AnalyserGroupBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserGroupBase.h; sourceTree = "<group>"; };
 		5DC4ABF616902E9900E835B7 /* AnalyserGroupBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserGroupBase.m; sourceTree = "<group>"; };
 		5DC4ABF816902F2C00E835B7 /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
@@ -125,6 +128,13 @@
 		5DC4ABFE16902FAF00E835B7 /* Analyser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analyser.m; sourceTree = "<group>"; };
 		5DC4AC0316903EA400E835B7 /* AnalyserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserTableViewCell.h; sourceTree = "<group>"; };
 		5DC4AC0416903EA400E835B7 /* AnalyserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserTableViewCell.m; sourceTree = "<group>"; };
+		5DC4AC071690448A00E835B7 /* AnalyserFGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserFGroup.h; sourceTree = "<group>"; };
+		5DC4AC081690448A00E835B7 /* AnalyserFGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserFGroup.m; sourceTree = "<group>"; };
+		5DC4AC0B16905ACB00E835B7 /* AnalyserFGroupFM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserFGroupFM.h; sourceTree = "<group>"; };
+		5DC4AC0C16905ACB00E835B7 /* AnalyserFGroupFM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserFGroupFM.m; sourceTree = "<group>"; };
+		5DC4AC0F1690626800E835B7 /* AnalyserPGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserPGroup.h; sourceTree = "<group>"; };
+		5DC4AC101690626800E835B7 /* AnalyserPGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserPGroup.m; sourceTree = "<group>"; };
+		5DC4AC121690672F00E835B7 /* AnalyserProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyserProtocol.h; sourceTree = "<group>"; };
 		5DC973AC168F085100C496F0 /* MutableTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutableTableViewModel.h; sourceTree = "<group>"; };
 		5DC973B1168F0CD200C496F0 /* JSONTestRecordStorageElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordStorageElement.h; sourceTree = "<group>"; };
 		5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordStorageElement.m; sourceTree = "<group>"; };
@@ -326,7 +336,8 @@
 				5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */,
 				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
 				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
-				5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */,
+				5DC4ABF216902E5200E835B7 /* AnalyserGroup.h */,
+				5DC4AC121690672F00E835B7 /* AnalyserProtocol.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -345,6 +356,9 @@
 		5DC4ABF416902E8200E835B7 /* private */ = {
 			isa = PBXGroup;
 			children = (
+				5DC4AC0E1690625800E835B7 /* P Group */,
+				5DC4AC0A16905AB200E835B7 /* F Group FM */,
+				5DC4AC061690447300E835B7 /* F Group */,
 				5DC4ABF516902E9900E835B7 /* AnalyserGroupBase.h */,
 				5DC4ABF616902E9900E835B7 /* AnalyserGroupBase.m */,
 			);
@@ -359,6 +373,33 @@
 				5DC4ABFE16902FAF00E835B7 /* Analyser.m */,
 			);
 			name = Analysis;
+			sourceTree = "<group>";
+		};
+		5DC4AC061690447300E835B7 /* F Group */ = {
+			isa = PBXGroup;
+			children = (
+				5DC4AC071690448A00E835B7 /* AnalyserFGroup.h */,
+				5DC4AC081690448A00E835B7 /* AnalyserFGroup.m */,
+			);
+			name = "F Group";
+			sourceTree = "<group>";
+		};
+		5DC4AC0A16905AB200E835B7 /* F Group FM */ = {
+			isa = PBXGroup;
+			children = (
+				5DC4AC0B16905ACB00E835B7 /* AnalyserFGroupFM.h */,
+				5DC4AC0C16905ACB00E835B7 /* AnalyserFGroupFM.m */,
+			);
+			name = "F Group FM";
+			sourceTree = "<group>";
+		};
+		5DC4AC0E1690625800E835B7 /* P Group */ = {
+			isa = PBXGroup;
+			children = (
+				5DC4AC0F1690626800E835B7 /* AnalyserPGroup.h */,
+				5DC4AC101690626800E835B7 /* AnalyserPGroup.m */,
+			);
+			name = "P Group";
 			sourceTree = "<group>";
 		};
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
@@ -562,6 +603,9 @@
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyser.m in Sources */,
 				5DC4AC0516903EA400E835B7 /* AnalyserTableViewCell.m in Sources */,
+				5DC4AC091690448A00E835B7 /* AnalyserFGroup.m in Sources */,
+				5DC4AC0D16905ACB00E835B7 /* AnalyserFGroupFM.m in Sources */,
+				5DC4AC111690626800E835B7 /* AnalyserPGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

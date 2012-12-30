@@ -11,6 +11,8 @@
 #endif
 
 #import "TestAnswersViewController.h"
+#import "AnalysisViewController.h"
+
 #import "StatementTableViewCell.h"
 
 
@@ -19,6 +21,7 @@
 
 static NSString * const kAnswerCellIdentifier = @"com.immpi.cells.answer";
 
+static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 #pragma mark -
 #pragma mark TestAnswersViewController private
@@ -67,6 +70,22 @@ static NSString * const kAnswerCellIdentifier = @"com.immpi.cells.answer";
 {
     [super viewWillDisappear:  animated];
     [_storage updateTestRecord: _record];
+}
+
+
+#pragma mark -
+#pragma mark navigation
+
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+{
+    if ([segue.identifier isEqualToString: kSegueAnalyzer])
+    {
+        AnalysisViewController *controller = segue.destinationViewController;
+        
+        FRB_AssertClass(controller, AnalysisViewController);
+        
+        controller.record = _record;
+    }
 }
 
 

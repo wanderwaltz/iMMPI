@@ -13,6 +13,44 @@
 #import "Analyser.h"
 #import "AnalyserGroupBase.h"
 
+
+#pragma mark -
+#pragma mark Constants
+
+NSString * const kGroupType_Group     = @"GROUP";
+
+NSString * const kGroupType_FScale    = @"F_SCALE";
+NSString * const kGroupType_FScale_FM = @"F_SCALE_FM";
+
+NSString * const kGroupType_PScale    = @"P_SCALE";
+
+NSString * const kGroupType_Base_L    = @"BASE_SCALE_L";
+NSString * const kGroupType_Base_F    = @"BASE_SCALE_F";
+NSString * const kGroupType_Base_K    = @"BASE_SCALE_K";
+
+NSString * const kGroupType_Base_1    = @"BASE_SCALE_1";
+NSString * const kGroupType_Base_2    = @"BASE_SCALE_2";
+NSString * const kGroupType_Base_3    = @"BASE_SCALE_3";
+NSString * const kGroupType_Base_4    = @"BASE_SCALE_4";
+NSString * const kGroupType_Base_5    = @"BASE_SCALE_5";
+NSString * const kGroupType_Base_6    = @"BASE_SCALE_6";
+NSString * const kGroupType_Base_7    = @"BASE_SCALE_7";
+NSString * const kGroupType_Base_8    = @"BASE_SCALE_8";
+NSString * const kGroupType_Base_9    = @"BASE_SCALE_9";
+NSString * const kGroupType_Base_0    = @"BASE_SCALE_0";
+
+NSString * const kGroupType_IScale_95  = @"ISCALE_95";
+NSString * const kGroupType_IScale_96  = @"ISCALE_96";
+NSString * const kGroupType_IScale_97  = @"ISCALE_97";
+NSString * const kGroupType_IScale_98  = @"ISCALE_98";
+NSString * const kGroupType_IScale_99  = @"ISCALE_99";
+NSString * const kGroupType_IScale_100 = @"ISCALE_100";
+NSString * const kGroupType_IScale_101 = @"ISCALE_101";
+NSString * const kGroupType_IScale_102 = @"ISCALE_102";
+NSString * const kGroupType_IScale_103 = @"ISCALE_103";
+NSString * const kGroupType_IScale_104 = @"ISCALE_104";
+
+
 #pragma mark -
 #pragma mark Static constants
 
@@ -41,6 +79,8 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
     NSMutableArray *_groups;
     NSMutableArray *_allGroups;
     NSMutableArray *_depths;
+    
+    NSSet *_invalidStatementIDs;
 }
 
 @end
@@ -70,7 +110,8 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
     
     if (self != nil)
     {
-
+        _invalidStatementIDs = [NSSet setWithArray:
+                                @[@14, @33, @48, @63, @66, @69, @121, @123, @133, @151, @168, @182, @184, @197, @200, @205, @266, @275, @293, @334, @349, @350, @462, @464, @474, @542, @551]];
     }
     return self;
 }
@@ -140,6 +181,8 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
     
     for (id<AnalyserGroup> group in _groups)
     {
+        FRB_AssertConformsTo(group, AnalyserGroup);
+        
         [_allGroups addObject: group];
         [_depths    addObject: @0];
 
@@ -156,6 +199,37 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 }
 
 
+- (void) computeScoresForRecord: (id<TestRecord>) record
+{
+    for (id<AnalyserGroup> group in _allGroups)
+    {
+        FRB_AssertConformsTo(group, AnalyserGroup);
+        [group computeScoreForRecord: record analyser: self];
+    }
+}
+
+
+#pragma mark -
+#pragma mark Analyser
+
+- (id<AnalyserGroup>) firstGroupForType: (NSString *) type
+{
+    for (id<AnalyserGroup> group in _allGroups)
+    {
+        FRB_AssertConformsTo(group, AnalyserGroup);
+        if ([group.type isEqualToString: type])
+            return group;
+    }
+    return nil;
+}
+
+
+- (BOOL) isValidStatementID: (NSInteger) statementID
+{
+    return ![_invalidStatementIDs containsObject: @(statementID)];
+}
+
+
 #pragma mark -
 #pragma mark private
 
@@ -168,6 +242,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
         for (NSUInteger i = 0; i < group.subgroupsCount; ++i)
         {
             id<AnalyserGroup> subgroup = [group subgroupAtIndex: i];
+            
             block(subgroup, depth);
             [self visitSubgroupsOfGroupDFS: subgroup
                                  withBlock: block

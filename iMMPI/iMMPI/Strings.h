@@ -22,4 +22,6 @@
 #define ___New_Record  @"Новая запись"
 #define ___Edit_Record @"Редактировать запись"
 
+#define ___Score_Invalid @"#";
+
 #endif

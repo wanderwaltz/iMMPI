@@ -349,7 +349,7 @@
                     <navigationItem key="navigationItem" title="Ответы на тест" id="eyH-RJ-E94">
                         <barButtonItem key="rightBarButtonItem" title="Анализ" id="xhN-p9-zdZ">
                             <connections>
-                                <segue destination="F49-RI-GVa" kind="push" id="D7C-fb-8Yk"/>
+                                <segue destination="F49-RI-GVa" kind="push" identifier="com.immpi.segue.analyzer" id="D7C-fb-8Yk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

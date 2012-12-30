@@ -14,9 +14,14 @@
 
 @interface AnalyserGroupBase : NSObject<AnalyserGroup>
 @property (strong,   nonatomic) NSString  *name;
+@property (strong,   nonatomic) NSString  *type;
+@property (assign,   nonatomic) double     score;
 @property (readonly, nonatomic) NSUInteger subgroupsCount;
 
+- (id) initWithJSON: (NSDictionary *) json;
+
 - (id<AnalyserGroup>) subgroupAtIndex: (NSUInteger) index;
+
 
 + (id<AnalyserGroup>) parseGroupJSON: (NSDictionary *) json;
 
