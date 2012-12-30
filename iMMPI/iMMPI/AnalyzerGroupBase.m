@@ -1,5 +1,5 @@
 //
-//  AnalyserGroupBase.m
+//  AnalyzerGroupBase.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,16 +10,16 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "AnalyserGroupBase.h"
+#import "AnalyzerGroupBase.h"
 
-#import "AnalyserFGroup.h"
-#import "AnalyserFGroupFM.h"
-#import "AnalyserPGroup.h"
-#import "AnalyserKGroup.h"
-#import "AnalyserIGroupT1.h"
-#import "AnalyserIGroup99.h"
-#import "AnalyserIGroupM.h"
-#import "AnalyserIGroupX.h"
+#import "AnalyzerFGroup.h"
+#import "AnalyzerFGroupFM.h"
+#import "AnalyzerPGroup.h"
+#import "AnalyzerKGroup.h"
+#import "AnalyzerIGroupT1.h"
+#import "AnalyzerIGroup99.h"
+#import "AnalyzerIGroupM.h"
+#import "AnalyzerIGroupX.h"
 
 
 #pragma mark -
@@ -45,7 +45,7 @@ static id _logSubgroupNotDictionary(id object);
 #pragma mark -
 #pragma mark AnalyzerGroupBase private
 
-@interface AnalyserGroupBase()
+@interface AnalyzerGroupBase()
 {
     NSMutableArray *_subgroups;
 }
@@ -56,9 +56,9 @@ static id _logSubgroupNotDictionary(id object);
 
 
 #pragma mark -
-#pragma mark AnalyserGroupBase implementation
+#pragma mark AnalyzerGroupBase implementation
 
-@implementation AnalyserGroupBase
+@implementation AnalyzerGroupBase
 
 #pragma mark -
 #pragma mark intialization methods
@@ -69,38 +69,38 @@ static id _logSubgroupNotDictionary(id object);
     dispatch_once(&predicate,
                   ^{
                       kGroupClassForType = @{
-                      kGroupType_Group      : @"AnalyserGroupBase",
+                      kGroupType_Group      : @"AnalyzerGroupBase",
                       
-                      kGroupType_FScale     : @"AnalyserFGroup",
-                      kGroupType_FScale_FM  : @"AnalyserFGroupFM",
+                      kGroupType_FScale     : @"AnalyzerFGroup",
+                      kGroupType_FScale_FM  : @"AnalyzerFGroupFM",
                       
-                      kGroupType_PScale     : @"AnalyserPGroup",
+                      kGroupType_PScale     : @"AnalyzerPGroup",
                       
-                      kGroupType_Base_L     : @"AnalyserFGroup",
-                      kGroupType_Base_F     : @"AnalyserFGroup",
-                      kGroupType_Base_K     : @"AnalyserFGroup",
+                      kGroupType_Base_L     : @"AnalyzerFGroup",
+                      kGroupType_Base_F     : @"AnalyzerFGroup",
+                      kGroupType_Base_K     : @"AnalyzerFGroup",
                       
-                      kGroupType_Base_1     : @"AnalyserKGroup",
-                      kGroupType_Base_2     : @"AnalyserFGroup",
-                      kGroupType_Base_3     : @"AnalyserFGroup",
-                      kGroupType_Base_4     : @"AnalyserKGroup",
-                      kGroupType_Base_5     : @"AnalyserFGroupFM",
-                      kGroupType_Base_6     : @"AnalyserFGroup",
-                      kGroupType_Base_7     : @"AnalyserKGroup",
-                      kGroupType_Base_8     : @"AnalyserKGroup",
-                      kGroupType_Base_9     : @"AnalyserKGroup",
-                      kGroupType_Base_0     : @"AnalyserFGroup",
+                      kGroupType_Base_1     : @"AnalyzerKGroup",
+                      kGroupType_Base_2     : @"AnalyzerFGroup",
+                      kGroupType_Base_3     : @"AnalyzerFGroup",
+                      kGroupType_Base_4     : @"AnalyzerKGroup",
+                      kGroupType_Base_5     : @"AnalyzerFGroupFM",
+                      kGroupType_Base_6     : @"AnalyzerFGroup",
+                      kGroupType_Base_7     : @"AnalyzerKGroup",
+                      kGroupType_Base_8     : @"AnalyzerKGroup",
+                      kGroupType_Base_9     : @"AnalyzerKGroup",
+                      kGroupType_Base_0     : @"AnalyzerFGroup",
                       
-                      kGroupType_IScale_95  : @"AnalyserIGroupT1",
-                      kGroupType_IScale_96  : @"AnalyserIGroupT1",
-                      kGroupType_IScale_97  : @"AnalyserIGroupT1",
-                      kGroupType_IScale_98  : @"AnalyserIGroupT1",
-                      kGroupType_IScale_99  : @"AnalyserIGroup99",
-                      kGroupType_IScale_100 : @"AnalyserIGroupX",
-                      kGroupType_IScale_101 : @"AnalyserIGroupX",
-                      kGroupType_IScale_102 : @"AnalyserIGroupX",
-                      kGroupType_IScale_103 : @"AnalyserIGroupM",
-                      kGroupType_IScale_104 : @"AnalyserIGroupM"
+                      kGroupType_IScale_95  : @"AnalyzerIGroupT1",
+                      kGroupType_IScale_96  : @"AnalyzerIGroupT1",
+                      kGroupType_IScale_97  : @"AnalyzerIGroupT1",
+                      kGroupType_IScale_98  : @"AnalyzerIGroupT1",
+                      kGroupType_IScale_99  : @"AnalyzerIGroup99",
+                      kGroupType_IScale_100 : @"AnalyzerIGroupX",
+                      kGroupType_IScale_101 : @"AnalyzerIGroupX",
+                      kGroupType_IScale_102 : @"AnalyzerIGroupX",
+                      kGroupType_IScale_103 : @"AnalyzerIGroupM",
+                      kGroupType_IScale_104 : @"AnalyzerIGroupM"
                       };
                   });
 }
@@ -142,22 +142,22 @@ static id _logSubgroupNotDictionary(id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
-- (id<AnalyserGroup>) subgroupAtIndex: (NSUInteger) index
+- (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index
 {
-    id<AnalyserGroup> subgroup = _subgroups[index];
-    FRB_AssertConformsTo(subgroup, AnalyserGroup);
+    id<AnalyzerGroup> subgroup = _subgroups[index];
+    FRB_AssertConformsTo(subgroup, AnalyzerGroup);
     
     return subgroup;
 }
 
 
-- (void) visitSubgroupsDFS: (void(^)(id<AnalyserGroup> subgroup)) block
+- (void) visitSubgroupsDFS: (void(^)(id<AnalyzerGroup> subgroup)) block
 {
     if (block)
     {
-        for (id<AnalyserGroup> subgroup in _subgroups)
+        for (id<AnalyzerGroup> subgroup in _subgroups)
         {
-            FRB_AssertConformsTo(subgroup, AnalyserGroup);
+            FRB_AssertConformsTo(subgroup, AnalyzerGroup);
             block(subgroup);
             [subgroup visitSubgroupsDFS: block];
         }
@@ -166,7 +166,7 @@ static id _logSubgroupNotDictionary(id object);
 
 
 - (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyser>) analyser
+                        analyser: (id<Analyzer>) analyser
 {
     _score = NAN;
     return _score;
@@ -174,14 +174,14 @@ static id _logSubgroupNotDictionary(id object);
 
 
 - (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyser>) analyser
+                              analyser: (id<Analyzer>) analyser
 {
     return 0;
 }
 
 
 - (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
-                                 analyser: (id<Analyser>) analyser
+                                 analyser: (id<Analyzer>) analyser
 {
     return 0;
 }
@@ -190,7 +190,7 @@ static id _logSubgroupNotDictionary(id object);
 #pragma mark -
 #pragma mark methods
 
-+ (id<AnalyserGroup>) parseGroupJSON: (NSDictionary *) json
++ (id<AnalyzerGroup>) parseGroupJSON: (NSDictionary *) json
 {
     NSString *name = json[kJSONKeyName];
     NSString *type = json[kJSONKeyType];
@@ -199,7 +199,7 @@ static id _logSubgroupNotDictionary(id object);
     if (type.length == 0) return _logGroupTypeNotFound();
     
     
-    AnalyserGroupBase *group = nil;
+    AnalyzerGroupBase *group = nil;
     
     NSString *className = kGroupClassForType[type];
     
@@ -210,7 +210,7 @@ static id _logSubgroupNotDictionary(id object);
     
     if (group == nil)
     {
-        group = [AnalyserGroupBase new];
+        group = [AnalyzerGroupBase new];
         NSLog(@"Failed to parse group '%@' of type '%@'.", name, type);
     }
     
@@ -229,7 +229,7 @@ static id _logSubgroupNotDictionary(id object);
             {
                 if ([subgroupJSON isKindOfClass: [NSDictionary class]])
                 {
-                    id<AnalyserGroup> subgroup = [self parseGroupJSON: subgroupJSON];
+                    id<AnalyzerGroup> subgroup = [self parseGroupJSON: subgroupJSON];
                     
                     if (subgroup != nil)
                     {

@@ -11,13 +11,13 @@
 #endif
 
 #import "AnalysisViewController.h"
-#import "AnalyserTableViewCell.h"
+#import "AnalyzerTableViewCell.h"
 
 
 #pragma mark -
 #pragma mark Static constants
 
-static NSString * const kAnalyserGroupCellIdentifer = @"com.immpi.cells.analyzerGroup";
+static NSString * const kAnalyzerGroupCellIdentifer = @"com.immpi.cells.analyzerGroup";
 
 
 #pragma mark -
@@ -25,7 +25,7 @@ static NSString * const kAnalyserGroupCellIdentifer = @"com.immpi.cells.analyzer
 
 @interface AnalysisViewController()
 {
-    Analyser *_analyzer;
+    Analyzer *_analyzer;
 }
 
 @end
@@ -59,7 +59,7 @@ static NSString * const kAnalyserGroupCellIdentifer = @"com.immpi.cells.analyzer
 {
     if (_analyzer == nil)
     {
-        _analyzer = [Analyser new];
+        _analyzer = [Analyzer new];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [_analyzer loadGroups];
@@ -92,13 +92,13 @@ static NSString * const kAnalyserGroupCellIdentifer = @"com.immpi.cells.analyzer
 - (UITableViewCell *) tableView: (UITableView *) tableView
           cellForRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    AnalyserTableViewCell *cell = (id)[tableView dequeueReusableCellWithIdentifier:
-                                       kAnalyserGroupCellIdentifer];
-    FRB_AssertClass(cell, AnalyserTableViewCell);
+    AnalyzerTableViewCell *cell = (id)[tableView dequeueReusableCellWithIdentifier:
+                                       kAnalyzerGroupCellIdentifer];
+    FRB_AssertClass(cell, AnalyzerTableViewCell);
     
     NSUInteger groupIndex = indexPath.row;
 
-    id<AnalyserGroup> group = [_analyzer groupAtIndex:        groupIndex];
+    id<AnalyzerGroup> group = [_analyzer groupAtIndex:        groupIndex];
     NSUInteger        depth = [_analyzer depthOfGroupAtIndex: groupIndex];
     
     cell.groupNameLabel.text = group.name;

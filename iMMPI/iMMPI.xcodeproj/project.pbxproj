@@ -28,11 +28,11 @@
 		5D5E05B71646510700A5A704 /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B31646510700A5A704 /* mmpi.male.adult.json */; };
 		5D5E05B81646510700A5A704 /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B41646510700A5A704 /* mmpi.male.teen.json */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
-		5D85558516906A9C004E3021 /* AnalyserKGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558416906A9C004E3021 /* AnalyserKGroup.m */; };
-		5D85558916906E98004E3021 /* AnalyserIGroupT1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558816906E98004E3021 /* AnalyserIGroupT1.m */; };
-		5D85558D16907158004E3021 /* AnalyserIGroup99.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558C16907158004E3021 /* AnalyserIGroup99.m */; };
-		5D855591169074D0004E3021 /* AnalyserIGroupM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D855590169074D0004E3021 /* AnalyserIGroupM.m */; };
-		5D855595169076A4004E3021 /* AnalyserIGroupX.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D855594169076A4004E3021 /* AnalyserIGroupX.m */; };
+		5D85558516906A9C004E3021 /* AnalyzerKGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558416906A9C004E3021 /* AnalyzerKGroup.m */; };
+		5D85558916906E98004E3021 /* AnalyzerIGroupT1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558816906E98004E3021 /* AnalyzerIGroupT1.m */; };
+		5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558C16907158004E3021 /* AnalyzerIGroup99.m */; };
+		5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D855590169074D0004E3021 /* AnalyzerIGroupM.m */; };
+		5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D855594169076A4004E3021 /* AnalyzerIGroupX.m */; };
 		5DA5C9E5163B018D00CF1601 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
 		5DA5C9E7163B018D00CF1601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
 		5DA5C9E9163B018D00CF1601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
@@ -52,13 +52,13 @@
 		5DC4048C168C4AB3000AFBAE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4048B168C4AB3000AFBAE /* Person.m */; };
 		5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */; };
 		5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
-		5DC4ABF716902E9900E835B7 /* AnalyserGroupBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF616902E9900E835B7 /* AnalyserGroupBase.m */; };
+		5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF616902E9900E835B7 /* AnalyzerGroupBase.m */; };
 		5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */; };
-		5DC4ABFF16902FAF00E835B7 /* Analyser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABFE16902FAF00E835B7 /* Analyser.m */; };
-		5DC4AC0516903EA400E835B7 /* AnalyserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0416903EA400E835B7 /* AnalyserTableViewCell.m */; };
-		5DC4AC091690448A00E835B7 /* AnalyserFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC081690448A00E835B7 /* AnalyserFGroup.m */; };
-		5DC4AC0D16905ACB00E835B7 /* AnalyserFGroupFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0C16905ACB00E835B7 /* AnalyserFGroupFM.m */; };
-		5DC4AC111690626800E835B7 /* AnalyserPGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC101690626800E835B7 /* AnalyserPGroup.m */; };
+		5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABFE16902FAF00E835B7 /* Analyzer.m */; };
+		5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0416903EA400E835B7 /* AnalyzerTableViewCell.m */; };
+		5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC081690448A00E835B7 /* AnalyzerFGroup.m */; };
+		5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0C16905ACB00E835B7 /* AnalyzerFGroupFM.m */; };
+		5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC101690626800E835B7 /* AnalyzerPGroup.m */; };
 		5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */; };
 		5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
 		5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */; };
@@ -86,16 +86,16 @@
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
-		5D85558316906A9C004E3021 /* AnalyserKGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserKGroup.h; sourceTree = "<group>"; };
-		5D85558416906A9C004E3021 /* AnalyserKGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserKGroup.m; sourceTree = "<group>"; };
-		5D85558716906E98004E3021 /* AnalyserIGroupT1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserIGroupT1.h; sourceTree = "<group>"; };
-		5D85558816906E98004E3021 /* AnalyserIGroupT1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserIGroupT1.m; sourceTree = "<group>"; };
-		5D85558B16907158004E3021 /* AnalyserIGroup99.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserIGroup99.h; sourceTree = "<group>"; };
-		5D85558C16907158004E3021 /* AnalyserIGroup99.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserIGroup99.m; sourceTree = "<group>"; };
-		5D85558F169074D0004E3021 /* AnalyserIGroupM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserIGroupM.h; sourceTree = "<group>"; };
-		5D855590169074D0004E3021 /* AnalyserIGroupM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserIGroupM.m; sourceTree = "<group>"; };
-		5D855593169076A4004E3021 /* AnalyserIGroupX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserIGroupX.h; sourceTree = "<group>"; };
-		5D855594169076A4004E3021 /* AnalyserIGroupX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserIGroupX.m; sourceTree = "<group>"; };
+		5D85558316906A9C004E3021 /* AnalyzerKGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerKGroup.h; sourceTree = "<group>"; };
+		5D85558416906A9C004E3021 /* AnalyzerKGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerKGroup.m; sourceTree = "<group>"; };
+		5D85558716906E98004E3021 /* AnalyzerIGroupT1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIGroupT1.h; sourceTree = "<group>"; };
+		5D85558816906E98004E3021 /* AnalyzerIGroupT1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerIGroupT1.m; sourceTree = "<group>"; };
+		5D85558B16907158004E3021 /* AnalyzerIGroup99.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIGroup99.h; sourceTree = "<group>"; };
+		5D85558C16907158004E3021 /* AnalyzerIGroup99.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerIGroup99.m; sourceTree = "<group>"; };
+		5D85558F169074D0004E3021 /* AnalyzerIGroupM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIGroupM.h; sourceTree = "<group>"; };
+		5D855590169074D0004E3021 /* AnalyzerIGroupM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerIGroupM.m; sourceTree = "<group>"; };
+		5D855593169076A4004E3021 /* AnalyzerIGroupX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIGroupX.h; sourceTree = "<group>"; };
+		5D855594169076A4004E3021 /* AnalyzerIGroupX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerIGroupX.m; sourceTree = "<group>"; };
 		5DA5C9E0163B018D00CF1601 /* iMMPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMMPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA5C9E4163B018D00CF1601 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5DA5C9E6163B018D00CF1601 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,22 +134,22 @@
 		5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTestRecordViewController.h; sourceTree = "<group>"; };
 		5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTestRecordViewController.m; sourceTree = "<group>"; };
 		5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.analysis.json; sourceTree = "<group>"; };
-		5DC4ABF216902E5200E835B7 /* AnalyserGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyserGroup.h; sourceTree = "<group>"; };
-		5DC4ABF516902E9900E835B7 /* AnalyserGroupBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserGroupBase.h; sourceTree = "<group>"; };
-		5DC4ABF616902E9900E835B7 /* AnalyserGroupBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserGroupBase.m; sourceTree = "<group>"; };
+		5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroup.h; sourceTree = "<group>"; };
+		5DC4ABF516902E9900E835B7 /* AnalyzerGroupBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroupBase.h; sourceTree = "<group>"; };
+		5DC4ABF616902E9900E835B7 /* AnalyzerGroupBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerGroupBase.m; sourceTree = "<group>"; };
 		5DC4ABF816902F2C00E835B7 /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
 		5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
-		5DC4ABFD16902FAF00E835B7 /* Analyser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analyser.h; sourceTree = "<group>"; };
-		5DC4ABFE16902FAF00E835B7 /* Analyser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analyser.m; sourceTree = "<group>"; };
-		5DC4AC0316903EA400E835B7 /* AnalyserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserTableViewCell.h; sourceTree = "<group>"; };
-		5DC4AC0416903EA400E835B7 /* AnalyserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserTableViewCell.m; sourceTree = "<group>"; };
-		5DC4AC071690448A00E835B7 /* AnalyserFGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserFGroup.h; sourceTree = "<group>"; };
-		5DC4AC081690448A00E835B7 /* AnalyserFGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserFGroup.m; sourceTree = "<group>"; };
-		5DC4AC0B16905ACB00E835B7 /* AnalyserFGroupFM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserFGroupFM.h; sourceTree = "<group>"; };
-		5DC4AC0C16905ACB00E835B7 /* AnalyserFGroupFM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserFGroupFM.m; sourceTree = "<group>"; };
-		5DC4AC0F1690626800E835B7 /* AnalyserPGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserPGroup.h; sourceTree = "<group>"; };
-		5DC4AC101690626800E835B7 /* AnalyserPGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserPGroup.m; sourceTree = "<group>"; };
-		5DC4AC121690672F00E835B7 /* AnalyserProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyserProtocol.h; sourceTree = "<group>"; };
+		5DC4ABFD16902FAF00E835B7 /* Analyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analyzer.h; sourceTree = "<group>"; };
+		5DC4ABFE16902FAF00E835B7 /* Analyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analyzer.m; sourceTree = "<group>"; };
+		5DC4AC0316903EA400E835B7 /* AnalyzerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerTableViewCell.h; sourceTree = "<group>"; };
+		5DC4AC0416903EA400E835B7 /* AnalyzerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerTableViewCell.m; sourceTree = "<group>"; };
+		5DC4AC071690448A00E835B7 /* AnalyzerFGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerFGroup.h; sourceTree = "<group>"; };
+		5DC4AC081690448A00E835B7 /* AnalyzerFGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerFGroup.m; sourceTree = "<group>"; };
+		5DC4AC0B16905ACB00E835B7 /* AnalyzerFGroupFM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerFGroupFM.h; sourceTree = "<group>"; };
+		5DC4AC0C16905ACB00E835B7 /* AnalyzerFGroupFM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerFGroupFM.m; sourceTree = "<group>"; };
+		5DC4AC0F1690626800E835B7 /* AnalyzerPGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerPGroup.h; sourceTree = "<group>"; };
+		5DC4AC101690626800E835B7 /* AnalyzerPGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerPGroup.m; sourceTree = "<group>"; };
+		5DC4AC121690672F00E835B7 /* AnalyzerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzerProtocol.h; sourceTree = "<group>"; };
 		5DC973AC168F085100C496F0 /* MutableTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutableTableViewModel.h; sourceTree = "<group>"; };
 		5DC973B1168F0CD200C496F0 /* JSONTestRecordStorageElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordStorageElement.h; sourceTree = "<group>"; };
 		5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordStorageElement.m; sourceTree = "<group>"; };
@@ -210,8 +210,8 @@
 		5D85558116906A57004E3021 /* K Group */ = {
 			isa = PBXGroup;
 			children = (
-				5D85558316906A9C004E3021 /* AnalyserKGroup.h */,
-				5D85558416906A9C004E3021 /* AnalyserKGroup.m */,
+				5D85558316906A9C004E3021 /* AnalyzerKGroup.h */,
+				5D85558416906A9C004E3021 /* AnalyzerKGroup.m */,
 			);
 			name = "K Group";
 			sourceTree = "<group>";
@@ -219,8 +219,8 @@
 		5D85558616906E7A004E3021 /* I Group T1 */ = {
 			isa = PBXGroup;
 			children = (
-				5D85558716906E98004E3021 /* AnalyserIGroupT1.h */,
-				5D85558816906E98004E3021 /* AnalyserIGroupT1.m */,
+				5D85558716906E98004E3021 /* AnalyzerIGroupT1.h */,
+				5D85558816906E98004E3021 /* AnalyzerIGroupT1.m */,
 			);
 			name = "I Group T1";
 			sourceTree = "<group>";
@@ -228,8 +228,8 @@
 		5D85558A16907144004E3021 /* I Group 99 */ = {
 			isa = PBXGroup;
 			children = (
-				5D85558B16907158004E3021 /* AnalyserIGroup99.h */,
-				5D85558C16907158004E3021 /* AnalyserIGroup99.m */,
+				5D85558B16907158004E3021 /* AnalyzerIGroup99.h */,
+				5D85558C16907158004E3021 /* AnalyzerIGroup99.m */,
 			);
 			name = "I Group 99";
 			sourceTree = "<group>";
@@ -237,8 +237,8 @@
 		5D85558E16907495004E3021 /* I Group M */ = {
 			isa = PBXGroup;
 			children = (
-				5D85558F169074D0004E3021 /* AnalyserIGroupM.h */,
-				5D855590169074D0004E3021 /* AnalyserIGroupM.m */,
+				5D85558F169074D0004E3021 /* AnalyzerIGroupM.h */,
+				5D855590169074D0004E3021 /* AnalyzerIGroupM.m */,
 			);
 			name = "I Group M";
 			sourceTree = "<group>";
@@ -246,8 +246,8 @@
 		5D85559216907689004E3021 /* I Group X */ = {
 			isa = PBXGroup;
 			children = (
-				5D855593169076A4004E3021 /* AnalyserIGroupX.h */,
-				5D855594169076A4004E3021 /* AnalyserIGroupX.m */,
+				5D855593169076A4004E3021 /* AnalyzerIGroupX.h */,
+				5D855594169076A4004E3021 /* AnalyzerIGroupX.m */,
 			);
 			name = "I Group X";
 			sourceTree = "<group>";
@@ -368,8 +368,8 @@
 			children = (
 				5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */,
 				5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */,
-				5DC4AC0316903EA400E835B7 /* AnalyserTableViewCell.h */,
-				5DC4AC0416903EA400E835B7 /* AnalyserTableViewCell.m */,
+				5DC4AC0316903EA400E835B7 /* AnalyzerTableViewCell.h */,
+				5DC4AC0416903EA400E835B7 /* AnalyzerTableViewCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -396,8 +396,8 @@
 				5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */,
 				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
 				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
-				5DC4ABF216902E5200E835B7 /* AnalyserGroup.h */,
-				5DC4AC121690672F00E835B7 /* AnalyserProtocol.h */,
+				5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */,
+				5DC4AC121690672F00E835B7 /* AnalyzerProtocol.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -424,8 +424,8 @@
 				5DC4AC0E1690625800E835B7 /* P Group */,
 				5DC4AC0A16905AB200E835B7 /* F Group FM */,
 				5DC4AC061690447300E835B7 /* F Group */,
-				5DC4ABF516902E9900E835B7 /* AnalyserGroupBase.h */,
-				5DC4ABF616902E9900E835B7 /* AnalyserGroupBase.m */,
+				5DC4ABF516902E9900E835B7 /* AnalyzerGroupBase.h */,
+				5DC4ABF616902E9900E835B7 /* AnalyzerGroupBase.m */,
 			);
 			name = private;
 			sourceTree = "<group>";
@@ -434,8 +434,8 @@
 			isa = PBXGroup;
 			children = (
 				5DC4ABF416902E8200E835B7 /* private */,
-				5DC4ABFD16902FAF00E835B7 /* Analyser.h */,
-				5DC4ABFE16902FAF00E835B7 /* Analyser.m */,
+				5DC4ABFD16902FAF00E835B7 /* Analyzer.h */,
+				5DC4ABFE16902FAF00E835B7 /* Analyzer.m */,
 			);
 			name = Analysis;
 			sourceTree = "<group>";
@@ -443,8 +443,8 @@
 		5DC4AC061690447300E835B7 /* F Group */ = {
 			isa = PBXGroup;
 			children = (
-				5DC4AC071690448A00E835B7 /* AnalyserFGroup.h */,
-				5DC4AC081690448A00E835B7 /* AnalyserFGroup.m */,
+				5DC4AC071690448A00E835B7 /* AnalyzerFGroup.h */,
+				5DC4AC081690448A00E835B7 /* AnalyzerFGroup.m */,
 			);
 			name = "F Group";
 			sourceTree = "<group>";
@@ -452,8 +452,8 @@
 		5DC4AC0A16905AB200E835B7 /* F Group FM */ = {
 			isa = PBXGroup;
 			children = (
-				5DC4AC0B16905ACB00E835B7 /* AnalyserFGroupFM.h */,
-				5DC4AC0C16905ACB00E835B7 /* AnalyserFGroupFM.m */,
+				5DC4AC0B16905ACB00E835B7 /* AnalyzerFGroupFM.h */,
+				5DC4AC0C16905ACB00E835B7 /* AnalyzerFGroupFM.m */,
 			);
 			name = "F Group FM";
 			sourceTree = "<group>";
@@ -461,8 +461,8 @@
 		5DC4AC0E1690625800E835B7 /* P Group */ = {
 			isa = PBXGroup;
 			children = (
-				5DC4AC0F1690626800E835B7 /* AnalyserPGroup.h */,
-				5DC4AC101690626800E835B7 /* AnalyserPGroup.m */,
+				5DC4AC0F1690626800E835B7 /* AnalyzerPGroup.h */,
+				5DC4AC101690626800E835B7 /* AnalyzerPGroup.m */,
 			);
 			name = "P Group";
 			sourceTree = "<group>";
@@ -664,18 +664,18 @@
 				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
 				5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */,
-				5DC4ABF716902E9900E835B7 /* AnalyserGroupBase.m in Sources */,
+				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
-				5DC4ABFF16902FAF00E835B7 /* Analyser.m in Sources */,
-				5DC4AC0516903EA400E835B7 /* AnalyserTableViewCell.m in Sources */,
-				5DC4AC091690448A00E835B7 /* AnalyserFGroup.m in Sources */,
-				5DC4AC0D16905ACB00E835B7 /* AnalyserFGroupFM.m in Sources */,
-				5DC4AC111690626800E835B7 /* AnalyserPGroup.m in Sources */,
-				5D85558516906A9C004E3021 /* AnalyserKGroup.m in Sources */,
-				5D85558916906E98004E3021 /* AnalyserIGroupT1.m in Sources */,
-				5D85558D16907158004E3021 /* AnalyserIGroup99.m in Sources */,
-				5D855591169074D0004E3021 /* AnalyserIGroupM.m in Sources */,
-				5D855595169076A4004E3021 /* AnalyserIGroupX.m in Sources */,
+				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
+				5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */,
+				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
+				5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */,
+				5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */,
+				5D85558516906A9C004E3021 /* AnalyzerKGroup.m in Sources */,
+				5D85558916906E98004E3021 /* AnalyzerIGroupT1.m in Sources */,
+				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
+				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
+				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

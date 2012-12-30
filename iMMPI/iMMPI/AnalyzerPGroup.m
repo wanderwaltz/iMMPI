@@ -1,5 +1,5 @@
 //
-//  AnalyserPGroup.m
+//  AnalyzerPGroup.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,7 +10,7 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "AnalyserPGroup.h"
+#import "AnalyzerPGroup.h"
 
 
 #pragma mark -
@@ -33,9 +33,9 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 
 
 #pragma mark -
-#pragma mark AnalyserPGroup private
+#pragma mark AnalyzerPGroup private
 
-@interface AnalyserPGroup()
+@interface AnalyzerPGroup()
 {
     NSArray   *_maleBrackets;
     NSArray *_femaleBrackets;
@@ -48,9 +48,9 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 
 
 #pragma mark -
-#pragma mark AnalyserPGroup implementation
+#pragma mark AnalyzerPGroup implementation
 
-@implementation AnalyserPGroup
+@implementation AnalyzerPGroup
 
 #pragma mark -
 #pragma mark initialization methods
@@ -97,7 +97,7 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 
 
 #pragma mark -
-#pragma mark AnalyserGroup
+#pragma mark AnalyzerGroup
 
 - (NSArray *) bracketsForRecord: (id<TestRecord>) record
 {
@@ -110,7 +110,7 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 
 
 - (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyser>) analyser
+                        analyser: (id<Analyzer>) analyser
 {
     NSUInteger percentage = [self computePercentageForRecord: record
                                                     analyser: analyser];
@@ -143,7 +143,7 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 
 
 - (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyser>) analyser
+                              analyser: (id<Analyzer>) analyser
 {
     NSUInteger positiveMatches = 0;
     NSUInteger negativeMatches = 0;
@@ -168,7 +168,7 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 
 
 - (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
-                                 analyser: (id<Analyser>) analyser
+                                 analyser: (id<Analyzer>) analyser
 {
     return [self computeMatchesForRecord: record
                                 analyser: analyser] * 100 /

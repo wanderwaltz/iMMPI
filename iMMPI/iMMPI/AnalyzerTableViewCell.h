@@ -1,5 +1,5 @@
 //
-//  AnalyserTableViewCell.h
+//  AnalyzerTableViewCell.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,9 +10,9 @@
 
 
 #pragma mark -
-#pragma mark AnalyserTableViewCell interface
+#pragma mark AnalyzerTableViewCell interface
 
-@interface AnalyserTableViewCell : UITableViewCell
+@interface AnalyzerTableViewCell : UITableViewCell
 @property (readonly, nonatomic) UILabel *groupNameLabel;
 @property (readonly, nonatomic) UILabel *scoreLabel;
 

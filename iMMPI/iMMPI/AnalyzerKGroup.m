@@ -1,5 +1,5 @@
 //
-//  AnalyserKGroup.m
+//  AnalyzerKGroup.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,7 +10,7 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "AnalyserKGroup.h"
+#import "AnalyzerKGroup.h"
 
 
 #pragma mark -
@@ -20,9 +20,9 @@ static NSString * const kJSONKeyCorrectionMultiplier = @"correctionMultiplier";
 
 
 #pragma mark -
-#pragma mark AnalyserKGroup private
+#pragma mark AnalyzerKGroup private
 
-@interface AnalyserKGroup()
+@interface AnalyzerKGroup()
 {
     double _correctionMultiplier;
 }
@@ -31,9 +31,9 @@ static NSString * const kJSONKeyCorrectionMultiplier = @"correctionMultiplier";
 
 
 #pragma mark -
-#pragma mark AnalyserKGroup implementation
+#pragma mark AnalyzerKGroup implementation
 
-@implementation AnalyserKGroup
+@implementation AnalyzerKGroup
 
 #pragma mark -
 #pragma mark initialization methods
@@ -51,10 +51,10 @@ static NSString * const kJSONKeyCorrectionMultiplier = @"correctionMultiplier";
 
 
 #pragma mark -
-#pragma mark AnalyserGroup
+#pragma mark AnalyzerGroup
 
 - (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyser>) analyser
+                        analyser: (id<Analyzer>) analyser
 {
     NSUInteger matches = [self computeMatchesForRecord: record
                                               analyser: analyser];
@@ -65,7 +65,7 @@ static NSString * const kJSONKeyCorrectionMultiplier = @"correctionMultiplier";
     double deviation = (record.person.gender == GenderFemale) ?
                         self.deviationFemale : self.deviationMale;
     
-    id<AnalyserGroup> correctionGroup = [analyser firstGroupForType: kGroupType_Base_K];
+    id<AnalyzerGroup> correctionGroup = [analyser firstGroupForType: kGroupType_Base_K];
     
     NSUInteger correctionMatches = [correctionGroup computeMatchesForRecord: record
                                                                    analyser: analyser];

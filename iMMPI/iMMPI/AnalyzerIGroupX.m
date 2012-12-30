@@ -1,5 +1,5 @@
 //
-//  AnalyserIGroupX.m
+//  AnalyzerIGroupX.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,7 +10,7 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "AnalyserIGroupX.h"
+#import "AnalyzerIGroupX.h"
 
 
 #pragma mark -
@@ -21,9 +21,9 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 
 
 #pragma mark -
-#pragma mark AnalyserIGroupX private
+#pragma mark AnalyzerIGroupX private
 
-@interface AnalyserIGroupX()
+@interface AnalyzerIGroupX()
 {
     NSArray *_positiveIndices;
     NSArray *_negativeIndices;
@@ -33,9 +33,9 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 
 
 #pragma mark -
-#pragma mark AnalyserIGroupX implementation
+#pragma mark AnalyzerIGroupX implementation
 
-@implementation AnalyserIGroupX
+@implementation AnalyzerIGroupX
 
 #pragma mark -
 #pragma mark initialization methods
@@ -59,14 +59,14 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 
 
 #pragma mark -
-#pragma mark AnalyserGroup
+#pragma mark AnalyzerGroup
 
 /* This is one ugly piece of code translated directly from Pascal.
  
  I've written it a couple of years ago and actually have no clue what exactly does it do. I guess I'll have to rewrite it from scratch some time later when I'll get the original book with formulae of computing these values.
  */
 - (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyser>) analyser
+                        analyser: (id<Analyzer>) analyser
 {
     NSInteger X = 0;
     NSInteger T_aer = 0;
@@ -90,14 +90,14 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
     NSInteger DS[3][2] = { {0, 1}, {0,2}, {1,2} };
     
     
-    id<AnalyserGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
-    id<AnalyserGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
-    id<AnalyserGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
-    id<AnalyserGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
+    id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
+    id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
+    id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
+    id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
-    id<AnalyserGroup> IScale_100 = [analyser firstGroupForType: kGroupType_IScale_100];
-    id<AnalyserGroup> IScale_101 = [analyser firstGroupForType: kGroupType_IScale_101];
-    id<AnalyserGroup> IScale_102 = [analyser firstGroupForType: kGroupType_IScale_102];
+    id<AnalyzerGroup> IScale_100 = [analyser firstGroupForType: kGroupType_IScale_100];
+    id<AnalyzerGroup> IScale_101 = [analyser firstGroupForType: kGroupType_IScale_101];
+    id<AnalyzerGroup> IScale_102 = [analyser firstGroupForType: kGroupType_IScale_102];
     
     T_aer =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +
@@ -247,7 +247,7 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 
 
 - (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyser>) analyser
+                              analyser: (id<Analyzer>) analyser
 {
     NSUInteger positiveMatches = 0;
     NSUInteger negativeMatches = 0;
@@ -272,7 +272,7 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 
 
 - (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
-                                 analyser: (id<Analyser>) analyser
+                                 analyser: (id<Analyzer>) analyser
 {
     return [self computeMatchesForRecord: record
                                 analyser: analyser] * 100 /

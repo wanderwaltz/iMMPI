@@ -1,5 +1,5 @@
 //
-//  AnalyserGroupBase.h
+//  AnalyzerGroupBase.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,9 +10,9 @@
 
 
 #pragma mark -
-#pragma mark AnalyserGroupBase interface
+#pragma mark AnalyzerGroupBase interface
 
-@interface AnalyserGroupBase : NSObject<AnalyserGroup>
+@interface AnalyzerGroupBase : NSObject<AnalyzerGroup>
 @property (strong,   nonatomic) NSString  *name;
 @property (strong,   nonatomic) NSString  *type;
 @property (assign,   nonatomic) double     score;
@@ -20,12 +20,12 @@
 
 - (id) initWithJSON: (NSDictionary *) json;
 
-- (id<AnalyserGroup>) subgroupAtIndex: (NSUInteger) index;
+- (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index;
 
 - (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyser>) analyser;
+                              analyser: (id<Analyzer>) analyser;
 
 
-+ (id<AnalyserGroup>) parseGroupJSON: (NSDictionary *) json;
++ (id<AnalyzerGroup>) parseGroupJSON: (NSDictionary *) json;
 
 @end

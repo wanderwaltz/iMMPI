@@ -1,16 +1,16 @@
 //
-//  AnalyserIGroupM.h
+//  AnalyzerIGroup99.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "AnalyserPGroup.h"
+#import "AnalyzerPGroup.h"
 
 
 #pragma mark -
-#pragma mark AnalyserIGroupM interface
+#pragma mark AnalyzerIGroup99 interface
 
-@interface AnalyserIGroupM : AnalyserPGroup
+@interface AnalyzerIGroup99 : AnalyzerPGroup
 @end

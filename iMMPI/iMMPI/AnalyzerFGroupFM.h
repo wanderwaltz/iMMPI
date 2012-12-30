@@ -1,16 +1,16 @@
 //
-//  AnalyserFGroupFM.h
+//  AnalyzerFGroupFM.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "AnalyserGroupBase.h"
+#import "AnalyzerGroupBase.h"
 
 
 #pragma mark -
-#pragma mark AnalyserFGroupFM interface
+#pragma mark AnalyzerFGroupFM interface
 
-@interface AnalyserFGroupFM : AnalyserGroupBase
+@interface AnalyzerFGroupFM : AnalyzerGroupBase
 @end

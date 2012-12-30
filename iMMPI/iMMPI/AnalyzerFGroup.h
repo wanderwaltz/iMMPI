@@ -1,18 +1,18 @@
 //
-//  AnalyserFGroup.h
+//  AnalyzerFGroup.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "AnalyserGroupBase.h"
+#import "AnalyzerGroupBase.h"
 
 
 #pragma mark -
-#pragma mark AnalyserFGroup interface
+#pragma mark AnalyzerFGroup interface
 
-@interface AnalyserFGroup : AnalyserGroupBase
+@interface AnalyzerFGroup : AnalyzerGroupBase
 
 @property (readonly, nonatomic) double medianMale;
 @property (readonly, nonatomic) double medianFemale;

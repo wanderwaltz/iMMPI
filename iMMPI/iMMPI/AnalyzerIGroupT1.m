@@ -1,5 +1,5 @@
 //
-//  AnalyserIGroupT1.m
+//  AnalyzerIGroupT1.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,19 +10,19 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "AnalyserIGroupT1.h"
+#import "AnalyzerIGroupT1.h"
 
 
 #pragma mark -
-#pragma mark AnalyserIGroupT1 implementation
+#pragma mark AnalyzerIGroupT1 implementation
 
-@implementation AnalyserIGroupT1
+@implementation AnalyzerIGroupT1
 
 #pragma mark -
-#pragma mark AnalyserGroup
+#pragma mark AnalyzerGroup
 
 - (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyser>) analyser
+                        analyser: (id<Analyzer>) analyser
 {
     NSArray *brackets = [self bracketsForRecord: record];
     
@@ -31,10 +31,10 @@
     NSUInteger C = [brackets[2] unsignedIntegerValue];
     NSUInteger D = [brackets[3] unsignedIntegerValue];
     
-    id<AnalyserGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
-    id<AnalyserGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
-    id<AnalyserGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
-    id<AnalyserGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
+    id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
+    id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
+    id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
+    id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
     NSUInteger T_aer =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +

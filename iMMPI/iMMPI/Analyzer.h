@@ -1,5 +1,5 @@
 //
-//  Analyser.h
+//  Analyzer.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -47,13 +47,13 @@ extern NSString * const kGroupType_IScale_104;
 
 
 #pragma mark -
-#pragma mark Analyser interface
+#pragma mark Analyzer interface
 
-@interface Analyser : NSObject<Analyser>
+@interface Analyzer : NSObject<Analyzer>
 
 @property (readonly, nonatomic) NSUInteger groupsCount;
 
-- (id<AnalyserGroup>) groupAtIndex: (NSUInteger) index;
+- (id<AnalyzerGroup>) groupAtIndex: (NSUInteger) index;
 - (NSUInteger) depthOfGroupAtIndex: (NSUInteger) index;
 
 - (BOOL) loadGroups;

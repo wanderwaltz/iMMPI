@@ -47,8 +47,8 @@ typedef enum : NSInteger
 #import "TestRecordProtocol.h"
 #import "StatementProtocol.h"
 #import "QuestionnaireProtocol.h"
-#import "AnalyserGroup.h"
-#import "AnalyserProtocol.h"
+#import "AnalyzerGroup.h"
+#import "AnalyzerProtocol.h"
 
 #import "MutableTableViewModel.h"
 #import "TestRecordStorageProtocol.h"
@@ -65,7 +65,7 @@ typedef enum : NSInteger
 #import "TestAnswers.h"
 #import "Answer.h"
 
-#import "Analyser.h"
+#import "Analyzer.h"
 
 #import "JSONTestRecordSerialization.h"
 

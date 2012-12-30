@@ -1,5 +1,5 @@
 //
-//  AnalyserProtocol.h
+//  AnalyzerProtocol.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,12 +10,12 @@
 
 
 #pragma mark -
-#pragma mark Analyser protocol
+#pragma mark Analyzer protocol
 
-@protocol Analyser<NSObject>
+@protocol Analyzer<NSObject>
 @required
 
-- (id<AnalyserGroup>) firstGroupForType: (NSString *) type;
+- (id<AnalyzerGroup>) firstGroupForType: (NSString *) type;
 
 - (BOOL) isValidStatementID: (NSInteger) statementID;
 

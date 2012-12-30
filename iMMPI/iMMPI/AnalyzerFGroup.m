@@ -1,5 +1,5 @@
 //
-//  AnalyserFGroupFM.m
+//  AnalyzerFGroup.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,17 +10,14 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "AnalyserFGroupFM.h"
+#import "AnalyzerFGroup.h"
 
 
 #pragma mark -
 #pragma mark Static constants
 
-static NSString * const kJSONKeyMaleAnswersPositive = @"maleAnswersPositive";
-static NSString * const kJSONKeyMaleAnswersNegative = @"maleAnswersNegative";
-
-static NSString * const kJSONKeyFemaleAnswersPositive = @"femaleAnswersPositive";
-static NSString * const kJSONKeyFemaleAnswersNegative = @"femaleAnswersNegative";
+static NSString * const kJSONKeyAnswersPositive = @"answersPositive";
+static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 
 static NSString * const kJSONKeyMaleDeviation   = @"maleDeviation";
 static NSString * const kJSONKeyFemaleDeviation = @"femaleDeviation";
@@ -40,16 +37,13 @@ static id _logExpectedFloat(NSString *key, id object);
 
 
 #pragma mark -
-#pragma mark AnalyserFGroupFM private
+#pragma mark AnalyzerFGroup private
 
-@interface AnalyserFGroupFM()
+@interface AnalyzerFGroup()
 {
-    NSArray *_malePositiveIndices;
-    NSArray *_maleNegativeIndices;
-    
-    NSArray *_femalePositiveIndices;
-    NSArray *_femaleNegativeIndices;
-    
+    NSArray *_positiveIndices;
+    NSArray *_negativeIndices;
+        
     double _medianMale;
     double _deviationMale;
     
@@ -61,20 +55,17 @@ static id _logExpectedFloat(NSString *key, id object);
 
 
 #pragma mark -
-#pragma mark AnalyserFGroupFM implementation
+#pragma mark AnalyzerFGroup implementation
 
-@implementation AnalyserFGroupFM
+@implementation AnalyzerFGroup
 
 #pragma mark -
 #pragma mark initialization methods
 
 - (id) initWithJSON: (NSDictionary *) json
 {
-    NSString *maleAnswersPositiveString = json[kJSONKeyMaleAnswersPositive];
-    NSString *maleAnswersNegativeString = json[kJSONKeyMaleAnswersNegative];
-    
-    NSString *femaleAnswersPositiveString = json[kJSONKeyFemaleAnswersPositive];
-    NSString *femaleAnswersNegativeString = json[kJSONKeyFemaleAnswersNegative];
+    NSString *answersPositiveString = json[kJSONKeyAnswersPositive];
+    NSString *answersNegativeString = json[kJSONKeyAnswersNegative];
     
     NSNumber *maleMedian      = json[kJSONKeyMaleMedian];
     NSNumber *maleDeviation   = json[kJSONKeyMaleDeviation];
@@ -105,15 +96,10 @@ static id _logExpectedFloat(NSString *key, id object);
     
     if (self != nil)
     {
-        _malePositiveIndices = [[maleAnswersPositiveString componentsSeparatedByString: @" "]
-                                valueForKey: @"intValue"];
-        _maleNegativeIndices = [[maleAnswersNegativeString componentsSeparatedByString: @" "]
-                                valueForKey: @"intValue"];
-        
-        _femalePositiveIndices = [[femaleAnswersPositiveString componentsSeparatedByString: @" "]
-                                  valueForKey: @"intValue"];
-        _femaleNegativeIndices = [[femaleAnswersNegativeString componentsSeparatedByString: @" "]
-                                  valueForKey: @"intValue"];
+        _positiveIndices = [[answersPositiveString componentsSeparatedByString: @" "]
+                            valueForKey: @"intValue"];
+        _negativeIndices = [[answersNegativeString componentsSeparatedByString: @" "]
+                            valueForKey: @"intValue"];
         
         _medianMale   = [maleMedian   doubleValue];
         _medianFemale = [femaleMedian doubleValue];
@@ -126,14 +112,14 @@ static id _logExpectedFloat(NSString *key, id object);
 
 
 #pragma mark -
-#pragma mark AnalyserGroup
+#pragma mark AnalyzerGroup
 
 - (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyser>) analyser
+                        analyser: (id<Analyzer>) analyser
 {
     NSUInteger matches = [self computeMatchesForRecord: record
                                               analyser: analyser];
-   
+    
     double median    = (record.person.gender == GenderFemale) ?    _medianFemale :    _medianMale;
     double deviation = (record.person.gender == GenderFemale) ? _deviationFemale : _deviationMale;
     
@@ -145,18 +131,12 @@ static id _logExpectedFloat(NSString *key, id object);
 
 
 - (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyser>) analyser
+                              analyser: (id<Analyzer>) analyser
 {
     NSUInteger positiveMatches = 0;
     NSUInteger negativeMatches = 0;
     
-    NSArray *positiveIndices =
-    (record.person.gender == GenderFemale) ? _femalePositiveIndices : _malePositiveIndices;
-    
-    NSArray *negativeIndices =
-    (record.person.gender == GenderFemale) ? _femaleNegativeIndices : _maleNegativeIndices;
-    
-    for (NSNumber *index in positiveIndices)
+    for (NSNumber *index in _positiveIndices)
     {
         if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
              == AnswerTypePositive) &&
@@ -164,31 +144,25 @@ static id _logExpectedFloat(NSString *key, id object);
     }
     
     
-    for (NSNumber *index in negativeIndices)
+    for (NSNumber *index in _negativeIndices)
     {
         if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
              == AnswerTypeNegative) &&
             [analyser isValidStatementID: [index integerValue]]) negativeMatches++;
     }
-    
+
     return positiveMatches+negativeMatches;
 }
 
 
 - (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
-                                 analyser: (id<Analyser>) analyser
+                                 analyser: (id<Analyzer>) analyser
 {
-    NSArray *positiveIndices =
-    (record.person.gender == GenderFemale) ? _femalePositiveIndices : _malePositiveIndices;
-    
-    NSArray *negativeIndices =
-    (record.person.gender == GenderFemale) ? _femaleNegativeIndices : _maleNegativeIndices;
-
-    
     return [self computeMatchesForRecord: record
                                 analyser: analyser] * 100 /
-            (positiveIndices.count + negativeIndices.count);
+            (_positiveIndices.count + _negativeIndices.count);
 }
+
 
 @end
 
@@ -198,34 +172,34 @@ static id _logExpectedFloat(NSString *key, id object);
 
 static id _logMaleDeviationNotFound()
 {
-    NSLog(@"Failed to parse F_SCALE_FM group: '%@' not found.", kJSONKeyMaleDeviation);
+    NSLog(@"Failed to parse F_SCALE group: '%@' not found.", kJSONKeyMaleDeviation);
     return nil;
 }
 
 
 static id _logFemaleDeviationNotFound()
 {
-    NSLog(@"Failed to parse F_SCALE_FM group: '%@' not found.", kJSONKeyFemaleDeviation);
+    NSLog(@"Failed to parse F_SCALE group: '%@' not found.", kJSONKeyFemaleDeviation);
     return nil;
 }
 
 
 static id _logMaleMedianNotFound()
 {
-    NSLog(@"Failed to parse F_SCALE_FM group: '%@' not found.", kJSONKeyMaleMedian);
+    NSLog(@"Failed to parse F_SCALE group: '%@' not found.", kJSONKeyMaleMedian);
     return nil;
 }
 
 
 static id _logFemaleMedianNotFound()
 {
-    NSLog(@"Failed to parse F_SCALE_FM group: '%@' not found.", kJSONKeyFemaleMedian);
+    NSLog(@"Failed to parse F_SCALE group: '%@' not found.", kJSONKeyFemaleMedian);
     return nil;
 }
 
 
 static id _logExpectedFloat(NSString *key, id object)
 {
-    NSLog(@"Failed to parse F_SCALE_FM group: expected '%@' to be of floating-point value, got '%@' instead.", key, object);
+    NSLog(@"Failed to parse F_SCALE group: expected '%@' to be of floating-point value, got '%@' instead.", key, object);
     return nil;
 }

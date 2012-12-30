@@ -1,5 +1,5 @@
 //
-//  AnalyserTableViewCell.m
+//  AnalyzerTableViewCell.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,13 +10,13 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "AnalyserTableViewCell.h"
+#import "AnalyzerTableViewCell.h"
 
 
 #pragma mark -
-#pragma mark AnalyserTableViewCell private
+#pragma mark AnalyzerTableViewCell private
 
-@interface AnalyserTableViewCell()
+@interface AnalyzerTableViewCell()
 {
     IBOutlet UILabel *_groupNameLabel;
     IBOutlet UILabel *_scoreLabel;
@@ -30,7 +30,7 @@
 #pragma mark -
 #pragma mark AnalyzerTableViewCell implementation
 
-@implementation AnalyserTableViewCell
+@implementation AnalyzerTableViewCell
 
 #pragma mark -
 #pragma mark properties

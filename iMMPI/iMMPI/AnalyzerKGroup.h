@@ -1,16 +1,17 @@
 //
-//  AnalyserIGroupX.h
+//  AnalyzerKGroup.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "AnalyserGroupBase.h"
+#import "AnalyzerFGroup.h"
 
 
 #pragma mark -
-#pragma mark AnalyserIGroupX interface
+#pragma mark AnalyzerKGroup interface
 
-@interface AnalyserIGroupX : AnalyserGroupBase
+@interface AnalyzerKGroup : AnalyzerFGroup
+
 @end

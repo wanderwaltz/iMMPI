@@ -1,5 +1,5 @@
 //
-//  AnalyserIGroupM.m
+//  AnalyzerIGroupM.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,7 +10,7 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "AnalyserIGroupM.h"
+#import "AnalyzerIGroupM.h"
 
 
 #pragma mark -
@@ -29,9 +29,9 @@ static id _logMultiplierNotFound();
 
 
 #pragma mark -
-#pragma mark AnalyserIGroupM private
+#pragma mark AnalyzerIGroupM private
 
-@interface AnalyserIGroupM()
+@interface AnalyzerIGroupM()
 {
     NSArray  *_brackets;
     NSString *_multiplierType;
@@ -41,9 +41,9 @@ static id _logMultiplierNotFound();
 
 
 #pragma mark -
-#pragma mark AnalyserIGroupM implementation
+#pragma mark AnalyzerIGroupM implementation
 
-@implementation AnalyserIGroupM
+@implementation AnalyzerIGroupM
 
 #pragma mark -
 #pragma mark initialization methods
@@ -76,7 +76,7 @@ static id _logMultiplierNotFound();
 
 
 #pragma mark -
-#pragma mark AnalyserGroup
+#pragma mark AnalyzerGroup
 
 - (NSArray *) bracketsForRecord: (id<TestRecord>) record
 {
@@ -86,7 +86,7 @@ static id _logMultiplierNotFound();
 
 
 - (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyser>) analyser
+                        analyser: (id<Analyzer>) analyser
 {
     NSArray *brackets = [self bracketsForRecord: record];
     
@@ -95,10 +95,10 @@ static id _logMultiplierNotFound();
     NSUInteger C = [brackets[2] unsignedIntegerValue];
     NSUInteger D = [brackets[3] unsignedIntegerValue];
     
-    id<AnalyserGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
-    id<AnalyserGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
-    id<AnalyserGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
-    id<AnalyserGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
+    id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
+    id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
+    id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
+    id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
     NSUInteger T_aer =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +

@@ -1,5 +1,5 @@
 //
-//  Analyser.m
+//  Analyzer.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,8 +10,8 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "Analyser.h"
-#import "AnalyserGroupBase.h"
+#import "Analyzer.h"
+#import "AnalyzerGroupBase.h"
 
 
 #pragma mark -
@@ -74,7 +74,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 #pragma mark -
 #pragma mark Analyzer private
 
-@interface Analyser()
+@interface Analyzer()
 {
     NSMutableArray *_groups;
     NSMutableArray *_allGroups;
@@ -90,7 +90,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 #pragma mark -
 #pragma mark Analyzer implementation
 
-@implementation Analyser
+@implementation Analyzer
 
 #pragma mark -
 #pragma mark properties
@@ -120,7 +120,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 #pragma mark -
 #pragma mark methods
 
-- (id<AnalyserGroup>) groupAtIndex: (NSUInteger) index
+- (id<AnalyzerGroup>) groupAtIndex: (NSUInteger) index
 {
     return _allGroups[index];
 }
@@ -163,7 +163,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
     {
         if ([groupJson isKindOfClass: [NSDictionary class]])
         {
-            id<AnalyserGroup> group = [AnalyserGroupBase parseGroupJSON: groupJson];
+            id<AnalyzerGroup> group = [AnalyzerGroupBase parseGroupJSON: groupJson];
             
             if (group != nil)
             {
@@ -179,16 +179,16 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
     _allGroups = [NSMutableArray arrayWithCapacity: _groups.count];
     _depths    = [NSMutableArray arrayWithCapacity: _allGroups.count];
     
-    for (id<AnalyserGroup> group in _groups)
+    for (id<AnalyzerGroup> group in _groups)
     {
-        FRB_AssertConformsTo(group, AnalyserGroup);
+        FRB_AssertConformsTo(group, AnalyzerGroup);
         
         [_allGroups addObject: group];
         [_depths    addObject: @0];
 
         [self visitSubgroupsOfGroupDFS: group
                              withBlock:
-         ^(id<AnalyserGroup> subgroup, NSUInteger depth) {
+         ^(id<AnalyzerGroup> subgroup, NSUInteger depth) {
              [_allGroups addObject: subgroup];
              [_depths addObject: @(depth)];
          }
@@ -201,22 +201,22 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 
 - (void) computeScoresForRecord: (id<TestRecord>) record
 {
-    for (id<AnalyserGroup> group in _allGroups)
+    for (id<AnalyzerGroup> group in _allGroups)
     {
-        FRB_AssertConformsTo(group, AnalyserGroup);
+        FRB_AssertConformsTo(group, AnalyzerGroup);
         [group computeScoreForRecord: record analyser: self];
     }
 }
 
 
 #pragma mark -
-#pragma mark Analyser
+#pragma mark Analyzer
 
-- (id<AnalyserGroup>) firstGroupForType: (NSString *) type
+- (id<AnalyzerGroup>) firstGroupForType: (NSString *) type
 {
-    for (id<AnalyserGroup> group in _allGroups)
+    for (id<AnalyzerGroup> group in _allGroups)
     {
-        FRB_AssertConformsTo(group, AnalyserGroup);
+        FRB_AssertConformsTo(group, AnalyzerGroup);
         if ([group.type isEqualToString: type])
             return group;
     }
@@ -233,15 +233,15 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 #pragma mark -
 #pragma mark private
 
-- (void) visitSubgroupsOfGroupDFS: (id<AnalyserGroup>) group
-                        withBlock: (void(^)(id<AnalyserGroup> subgroup, NSUInteger depth)) block
+- (void) visitSubgroupsOfGroupDFS: (id<AnalyzerGroup>) group
+                        withBlock: (void(^)(id<AnalyzerGroup> subgroup, NSUInteger depth)) block
                             depth: (NSUInteger) depth
 {
     if (block)
     {
         for (NSUInteger i = 0; i < group.subgroupsCount; ++i)
         {
-            id<AnalyserGroup> subgroup = [group subgroupAtIndex: i];
+            id<AnalyzerGroup> subgroup = [group subgroupAtIndex: i];
             
             block(subgroup, depth);
             [self visitSubgroupsOfGroupDFS: subgroup
