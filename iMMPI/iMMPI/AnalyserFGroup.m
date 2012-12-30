@@ -117,16 +117,29 @@ static id _logExpectedFloat(NSString *key, id object);
 - (double) computeScoreForRecord: (id<TestRecord>) record
                         analyser: (id<Analyser>) analyser
 {
-    NSUInteger positiveMatches = 0;
-    NSUInteger negativeMatches = 0;
+    NSUInteger matches = [self computeMatchesForRecord: record
+                                              analyser: analyser];
     
     double median    = (record.person.gender == GenderFemale) ?    _medianFemale :    _medianMale;
     double deviation = (record.person.gender == GenderFemale) ? _deviationFemale : _deviationMale;
     
+    double score = round(50 + 10 * (matches-median)/deviation);
+    self.score   = score;
+    
+    return self.score;
+}
+
+
+- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
+                              analyser: (id<Analyser>) analyser
+{
+    NSUInteger positiveMatches = 0;
+    NSUInteger negativeMatches = 0;
+    
     for (NSNumber *index in _positiveIndices)
     {
         if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
-            == AnswerTypePositive) &&
+             == AnswerTypePositive) &&
             [analyser isValidStatementID: [index integerValue]]) positiveMatches++;
     }
     
@@ -134,15 +147,22 @@ static id _logExpectedFloat(NSString *key, id object);
     for (NSNumber *index in _negativeIndices)
     {
         if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
-            == AnswerTypeNegative) &&
+             == AnswerTypeNegative) &&
             [analyser isValidStatementID: [index integerValue]]) negativeMatches++;
     }
-    
-    double score = round(50 + 10 * (positiveMatches+negativeMatches-median)/deviation);
-    self.score   = score;
-    
-    return self.score;
+
+    return positiveMatches+negativeMatches;
 }
+
+
+- (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
+                                 analyser: (id<Analyser>) analyser
+{
+    return [self computeMatchesForRecord: record
+                                analyser: analyser] * 100 /
+            (_positiveIndices.count + _negativeIndices.count);
+}
+
 
 @end
 

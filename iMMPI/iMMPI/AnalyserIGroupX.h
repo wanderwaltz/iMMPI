@@ -1,5 +1,5 @@
 //
-//  AnalyserPGroup.h
+//  AnalyserIGroupX.h
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 30.12.12.
@@ -10,10 +10,7 @@
 
 
 #pragma mark -
-#pragma mark AnalyserPGroup interface
+#pragma mark AnalyserIGroupX interface
 
-@interface AnalyserPGroup : AnalyserGroupBase
-
-- (NSArray *) bracketsForRecord: (id<TestRecord>) record;
-
+@interface AnalyserIGroupX : AnalyserGroupBase
 @end

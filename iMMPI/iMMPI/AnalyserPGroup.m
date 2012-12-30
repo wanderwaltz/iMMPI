@@ -99,36 +99,23 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 #pragma mark -
 #pragma mark AnalyserGroup
 
-- (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyser>) analyser
+- (NSArray *) bracketsForRecord: (id<TestRecord>) record
 {
-    NSUInteger totalIndices = _negativeIndices.count + _positiveIndices.count;
-    
-    NSUInteger positiveMatches = 0;
-    NSUInteger negativeMatches = 0;
-    
-    for (NSNumber *index in _positiveIndices)
-    {
-        if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
-            == AnswerTypePositive) &&
-            [analyser isValidStatementID: [index integerValue]]) positiveMatches++;
-    }
-    
-    
-    for (NSNumber *index in _negativeIndices)
-    {
-        if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
-            == AnswerTypeNegative) &&
-            [analyser isValidStatementID: [index integerValue]]) negativeMatches++;
-    }
-    
-    NSUInteger totalMatches = positiveMatches+negativeMatches;
-    
-    NSUInteger percentage = (totalMatches * 100) / totalIndices;
-    
     NSArray *brackets = (record.person.gender == GenderFemale) ? _femaleBrackets : _maleBrackets;
     
     NSAssert(brackets.count == 4, @"");
+    
+    return brackets;
+}
+
+
+- (double) computeScoreForRecord: (id<TestRecord>) record
+                        analyser: (id<Analyser>) analyser
+{
+    NSUInteger percentage = [self computePercentageForRecord: record
+                                                    analyser: analyser];
+    
+    NSArray *brackets = [self bracketsForRecord: record];
     
     NSUInteger A = [brackets[0] unsignedIntegerValue];
     NSUInteger B = [brackets[1] unsignedIntegerValue];
@@ -153,6 +140,41 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     
     return self.score;
 }
+
+
+- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
+                              analyser: (id<Analyser>) analyser
+{
+    NSUInteger positiveMatches = 0;
+    NSUInteger negativeMatches = 0;
+    
+    for (NSNumber *index in _positiveIndices)
+    {
+        if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
+             == AnswerTypePositive) &&
+            [analyser isValidStatementID: [index integerValue]]) positiveMatches++;
+    }
+    
+    
+    for (NSNumber *index in _negativeIndices)
+    {
+        if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
+             == AnswerTypeNegative) &&
+            [analyser isValidStatementID: [index integerValue]]) negativeMatches++;
+    }
+    
+    return positiveMatches+negativeMatches;
+}
+
+
+- (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
+                                 analyser: (id<Analyser>) analyser
+{
+    return [self computeMatchesForRecord: record
+                                analyser: analyser] * 100 /
+            (_positiveIndices.count + _negativeIndices.count);
+}
+
 
 @end
 

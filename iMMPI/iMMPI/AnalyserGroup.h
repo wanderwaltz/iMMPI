@@ -29,4 +29,10 @@
 
 - (double) computeScoreForRecord: (id<TestRecord>) record analyser: (id<Analyser>) analyser;
 
+- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
+                              analyser: (id<Analyser>) analyser;
+
+- (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
+                                 analyser: (id<Analyser>) analyser;
+
 @end

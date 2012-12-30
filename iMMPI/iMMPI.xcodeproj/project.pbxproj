@@ -28,6 +28,11 @@
 		5D5E05B71646510700A5A704 /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B31646510700A5A704 /* mmpi.male.adult.json */; };
 		5D5E05B81646510700A5A704 /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B41646510700A5A704 /* mmpi.male.teen.json */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
+		5D85558516906A9C004E3021 /* AnalyserKGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558416906A9C004E3021 /* AnalyserKGroup.m */; };
+		5D85558916906E98004E3021 /* AnalyserIGroupT1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558816906E98004E3021 /* AnalyserIGroupT1.m */; };
+		5D85558D16907158004E3021 /* AnalyserIGroup99.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558C16907158004E3021 /* AnalyserIGroup99.m */; };
+		5D855591169074D0004E3021 /* AnalyserIGroupM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D855590169074D0004E3021 /* AnalyserIGroupM.m */; };
+		5D855595169076A4004E3021 /* AnalyserIGroupX.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D855594169076A4004E3021 /* AnalyserIGroupX.m */; };
 		5DA5C9E5163B018D00CF1601 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
 		5DA5C9E7163B018D00CF1601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
 		5DA5C9E9163B018D00CF1601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
@@ -81,6 +86,16 @@
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		5D85558316906A9C004E3021 /* AnalyserKGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserKGroup.h; sourceTree = "<group>"; };
+		5D85558416906A9C004E3021 /* AnalyserKGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserKGroup.m; sourceTree = "<group>"; };
+		5D85558716906E98004E3021 /* AnalyserIGroupT1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserIGroupT1.h; sourceTree = "<group>"; };
+		5D85558816906E98004E3021 /* AnalyserIGroupT1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserIGroupT1.m; sourceTree = "<group>"; };
+		5D85558B16907158004E3021 /* AnalyserIGroup99.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserIGroup99.h; sourceTree = "<group>"; };
+		5D85558C16907158004E3021 /* AnalyserIGroup99.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserIGroup99.m; sourceTree = "<group>"; };
+		5D85558F169074D0004E3021 /* AnalyserIGroupM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserIGroupM.h; sourceTree = "<group>"; };
+		5D855590169074D0004E3021 /* AnalyserIGroupM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserIGroupM.m; sourceTree = "<group>"; };
+		5D855593169076A4004E3021 /* AnalyserIGroupX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyserIGroupX.h; sourceTree = "<group>"; };
+		5D855594169076A4004E3021 /* AnalyserIGroupX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyserIGroupX.m; sourceTree = "<group>"; };
 		5DA5C9E0163B018D00CF1601 /* iMMPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMMPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA5C9E4163B018D00CF1601 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5DA5C9E6163B018D00CF1601 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -190,6 +205,51 @@
 				5DC40471168C2596000AFBAE /* Statement.m */,
 			);
 			name = Questionnaire;
+			sourceTree = "<group>";
+		};
+		5D85558116906A57004E3021 /* K Group */ = {
+			isa = PBXGroup;
+			children = (
+				5D85558316906A9C004E3021 /* AnalyserKGroup.h */,
+				5D85558416906A9C004E3021 /* AnalyserKGroup.m */,
+			);
+			name = "K Group";
+			sourceTree = "<group>";
+		};
+		5D85558616906E7A004E3021 /* I Group T1 */ = {
+			isa = PBXGroup;
+			children = (
+				5D85558716906E98004E3021 /* AnalyserIGroupT1.h */,
+				5D85558816906E98004E3021 /* AnalyserIGroupT1.m */,
+			);
+			name = "I Group T1";
+			sourceTree = "<group>";
+		};
+		5D85558A16907144004E3021 /* I Group 99 */ = {
+			isa = PBXGroup;
+			children = (
+				5D85558B16907158004E3021 /* AnalyserIGroup99.h */,
+				5D85558C16907158004E3021 /* AnalyserIGroup99.m */,
+			);
+			name = "I Group 99";
+			sourceTree = "<group>";
+		};
+		5D85558E16907495004E3021 /* I Group M */ = {
+			isa = PBXGroup;
+			children = (
+				5D85558F169074D0004E3021 /* AnalyserIGroupM.h */,
+				5D855590169074D0004E3021 /* AnalyserIGroupM.m */,
+			);
+			name = "I Group M";
+			sourceTree = "<group>";
+		};
+		5D85559216907689004E3021 /* I Group X */ = {
+			isa = PBXGroup;
+			children = (
+				5D855593169076A4004E3021 /* AnalyserIGroupX.h */,
+				5D855594169076A4004E3021 /* AnalyserIGroupX.m */,
+			);
+			name = "I Group X";
 			sourceTree = "<group>";
 		};
 		5DA5C9D5163B018D00CF1601 = {
@@ -356,6 +416,11 @@
 		5DC4ABF416902E8200E835B7 /* private */ = {
 			isa = PBXGroup;
 			children = (
+				5D85559216907689004E3021 /* I Group X */,
+				5D85558E16907495004E3021 /* I Group M */,
+				5D85558A16907144004E3021 /* I Group 99 */,
+				5D85558616906E7A004E3021 /* I Group T1 */,
+				5D85558116906A57004E3021 /* K Group */,
 				5DC4AC0E1690625800E835B7 /* P Group */,
 				5DC4AC0A16905AB200E835B7 /* F Group FM */,
 				5DC4AC061690447300E835B7 /* F Group */,
@@ -606,6 +671,11 @@
 				5DC4AC091690448A00E835B7 /* AnalyserFGroup.m in Sources */,
 				5DC4AC0D16905ACB00E835B7 /* AnalyserFGroupFM.m in Sources */,
 				5DC4AC111690626800E835B7 /* AnalyserPGroup.m in Sources */,
+				5D85558516906A9C004E3021 /* AnalyserKGroup.m in Sources */,
+				5D85558916906E98004E3021 /* AnalyserIGroupT1.m in Sources */,
+				5D85558D16907158004E3021 /* AnalyserIGroup99.m in Sources */,
+				5D855591169074D0004E3021 /* AnalyserIGroupM.m in Sources */,
+				5D855595169076A4004E3021 /* AnalyserIGroupX.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

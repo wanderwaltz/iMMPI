@@ -14,6 +14,13 @@
 
 #import "AnalyserFGroup.h"
 #import "AnalyserFGroupFM.h"
+#import "AnalyserPGroup.h"
+#import "AnalyserKGroup.h"
+#import "AnalyserIGroupT1.h"
+#import "AnalyserIGroup99.h"
+#import "AnalyserIGroupM.h"
+#import "AnalyserIGroupX.h"
+
 
 #pragma mark -
 #pragma mark Static constants
@@ -73,33 +80,45 @@ static id _logSubgroupNotDictionary(id object);
                       kGroupType_Base_F     : @"AnalyserFGroup",
                       kGroupType_Base_K     : @"AnalyserFGroup",
                       
-                      kGroupType_Base_1     : @"",
+                      kGroupType_Base_1     : @"AnalyserKGroup",
                       kGroupType_Base_2     : @"AnalyserFGroup",
                       kGroupType_Base_3     : @"AnalyserFGroup",
-                      kGroupType_Base_4     : @"",
+                      kGroupType_Base_4     : @"AnalyserKGroup",
                       kGroupType_Base_5     : @"AnalyserFGroupFM",
                       kGroupType_Base_6     : @"AnalyserFGroup",
-                      kGroupType_Base_7     : @"",
-                      kGroupType_Base_8     : @"",
-                      kGroupType_Base_9     : @"",
+                      kGroupType_Base_7     : @"AnalyserKGroup",
+                      kGroupType_Base_8     : @"AnalyserKGroup",
+                      kGroupType_Base_9     : @"AnalyserKGroup",
                       kGroupType_Base_0     : @"AnalyserFGroup",
                       
-                      kGroupType_IScale_95  : @"",
-                      kGroupType_IScale_96  : @"",
-                      kGroupType_IScale_97  : @"",
-                      kGroupType_IScale_98  : @"",
-                      kGroupType_IScale_99  : @"",
-                      kGroupType_IScale_100 : @"",
-                      kGroupType_IScale_101 : @"",
-                      kGroupType_IScale_102 : @"",
-                      kGroupType_IScale_103 : @"",
-                      kGroupType_IScale_104 : @""
+                      kGroupType_IScale_95  : @"AnalyserIGroupT1",
+                      kGroupType_IScale_96  : @"AnalyserIGroupT1",
+                      kGroupType_IScale_97  : @"AnalyserIGroupT1",
+                      kGroupType_IScale_98  : @"AnalyserIGroupT1",
+                      kGroupType_IScale_99  : @"AnalyserIGroup99",
+                      kGroupType_IScale_100 : @"AnalyserIGroupX",
+                      kGroupType_IScale_101 : @"AnalyserIGroupX",
+                      kGroupType_IScale_102 : @"AnalyserIGroupX",
+                      kGroupType_IScale_103 : @"AnalyserIGroupM",
+                      kGroupType_IScale_104 : @"AnalyserIGroupM"
                       };
                   });
 }
 
 
 - (id) initWithJSON: (NSDictionary *) json
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        _subgroups = [NSMutableArray array];
+    }
+    return self;
+}
+
+
+- (id) init
 {
     self = [super init];
     
@@ -151,6 +170,20 @@ static id _logSubgroupNotDictionary(id object);
 {
     _score = NAN;
     return _score;
+}
+
+
+- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
+                              analyser: (id<Analyser>) analyser
+{
+    return 0;
+}
+
+
+- (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
+                                 analyser: (id<Analyser>) analyser
+{
+    return 0;
 }
 
 

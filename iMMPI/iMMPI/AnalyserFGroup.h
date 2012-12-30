@@ -13,4 +13,11 @@
 #pragma mark AnalyserFGroup interface
 
 @interface AnalyserFGroup : AnalyserGroupBase
+
+@property (readonly, nonatomic) double medianMale;
+@property (readonly, nonatomic) double medianFemale;
+@property (readonly, nonatomic) double deviationMale;
+@property (readonly, nonatomic) double deviationFemale;
+
+
 @end

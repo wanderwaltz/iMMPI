@@ -131,11 +131,24 @@ static id _logExpectedFloat(NSString *key, id object);
 - (double) computeScoreForRecord: (id<TestRecord>) record
                         analyser: (id<Analyser>) analyser
 {
-    NSUInteger positiveMatches = 0;
-    NSUInteger negativeMatches = 0;
-    
+    NSUInteger matches = [self computeMatchesForRecord: record
+                                              analyser: analyser];
+   
     double median    = (record.person.gender == GenderFemale) ?    _medianFemale :    _medianMale;
     double deviation = (record.person.gender == GenderFemale) ? _deviationFemale : _deviationMale;
+    
+    double score = round(50 + 10 * (matches-median)/deviation);
+    self.score   = score;
+    
+    return self.score;
+}
+
+
+- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
+                              analyser: (id<Analyser>) analyser
+{
+    NSUInteger positiveMatches = 0;
+    NSUInteger negativeMatches = 0;
     
     NSArray *positiveIndices =
     (record.person.gender == GenderFemale) ? _femalePositiveIndices : _malePositiveIndices;
@@ -146,7 +159,7 @@ static id _logExpectedFloat(NSString *key, id object);
     for (NSNumber *index in positiveIndices)
     {
         if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
-            == AnswerTypePositive) &&
+             == AnswerTypePositive) &&
             [analyser isValidStatementID: [index integerValue]]) positiveMatches++;
     }
     
@@ -154,14 +167,27 @@ static id _logExpectedFloat(NSString *key, id object);
     for (NSNumber *index in negativeIndices)
     {
         if (([record.testAnswers answerTypeForStatementID: [index integerValue]]
-            == AnswerTypeNegative) &&
+             == AnswerTypeNegative) &&
             [analyser isValidStatementID: [index integerValue]]) negativeMatches++;
     }
     
-    double score = round(50 + 10 * (positiveMatches+negativeMatches-median)/deviation);
-    self.score   = score;
+    return positiveMatches+negativeMatches;
+}
+
+
+- (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
+                                 analyser: (id<Analyser>) analyser
+{
+    NSArray *positiveIndices =
+    (record.person.gender == GenderFemale) ? _femalePositiveIndices : _malePositiveIndices;
     
-    return self.score;
+    NSArray *negativeIndices =
+    (record.person.gender == GenderFemale) ? _femaleNegativeIndices : _maleNegativeIndices;
+
+    
+    return [self computeMatchesForRecord: record
+                                analyser: analyser] * 100 /
+            (positiveIndices.count + negativeIndices.count);
 }
 
 @end
