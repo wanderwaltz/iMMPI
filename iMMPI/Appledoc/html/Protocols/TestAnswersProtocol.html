@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>Statement Protocol Reference</title>
+		<title>TestAnswersProtocol Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">Statement Protocol Reference</h1>
+				<h1 class="hideInXcode">TestAnswersProtocol Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -38,15 +38,17 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/statementID">&nbsp;&nbsp;&nbsp;&nbsp;statementID</option>
-	
-	<option value="//api/name/text">&nbsp;&nbsp;&nbsp;&nbsp;text</option>
 	
 	
 	
 	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/answerTypeForStatementID:">&nbsp;&nbsp;&nbsp;&nbsp;- answerTypeForStatementID:</option>
+	
+	<option value="//api/name/enumerateAnswers:">&nbsp;&nbsp;&nbsp;&nbsp;- enumerateAnswers:</option>
+	
+	<option value="//api/name/setAnswerType:forStatementID:">&nbsp;&nbsp;&nbsp;&nbsp;- setAnswerType:forStatementID:</option>
 	
 	
 	
@@ -70,24 +72,26 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/statementID">statementID</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/answerTypeForStatementID:">answerTypeForStatementID:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/text">text</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enumerateAnswers:">enumerateAnswers:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAnswerType:forStatementID:">setAnswerType:forStatementID:</a></span></li>
 	
 </ul></li>
-
-
-
-
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="Statement Protocol Reference" name="top"></a>
+				<a title="TestAnswersProtocol Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -96,7 +100,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">Statement Protocol Reference</h1>
+						<h1 class="title title-header">TestAnswersProtocol Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -107,7 +111,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">StatementProtocol.h</td>
+	<td class="specification-value">TestAnswersProtocol.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -117,7 +121,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A single statement of the <a href="../Classes/Questionnaire.html">Questionnaire</a>.</p>
+						<p>Encapsulates a mutable set of answers.</p>
 					</div>
 					
 					
@@ -135,17 +139,24 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/statementID">&nbsp;&nbsp;statementID</a></code>
-		<span class="tooltip"><p>ID of the statement</p></span>
+		<code><a href="#//api/name/setAnswerType:forStatementID:">&ndash;&nbsp;setAnswerType:forStatementID:</a></code>
+		<span class="tooltip"><p>This method should set an AnswerType for a statement with a given ID</p></span>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/text">&nbsp;&nbsp;text</a></code>
-		<span class="tooltip"><p>Text of the statement.</p></span>
+		<code><a href="#//api/name/answerTypeForStatementID:">&ndash;&nbsp;answerTypeForStatementID:</a></code>
+		<span class="tooltip"><p>This method should return answer type for statement with the provided ID</p></span>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enumerateAnswers:">&ndash;&nbsp;enumerateAnswers:</a></code>
+		<span class="tooltip"><p>This method should enumerate all answers with type != AnswerTypeUnknown.</p></span>
+	</span>
+	
 	<span class="task-item-suffix">required method</span>
 </li>
 						</ul>
@@ -156,27 +167,46 @@
 					
 					
 					
+					
+					
+					
+					
 					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/statementID" title="statementID"></a>
-	<h3 class="subsubtitle method-title">statementID</h3>
+	<a name="//api/name/answerTypeForStatementID:" title="answerTypeForStatementID:"></a>
+	<h3 class="subsubtitle method-title">answerTypeForStatementID:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>ID of the statement</p>
+		<p>This method should return answer type for statement with the provided ID</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger statementID</code></div>
+	<div class="method-subsection method-declaration"><code>- (AnswerType)answerTypeForStatementID:(NSInteger)<em>statementID</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>statementID</em></dt>
+			<dd><p>ID of the statement related to the answer</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>AnswerType for a recorded answer. If the statement has not yet been answered, returns AnswerTypeUnknown.</p>
+	</div>
 	
 	
 	
@@ -184,9 +214,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>ID of the statement</p>
-
-<p>ID is used when analyzing test results and querying an answer from <a href="../Classes/TestAnswers.html">TestAnswers</a> object.</p>
+		<p>This method should return answer type for statement with the provided ID</p>
 	</div>
 	
 	
@@ -197,27 +225,37 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">StatementProtocol.h</code><br />
+		<code class="declared-in-ref">TestAnswersProtocol.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/text" title="text"></a>
-	<h3 class="subsubtitle method-title">text</h3>
+	<a name="//api/name/enumerateAnswers:" title="enumerateAnswers:"></a>
+	<h3 class="subsubtitle method-title">enumerateAnswers:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Text of the statement.</p>
+		<p>This method should enumerate all answers with type != AnswerTypeUnknown.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSString *text</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)enumerateAnswers:(void ( ^ ) ( NSInteger statementID , AnswerType answer ))<em>block</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Block to be called on each answer/statementID pair where answer != AnswerTypeUnknown</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
@@ -227,7 +265,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Text of the statement.</p>
+		<p>This method should enumerate all answers with type != AnswerTypeUnknown.</p>
+
+<p>Ordering of the enumerating answers is undefined.</p>
 	</div>
 	
 	
@@ -238,17 +278,69 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">StatementProtocol.h</code><br />
+		<code class="declared-in-ref">TestAnswersProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setAnswerType:forStatementID:" title="setAnswerType:forStatementID:"></a>
+	<h3 class="subsubtitle method-title">setAnswerType:forStatementID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method should set an AnswerType for a statement with a given ID</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setAnswerType:(AnswerType)<em>answerType</em> forStatementID:(NSInteger)<em>statementID</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>answerType</em></dt>
+			<dd><p>answer type (agree, disagree, undefined &ndash; see source for the exact enum values)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>statementID</em></dt>
+			<dd><p>ID of the statement to relate the answer with</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method should set an AnswerType for a statement with a given ID</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TestAnswersProtocol.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
-					
-					
-					
-					
 					
 					
 				</div>

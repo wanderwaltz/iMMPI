@@ -13,14 +13,14 @@
 #pragma mark -
 #pragma mark TestRecord interface
 
-/*! A concrete implementation of TestRecord protocol.
+/*! A concrete implementation of TestRecordProtocol.
  
  Initializing this class instance with -init method will also create a Person object and set it as the person property value. testAnswers property will be initialized with empty TestAnswers object; date property defaults to the current date/time.
  */
-@interface TestRecord : NSObject<TestRecord>
+@interface TestRecord : NSObject<TestRecordProtocol>
 
-@property (strong, nonatomic) id<Person> person;
-@property (strong, nonatomic) id<TestAnswers> testAnswers;
+@property (strong, nonatomic) id<PersonProtocol> person;
+@property (strong, nonatomic) id<TestAnswersProtocol> testAnswers;
 
 @property (strong, nonatomic) NSDate *date;
 

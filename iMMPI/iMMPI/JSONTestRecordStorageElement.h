@@ -14,7 +14,7 @@
 
 @interface JSONTestRecordStorageElement : NSObject
 
-@property (strong, nonatomic) id<TestRecord> record;
+@property (strong, nonatomic) id<TestRecordProtocol> record;
 @property (strong, nonatomic) NSString *fileName;
 
 @end

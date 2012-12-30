@@ -12,9 +12,11 @@
 #pragma mark -
 #pragma mark Statement protocol
 
-/*! A single statement of the Questionnaire.
+/*! A single statement of the questionnaire. 
+ 
+ @see QuestionnaireProtocol
  */
-@protocol Statement<NSObject>
+@protocol StatementProtocol<NSObject>
 @required
 
 

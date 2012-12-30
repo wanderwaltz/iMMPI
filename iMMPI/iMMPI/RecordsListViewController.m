@@ -105,7 +105,7 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         
         FRB_AssertNotNil(indexPath);
         
-        id<TestRecord> record = [self testRecordAtIndexPath: indexPath];
+        id<TestRecordProtocol> record = [self testRecordAtIndexPath: indexPath];
         
         
         EditTestRecordViewController *controller = segue.destinationViewController;
@@ -124,7 +124,7 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         
         FRB_AssertNotNil(indexPath);
         
-        id<TestRecord> record = [self testRecordAtIndexPath: indexPath];
+        id<TestRecordProtocol> record = [self testRecordAtIndexPath: indexPath];
         
         
         TestAnswersViewController *controller = segue.destinationViewController;
@@ -162,7 +162,7 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 }
 
 
-- (id<TestRecord>) testRecordAtIndexPath: (NSIndexPath *) indexPath
+- (id<TestRecordProtocol>) testRecordAtIndexPath: (NSIndexPath *) indexPath
 {
     return [_model objectAtIndexPath: indexPath];
 }
@@ -190,7 +190,7 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kRecordCellIdentifier];
     FRB_AssertNotNil(cell);
     
-    id<TestRecord> record = [self testRecordAtIndexPath: indexPath];
+    id<TestRecordProtocol> record = [self testRecordAtIndexPath: indexPath];
     FRB_AssertNotNil(record);
     
     cell.textLabel.text       = record.person.name;
@@ -204,7 +204,7 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 #pragma mark EditTestRecordViewControllerDelegate
 
 - (void) editTestRecordViewController: (EditTestRecordViewController *) controller
-               didFinishEditingRecord: (id<TestRecord>) record
+               didFinishEditingRecord: (id<TestRecordProtocol>) record
 {
     // In this case, we've adding a new record (form is presented modally)
     if (controller.navigationController.presentingViewController != nil)

@@ -19,7 +19,7 @@
 @required
 
 - (void) editTestRecordViewController: (EditTestRecordViewController *) controller
-               didFinishEditingRecord: (id<TestRecord>) record;
+               didFinishEditingRecord: (id<TestRecordProtocol>) record;
 
 @end
 
@@ -30,6 +30,6 @@
 @interface EditTestRecordViewController : UITableViewController
 
 @property (weak,   nonatomic) id<EditTestRecordViewControllerDelegate> delegate;
-@property (strong, nonatomic) id<TestRecord> record;
+@property (strong, nonatomic) id<TestRecordProtocol> record;
 
 @end

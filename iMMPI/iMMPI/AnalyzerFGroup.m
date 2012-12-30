@@ -114,8 +114,8 @@ static id _logExpectedFloat(NSString *key, id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
-- (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyzer>) analyser
+- (double) computeScoreForRecord: (id<TestRecordProtocol>) record
+                        analyser: (id<AnalyzerProtocol>) analyser
 {
     NSUInteger matches = [self computeMatchesForRecord: record
                                               analyser: analyser];
@@ -130,8 +130,8 @@ static id _logExpectedFloat(NSString *key, id object);
 }
 
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyzer>) analyser
+- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
+                              analyser: (id<AnalyzerProtocol>) analyser
 {
     NSUInteger positiveMatches = 0;
     NSUInteger negativeMatches = 0;
@@ -155,8 +155,8 @@ static id _logExpectedFloat(NSString *key, id object);
 }
 
 
-- (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
-                                 analyser: (id<Analyzer>) analyser
+- (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
+                                 analyser: (id<AnalyzerProtocol>) analyser
 {
     return [self computeMatchesForRecord: record
                                 analyser: analyser] * 100 /

@@ -18,7 +18,7 @@
  
  Questionnaries are stored in json format in the application bundle. There are separate sets of questions depending on the gender and age group of the person, and these are stored in separate files.
  */
-@interface Questionnaire : NSObject<Questionnaire>
+@interface Questionnaire : NSObject<QuestionnaireProtocol>
 
 /*! 
  A class method for creating Questionnarie objects.
@@ -49,10 +49,10 @@
 
 /*! This method return a statement with a given index.
  
- @return For each index starting from 0 to statementsCount this method is expected to return an object conforming to Statement protocol. If index is outside of this range, an out of range exception is raised.
+ @return For each index starting from 0 to statementsCount this method is expected to return an object conforming to StatementProtocol. If index is outside of this range, an out of range exception is raised.
  
  @param index Index of statement to return.
  */
-- (id<Statement>) statementAtIndex: (NSUInteger) index;
+- (id<StatementProtocol>) statementAtIndex: (NSUInteger) index;
 
 @end

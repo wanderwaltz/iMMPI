@@ -14,6 +14,6 @@
 #pragma mark AnalysisViewController interface
 
 @interface AnalysisViewController : UITableViewController
-@property (strong, nonatomic) id<TestRecord> record;
+@property (strong, nonatomic) id<TestRecordProtocol> record;
 
 @end

@@ -12,9 +12,9 @@
 #pragma mark -
 #pragma mark Statement interface
 
-/*! A concrete implementation of Statement protocol.
+/*! A concrete implementation of StatementProtocol.
  */
-@interface Statement : NSObject<Statement>
+@interface Statement : NSObject<StatementProtocol>
 
 @property (copy,   nonatomic) NSString *text;
 @property (assign, nonatomic) NSInteger statementID;

@@ -62,7 +62,7 @@ enum
 #pragma mark -
 #pragma mark properties
 
-- (void) setRecord:(id<TestRecord>)record
+- (void) setRecord:(id<TestRecordProtocol>)record
 {
     _record = record;
     

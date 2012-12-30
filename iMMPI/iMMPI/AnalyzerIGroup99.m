@@ -71,15 +71,15 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
-- (NSArray *) bracketsForRecord: (id<TestRecord>) record
+- (NSArray *) bracketsForRecord: (id<TestRecordProtocol>) record
 {
     NSAssert(_brackets.count == 4, @"");
     return _brackets;
 }
 
 
-- (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyzer>) analyser
+- (double) computeScoreForRecord: (id<TestRecordProtocol>) record
+                        analyser: (id<AnalyzerProtocol>) analyser
 {
     NSArray *brackets = [self bracketsForRecord: record];
     

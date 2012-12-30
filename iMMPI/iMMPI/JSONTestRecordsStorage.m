@@ -89,7 +89,7 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 #pragma mark -
 #pragma mark TestRecordStorage
 
-- (BOOL) addNewTestRecord: (id<TestRecord>) testRecord
+- (BOOL) addNewTestRecord: (id<TestRecordProtocol>) testRecord
 {
     BOOL didAdd = NO;
     
@@ -103,7 +103,7 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 }
 
 
-- (BOOL) updateTestRecord: (id<TestRecord>) testRecord
+- (BOOL) updateTestRecord: (id<TestRecordProtocol>) testRecord
 {
     BOOL didUpdate = NO;
     
@@ -132,7 +132,7 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
             
             NSData *data = [NSData dataWithContentsOfFile: path];
             
-            id<TestRecord> record = [JSONTestRecordSerialization testRecordFromData: data];
+            id<TestRecordProtocol> record = [JSONTestRecordSerialization testRecordFromData: data];
             
             if (record != nil)
             {
@@ -194,7 +194,7 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 }
 
 
-- (NSString *) fileNameForRecord: (id<TestRecord>) record
+- (NSString *) fileNameForRecord: (id<TestRecordProtocol>) record
 {
     NSString *candidate = [NSString stringWithFormat: @"%@ - %@",
                            record.person.name, [_dateFormatter stringFromDate: record.date]];
@@ -229,7 +229,7 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 }
 
 
-- (JSONTestRecordStorageElement *) elementForRecord: (id<TestRecord>) record
+- (JSONTestRecordStorageElement *) elementForRecord: (id<TestRecordProtocol>) record
 {
     JSONTestRecordStorageElement *found = nil;
     

@@ -14,6 +14,6 @@
 
 @interface AnalyzerPGroup : AnalyzerGroupBase
 
-- (NSArray *) bracketsForRecord: (id<TestRecord>) record;
+- (NSArray *) bracketsForRecord: (id<TestRecordProtocol>) record;
 
 @end

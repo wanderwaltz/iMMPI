@@ -49,7 +49,7 @@ extern NSString * const kGroupType_IScale_104;
 #pragma mark -
 #pragma mark Analyzer interface
 
-@interface Analyzer : NSObject<Analyzer>
+@interface Analyzer : NSObject<AnalyzerProtocol>
 
 @property (readonly, nonatomic) NSUInteger groupsCount;
 
@@ -58,6 +58,6 @@ extern NSString * const kGroupType_IScale_104;
 
 - (BOOL) loadGroups;
 
-- (void) computeScoresForRecord: (id<TestRecord>) record;
+- (void) computeScoresForRecord: (id<TestRecordProtocol>) record;
 
 @end

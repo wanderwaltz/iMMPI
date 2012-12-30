@@ -165,23 +165,23 @@ static id _logSubgroupNotDictionary(id object);
 }
 
 
-- (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyzer>) analyser
+- (double) computeScoreForRecord: (id<TestRecordProtocol>) record
+                        analyser: (id<AnalyzerProtocol>) analyser
 {
     _score = NAN;
     return _score;
 }
 
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyzer>) analyser
+- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
+                              analyser: (id<AnalyzerProtocol>) analyser
 {
     return 0;
 }
 
 
-- (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
-                                 analyser: (id<Analyzer>) analyser
+- (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
+                                 analyser: (id<AnalyzerProtocol>) analyser
 {
     return 0;
 }

@@ -14,7 +14,7 @@
 #pragma mark TestAnswersViewController interface
 
 @interface TestAnswersViewController : UITableViewController
-@property (strong, nonatomic) id<TestRecord> record;
+@property (strong, nonatomic) id<TestRecordProtocol> record;
 @property (strong, nonatomic) id<TestRecordStorage> storage;
 
 @end

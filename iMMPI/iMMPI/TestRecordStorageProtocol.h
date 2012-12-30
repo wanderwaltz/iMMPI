@@ -12,7 +12,7 @@
 #pragma mark -
 #pragma mark TestRecordStorage protocol
 
-/*! Encapsulates a persistent storage for TestRecord objects.
+/*! Encapsulates a persistent storage for objects conforming to TestRecordProtocol.
  */
 @protocol TestRecordStorage <NSObject>
 @required
@@ -23,11 +23,11 @@
  
  This method should return YES or NO depending on whether the operation was successful.
  
- @param testRecord A TestRecord object to be added to the storage.
+ @param testRecord A TestRecordProtocol object to be added to the storage.
  
  @return YES if the record has been added to storage, NO otherwise.
  */
-- (BOOL) addNewTestRecord: (id<TestRecord>) testRecord;
+- (BOOL) addNewTestRecord: (id<TestRecordProtocol>) testRecord;
 
 
 
@@ -35,15 +35,15 @@
  
  If the record does not yet exist in storage, this method should do nothing and return NO.
  
- @param testRecord A TestRecord object to be updated in the persistent storage.
+ @param testRecord A TestRecordProtocol object to be updated in the persistent storage.
  
  @return YES if the record exists in storage and has been successfully updated. NO if update failed or record does not exist.
  */
-- (BOOL) updateTestRecord: (id<TestRecord>) testRecord;
+- (BOOL) updateTestRecord: (id<TestRecordProtocol>) testRecord;
 
 
 
-/*! This method should load all TestRecord objects stored in the persistent storage.
+/*! This method should load all TestRecordProtocol objects stored in the persistent storage.
  
  @return YES if operation succeeded, NO otherwise.
  */
@@ -53,7 +53,7 @@
 
 /*! This method should return all test records currently loaded.
  
- @return An array of TestRecord objects.
+ @return An array of TestRecordProtocol objects.
  */
 - (NSArray *) allTestRecords;
 

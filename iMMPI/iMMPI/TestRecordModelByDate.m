@@ -58,7 +58,7 @@
 }
 
 
-- (id<TestRecord>) objectAtIndexPath: (NSIndexPath *) indexPath
+- (id<TestRecordProtocol>) objectAtIndexPath: (NSIndexPath *) indexPath
 {
     return _records[indexPath.row];
 }
@@ -70,7 +70,7 @@
 }
 
 
-- (BOOL) addNewObject: (id<TestRecord>) object
+- (BOOL) addNewObject: (id<TestRecordProtocol>) object
 {
     FRB_AssertNotNil(object);
     
@@ -80,7 +80,7 @@
 }
 
 
-- (BOOL) updateObject: (id<TestRecord>) object
+- (BOOL) updateObject: (id<TestRecordProtocol>) object
 {
     FRB_AssertNotNil(object);
     return [_records indexOfObject: object] != NSNotFound;

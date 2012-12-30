@@ -28,8 +28,8 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 @interface TestAnswersViewController()<StatementTableViewCellDelegate>
 {
-    id<Questionnaire> _questionnaire;
-    id<TestAnswers>   _answers;
+    id<QuestionnaireProtocol> _questionnaire;
+    id<TestAnswersProtocol>   _answers;
 }
 
 @end
@@ -43,7 +43,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 #pragma mark -
 #pragma mark properties
 
-- (void) setRecord: (id<TestRecord>) record
+- (void) setRecord: (id<TestRecordProtocol>) record
 {
     _record        = record;
     _answers       = record.testAnswers;
@@ -102,7 +102,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 }
 
 
-- (id<Statement>) statementAtIndexPath: (NSIndexPath *) indexPath
+- (id<StatementProtocol>) statementAtIndexPath: (NSIndexPath *) indexPath
 {
     return [_questionnaire statementAtIndex: indexPath.row];
 }
@@ -125,7 +125,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
                                         kAnswerCellIdentifier];
     FRB_AssertClass(cell, StatementTableViewCell);
     
-    id<Statement> statement = [self statementAtIndexPath: indexPath];
+    id<StatementProtocol> statement = [self statementAtIndexPath: indexPath];
     FRB_AssertNotNil(statement);
     
     cell.delegate                = self;

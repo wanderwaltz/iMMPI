@@ -13,9 +13,9 @@
 #pragma mark TestAnswers protocol
 
 /*!
- Encapsulates a mutable set of Answer objects.
+ Encapsulates a mutable set of answers.
  */
-@protocol TestAnswers<NSObject>
+@protocol TestAnswersProtocol<NSObject>
 @required
 
 /*! This method should set an AnswerType for a statement with a given ID

@@ -14,8 +14,8 @@
 
 @interface JSONTestRecordSerialization : NSObject
 
-+ (NSData *)       dataWithTestRecord: (id<TestRecord>) testRecord;
-+ (id<TestRecord>) testRecordFromData: (NSData *) data;
++ (NSData *)               dataWithTestRecord: (id<TestRecordProtocol>) testRecord;
++ (id<TestRecordProtocol>) testRecordFromData: (NSData *) data;
 
 + (NSString *) version;
 

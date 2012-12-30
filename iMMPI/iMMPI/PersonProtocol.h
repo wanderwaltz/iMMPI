@@ -16,7 +16,7 @@
  
  Gender and the age group are relevant for selecting a proper questionnaire for the person.
  */
-@protocol Person<NSObject>
+@protocol PersonProtocol<NSObject>
 @required
 
 /// Full name of a person

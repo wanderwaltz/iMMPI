@@ -15,9 +15,9 @@
 
 @interface TestRecordModelByDate : NSObject<MutableTableViewModel>
 
-- (id<TestRecord>) objectAtIndexPath: (NSIndexPath *) indexPath;
+- (id<TestRecordProtocol>) objectAtIndexPath: (NSIndexPath *) indexPath;
 
-- (BOOL) addNewObject: (id<TestRecord>) object;
-- (BOOL) updateObject: (id<TestRecord>) object;
+- (BOOL) addNewObject: (id<TestRecordProtocol>) object;
+- (BOOL) updateObject: (id<TestRecordProtocol>) object;
 
 @end

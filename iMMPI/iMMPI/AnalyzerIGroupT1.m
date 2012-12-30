@@ -21,8 +21,8 @@
 #pragma mark -
 #pragma mark AnalyzerGroup
 
-- (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyzer>) analyser
+- (double) computeScoreForRecord: (id<TestRecordProtocol>) record
+                        analyser: (id<AnalyzerProtocol>) analyser
 {
     NSArray *brackets = [self bracketsForRecord: record];
     

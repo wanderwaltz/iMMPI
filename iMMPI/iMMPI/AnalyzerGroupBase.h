@@ -22,8 +22,8 @@
 
 - (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index;
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyzer>) analyser;
+- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
+                              analyser: (id<AnalyzerProtocol>) analyser;
 
 
 + (id<AnalyzerGroup>) parseGroupJSON: (NSDictionary *) json;

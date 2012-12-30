@@ -12,7 +12,7 @@
 #pragma mark -
 #pragma mark Analyzer protocol
 
-@protocol Analyzer<NSObject>
+@protocol AnalyzerProtocol<NSObject>
 @required
 
 - (id<AnalyzerGroup>) firstGroupForType: (NSString *) type;

@@ -13,11 +13,11 @@
 #pragma mark Questionnaire protocol
 
 /*!
- Questionnaire protocol encapsulates an ordered array of MMPI test statements.
+ QuestionnaireProtocol encapsulates an ordered array of MMPI test statements.
  
  Actual ordering depends on the implementation and is relevant only for presenting the statements list to the end-user. This ordering does not have any semantic meaning.
  */
-@protocol Questionnaire<NSObject>
+@protocol QuestionnaireProtocol<NSObject>
 @required
 
 /// This method should return number of statements included in the certain questionnaire.
@@ -30,6 +30,6 @@
  
  @param index Index of statement to return.
  */
-- (id<Statement>) statementAtIndex: (NSUInteger) index;
+- (id<StatementProtocol>) statementAtIndex: (NSUInteger) index;
 
 @end

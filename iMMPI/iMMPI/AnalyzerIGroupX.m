@@ -65,8 +65,8 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
  
  I've written it a couple of years ago and actually have no clue what exactly does it do. I guess I'll have to rewrite it from scratch some time later when I'll get the original book with formulae of computing these values.
  */
-- (double) computeScoreForRecord: (id<TestRecord>) record
-                        analyser: (id<Analyzer>) analyser
+- (double) computeScoreForRecord: (id<TestRecordProtocol>) record
+                        analyser: (id<AnalyzerProtocol>) analyser
 {
     NSInteger X = 0;
     NSInteger T_aer = 0;
@@ -246,8 +246,8 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 }
 
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyzer>) analyser
+- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
+                              analyser: (id<AnalyzerProtocol>) analyser
 {
     NSUInteger positiveMatches = 0;
     NSUInteger negativeMatches = 0;
@@ -271,8 +271,8 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 }
 
 
-- (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
-                                 analyser: (id<Analyzer>) analyser
+- (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
+                                 analyser: (id<AnalyzerProtocol>) analyser
 {
     return [self computeMatchesForRecord: record
                                 analyser: analyser] * 100 /

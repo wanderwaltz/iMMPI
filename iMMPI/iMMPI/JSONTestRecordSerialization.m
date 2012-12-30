@@ -46,7 +46,7 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
 #pragma mark -
 #pragma mark methods
 
-+ (NSData *) dataWithTestRecord: (id<TestRecord>) testRecord
++ (NSData *) dataWithTestRecord: (id<TestRecordProtocol>) testRecord
 {
     NSMutableDictionary *json = [NSMutableDictionary dictionary];
     
@@ -76,9 +76,9 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
 }
 
 
-+ (id<TestRecord>) testRecordFromData: (NSData *) data
++ (id<TestRecordProtocol>) testRecordFromData: (NSData *) data
 {
-    id<TestRecord> record     = nil;
+    id<TestRecordProtocol> record     = nil;
     NSError       *error      = nil;
     NSDictionary  *dictionary = [NSJSONSerialization JSONObjectWithData: data
                                                                 options: 0

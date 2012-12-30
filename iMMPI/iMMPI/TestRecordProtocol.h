@@ -16,15 +16,15 @@
  
  Test session consists of a person taking test, his/her answers for the test and the date of the test session.
  */
-@protocol TestRecord<NSObject>
+@protocol TestRecordProtocol<NSObject>
 @required
 
 /// Person who took the test
-@property (strong, nonatomic) id<Person> person;
+@property (strong, nonatomic) id<PersonProtocol> person;
 
 
 /// Answers of the person
-@property (strong, nonatomic) id<TestAnswers> testAnswers;
+@property (strong, nonatomic) id<TestAnswersProtocol> testAnswers;
 
 
 /// Date of the test session

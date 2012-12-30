@@ -12,7 +12,7 @@
 #pragma mark -
 #pragma mark AnalyzerGroup protocol
 
-@protocol Analyzer;
+@protocol AnalyzerProtocol;
 
 @protocol AnalyzerGroup <NSObject>
 @required
@@ -27,12 +27,13 @@
 
 - (void) visitSubgroupsDFS: (void(^)(id<AnalyzerGroup> subgroup)) block;
 
-- (double) computeScoreForRecord: (id<TestRecord>) record analyser: (id<Analyzer>) analyser;
+- (double) computeScoreForRecord: (id<TestRecordProtocol>) record
+                        analyser: (id<AnalyzerProtocol>) analyser;
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecord>) record
-                              analyser: (id<Analyzer>) analyser;
+- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
+                              analyser: (id<AnalyzerProtocol>) analyser;
 
-- (NSUInteger) computePercentageForRecord: (id<TestRecord>) record
-                                 analyser: (id<Analyzer>) analyser;
+- (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
+                                 analyser: (id<AnalyzerProtocol>) analyser;
 
 @end

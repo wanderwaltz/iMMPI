@@ -199,7 +199,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 }
 
 
-- (void) computeScoresForRecord: (id<TestRecord>) record
+- (void) computeScoresForRecord: (id<TestRecordProtocol>) record
 {
     for (id<AnalyzerGroup> group in _allGroups)
     {

@@ -16,7 +16,7 @@
 /*!
  Encapsulates a mutable set of Answer objects.
  */
-@interface TestAnswers : NSObject<TestAnswers>
+@interface TestAnswers : NSObject<TestAnswersProtocol>
 
 /*! Sets an AnswerType for a statement with a given ID
  
