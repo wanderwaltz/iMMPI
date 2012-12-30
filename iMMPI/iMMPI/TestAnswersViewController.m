@@ -45,26 +45,20 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 - (void) setRecord: (id<TestRecord>) record
 {
-    _record = record;
-    
-    if (_record)
-    {
-        _questionnaire = [Questionnaire newForGender: record.person.gender
-                                            ageGroup: record.person.ageGroup];
-        _answers = record.testAnswers;
-    }
-    else
-    {
-        _questionnaire = nil;
-        _answers       = nil;
-    }
-    
-    [self.tableView reloadData];
+    _record        = record;
+    _answers       = record.testAnswers;
+    _questionnaire = nil;    
 }
 
 
 #pragma mark -
 #pragma mark view lifecycle
+
+- (void) viewWillAppear: (BOOL) animated
+{
+    [super viewWillAppear: animated];
+    [self loadQuestionnaireIfNeeded];
+}
 
 - (void) viewWillDisappear: (BOOL) animated
 {
@@ -91,6 +85,22 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 #pragma mark -
 #pragma mark private
+
+- (void) loadQuestionnaireIfNeeded
+{
+    if (_questionnaire == nil)
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            _questionnaire = [Questionnaire newForGender: _record.person.gender
+                                                ageGroup: _record.person.ageGroup];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        });
+    }
+}
+
 
 - (id<Statement>) statementAtIndexPath: (NSIndexPath *) indexPath
 {

@@ -324,7 +324,6 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="leading" secondItem="MXh-OU-DB3" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="D1M-Ej-92W"/>
                                     <constraint firstItem="Mnm-Gt-j3X" firstAttribute="baseline" secondItem="MXh-OU-DB3" secondAttribute="baseline" type="default" id="KLs-Uj-kJQ"/>
                                     <constraint firstAttribute="trailing" secondItem="0Ri-nw-zcd" secondAttribute="trailing" constant="20" type="user" id="NDb-w5-1sV"/>
                                     <constraint firstItem="MXh-OU-DB3" firstAttribute="bottom" secondItem="0Ri-nw-zcd" secondAttribute="bottom" type="default" id="Wvx-x4-lsn"/>
