@@ -134,7 +134,10 @@ static NSString * const kAnalyzerGroupCellIdentifer = @"com.immpi.cells.analyzer
     {
         if (group.score >= 0.0)
         {
-            cell.scoreLabel.text = [NSString stringWithFormat: @"%.0lf", group.score];
+            if (fabs(group.score-trunc(group.score) > 0.1))
+                cell.scoreLabel.text = [NSString stringWithFormat: @"%.1lf", group.score];
+            else
+                cell.scoreLabel.text = [NSString stringWithFormat: @"%.0lf", group.score];
         }
         else
         {

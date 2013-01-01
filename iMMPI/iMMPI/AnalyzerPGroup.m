@@ -137,6 +137,7 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     else
         self.score = round(10 * (4.5 + 0.5 * (double)(percentage-D) / (double)(100-D)));
 
+    self.score /= 10.0;
     
     return self.score;
 }
