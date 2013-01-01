@@ -57,7 +57,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83j-qF-MIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="-1561"/>
+            <point key="canvasLocation" x="-138" y="-1429"/>
         </scene>
         <!--Edit Test Record View Controller - Новая запись-->
         <scene sceneID="cc3-9u-E1o">
@@ -309,16 +309,16 @@
         <scene sceneID="JL9-xO-BoI">
             <objects>
                 <tableViewController id="yLl-co-mCt" customClass="TestAnswersViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" id="wbn-Jg-gjv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="wbn-Jg-gjv">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.answer" rowHeight="53" id="iwU-6S-iub" customClass="StatementTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="768" height="53"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.answer" rowHeight="64" id="iwU-6S-iub" customClass="StatementTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="768" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="52"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mnm-Gt-j3X">
@@ -330,18 +330,18 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="527" translatesAutoresizingMaskIntoConstraints="NO" id="0Ri-nw-zcd">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="521" translatesAutoresizingMaskIntoConstraints="NO" id="0Ri-nw-zcd">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="527" id="ZLZ-tN-T2b"/>
-                                                <constraint firstAttribute="height" constant="36" id="fXa-L4-qKg"/>
+                                                <constraint firstAttribute="height" constant="54" type="user" id="wuP-9B-wmc"/>
                                             </constraints>
                                             <string key="text">Текст вопроса, возможно длинный и располагающийся в две строчки; этого должно быть достаточно - в целом, все вопросы СМИЛ изложены достаточно сжато</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-OU-DB3">
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="Hxc-O0-C7J"/>
                                                 <constraint firstAttribute="width" constant="133" type="user" id="PEU-8E-gSB"/>
                                             </constraints>
                                             <segments>
@@ -353,13 +353,14 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="baseline" secondItem="MXh-OU-DB3" secondAttribute="baseline" type="default" id="KLs-Uj-kJQ"/>
-                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="bottom" secondItem="0Ri-nw-zcd" secondAttribute="bottom" type="default" id="Wvx-x4-lsn"/>
-                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="centerY" secondItem="iwU-6S-iub" secondAttribute="centerY" type="default" id="i56-Fm-Uff"/>
-                                    <constraint firstItem="0Ri-nw-zcd" firstAttribute="leading" secondItem="Mnm-Gt-j3X" secondAttribute="trailing" constant="21" type="user" id="jgw-Ft-Iqn"/>
-                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="leading" secondItem="MXh-OU-DB3" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="m9C-Rd-H0i"/>
-                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="top" secondItem="iwU-6S-iub" secondAttribute="top" constant="19" id="vl7-Rv-OHM"/>
-                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="leading" secondItem="iwU-6S-iub" secondAttribute="leading" constant="20" type="user" id="vub-Or-Xfx"/>
+                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="centerY" secondItem="0Ri-nw-zcd" secondAttribute="centerY" type="default" id="1Ko-7g-PI3"/>
+                                    <constraint firstItem="Mnm-Gt-j3X" firstAttribute="leading" secondItem="iwU-6S-iub" secondAttribute="leading" constant="14" type="user" id="38i-CW-zVp"/>
+                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="leading" secondItem="0Ri-nw-zcd" secondAttribute="trailing" constant="21" type="user" id="Fox-Eh-7fY"/>
+                                    <constraint firstAttribute="trailing" secondItem="MXh-OU-DB3" secondAttribute="trailing" constant="20" type="user" id="NQY-C9-kGA"/>
+                                    <constraint firstItem="0Ri-nw-zcd" firstAttribute="centerY" secondItem="MXh-OU-DB3" secondAttribute="centerY" type="default" id="eHJ-rz-cOI"/>
+                                    <constraint firstAttribute="centerY" secondItem="MXh-OU-DB3" secondAttribute="centerY" type="user" id="mxd-MK-BQb"/>
+                                    <constraint firstItem="MXh-OU-DB3" firstAttribute="baseline" secondItem="Mnm-Gt-j3X" secondAttribute="baseline" type="default" id="pjs-EF-onR"/>
+                                    <constraint firstItem="0Ri-nw-zcd" firstAttribute="leading" secondItem="Mnm-Gt-j3X" secondAttribute="trailing" constant="20" type="user" id="xdp-qs-hpH"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="statementIDLabel" destination="Mnm-Gt-j3X" id="lNm-mx-A6g"/>
@@ -383,7 +384,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tv2-b8-c0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="-52"/>
+            <point key="canvasLocation" x="1343" y="-192"/>
         </scene>
         <!--Analysis View Controller - Анализ-->
         <scene sceneID="O4d-EX-KCt">
@@ -441,7 +442,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g11-S7-kr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3395" y="-52"/>
+            <point key="canvasLocation" x="2271" y="-192"/>
         </scene>
         <!--Persons List View Controller - Все записи-->
         <scene sceneID="VQi-TQ-cMF">
@@ -512,7 +513,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjG-3W-QeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1441" y="-60"/>
+            <point key="canvasLocation" x="409" y="-192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p6m-pL-62g">
