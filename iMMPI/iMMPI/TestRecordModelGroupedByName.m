@@ -115,6 +115,7 @@
 - (BOOL) updateObject: (id<TestRecordProtocol>) object
 {
     FRB_AssertNotNil(object);
+    FRB_AssertConformsTo(object, TestRecordProtocol);
     
     NSUInteger index = [_records indexOfObject: object];
     
@@ -123,20 +124,50 @@
         for (TestRecordsPersonGroup *group in _groups)
         {
             FRB_AssertClass(group, TestRecordsPersonGroup);
-            if (![group.name isEqualToString: object.person.name])
+            
+            if ([group.allRecords indexOfObject: object] != NSNotFound)
             {
-                [group removeRecord: object];
-                
-                [_records removeObject: object];
-                [self addNewObject:     object];
-                
-                break;
+                if (![group.name isEqualToString: object.person.name])
+                {
+                    [group removeRecord: object];
+                    
+                    if (group.allRecords.count == 0)
+                        [_groups removeObject: group];
+                    
+                    [_records removeObject: object];
+                    [self addNewObject:     object];
+                    
+                    break;
+                }
             }
         }
         
         return YES;
     }
     else return NO;
+}
+
+
+- (id<TestRecordsGroupByName>) groupForRecord: (id<TestRecordProtocol>) record
+{
+    FRB_AssertNotNil(record);
+    FRB_AssertConformsTo(record, TestRecordProtocol);
+    
+    id<TestRecordsGroupByName> found = nil;
+    
+    for (id<TestRecordsGroupByName> group in _groups)
+    {
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
+        
+        if ([group.allRecords indexOfObject: record] != NSNotFound)
+        {
+            found = group;
+            break;
+        }
+    }
+    
+    
+    return found;
 }
 
 

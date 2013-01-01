@@ -32,6 +32,7 @@
 - (NSUInteger) numberOfRowsInSection: (NSUInteger) section;
 
 - (id<TestRecordsGroupByName>) objectAtIndexPath: (NSIndexPath *) indexPath;
+- (id<TestRecordsGroupByName>) groupForRecord: (id<TestRecordProtocol>) record;
 
 - (void) addObjectsFromArray: (NSArray *) array;
 

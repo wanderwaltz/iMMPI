@@ -373,10 +373,9 @@ accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
 - (BOOL) testRecordModelByDate: (TestRecordModelByDate *) model
             shouldUpdateObject: (id<TestRecordProtocol>) record
 {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow: 0 inSection: 0];
-    id<TestRecordProtocol> otherRecord = [model objectAtIndexPath: indexPath];
+    id<TestRecordsGroupByName> group = [_model groupForRecord: record];
     
-    if ([otherRecord.person.name isEqualToString: record.person.name])
+    if ([group.name isEqualToString: record.person.name])
         return YES;
     else
     {
