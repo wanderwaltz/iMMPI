@@ -192,21 +192,48 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
         
         if (jsonData)
         {
-            NSString *fileName = element.fileName;
+            NSString *fileName          = element.fileName;
+            NSString *suggestedFileName = [self fileNameForRecord: element.record];
             
-            if (fileName == nil)
+            if ((fileName != nil) && ![fileName isEqualToString: suggestedFileName])
             {
-                fileName = [self fileNameForRecord: element.record];
-                element.fileName = fileName;
+                // Remove the file containing the old version
+                // since the new suggested file name has changed
+                [self removeRecordFileWithName: fileName];
             }
             
-            NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
+            element.fileName = suggestedFileName;
+            
+            NSString *path = [_storedRecordsPath stringByAppendingPathComponent:
+                              suggestedFileName];
             
             didStore = [jsonData writeToFile: path atomically: YES];
         }
     }
     
     return didStore;
+}
+
+
+- (void) removeRecordFileWithName: (NSString *) fileName
+{
+    NSString *path = [_storedRecordsPath stringByAppendingPathComponent:
+                        fileName];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if ([fileManager fileExistsAtPath: path])
+    {
+        NSError *error = nil;
+        
+        BOOL deleted = [fileManager removeItemAtPath: path
+                                               error: &error];
+        
+        if (!deleted)
+        {
+            NSLog(@"JSONTestRecordsStorage failed to remove test record file named '%@' with error: %@", fileName, error);
+        }
+    }
 }
 
 
