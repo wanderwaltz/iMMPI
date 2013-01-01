@@ -90,7 +90,9 @@ enum
 
 - (IBAction) saveButtonAction: (id) sender
 {
-    _record.person.name     = _personName;
+    _record.person.name     = [_personName stringByTrimmingCharactersInSet:
+                               [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
     _record.person.gender   = _selectedGender;
     _record.person.ageGroup = _selectedAgeGroup;
     _record.date            = _selectedDate;
