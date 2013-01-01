@@ -47,7 +47,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 {
     _record        = record;
     _answers       = record.testAnswers;
-    _questionnaire = nil;    
+    _questionnaire = nil;
 }
 
 

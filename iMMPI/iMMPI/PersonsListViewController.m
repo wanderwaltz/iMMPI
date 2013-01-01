@@ -27,7 +27,8 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 #pragma mark -
 #pragma mark PersonsListViewController private
 
-@interface PersonsListViewController()<EditTestRecordViewControllerDelegate>
+@interface PersonsListViewController()
+<EditTestRecordViewControllerDelegate, TestRecordModelByDateDelegate>
 {
     id<TestRecordStorage> _storage;
     
@@ -157,7 +158,10 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         FRB_AssertClass(controller, RecordsListViewController);
         
         
-        controller.model   = [TestRecordModelByDate new];
+        TestRecordModelByDate *model = [TestRecordModelByDate new];
+        model.delegate = self;
+        
+        controller.model   = model;
         controller.storage = _storage;
         controller.title   = group.name;
         
@@ -286,6 +290,111 @@ accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
         
         [self.tableView reloadData];
     }
+}
+
+
+#pragma mark -
+#pragma mark TestRecordModelByDateDelegate
+
+// PersonsListViewController is set as a delegate to a certain TestRecordModelByDate
+// when a group of records is selected. Then RecordsListViewContronller is pushed to
+// the current navigation stack and is set up to share the _storage with this class
+// and to have a TestRecordModelByDate as a model.
+//
+// This happens when a group is not empty and contains more than one test record.
+
+- (BOOL) testRecordModelByDate: (TestRecordModelByDate *) model
+            shouldAddNewObject: (id<TestRecordProtocol>) record
+{
+    // We select a first test record in the model.
+    //
+    // This method assumes that at least one record does exist in the model.
+    // This is true if no records were deleted in RecordsListViewController which
+    // manages the TestRecordModelByDate. But if the last record has been deleted
+    // from the model, the corresponding delegate method should ensure that the
+    // navigation stack is popped to the current PersonsListViewController, which
+    // will result in deleting of the model, and no more delegate methods firing.
+    //
+    // That said, we can relatively safely assume that there is at least one record
+    // in the TestRecordModelByDate.
+    
+    NSIndexPath             *indexPath = [NSIndexPath indexPathForRow: 0 inSection: 0];
+    id<TestRecordProtocol> otherRecord = [model objectAtIndexPath: indexPath];
+    FRB_AssertConformsTo(otherRecord, TestRecordProtocol);
+    
+    // And check whether the new record has the same person name
+    if ([otherRecord.person.name isEqualToString: record.person.name])
+        // If name is the same, add the record to TestRecordModelByDate,
+        // it will be added to the _model in -testRecordModelByDate:didAddNewObject:
+        // delegate method
+        return YES;
+    else
+    {
+        // If the name is not the same, we should not add this record to the
+        // TestRecordModelByDate, since we try to contain a list of persons
+        // with the same name there.
+        //
+        // Instead we add the record to _model and pop the navigation stack
+        // to show a list of all persons where the newly added record will
+        // also be contained.
+        [_model addNewObject: record];
+        [self.tableView reloadData];
+        [self.navigationController popToViewController: self
+                                              animated: YES];
+        return NO;
+    }
+    
+    // IMPORTANT!!!
+    //
+    // Note that none of the delegate methods implementations are
+    // storing the record into permanent storage here. This is a
+    // smelly code somewhat since we assume that the record is saved
+    // elsewhere (it indeed is being saved by the RecordsListViewController,
+    // but it is a private implementation detail).
+    //
+}
+
+
+- (void) testRecordModelByDate: (TestRecordModelByDate *) model
+               didAddNewObject: (id<TestRecordProtocol>) record
+{
+    // If the -testRecordModelByDate:shouldAddNewObject: returned YES,
+    // the record is already added to the TestRecordModelByDate, so
+    // we only add it to _model and reload the table view.
+    [_model addNewObject: record];
+    [self.tableView reloadData];
+}
+
+
+// The delegate methods which handle records update are essentially
+// the same as the delegate methods which handle addition of a new
+// record, see comments there for the explanation of how this works
+// and why.
+- (BOOL) testRecordModelByDate: (TestRecordModelByDate *) model
+            shouldUpdateObject: (id<TestRecordProtocol>) record
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow: 0 inSection: 0];
+    id<TestRecordProtocol> otherRecord = [model objectAtIndexPath: indexPath];
+    
+    if ([otherRecord.person.name isEqualToString: record.person.name])
+        return YES;
+    else
+    {
+        [_model updateObject: record];
+        [self.tableView reloadData];
+        [self.navigationController popToViewController: self
+                                              animated: YES];
+        return NO;
+    }
+}
+
+
+- (void) testRecordModelByDate: (TestRecordModelByDate *) model
+               didUpdateObject: (id<TestRecordProtocol>) record
+{
+    [_model updateObject: record];
+    [self.tableView reloadData];
+
 }
 
 @end
