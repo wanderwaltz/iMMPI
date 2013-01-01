@@ -51,7 +51,7 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
     if (self != nil)
     {
         _dateFormatter = [NSDateFormatter new];
-        _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+        _dateFormatter.dateStyle = NSDateFormatterShortStyle;
         _dateFormatter.timeStyle = NSDateFormatterNoStyle;
     }
     return self;
@@ -162,6 +162,34 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 }
 
 
+- (NSString *) abbreviatePersonName: (NSString *) name
+{
+    NSArray *components = [name componentsSeparatedByCharactersInSet:
+                           [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if (components.count == 0) return nil;
+    
+    NSMutableArray *abbreviated = [NSMutableArray array];
+    
+    [abbreviated addObject: components[0]];
+    
+    if (components.count > 1)
+    {
+        for (NSUInteger i = 1; i < components.count; ++i)
+        {
+            NSString *component = components[i];
+            
+            if (component.length > 0)
+                [abbreviated addObject:
+                 [NSString stringWithFormat: @"%@.",
+                 [[component substringToIndex: 1] uppercaseString]]];
+        }
+    }
+    
+    return [abbreviated componentsJoinedByString: @" "];
+}
+
+
 #pragma mark -
 #pragma mark UITableViewDelegate
 
@@ -203,7 +231,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
     id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
     FRB_AssertConformsTo(record, TestRecordProtocol);
     
-    cell.textLabel.text       = record.person.name;
+    cell.textLabel.text       = [self abbreviatePersonName: record.person.name];
     cell.detailTextLabel.text = [_dateFormatter stringFromDate: record.date];
     
     return cell;
