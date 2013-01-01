@@ -424,7 +424,7 @@
                                     <constraint firstItem="fer-fQ-825" firstAttribute="leading" secondItem="r2c-mq-F81" secondAttribute="leading" constant="20" type="user" id="8s6-Bf-r38"/>
                                     <constraint firstItem="h1a-p9-gNT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fer-fQ-825" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="JGV-4S-hYS"/>
                                     <constraint firstItem="h1a-p9-gNT" firstAttribute="top" secondItem="fer-fQ-825" secondAttribute="top" type="default" id="SUS-C7-M37"/>
-                                    <constraint firstItem="h1a-p9-gNT" firstAttribute="leading" secondItem="r2c-mq-F81" secondAttribute="leading" constant="673" id="uHB-qO-A6d"/>
+                                    <constraint firstAttribute="trailing" secondItem="h1a-p9-gNT" secondAttribute="trailing" constant="20" type="user" id="YSR-hl-qd6"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="_groupNameLabel" destination="fer-fQ-825" id="7A8-cR-bL3"/>
