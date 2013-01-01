@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
+
 
 #pragma mark -
 #pragma mark RecordsListViewController interface
 
 @interface RecordsListViewController : UITableViewController
+@property (strong, nonatomic) id<TestRecordStorage>   storage;
+@property (strong, nonatomic) id<MutableTableViewModel> model;
+
 @end

@@ -15,7 +15,7 @@
 @protocol TestRecordsGroupByName<NSObject>
 @required
 
-- (NSUInteger) numberOrRecords;
+- (NSUInteger) numberOfRecords;
 - (NSString *) name;
 
 - (NSArray *) allRecords;

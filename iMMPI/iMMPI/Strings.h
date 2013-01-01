@@ -24,4 +24,6 @@
 
 #define ___Score_Invalid @"#";
 
+#define ___Back @"Назад"
+
 #endif

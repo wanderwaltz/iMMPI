@@ -1,45 +1,49 @@
 //
-//  RecordsListViewController.m
+//  PersonsListViewController.m
 //  iMMPI
 //
-//  Created by Egor Chiglintsev on 27.10.12.
-//  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
+//  Created by Egor Chiglintsev on 02.01.13.
+//  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#if (!__has_feature(objc_arc))
-#error "This file should be compiled with ARC support"
-#endif
-
+#import "PersonsListViewController.h"
 #import "RecordsListViewController.h"
 #import "EditTestRecordViewController.h"
 #import "TestAnswersViewController.h"
+#import "Model.h"
 
 
 #pragma mark -
 #pragma mark Static constants
 
-static NSString * const kRecordCellIdentifier = @"com.immpi.cells.record";
+static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 
 static NSString * const kSegueAddRecord   = @"com.immpi.segue.addRecord";
-static NSString * const kSegueEditRecord  = @"com.immpi.segue.editRecord";
+static NSString * const kSegueEditGroup   = @"com.immpi.segue.editGroup";
+static NSString * const kSegueListGroup   = @"com.immpi.segue.listGroup";
 static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 
 
 #pragma mark -
-#pragma mark RecordsListViewController private
+#pragma mark PersonsListViewController private
 
-@interface RecordsListViewController()<EditTestRecordViewControllerDelegate>
+@interface PersonsListViewController()<EditTestRecordViewControllerDelegate>
 {
-    NSDateFormatter *_dateFormatter;
+    id<TestRecordStorage> _storage;
+    
+    // This view controller depends alot on the TestRecordModelGroupedByName
+    // functionality, so the coupling could not be loosened by using
+    // MutableTableViewModel protocol
+    TestRecordModelGroupedByName *_model;
 }
 
 @end
 
 
 #pragma mark -
-#pragma mark RecordsListViewController implementation
+#pragma mark PersonsListViewController implementation
 
-@implementation RecordsListViewController
+@implementation PersonsListViewController
 
 #pragma mark -
 #pragma mark initialization methods
@@ -50,9 +54,13 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
     
     if (self != nil)
     {
-        _dateFormatter = [NSDateFormatter new];
-        _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
-        _dateFormatter.timeStyle = NSDateFormatterNoStyle;
+        _model = [TestRecordModelGroupedByName new];
+        
+        self.navigationItem.backBarButtonItem =
+        [[UIBarButtonItem alloc] initWithTitle: ___Back
+                                         style: UIBarButtonItemStyleBordered
+                                        target: nil
+                                        action: nil];
     }
     return self;
 }
@@ -64,8 +72,6 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 - (void) viewWillAppear: (BOOL) animated
 {
     [super viewWillAppear: animated];
-    
-    if (_model == nil) _model = [TestRecordModelByDate new];
     
     // We do init storage here since if the view never appears
     // there is no sense loading the records anyway.
@@ -94,15 +100,15 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         controller.title    = ___New_Record;
     }
     
-    // Editing existing test record
-    else if ([segue.identifier isEqualToString: kSegueEditRecord])
+    // Editing existing group of test records
+    else if ([segue.identifier isEqualToString: kSegueEditGroup])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
         FRB_AssertNotNil(indexPath);
         
         
-        id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
-        FRB_AssertConformsTo(record, TestRecordProtocol);
+        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
         
         
         EditTestRecordViewController *controller =
@@ -112,7 +118,7 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         
         controller.delegate = self;
         controller.title    = ___Edit_Record;
-        controller.record   = record;
+        controller.record   = group.allRecords[0];
     }
     
     // Editing test answers for a record
@@ -122,8 +128,10 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         FRB_AssertNotNil(indexPath);
         
         
-        id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
-        FRB_AssertConformsTo(record, TestRecordProtocol);
+        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
+        
+        NSAssert((group.numberOfRecords == 1), @"kSegueEditAnswers should be performed only if number of records in a group is exactly equal to 1");
         
         
         TestAnswersViewController *controller =
@@ -131,8 +139,29 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         FRB_AssertClass(controller, TestAnswersViewController);
         
         
-        controller.record  =   record;
+        controller.record  = group.allRecords[0];
         controller.storage = _storage;
+    }
+    
+    // Viewing contents of a records group
+    else if ([segue.identifier isEqualToString: kSegueListGroup])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        FRB_AssertNotNil(indexPath);
+        
+        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
+        
+        
+        RecordsListViewController *controller = segue.destinationViewController;
+        FRB_AssertClass(controller, RecordsListViewController);
+        
+        
+        controller.model   = [TestRecordModelByDate new];
+        controller.storage = _storage;
+        controller.title   = group.name;
+        
+        [controller.model addObjectsFromArray: group.allRecords];
     }
 }
 
@@ -165,20 +194,38 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 #pragma mark -
 #pragma mark UITableViewDelegate
 
-     - (void) tableView: (UITableView *) tableView
+- (void) tableView: (UITableView *) tableView
 didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
-    FRB_AssertConformsTo(record, TestRecordProtocol);
+    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    FRB_AssertConformsTo(group, TestRecordsGroupByName);
     
     id sender = [tableView cellForRowAtIndexPath: indexPath];
     
-    [self performSegueWithIdentifier: kSegueEditAnswers
-                              sender: sender];
+    if (group.numberOfRecords > 1)
+    {
+        [self performSegueWithIdentifier: kSegueListGroup sender: sender];
+    }
+    else
+    {
+        [self performSegueWithIdentifier: kSegueEditAnswers sender: sender];
+    }
 }
 
 
-#pragma mark - 
+- (void) tableView: (UITableView *) tableView
+accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
+{
+    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    FRB_AssertConformsTo(group, TestRecordsGroupByName);
+    
+    id sender = [tableView cellForRowAtIndexPath: indexPath];
+    
+    [self performSegueWithIdentifier: kSegueEditGroup sender: sender];
+}
+
+
+#pragma mark -
 #pragma mark UITableViewDataSource
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView *) tableView
@@ -197,16 +244,21 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 - (UITableViewCell *) tableView: (UITableView *) tableView
           cellForRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kRecordCellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kGroupCellIdentifier];
     FRB_AssertNotNil(cell);
     
-    id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
-    FRB_AssertConformsTo(record, TestRecordProtocol);
+    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    FRB_AssertConformsTo(group, TestRecordsGroupByName);
     
-    cell.textLabel.text       = record.person.name;
-    cell.detailTextLabel.text = [_dateFormatter stringFromDate: record.date];
+    cell.textLabel.text = group.name;
+    
+    if (group.numberOfRecords > 1)
+        cell.detailTextLabel.text = [NSString stringWithFormat: @"%d", group.numberOfRecords];
+    else
+        cell.detailTextLabel.text = nil;
     
     return cell;
+    
 }
 
 

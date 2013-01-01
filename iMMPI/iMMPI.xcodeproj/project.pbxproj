@@ -43,6 +43,8 @@
 		5DA5CA13163B061000CF1601 /* RecordsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA12163B061000CF1601 /* RecordsListViewController.m */; };
 		5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */; };
 		5DBE76D6169351200018C728 /* TestRecordModelGroupedByName.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */; };
+		5DBE76DA169356F50018C728 /* PersonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76D9169356F50018C728 /* PersonsListViewController.m */; };
+		5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
 		5DC40472168C2596000AFBAE /* Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40471168C2596000AFBAE /* Statement.m */; };
@@ -114,6 +116,10 @@
 		5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersViewController.m; sourceTree = "<group>"; };
 		5DBE76D4169351200018C728 /* TestRecordModelGroupedByName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordModelGroupedByName.h; sourceTree = "<group>"; };
 		5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordModelGroupedByName.m; sourceTree = "<group>"; };
+		5DBE76D8169356F50018C728 /* PersonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsListViewController.h; sourceTree = "<group>"; };
+		5DBE76D9169356F50018C728 /* PersonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsListViewController.m; sourceTree = "<group>"; };
+		5DBE76DC169358BD0018C728 /* TestRecordsPersonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordsPersonGroup.h; sourceTree = "<group>"; };
+		5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordsPersonGroup.m; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5DC0B2C4168CDB790035A910 /* Strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
@@ -325,6 +331,7 @@
 				5DA5CA10163B050700CF1601 /* Analysis View Controller */,
 				5DA5CA0F163B04F200CF1601 /* Test Answers View Controller */,
 				5DA5CA0E163B04E800CF1601 /* Edit Test Record View Controller */,
+				5DBE76D7169356D40018C728 /* Persons List View Controller */,
 				5DA5CA0D163B04DB00CF1601 /* Records List View Controller */,
 			);
 			name = "View Controllers";
@@ -369,10 +376,29 @@
 		5DBE76D2169350F40018C728 /* Test Record Model Grouped By Name */ = {
 			isa = PBXGroup;
 			children = (
+				5DBE76DB169358960018C728 /* private */,
 				5DBE76D4169351200018C728 /* TestRecordModelGroupedByName.h */,
 				5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */,
 			);
 			name = "Test Record Model Grouped By Name";
+			sourceTree = "<group>";
+		};
+		5DBE76D7169356D40018C728 /* Persons List View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5DBE76D8169356F50018C728 /* PersonsListViewController.h */,
+				5DBE76D9169356F50018C728 /* PersonsListViewController.m */,
+			);
+			name = "Persons List View Controller";
+			sourceTree = "<group>";
+		};
+		5DBE76DB169358960018C728 /* private */ = {
+			isa = PBXGroup;
+			children = (
+				5DBE76DC169358BD0018C728 /* TestRecordsPersonGroup.h */,
+				5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */,
+			);
+			name = private;
 			sourceTree = "<group>";
 		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
@@ -690,6 +716,8 @@
 				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
 				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
 				5DBE76D6169351200018C728 /* TestRecordModelGroupedByName.m in Sources */,
+				5DBE76DA169356F50018C728 /* PersonsListViewController.m in Sources */,
+				5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

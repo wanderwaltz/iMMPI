@@ -11,6 +11,7 @@
 #endif
 
 #import "TestRecordModelGroupedByName.h"
+#import "TestRecordsPersonGroup.h"
 
 
 #pragma mark -
@@ -19,6 +20,7 @@
 @interface TestRecordModelGroupedByName()
 {
     NSMutableArray *_records;
+    NSMutableArray *_groups;
 }
 
 @end
@@ -39,6 +41,7 @@
     if (self != nil)
     {
         _records = [NSMutableArray array];
+        _groups  = [NSMutableArray array];
     }
     return self;
 }
@@ -54,27 +57,56 @@
 
 - (NSUInteger) numberOfRowsInSection: (NSUInteger) section
 {
-    return _records.count;
+    return _groups.count;
 }
 
 
 - (id<TestRecordProtocol>) objectAtIndexPath: (NSIndexPath *) indexPath
 {
-    return _records[indexPath.row];
+    return _groups[indexPath.row];
 }
 
 
 - (void) addObjectsFromArray: (NSArray *) array
 {
     [_records addObjectsFromArray: array];
+    [self recreateGroups];
 }
 
 
 - (BOOL) addNewObject: (id<TestRecordProtocol>) object
 {
     FRB_AssertNotNil(object);
+    FRB_AssertConformsTo(object, TestRecordProtocol);
     
     [_records addObject: object];
+    
+    BOOL foundGroup = NO;
+    
+    for (TestRecordsPersonGroup *group in _groups)
+    {
+        FRB_AssertClass(group, TestRecordsPersonGroup);
+        if ([group.name isEqualToString: object.person.name])
+        {
+            [group addRecord: object];
+            [group sortRecords];
+            
+            foundGroup = YES;
+            break;
+        }
+    }
+    
+    if (!foundGroup)
+    {
+        TestRecordsPersonGroup *group =
+        [[TestRecordsPersonGroup alloc] initWithName: object.person.name];
+        
+        [group addRecord: object];
+        
+        [_groups addObject: group];
+    }
+    
+    [self sortGroups];
     
     return YES;
 }
@@ -88,9 +120,69 @@
     
     if (index != NSNotFound)
     {
+        for (TestRecordsPersonGroup *group in _groups)
+        {
+            FRB_AssertClass(group, TestRecordsPersonGroup);
+            if (![group.name isEqualToString: object.person.name])
+            {
+                [group removeRecord: object];
+                
+                [_records removeObject: object];
+                [self addNewObject:     object];
+                
+                break;
+            }
+        }
+        
         return YES;
     }
     else return NO;
+}
+
+
+#pragma mark -
+#pragma mark private
+
+- (void) recreateGroups
+{
+    [_groups removeAllObjects];
+    
+    if (_records.count > 0)
+    {
+        [_records sortUsingDescriptors:
+         @[[NSSortDescriptor sortDescriptorWithKey: @"person.name" ascending: YES]]];
+        
+        NSString *currentName = [_records[0] person].name;
+        
+        TestRecordsPersonGroup *group =
+        [[TestRecordsPersonGroup alloc] initWithName: currentName];
+        
+        for (id<TestRecordProtocol> record in _records)
+        {
+            if ([currentName isEqualToString: record.person.name])
+            {
+                [group addRecord: record];
+            }
+            else
+            {
+                [_groups addObject: group];
+                
+                currentName = record.person.name;
+                group       = [[TestRecordsPersonGroup alloc] initWithName: currentName];
+                
+                [group addRecord: record];
+            }
+        }
+        
+        [_groups addObject: group];
+    }
+}
+
+
+- (void) sortGroups
+{
+    [_groups sortUsingDescriptors:
+     @[[NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES]]];
 }
 
 @end

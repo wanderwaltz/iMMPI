@@ -33,6 +33,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editRecord" trigger="accessoryAction" modalPresentationStyle="formSheet" id="V8Q-xd-vbY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,13 +52,12 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editRecord" modalPresentationStyle="formSheet" id="oNF-B1-Pv8"/>
                         <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="THK-Zl-NF7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83j-qF-MIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-334" y="-641"/>
+            <point key="canvasLocation" x="230" y="-1561"/>
         </scene>
         <!--Edit Test Record View Controller - Новая запись-->
         <scene sceneID="cc3-9u-E1o">
@@ -97,7 +99,7 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="FiK-Lg-ERb" firstAttribute="baseline" secondItem="WIw-Eq-pRb" secondAttribute="baseline" type="default" id="2m6-tx-OQB"/>
-                                            <constraint firstItem="WIw-Eq-pRb" firstAttribute="leading" secondItem="9bC-p2-ocw" secondAttribute="leading" constant="51" id="EYF-4s-C8B"/>
+                                            <constraint firstItem="WIw-Eq-pRb" firstAttribute="leading" secondItem="9bC-p2-ocw" secondAttribute="leading" constant="51" id="4p8-lV-lkv"/>
                                             <constraint firstItem="FiK-Lg-ERb" firstAttribute="leading" secondItem="WIw-Eq-pRb" secondAttribute="trailing" constant="20" type="user" id="FdV-ym-3WQ"/>
                                             <constraint firstItem="WIw-Eq-pRb" firstAttribute="centerY" secondItem="9bC-p2-ocw" secondAttribute="centerY" type="default" id="VjZ-uY-cFf"/>
                                         </constraints>
@@ -130,10 +132,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="qyt-tw-dSH" firstAttribute="leading" secondItem="5aa-FY-mjS" secondAttribute="leading" constant="51" id="0I3-Y7-1KM"/>
                                             <constraint firstItem="qyt-tw-dSH" firstAttribute="top" secondItem="5aa-FY-mjS" secondAttribute="top" constant="11" id="Ya0-8b-iLL"/>
                                             <constraint firstItem="wWc-Yu-PRt" firstAttribute="top" secondItem="qyt-tw-dSH" secondAttribute="top" type="default" id="bLG-rx-Wp9"/>
                                             <constraint firstItem="wWc-Yu-PRt" firstAttribute="leading" secondItem="qyt-tw-dSH" secondAttribute="trailing" constant="20" type="user" id="ijG-Wg-9CI"/>
-                                            <constraint firstItem="qyt-tw-dSH" firstAttribute="leading" secondItem="5aa-FY-mjS" secondAttribute="leading" constant="51" id="kyT-ah-EOk"/>
                                             <constraint firstItem="wWc-Yu-PRt" firstAttribute="bottom" secondItem="qyt-tw-dSH" secondAttribute="bottom" type="default" id="qJM-dW-KUc"/>
                                         </constraints>
                                     </tableViewCell>
@@ -166,7 +168,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Qpt-Mq-XOC" firstAttribute="leading" secondItem="GS1-in-4a8" secondAttribute="leading" constant="51" id="6VG-F0-Wj3"/>
+                                            <constraint firstItem="Qpt-Mq-XOC" firstAttribute="leading" secondItem="GS1-in-4a8" secondAttribute="leading" constant="51" id="3a5-Zh-Edz"/>
                                             <constraint firstItem="szK-MN-G0G" firstAttribute="leading" secondItem="Qpt-Mq-XOC" secondAttribute="trailing" constant="20" type="user" id="UaV-Rj-dvh"/>
                                             <constraint firstItem="szK-MN-G0G" firstAttribute="top" secondItem="GS1-in-4a8" secondAttribute="top" constant="11" id="V6c-Ki-URS"/>
                                             <constraint firstItem="Qpt-Mq-XOC" firstAttribute="centerY" secondItem="GS1-in-4a8" secondAttribute="centerY" type="default" id="ySV-X6-2k1"/>
@@ -201,8 +203,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="bG2-Oj-KV8" firstAttribute="leading" secondItem="Yny-Pd-Q65" secondAttribute="leading" constant="51" id="3Yg-pm-dfI"/>
                                             <constraint firstItem="bG2-Oj-KV8" firstAttribute="centerY" secondItem="Yny-Pd-Q65" secondAttribute="centerY" type="default" id="LuE-bv-dRF"/>
-                                            <constraint firstItem="bG2-Oj-KV8" firstAttribute="leading" secondItem="Yny-Pd-Q65" secondAttribute="leading" constant="51" id="U4p-02-mMa"/>
                                             <constraint firstItem="sNa-OR-PTw" firstAttribute="leading" secondItem="bG2-Oj-KV8" secondAttribute="trailing" constant="20" type="user" id="lrN-Ic-WRG"/>
                                             <constraint firstItem="sNa-OR-PTw" firstAttribute="top" secondItem="Yny-Pd-Q65" secondAttribute="top" constant="11" id="vm9-JB-iwc"/>
                                         </constraints>
@@ -239,7 +241,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTN-tL-7KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="-1323"/>
+            <point key="canvasLocation" x="1703" y="-1407"/>
         </scene>
         <!--Table View Controller - Выберите запись-->
         <scene sceneID="t8N-86-zGB">
@@ -271,29 +273,14 @@
             </objects>
             <point key="canvasLocation" x="-1108" y="1170"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Q9s-Kh-Ll7">
-            <objects>
-                <navigationController id="CtI-rZ-VSB" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="f8q-vB-EF3">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="zGB-ra-p1M" kind="relationship" relationship="rootViewController" id="oOF-Pu-rwx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yYS-iG-RX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1013" y="-555"/>
-        </scene>
         <!--Split View Controller-->
         <scene sceneID="KZH-4F-g7f">
             <objects>
                 <splitViewController id="V0Y-wD-Tfh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
-                        <segue destination="CtI-rZ-VSB" kind="relationship" relationship="masterViewController" id="PC1-SY-8kp"/>
                         <segue destination="uVX-dK-n6S" kind="relationship" relationship="detailViewController" id="1MP-sZ-fLR"/>
+                        <segue destination="M9G-z0-xl6" kind="relationship" relationship="masterViewController" id="kRb-gn-h0N"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKV-9P-dhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -316,7 +303,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukp-Hq-LPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441" y="-1343"/>
+            <point key="canvasLocation" x="917" y="-1407"/>
         </scene>
         <!--Test Answers View Controller - Ответы на тест-->
         <scene sceneID="JL9-xO-BoI">
@@ -396,7 +383,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tv2-b8-c0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1425" y="-52"/>
+            <point key="canvasLocation" x="2399" y="-52"/>
         </scene>
         <!--Analysis View Controller - Анализ-->
         <scene sceneID="O4d-EX-KCt">
@@ -454,7 +441,60 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g11-S7-kr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2421" y="-52"/>
+            <point key="canvasLocation" x="3395" y="-52"/>
+        </scene>
+        <!--Persons List View Controller - Все записи-->
+        <scene sceneID="VQi-TQ-cMF">
+            <objects>
+                <tableViewController id="nvo-jh-oP6" customClass="PersonsListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="txJ-t0-aON">
+                        <rect key="frame" x="0.0" y="64" width="320" height="788"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.personsGroup" textLabel="ZEV-cn-cEB" detailTextLabel="rn6-T8-ZdH" style="IBUITableViewCellStyleValue1" id="QHr-PC-MeF">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Иванов Иван Иванович" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEV-cn-cEB">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn6-T8-ZdH">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nvo-jh-oP6" id="9EZ-uy-x3j"/>
+                            <outlet property="delegate" destination="nvo-jh-oP6" id="QSV-MB-dgb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Все записи" id="Egf-o3-H6R">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lnr-7U-As0">
+                            <connections>
+                                <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.addRecord" modalPresentationStyle="formSheet" id="p41-jG-o3A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="dBb-vP-UTt"/>
+                        <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editGroup" modalPresentationStyle="formSheet" id="ghm-Jh-3HV"/>
+                        <segue destination="zGB-ra-p1M" kind="push" identifier="com.immpi.segue.listGroup" id="hGM-y0-hAY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d6V-I4-VnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-688" y="-127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yOi-ik-Xg1">
@@ -472,7 +512,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjG-3W-QeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="-60"/>
+            <point key="canvasLocation" x="1441" y="-60"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p6m-pL-62g">
+            <objects>
+                <navigationController id="M9G-z0-xl6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VnY-43-Asd">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nvo-jh-oP6" kind="relationship" relationship="rootViewController" id="giV-Rn-M72"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-p1-QOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1158" y="-147"/>
         </scene>
     </scenes>
     <classes>
@@ -490,8 +548,6 @@
         <class className="EditTestRecordViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTestRecordViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="saveButtonAction:"/>
                 <relationship kind="outlet" name="_ageGroupLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="_ageGroupTableViewCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="_dateLabel" candidateClass="UILabel"/>
@@ -503,6 +559,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PersonsListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonsListViewController.h"/>
         </class>
         <class className="RecordsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecordsListViewController.h"/>
@@ -525,6 +584,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oNF-B1-Pv8"/>
+        <segue reference="THK-Zl-NF7"/>
+        <segue reference="V8Q-xd-vbY"/>
     </inferredMetricsTieBreakers>
 </document>
