@@ -37,6 +37,17 @@
 - (BOOL) updateTestRecord: (id<TestRecordProtocol>) testRecord;
 
 
+/*! This method checks whether the provided TestRecordProtocol object does exist in the storage.
+ 
+ Test records are compared by reference.
+ 
+ @param testRecord A TestRecordProtocol object to be searched within storage.
+ 
+ @return YES if the record does exist in storage, NO otherwise.
+ */
+- (BOOL) containsTestRecord: (id<TestRecordProtocol>) testRecord;
+
+
 
 /*! This method loads all JSON test record files and parses these into TestRecordProtocol objects.
  

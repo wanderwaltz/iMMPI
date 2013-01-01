@@ -43,6 +43,16 @@
 
 
 
+/*! This method should check whether the provided TestRecordProtocol object does exist in the storage.
+ 
+ @param testRecord A TestRecordProtocol object to be searched within storage.
+ 
+ @return YES if the record does exist in storage, NO otherwise.
+ */
+- (BOOL) containsTestRecord: (id<TestRecordProtocol>) testRecord;
+
+
+
 /*! This method should load all TestRecordProtocol objects stored in the persistent storage.
  
  @return YES if operation succeeded, NO otherwise.

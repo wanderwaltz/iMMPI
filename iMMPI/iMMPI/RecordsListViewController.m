@@ -108,7 +108,8 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         id<TestRecordProtocol> record = [self testRecordAtIndexPath: indexPath];
         
         
-        EditTestRecordViewController *controller = segue.destinationViewController;
+        EditTestRecordViewController *controller =
+        (id)[segue.destinationViewController viewControllers][0];
         
         FRB_AssertClass(controller, EditTestRecordViewController);
         
@@ -127,7 +128,8 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         id<TestRecordProtocol> record = [self testRecordAtIndexPath: indexPath];
         
         
-        TestAnswersViewController *controller = segue.destinationViewController;
+        TestAnswersViewController *controller =
+        (id)[segue.destinationViewController viewControllers][0];
         
         FRB_AssertClass(controller, TestAnswersViewController);
         
@@ -206,30 +208,23 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 - (void) editTestRecordViewController: (EditTestRecordViewController *) controller
                didFinishEditingRecord: (id<TestRecordProtocol>) record
 {
-    // In this case, we've adding a new record (form is presented modally)
-    if (controller.navigationController.presentingViewController != nil)
+    [self dismissViewControllerAnimated: YES
+                             completion: nil];
+    
+    if (record != nil)
     {
-        [self dismissViewControllerAnimated: YES
-                                 completion: nil];
-        
-        if (record != nil)
-        {
-            [_model       addNewObject: record];
-            [_storage addNewTestRecord: record];
-            [self.tableView reloadData];
-        }
-    }
-    else
-    {
-        [self.navigationController popToViewController: self
-                                              animated: YES];
-        
-        if (record != nil)
+        if ([_storage containsTestRecord: record])
         {
             [_model       updateObject: record];
             [_storage updateTestRecord: record];
-            [self.tableView reloadData];
         }
+        else
+        {
+            [_model       addNewObject: record];
+            [_storage addNewTestRecord: record];
+        }
+        
+        [self.tableView reloadData];
     }
 }
 

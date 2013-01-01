@@ -155,11 +155,27 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
     
     for (JSONTestRecordStorageElement *element in _elements)
     {
+        FRB_AssertClass(element, JSONTestRecordStorageElement);
         if (element.record != nil)
             [records addObject: element.record];
     }
     
     return records;
+}
+
+
+- (BOOL) containsTestRecord: (id<TestRecordProtocol>) testRecord
+{
+    FRB_AssertNotNil(testRecord);
+    
+    for (JSONTestRecordStorageElement *element in _elements)
+    {
+        FRB_AssertClass(element, JSONTestRecordStorageElement);
+        if (element.record == testRecord)
+            return YES;
+    }
+    
+    return NO;
 }
 
 
