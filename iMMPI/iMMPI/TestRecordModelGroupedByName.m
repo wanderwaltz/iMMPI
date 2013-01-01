@@ -1,22 +1,22 @@
 //
-//  TestRecordModelByDate.m
+//  TestRecordModelGroupedByName.m
 //  iMMPI
 //
-//  Created by Egor Chiglintsev on 29.12.12.
-//  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
+//  Created by Egor Chiglintsev on 02.01.13.
+//  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
 #if (!__has_feature(objc_arc))
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "TestRecordModelByDate.h"
+#import "TestRecordModelGroupedByName.h"
 
 
 #pragma mark -
-#pragma mark TestRecordModelByDate private
+#pragma mark TestRecordModelGroupedByName private
 
-@interface TestRecordModelByDate()
+@interface TestRecordModelGroupedByName()
 {
     NSMutableArray *_records;
 }
@@ -25,9 +25,9 @@
 
 
 #pragma mark -
-#pragma mark TestRecordModelByDate implementation
+#pragma mark TestRecordModelGroupedByName implementation
 
-@implementation TestRecordModelByDate
+@implementation TestRecordModelGroupedByName
 
 #pragma mark -
 #pragma mark initialization methods
@@ -67,7 +67,6 @@
 - (void) addObjectsFromArray: (NSArray *) array
 {
     [_records addObjectsFromArray: array];
-    [self sortRecords];
 }
 
 
@@ -76,7 +75,6 @@
     FRB_AssertNotNil(object);
     
     [_records addObject: object];
-    [self sortRecords];
     
     return YES;
 }
@@ -90,20 +88,9 @@
     
     if (index != NSNotFound)
     {
-        [self sortRecords];
         return YES;
     }
     else return NO;
-}
-
-
-#pragma mark -
-#pragma mark private 
-
-- (void) sortRecords
-{
-    [_records sortUsingDescriptors:
-     @[[NSSortDescriptor sortDescriptorWithKey: @"date" ascending: NO]]];
 }
 
 @end

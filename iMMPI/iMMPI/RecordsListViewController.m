@@ -54,10 +54,10 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
     
     if (self != nil)
     {
-        _model = [TestRecordModelByDate new];
+        _model = [TestRecordModelGroupedByName new];
     
         _dateFormatter = [NSDateFormatter new];
-        _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+        _dateFormatter.dateStyle = NSDateFormatterShortStyle;
         _dateFormatter.timeStyle = NSDateFormatterNoStyle;
     }
     return self;
@@ -102,16 +102,17 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
     else if ([segue.identifier isEqualToString: kSegueEditRecord])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
-        
         FRB_AssertNotNil(indexPath);
         
-        id<TestRecordProtocol> record = [self testRecordAtIndexPath: indexPath];
+        
+        id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(record, TestRecordProtocol);
         
         
         EditTestRecordViewController *controller =
         (id)[segue.destinationViewController viewControllers][0];
-        
         FRB_AssertClass(controller, EditTestRecordViewController);
+        
         
         controller.delegate = self;
         controller.title    = ___Edit_Record;
@@ -122,16 +123,17 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
     else if ([segue.identifier isEqualToString: kSegueEditAnswers])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
-        
         FRB_AssertNotNil(indexPath);
         
-        id<TestRecordProtocol> record = [self testRecordAtIndexPath: indexPath];
+        
+        id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(record, TestRecordProtocol);
         
         
         TestAnswersViewController *controller =
         (id)[segue.destinationViewController viewControllers][0];
-        
         FRB_AssertClass(controller, TestAnswersViewController);
+        
         
         controller.record  =   record;
         controller.storage = _storage;
@@ -164,14 +166,47 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 }
 
 
-- (id<TestRecordProtocol>) testRecordAtIndexPath: (NSIndexPath *) indexPath
+#pragma mark -
+#pragma mark UITableViewDelegate
+
+     - (void) tableView: (UITableView *) tableView
+didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    return [_model objectAtIndexPath: indexPath];
+    id object = [_model objectAtIndexPath: indexPath];
+    id sender = [tableView cellForRowAtIndexPath: indexPath];
+    
+    if ([object conformsToProtocol: @protocol(TestRecordProtocol)])
+    {
+        [self performSegueWithIdentifier: kSegueEditAnswers
+                                  sender: sender];
+    }
+    else
+    {
+        
+    }
+}
+
+
+                      - (void) tableView: (UITableView *) tableView
+accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
+{
+    id object = [_model objectAtIndexPath: indexPath];
+    id sender = [tableView cellForRowAtIndexPath: indexPath];
+    
+    if ([object conformsToProtocol: @protocol(TestRecordProtocol)])
+    {
+        [self performSegueWithIdentifier: kSegueEditRecord
+                                  sender: sender];
+    }
+    else
+    {
+        
+    }
 }
 
 
 #pragma mark - 
-#pragma mark Table view data source
+#pragma mark UITableViewDataSource
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView *) tableView
 {
@@ -189,14 +224,49 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 - (UITableViewCell *) tableView: (UITableView *) tableView
           cellForRowAtIndexPath: (NSIndexPath *) indexPath
 {
+    id object = [_model objectAtIndexPath: indexPath];
+    FRB_AssertNotNil(object);
+    
+    if ([object conformsToProtocol: @protocol(TestRecordProtocol)])
+        return [self cellForTableView: tableView
+                           testRecord: object];
+    else if ([object conformsToProtocol: @protocol(TestRecordsGroupByName)])
+        return [self cellForTableView: tableView
+                     testRecordsGroup: object];
+    else
+        return nil;
+
+}
+
+
+#pragma mark -
+#pragma mark table view cells
+
+- (UITableViewCell *) cellForTableView: (UITableView *) tableView
+                            testRecord: (id<TestRecordProtocol>) record
+{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kRecordCellIdentifier];
     FRB_AssertNotNil(cell);
     
-    id<TestRecordProtocol> record = [self testRecordAtIndexPath: indexPath];
-    FRB_AssertNotNil(record);
-    
     cell.textLabel.text       = record.person.name;
     cell.detailTextLabel.text = [_dateFormatter stringFromDate: record.date];
+    
+    return cell;
+}
+
+
+- (UITableViewCell *) cellForTableView: (UITableView *) tableView
+                      testRecordsGroup: (id<TestRecordsGroupByName>) group
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kRecordCellIdentifier];
+    FRB_AssertNotNil(cell);
+    
+    cell.textLabel.text = group.name;
+    
+    if (group.numberOrRecords > 1)
+        cell.detailTextLabel.text = [NSString stringWithFormat: @"%d", group.numberOrRecords];
+    else
+        cell.detailTextLabel.text = nil;
     
     return cell;
 }

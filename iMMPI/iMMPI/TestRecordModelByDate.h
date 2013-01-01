@@ -8,7 +8,6 @@
 
 #import "Model.h"
 
-// TODO: sorting/sectioning by date
 
 #pragma mark -
 #pragma mark TestRecordModelByDate interface

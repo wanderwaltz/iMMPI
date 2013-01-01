@@ -42,6 +42,7 @@
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
 		5DA5CA13163B061000CF1601 /* RecordsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA12163B061000CF1601 /* RecordsListViewController.m */; };
 		5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */; };
+		5DBE76D6169351200018C728 /* TestRecordModelGroupedByName.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
 		5DC40472168C2596000AFBAE /* Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40471168C2596000AFBAE /* Statement.m */; };
@@ -111,6 +112,8 @@
 		5DA5CA12163B061000CF1601 /* RecordsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsListViewController.m; sourceTree = "<group>"; };
 		5DA5CA14163B080B00CF1601 /* TestAnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersViewController.h; sourceTree = "<group>"; };
 		5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersViewController.m; sourceTree = "<group>"; };
+		5DBE76D4169351200018C728 /* TestRecordModelGroupedByName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordModelGroupedByName.h; sourceTree = "<group>"; };
+		5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordModelGroupedByName.m; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5DC0B2C4168CDB790035A910 /* Strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
@@ -363,6 +366,15 @@
 			name = "Analysis View Controller";
 			sourceTree = "<group>";
 		};
+		5DBE76D2169350F40018C728 /* Test Record Model Grouped By Name */ = {
+			isa = PBXGroup;
+			children = (
+				5DBE76D4169351200018C728 /* TestRecordModelGroupedByName.h */,
+				5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */,
+			);
+			name = "Test Record Model Grouped By Name";
+			sourceTree = "<group>";
+		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +512,7 @@
 		5DC973C2168F240D00C496F0 /* Test Record Table Models */ = {
 			isa = PBXGroup;
 			children = (
+				5DBE76D2169350F40018C728 /* Test Record Model Grouped By Name */,
 				5DC973C3168F241C00C496F0 /* Test Record Model By Date */,
 			);
 			name = "Test Record Table Models";
@@ -676,6 +689,7 @@
 				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
 				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
 				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
+				5DBE76D6169351200018C728 /* TestRecordModelGroupedByName.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

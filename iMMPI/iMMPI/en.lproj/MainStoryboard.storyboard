@@ -33,10 +33,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="gv3-rj-vhd"/>
-                                    <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editRecord" trigger="accessoryAction" modalPresentationStyle="formSheet" id="ho4-oY-XA3"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -52,6 +48,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editRecord" modalPresentationStyle="formSheet" id="oNF-B1-Pv8"/>
+                        <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="THK-Zl-NF7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83j-qF-MIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +97,7 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="FiK-Lg-ERb" firstAttribute="baseline" secondItem="WIw-Eq-pRb" secondAttribute="baseline" type="default" id="2m6-tx-OQB"/>
-                                            <constraint firstItem="WIw-Eq-pRb" firstAttribute="leading" secondItem="9bC-p2-ocw" secondAttribute="leading" constant="51" id="47b-45-ibS"/>
+                                            <constraint firstItem="WIw-Eq-pRb" firstAttribute="leading" secondItem="9bC-p2-ocw" secondAttribute="leading" constant="51" id="EYF-4s-C8B"/>
                                             <constraint firstItem="FiK-Lg-ERb" firstAttribute="leading" secondItem="WIw-Eq-pRb" secondAttribute="trailing" constant="20" type="user" id="FdV-ym-3WQ"/>
                                             <constraint firstItem="WIw-Eq-pRb" firstAttribute="centerY" secondItem="9bC-p2-ocw" secondAttribute="centerY" type="default" id="VjZ-uY-cFf"/>
                                         </constraints>
@@ -133,8 +133,8 @@
                                             <constraint firstItem="qyt-tw-dSH" firstAttribute="top" secondItem="5aa-FY-mjS" secondAttribute="top" constant="11" id="Ya0-8b-iLL"/>
                                             <constraint firstItem="wWc-Yu-PRt" firstAttribute="top" secondItem="qyt-tw-dSH" secondAttribute="top" type="default" id="bLG-rx-Wp9"/>
                                             <constraint firstItem="wWc-Yu-PRt" firstAttribute="leading" secondItem="qyt-tw-dSH" secondAttribute="trailing" constant="20" type="user" id="ijG-Wg-9CI"/>
+                                            <constraint firstItem="qyt-tw-dSH" firstAttribute="leading" secondItem="5aa-FY-mjS" secondAttribute="leading" constant="51" id="kyT-ah-EOk"/>
                                             <constraint firstItem="wWc-Yu-PRt" firstAttribute="bottom" secondItem="qyt-tw-dSH" secondAttribute="bottom" type="default" id="qJM-dW-KUc"/>
-                                            <constraint firstItem="qyt-tw-dSH" firstAttribute="leading" secondItem="5aa-FY-mjS" secondAttribute="leading" constant="51" id="zdn-2i-5by"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GS1-in-4a8">
@@ -166,9 +166,9 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="Qpt-Mq-XOC" firstAttribute="leading" secondItem="GS1-in-4a8" secondAttribute="leading" constant="51" id="6VG-F0-Wj3"/>
                                             <constraint firstItem="szK-MN-G0G" firstAttribute="leading" secondItem="Qpt-Mq-XOC" secondAttribute="trailing" constant="20" type="user" id="UaV-Rj-dvh"/>
                                             <constraint firstItem="szK-MN-G0G" firstAttribute="top" secondItem="GS1-in-4a8" secondAttribute="top" constant="11" id="V6c-Ki-URS"/>
-                                            <constraint firstItem="Qpt-Mq-XOC" firstAttribute="leading" secondItem="GS1-in-4a8" secondAttribute="leading" constant="51" id="hLa-ES-7aj"/>
                                             <constraint firstItem="Qpt-Mq-XOC" firstAttribute="centerY" secondItem="GS1-in-4a8" secondAttribute="centerY" type="default" id="ySV-X6-2k1"/>
                                         </constraints>
                                     </tableViewCell>
@@ -202,8 +202,8 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="bG2-Oj-KV8" firstAttribute="centerY" secondItem="Yny-Pd-Q65" secondAttribute="centerY" type="default" id="LuE-bv-dRF"/>
+                                            <constraint firstItem="bG2-Oj-KV8" firstAttribute="leading" secondItem="Yny-Pd-Q65" secondAttribute="leading" constant="51" id="U4p-02-mMa"/>
                                             <constraint firstItem="sNa-OR-PTw" firstAttribute="leading" secondItem="bG2-Oj-KV8" secondAttribute="trailing" constant="20" type="user" id="lrN-Ic-WRG"/>
-                                            <constraint firstItem="bG2-Oj-KV8" firstAttribute="leading" secondItem="Yny-Pd-Q65" secondAttribute="leading" constant="51" id="oFp-5n-aYp"/>
                                             <constraint firstItem="sNa-OR-PTw" firstAttribute="top" secondItem="Yny-Pd-Q65" secondAttribute="top" constant="11" id="vm9-JB-iwc"/>
                                         </constraints>
                                     </tableViewCell>
@@ -249,17 +249,6 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Edq-t2-R59">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Выберите запись" id="pdV-FU-isi"/>
                 </tableViewController>
@@ -536,6 +525,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ho4-oY-XA3"/>
+        <segue reference="oNF-B1-Pv8"/>
     </inferredMetricsTieBreakers>
 </document>

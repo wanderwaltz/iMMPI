@@ -72,5 +72,6 @@ typedef enum : NSInteger
 #import "JSONTestRecordsStorage.h"
 
 #import "TestRecordModelByDate.h"
+#import "TestRecordModelGroupedByName.h"
 
 #endif
