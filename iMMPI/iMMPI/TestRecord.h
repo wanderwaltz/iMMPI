@@ -19,7 +19,7 @@
  */
 @interface TestRecord : NSObject<TestRecordProtocol>
 
-@property (strong, nonatomic) id<PersonProtocol> person;
+@property (strong, nonatomic) id<PersonProtocol>      person;
 @property (strong, nonatomic) id<TestAnswersProtocol> testAnswers;
 
 @property (strong, nonatomic) NSDate *date;
