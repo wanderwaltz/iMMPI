@@ -119,6 +119,28 @@
 }
 
 
+- (BOOL) removeObject: (id<TestRecordProtocol>) object
+{
+    FRB_AssertNotNil(object);
+    FRB_AssertConformsTo(object, TestRecordProtocol);
+    
+    NSUInteger index = [_records indexOfObject: object];
+    
+    if (index != NSNotFound)
+    {
+        if ([self delegate_shouldRemoveObject: object])
+        {
+            [_records removeObject: object];
+            [self delegate_didRemoveObject: object];
+            
+            return YES;
+        }
+        else return NO;
+    }
+    else return NO;
+}
+
+
 #pragma mark -
 #pragma mark private 
 
@@ -152,6 +174,16 @@
 }
 
 
+- (void) delegate_didRemoveObject: (id<TestRecordProtocol>) record
+{
+    if ([_delegate respondsToSelector: @selector(testRecordModelByDate:didRemoveObject:)])
+    {
+        [_delegate testRecordModelByDate: self
+                         didRemoveObject: record];
+    }
+}
+
+
 - (BOOL) delegate_shouldAddNewObject: (id<TestRecordProtocol>) record
 {
     if ([_delegate respondsToSelector: @selector(testRecordModelByDate:shouldAddNewObject:)])
@@ -173,5 +205,15 @@
     else return YES;
 }
 
+
+- (BOOL) delegate_shouldRemoveObject: (id<TestRecordProtocol>) record
+{
+    if ([_delegate respondsToSelector: @selector(testRecordModelByDate:shouldRemoveObject:)])
+    {
+        return [_delegate testRecordModelByDate: self
+                             shouldRemoveObject: record];
+    }
+    else return YES;
+}
 
 @end

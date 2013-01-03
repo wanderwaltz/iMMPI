@@ -18,7 +18,13 @@
 #pragma mark Static constants
 
 static NSString * const kJSONPathExtension = @"json";
-static NSString * const kJSONRecordsFolder = @"JSONRecords";
+
+
+#pragma mark -
+#pragma mark Constants
+
+NSString * const kJSONTestRecordStorageDirectoryDefault = @"JSONRecords";
+NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
 
 
 #pragma mark -
@@ -27,6 +33,7 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 @interface JSONTestRecordsStorage()
 {
     NSMutableArray *_elements;
+    NSMutableSet   *_loadedFileNames;
     
     NSString    *_storedRecordsPath;
     NSDateFormatter *_dateFormatter;
@@ -45,36 +52,28 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 
 - (id) init
 {
+    return [self initWithDirectoryName: kJSONTestRecordStorageDirectoryDefault];
+}
+
+
+- (id) initWithDirectoryName: (NSString *) storageDirectoryName
+{
     NSArray *directories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
     NSString *storedRecordsPath = [[directories lastObject] stringByAppendingPathComponent:
-                                   kJSONRecordsFolder];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    if (![fileManager fileExistsAtPath: storedRecordsPath])
-    {
-        NSError *error = nil;
+                                   storageDirectoryName];
         
-        BOOL created =
-        [fileManager createDirectoryAtPath: storedRecordsPath
-               withIntermediateDirectories: YES
-                                attributes: nil
-                                     error: &error];
-        
-        if (!created)
-        {
-            NSLog(@"Failed to create directory at path '%@' with error: %@",
-                  storedRecordsPath, error);
-            return nil;
-        }
-    }
+    FRB_AssertNotNil(storedRecordsPath);
     
+    if (![self createFolderAtPathIfNeeded: storedRecordsPath])
+        return nil;
+        
     self = [super init];
     
     if (self != nil)
     {
-        _elements = [NSMutableArray array];
+        _elements        = [NSMutableArray array];
+        _loadedFileNames = [NSMutableSet   set];
         
         _storedRecordsPath = storedRecordsPath;
         
@@ -118,6 +117,21 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 }
 
 
+- (BOOL) removeTestRecord: (id<TestRecordProtocol>) testRecord
+{
+    BOOL didRemove = NO;
+    
+    JSONTestRecordStorageElement *element = [self elementForRecord: testRecord];
+    
+    if (element != nil)
+    {
+        didRemove = [self removeElement: element];
+    }
+    
+    return didRemove;
+}
+
+
 - (BOOL) loadStoredTestRecords
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -126,11 +140,11 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
     
     for (NSString *fileName in subpaths)
     {
-        if ([[fileName pathExtension] isEqualToString: kJSONPathExtension])
+        if ([[fileName pathExtension] isEqualToString: kJSONPathExtension] &&
+            ![_loadedFileNames containsObject: fileName])
         {
             NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
-            
-            NSData *data = [NSData dataWithContentsOfFile: path];
+            NSData   *data = [NSData dataWithContentsOfFile: path];
             
             id<TestRecordProtocol> record = [JSONTestRecordSerialization testRecordFromData: data];
             
@@ -140,7 +154,8 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
                 element.record   = record;
                 element.fileName = fileName;
                 
-                [_elements addObject: element];
+                [_loadedFileNames addObject: fileName];
+                [_elements        addObject:  element];
             }
         }
     }
@@ -182,12 +197,62 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 #pragma mark -
 #pragma mark private
 
+- (BOOL) createFolderAtPathIfNeeded: (NSString *) path
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath: path])
+    {
+        NSError *error = nil;
+        
+        BOOL created =
+        [fileManager createDirectoryAtPath: path
+               withIntermediateDirectories: YES
+                                attributes: nil
+                                     error: &error];
+        
+        if (!created)
+        {
+            NSLog(@"Failed to create directory at path '%@' with error: %@",
+                  path, error);
+            return NO;
+        }
+    }
+
+    return YES;
+}
+
+
+- (BOOL) removeElement: (JSONTestRecordStorageElement *) element
+{
+    BOOL     didRemove = NO;
+    NSString *fileName = element.fileName;
+    
+    if (fileName.length > 0)
+    {
+        if ([_trashStorage addNewTestRecord: element.record])
+        {
+            didRemove = [self removeRecordFileWithName: element.fileName];   
+        }
+    }
+    
+    if (didRemove)
+    {
+        [_elements removeObject: element];
+    }
+    
+    return didRemove;
+}
+
+
 - (BOOL) storeElement: (JSONTestRecordStorageElement *) element
 {
     BOOL didStore = NO;
     
-    if (element.record)
+    if (element.record != nil)
     {
+        FRB_AssertConformsTo(element.record, TestRecordProtocol);
+        
         NSData *jsonData = [JSONTestRecordSerialization dataWithTestRecord: element.record];
         
         if (jsonData)
@@ -203,6 +268,7 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
             }
             
             element.fileName = suggestedFileName;
+            [_loadedFileNames addObject: suggestedFileName];
             
             NSString *path = [_storedRecordsPath stringByAppendingPathComponent:
                               suggestedFileName];
@@ -215,7 +281,7 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
 }
 
 
-- (void) removeRecordFileWithName: (NSString *) fileName
+- (BOOL) removeRecordFileWithName: (NSString *) fileName
 {
     NSString *path = [_storedRecordsPath stringByAppendingPathComponent:
                         fileName];
@@ -233,7 +299,14 @@ static NSString * const kJSONRecordsFolder = @"JSONRecords";
         {
             NSLog(@"JSONTestRecordsStorage failed to remove test record file named '%@' with error: %@", fileName, error);
         }
+        else
+        {
+            [_loadedFileNames removeObject: fileName];
+        }
+        
+        return deleted;
     }
+    else return YES;
 }
 
 

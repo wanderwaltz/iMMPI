@@ -24,5 +24,6 @@
 
 - (BOOL) addNewObject: (id) object;
 - (BOOL) updateObject: (id) object;
+- (BOOL) removeObject: (id) object;
 
 @end

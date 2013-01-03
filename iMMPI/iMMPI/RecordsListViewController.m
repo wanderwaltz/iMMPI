@@ -190,6 +190,17 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 }
 
 
+- (BOOL) deleteTestRecord: (id<TestRecordProtocol>) record
+              atIndexPath: (NSIndexPath *) indexPath
+{
+    FRB_AssertConformsTo(record, TestRecordProtocol);
+    
+    [_storage removeTestRecord: record];
+    
+    return [_model removeObject: record];
+}
+
+
 #pragma mark -
 #pragma mark UITableViewDelegate
 
@@ -206,7 +217,21 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 }
 
 
-#pragma mark - 
+- (UITableViewCellEditingStyle) tableView: (UITableView *) tableView
+            editingStyleForRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+
+- (NSString *) tableView: (UITableView *) tableView
+titleForDeleteConfirmationButtonForRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    return ___Delete;
+}
+
+
+#pragma mark -
 #pragma mark UITableViewDataSource
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView *) tableView
@@ -235,6 +260,31 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
     cell.detailTextLabel.text = [_dateFormatter stringFromDate: record.date];
     
     return cell;
+}
+
+
+- (BOOL) tableView: (UITableView *) tableView
+canEditRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    return YES;
+}
+
+
+- (void) tableView: (UITableView *) tableView
+commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
+ forRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    FRB_AssertNotNil(indexPath);
+    
+    id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
+    FRB_AssertConformsTo(record, TestRecordProtocol);
+    
+    if ([self deleteTestRecord: record
+                   atIndexPath: indexPath])
+    {
+        [self.tableView deleteRowsAtIndexPaths: @[indexPath]
+                              withRowAnimation: UITableViewRowAnimationAutomatic];
+    }
 }
 
 

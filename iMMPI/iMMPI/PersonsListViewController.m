@@ -22,6 +22,7 @@ static NSString * const kSegueAddRecord   = @"com.immpi.segue.addRecord";
 static NSString * const kSegueEditGroup   = @"com.immpi.segue.editGroup";
 static NSString * const kSegueListGroup   = @"com.immpi.segue.listGroup";
 static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
+static NSString * const kSegueViewTrash   = @"com.immpi.segue.viewTrash";
 
 
 #pragma mark -
@@ -31,6 +32,7 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 <EditTestRecordViewControllerDelegate, TestRecordModelByDateDelegate>
 {
     id<TestRecordStorage> _storage;
+    id<TestRecordStorage> _trashStorage;
     
     // This view controller depends alot on the TestRecordModelGroupedByName
     // functionality, so the coupling could not be loosened by using
@@ -167,6 +169,34 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         
         [controller.model addObjectsFromArray: group.allRecords];
     }
+    
+    
+    // Viewing trash
+    else if ([segue.identifier isEqualToString: kSegueViewTrash])
+    {
+        RecordsListViewController *controller = segue.destinationViewController;
+        FRB_AssertClass(controller, RecordsListViewController);
+        
+        
+        TestRecordModelByDate *model = [TestRecordModelByDate new];
+
+        controller.model   = model;
+        controller.storage = _trashStorage;
+        controller.title   = ___Trash;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [controller.storage loadStoredTestRecords];
+            NSArray *allRecords = [controller.storage allTestRecords];
+            
+            if (allRecords.count > 0)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [controller.model addObjectsFromArray: allRecords];
+                    [controller.tableView reloadData];
+                });
+            }
+        });
+    }
 }
 
 
@@ -177,10 +207,18 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 {
     if (_storage == nil)
     {
-        _storage = [JSONTestRecordsStorage new];
+        _storage      = [[JSONTestRecordsStorage alloc]
+                         initWithDirectoryName: kJSONTestRecordStorageDirectoryDefault];
+        
+        _trashStorage = [[JSONTestRecordsStorage alloc]
+                         initWithDirectoryName: kJSONTestRecordStorageDirectoryTrash];
+        
+        [(id)_storage setTrashStorage: _trashStorage];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [_storage loadStoredTestRecords];
+            [_storage loadStoredTestRecords];
+            
             NSArray *allRecords = [_storage allTestRecords];
             
             if (allRecords.count > 0)
@@ -195,10 +233,23 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
 }
 
 
+- (BOOL) deleteGroup: (id<TestRecordsGroupByName>) group
+         atIndexPath: (NSIndexPath *) indexPath
+{
+    for (id<TestRecordProtocol> record in group.allRecords)
+    {
+        FRB_AssertConformsTo(record, TestRecordProtocol);
+        [_storage removeTestRecord: record];
+    }
+    
+    return [_model removeObject: group];
+}
+
+
 #pragma mark -
 #pragma mark UITableViewDelegate
 
-- (void) tableView: (UITableView *) tableView
+     - (void) tableView: (UITableView *) tableView
 didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
     id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
@@ -217,7 +268,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 }
 
 
-- (void) tableView: (UITableView *) tableView
+                      - (void) tableView: (UITableView *) tableView
 accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
 {
     id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
@@ -226,6 +277,25 @@ accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
     id sender = [tableView cellForRowAtIndexPath: indexPath];
     
     [self performSegueWithIdentifier: kSegueEditGroup sender: sender];
+}
+
+
+- (UITableViewCellEditingStyle) tableView: (UITableView *) tableView
+            editingStyleForRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+
+                         - (NSString *) tableView: (UITableView *) tableView
+titleForDeleteConfirmationButtonForRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    FRB_AssertConformsTo(group, TestRecordsGroupByName);
+    
+    if (group.numberOfRecords == 1) return ___Delete;
+    else
+        return [NSString stringWithFormat: ___FORMAT_Delete_N_Records, group.numberOfRecords];
 }
 
 
@@ -262,7 +332,31 @@ accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
         cell.detailTextLabel.text = nil;
     
     return cell;
+}
+
+
+   - (BOOL) tableView: (UITableView *) tableView
+canEditRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    return YES;
+}
+
+
+- (void) tableView: (UITableView *) tableView
+commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
+ forRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    FRB_AssertNotNil(indexPath);
     
+    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    FRB_AssertConformsTo(group, TestRecordsGroupByName);
+
+    if ([self deleteGroup: group
+              atIndexPath: indexPath])
+    {
+        [self.tableView deleteRowsAtIndexPaths: @[indexPath]
+                              withRowAnimation: UITableViewRowAnimationAutomatic];
+    }
 }
 
 
@@ -395,5 +489,38 @@ accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
     [self.tableView reloadData];
 
 }
+
+
+// The delegate methods which handle records removal are essentially
+// the same as the delegate methods which handle addition of a new
+// record, see comments there for the explanation of how this works
+// and why.
+- (BOOL) testRecordModelByDate: (TestRecordModelByDate *) model
+            shouldRemoveObject: (id<TestRecordProtocol>) record
+{
+    id<TestRecordsGroupByName> group = [_model groupForRecord: record];
+    
+    if (group.numberOfRecords > 1)
+        return YES;
+    else
+    {
+        [_model removeObject: record];
+        [self.tableView reloadData];
+        [self.navigationController popToViewController: self
+                                              animated: YES];
+    
+        return NO;
+    }
+}
+
+
+- (void) testRecordModelByDate: (TestRecordModelByDate *) model
+               didRemoveObject: (id<TestRecordProtocol>) record
+{
+    [_model removeObject: record];
+    [self.tableView reloadData];
+    
+}
+
 
 @end

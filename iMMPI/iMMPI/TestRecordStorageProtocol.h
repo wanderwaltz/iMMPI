@@ -43,6 +43,18 @@
 
 
 
+/*! This method should remove the existing record from the storage.
+ 
+ If the record does not yet exist in storage, this method should do nothing and return NO.
+ 
+ @param testRecord A TestRecordProtocol object to be removed from the persistent storage.
+ 
+ @return YES if the record existed in storage and has been successfully removed. NO if removal failed or record does not exist.
+ */
+- (BOOL) removeTestRecord: (id<TestRecordProtocol>) testRecord;
+
+
+
 /*! This method should check whether the provided TestRecordProtocol object does exist in the storage.
  
  @param testRecord A TestRecordProtocol object to be searched within storage.

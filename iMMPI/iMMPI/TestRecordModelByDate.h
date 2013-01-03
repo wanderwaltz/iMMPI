@@ -17,17 +17,28 @@
 @protocol TestRecordModelByDateDelegate <NSObject>
 @optional
 
+// Adding new objects
 - (BOOL) testRecordModelByDate: (TestRecordModelByDate *) model
             shouldAddNewObject: (id<TestRecordProtocol>) record;
 
 - (void) testRecordModelByDate: (TestRecordModelByDate *) model
                didAddNewObject: (id<TestRecordProtocol>) record;
 
+
+// Updating objects
 - (BOOL) testRecordModelByDate: (TestRecordModelByDate *) model
             shouldUpdateObject: (id<TestRecordProtocol>) record;
 
 - (void) testRecordModelByDate: (TestRecordModelByDate *) model
                didUpdateObject: (id<TestRecordProtocol>) record;
+
+
+// Removing objects
+- (BOOL) testRecordModelByDate: (TestRecordModelByDate *) model
+            shouldRemoveObject: (id<TestRecordProtocol>) record;
+
+- (void) testRecordModelByDate: (TestRecordModelByDate *) model
+               didRemoveObject: (id<TestRecordProtocol>) record;
 
 @end
 

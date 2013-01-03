@@ -26,4 +26,10 @@
 
 #define ___Back @"Назад"
 
+#define ___Delete @"Удалить"
+
+#define ___FORMAT_Delete_N_Records @"Удалить записи (%d)"
+
+#define ___Trash @"Корзина"
+
 #endif

@@ -39,4 +39,12 @@
 - (BOOL) addNewObject: (id<TestRecordProtocol>) testRecord;
 - (BOOL) updateObject: (id<TestRecordProtocol>) testRecord;
 
+/*! Removes an object from the model.
+ 
+ @param recordOrGroup The object to be removed from the model. Should conform either to TestRecordProtocol or to TestRecordsGroupByName protocol.
+ 
+ @return YES if an TestRecordProtocol object or TestRecordsGroupByName object has been successfully deleted, NO otherwise.
+ */
+- (BOOL) removeObject: (id) recordOrGroup;
+
 @end

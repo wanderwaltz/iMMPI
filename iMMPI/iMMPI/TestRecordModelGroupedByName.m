@@ -148,6 +148,25 @@
 }
 
 
+- (BOOL) removeObject: (id) recordOrGroup
+{
+    // This method supports test records
+    if ([recordOrGroup conformsToProtocol: @protocol(TestRecordProtocol)])
+        return [self removeTestRecord: recordOrGroup];
+    
+    // Or entire test record groups
+    else if ([recordOrGroup conformsToProtocol: @protocol(TestRecordsGroupByName)])
+        return [self removeGroup: recordOrGroup];
+    
+    // Else an assertion is failed to indicate that something went wrong
+    else
+    {
+        FRB_ShouldNeverHappen(@"Expected either TestRecordProtocol object or TestRecordsGroupByName object");
+        return NO;
+    }
+}
+
+
 - (id<TestRecordsGroupByName>) groupForRecord: (id<TestRecordProtocol>) record
 {
     FRB_AssertNotNil(record);
@@ -173,6 +192,61 @@
 
 #pragma mark -
 #pragma mark private
+
+- (BOOL) removeGroup: (id<TestRecordsGroupByName>) group
+{
+    FRB_AssertNotNil(group);
+    FRB_AssertConformsTo(group, TestRecordsGroupByName);
+    
+    NSUInteger index = [_groups indexOfObject: group];
+    
+    if (index != NSNotFound)
+    {
+        for (id<TestRecordProtocol> record in group.allRecords)
+        {
+            [_records removeObject: record];
+        }
+        
+        [_groups removeObject: group];
+        
+        return YES;
+    }
+    else return NO;
+}
+
+
+- (BOOL) removeTestRecord: (id<TestRecordProtocol>) object
+{
+    FRB_AssertNotNil(object);
+    FRB_AssertConformsTo(object, TestRecordProtocol);
+    
+    NSUInteger index = [_records indexOfObject: object];
+    
+    if (index != NSNotFound)
+    {
+        [_records removeObject: object];
+        
+        for (TestRecordsPersonGroup *group in _groups)
+        {
+            FRB_AssertClass(group, TestRecordsPersonGroup);
+            
+            if ([group.allRecords indexOfObject: object] != NSNotFound)
+            {
+                [group removeRecord: object];
+                
+                if (group.allRecords.count == 0)
+                    [_groups removeObject: group];
+                
+                [_records removeObject: object];
+                
+                break;
+            }
+        }
+        
+        return YES;
+    }
+    else return NO;
+}
 
 - (void) recreateGroups
 {

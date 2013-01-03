@@ -8,6 +8,12 @@
 
 #import "Model.h"
 
+#pragma mark -
+#pragma mark Constants
+
+extern NSString * const kJSONTestRecordStorageDirectoryDefault;
+extern NSString * const kJSONTestRecordStorageDirectoryTrash;
+
 
 #pragma mark -
 #pragma mark JSONTestRecordsStorage interface
@@ -15,6 +21,22 @@
 /*! An implementation of TestRecordStorage which stores each TestRecordProtocol object in JSON format in a separate file in Documents directory.
  */
 @interface JSONTestRecordsStorage : NSObject<TestRecordStorage>
+
+/*! Another TestRecordStorage object which will be used to store records deleted
+ from the current storage.
+ */
+@property (strong, nonatomic) id<TestRecordStorage> trashStorage;
+
+
+/*! Initializes the storage with a directory name to store the records within.
+ 
+ The subdirectory with a given name is created in Documents directory to store the records, so all the files will be backed up to iCloud by default.
+ 
+ @param storageDirectoryName Name of a directory to store the records within.
+ */
+- (id) initWithDirectoryName: (NSString *) storageDirectoryName;
+
+
 
 /*! This method serializes the testRecord object in JSON format and saves it to disk. The file name is selected depending on the test record data and if the file with the same name already exists, it is not overwritten, and a new file name is selected to save the record.
  
