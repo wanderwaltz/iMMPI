@@ -91,8 +91,8 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
         record.person.name     = null2Nil(dictionary[kJSONKeyName]);
         record.person.gender   = [self   decodeGender: dictionary[kJSONKeyGender]];
         record.person.ageGroup = [self decodeAgeGroup: dictionary[kJSONKeyAgeGroup]];
-        record.date            = [[self dateFormatter] dateFromString: null2Nil(
-                                                                                dictionary[kJSONKeyDate])];
+        record.date            = [[self dateFormatter] dateFromString:
+                                  null2Nil(dictionary[kJSONKeyDate])];
         
         NSArray *answers = dictionary[kJSONKeyAnswers];
         
@@ -225,12 +225,14 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
     dispatch_once(&predicate,
                   ^{
                       formatter = [NSDateFormatter new];
-                      formatter.dateStyle = NSDateFormatterMediumStyle;
+
+                      formatter.dateStyle = NSDateFormatterNoStyle;
                       formatter.timeStyle = NSDateFormatterNoStyle;
+                      
+                      formatter.dateFormat = @"dd-MM-yyyy";
                   });
     
     return formatter;
 }
-
 
 @end

@@ -51,7 +51,7 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
     if (self != nil)
     {
         _dateFormatter = [NSDateFormatter new];
-        _dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
         _dateFormatter.timeStyle = NSDateFormatterNoStyle;
     }
     return self;
