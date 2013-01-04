@@ -10,6 +10,8 @@
 #import "RecordsListViewController.h"
 #import "EditTestRecordViewController.h"
 #import "TestAnswersViewController.h"
+#import "TestAnswersInputViewController.h"
+
 #import "Model.h"
 
 
@@ -18,11 +20,12 @@
 
 static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 
-static NSString * const kSegueAddRecord   = @"com.immpi.segue.addRecord";
-static NSString * const kSegueEditGroup   = @"com.immpi.segue.editGroup";
-static NSString * const kSegueListGroup   = @"com.immpi.segue.listGroup";
-static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
-static NSString * const kSegueViewTrash   = @"com.immpi.segue.viewTrash";
+static NSString * const kSegueAddRecord    = @"com.immpi.segue.addRecord";
+static NSString * const kSegueEditGroup    = @"com.immpi.segue.editGroup";
+static NSString * const kSegueListGroup    = @"com.immpi.segue.listGroup";
+static NSString * const kSegueEditAnswers  = @"com.immpi.segue.editAnswers";
+static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
+static NSString * const kSegueAnswersInput = @"com.immpi.segue.answersInput";
 
 
 #pragma mark -
@@ -146,6 +149,28 @@ static NSString * const kSegueViewTrash   = @"com.immpi.segue.viewTrash";
         controller.storage = _storage;
     }
     
+    // Test answers input for a record
+    else if ([segue.identifier isEqualToString: kSegueAnswersInput])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        FRB_AssertNotNil(indexPath);
+        
+        
+        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
+        
+        NSAssert((group.numberOfRecords == 1), @"kSegueEditAnswers should be performed only if number of records in a group is exactly equal to 1");
+        
+        
+        TestAnswersInputViewController *controller =
+        (id)[segue.destinationViewController viewControllers][0];
+        FRB_AssertClass(controller, TestAnswersInputViewController);
+        
+        
+        controller.record  = group.allRecords[0];
+        controller.storage = _storage;
+    }
+    
     // Viewing contents of a records group
     else if ([segue.identifier isEqualToString: kSegueListGroup])
     {
@@ -263,7 +288,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
     }
     else
     {
-        [self performSegueWithIdentifier: kSegueEditAnswers sender: sender];
+        [self performSegueWithIdentifier: kSegueAnswersInput sender: sender];
     }
 }
 

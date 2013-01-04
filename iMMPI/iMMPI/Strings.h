@@ -32,4 +32,9 @@
 
 #define ___Trash @"Корзина"
 
+#define ___FORMAT_N_of_M @"%d из %d"
+
+#define ___YES @"ДА"
+#define ___NO  @"НЕТ"
+
 #endif

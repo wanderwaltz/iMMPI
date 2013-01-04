@@ -12,10 +12,12 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <AddressBook/AddressBook.h>
+    #import <QuartzCore/QuartzCore.h>
 
     #import "FRBCommon.h"
     #import "FRBDispatch.h"
     #import "FRBDatePickerPopover.h"
+    #import "FRBGeometry.h"
 
     #import "Strings.h"
 

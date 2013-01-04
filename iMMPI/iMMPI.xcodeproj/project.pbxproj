@@ -42,6 +42,7 @@
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
 		5DA5CA13163B061000CF1601 /* RecordsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA12163B061000CF1601 /* RecordsListViewController.m */; };
 		5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */; };
+		5DBD5659169714EE00728BB4 /* TestAnswersInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD5658169714EE00728BB4 /* TestAnswersInputViewController.m */; };
 		5DBE76D6169351200018C728 /* TestRecordModelGroupedByName.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */; };
 		5DBE76DA169356F50018C728 /* PersonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76D9169356F50018C728 /* PersonsListViewController.m */; };
 		5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */; };
@@ -114,6 +115,8 @@
 		5DA5CA12163B061000CF1601 /* RecordsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsListViewController.m; sourceTree = "<group>"; };
 		5DA5CA14163B080B00CF1601 /* TestAnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersViewController.h; sourceTree = "<group>"; };
 		5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersViewController.m; sourceTree = "<group>"; };
+		5DBD5657169714EE00728BB4 /* TestAnswersInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersInputViewController.h; sourceTree = "<group>"; };
+		5DBD5658169714EE00728BB4 /* TestAnswersInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersInputViewController.m; sourceTree = "<group>"; };
 		5DBE76D4169351200018C728 /* TestRecordModelGroupedByName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordModelGroupedByName.h; sourceTree = "<group>"; };
 		5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordModelGroupedByName.m; sourceTree = "<group>"; };
 		5DBE76D8169356F50018C728 /* PersonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsListViewController.h; sourceTree = "<group>"; };
@@ -328,8 +331,9 @@
 		5DA5CA0C163B04D200CF1601 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5DA5CA10163B050700CF1601 /* Analysis View Controller */,
 				5DA5CA0F163B04F200CF1601 /* Test Answers View Controller */,
+				5DBD5655169714D100728BB4 /* Test Answers Input View Controller */,
+				5DA5CA10163B050700CF1601 /* Analysis View Controller */,
 				5DA5CA0E163B04E800CF1601 /* Edit Test Record View Controller */,
 				5DBE76D7169356D40018C728 /* Persons List View Controller */,
 				5DA5CA0D163B04DB00CF1601 /* Records List View Controller */,
@@ -371,6 +375,15 @@
 				5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */,
 			);
 			name = "Analysis View Controller";
+			sourceTree = "<group>";
+		};
+		5DBD5655169714D100728BB4 /* Test Answers Input View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5DBD5657169714EE00728BB4 /* TestAnswersInputViewController.h */,
+				5DBD5658169714EE00728BB4 /* TestAnswersInputViewController.m */,
+			);
+			name = "Test Answers Input View Controller";
 			sourceTree = "<group>";
 		};
 		5DBE76D2169350F40018C728 /* Test Record Model Grouped By Name */ = {
@@ -718,6 +731,7 @@
 				5DBE76D6169351200018C728 /* TestRecordModelGroupedByName.m in Sources */,
 				5DBE76DA169356F50018C728 /* PersonsListViewController.m in Sources */,
 				5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */,
+				5DBD5659169714EE00728BB4 /* TestAnswersInputViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

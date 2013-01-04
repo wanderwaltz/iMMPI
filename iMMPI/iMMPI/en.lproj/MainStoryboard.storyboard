@@ -375,6 +375,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ответы на тест" id="eyH-RJ-E94">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="Fk5-BQ-tHb"/>
                         <barButtonItem key="rightBarButtonItem" title="Анализ" id="xhN-p9-zdZ">
                             <connections>
                                 <segue destination="F49-RI-GVa" kind="push" identifier="com.immpi.segue.analyzer" id="D7C-fb-8Yk"/>
@@ -391,7 +392,7 @@
             <objects>
                 <tableViewController id="F49-RI-GVa" customClass="AnalysisViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pKI-E6-RgH">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -442,7 +443,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g11-S7-kr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2271" y="-192"/>
+            <point key="canvasLocation" x="2819" y="-192"/>
         </scene>
         <!--Persons List View Controller - Все записи-->
         <scene sceneID="VQi-TQ-cMF">
@@ -496,6 +497,7 @@
                         <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="dBb-vP-UTt"/>
                         <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editGroup" modalPresentationStyle="formSheet" id="ghm-Jh-3HV"/>
                         <segue destination="zGB-ra-p1M" kind="push" identifier="com.immpi.segue.listGroup" id="hGM-y0-hAY"/>
+                        <segue destination="LqN-J3-mFC" kind="replace" identifier="com.immpi.segue.answersInput" splitViewControllerTargetIndex="1" id="gZV-hG-uQK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6V-I4-VnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -538,62 +540,145 @@
             </objects>
             <point key="canvasLocation" x="-1158" y="-147"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9Hb-ab-zjM">
+            <objects>
+                <navigationController toolbarHidden="NO" id="LqN-J3-mFC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pA9-u1-KZx">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Bwm-7g-Eze">
+                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="QWv-EL-1cu" kind="relationship" relationship="rootViewController" id="MFe-gH-7aT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1cz-af-I7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="1198"/>
+        </scene>
+        <!--Test Answers Input View Controller - 4 из 566-->
+        <scene sceneID="8DC-Og-m1f">
+            <objects>
+                <tableViewController id="QWv-EL-1cu" customClass="TestAnswersInputViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="1mi-nd-tOm">
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.answer" id="VXc-NI-jF1" customClass="StatementTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="768" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cF-4c-DzO">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="39" type="user" id="Kqo-co-rfI"/>
+                                                <constraint firstAttribute="height" constant="21" id="Yog-Qs-FMp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="619" translatesAutoresizingMaskIntoConstraints="NO" id="cEW-ZM-oeL">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="54" type="user" id="pZu-nI-uQu"/>
+                                            </constraints>
+                                            <string key="text">Текст вопроса, возможно длинный и располагающийся в две строчки; этого должно быть достаточно - в целом, все вопросы СМИЛ изложены достаточно сжато</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="НЕТ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXn-qy-L6f">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="f00-q9-WfA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QXn-qy-L6f" secondAttribute="trailing" constant="20" type="user" id="733-Wa-2lC"/>
+                                    <constraint firstItem="2cF-4c-DzO" firstAttribute="leading" secondItem="VXc-NI-jF1" secondAttribute="leading" constant="8" type="user" id="95I-YE-kD6"/>
+                                    <constraint firstAttribute="centerY" secondItem="cEW-ZM-oeL" secondAttribute="centerY" type="user" id="AkA-cF-R4p"/>
+                                    <constraint firstItem="cEW-ZM-oeL" firstAttribute="leading" secondItem="2cF-4c-DzO" secondAttribute="trailing" constant="20" type="user" id="WYg-DE-5lx"/>
+                                    <constraint firstItem="cEW-ZM-oeL" firstAttribute="centerY" secondItem="2cF-4c-DzO" secondAttribute="centerY" type="default" id="ZkC-tm-dgc"/>
+                                    <constraint firstItem="QXn-qy-L6f" firstAttribute="leading" secondItem="cEW-ZM-oeL" secondAttribute="trailing" constant="20" type="user" id="qMS-qh-egP"/>
+                                    <constraint firstItem="QXn-qy-L6f" firstAttribute="top" secondItem="VXc-NI-jF1" secondAttribute="top" constant="20" type="default" id="tjs-S8-tC1"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="statementAnswerLabel" destination="QXn-qy-L6f" id="xfF-Vj-yyx"/>
+                                    <outlet property="statementIDLabel" destination="2cF-4c-DzO" id="9QV-U9-Wp2"/>
+                                    <outlet property="statementTextLabel" destination="cEW-ZM-oeL" id="A9T-hg-xGx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QWv-EL-1cu" id="p0b-Ep-Ltd"/>
+                            <outlet property="delegate" destination="QWv-EL-1cu" id="IwP-EB-5vw"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Пред." id="UYr-v7-hNu">
+                            <connections>
+                                <action selector="prevBarButtonAction:" destination="QWv-EL-1cu" id="0y6-Qm-jgW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="OeS-5Q-bMc"/>
+                        <barButtonItem title="НЕТ" width="200" id="vic-cp-KGi">
+                            <connections>
+                                <action selector="negativeAnswerButtonAction:" destination="QWv-EL-1cu" id="CCk-sN-q8N"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="ДА" width="200" id="kUC-Eo-4Hs">
+                            <connections>
+                                <action selector="positiveAnswerButtonAction:" destination="QWv-EL-1cu" id="n4X-Ts-J8U"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xvu-mK-tOi"/>
+                        <barButtonItem title="След." id="Zgn-Ih-vsg">
+                            <connections>
+                                <action selector="nextBarButtonAction:" destination="QWv-EL-1cu" id="JZR-LW-L64"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="4 из 566" id="40Z-vh-v6Y">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="gVz-fS-QQZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Анализ" id="Nde-Ez-BKg">
+                            <connections>
+                                <segue destination="F49-RI-GVa" kind="push" identifier="com.immpi.segue.analyzer" id="yzq-KO-2Lv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="_analyzisBarButton" destination="Nde-Ez-BKg" id="7XP-js-qPe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cg-8N-z5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="1198"/>
+        </scene>
     </scenes>
-    <classes>
-        <class className="AnalysisViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalysisViewController.h"/>
-        </class>
-        <class className="AnalyzerTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyzerTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="_groupNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="_lcGroupNameLabelLeft" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="_scoreLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EditTestRecordViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTestRecordViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="saveButtonAction:"/>
-                <relationship kind="outlet" name="_ageGroupLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="_ageGroupTableViewCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="_dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="_dateTableViewCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="_fullNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="_genderLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="_genderTableViewCell" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PersonsListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonsListViewController.h"/>
-        </class>
-        <class className="RecordsListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecordsListViewController.h"/>
-        </class>
-        <class className="StatementTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatementTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="statementIDLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="statementSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="statementTextLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TestAnswersViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="p41-jG-o3A"/>
+        <segue reference="dBb-vP-UTt"/>
         <segue reference="1n8-HN-ewy"/>
-        <segue reference="THK-Zl-NF7"/>
-        <segue reference="V8Q-xd-vbY"/>
+        <segue reference="yzq-KO-2Lv"/>
     </inferredMetricsTieBreakers>
 </document>

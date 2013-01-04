@@ -33,6 +33,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *statementIDLabel;
 @property (strong, nonatomic) IBOutlet UILabel *statementTextLabel;
+@property (strong, nonatomic) IBOutlet UILabel *statementAnswerLabel;
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *statementSegmentedControl;
 
