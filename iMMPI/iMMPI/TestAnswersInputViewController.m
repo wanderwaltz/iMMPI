@@ -45,7 +45,9 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 - (void) viewWillAppear: (BOOL) animated
 {
     [super viewWillAppear: animated];
-    [self loadQuestionnaireAsyncIfNeeded];
+    [self loadQuestionnaireAsyncIfNeeded: ^{
+        [self setStatementIndex: 0];
+    }];
 }
 
 - (void) viewWillDisappear: (BOOL) animated

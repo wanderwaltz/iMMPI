@@ -13,6 +13,7 @@
 #import "RecordsListViewController.h"
 #import "EditTestRecordViewController.h"
 #import "TestAnswersViewController.h"
+#import "TestAnswersInputViewController.h"
 
 
 #pragma mark -
@@ -20,9 +21,10 @@
 
 static NSString * const kRecordCellIdentifier = @"com.immpi.cells.record";
 
-static NSString * const kSegueAddRecord   = @"com.immpi.segue.addRecord";
-static NSString * const kSegueEditRecord  = @"com.immpi.segue.editRecord";
-static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
+static NSString * const kSegueAddRecord    = @"com.immpi.segue.addRecord";
+static NSString * const kSegueEditRecord   = @"com.immpi.segue.editRecord";
+static NSString * const kSegueEditAnswers  = @"com.immpi.segue.editAnswers";
+static NSString * const kSegueAnswersInput = @"com.immpi.segue.answersInput";
 
 
 #pragma mark -
@@ -134,6 +136,26 @@ static NSString * const kSegueEditAnswers = @"com.immpi.segue.editAnswers";
         controller.record  =   record;
         controller.storage = _storage;
     }
+    
+    // Test answers input for a record
+    else if ([segue.identifier isEqualToString: kSegueAnswersInput])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        FRB_AssertNotNil(indexPath);
+    
+    
+        id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(record, TestRecordProtocol);
+    
+       
+        TestAnswersInputViewController *controller =
+        (id)[segue.destinationViewController viewControllers][0];
+        FRB_AssertClass(controller, TestAnswersInputViewController);
+    
+    
+        controller.record  = record;
+        controller.storage = _storage;
+    }
 }
 
 
@@ -212,7 +234,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
     
     id sender = [tableView cellForRowAtIndexPath: indexPath];
     
-    [self performSegueWithIdentifier: kSegueEditAnswers
+    [self performSegueWithIdentifier: kSegueAnswersInput
                               sender: sender];
 }
 

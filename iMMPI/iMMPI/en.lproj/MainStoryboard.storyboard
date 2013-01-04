@@ -53,6 +53,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="THK-Zl-NF7"/>
+                        <segue destination="LqN-J3-mFC" kind="replace" identifier="com.immpi.segue.answersInput" splitViewControllerTargetIndex="1" id="wQm-8j-8wQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83j-qF-MIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,7 +242,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTN-tL-7KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="-1407"/>
+            <point key="canvasLocation" x="1699" y="-1307"/>
         </scene>
         <!--Table View Controller - Выберите запись-->
         <scene sceneID="t8N-86-zGB">
@@ -256,7 +257,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEl-k1-RqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-128" y="1170"/>
+            <point key="canvasLocation" x="-164" y="1698"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wv7-qr-V0V">
@@ -271,7 +272,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWr-mo-gaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1108" y="1170"/>
+            <point key="canvasLocation" x="-1144" y="1698"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="KZH-4F-g7f">
@@ -285,7 +286,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKV-9P-dhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2107" y="370"/>
+            <point key="canvasLocation" x="-2143" y="370"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LVy-lh-EKl">
@@ -303,7 +304,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukp-Hq-LPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="-1407"/>
+            <point key="canvasLocation" x="913" y="-1307"/>
         </scene>
         <!--Test Answers View Controller - Ответы на тест-->
         <scene sceneID="JL9-xO-BoI">
@@ -385,14 +386,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tv2-b8-c0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="-192"/>
+            <point key="canvasLocation" x="1803" y="-192"/>
         </scene>
         <!--Analysis View Controller - Анализ-->
         <scene sceneID="O4d-EX-KCt">
             <objects>
                 <tableViewController id="F49-RI-GVa" customClass="AnalysisViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pKI-E6-RgH">
-                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -520,7 +521,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjG-3W-QeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="-192"/>
+            <point key="canvasLocation" x="869" y="-192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p6m-pL-62g">
@@ -562,7 +563,7 @@
             </objects>
             <point key="canvasLocation" x="924" y="1198"/>
         </scene>
-        <!--Test Answers Input View Controller - 4 из 566-->
+        <!--Test Answers Input View Controller-->
         <scene sceneID="8DC-Og-m1f">
             <objects>
                 <tableViewController id="QWv-EL-1cu" customClass="TestAnswersInputViewController" sceneMemberID="viewController">
@@ -652,7 +653,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="4 из 566" id="40Z-vh-v6Y">
+                    <navigationItem key="navigationItem" id="40Z-vh-v6Y">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="gVz-fS-QQZ"/>
                         <barButtonItem key="rightBarButtonItem" title="Анализ" id="Nde-Ez-BKg">
                             <connections>
@@ -676,9 +677,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="p41-jG-o3A"/>
-        <segue reference="dBb-vP-UTt"/>
         <segue reference="1n8-HN-ewy"/>
-        <segue reference="yzq-KO-2Lv"/>
+        <segue reference="pzp-1q-KmK"/>
+        <segue reference="THK-Zl-NF7"/>
+        <segue reference="wQm-8j-8wQ"/>
+        <segue reference="D7C-fb-8Yk"/>
     </inferredMetricsTieBreakers>
 </document>
