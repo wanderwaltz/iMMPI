@@ -48,7 +48,11 @@
 	
 	<option value="//api/name/allTestRecords">&nbsp;&nbsp;&nbsp;&nbsp;- allTestRecords</option>
 	
+	<option value="//api/name/containsTestRecord:">&nbsp;&nbsp;&nbsp;&nbsp;- containsTestRecord:</option>
+	
 	<option value="//api/name/loadStoredTestRecords">&nbsp;&nbsp;&nbsp;&nbsp;- loadStoredTestRecords</option>
+	
+	<option value="//api/name/removeTestRecord:">&nbsp;&nbsp;&nbsp;&nbsp;- removeTestRecord:</option>
 	
 	<option value="//api/name/updateTestRecord:">&nbsp;&nbsp;&nbsp;&nbsp;- updateTestRecord:</option>
 	
@@ -84,7 +88,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allTestRecords">allTestRecords</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsTestRecord:">containsTestRecord:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadStoredTestRecords">loadStoredTestRecords</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeTestRecord:">removeTestRecord:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateTestRecord:">updateTestRecord:</a></span></li>
 	
@@ -152,6 +160,20 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/updateTestRecord:">&ndash;&nbsp;updateTestRecord:</a></code>
 		<span class="tooltip"><p>This method should update the existing record from the storage.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeTestRecord:">&ndash;&nbsp;removeTestRecord:</a></code>
+		<span class="tooltip"><p>This method should remove the existing record from the storage.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/containsTestRecord:">&ndash;&nbsp;containsTestRecord:</a></code>
+		<span class="tooltip"><p>This method should check whether the provided <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> object does exist in the storage.</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
@@ -293,6 +315,62 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/containsTestRecord:" title="containsTestRecord:"></a>
+	<h3 class="subsubtitle method-title">containsTestRecord:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method should check whether the provided <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> object does exist in the storage.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)containsTestRecord:(id&lt;TestRecordProtocol&gt;)<em>testRecord</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>testRecord</em></dt>
+			<dd><p>A <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> object to be searched within storage.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the record does exist in storage, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method should check whether the provided <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> object does exist in the storage.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TestRecordStorageProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/loadStoredTestRecords" title="loadStoredTestRecords"></a>
 	<h3 class="subsubtitle method-title">loadStoredTestRecords</h3>
 	
@@ -322,6 +400,64 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method should load all <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects stored in the persistent storage.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TestRecordStorageProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeTestRecord:" title="removeTestRecord:"></a>
+	<h3 class="subsubtitle method-title">removeTestRecord:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method should remove the existing record from the storage.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)removeTestRecord:(id&lt;TestRecordProtocol&gt;)<em>testRecord</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>testRecord</em></dt>
+			<dd><p>A <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> object to be removed from the persistent storage.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the record existed in storage and has been successfully removed. NO if removal failed or record does not exist.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method should remove the existing record from the storage.</p>
+
+<p>If the record does not yet exist in storage, this method should do nothing and return NO.</p>
 	</div>
 	
 	
@@ -409,7 +545,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Frostbit. All rights reserved. (Last updated: 2012-12-30)</span><br />
+						<p><span class="copyright">&copy; 2013 Frostbit. All rights reserved. (Last updated: 2013-01-05)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

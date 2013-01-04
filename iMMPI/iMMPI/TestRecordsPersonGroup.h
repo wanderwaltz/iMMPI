@@ -12,6 +12,8 @@
 #pragma mark -
 #pragma mark TestRecordsPersonGroup interface
 
+/*! An implementation of TestRecordsGroupByName protocol for private use in TestRecordModelGroupedByName class.
+ */
 @interface TestRecordsPersonGroup : NSObject<TestRecordsGroupByName>
 @property (readonly, nonatomic) NSArray  *allRecords;
 @property (readonly, nonatomic) NSString *name;

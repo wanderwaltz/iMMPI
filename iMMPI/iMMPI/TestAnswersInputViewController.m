@@ -18,8 +18,6 @@
 #pragma mark -
 #pragma mark Static constants
 
-static NSString * const kAnswerCellIdentifier = @"com.immpi.cells.answer";
-
 static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 
@@ -29,8 +27,6 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 @interface TestAnswersInputViewController()
 {
     IBOutlet UIBarButtonItem *_analyzisBarButton;
-    
-    id<QuestionnaireProtocol> _questionnaire;
     
     NSUInteger _statementIndex;
 }
@@ -42,6 +38,22 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 #pragma mark TestAnswersInputViewController implementations
 
 @implementation TestAnswersInputViewController
+
+#pragma mark -
+#pragma mark view lifecycle
+
+- (void) viewWillAppear: (BOOL) animated
+{
+    [super viewWillAppear: animated];
+    [self loadQuestionnaireAsyncIfNeeded];
+}
+
+- (void) viewWillDisappear: (BOOL) animated
+{
+    [super viewWillDisappear: animated];
+    [self saveRecord];
+}
+
 
 #pragma mark -
 #pragma mark actions
@@ -60,10 +72,10 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 - (IBAction) negativeAnswerButtonAction: (id) sender
 {
-    id<StatementProtocol> statement = [_questionnaire statementAtIndex: _statementIndex];
+    id<StatementProtocol> statement = [self.questionnaire statementAtIndex: _statementIndex];
     FRB_AssertNotNil(statement);
     
-    [_record.testAnswers setAnswerType: AnswerTypeNegative
+    [self.record.testAnswers setAnswerType: AnswerTypeNegative
                         forStatementID: statement.statementID];
     
     if (![self setNextStatementIndex])
@@ -76,33 +88,16 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 - (IBAction) positiveAnswerButtonAction: (id) sender
 {
-    id<StatementProtocol> statement = [_questionnaire statementAtIndex: _statementIndex];
+    id<StatementProtocol> statement = [self.questionnaire statementAtIndex: _statementIndex];
     FRB_AssertNotNil(statement);
     
-    [_record.testAnswers setAnswerType: AnswerTypePositive
-                        forStatementID: statement.statementID];
+    [self.record.testAnswers setAnswerType: AnswerTypePositive
+                            forStatementID: statement.statementID];
     if (![self setNextStatementIndex])
     {
         [self performSegueWithIdentifier: kSegueAnalyzer
                                   sender: nil];
     }
-}
-
-
-#pragma mark -
-#pragma mark view lifecycle
-
-- (void) viewWillAppear: (BOOL) animated
-{
-    [super viewWillAppear: animated];
-    [self loadQuestionnaireIfNeeded];
-}
-
-
-- (void) viewWillDisappear: (BOOL) animated
-{
-    [super viewWillDisappear:  animated];
-    [_storage updateTestRecord: _record];
 }
 
 
@@ -117,35 +112,13 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
         
         FRB_AssertClass(controller, AnalysisViewController);
         
-        controller.record = _record;
+        controller.record = self.record;
     }
 }
 
 
 #pragma mark -
 #pragma mark private
-
-- (void) loadQuestionnaireIfNeeded
-{
-    if (_questionnaire == nil)
-    {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            _questionnaire = [Questionnaire newForGender: _record.person.gender
-                                                ageGroup: _record.person.ageGroup];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self setStatementIndex: 0];
-            });
-        });
-    }
-}
-
-
-- (id<StatementProtocol>) statementAtIndexPath: (NSIndexPath *) indexPath
-{
-    return [_questionnaire statementAtIndex: indexPath.row];
-}
-
 
 - (BOOL) setPreviousStatementIndex
 {
@@ -160,11 +133,11 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 - (BOOL) setNextStatementIndex
 {
-    id<StatementProtocol> statement = [_questionnaire statementAtIndex: _statementIndex];
+    id<StatementProtocol> statement = [self.questionnaire statementAtIndex: _statementIndex];
     FRB_AssertNotNil(statement);
     
-    if ((_statementIndex < _questionnaire.statementsCount-1) &&
-        ([_record.testAnswers answerTypeForStatementID: statement.statementID] != AnswerTypeUnknown))
+    if ((_statementIndex < self.questionnaire.statementsCount-1) &&
+        ([self.record.testAnswers answerTypeForStatementID: statement.statementID] != AnswerTypeUnknown))
     {
         [self setStatementIndex: _statementIndex+1];
         return YES;
@@ -175,7 +148,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 - (void) setStatementIndex: (NSUInteger) index
 {
-    if (index < _questionnaire.statementsCount)
+    if (index < self.questionnaire.statementsCount)
     {
         _statementIndex = index;
         [self.tableView reloadData];
@@ -185,7 +158,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
                                       animated: NO];
         
         self.title = [NSString stringWithFormat: ___FORMAT_N_of_M,
-                      _statementIndex+1, _questionnaire.statementsCount];
+                      _statementIndex+1, self.questionnaire.statementsCount];
     }
 }
 
@@ -203,25 +176,16 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 #pragma mark -
 #pragma mark UITableViewDataSource
 
-- (NSInteger) tableView: (UITableView *) tableView
-  numberOfRowsInSection: (NSInteger) section
-{
-    return  _questionnaire.statementsCount;
-}
-
-
 - (UITableViewCell *) tableView: (UITableView *) tableView
           cellForRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    StatementTableViewCell *cell = (id)[tableView dequeueReusableCellWithIdentifier:
-                                        kAnswerCellIdentifier];
+    StatementTableViewCell *cell =
+    (StatementTableViewCell *)[super tableView: tableView
+                         cellForRowAtIndexPath: indexPath];
     FRB_AssertClass(cell, StatementTableViewCell);
     
     id<StatementProtocol> statement = [self statementAtIndexPath: indexPath];
     FRB_AssertNotNil(statement);
-    
-    cell.statementIDLabel.text   = [NSString stringWithFormat: @"%d", statement.statementID];
-    cell.statementTextLabel.text = statement.text;
     
     if (_statementIndex == indexPath.row)
     {
@@ -235,16 +199,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
         cell.statementTextLabel.alpha   = 0.125;
         cell.statementAnswerLabel.alpha = 0.125;
     }
-    
-    
-    switch ([_record.testAnswers answerTypeForStatementID: statement.statementID])
-    {
-        case AnswerTypePositive: cell.statementAnswerLabel.text = ___YES; break;
-        case AnswerTypeNegative: cell.statementAnswerLabel.text =  ___NO; break;
-        case AnswerTypeUnknown:  cell.statementAnswerLabel.text =    nil; break;
-    }
-    
-    
+
     return cell;
 }
 

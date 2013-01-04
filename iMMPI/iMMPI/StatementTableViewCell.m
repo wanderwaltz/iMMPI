@@ -19,6 +19,15 @@
 @implementation StatementTableViewCell
 
 #pragma mark -
+#pragma mark Class methods
+
++ (NSString *) reuseIdentifier
+{
+    return @"com.immpi.cells.answer";
+}
+
+
+#pragma mark -
 #pragma mark initialization methods
 
 - (void) awakeFromNib

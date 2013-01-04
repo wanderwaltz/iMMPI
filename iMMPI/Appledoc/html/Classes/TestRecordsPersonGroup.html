@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>TestAnswersProtocol Protocol Reference</title>
+		<title>TestRecordsPersonGroup Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">TestAnswersProtocol Protocol Reference</h1>
+				<h1 class="hideInXcode">TestRecordsPersonGroup Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -38,17 +38,20 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/allRecords">&nbsp;&nbsp;&nbsp;&nbsp;allRecords</option>
+	
+	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/answerTypeForStatementID:">&nbsp;&nbsp;&nbsp;&nbsp;- answerTypeForStatementID:</option>
-	
-	<option value="//api/name/enumerateAnswers:">&nbsp;&nbsp;&nbsp;&nbsp;- enumerateAnswers:</option>
-	
-	<option value="//api/name/setAnswerType:forStatementID:">&nbsp;&nbsp;&nbsp;&nbsp;- setAnswerType:forStatementID:</option>
+	<option value="//api/name/numberOfRecords">&nbsp;&nbsp;&nbsp;&nbsp;- numberOfRecords</option>
 	
 	
 	
@@ -72,17 +75,21 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allRecords">allRecords</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+</ul></li>
+
 
 
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/answerTypeForStatementID:">answerTypeForStatementID:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enumerateAnswers:">enumerateAnswers:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAnswerType:forStatementID:">setAnswerType:forStatementID:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfRecords">numberOfRecords</a></span></li>
 	
 </ul></li>
 
@@ -91,7 +98,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="TestAnswersProtocol Protocol Reference" name="top"></a>
+				<a title="TestRecordsPersonGroup Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -100,18 +107,21 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">TestAnswersProtocol Protocol Reference</h1>
+						<h1 class="title title-header">TestRecordsPersonGroup Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Conforms to</td>
+	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/TestRecordsGroupByName.html">TestRecordsGroupByName</a></td>
+</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">TestAnswersProtocol.h</td>
+	<td class="specification-value">TestRecordsPersonGroup.h<br />TestRecordsPersonGroup.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -121,7 +131,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Encapsulates a mutable set of answers.</p>
+						<p>An implementation of <a href="../Protocols/TestRecordsGroupByName.html">TestRecordsGroupByName</a> protocol for private use in <a href="../Classes/TestRecordModelGroupedByName.html">TestRecordModelGroupedByName</a> class.</p>
 					</div>
 					
 					
@@ -139,25 +149,25 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setAnswerType:forStatementID:">&ndash;&nbsp;setAnswerType:forStatementID:</a></code>
-		<span class="tooltip"><p>This method should set an AnswerType for a statement with a given ID</p></span>
+		<code><a href="#//api/name/allRecords">&nbsp;&nbsp;allRecords</a></code>
+		<span class="tooltip"><p>An array of <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects contained in the group.</p></span>
 	</span>
+	<span class="task-item-suffix">property</span>
 	
-	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/answerTypeForStatementID:">&ndash;&nbsp;answerTypeForStatementID:</a></code>
-		<span class="tooltip"><p>This method should return answer type for statement with the provided ID</p></span>
+		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+		<span class="tooltip"><p>Name of the group. All <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects contained in the group are expected to have the same person name as the group.</p></span>
 	</span>
+	<span class="task-item-suffix">property</span>
 	
-	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/enumerateAnswers:">&ndash;&nbsp;enumerateAnswers:</a></code>
-		<span class="tooltip"><p>This method should enumerate all answers with type != AnswerTypeUnknown.</p></span>
+		<code><a href="#//api/name/numberOfRecords">&ndash;&nbsp;numberOfRecords</a></code>
+		<span class="tooltip"><p>Number of <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects in the group.</p></span>
 	</span>
 	
-	<span class="task-item-suffix">required method</span>
+	
 </li>
 						</ul>
 						
@@ -166,6 +176,94 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/allRecords" title="allRecords"></a>
+	<h3 class="subsubtitle method-title">allRecords</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An array of <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects contained in the group.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSArray *allRecords</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An array of <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects contained in the group.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TestRecordModelGroupedByName.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="subsubtitle method-title">name</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Name of the group. All <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects contained in the group are expected to have the same person name as the group.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSString *name</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Name of the group. All <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects contained in the group are expected to have the same person name as the group.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TestRecordModelGroupedByName.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -176,37 +274,22 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/answerTypeForStatementID:" title="answerTypeForStatementID:"></a>
-	<h3 class="subsubtitle method-title">answerTypeForStatementID:</h3>
+	<a name="//api/name/numberOfRecords" title="numberOfRecords"></a>
+	<h3 class="subsubtitle method-title">numberOfRecords</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>This method should return answer type for statement with the provided ID</p>
+		<p>Number of <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects in the group.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (AnswerType)answerTypeForStatementID:(NSInteger)<em>statementID</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)numberOfRecords</code></div>
 
     
 	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>statementID</em></dt>
-			<dd><p>ID of the statement related to the answer</p></dd>
-		</dl>
-		
-	</div>
 	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>AnswerType for a recorded answer. If the statement has not yet been answered, returns AnswerTypeUnknown.</p>
-	</div>
 	
 	
 	
@@ -214,7 +297,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method should return answer type for statement with the provided ID</p>
+		<p>Number of <a href="../Protocols/TestRecordProtocol.html">TestRecordProtocol</a> objects in the group.</p>
 	</div>
 	
 	
@@ -225,116 +308,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TestAnswersProtocol.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/enumerateAnswers:" title="enumerateAnswers:"></a>
-	<h3 class="subsubtitle method-title">enumerateAnswers:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>This method should enumerate all answers with type != AnswerTypeUnknown.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)enumerateAnswers:(void ( ^ ) ( NSInteger statementID , AnswerType answer ))<em>block</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>Block to be called on each answer/statementID pair where answer != AnswerTypeUnknown</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method should enumerate all answers with type != AnswerTypeUnknown.</p>
-
-<p>Ordering of the enumerating answers is undefined.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TestAnswersProtocol.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/setAnswerType:forStatementID:" title="setAnswerType:forStatementID:"></a>
-	<h3 class="subsubtitle method-title">setAnswerType:forStatementID:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>This method should set an AnswerType for a statement with a given ID</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)setAnswerType:(AnswerType)<em>answerType</em> forStatementID:(NSInteger)<em>statementID</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>answerType</em></dt>
-			<dd><p>answer type (agree, disagree, undefined &ndash; see source for the exact enum values)</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>statementID</em></dt>
-			<dd><p>ID of the statement to relate the answer with</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method should set an AnswerType for a statement with a given ID</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TestAnswersProtocol.h</code><br />
+		<code class="declared-in-ref">TestRecordModelGroupedByName.h</code><br />
 	</div>				
 	
 	
