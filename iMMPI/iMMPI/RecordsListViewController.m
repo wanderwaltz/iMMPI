@@ -25,6 +25,7 @@ static NSString * const kSegueAddRecord    = @"com.immpi.segue.addRecord";
 static NSString * const kSegueEditRecord   = @"com.immpi.segue.editRecord";
 static NSString * const kSegueEditAnswers  = @"com.immpi.segue.editAnswers";
 static NSString * const kSegueAnswersInput = @"com.immpi.segue.answersInput";
+static NSString * const kSegueBlankDetail  = @"com.immpi.segue.blankDetail";
 
 
 #pragma mark -
@@ -333,6 +334,8 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         }
         
         [self.tableView reloadData];
+        
+        [self performSegueWithIdentifier: kSegueBlankDetail sender: self];
     }
 }
 

@@ -166,16 +166,6 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 
 #pragma mark -
-#pragma mark UITableViewDelegate 
-
-     - (void) tableView: (UITableView *) tableView
-didSelectRowAtIndexPath: (NSIndexPath *) indexPath
-{
-    [self setStatementIndex: indexPath.row];
-}
-
-
-#pragma mark -
 #pragma mark UITableViewDataSource
 
 - (UITableViewCell *) tableView: (UITableView *) tableView

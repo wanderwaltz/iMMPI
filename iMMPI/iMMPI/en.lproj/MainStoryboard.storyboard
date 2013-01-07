@@ -54,6 +54,7 @@
                     <connections>
                         <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="THK-Zl-NF7"/>
                         <segue destination="LqN-J3-mFC" kind="replace" identifier="com.immpi.segue.answersInput" splitViewControllerTargetIndex="1" id="wQm-8j-8wQ"/>
+                        <segue destination="uVX-dK-n6S" kind="replace" identifier="com.immpi.segue.blankDetail" splitViewControllerTargetIndex="1" id="B1l-8X-pqZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83j-qF-MIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -257,7 +258,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEl-k1-RqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164" y="1698"/>
+            <point key="canvasLocation" x="764" y="1654"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wv7-qr-V0V">
@@ -272,7 +273,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWr-mo-gaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1144" y="1698"/>
+            <point key="canvasLocation" x="-134" y="1654"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="KZH-4F-g7f">
@@ -386,7 +387,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tv2-b8-c0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1803" y="-192"/>
+            <point key="canvasLocation" x="2644" y="-147"/>
         </scene>
         <!--Analysis View Controller - Анализ-->
         <scene sceneID="O4d-EX-KCt">
@@ -444,7 +445,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g11-S7-kr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2819" y="-192"/>
+            <point key="canvasLocation" x="3623" y="-147"/>
         </scene>
         <!--Persons List View Controller - Все записи-->
         <scene sceneID="VQi-TQ-cMF">
@@ -499,11 +500,12 @@
                         <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editGroup" modalPresentationStyle="formSheet" id="ghm-Jh-3HV"/>
                         <segue destination="zGB-ra-p1M" kind="push" identifier="com.immpi.segue.listGroup" id="hGM-y0-hAY"/>
                         <segue destination="LqN-J3-mFC" kind="replace" identifier="com.immpi.segue.answersInput" splitViewControllerTargetIndex="1" id="gZV-hG-uQK"/>
+                        <segue destination="uVX-dK-n6S" kind="replace" identifier="com.immpi.segue.blankDetail" splitViewControllerTargetIndex="1" id="Vg7-Qs-0dP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6V-I4-VnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-688" y="-127"/>
+            <point key="canvasLocation" x="-684" y="-147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yOi-ik-Xg1">
@@ -521,7 +523,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjG-3W-QeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="-192"/>
+            <point key="canvasLocation" x="1784" y="-147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p6m-pL-62g">
@@ -561,7 +563,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cz-af-I7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="1198"/>
+            <point key="canvasLocation" x="1784" y="1018"/>
         </scene>
         <!--Test Answers Input View Controller-->
         <scene sceneID="8DC-Og-m1f">
@@ -668,7 +670,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cg-8N-z5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="1198"/>
+            <point key="canvasLocation" x="2644" y="1018"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -677,10 +679,11 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="dBb-vP-UTt"/>
+        <segue reference="gZV-hG-uQK"/>
+        <segue reference="p41-jG-o3A"/>
         <segue reference="1n8-HN-ewy"/>
-        <segue reference="pzp-1q-KmK"/>
-        <segue reference="THK-Zl-NF7"/>
-        <segue reference="wQm-8j-8wQ"/>
+        <segue reference="B1l-8X-pqZ"/>
         <segue reference="D7C-fb-8Yk"/>
     </inferredMetricsTieBreakers>
 </document>
