@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Storyboard.h"
 #import "StatementTableViewCell.h"
 #import "Model.h"
 
@@ -24,8 +24,9 @@
  
  @see TestAnswersInputViewController, TestAnswersViewController
  */
-@interface TestAnswersTableViewControllerBase : UITableViewController
-<StatementTableViewCellDelegate>
+@interface TestAnswersTableViewControllerBase : StoryboardManagedTableViewController
+<StatementTableViewCellDelegate,
+ SegueDestinationEditAnswers>
 
 /*! A TestRecordProtocol object to be managed by the view controller.
  

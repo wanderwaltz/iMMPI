@@ -6,10 +6,14 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Storyboard.h"
 
 #pragma mark -
 #pragma mark PersonsListViewController interface
 
-@interface PersonsListViewController : UITableViewController
+@interface PersonsListViewController : StoryboardManagedTableViewController
+<SegueSourceEditAnswers,
+ SegueSourceEditRecord,
+ SegueSourceListRecords>
+
 @end

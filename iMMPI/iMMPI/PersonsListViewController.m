@@ -20,13 +20,8 @@
 
 static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 
-static NSString * const kSegueAddRecord    = @"com.immpi.segue.addRecord";
-static NSString * const kSegueEditGroup    = @"com.immpi.segue.editGroup";
 static NSString * const kSegueListGroup    = @"com.immpi.segue.listGroup";
-static NSString * const kSegueEditAnswers  = @"com.immpi.segue.editAnswers";
 static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
-static NSString * const kSegueAnswersInput = @"com.immpi.segue.answersInput";
-static NSString * const kSegueBlankDetail  = @"com.immpi.segue.blankDetail";
 
 
 #pragma mark -
@@ -61,6 +56,8 @@ static NSString * const kSegueBlankDetail  = @"com.immpi.segue.blankDetail";
     
     if (self != nil)
     {
+        self.segueHandler = [MMPISegueHandler new];
+        
         _model = [TestRecordModelGroupedByName new];
         
         self.navigationItem.backBarButtonItem =
@@ -92,23 +89,43 @@ static NSString * const kSegueBlankDetail  = @"com.immpi.segue.blankDetail";
 #pragma mark -
 #pragma mark navigation
 
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+#pragma mark SegueSourceEditAnswers
+
+- (id<TestRecordProtocol>) testRecordToEditAnswersWithSender: (id) sender
 {
-    // Creating a new test record
-    if ([segue.identifier isEqualToString: kSegueAddRecord])
-    {
-        EditTestRecordViewController *controller =
-        (id)[segue.destinationViewController viewControllers][0];
-        
-        FRB_AssertClass(controller, EditTestRecordViewController);
-        
-        controller.delegate = self;
-        controller.record   = [TestRecord new];
-        controller.title    = ___New_Record;
-    }
+    NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+    FRB_AssertNotNil(indexPath);
     
-    // Editing existing group of test records
-    else if ([segue.identifier isEqualToString: kSegueEditGroup])
+    
+    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    FRB_AssertConformsTo(group, TestRecordsGroupByName);
+    
+    NSAssert((group.numberOfRecords == 1), @"kSegueEditAnswers should be performed only if number of records in a group is exactly equal to 1");
+    
+    return group.allRecords[0];
+}
+
+
+- (id<TestRecordStorage>) storageToEditAnswersWithSender: (id) sender
+{
+    return _storage;
+}
+
+
+#pragma mark SegueSourceEditRecord
+
+- (NSString *) titleForEditingTestRecord: (id<TestRecordProtocol>) record withSender: (id) sender
+{
+    if ([sender isKindOfClass: [UITableViewCell class]])
+        return ___Edit_Record;
+    else
+        return ___New_Record;
+}
+
+
+- (id<TestRecordProtocol>) testRecordToEditWithSender: (id) sender
+{
+    if ([sender isKindOfClass: [UITableViewCell class]])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
         FRB_AssertNotNil(indexPath);
@@ -117,112 +134,85 @@ static NSString * const kSegueBlankDetail  = @"com.immpi.segue.blankDetail";
         id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
         FRB_AssertConformsTo(group, TestRecordsGroupByName);
         
-        
-        EditTestRecordViewController *controller =
-        (id)[segue.destinationViewController viewControllers][0];
-        FRB_AssertClass(controller, EditTestRecordViewController);
-        
-        
-        controller.delegate = self;
-        controller.title    = ___Edit_Record;
-        controller.record   = group.allRecords[0];
+        return group.allRecords[0];
     }
-    
-    // Editing test answers for a record
-    else if ([segue.identifier isEqualToString: kSegueEditAnswers])
+    else
     {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
-        FRB_AssertNotNil(indexPath);
-        
-        
-        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
-        FRB_AssertConformsTo(group, TestRecordsGroupByName);
-        
-        NSAssert((group.numberOfRecords == 1), @"kSegueEditAnswers should be performed only if number of records in a group is exactly equal to 1");
-        
-        
-        TestAnswersViewController *controller =
-        (id)[segue.destinationViewController viewControllers][0];
-        FRB_AssertClass(controller, TestAnswersViewController);
-        
-        
-        controller.record  = group.allRecords[0];
-        controller.storage = _storage;
+        return [TestRecord new];
     }
-    
-    // Test answers input for a record
-    else if ([segue.identifier isEqualToString: kSegueAnswersInput])
-    {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
-        FRB_AssertNotNil(indexPath);
-        
-        
-        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
-        FRB_AssertConformsTo(group, TestRecordsGroupByName);
-        
-        NSAssert((group.numberOfRecords == 1), @"kSegueEditAnswers should be performed only if number of records in a group is exactly equal to 1");
-        
-        
-        TestAnswersInputViewController *controller =
-        (id)[segue.destinationViewController viewControllers][0];
-        FRB_AssertClass(controller, TestAnswersInputViewController);
-        
-        
-        controller.record  = group.allRecords[0];
-        controller.storage = _storage;
-    }
-    
-    // Viewing contents of a records group
-    else if ([segue.identifier isEqualToString: kSegueListGroup])
+}
+
+
+- (id<EditTestRecordViewControllerDelegate>) delegateForEditingTestRecordWithSender: (id) sender
+{
+    return self;
+}
+
+
+#pragma mark SegueSourceListRecords
+
+- (id<MutableTableViewModel>) modelForListRecordsWithSender: (id) sender
+{
+    if ([sender isKindOfClass: [UITableViewCell class]])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
         FRB_AssertNotNil(indexPath);
         
         id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
         FRB_AssertConformsTo(group, TestRecordsGroupByName);
-        
-        
-        RecordsListViewController *controller = segue.destinationViewController;
-        FRB_AssertClass(controller, RecordsListViewController);
-        
         
         TestRecordModelByDate *model = [TestRecordModelByDate new];
         model.delegate = self;
         
-        controller.model   = model;
-        controller.storage = _storage;
-        controller.title   = group.name;
-        
-        [controller.model addObjectsFromArray: group.allRecords];
-    }
-    
-    
-    // Viewing trash
-    else if ([segue.identifier isEqualToString: kSegueViewTrash])
-    {
-        RecordsListViewController *controller = segue.destinationViewController;
-        FRB_AssertClass(controller, RecordsListViewController);
-        
-        
-        TestRecordModelByDate *model = [TestRecordModelByDate new];
+        [model addObjectsFromArray: group.allRecords];
 
-        controller.model   = model;
-        controller.storage = _trashStorage;
-        controller.title   = ___Trash;
+        return model;
+    }
+    else
+    {
+        TestRecordModelByDate *model = [TestRecordModelByDate new];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [controller.storage loadStoredTestRecords];
-            NSArray *allRecords = [controller.storage allTestRecords];
+            [_trashStorage loadStoredTestRecords];
+            NSArray *allRecords = [_trashStorage allTestRecords];
             
             if (allRecords.count > 0)
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [controller.model addObjectsFromArray: allRecords];
-                    [controller.tableView reloadData];
+                    [model addObjectsFromArray: allRecords];
+                    // TODO: update controller
                 });
             }
         });
+        
+        return model;
     }
+}
+
+
+- (id<TestRecordStorage>) storageForListRecordsWithSender: (id) sender
+{
+    if ([sender isKindOfClass: [UITableViewCell class]])
+        return _storage;
+    else
+        return _trashStorage;
+}
+
+
+- (NSString *) titleForListRecordsWithSender: (id) sender
+{
+    if ([sender isKindOfClass: [UITableViewCell class]])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        FRB_AssertNotNil(indexPath);
+        
+        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
+
+        return group.name;
+    }
+    else
+        return ___Trash;
 }
 
 
@@ -289,7 +279,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
     }
     else
     {
-        [self performSegueWithIdentifier: kSegueAnswersInput sender: sender];
+        [self performSegueWithIdentifier: kSegueIDAnswersInput sender: sender];
     }
 }
 
@@ -302,7 +292,7 @@ accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
     
     id sender = [tableView cellForRowAtIndexPath: indexPath];
     
-    [self performSegueWithIdentifier: kSegueEditGroup sender: sender];
+    [self performSegueWithIdentifier: kSegueIDEditGroup sender: sender];
 }
 
 
@@ -410,7 +400,7 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         
         [self.tableView reloadData];
         
-        [self performSegueWithIdentifier: kSegueBlankDetail sender: self];
+        [self performSegueWithIdentifier: kSegueIDBlankDetail sender: self];
     }
 }
 

@@ -28,6 +28,8 @@
 		5D5E05B71646510700A5A704 /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B31646510700A5A704 /* mmpi.male.adult.json */; };
 		5D5E05B81646510700A5A704 /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B41646510700A5A704 /* mmpi.male.teen.json */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
+		5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74CF00169B08D500BAA202 /* StoryboardManagedViewController.m */; };
+		5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74CF03169B08E600BAA202 /* StoryboardManagedTableViewController.m */; };
 		5D85558516906A9C004E3021 /* AnalyzerKGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558416906A9C004E3021 /* AnalyzerKGroup.m */; };
 		5D85558916906E98004E3021 /* AnalyzerIGroupT1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558816906E98004E3021 /* AnalyzerIGroupT1.m */; };
 		5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558C16907158004E3021 /* AnalyzerIGroup99.m */; };
@@ -70,6 +72,7 @@
 		5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
 		5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
 		631F7A52D295429BB0A3F386 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D76D094067F4B558239B3CE /* libPods.a */; };
+		7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,12 @@
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		5D74CEFF169B08D500BAA202 /* StoryboardManagedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedViewController.h; sourceTree = "<group>"; };
+		5D74CF00169B08D500BAA202 /* StoryboardManagedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardManagedViewController.m; sourceTree = "<group>"; };
+		5D74CF02169B08E600BAA202 /* StoryboardManagedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedTableViewController.h; sourceTree = "<group>"; };
+		5D74CF03169B08E600BAA202 /* StoryboardManagedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardManagedTableViewController.m; sourceTree = "<group>"; };
+		5D74CF05169B094B00BAA202 /* Storyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Storyboard.h; sourceTree = "<group>"; };
+		5D74CF07169B097B00BAA202 /* SegueHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueHandler.h; sourceTree = "<group>"; };
 		5D85558316906A9C004E3021 /* AnalyzerKGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerKGroup.h; sourceTree = "<group>"; };
 		5D85558416906A9C004E3021 /* AnalyzerKGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerKGroup.m; sourceTree = "<group>"; };
 		5D85558716906E98004E3021 /* AnalyzerIGroupT1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIGroupT1.h; sourceTree = "<group>"; };
@@ -178,6 +187,15 @@
 		5DCC9647168DC1D8004F8D4E /* JSONTestRecordSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordSerialization.h; sourceTree = "<group>"; };
 		5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordSerialization.m; sourceTree = "<group>"; };
 		6D76D094067F4B558239B3CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C0F025C169BFF5D006377B3 /* StoryboardManagedViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedViewControllerProtocol.h; sourceTree = "<group>"; };
+		7C0F025F169C00B9006377B3 /* MMPISegueHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPISegueHandler.h; sourceTree = "<group>"; };
+		7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPISegueHandler.m; sourceTree = "<group>"; };
+		7C0F0265169C02E4006377B3 /* SegueSourceEditAnswers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceEditAnswers.h; sourceTree = "<group>"; };
+		7C0F0266169C02F0006377B3 /* SegueDestinationEditAnswers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationEditAnswers.h; sourceTree = "<group>"; };
+		7C0F0267169C08B3006377B3 /* SegueSourceEditRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceEditRecord.h; sourceTree = "<group>"; };
+		7C0F0268169C08C7006377B3 /* SegueDestinationEditRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationEditRecord.h; sourceTree = "<group>"; };
+		7C0F0269169C0E0C006377B3 /* SegueSourceListRecords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceListRecords.h; sourceTree = "<group>"; };
+		7C0F026A169C0E18006377B3 /* SegueDestinationListRecords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationListRecords.h; sourceTree = "<group>"; };
 		886E7B631E6B483C8375754E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -220,6 +238,47 @@
 				5DC40471168C2596000AFBAE /* Statement.m */,
 			);
 			name = Questionnaire;
+			sourceTree = "<group>";
+		};
+		5D74CEF8169B085000BAA202 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5D74CEFA169B086900BAA202 /* Storyboard */,
+				5DC40473168C2D49000AFBAE /* Table View Cells */,
+				5DA5CA0C163B04D200CF1601 /* View Controllers */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		5D74CEFA169B086900BAA202 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5D74CF05169B094B00BAA202 /* Storyboard.h */,
+				5D74CF06169B095200BAA202 /* Protocols */,
+				7C0F025E169C0092006377B3 /* MMPI Segue Handler */,
+				5D74CEFE169B08B200BAA202 /* Managed View Controllers */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		5D74CEFE169B08B200BAA202 /* Managed View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D74CEFF169B08D500BAA202 /* StoryboardManagedViewController.h */,
+				5D74CF00169B08D500BAA202 /* StoryboardManagedViewController.m */,
+				5D74CF02169B08E600BAA202 /* StoryboardManagedTableViewController.h */,
+				5D74CF03169B08E600BAA202 /* StoryboardManagedTableViewController.m */,
+			);
+			name = "Managed View Controllers";
+			sourceTree = "<group>";
+		};
+		5D74CF06169B095200BAA202 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5D74CF07169B097B00BAA202 /* SegueHandler.h */,
+				7C0F025C169BFF5D006377B3 /* StoryboardManagedViewControllerProtocol.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		5D85558116906A57004E3021 /* K Group */ = {
@@ -305,8 +364,7 @@
 				5DC0B2C4168CDB790035A910 /* Strings.h */,
 				5DCC9642168DC12B004F8D4E /* Utils */,
 				5D5E05B9164651A800A5A704 /* Model */,
-				5DC40473168C2D49000AFBAE /* Table View Cells */,
-				5DA5CA0C163B04D200CF1601 /* View Controllers */,
+				5D74CEF8169B085000BAA202 /* UI */,
 				5DA5C9F3163B018D00CF1601 /* AppDelegate.h */,
 				5DA5C9F4163B018D00CF1601 /* AppDelegate.m */,
 				5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */,
@@ -605,6 +663,29 @@
 			name = "Test Record Serialization";
 			sourceTree = "<group>";
 		};
+		7C0F025E169C0092006377B3 /* MMPI Segue Handler */ = {
+			isa = PBXGroup;
+			children = (
+				7C0F0264169C027E006377B3 /* Protocols */,
+				7C0F025F169C00B9006377B3 /* MMPISegueHandler.h */,
+				7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */,
+			);
+			name = "MMPI Segue Handler";
+			sourceTree = "<group>";
+		};
+		7C0F0264169C027E006377B3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7C0F0265169C02E4006377B3 /* SegueSourceEditAnswers.h */,
+				7C0F0266169C02F0006377B3 /* SegueDestinationEditAnswers.h */,
+				7C0F0267169C08B3006377B3 /* SegueSourceEditRecord.h */,
+				7C0F0268169C08C7006377B3 /* SegueDestinationEditRecord.h */,
+				7C0F0269169C0E0C006377B3 /* SegueSourceListRecords.h */,
+				7C0F026A169C0E18006377B3 /* SegueDestinationListRecords.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -754,6 +835,9 @@
 				5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */,
 				5DBD5659169714EE00728BB4 /* TestAnswersInputViewController.m in Sources */,
 				5DBD568D1697274700728BB4 /* TestAnswersTableViewControllerBase.m in Sources */,
+				5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */,
+				5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */,
+				7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

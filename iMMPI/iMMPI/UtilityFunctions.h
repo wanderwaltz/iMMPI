@@ -13,3 +13,7 @@ id nil2Null(id object);
 
 /// Returns object if object is not of NSNull class, else returns nil
 id null2Nil(id object);
+
+
+
+UIViewController *SelfOrFirstChild(UIViewController *controller);

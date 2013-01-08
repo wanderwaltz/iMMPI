@@ -140,5 +140,18 @@
 }
 
 
+#pragma mark -
+#pragma mark SegueDestinationEditAnswers
+
+- (void) setRecordToEditAnswers:  (id<TestRecordProtocol>) record
+{
+    self.record = record;
+}
+
+
+- (void) setStorageToEditAnswers: (id<TestRecordStorage>) storage
+{
+    self.storage = storage;
+}
 
 @end

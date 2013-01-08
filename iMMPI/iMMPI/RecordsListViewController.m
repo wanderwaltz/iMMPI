@@ -339,4 +339,26 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     }
 }
 
+
+#pragma mark -
+#pragma mark SegueDestinationListRecords
+
+- (void) setModelForListRecords: (id<MutableTableViewModel>) model
+{
+    self.model = model;
+}
+
+
+- (void) setStorageForListRecords: (id<TestRecordStorage>) storage
+{
+    self.storage = storage;
+}
+
+
+- (void) setTitleForListRecords: (NSString *) title
+{
+    self.title = title;
+}
+
+
 @end

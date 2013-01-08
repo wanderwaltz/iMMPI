@@ -21,3 +21,12 @@ id null2Nil(id object)
     if (![object isKindOfClass: [NSNull class]]) return object;
     else return nil;
 }
+
+
+UIViewController *SelfOrFirstChild(UIViewController *controller)
+{
+    if ([controller isKindOfClass: [UINavigationController class]])
+        return [(id)controller viewControllers][0];
+    else
+        return controller;
+}

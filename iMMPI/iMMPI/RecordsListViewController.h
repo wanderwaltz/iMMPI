@@ -6,14 +6,16 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Storyboard.h"
 #import "Model.h"
 
 
 #pragma mark -
 #pragma mark RecordsListViewController interface
 
-@interface RecordsListViewController : UITableViewController
+@interface RecordsListViewController : StoryboardManagedTableViewController
+<SegueDestinationListRecords>
+
 @property (strong, nonatomic) id<TestRecordStorage>   storage;
 @property (strong, nonatomic) id<MutableTableViewModel> model;
 

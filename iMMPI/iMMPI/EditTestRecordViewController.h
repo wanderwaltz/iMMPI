@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Storyboard.h"
 #import "Model.h"
 
 
@@ -27,7 +27,8 @@
 #pragma mark -
 #pragma mark EditTestRecordViewController interface
 
-@interface EditTestRecordViewController : UITableViewController
+@interface EditTestRecordViewController : StoryboardManagedTableViewController
+<SegueDestinationEditRecord>
 
 @property (weak,   nonatomic) id<EditTestRecordViewControllerDelegate> delegate;
 @property (strong, nonatomic) id<TestRecordProtocol> record;

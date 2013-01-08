@@ -2,3 +2,9 @@ syntax: glob
 iMMPI/iMMPI.xcodeproj/project.xcworkspace/xcuserdata
 iMMPI/iMMPI.xcodeproj/xcuserdata
 iMMPI/Pods
+iMMPI/iMMPI.xcworkspace/xcuserdata/chiglintsev.xcuserdatad/UserInterfaceState.xcuserstate
+iMMPI/iMMPI.xcworkspace/xcuserdata/chiglintsev.xcuserdatad/WorkspaceSettings.xcsettings
+iMMPI/iMMPI.xcworkspace/xcuserdata/chiglintsev.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
+iMMPI/iMMPI.xcworkspace/xcuserdata/tsd.xcuserdatad/UserInterfaceState.xcuserstate
+Unused/ini-Convert/iMMPI-ini-Convert.xcodeproj/project.xcworkspace/xcuserdata/tsd.xcuserdatad/UserInterfaceState.xcuserstate
+Unused/ini-Convert/iMMPI-ini-Convert.xcodeproj/xcuserdata/tsd.xcuserdatad/xcschemes/xcschememanagement.plist

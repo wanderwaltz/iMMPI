@@ -246,4 +246,24 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 }
 
 
+#pragma mark -
+#pragma mark SegueDestinationEditRecord
+
+- (void) setTitleForEditingTestRecord: (NSString *) title
+{
+    self.title = title;
+}
+
+
+- (void) setTestRecordToEdit: (id<TestRecordProtocol>) record
+{
+    self.record = record;
+}
+
+
+- (void) setDelegateForEditingTestRecord: (id<EditTestRecordViewControllerDelegate>) delegate
+{
+    self.delegate = delegate;
+}
+
 @end
