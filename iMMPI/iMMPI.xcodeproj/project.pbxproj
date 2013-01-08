@@ -129,6 +129,8 @@
 		5DBD5658169714EE00728BB4 /* TestAnswersInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersInputViewController.m; sourceTree = "<group>"; };
 		5DBD568B1697274700728BB4 /* TestAnswersTableViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersTableViewControllerBase.h; sourceTree = "<group>"; };
 		5DBD568C1697274700728BB4 /* TestAnswersTableViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersTableViewControllerBase.m; sourceTree = "<group>"; };
+		5DBE6BD0169C3C05005F5E1B /* SegueSourceAnalyzeRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceAnalyzeRecord.h; sourceTree = "<group>"; };
+		5DBE6BD2169C3C14005F5E1B /* SegueDestinationAnalyzeRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationAnalyzeRecord.h; sourceTree = "<group>"; };
 		5DBE76D4169351200018C728 /* TestRecordModelGroupedByName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordModelGroupedByName.h; sourceTree = "<group>"; };
 		5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordModelGroupedByName.m; sourceTree = "<group>"; };
 		5DBE76D8169356F50018C728 /* PersonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsListViewController.h; sourceTree = "<group>"; };
@@ -682,6 +684,8 @@
 				7C0F0268169C08C7006377B3 /* SegueDestinationEditRecord.h */,
 				7C0F0269169C0E0C006377B3 /* SegueSourceListRecords.h */,
 				7C0F026A169C0E18006377B3 /* SegueDestinationListRecords.h */,
+				5DBE6BD0169C3C05005F5E1B /* SegueSourceAnalyzeRecord.h */,
+				5DBE6BD2169C3C14005F5E1B /* SegueDestinationAnalyzeRecord.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";

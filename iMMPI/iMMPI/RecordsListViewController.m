@@ -21,12 +21,6 @@
 
 static NSString * const kRecordCellIdentifier = @"com.immpi.cells.record";
 
-static NSString * const kSegueAddRecord    = @"com.immpi.segue.addRecord";
-static NSString * const kSegueEditRecord   = @"com.immpi.segue.editRecord";
-static NSString * const kSegueEditAnswers  = @"com.immpi.segue.editAnswers";
-static NSString * const kSegueAnswersInput = @"com.immpi.segue.answersInput";
-static NSString * const kSegueBlankDetail  = @"com.immpi.segue.blankDetail";
-
 
 #pragma mark -
 #pragma mark RecordsListViewController private
@@ -82,81 +76,59 @@ static NSString * const kSegueBlankDetail  = @"com.immpi.segue.blankDetail";
 #pragma mark -
 #pragma mark navigation
 
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+#pragma mark SegueSourceEditAnswers
+
+- (id<TestRecordProtocol>) testRecordToEditAnswersWithSender: (id) sender
 {
-    // Creating a new test record
-    if ([segue.identifier isEqualToString: kSegueAddRecord])
-    {
-        EditTestRecordViewController *controller =
-        (id)[segue.destinationViewController viewControllers][0];
-        
-        FRB_AssertClass(controller, EditTestRecordViewController);
-        
-        controller.delegate = self;
-        controller.record   = [TestRecord new];
-        controller.title    = ___New_Record;
-    }
+    NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+    FRB_AssertNotNil(indexPath);
     
-    // Editing existing test record
-    else if ([segue.identifier isEqualToString: kSegueEditRecord])
-    {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
-        FRB_AssertNotNil(indexPath);
-        
-        
-        id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
-        FRB_AssertConformsTo(record, TestRecordProtocol);
-        
-        
-        EditTestRecordViewController *controller =
-        (id)[segue.destinationViewController viewControllers][0];
-        FRB_AssertClass(controller, EditTestRecordViewController);
-        
-        
-        controller.delegate = self;
-        controller.title    = ___Edit_Record;
-        controller.record   = record;
-    }
+    id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
+    FRB_AssertConformsTo(record, TestRecordProtocol);
     
-    // Editing test answers for a record
-    else if ([segue.identifier isEqualToString: kSegueEditAnswers])
+    return record;
+}
+
+
+- (id<TestRecordStorage>) storageToEditAnswersWithSender: (id) sender
+{
+    return _storage;
+}
+
+
+#pragma mark SegueSourceEditRecord
+
+- (NSString *) titleForEditingTestRecord: (id<TestRecordProtocol>) record withSender: (id) sender
+{
+    if ([sender isKindOfClass: [UITableViewCell class]])
+        return ___Edit_Record;
+    else
+        return ___New_Record;
+}
+
+
+- (id<TestRecordProtocol>) testRecordToEditWithSender: (id) sender
+{
+    if ([sender isKindOfClass: [UITableViewCell class]])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
         FRB_AssertNotNil(indexPath);
         
-        
         id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
         FRB_AssertConformsTo(record, TestRecordProtocol);
         
-        
-        TestAnswersViewController *controller =
-        (id)[segue.destinationViewController viewControllers][0];
-        FRB_AssertClass(controller, TestAnswersViewController);
-        
-        
-        controller.record  =   record;
-        controller.storage = _storage;
+        return record;
     }
-    
-    // Test answers input for a record
-    else if ([segue.identifier isEqualToString: kSegueAnswersInput])
+    else
     {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
-        FRB_AssertNotNil(indexPath);
-    
-    
-        id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
-        FRB_AssertConformsTo(record, TestRecordProtocol);
-    
-       
-        TestAnswersInputViewController *controller =
-        (id)[segue.destinationViewController viewControllers][0];
-        FRB_AssertClass(controller, TestAnswersInputViewController);
-    
-    
-        controller.record  = record;
-        controller.storage = _storage;
+        return [TestRecord new];
     }
+}
+
+
+- (id<EditTestRecordViewControllerDelegate>) delegateForEditingTestRecordWithSender: (id) sender
+{
+    return self;
 }
 
 
@@ -235,7 +207,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
     
     id sender = [tableView cellForRowAtIndexPath: indexPath];
     
-    [self performSegueWithIdentifier: kSegueAnswersInput
+    [self performSegueWithIdentifier: kSegueIDAnswersInput
                               sender: sender];
 }
 
@@ -335,7 +307,7 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         
         [self.tableView reloadData];
         
-        [self performSegueWithIdentifier: kSegueBlankDetail sender: self];
+        [self performSegueWithIdentifier: kSegueIDBlankDetail sender: self];
     }
 }
 
@@ -359,6 +331,5 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
 {
     self.title = title;
 }
-
 
 @end

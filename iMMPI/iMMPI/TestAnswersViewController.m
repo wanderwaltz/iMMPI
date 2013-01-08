@@ -48,20 +48,4 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
     [self saveRecord];
 }
 
-
-#pragma mark -
-#pragma mark navigation
-
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
-{
-    if ([segue.identifier isEqualToString: kSegueAnalyzer])
-    {
-        AnalysisViewController *controller = segue.destinationViewController;
-        
-        FRB_AssertClass(controller, AnalysisViewController);
-        
-        controller.record = self.record;
-    }
-}
-
 @end

@@ -149,4 +149,13 @@ static NSString * const kAnalyzerGroupCellIdentifer = @"com.immpi.cells.analyzer
 }
 
 
+#pragma mark -
+#pragma mark SegueDestinationAnalyzeRecord
+
+- (void) setRecordForAnalysis: (id<TestRecordProtocol>) record
+{
+    self.record = record;
+}
+
+
 @end

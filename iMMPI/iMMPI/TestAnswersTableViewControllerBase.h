@@ -26,6 +26,7 @@
  */
 @interface TestAnswersTableViewControllerBase : StoryboardManagedTableViewController
 <StatementTableViewCellDelegate,
+ SegueSourceAnalyzeRecord,
  SegueDestinationEditAnswers>
 
 /*! A TestRecordProtocol object to be managed by the view controller.

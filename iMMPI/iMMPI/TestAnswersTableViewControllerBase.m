@@ -154,4 +154,13 @@
     self.storage = storage;
 }
 
+
+#pragma mark -
+#pragma mark SegueSourceAnalyzeRecord
+
+- (id<TestRecordProtocol>) recordForAnalysisWithSender: (id) sender
+{
+    return self.record;
+}
+
 @end

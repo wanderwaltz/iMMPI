@@ -29,6 +29,8 @@ NSString * const kSegueIDBlankDetail  = @"com.immpi.segue.blankDetail";
 NSString * const kSegueIDListGroup    = @"com.immpi.segue.listGroup";
 NSString * const kSegueIDViewTrash    = @"com.immpi.segue.viewTrash";
 
+NSString * const kSegueIDAnalyzer      = @"com.immpi.segue.analyzer";
+
 
 #pragma mark -
 #pragma mark MMPISegueHandler private
@@ -66,7 +68,9 @@ NSString * const kSegueIDViewTrash    = @"com.immpi.segue.viewTrash";
         kSegueIDBlankDetail  : @"doNothing:sender:",
         
         kSegueIDListGroup    : @"handleListRecords:sender:",
-        kSegueIDViewTrash    : @"handleListRecords:sender:"
+        kSegueIDViewTrash    : @"handleListRecords:sender:",
+        
+        kSegueIDAnalyzer     : @"handleAnalyzeRecord:sender:"
         };
     }
     return self;
@@ -163,6 +167,18 @@ NSString * const kSegueIDViewTrash    = @"com.immpi.segue.viewTrash";
     [destination setModelForListRecords:   [source modelForListRecordsWithSender:   sender]];
     [destination setStorageForListRecords: [source storageForListRecordsWithSender: sender]];
     [destination setTitleForListRecords:   [source titleForListRecordsWithSender:   sender]];
+}
+
+
+- (void) handleAnalyzeRecord: (UIStoryboardSegue *) segue sender: (id) sender
+{
+    id<SegueSourceAnalyzeRecord>      source      = (id)SelfOrFirstChild(segue.sourceViewController);
+    id<SegueDestinationAnalyzeRecord> destination = (id)SelfOrFirstChild(segue.destinationViewController);
+    
+    FRB_AssertConformsTo(source,      SegueSourceAnalyzeRecord);
+    FRB_AssertConformsTo(destination, SegueDestinationAnalyzeRecord);
+    
+    [destination setRecordForAnalysis: [source recordForAnalysisWithSender: sender]];
 }
 
 @end

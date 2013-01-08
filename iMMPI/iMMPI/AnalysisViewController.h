@@ -6,14 +6,16 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Storyboard.h"
 #import "Model.h"
 
 
 #pragma mark -
 #pragma mark AnalysisViewController interface
 
-@interface AnalysisViewController : UITableViewController
+@interface AnalysisViewController : StoryboardManagedTableViewController
+<SegueDestinationAnalyzeRecord>
+
 @property (strong, nonatomic) id<TestRecordProtocol> record;
 
 @end

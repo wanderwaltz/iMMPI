@@ -24,6 +24,11 @@
 #import "SegueDestinationListRecords.h"
 
 
+// Analysing a TestRecordProtocol object
+#import "SegueSourceAnalyzeRecord.h"
+#import "SegueDestinationAnalyzeRecord.h"
+
+
 #pragma mark -
 #pragma mark Constants
 
@@ -41,6 +46,8 @@ extern NSString * const kSegueIDBlankDetail;  // No protocols required
 
 extern NSString * const kSegueIDListGroup;    // SegueSourceListRecords,  SegueDestinationListRecords
 extern NSString * const kSegueIDViewTrash;    // SegueSourceListRecords,  SegueDestinationListRecords
+
+extern NSString * const kSegueIDAnalyzer;     // SegueSourceAnalyzeRecord, SegueDestinationAnalyzeRecord
 
 
 #pragma mark -

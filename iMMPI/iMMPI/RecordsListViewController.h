@@ -14,7 +14,9 @@
 #pragma mark RecordsListViewController interface
 
 @interface RecordsListViewController : StoryboardManagedTableViewController
-<SegueDestinationListRecords>
+<SegueSourceEditRecord,
+ SegueSourceEditAnswers,
+ SegueDestinationListRecords>
 
 @property (strong, nonatomic) id<TestRecordStorage>   storage;
 @property (strong, nonatomic) id<MutableTableViewModel> model;
