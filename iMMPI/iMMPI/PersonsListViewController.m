@@ -171,19 +171,7 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
     else
     {
         TestRecordModelByDate *model = [TestRecordModelByDate new];
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [_trashStorage loadStoredTestRecords];
-            NSArray *allRecords = [_trashStorage allTestRecords];
-            
-            if (allRecords.count > 0)
-            {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [model addObjectsFromArray: allRecords];
-                    // TODO: update controller
-                });
-            }
-        });
+        [model addObjectsFromArray: _trashStorage.allTestRecords];
         
         return model;
     }

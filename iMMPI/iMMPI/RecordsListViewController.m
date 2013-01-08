@@ -140,7 +140,11 @@ static NSString * const kRecordCellIdentifier = @"com.immpi.cells.record";
     if (_storage == nil)
     {
         _storage = [JSONTestRecordsStorage new];
-        
+    }
+    
+    
+    if (_storage.allTestRecords.count == 0)
+    {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [_storage loadStoredTestRecords];
             NSArray *allRecords = [_storage allTestRecords];
