@@ -7,7 +7,7 @@
         <!--Records List View Controller - Все записи-->
         <scene sceneID="CCt-C6-Jur">
             <objects>
-                <tableViewController id="zGB-ra-p1M" customClass="RecordsListViewController" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="zGB-ra-p1M" customClass="RecordsListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5VU-dV-5wm">
                         <rect key="frame" x="0.0" y="64" width="320" height="788"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,6 +495,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="mZx-MM-2JJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
+                    </refreshControl>
                     <connections>
                         <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="dBb-vP-UTt"/>
                         <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editGroup" modalPresentationStyle="formSheet" id="ghm-Jh-3HV"/>
@@ -679,7 +683,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1MP-sZ-fLR"/>
+        <segue reference="Vg7-Qs-0dP"/>
         <segue reference="dBb-vP-UTt"/>
         <segue reference="1n8-HN-ewy"/>
         <segue reference="gZV-hG-uQK"/>

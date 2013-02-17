@@ -66,6 +66,8 @@
 		5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC081690448A00E835B7 /* AnalyzerFGroup.m */; };
 		5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0C16905ACB00E835B7 /* AnalyzerFGroupFM.m */; };
 		5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC101690626800E835B7 /* AnalyzerPGroup.m */; };
+		5DC68C8116D0D7D400B338C2 /* MMPIATestRecordReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC68C8016D0D7D400B338C2 /* MMPIATestRecordReader.m */; };
+		5DC68C8616D0F55800B338C2 /* ProgressAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC68C8516D0F55800B338C2 /* ProgressAlertView.m */; };
 		5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */; };
 		5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
 		5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */; };
@@ -176,6 +178,10 @@
 		5DC4AC0F1690626800E835B7 /* AnalyzerPGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerPGroup.h; sourceTree = "<group>"; };
 		5DC4AC101690626800E835B7 /* AnalyzerPGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerPGroup.m; sourceTree = "<group>"; };
 		5DC4AC121690672F00E835B7 /* AnalyzerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzerProtocol.h; sourceTree = "<group>"; };
+		5DC68C7F16D0D7D400B338C2 /* MMPIATestRecordReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPIATestRecordReader.h; sourceTree = "<group>"; };
+		5DC68C8016D0D7D400B338C2 /* MMPIATestRecordReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPIATestRecordReader.m; sourceTree = "<group>"; };
+		5DC68C8416D0F55800B338C2 /* ProgressAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressAlertView.h; sourceTree = "<group>"; };
+		5DC68C8516D0F55800B338C2 /* ProgressAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressAlertView.m; sourceTree = "<group>"; };
 		5DC973AC168F085100C496F0 /* MutableTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutableTableViewModel.h; sourceTree = "<group>"; };
 		5DC973B1168F0CD200C496F0 /* JSONTestRecordStorageElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordStorageElement.h; sourceTree = "<group>"; };
 		5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordStorageElement.m; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 			children = (
 				5D5E05BE1646521700A5A704 /* Model.h */,
 				5DC40483168C446C000AFBAE /* Protocols */,
+				5DC68C7E16D0D7AD00B338C2 /* Legacy MMPIA Import */,
 				5DC973BC168F20C200C496F0 /* JSON Test Records Storage */,
 				5DC973C2168F240D00C496F0 /* Test Record Table Models */,
 				5DC973AB168F082200C496F0 /* Data Model Objects */,
@@ -245,6 +252,7 @@
 		5D74CEF8169B085000BAA202 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5DC68C8216D0F53200B338C2 /* Views */,
 				5D74CEFA169B086900BAA202 /* Storyboard */,
 				5DC40473168C2D49000AFBAE /* Table View Cells */,
 				5DA5CA0C163B04D200CF1601 /* View Controllers */,
@@ -599,6 +607,32 @@
 			name = "P Group";
 			sourceTree = "<group>";
 		};
+		5DC68C7E16D0D7AD00B338C2 /* Legacy MMPIA Import */ = {
+			isa = PBXGroup;
+			children = (
+				5DC68C7F16D0D7D400B338C2 /* MMPIATestRecordReader.h */,
+				5DC68C8016D0D7D400B338C2 /* MMPIATestRecordReader.m */,
+			);
+			name = "Legacy MMPIA Import";
+			sourceTree = "<group>";
+		};
+		5DC68C8216D0F53200B338C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5DC68C8316D0F53900B338C2 /* Progress Alert View */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5DC68C8316D0F53900B338C2 /* Progress Alert View */ = {
+			isa = PBXGroup;
+			children = (
+				5DC68C8416D0F55800B338C2 /* ProgressAlertView.h */,
+				5DC68C8516D0F55800B338C2 /* ProgressAlertView.m */,
+			);
+			name = "Progress Alert View";
+			sourceTree = "<group>";
+		};
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,6 +876,8 @@
 				5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */,
 				5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */,
 				7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */,
+				5DC68C8116D0D7D400B338C2 /* MMPIATestRecordReader.m in Sources */,
+				5DC68C8616D0F55800B338C2 /* ProgressAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

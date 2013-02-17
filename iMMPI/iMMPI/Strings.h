@@ -37,4 +37,6 @@
 #define ___YES @"ДА"
 #define ___NO  @"НЕТ"
 
+#define ___Importing_Records @"Импорт записей..."
+
 #endif

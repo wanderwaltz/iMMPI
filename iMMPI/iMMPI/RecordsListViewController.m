@@ -347,6 +347,7 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         NSIndexPath *indexPath = [_model indexPathForObject: testRecord];
         
         // For some reason row cannot be selected without dispatch_async here
+        // even though 'Selection: clear on appearance' is set to NO in the storyboard
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView selectRowAtIndexPath: indexPath
                                         animated: YES

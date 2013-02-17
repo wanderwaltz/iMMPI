@@ -12,6 +12,10 @@
 #import "TestAnswersViewController.h"
 #import "TestAnswersInputViewController.h"
 
+#import "MMPIATestRecordReader.h"
+
+#import "ProgressAlertView.h"
+
 #import "Model.h"
 
 
@@ -33,6 +37,8 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
     id<TestRecordStorage> _storage;
     id<TestRecordStorage> _trashStorage;
     
+    MMPIATestRecordReader *_legacyRecordsReader;
+    
     // This view controller depends alot on the TestRecordModelGroupedByName
     // functionality, so the coupling could not be loosened by using
     // MutableTableViewModel protocol
@@ -48,6 +54,15 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 @implementation PersonsListViewController
 
 #pragma mark -
+#pragma mark actions
+
+- (IBAction) refreshAction: (UIRefreshControl *) sender
+{
+    [self loadLegacyMMPIARecords];
+}
+
+
+#pragma mark -
 #pragma mark initialization methods
 
 - (id) initWithCoder:(NSCoder *)aDecoder
@@ -60,6 +75,9 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
         
         _model = [TestRecordModelGroupedByName new];
         
+        _legacyRecordsReader = [[MMPIATestRecordReader alloc] initWithDirectoryName:
+                                kMMPIATestRecordReaderDirectoryDefault];
+        
         self.navigationItem.backBarButtonItem =
         [[UIBarButtonItem alloc] initWithTitle: ___Back
                                          style: UIBarButtonItemStyleBordered
@@ -67,6 +85,23 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
                                         action: nil];
     }
     return self;
+}
+
+
+- (void) awakeFromNib
+{
+    // For some weird reason setting the action for refresh control
+    // in Interface Builder would not work, and setting the action
+    // programmatically in -initWithCoder: would crash the app with
+    // some strange error:
+    //
+    // 'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:
+    //    'NSBundle <path to the .app here> (loaded)' with name 'nvo-jh-oP6-view-txJ-t0-aON''
+    //
+    // So the only solution was to do assign the action in -awakeFromNib
+    [self.refreshControl addTarget: self
+                            action: @selector(refreshAction:)
+                  forControlEvents: UIControlEventValueChanged];
 }
 
 
@@ -354,6 +389,44 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
         });
     }
 }
+
+
+- (void) loadLegacyMMPIARecords
+{
+    __block ProgressAlertView *progressAlert = nil;
+    
+    [_legacyRecordsReader readRecordFilesInBackgroundWithCallback:
+     ^(id<TestRecordProtocol> record, NSString *fileName,
+       NSUInteger filesTotal, NSUInteger recordsRead) {
+         
+         if (progressAlert == nil)
+         {
+             progressAlert = [[ProgressAlertView alloc] initWithTitle: ___Importing_Records];
+             [progressAlert show];
+         }
+         
+         double progress = 0.0;
+         
+         if (filesTotal > 0) progress = (double)recordsRead / (double)filesTotal;
+         
+         progressAlert.progressView.progress = progress;
+         progressAlert.message = fileName;
+         
+         [progressAlert setNeedsDisplay];
+         [progressAlert setNeedsLayout];
+         
+         [_model       addNewObject: record];
+         [_storage addNewTestRecord: record];
+         
+         [self.tableView reloadData];
+    }
+                                                       completion:
+     ^(NSUInteger filesProcessed, NSUInteger recordsRead) {
+         [self.refreshControl endRefreshing];
+         [progressAlert dismissWithClickedButtonIndex: 0 animated: YES];
+     }];
+}
+
 
 
 - (BOOL) deleteGroup: (id<TestRecordsGroupByName>) group
