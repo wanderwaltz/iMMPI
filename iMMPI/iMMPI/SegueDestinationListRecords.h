@@ -19,4 +19,9 @@
 - (void) setStorageForListRecords: (id<TestRecordStorage>) storage;
 - (void)   setTitleForListRecords: (NSString *) title;
 
+
+@optional
+
+- (void) setSelectedTestRecord: (id<TestRecordProtocol>) testRecord;
+
 @end

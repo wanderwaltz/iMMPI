@@ -1,28 +1,28 @@
 
-SPEC CHECKSUMS: 
-  Frostbit/Geometry: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
-  Frostbit/Dispatch: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
-  Frostbit/UIKit/Classes/FRBDatePickerPopover: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
-  Frostbit/UIKit/Categories/UIViewController: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
-  Frostbit/Common: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
-
-COCOAPODS: 0.16.0
+DEPENDENCIES: 
+- Frostbit/Common (from `https://github.com/wanderwaltz/Frostbit.git')
+- Frostbit/Dispatch (from `https://github.com/wanderwaltz/Frostbit.git')
+- Frostbit/Geometry (from `https://github.com/wanderwaltz/Frostbit.git')
+- Frostbit/UIKit/Classes/FRBDatePickerPopover (from `https://github.com/wanderwaltz/Frostbit.git')
 
 EXTERNAL SOURCES: 
-  Frostbit/Geometry: 
-    :git: https://github.com/wanderwaltz/Frostbit.git
   Frostbit/Dispatch: 
     :git: https://github.com/wanderwaltz/Frostbit.git
   Frostbit/UIKit/Classes/FRBDatePickerPopover: 
     :git: https://github.com/wanderwaltz/Frostbit.git
   Frostbit/Common: 
     :git: https://github.com/wanderwaltz/Frostbit.git
+  Frostbit/Geometry: 
+    :git: https://github.com/wanderwaltz/Frostbit.git
 
-DEPENDENCIES: 
-- Frostbit/Common (from `https://github.com/wanderwaltz/Frostbit.git')
-- Frostbit/Dispatch (from `https://github.com/wanderwaltz/Frostbit.git')
-- Frostbit/Geometry (from `https://github.com/wanderwaltz/Frostbit.git')
-- Frostbit/UIKit/Classes/FRBDatePickerPopover (from `https://github.com/wanderwaltz/Frostbit.git')
+SPEC CHECKSUMS: 
+  Frostbit/Dispatch: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
+  Frostbit/UIKit/Categories/UIViewController: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
+  Frostbit/UIKit/Classes/FRBDatePickerPopover: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
+  Frostbit/Common: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
+  Frostbit/Geometry: 89a11a9e427b613a2b14f50bd7655af2b9ed8612
+
+COCOAPODS: 0.16.0
 
 PODS: 
 - Frostbit/Common (0.0.1)

@@ -19,4 +19,9 @@
 - (id<TestRecordStorage>)   storageForListRecordsWithSender: (id) sender;
 - (NSString *)                titleForListRecordsWithSender: (id) sender;
 
+
+@optional
+
+- (id<TestRecordProtocol>) selectedTestRecordForListRecordsWithSender: (id) sender;
+
 @end

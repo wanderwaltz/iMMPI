@@ -193,6 +193,21 @@
 }
 
 
+- (NSIndexPath *) indexPathForObject: (id) object
+{
+    FRB_AssertNotNil(object);
+    FRB_AssertConformsTo(object, TestRecordsGroupByName);
+    
+    NSUInteger index = [_groups indexOfObject: object];
+    
+    if (index != NSNotFound)
+    {
+        return [NSIndexPath indexPathForRow: index inSection: 0];
+    }
+    else return nil;
+}
+
+
 #pragma mark -
 #pragma mark private
 

@@ -62,6 +62,9 @@ static NSString * const kRecordCellIdentifier = @"com.immpi.cells.record";
 {
     [super viewWillAppear: animated];
     
+    // Model may be set externally by the object which created
+    // the RecordsListViewController; if not, create a default
+    // model as TestRecordModelByDate
     if (_model == nil) _model = [TestRecordModelByDate new];
     
     // We do init storage here since if the view never appears
@@ -334,6 +337,22 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
 - (void) setTitleForListRecords: (NSString *) title
 {
     self.title = title;
+}
+
+
+- (void) setSelectedTestRecord:(id<TestRecordProtocol>)testRecord
+{
+    if (testRecord != nil)
+    {
+        NSIndexPath *indexPath = [_model indexPathForObject: testRecord];
+        
+        // For some reason row cannot be selected without dispatch_async here
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView selectRowAtIndexPath: indexPath
+                                        animated: YES
+                                  scrollPosition: UITableViewScrollPositionNone];
+        });
+    }
 }
 
 @end

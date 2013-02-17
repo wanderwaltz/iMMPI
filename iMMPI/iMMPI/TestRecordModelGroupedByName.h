@@ -107,6 +107,16 @@
 
 
 
+/*! Finds a NSIndexPath corresponding to the provided TestRecordsGroupByName in the model.
+ 
+ @param group A TestRecordsGroupByName to be updated.
+ 
+ @return an NSIndexPath corresponding to the group or nil if the group has not been found in the model.
+ */
+- (NSIndexPath *) indexPathForObject: (id<TestRecordsGroupByName>) group;
+
+
+
 /*! Removes an object from the model.
  
  @param recordOrGroup The object to be removed from the model. Should conform either to TestRecordProtocol or to TestRecordsGroupByName protocol.

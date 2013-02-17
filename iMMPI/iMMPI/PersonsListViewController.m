@@ -93,16 +93,32 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 
 - (id<TestRecordProtocol>) testRecordToEditAnswersWithSender: (id) sender
 {
-    NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
-    FRB_AssertNotNil(indexPath);
-    
-    
-    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
-    FRB_AssertConformsTo(group, TestRecordsGroupByName);
-    
-    NSAssert((group.numberOfRecords == 1), @"kSegueEditAnswers should be performed only if number of records in a group is exactly equal to 1");
-    
-    return group.allRecords[0];
+    // Either a table view cell can end up as a 'sender' for segue
+    if ([sender isKindOfClass: [UITableViewCell class]])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        FRB_AssertNotNil(indexPath);
+        
+        
+        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
+        
+        NSAssert((group.numberOfRecords == 1), @"kSegueEditAnswers should be performed only if number of records in a group is exactly equal to 1");
+        
+        return group.allRecords[0];
+    }
+    // Or a test record (this happens if we perform segue
+    // programmatically after adding a new test record)
+    else if ([sender conformsToProtocol: @protocol(TestRecordProtocol)])
+    {
+        return sender;
+    }
+    // No other sender objects are supported
+    else
+    {
+        NSAssert(NO, @"Unsupported sender object in -testRecordToEditAnswersWithSender: method: %@", sender);
+        return nil;
+    }
 }
 
 
@@ -116,15 +132,31 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 
 - (NSString *) titleForEditingTestRecord: (id<TestRecordProtocol>) record withSender: (id) sender
 {
+    // If the segue was initiated by a table view cell,
+    // then we are editing an existing test record or group
+    // displayed by the table view cell.
     if ([sender isKindOfClass: [UITableViewCell class]])
         return ___Edit_Record;
-    else
+    
+    // If a bar button item initiates the segue, then
+    // it is the '+' button to add new record
+    else if ([sender isKindOfClass: [UIBarButtonItem class]])
         return ___New_Record;
+    
+    // Other sender objects are not supported
+    else
+    {
+        NSAssert(NO, @"Unknown sender object in -titleForEditingTestRecord:withSender: method: %@", sender);
+        return nil;
+    }
 }
 
 
 - (id<TestRecordProtocol>) testRecordToEditWithSender: (id) sender
 {
+    // If a table view cell initiates the segue, then we have
+    // a certain test records group to work with. We select a
+    // first record in the group and return it for editing.
     if ([sender isKindOfClass: [UITableViewCell class]])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
@@ -136,9 +168,19 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
         
         return group.allRecords[0];
     }
-    else
+    
+    // If a bar button item initiated the segue, it is the '+'
+    // button which adds a new record, so we create a new
+    // TestRecord instance to edit
+    else if ([sender isKindOfClass: [UIBarButtonItem class]])
     {
         return [TestRecord new];
+    }
+    
+    else
+    {
+        NSAssert(NO, @"Unknown sender object in -testRecordToEditWithSender: method: %@", sender);
+        return nil;
     }
 }
 
@@ -153,6 +195,10 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 
 - (id<MutableTableViewModel>) modelForListRecordsWithSender: (id) sender
 {
+    // If a table view cell initiated the segue then we have
+    // a test records group to work with. We create model
+    // accordingly, but first have to find the group object
+    // using the indexPath of the cell.
     if ([sender isKindOfClass: [UITableViewCell class]])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
@@ -168,27 +214,72 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 
         return model;
     }
-    else
+    
+    // If the sender itself conforms to TestRecordProtocol,
+    // we find the group which it belongs to and create the model
+    // according to the group found.
+    else if ([sender conformsToProtocol: @protocol(TestRecordProtocol)])
+    {
+        id<TestRecordsGroupByName> group = [_model groupForRecord: sender];
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
+        
+        TestRecordModelByDate *model = [TestRecordModelByDate new];
+        model.delegate = self;
+        
+        [model addObjectsFromArray: group.allRecords];
+        
+        return model;
+    }
+    
+    // If a bar button item initiated the segue, it is the
+    // trash bar button item, so we return a model suitable
+    // for displaying trash contents.
+    else if ([sender isKindOfClass: [UIBarButtonItem class]])
     {
         TestRecordModelByDate *model = [TestRecordModelByDate new];
         [model addObjectsFromArray: _trashStorage.allTestRecords];
         
         return model;
     }
+    
+    // All other sender objects are not supported
+    else
+    {
+        NSAssert(NO, @"Unknown sender object in -modelForListRecordsWithSender: method: %@", sender);
+        return nil;
+    }
 }
 
 
 - (id<TestRecordStorage>) storageForListRecordsWithSender: (id) sender
 {
-    if ([sender isKindOfClass: [UITableViewCell class]])
+    // If sender is a table view cell then we have a test records group
+    // to work with; if sender itself conforms to TestRecordProtocol then
+    // we also have a test records group which it belongs to. In both of
+    // these cases we assume that the current storage is used to store
+    // these records.
+    if ([sender isKindOfClass: [UITableViewCell class]] ||
+        [sender conformsToProtocol: @protocol(TestRecordProtocol)])
         return _storage;
-    else
+    
+    // If sender is a bar button item, then it is the trash button,
+    // so we return the trash storage.
+    else if ([sender isKindOfClass: [UIBarButtonItem class]])
         return _trashStorage;
+    
+    // All other sender objects are unsupported
+    else
+    {
+        NSAssert(NO, @"Unknown sender object in -storageForListRecordsWithSender: method: %@", sender);
+        return nil;
+    }
 }
 
 
 - (NSString *) titleForListRecordsWithSender: (id) sender
 {
+    // If sender is a table view cell then we find the group
+    // which is represented by this cell and return the group's name
     if ([sender isKindOfClass: [UITableViewCell class]])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
@@ -199,8 +290,36 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 
         return group.name;
     }
-    else
+    
+    // If sender itself conforms to TestRecordProtocol, we find a group
+    // which it belongs to and return the group's name.
+    else if ([sender conformsToProtocol: @protocol(TestRecordProtocol)])
+    {
+        id<TestRecordsGroupByName> group = [_model groupForRecord: sender];
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
+        
+        return group.name;
+    }
+    
+    // If sender is a bar button item then it is the trash button,
+    // so we return the ___Trash title.
+    else if ([sender isKindOfClass: [UIBarButtonItem class]])
         return ___Trash;
+    
+    else
+    {
+        NSAssert(NO, @"Unknown sender object in -titleForListRecordsWithSender: method: %@", sender);
+        return nil;
+    }
+}
+
+
+- (id<TestRecordProtocol>) selectedTestRecordForListRecordsWithSender: (id) sender
+{
+    if ([sender conformsToProtocol: @protocol(TestRecordProtocol)])
+        return sender;
+    else
+        return nil;
 }
 
 
@@ -250,25 +369,66 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 }
 
 
+- (void) showContentsOfGroupAtIndexPath: (NSIndexPath *) indexPath
+{
+    if (indexPath != nil)
+    {
+        // Expect a group of test records with a same person name in the model
+        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        FRB_AssertConformsTo(group, TestRecordsGroupByName);
+        
+        id sender = [self.tableView cellForRowAtIndexPath: indexPath];
+        
+        // If group contains several records, show the group contents as a list,
+        // if only one record in the group, select it immediately.
+        if (group.numberOfRecords > 1)
+        {
+            [self performSegueWithIdentifier: kSegueListGroup sender: sender];
+        }
+        else
+        {
+            [self performSegueWithIdentifier: kSegueIDAnswersInput sender: sender];
+        }
+    }
+}
+
+
+- (void) editAnswersForRecord: (id<TestRecordProtocol>) record
+{
+    FRB_AssertNotNil(record);
+    FRB_AssertConformsTo(record, TestRecordProtocol);
+    
+    id<TestRecordsGroupByName> group = [_model groupForRecord: record];
+    
+    if (group != nil)
+    {
+        NSIndexPath *indexPath = [_model indexPathForObject: group];
+        
+        if (indexPath != nil)
+        { 
+            // If group contains several records, show the group contents as a list,
+            // if only one record in the group, select it immediately.
+            if (group.numberOfRecords > 1)
+            {
+                [self performSegueWithIdentifier: kSegueListGroup      sender: record];
+                [self performSegueWithIdentifier: kSegueIDAnswersInput sender: record];
+            }
+            else
+            {
+                [self performSegueWithIdentifier: kSegueIDAnswersInput sender: record];
+            }
+        }
+    }
+}
+
+
 #pragma mark -
 #pragma mark UITableViewDelegate
 
      - (void) tableView: (UITableView *) tableView
 didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
-    FRB_AssertConformsTo(group, TestRecordsGroupByName);
-    
-    id sender = [tableView cellForRowAtIndexPath: indexPath];
-    
-    if (group.numberOfRecords > 1)
-    {
-        [self performSegueWithIdentifier: kSegueListGroup sender: sender];
-    }
-    else
-    {
-        [self performSegueWithIdentifier: kSegueIDAnswersInput sender: sender];
-    }
+    [self showContentsOfGroupAtIndexPath: indexPath];
 }
 
 
@@ -388,7 +548,23 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         
         [self.tableView reloadData];
         
-        [self performSegueWithIdentifier: kSegueIDBlankDetail sender: self];
+        dispatch_async(dispatch_get_main_queue(), ^{
+           
+            id<TestRecordsGroupByName> group = [_model groupForRecord: record];
+            
+            if (group != nil)
+            {
+                NSIndexPath *indexPath = [_model indexPathForObject: group];
+                
+                if (indexPath != nil)
+                {
+                    [self.tableView selectRowAtIndexPath: indexPath
+                                                animated: YES
+                                          scrollPosition: UITableViewScrollPositionNone];
+                    [self editAnswersForRecord: record];
+                }
+            }
+        });
     }
 }
 

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-// TODO: After creating a new record, automatically select it and show answers input UI
 // TODO: Larger answers input buttons (YES/NO) to make blind input possible
 
 

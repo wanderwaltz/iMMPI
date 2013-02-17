@@ -167,6 +167,14 @@ NSString * const kSegueIDAnalyzer      = @"com.immpi.segue.analyzer";
     [destination setModelForListRecords:   [source modelForListRecordsWithSender:   sender]];
     [destination setStorageForListRecords: [source storageForListRecordsWithSender: sender]];
     [destination setTitleForListRecords:   [source titleForListRecordsWithSender:   sender]];
+    
+    
+    if ([source respondsToSelector: @selector(selectedTestRecordForListRecordsWithSender:)] &&
+        [destination respondsToSelector: @selector(setSelectedTestRecord:)])
+    {
+        [destination setSelectedTestRecord:
+         [source selectedTestRecordForListRecordsWithSender: sender]];
+    }
 }
 
 

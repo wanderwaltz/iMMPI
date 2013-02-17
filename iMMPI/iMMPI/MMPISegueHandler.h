@@ -32,8 +32,7 @@
 #pragma mark -
 #pragma mark Constants
 
-/* Protocols required to be adopted by the source and destination view controllers for the corresponding
-   segue to be handled properly are shown in comments near the segue ID constant.
+/* Protocols required to be adopted by the source and destination view controllers for the corresponding segue to be handled properly are shown in comments near the segue ID constant.
  */
 extern NSString * const kSegueIDEditAnswers;  // SegueSourceEditAnswers, SegueDestinationEditAnswers
 extern NSString * const kSegueIDAnswersInput; // SegueSourceEditAnswers, SegueDestinationEditAnswers
