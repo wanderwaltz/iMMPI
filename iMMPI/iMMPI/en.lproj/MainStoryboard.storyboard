@@ -394,7 +394,7 @@
             <objects>
                 <tableViewController id="F49-RI-GVa" customClass="AnalysisViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pKI-E6-RgH">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -684,6 +684,6 @@
         <segue reference="1n8-HN-ewy"/>
         <segue reference="gZV-hG-uQK"/>
         <segue reference="p41-jG-o3A"/>
-        <segue reference="D7C-fb-8Yk"/>
+        <segue reference="yzq-KO-2Lv"/>
     </inferredMetricsTieBreakers>
 </document>

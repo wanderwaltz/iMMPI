@@ -339,8 +339,8 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
         [(id)_storage setTrashStorage: _trashStorage];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [_storage loadStoredTestRecords];
-            [_storage loadStoredTestRecords];
+            [_storage      loadStoredTestRecords];
+            [_trashStorage loadStoredTestRecords];
             
             NSArray *allRecords = [_storage allTestRecords];
             
