@@ -23,10 +23,6 @@
 
 /* Begin PBXBuildFile section */
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
-		5D5E05B51646510700A5A704 /* mmpi.female.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B11646510700A5A704 /* mmpi.female.adult.json */; };
-		5D5E05B61646510700A5A704 /* mmpi.female.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B21646510700A5A704 /* mmpi.female.teen.json */; };
-		5D5E05B71646510700A5A704 /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B31646510700A5A704 /* mmpi.male.adult.json */; };
-		5D5E05B81646510700A5A704 /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E05B41646510700A5A704 /* mmpi.male.teen.json */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74CF00169B08D500BAA202 /* StoryboardManagedViewController.m */; };
 		5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74CF03169B08E600BAA202 /* StoryboardManagedTableViewController.m */; };
@@ -51,6 +47,11 @@
 		5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
+		5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */; };
+		5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */; };
+		5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */; };
+		5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */; };
+		5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650A16D8EFCF004D4BBA /* AnalyzerBase5Group.m */; };
 		5DC40472168C2596000AFBAE /* Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40471168C2596000AFBAE /* Statement.m */; };
 		5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */; };
 		5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
@@ -89,10 +90,6 @@
 
 /* Begin PBXFileReference section */
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		5D5E05B11646510700A5A704 /* mmpi.female.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.adult.json; sourceTree = "<group>"; };
-		5D5E05B21646510700A5A704 /* mmpi.female.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.teen.json; sourceTree = "<group>"; };
-		5D5E05B31646510700A5A704 /* mmpi.male.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.adult.json; sourceTree = "<group>"; };
-		5D5E05B41646510700A5A704 /* mmpi.male.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.teen.json; sourceTree = "<group>"; };
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
@@ -142,6 +139,12 @@
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5DC0B2C4168CDB790035A910 /* Strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
+		5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.adult.json; sourceTree = "<group>"; };
+		5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.teen.json; sourceTree = "<group>"; };
+		5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.adult.json; sourceTree = "<group>"; };
+		5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.teen.json; sourceTree = "<group>"; };
+		5DC2650916D8EFCF004D4BBA /* AnalyzerBase5Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerBase5Group.h; sourceTree = "<group>"; };
+		5DC2650A16D8EFCF004D4BBA /* AnalyzerBase5Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerBase5Group.m; sourceTree = "<group>"; };
 		5DC40470168C2596000AFBAE /* Statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
 		5DC40471168C2596000AFBAE /* Statement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statement.m; sourceTree = "<group>"; };
 		5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementTableViewCell.h; sourceTree = "<group>"; };
@@ -387,10 +390,10 @@
 			isa = PBXGroup;
 			children = (
 				5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */,
-				5D5E05B11646510700A5A704 /* mmpi.female.adult.json */,
-				5D5E05B21646510700A5A704 /* mmpi.female.teen.json */,
-				5D5E05B31646510700A5A704 /* mmpi.male.adult.json */,
-				5D5E05B41646510700A5A704 /* mmpi.male.teen.json */,
+				5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */,
+				5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */,
+				5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */,
+				5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */,
 				5DA5C9EC163B018D00CF1601 /* iMMPI-Info.plist */,
 				5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */,
 				5DA5C9F0163B018D00CF1601 /* main.m */,
@@ -503,6 +506,15 @@
 			name = private;
 			sourceTree = "<group>";
 		};
+		5DC2650816D8EF8E004D4BBA /* Base 5 Group */ = {
+			isa = PBXGroup;
+			children = (
+				5DC2650916D8EFCF004D4BBA /* AnalyzerBase5Group.h */,
+				5DC2650A16D8EFCF004D4BBA /* AnalyzerBase5Group.m */,
+			);
+			name = "Base 5 Group";
+			sourceTree = "<group>";
+		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +568,7 @@
 		5DC4ABF416902E8200E835B7 /* private */ = {
 			isa = PBXGroup;
 			children = (
+				5DC2650816D8EF8E004D4BBA /* Base 5 Group */,
 				5D85559216907689004E3021 /* I Group X */,
 				5D85558E16907495004E3021 /* I Group M */,
 				5D85558A16907144004E3021 /* I Group 99 */,
@@ -780,11 +793,11 @@
 			files = (
 				5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */,
 				5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */,
-				5D5E05B51646510700A5A704 /* mmpi.female.adult.json in Resources */,
-				5D5E05B61646510700A5A704 /* mmpi.female.teen.json in Resources */,
-				5D5E05B71646510700A5A704 /* mmpi.male.adult.json in Resources */,
-				5D5E05B81646510700A5A704 /* mmpi.male.teen.json in Resources */,
 				5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */,
+				5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */,
+				5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */,
+				5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */,
+				5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +891,7 @@
 				7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */,
 				5DC68C8116D0D7D400B338C2 /* MMPIATestRecordReader.m in Sources */,
 				5DC68C8616D0F55800B338C2 /* ProgressAlertView.m in Sources */,
+				5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

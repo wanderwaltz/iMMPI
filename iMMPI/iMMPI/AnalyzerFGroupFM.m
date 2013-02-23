@@ -40,27 +40,6 @@ static id _logExpectedFloat(NSString *key, id object);
 
 
 #pragma mark -
-#pragma mark AnalyzerFGroupFM private
-
-@interface AnalyzerFGroupFM()
-{
-    NSArray *_malePositiveIndices;
-    NSArray *_maleNegativeIndices;
-    
-    NSArray *_femalePositiveIndices;
-    NSArray *_femaleNegativeIndices;
-    
-    double _medianMale;
-    double _deviationMale;
-    
-    double _medianFemale;
-    double _deviationFemale;
-}
-
-@end
-
-
-#pragma mark -
 #pragma mark AnalyzerFGroupFM implementation
 
 @implementation AnalyzerFGroupFM

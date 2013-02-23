@@ -21,6 +21,8 @@
 #import "AnalyzerIGroupM.h"
 #import "AnalyzerIGroupX.h"
 
+#import "AnalyzerBase5Group.h"
+
 
 #pragma mark -
 #pragma mark Static constants
@@ -84,7 +86,7 @@ static id _logSubgroupNotDictionary(id object);
                       kGroupType_Base_2     : @"AnalyzerFGroup",
                       kGroupType_Base_3     : @"AnalyzerFGroup",
                       kGroupType_Base_4     : @"AnalyzerKGroup",
-                      kGroupType_Base_5     : @"AnalyzerFGroupFM",
+                      kGroupType_Base_5     : @"AnalyzerBase5Group",
                       kGroupType_Base_6     : @"AnalyzerFGroup",
                       kGroupType_Base_7     : @"AnalyzerKGroup",
                       kGroupType_Base_8     : @"AnalyzerKGroup",
