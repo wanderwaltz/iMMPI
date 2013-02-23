@@ -684,10 +684,10 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Vg7-Qs-0dP"/>
-        <segue reference="dBb-vP-UTt"/>
-        <segue reference="1n8-HN-ewy"/>
         <segue reference="gZV-hG-uQK"/>
+        <segue reference="1n8-HN-ewy"/>
         <segue reference="p41-jG-o3A"/>
+        <segue reference="dBb-vP-UTt"/>
         <segue reference="yzq-KO-2Lv"/>
     </inferredMetricsTieBreakers>
 </document>

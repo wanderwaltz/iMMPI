@@ -88,7 +88,7 @@ NSString * const kSegueIDAnalyzer      = @"com.immpi.segue.analyzer";
 
 - (void) handleSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
-    id destination = segue.destinationViewController;
+    id destination = SelfOrFirstChild(segue.destinationViewController);
     
     if ([destination conformsToProtocol: @protocol(StoryboardManagedViewControllerProtocol)])
     {
