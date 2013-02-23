@@ -586,12 +586,10 @@
             {
               "answersPositive" : "4 25 70 77 78 87 92 126 132 140 149 203 204 261 295 69 74 187",
               "answersNegative" : "1 19 28 79 81 112 115 116 133 144 176 198 214 219 221 223 249 260 264 280 283 300",
-              "femaleDeviation" : 2.82,
-              "maleDeviation" : 2.8,
-              "maleMedian" : 6.54,
-              "type" : "F_SCALE",
+              "malePercent" : "20 26 46 55",
+              "femalePercent" : "41 47 66 74",
+              "type" : "P_SCALE",
               "name" : "Женственность интересов",
-              "femaleMedian" : 9.1
             },
             {
               "maleAnswersPositive" : "37 86 111 141 304 342 357",
