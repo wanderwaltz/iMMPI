@@ -268,7 +268,7 @@ static const int32_t kInsaneAnswersCount =  567; // Actually it is 566, but what
             [testRecord.testAnswers setAnswerType:
              ([answer intValue] == 0) ? AnswerTypeNegative : AnswerTypePositive
              
-                                   forStatementID: index];
+                                   forStatementID: index+1]; // Statements are indexed from 1
         }];
     }
     
