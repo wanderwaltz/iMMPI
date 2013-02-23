@@ -125,25 +125,8 @@ static NSString * const kAnalyzerGroupCellIdentifer = @"com.immpi.cells.analyzer
     }
     
     cell.scoreLabel.font = cell.groupNameLabel.font;
-    
-    if (isnan(group.score))
-    {
-        cell.scoreLabel.text = @"";
-    }
-    else
-    {
-        if (group.score >= 0.0)
-        {
-            if (fabs(group.score-trunc(group.score) > 0.1))
-                cell.scoreLabel.text = [NSString stringWithFormat: @"%.1lf", group.score];
-            else
-                cell.scoreLabel.text = [NSString stringWithFormat: @"%.0lf", group.score];
-        }
-        else
-        {
-            cell.scoreLabel.text = ___Score_Invalid;
-        }
-    }
+    cell.scoreLabel.text = [group readableScore];
+
     
     return cell;
 }

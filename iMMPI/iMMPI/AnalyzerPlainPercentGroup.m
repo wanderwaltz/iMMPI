@@ -18,13 +18,22 @@
 
 @implementation AnalyzerPlainPercentGroup
 
+#pragma mark -
+#pragma mark AnalyzerGroup
+
+- (NSString *) readableScore
+{
+    return [NSString stringWithFormat: @"%d%%", (NSInteger)self.score];
+}
+
+
 - (double) computeScoreForRecord: (id<TestRecordProtocol>) record
                         analyser: (id<AnalyzerProtocol>) analyser
 {
     NSUInteger percentage = [self computePercentageForRecord: record
                                                     analyser: analyser];
     
-    self.score =  percentage / 100.0;
+    self.score =  percentage;
     
     return self.score;
 }

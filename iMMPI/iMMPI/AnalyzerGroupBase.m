@@ -147,6 +147,12 @@ static id _logSubgroupNotDictionary(id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (NSString *) readableScore
+{
+    return @"";
+}
+
+
 - (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index
 {
     id<AnalyzerGroup> subgroup = _subgroups[index];
@@ -156,25 +162,11 @@ static id _logSubgroupNotDictionary(id object);
 }
 
 
-- (void) visitSubgroupsDFS: (void(^)(id<AnalyzerGroup> subgroup)) block
-{
-    if (block)
-    {
-        for (id<AnalyzerGroup> subgroup in _subgroups)
-        {
-            FRB_AssertConformsTo(subgroup, AnalyzerGroup);
-            block(subgroup);
-            [subgroup visitSubgroupsDFS: block];
-        }
-    }
-}
-
-
 - (double) computeScoreForRecord: (id<TestRecordProtocol>) record
                         analyser: (id<AnalyzerProtocol>) analyser
 {
-    _score = NAN;
-    return _score;
+    self.score = NAN;
+    return self.score;
 }
 
 

@@ -61,6 +61,12 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (NSString *) readableScore
+{
+    return [NSString stringWithFormat: @"%.1lf", self.score];
+}
+
+
 /* This is one ugly piece of code translated directly from Pascal.
  
  I've written it a couple of years ago and actually have no clue what exactly does it do. I guess I'll have to rewrite it from scratch some time later when I'll get the original book with formulae of computing these values.

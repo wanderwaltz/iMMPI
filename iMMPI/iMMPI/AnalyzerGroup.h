@@ -19,13 +19,14 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *type;
-@property (assign, nonatomic) double   score;
 
 @property (readonly, nonatomic) NSUInteger subgroupsCount;
 
+- (NSString *) readableScore;
+
+
 - (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index;
 
-- (void) visitSubgroupsDFS: (void(^)(id<AnalyzerGroup> subgroup)) block;
 
 - (double) computeScoreForRecord: (id<TestRecordProtocol>) record
                         analyser: (id<AnalyzerProtocol>) analyser;

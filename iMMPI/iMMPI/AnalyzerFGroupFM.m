@@ -107,6 +107,12 @@ static id _logExpectedFloat(NSString *key, id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (NSString *) readableScore
+{
+    return [NSString stringWithFormat: @"%d", (NSInteger)self.score];
+}
+
+
 - (double) computeScoreForRecord: (id<TestRecordProtocol>) record
                         analyser: (id<AnalyzerProtocol>) analyser
 {

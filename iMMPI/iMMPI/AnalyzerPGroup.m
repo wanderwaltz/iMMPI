@@ -99,6 +99,12 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (NSString *) readableScore
+{
+    return [NSString stringWithFormat: @"%.1lf", self.score];
+}
+
+
 - (NSArray *) bracketsForRecord: (id<TestRecordProtocol>) record
 {
     NSArray *brackets = (record.person.gender == GenderFemale) ? _femaleBrackets : _maleBrackets;
