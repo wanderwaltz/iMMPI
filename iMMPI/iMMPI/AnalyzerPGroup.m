@@ -171,9 +171,12 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 - (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
                                  analyser: (id<AnalyzerProtocol>) analyser
 {
-    return [self computeMatchesForRecord: record
-                                analyser: analyser] * 100 /
-            (_positiveIndices.count + _negativeIndices.count);
+    NSUInteger matches = [self computeMatchesForRecord: record
+                                              analyser: analyser];
+    
+    NSUInteger total = (_positiveIndices.count + _negativeIndices.count);
+    
+    return matches * 100 / total;
 }
 
 

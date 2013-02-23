@@ -106,18 +106,20 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
          [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / T_aer;
         
         if (percentage <= A)
-            self.score = round(10 * 1.5 * percentage/A);
+            self.score = round(10 * 1.5 * (double)percentage/(double)A);
         
         else if (percentage <= B)
-            self.score = round(10*(1.5+(percentage-A)/(B-A)));
+            self.score = round(10*(1.5+(double)(percentage-A)/(double)(B-A)));
         
         else if (percentage <= C)
-            self.score = round(10*(2.5+(percentage-B)/(C-B)));
+            self.score = round(10*(2.5+(double)(percentage-B)/(double)(C-B)));
         
         else if (percentage <= D)
-            self.score = round(10*(3.5+(percentage-C)/(D-C)));
+            self.score = round(10*(3.5+(double)(percentage-C)/(double)(D-C)));
         else
             self.score = 50;
+        
+        self.score = self.score/10.0;
     }
     else self.score = -1;
     

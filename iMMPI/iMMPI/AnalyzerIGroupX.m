@@ -242,6 +242,8 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
     else
         self.score = -1;
     
+    self.score /= 10.0;
+    
     return self.score;
 }
 
