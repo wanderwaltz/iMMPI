@@ -52,6 +52,7 @@
 		5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */; };
 		5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */; };
 		5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650A16D8EFCF004D4BBA /* AnalyzerBase5Group.m */; };
+		5DC2650F16D92441004D4BBA /* AnalyzerPlainPercentGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650E16D92441004D4BBA /* AnalyzerPlainPercentGroup.m */; };
 		5DC40472168C2596000AFBAE /* Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40471168C2596000AFBAE /* Statement.m */; };
 		5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */; };
 		5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
@@ -145,6 +146,8 @@
 		5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.teen.json; sourceTree = "<group>"; };
 		5DC2650916D8EFCF004D4BBA /* AnalyzerBase5Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerBase5Group.h; sourceTree = "<group>"; };
 		5DC2650A16D8EFCF004D4BBA /* AnalyzerBase5Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerBase5Group.m; sourceTree = "<group>"; };
+		5DC2650D16D92441004D4BBA /* AnalyzerPlainPercentGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerPlainPercentGroup.h; sourceTree = "<group>"; };
+		5DC2650E16D92441004D4BBA /* AnalyzerPlainPercentGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerPlainPercentGroup.m; sourceTree = "<group>"; };
 		5DC40470168C2596000AFBAE /* Statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
 		5DC40471168C2596000AFBAE /* Statement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statement.m; sourceTree = "<group>"; };
 		5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementTableViewCell.h; sourceTree = "<group>"; };
@@ -515,6 +518,15 @@
 			name = "Base 5 Group";
 			sourceTree = "<group>";
 		};
+		5DC2650C16D91392004D4BBA /* Plain Percent Group */ = {
+			isa = PBXGroup;
+			children = (
+				5DC2650D16D92441004D4BBA /* AnalyzerPlainPercentGroup.h */,
+				5DC2650E16D92441004D4BBA /* AnalyzerPlainPercentGroup.m */,
+			);
+			name = "Plain Percent Group";
+			sourceTree = "<group>";
+		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +580,7 @@
 		5DC4ABF416902E8200E835B7 /* private */ = {
 			isa = PBXGroup;
 			children = (
+				5DC2650C16D91392004D4BBA /* Plain Percent Group */,
 				5DC2650816D8EF8E004D4BBA /* Base 5 Group */,
 				5D85559216907689004E3021 /* I Group X */,
 				5D85558E16907495004E3021 /* I Group M */,
@@ -892,6 +905,7 @@
 				5DC68C8116D0D7D400B338C2 /* MMPIATestRecordReader.m in Sources */,
 				5DC68C8616D0F55800B338C2 /* ProgressAlertView.m in Sources */,
 				5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */,
+				5DC2650F16D92441004D4BBA /* AnalyzerPlainPercentGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

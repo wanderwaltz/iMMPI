@@ -22,6 +22,7 @@
 #import "AnalyzerIGroupX.h"
 
 #import "AnalyzerBase5Group.h"
+#import "AnalyzerPlainPercentGroup.h"
 
 
 #pragma mark -
@@ -102,7 +103,9 @@ static id _logSubgroupNotDictionary(id object);
                       kGroupType_IScale_101 : @"AnalyzerIGroupX",
                       kGroupType_IScale_102 : @"AnalyzerIGroupX",
                       kGroupType_IScale_103 : @"AnalyzerIGroupM",
-                      kGroupType_IScale_104 : @"AnalyzerIGroupM"
+                      kGroupType_IScale_104 : @"AnalyzerIGroupM",
+                      
+                      kGroupType_PlainPercentScale : @"AnalyzerPlainPercentGroup"
                       };
                   });
 }

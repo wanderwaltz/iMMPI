@@ -50,6 +50,8 @@ NSString * const kGroupType_IScale_102 = @"ISCALE_102";
 NSString * const kGroupType_IScale_103 = @"ISCALE_103";
 NSString * const kGroupType_IScale_104 = @"ISCALE_104";
 
+NSString * const kGroupType_PlainPercentScale = @"PLAIN_PERCENT_SCALE";
+
 
 #pragma mark -
 #pragma mark Static constants

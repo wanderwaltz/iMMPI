@@ -45,6 +45,8 @@ extern NSString * const kGroupType_IScale_102;
 extern NSString * const kGroupType_IScale_103;
 extern NSString * const kGroupType_IScale_104;
 
+extern NSString * const kGroupType_PlainPercentScale;
+
 
 #pragma mark -
 #pragma mark Analyzer interface
