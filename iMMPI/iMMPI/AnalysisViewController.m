@@ -26,6 +26,7 @@ static NSString * const kAnalyzerGroupCellIdentifer = @"com.immpi.cells.analyzer
 @interface AnalysisViewController()
 {
     Analyzer *_analyzer;
+    NSDateFormatter *_dateFormatter;
 }
 
 @end
@@ -35,6 +36,21 @@ static NSString * const kAnalyzerGroupCellIdentifer = @"com.immpi.cells.analyzer
 #pragma mark AnalysisViewController implementation
 
 @implementation AnalysisViewController
+
+#pragma mark -
+#pragma mark initialization methods
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder: aDecoder];
+    
+    if (self != nil)
+    {
+        _dateFormatter = [NSDateFormatter new];
+        _dateFormatter.dateStyle = NSDateFormatterShortStyle;
+    }
+    return self;
+}
 
 #pragma mark -
 #pragma mark view lifecylce
@@ -138,6 +154,9 @@ static NSString * const kAnalyzerGroupCellIdentifer = @"com.immpi.cells.analyzer
 - (void) setRecordForAnalysis: (id<TestRecordProtocol>) record
 {
     self.record = record;
+    
+    self.title = [NSString stringWithFormat: @"%@, %@",
+                  record.person.name, [_dateFormatter stringFromDate: record.date]];
 }
 
 
