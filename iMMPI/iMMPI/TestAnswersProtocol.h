@@ -18,6 +18,11 @@
 @protocol TestAnswersProtocol<NSObject>
 @required
 
+/// Determines whether this test answers object contains all answers for a certain questionnaire.
+@property (assign, nonatomic) BOOL allStatementsAnswered;
+
+
+
 /*! This method should set an AnswerType for a statement with a given ID
  
  @param answerType  answer type (agree, disagree, undefined - see source for the exact enum values)
@@ -25,6 +30,8 @@
  */
 - (void) setAnswerType: (AnswerType) answerType
         forStatementID: (NSInteger) statementID;
+
+
 
 
 /*! This method should return answer type for statement with the provided ID
@@ -36,9 +43,13 @@
 - (AnswerType) answerTypeForStatementID: (NSInteger) statementID;
 
 
+
+
 /*! This method should enumerate all answers with type != AnswerTypeUnknown.
  
  Ordering of the enumerating answers is undefined.
+ 
+ @note Used for serialization of test records.
  
  @param block Block to be called on each answer/statementID pair where answer != AnswerTypeUnknown
  */

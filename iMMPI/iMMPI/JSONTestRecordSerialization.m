@@ -26,6 +26,8 @@ static NSString * const kJSONKeyStatemet        = @"statement";
 static NSString * const kJSONKeyStatementID     = @"id";
 static NSString * const kJSONKeyStatementAnswer = @"answer";
 
+static NSString * const kJSONKeyAllStatementsAnswered = @"allStatementsAnswered";
+
 static NSString * const kJSONValueGenderMale   = @"male";
 static NSString * const kJSONValueGenderFemale = @"female";
 
@@ -55,6 +57,7 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
     json[kJSONKeyGender]   = nil2Null([self   encodeGender: testRecord.person.gender]);
     json[kJSONKeyAgeGroup] = nil2Null([self encodeAgeGroup: testRecord.person.ageGroup]);
     json[kJSONKeyDate]     = nil2Null([[self dateFormatter] stringFromDate: testRecord.date]);
+    json[kJSONKeyAllStatementsAnswered] = @(testRecord.testAnswers.allStatementsAnswered);
     
     NSMutableArray *answers = [NSMutableArray array];
     
@@ -93,6 +96,8 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
         record.person.ageGroup = [self decodeAgeGroup: dictionary[kJSONKeyAgeGroup]];
         record.date            = [[self dateFormatter] dateFromString:
                                   null2Nil(dictionary[kJSONKeyDate])];
+        
+        record.testAnswers.allStatementsAnswered = [dictionary[kJSONKeyAllStatementsAnswered] boolValue];
         
         NSArray *answers = dictionary[kJSONKeyAnswers];
         

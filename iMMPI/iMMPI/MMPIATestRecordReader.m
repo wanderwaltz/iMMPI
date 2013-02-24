@@ -30,6 +30,8 @@ static NSString * const kQuestionnaireFemaleTeen  = @"FEMALE TEEN";
 static const int32_t kInsaneStringLength = 1000;
 static const int32_t kInsaneAnswersCount =  567; // Actually it is 566, but whatever
 
+static const int32_t kMMPIQuestionsCount = 566; // Total questions count in the legact MMPI application
+
 
 #pragma mark -
 #pragma mark MMPIATestRecordReader private
@@ -262,6 +264,8 @@ static const int32_t kInsaneAnswersCount =  567; // Actually it is 566, but what
         testRecord.person.ageGroup = [self ageGroupFromQuestionnaireString: questionnaireString];
         
         testRecord.date = testDate;
+        
+        testRecord.testAnswers.allStatementsAnswered = (answers.count == kMMPIQuestionsCount);
         
         [answers enumerateObjectsUsingBlock:
          ^(NSNumber *answer, NSUInteger index, BOOL *stop) {

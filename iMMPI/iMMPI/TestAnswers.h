@@ -18,6 +18,10 @@
  */
 @interface TestAnswers : NSObject<TestAnswersProtocol>
 
+/// Determines whether this TestAnswes instance contains all answers for a certain questionnaire.
+@property (assign, nonatomic) BOOL allStatementsAnswered;
+
+
 /*! Sets an AnswerType for a statement with a given ID
  
  @param answerType  answer type (agree, disagree, undefined - see source for the exact enum values)
