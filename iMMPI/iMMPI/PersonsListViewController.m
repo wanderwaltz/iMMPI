@@ -24,9 +24,6 @@
 
 static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 
-static NSString * const kSegueListGroup    = @"com.immpi.segue.listGroup";
-static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
-
 
 #pragma mark -
 #pragma mark PersonsListViewController private
@@ -56,7 +53,7 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 #pragma mark -
 #pragma mark actions
 
-- (IBAction) refreshAction: (UIRefreshControl *) sender
+- (void) refreshAction: (UIRefreshControl *) sender
 {
     [self loadLegacyMMPIARecords];
 }
@@ -223,6 +220,19 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 - (id<EditTestRecordViewControllerDelegate>) delegateForEditingTestRecordWithSender: (id) sender
 {
     return self;
+}
+
+
+#pragma mark SegueSourceAnalyzeRecord
+
+- (id<TestRecordProtocol>) recordForAnalysisWithSender: (id) sender
+{
+    // Essentialy we can open the analyzer screen only in the
+    // same circumstances as if we were editing answers for
+    // a certain record - when the corresponding records group
+    // contains a single record. So we return the value of an
+    // existing method to avoid duplication of code
+    return [self testRecordToEditAnswersWithSender: sender];
 }
 
 
@@ -428,7 +438,6 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
 }
 
 
-
 - (BOOL) deleteGroup: (id<TestRecordsGroupByName>) group
          atIndexPath: (NSIndexPath *) indexPath
 {
@@ -456,11 +465,24 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
         // if only one record in the group, select it immediately.
         if (group.numberOfRecords > 1)
         {
-            [self performSegueWithIdentifier: kSegueListGroup sender: sender];
+            [self performSegueWithIdentifier: kSegueIDListGroup sender: sender];
+        }
+        else if (group.numberOfRecords == 1)
+        {
+            // A single record in the group
+            id<TestRecordProtocol> record = group.allRecords[0];
+            
+            // If already answered the test, go straight to analyzer
+            if (record.testAnswers.allStatementsAnswered)
+                [self performSegueWithIdentifier: kSegueIDAnalyzer sender: sender];
+            
+            // Else we have to input all answers first
+            else
+                [self performSegueWithIdentifier: kSegueIDAnswersInput sender: sender];
         }
         else
         {
-            [self performSegueWithIdentifier: kSegueIDAnswersInput sender: sender];
+            NSAssert(NO, @"Unexpected group with 0 records");
         }
     }
 }
@@ -483,7 +505,7 @@ static NSString * const kSegueViewTrash    = @"com.immpi.segue.viewTrash";
             // if only one record in the group, select it immediately.
             if (group.numberOfRecords > 1)
             {
-                [self performSegueWithIdentifier: kSegueListGroup      sender: record];
+                [self performSegueWithIdentifier: kSegueIDListGroup    sender: record];
                 [self performSegueWithIdentifier: kSegueIDAnswersInput sender: record];
             }
             else

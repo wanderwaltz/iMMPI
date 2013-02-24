@@ -99,6 +99,19 @@ static NSString * const kRecordCellIdentifier = @"com.immpi.cells.record";
 }
 
 
+#pragma mark SegueSourceAnalyzeRecord
+
+- (id<TestRecordProtocol>) recordForAnalysisWithSender: (id) sender
+{
+    // Essentialy we can open the analyzer screen only in the
+    // same circumstances as if we were editing answers for
+    // a certain record - when the corresponding records group
+    // contains a single record. So we return the value of an
+    // existing method to avoid duplication of code
+    return [self testRecordToEditAnswersWithSender: sender];
+}
+
+
 #pragma mark SegueSourceEditRecord
 
 - (NSString *) titleForEditingTestRecord: (id<TestRecordProtocol>) record withSender: (id) sender
@@ -214,8 +227,14 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
     
     id sender = [tableView cellForRowAtIndexPath: indexPath];
     
-    [self performSegueWithIdentifier: kSegueIDAnswersInput
-                              sender: sender];
+    
+    // If already answered the test, go straight to analyzer
+    if (record.testAnswers.allStatementsAnswered)
+        [self performSegueWithIdentifier: kSegueIDAnalyzer sender: sender];
+    
+    // Else we have to input all answers first
+    else
+        [self performSegueWithIdentifier: kSegueIDAnswersInput sender: sender];
 }
 
 

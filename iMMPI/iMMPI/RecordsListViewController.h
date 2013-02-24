@@ -16,6 +16,7 @@
 @interface RecordsListViewController : StoryboardManagedTableViewController
 <SegueSourceEditRecord,
  SegueSourceEditAnswers,
+ SegueSourceAnalyzeRecord,
  SegueDestinationListRecords>
 
 @property (strong, nonatomic) id<TestRecordStorage>   storage;

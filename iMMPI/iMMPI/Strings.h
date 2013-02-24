@@ -39,4 +39,6 @@
 
 #define ___Importing_Records @"Импорт записей..."
 
+#define ___Records @"Записи"
+
 #endif

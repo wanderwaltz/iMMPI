@@ -14,6 +14,7 @@
 @interface PersonsListViewController : StoryboardManagedTableViewController
 <SegueSourceEditAnswers,
  SegueSourceEditRecord,
- SegueSourceListRecords>
+ SegueSourceListRecords,
+ SegueSourceAnalyzeRecord>
 
 @end
