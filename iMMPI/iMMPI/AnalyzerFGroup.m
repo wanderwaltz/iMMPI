@@ -114,6 +114,12 @@ static id _logExpectedFloat(NSString *key, id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (BOOL) scoreIsWithinNorm
+{
+    return (40.0 <= self.score) && (self.score <= 60.0);
+}
+
+
 - (NSString *) readableScore
 {
     return [NSString stringWithFormat: @"%d", (NSInteger)self.score];

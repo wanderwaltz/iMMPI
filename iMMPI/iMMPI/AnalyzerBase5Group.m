@@ -21,6 +21,12 @@
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (BOOL) scoreIsWithinNorm
+{
+    return (40.0 <= self.score) && (self.score <= 60.0);
+}
+
+
 - (double) computeScoreForRecord: (id<TestRecordProtocol>) record
                         analyser: (id<AnalyzerProtocol>) analyser
 {

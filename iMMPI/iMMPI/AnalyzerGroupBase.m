@@ -147,6 +147,17 @@ static id _logSubgroupNotDictionary(id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (BOOL) scoreIsWithinNorm
+{
+    // We have to default to NO here because if score is within
+    // norm, this group may be completely hidden depending on the
+    // user's settings. So if some group does not implement this
+    // method, we'll be safer with NO as default since this group's
+    // score will always be visible in that case.
+    return NO;
+}
+
+
 - (NSString *) readableScore
 {
     return @"";

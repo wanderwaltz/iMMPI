@@ -10,7 +10,21 @@
 
 
 #pragma mark -
+#pragma mark AnalysisOptionsViewControllerDelegate protocol
+
+@class AnalysisOptionsViewController;
+
+@protocol AnalysisOptionsViewControllerDelegate<NSObject>
+@required
+
+- (void) analysisOptionsViewControllerSettingsChanged: (AnalysisOptionsViewController *) controller;
+
+@end
+
+
+#pragma mark -
 #pragma mark AnalysisOptionsViewController interface
 
 @interface AnalysisOptionsViewController : UITableViewController
+@property (weak, nonatomic) id<AnalysisOptionsViewControllerDelegate> delegate;
 @end

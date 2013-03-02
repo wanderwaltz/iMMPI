@@ -41,4 +41,6 @@
 
 #define ___Records @"Записи"
 
+#define ___Normal_Score_Placeholder @"-"
+
 #endif

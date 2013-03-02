@@ -12,6 +12,8 @@
 
 #import "AnalysisViewController.h"
 #import "AnalyzerTableViewCell.h"
+#import "AnalysisOptionsViewController.h"
+#import "AnalysisSettings.h"
 
 
 #pragma mark -
@@ -24,9 +26,11 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 #pragma mark -
 #pragma mark AnalysisViewController private
 
-@interface AnalysisViewController()<UIPopoverControllerDelegate>
+@interface AnalysisViewController()<UIPopoverControllerDelegate, AnalysisOptionsViewControllerDelegate>
 {
     Analyzer *_analyzer;
+    NSMutableArray *_analyzerGroupIndices;
+    
     NSDateFormatter *_dateFormatter;
     
     UIPopoverController *_analysisOptionsPopover;
@@ -51,6 +55,7 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     {
         _dateFormatter = [NSDateFormatter new];
         _dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        _analyzerGroupIndices = [NSMutableArray array];
     }
     return self;
 }
@@ -85,10 +90,30 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
             [_analyzer computeScoresForRecord: _record];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
+                [self reloadData];
             });
         });
     }
+}
+
+
+#pragma mark -
+#pragma mark  private
+
+- (void) reloadData
+{
+    [_analyzerGroupIndices removeAllObjects];
+    
+    for (NSUInteger i = 0; i < _analyzer.groupsCount; ++i)
+    {
+        id<AnalyzerGroup> group = [_analyzer groupAtIndex: i];
+        
+        // Add the index to list if the score is outside norm or filters are off
+        if (!group.scoreIsWithinNorm || ![AnalysisSettings shouldHideNormalResults])
+            [_analyzerGroupIndices addObject: @(i)];
+    }
+    
+    [self.tableView reloadData];
 }
 
 
@@ -120,10 +145,26 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     
     if ([segue.identifier isEqualToString: kSegueIDAnalysisOptions])
     {
+        AnalysisOptionsViewController *controller =
+        (id)SelfOrFirstChild(segue.destinationViewController);
+        
+        FRB_AssertClass(controller, AnalysisOptionsViewController);
+        controller.delegate = self;
+        
         FRB_AssertClass(segue, UIStoryboardPopoverSegue);
         _analysisOptionsPopover = [(UIStoryboardPopoverSegue *)segue popoverController];
         _analysisOptionsPopover.delegate = self;
     }
+}
+
+
+#pragma mark -
+#pragma mark AnalysisOptionsViewControllerDelegate
+
+- (void) analysisOptionsViewControllerSettingsChanged:
+ (AnalysisOptionsViewController *) controller
+{
+    [self reloadData];
 }
 
 
@@ -151,7 +192,7 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 - (NSInteger) tableView: (UITableView *) tableView
   numberOfRowsInSection: (NSInteger) section
 {
-    return _analyzer.groupsCount;
+    return _analyzerGroupIndices.count;
 }
 
 
@@ -162,10 +203,20 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
                                        kAnalyzerGroupCellIdentifer];
     FRB_AssertClass(cell, AnalyzerTableViewCell);
     
-    NSUInteger groupIndex = indexPath.row;
+    NSUInteger groupIndex = [_analyzerGroupIndices[indexPath.row] integerValue];
 
     id<AnalyzerGroup> group = [_analyzer groupAtIndex:        groupIndex];
     NSUInteger        depth = [_analyzer depthOfGroupAtIndex: groupIndex];
+    
+    
+    // If we hide the scores which are within the norm, there may be a situation
+    // when the group's parent group is hidden, while the group itself is not.
+    // In that case we'll have the offset of the child group still equal to
+    // larger value and it will look like this group is child to some other group
+    // which is wrong. So we reset all of the offsets if 'hide normal' setting
+    // is set to on. Offset zero is reserved for the larger groups which are
+    // always present, so we cap the offset at the value of 1
+    if ([AnalysisSettings shouldHideNormalResults] && depth > 1) depth = 1;
     
     cell.groupNameLabel.text = group.name;
     cell.groupNameOffset     = depth * 40;
@@ -191,7 +242,12 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     }
     
     cell.scoreLabel.font = cell.groupNameLabel.font;
-    cell.scoreLabel.text = [group readableScore];
+    
+    
+    if ([AnalysisSettings shouldFilterAnalysisResults] && group.scoreIsWithinNorm)
+        cell.scoreLabel.text = ___Normal_Score_Placeholder;
+    else
+        cell.scoreLabel.text = [group readableScore];
 
     
     return cell;

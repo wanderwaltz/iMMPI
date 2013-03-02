@@ -61,6 +61,12 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (BOOL) scoreIsWithinNorm
+{
+    return fabs(self.score - 3.0) < 0.05;
+}
+
+
 - (NSString *) readableScore
 {
     return [NSString stringWithFormat: @"%.1lf", self.score];

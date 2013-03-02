@@ -13,5 +13,4 @@
 #pragma mark AnalyzerKGroup interface
 
 @interface AnalyzerKGroup : AnalyzerFGroup
-
 @end
