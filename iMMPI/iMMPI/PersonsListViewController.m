@@ -80,8 +80,23 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
                                          style: UIBarButtonItemStyleBordered
                                         target: nil
                                         action: nil];
+        
+        [[NSNotificationCenter defaultCenter]
+         addObserverForName: UIApplicationDidBecomeActiveNotification
+                     object: nil
+                      queue: [NSOperationQueue mainQueue]
+                 usingBlock:
+         ^(NSNotification *note) {
+             [self loadLegacyMMPIARecords];
+         }];
     }
     return self;
+}
+
+
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
 }
 
 
@@ -394,47 +409,59 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [_model addObjectsFromArray: allRecords];
                     [self.tableView reloadData];
+                    [self loadLegacyMMPIARecords];
                 });
             }
+            else
+            {
+                [self loadLegacyMMPIARecords];
+            }
         });
+    }
+    else
+    {
+        [self loadLegacyMMPIARecords];
     }
 }
 
 
 - (void) loadLegacyMMPIARecords
 {
-    __block ProgressAlertView *progressAlert = nil;
-    
-    [_legacyRecordsReader readRecordFilesInBackgroundWithCallback:
-     ^(id<TestRecordProtocol> record, NSString *fileName,
-       NSUInteger filesTotal, NSUInteger recordsRead) {
-         
-         if (progressAlert == nil)
-         {
-             progressAlert = [[ProgressAlertView alloc] initWithTitle: ___Importing_Records];
-             [progressAlert show];
+    if (!_legacyRecordsReader.isProcessingRecords)
+    {
+        __block ProgressAlertView *progressAlert = nil;
+        
+        [_legacyRecordsReader readRecordFilesInBackgroundWithCallback:
+         ^(id<TestRecordProtocol> record, NSString *fileName,
+           NSUInteger filesTotal, NSUInteger recordsRead) {
+             
+             if (progressAlert == nil)
+             {
+                 progressAlert = [[ProgressAlertView alloc] initWithTitle: ___Importing_Records];
+                 [progressAlert show];
+             }
+             
+             double progress = 0.0;
+             
+             if (filesTotal > 0) progress = (double)recordsRead / (double)filesTotal;
+             
+             progressAlert.progressView.progress = progress;
+             progressAlert.message = fileName;
+             
+             [progressAlert setNeedsDisplay];
+             [progressAlert setNeedsLayout];
+             
+             [_model       addNewObject: record];
+             [_storage addNewTestRecord: record];
+             
+             [self.tableView reloadData];
          }
-         
-         double progress = 0.0;
-         
-         if (filesTotal > 0) progress = (double)recordsRead / (double)filesTotal;
-         
-         progressAlert.progressView.progress = progress;
-         progressAlert.message = fileName;
-         
-         [progressAlert setNeedsDisplay];
-         [progressAlert setNeedsLayout];
-         
-         [_model       addNewObject: record];
-         [_storage addNewTestRecord: record];
-         
-         [self.tableView reloadData];
+                                                           completion:
+         ^(NSUInteger filesProcessed, NSUInteger recordsRead) {
+             [self.refreshControl endRefreshing];
+             [progressAlert dismissWithClickedButtonIndex: 0 animated: YES];
+         }];
     }
-                                                       completion:
-     ^(NSUInteger filesProcessed, NSUInteger recordsRead) {
-         [self.refreshControl endRefreshing];
-         [progressAlert dismissWithClickedButtonIndex: 0 animated: YES];
-     }];
 }
 
 

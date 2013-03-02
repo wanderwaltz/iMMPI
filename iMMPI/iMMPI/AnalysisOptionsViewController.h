@@ -19,6 +19,11 @@
 
 - (void) analysisOptionsViewControllerSettingsChanged: (AnalysisOptionsViewController *) controller;
 
+
+- (void) analysisOptionsViewControllerPrintOptionSelected: (AnalysisOptionsViewController *) controller;
+
+- (void) analysisOptionsViewControllerEmailOptionSelected: (AnalysisOptionsViewController *) controller;
+
 @end
 
 

@@ -10,7 +10,6 @@
 
 // TODO: Larger answers input buttons (YES/NO) to make blind input possible
 
-
 #pragma mark -
 #pragma mark AppDelegate interface
 

@@ -15,6 +15,8 @@
 #import "AnalysisOptionsViewController.h"
 #import "AnalysisSettings.h"
 
+#import <MessageUI/MessageUI.h>
+
 
 #pragma mark -
 #pragma mark Static constants
@@ -26,7 +28,10 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 #pragma mark -
 #pragma mark AnalysisViewController private
 
-@interface AnalysisViewController()<UIPopoverControllerDelegate, AnalysisOptionsViewControllerDelegate>
+@interface AnalysisViewController()
+<UIPopoverControllerDelegate,
+ AnalysisOptionsViewControllerDelegate,
+ MFMailComposeViewControllerDelegate>
 {
     Analyzer *_analyzer;
     NSMutableArray *_analyzerGroupIndices;
@@ -97,9 +102,6 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 }
 
 
-#pragma mark -
-#pragma mark  private
-
 - (void) reloadData
 {
     [_analyzerGroupIndices removeAllObjects];
@@ -114,6 +116,123 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     }
     
     [self.tableView reloadData];
+}
+
+
+- (void) presentPrintingInterface
+{
+    UIPrintInteractionController *printController =
+    [UIPrintInteractionController sharedPrintController];
+    
+    UIMarkupTextPrintFormatter *formatter =
+    [[UIMarkupTextPrintFormatter alloc] initWithMarkupText: [self composeHTMLAnalysisReport]];
+    
+    printController.printFormatter = formatter;
+    
+    [printController presentFromBarButtonItem: self.navigationItem.rightBarButtonItem
+                                     animated: YES
+                            completionHandler:
+     ^(UIPrintInteractionController *printInteractionController, BOOL completed, NSError *error)
+     {
+                                
+    }];
+}
+
+
+- (void) presentEmailInterface
+{
+    MFMailComposeViewController *controller =
+    [MFMailComposeViewController new];
+    
+    controller.mailComposeDelegate = self;
+    
+    NSString *htmlReport   = [self composeHTMLAnalysisReport];
+    NSData *htmlReportData = [htmlReport dataUsingEncoding: NSUTF8StringEncoding];
+    
+    [controller addAttachmentData: htmlReportData
+                         mimeType: @"text/html"
+                         fileName: [NSString stringWithFormat: @"%@%@.html",
+                                    self.record.person.name,
+                                    [_dateFormatter stringFromDate: self.record.date]]];
+    
+    [self presentViewController: controller
+                       animated: YES
+                     completion: nil];
+}
+
+
+- (NSString *) composeHTMLAnalysisReport
+{
+    NSMutableString *html = [NSMutableString string];
+    
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    dateFormatter.dateStyle = NSDateFormatterLongStyle;
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    
+    [html appendString: @"<!DOCTYPE html>"];
+    [html appendString: @"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
+    [html appendString: @"<html>"];
+    [html appendString: @"<body>"];
+    [html appendFormat: @"<h1>%@</h1>", self.record.person.name];
+    
+    NSString *dateString = [dateFormatter stringFromDate: self.record.date];
+    
+    if (dateString.length > 0)
+    [html appendFormat: @"<h2>%@</h2>", dateString];
+    
+    [html appendString: @"<table width=\"100%\">"];
+    [html appendString: @"<colgroup>"];
+    [html appendString: @"<col width=\" 1%\">"];
+    [html appendString: @"<col width=\" 4%\">"];
+    [html appendString: @"<col width=\" 5%\">"];
+    [html appendString: @"<col width=\"75%\">"];
+    [html appendString: @"<col width=\"15%\">"];
+    [html appendString: @"</colgroup>"];
+    
+    for (NSNumber *groupIndexNumber in _analyzerGroupIndices)
+    {
+        NSInteger groupIndex = [groupIndexNumber integerValue];
+        
+        id<AnalyzerGroup> group = [_analyzer groupAtIndex: groupIndex];
+        
+        [html appendString: @"<tr>"];
+        
+        switch ([_analyzer depthOfGroupAtIndex: groupIndex])
+        {
+            case 0:
+            {
+                [html appendString: @"<td colspan=\"1\"></td>"];
+                [html appendFormat: @"<td colspan=\"3\"><b>%@</b></td>", group.name];
+            } break;
+                
+                
+            case 1:
+            {
+                [html appendString: @"<td colspan=\"2\"></td>"];
+                [html appendFormat: @"<td colspan=\"2\">%@</td>", group.name];
+            } break;
+                
+                
+            default:
+            {
+                [html appendString: @"<td colspan=\"3\"></td>"];
+                [html appendFormat: @"<td colspan=\"1\"><i>%@</i></td>", group.name];
+            } break;
+        }
+        
+        if ([group scoreIsWithinNorm])
+            [html appendFormat: @"<td>%@</td>", ___Normal_Score_Placeholder];
+        else
+            [html appendFormat: @"<td>%@</td>", group.readableScore];
+        
+        [html appendString: @"</tr>"];
+    }
+    
+    [html appendString: @"</table>"];
+    [html appendString: @"</body>"];
+    [html appendString: @"</html>"];
+    
+    return html;
 }
 
 
@@ -165,6 +284,40 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
  (AnalysisOptionsViewController *) controller
 {
     [self reloadData];
+}
+
+
+- (void) analysisOptionsViewControllerPrintOptionSelected:
+ (AnalysisOptionsViewController *) controller
+{
+    [_analysisOptionsPopover dismissPopoverAnimated: YES];
+     _analysisOptionsPopover = nil;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentPrintingInterface];
+    });
+}
+
+
+- (void) analysisOptionsViewControllerEmailOptionSelected:
+ (AnalysisOptionsViewController *)controller
+{
+    [_analysisOptionsPopover dismissPopoverAnimated: YES];
+     _analysisOptionsPopover = nil;
+    
+    [self presentEmailInterface];
+}
+
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate
+
+- (void) mailComposeController: (MFMailComposeViewController *) controller
+           didFinishWithResult: (MFMailComposeResult) result
+                         error: (NSError *) error
+{
+    [self dismissViewControllerAnimated: YES
+                             completion: nil];
 }
 
 

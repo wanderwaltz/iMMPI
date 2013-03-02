@@ -20,6 +20,8 @@ extern NSString * const kMMPIATestRecordReaderDirectoryDefault;
 
 @interface MMPIATestRecordReader : NSObject
 
+@property (assign, atomic) BOOL isProcessingRecords;
+
 - (id) initWithDirectoryName: (NSString *) storageDirectoryName;
 
 - (void) readRecordFilesInBackgroundWithCallback:

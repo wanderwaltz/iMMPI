@@ -15,7 +15,8 @@
 #pragma mark -
 #pragma mark Constants
 
-NSString * const kMMPIATestRecordReaderDirectoryDefault = @"Import";
+NSString * const kMMPIATestRecordReaderDirectoryDefault = @".";
+NSString * const kMMPIAPathExtension = @"ans";
 
 
 #pragma mark -
@@ -95,6 +96,8 @@ static const int32_t kMMPIQuestionsCount = 566; // Total questions count in the 
                   NSUInteger totalFiles, NSUInteger recordsRead)) callback                                      completion:
             (void (^)(NSUInteger filesProcessed, NSUInteger recordsRead)) completion
 {
+    self.isProcessingRecords = YES;
+    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     NSError *error = nil;
@@ -110,46 +113,55 @@ static const int32_t kMMPIQuestionsCount = 566; // Total questions count in the 
             
             for (NSString *fileName in contents)
             {
-                NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
-                
-                id<TestRecordProtocol> testRecord =
-                [self tryReadingTestRecordFromMMPIAFileWithPath: path];
-                
-                if (testRecord != nil)
+                if ([fileName.pathExtension isEqualToString: kMMPIAPathExtension])
                 {
-                    recordsRead++;
+                    NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
                     
-                    if (callback != nil)
+                    id<TestRecordProtocol> testRecord =
+                    [self tryReadingTestRecordFromMMPIAFileWithPath: path];
+                    
+                    if (testRecord != nil)
                     {
-                        dispatch_sync(dispatch_get_main_queue(), ^{
-                            callback(testRecord, fileName, contents.count, recordsRead);
-                        });
+                        recordsRead++;
+                        
+                        if (callback != nil)
+                        {
+                            dispatch_sync(dispatch_get_main_queue(), ^{
+                                callback(testRecord, fileName, contents.count, recordsRead);
+                            });
+                        }
+                        
+                        NSError *error = nil;
+                        
+                        BOOL deleted = [fileManager removeItemAtPath: path
+                                                               error: &error];
+                        
+                        if (!deleted)
+                        {
+                            NSLog(@"Failed to delete file at path: '%@' with error: %@", path, error);
+                        }
                     }
-                }
-                
-                NSError *error = nil;
-                
-                BOOL deleted = [fileManager removeItemAtPath: path
-                                                       error: &error];
-                
-                if (!deleted)
-                {
-                    NSLog(@"Failed to delete file at path: '%@' with error: %@", path, error);
                 }
             }
             
-            if (completion != nil)
-                dispatch_async(dispatch_get_main_queue(), ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                self.isProcessingRecords = NO;
+                
+                if (completion != nil)
                     completion(contents.count, recordsRead);
-                });
+            });
         });
     }
-    else if (completion != nil)
-    {
+    else
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(NSNotFound, 0);
+            
+            self.isProcessingRecords = NO;
+            
+            if (completion != nil)
+                completion(NSNotFound, 0);
         });
-    }
+    
 }
 
 
@@ -242,7 +254,9 @@ static const int32_t kMMPIQuestionsCount = 566; // Total questions count in the 
             if (bytes - initialBytes < data.length)
             {
                 // TDateTime type is a double floating point number
-                double dateTime = (*(double *)bytes);
+                double dateTime = 0.0;
+                memcpy(&dateTime, bytes, sizeof(dateTime));
+                
                 testDate = [self dateFromDelphiTDateTime: dateTime];
             }
         }

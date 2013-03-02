@@ -13,6 +13,8 @@
 #import "AnalysisOptionsViewController.h"
 #import "AnalysisSettings.h"
 
+#import <MessageUI/MessageUI.h>
+
 
 #pragma mark -
 #pragma mark Static constants
@@ -57,8 +59,11 @@ static const NSInteger kCellUISwitchTag = 1;
         if ([AnalysisSettings shouldFilterAnalysisResults])
             [_cellIdentifiers addObject: kCellIdentifierHideFiltered];
         
+        if ([MFMailComposeViewController canSendMail])
         [_cellIdentifiers addObject: kCellIdentifierEmailAnalysis];
-        [_cellIdentifiers addObject: kCellIdentifierPrintAnalysis];
+        
+        if ([UIPrintInteractionController isPrintingAvailable])
+            [_cellIdentifiers addObject: kCellIdentifierPrintAnalysis];
     }
     return self;
 }
@@ -105,7 +110,16 @@ static const NSInteger kCellUISwitchTag = 1;
 - (void)      tableView: (UITableView *) tableView
 didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath: indexPath];
     
+    if ([cell.reuseIdentifier isEqualToString: kCellIdentifierPrintAnalysis])
+    {
+        [_delegate analysisOptionsViewControllerPrintOptionSelected: self];
+    }
+    else if ([cell.reuseIdentifier isEqualToString: kCellIdentifierEmailAnalysis])
+    {
+        [_delegate analysisOptionsViewControllerEmailOptionSelected: self];
+    }
 }
 
 
