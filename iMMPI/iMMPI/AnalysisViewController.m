@@ -18,15 +18,18 @@
 #pragma mark Static constants
 
 static NSString * const kAnalyzerGroupCellIdentifer = @"com.immpi.cells.analyzerGroup";
+static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOptions";
 
 
 #pragma mark -
 #pragma mark AnalysisViewController private
 
-@interface AnalysisViewController()
+@interface AnalysisViewController()<UIPopoverControllerDelegate>
 {
     Analyzer *_analyzer;
     NSDateFormatter *_dateFormatter;
+    
+    UIPopoverController *_analysisOptionsPopover;
 }
 
 @end
@@ -85,6 +88,53 @@ static NSString * const kAnalyzerGroupCellIdentifer = @"com.immpi.cells.analyzer
                 [self.tableView reloadData];
             });
         });
+    }
+}
+
+
+#pragma mark -
+#pragma mark storyboard
+
+- (BOOL) shouldPerformSegueWithIdentifier: (NSString *) identifier
+                                   sender: (id) sender
+{
+    if ([identifier isEqualToString: kSegueIDAnalysisOptions])
+    {
+        if (_analysisOptionsPopover != nil)
+        {
+            [_analysisOptionsPopover dismissPopoverAnimated: YES];
+             _analysisOptionsPopover = nil;
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
+
+- (void) prepareForSegue: (UIStoryboardSegue *) segue
+                  sender: (id) sender
+{
+    [super prepareForSegue: segue
+                    sender: sender];
+    
+    if ([segue.identifier isEqualToString: kSegueIDAnalysisOptions])
+    {
+        FRB_AssertClass(segue, UIStoryboardPopoverSegue);
+        _analysisOptionsPopover = [(UIStoryboardPopoverSegue *)segue popoverController];
+        _analysisOptionsPopover.delegate = self;
+    }
+}
+
+
+#pragma mark -
+#pragma mark UIPopoverControllerDelegate
+
+- (void) popoverControllerDidDismissPopover: (UIPopoverController *) popoverController
+{
+    if (popoverController == _analysisOptionsPopover)
+    {
+        _analysisOptionsPopover = nil;
     }
 }
 

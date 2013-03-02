@@ -47,6 +47,7 @@
 		5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
+		5DC0C87F16E26207006ED854 /* AnalysisOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87E16E26207006ED854 /* AnalysisOptionsViewController.m */; };
 		5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */; };
 		5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */; };
 		5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */; };
@@ -140,6 +141,8 @@
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5DC0B2C4168CDB790035A910 /* Strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
+		5DC0C87D16E26207006ED854 /* AnalysisOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisOptionsViewController.h; sourceTree = "<group>"; };
+		5DC0C87E16E26207006ED854 /* AnalysisOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisOptionsViewController.m; sourceTree = "<group>"; };
 		5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.adult.json; sourceTree = "<group>"; };
 		5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.teen.json; sourceTree = "<group>"; };
 		5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.adult.json; sourceTree = "<group>"; };
@@ -447,6 +450,7 @@
 		5DA5CA10163B050700CF1601 /* Analysis View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */,
 				5DC4ABF816902F2C00E835B7 /* AnalysisViewController.h */,
 				5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */,
 			);
@@ -507,6 +511,15 @@
 				5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */,
 			);
 			name = private;
+			sourceTree = "<group>";
+		};
+		5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5DC0C87D16E26207006ED854 /* AnalysisOptionsViewController.h */,
+				5DC0C87E16E26207006ED854 /* AnalysisOptionsViewController.m */,
+			);
+			name = "Analysis Options View Controller";
 			sourceTree = "<group>";
 		};
 		5DC2650816D8EF8E004D4BBA /* Base 5 Group */ = {
@@ -906,6 +919,7 @@
 				5DC68C8616D0F55800B338C2 /* ProgressAlertView.m in Sources */,
 				5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */,
 				5DC2650F16D92441004D4BBA /* AnalyzerPlainPercentGroup.m in Sources */,
+				5DC0C87F16E26207006ED854 /* AnalysisOptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
