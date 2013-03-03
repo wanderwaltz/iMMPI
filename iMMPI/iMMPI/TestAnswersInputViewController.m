@@ -130,6 +130,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
                             forStatementID: statement.statementID];
     if (![self setNextStatementIndex])
     {
+         self.record.testAnswers.allStatementsAnswered = YES;
         [self performSegueWithIdentifier: kSegueAnalyzer
                                   sender: nil];
     }

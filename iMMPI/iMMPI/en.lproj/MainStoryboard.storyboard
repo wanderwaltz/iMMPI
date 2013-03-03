@@ -590,7 +590,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="u10-cU-VYV">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.answer" id="udx-Ki-cWK" customClass="StatementTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.answer" id="udx-Ki-cWK" customClass="StatementTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="768" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -765,7 +765,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ответы на тест" id="bkL-Tp-xIq">
-                        <barButtonItem key="rightBarButtonItem" title="Анализ" id="7pg-kI-PYi"/>
+                        <barButtonItem key="rightBarButtonItem" title="Анализ" id="7pg-kI-PYi">
+                            <connections>
+                                <segue destination="F49-RI-GVa" kind="push" identifier="com.immpi.segue.analyzer" id="rcs-v6-40C"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="_analyzisBarButton" destination="7pg-kI-PYi" id="xhw-3u-Scm"/>
@@ -982,6 +986,10 @@
         <class className="TestAnswersInputViewController" superclassName="TestAnswersTableViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersInputViewController.h"/>
             <relationships>
+                <relationship kind="action" name="negativeAnswerButtonAction:"/>
+                <relationship kind="action" name="nextButtonAction:"/>
+                <relationship kind="action" name="positiveAnswerButtonAction:"/>
+                <relationship kind="action" name="prevButtonAction:"/>
                 <relationship kind="outlet" name="_analyzisBarButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="_inputView" candidateClass="UIView"/>
             </relationships>
@@ -1005,12 +1013,12 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="THK-Zl-NF7"/>
         <segue reference="1n8-HN-ewy"/>
-        <segue reference="pzp-1q-KmK"/>
         <segue reference="wQm-8j-8wQ"/>
         <segue reference="B1l-8X-pqZ"/>
-        <segue reference="THK-Zl-NF7"/>
         <segue reference="K8u-i7-vef"/>
-        <segue reference="0xe-yy-e5Q"/>
+        <segue reference="pzp-1q-KmK"/>
+        <segue reference="rcs-v6-40C"/>
     </inferredMetricsTieBreakers>
 </document>

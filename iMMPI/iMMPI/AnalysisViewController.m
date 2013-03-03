@@ -146,6 +146,10 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     
     controller.mailComposeDelegate = self;
     
+    [controller setToRecipients: @[@"sasha-e2000@mail.ru"]];
+    [controller setSubject: @"Результаты тестирования"];
+    
+    
     NSString *htmlReport   = [self composeHTMLAnalysisReport];
     NSData *htmlReportData = [htmlReport dataUsingEncoding: NSUTF8StringEncoding];
     
