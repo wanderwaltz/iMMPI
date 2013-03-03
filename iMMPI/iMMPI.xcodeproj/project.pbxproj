@@ -78,6 +78,10 @@
 		5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */; };
 		5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
 		5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
+		5DEE4BD816E304890072F239 /* AnswersInputViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */; };
+		5DEE4BD916E304890072F239 /* AnswersInputViewBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD716E304890072F239 /* AnswersInputViewBackground@2x.png */; };
+		5DEE4BDC16E305770072F239 /* AnswersInputButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */; };
+		5DEE4BDD16E305770072F239 /* AnswersInputButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BDB16E305770072F239 /* AnswersInputButton@2x.png */; };
 		631F7A52D295429BB0A3F386 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D76D094067F4B558239B3CE /* libPods.a */; };
 		7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */; };
 /* End PBXBuildFile section */
@@ -208,6 +212,10 @@
 		5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
 		5DCC9647168DC1D8004F8D4E /* JSONTestRecordSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordSerialization.h; sourceTree = "<group>"; };
 		5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordSerialization.m; sourceTree = "<group>"; };
+		5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnswersInputViewBackground.png; sourceTree = "<group>"; };
+		5DEE4BD716E304890072F239 /* AnswersInputViewBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputViewBackground@2x.png"; sourceTree = "<group>"; };
+		5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputButtonPressed@2x.png"; sourceTree = "<group>"; };
+		5DEE4BDB16E305770072F239 /* AnswersInputButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputButton@2x.png"; sourceTree = "<group>"; };
 		6D76D094067F4B558239B3CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0F025C169BFF5D006377B3 /* StoryboardManagedViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedViewControllerProtocol.h; sourceTree = "<group>"; };
 		7C0F025F169C00B9006377B3 /* MMPISegueHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPISegueHandler.h; sourceTree = "<group>"; };
@@ -403,6 +411,10 @@
 		5DA5C9EB163B018D00CF1601 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */,
+				5DEE4BDB16E305770072F239 /* AnswersInputButton@2x.png */,
+				5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */,
+				5DEE4BD716E304890072F239 /* AnswersInputViewBackground@2x.png */,
 				5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */,
 				5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */,
 				5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */,
@@ -841,6 +853,10 @@
 				5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */,
 				5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */,
 				5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */,
+				5DEE4BD816E304890072F239 /* AnswersInputViewBackground.png in Resources */,
+				5DEE4BD916E304890072F239 /* AnswersInputViewBackground@2x.png in Resources */,
+				5DEE4BDC16E305770072F239 /* AnswersInputButtonPressed@2x.png in Resources */,
+				5DEE4BDD16E305770072F239 /* AnswersInputButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

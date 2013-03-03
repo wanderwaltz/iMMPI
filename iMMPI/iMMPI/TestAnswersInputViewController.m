@@ -26,7 +26,8 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 @interface TestAnswersInputViewController()
 {
-    IBOutlet UIBarButtonItem *_analyzisBarButton;
+    __weak IBOutlet UIBarButtonItem *_analyzisBarButton;
+    __weak IBOutlet UIView *_inputView;
     
     NSUInteger _statementIndex;
 }
@@ -41,6 +42,38 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 #pragma mark -
 #pragma mark view lifecycle
+
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UIImage *buttonBackground        = [UIImage imageNamed: @"AnswersInputButton"];
+    UIImage *buttonBackgroundPressed = [UIImage imageNamed: @"AnswersInputButtonPressed"];
+    
+    buttonBackground =
+    [buttonBackground resizableImageWithCapInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)
+                                     resizingMode: UIImageResizingModeStretch];
+    buttonBackgroundPressed =
+    [buttonBackgroundPressed resizableImageWithCapInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)
+                                            resizingMode: UIImageResizingModeStretch];
+    
+    for (UIButton *button in _inputView.subviews)
+    {
+        if ([button isKindOfClass: [UIButton class]])
+        {
+            button.backgroundColor = [UIColor clearColor];
+            
+            [button setBackgroundImage: buttonBackground
+                              forState: UIControlStateNormal];
+            
+            [button setBackgroundImage: buttonBackgroundPressed
+                              forState: UIControlStateHighlighted];
+        }
+    }
+    
+    _inputView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _inputView.layer.borderWidth = 1.0;
+}
 
 - (void) viewWillAppear: (BOOL) animated
 {
@@ -60,13 +93,13 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 #pragma mark -
 #pragma mark actions
 
-- (IBAction) prevBarButtonAction: (id) sender
+- (IBAction) prevButtonAction: (id) sender
 {
     [self setPreviousStatementIndex];
 }
 
 
-- (IBAction) nextBarButtonAction: (id) sender
+- (IBAction) nextButtonAction: (id) sender
 {
     [self setNextStatementIndex];
 }

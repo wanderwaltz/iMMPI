@@ -560,7 +560,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9Hb-ab-zjM">
             <objects>
-                <navigationController toolbarHidden="NO" id="LqN-J3-mFC" sceneMemberID="viewController">
+                <navigationController id="LqN-J3-mFC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pA9-u1-KZx">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
@@ -572,117 +572,209 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="QWv-EL-1cu" kind="relationship" relationship="rootViewController" id="MFe-gH-7aT"/>
+                        <segue destination="0Nj-AL-4cy" kind="relationship" relationship="rootViewController" id="TIH-Sv-hwN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cz-af-I7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1784" y="1018"/>
         </scene>
-        <!--Test Answers Input View Controller-->
-        <scene sceneID="8DC-Og-m1f">
+        <!--Test Answers Input View Controller - Ответы на тест-->
+        <scene sceneID="xBm-Vm-KdH">
             <objects>
-                <tableViewController id="QWv-EL-1cu" customClass="TestAnswersInputViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="1mi-nd-tOm">
-                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.answer" id="VXc-NI-jF1" customClass="StatementTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="768" height="64"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="63"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cF-4c-DzO">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="39" type="user" id="Kqo-co-rfI"/>
-                                                <constraint firstAttribute="height" constant="21" id="Yog-Qs-FMp"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="619" translatesAutoresizingMaskIntoConstraints="NO" id="cEW-ZM-oeL">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="54" type="user" id="pZu-nI-uQu"/>
-                                            </constraints>
-                                            <string key="text">Текст вопроса, возможно длинный и располагающийся в две строчки; этого должно быть достаточно - в целом, все вопросы СМИЛ изложены достаточно сжато</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="НЕТ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXn-qy-L6f">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="42" id="f00-q9-WfA"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="QXn-qy-L6f" secondAttribute="trailing" constant="20" type="user" id="733-Wa-2lC"/>
-                                    <constraint firstItem="2cF-4c-DzO" firstAttribute="leading" secondItem="VXc-NI-jF1" secondAttribute="leading" constant="8" type="user" id="95I-YE-kD6"/>
-                                    <constraint firstAttribute="centerY" secondItem="cEW-ZM-oeL" secondAttribute="centerY" type="user" id="AkA-cF-R4p"/>
-                                    <constraint firstItem="cEW-ZM-oeL" firstAttribute="leading" secondItem="2cF-4c-DzO" secondAttribute="trailing" constant="20" type="user" id="WYg-DE-5lx"/>
-                                    <constraint firstItem="cEW-ZM-oeL" firstAttribute="centerY" secondItem="2cF-4c-DzO" secondAttribute="centerY" type="default" id="ZkC-tm-dgc"/>
-                                    <constraint firstItem="QXn-qy-L6f" firstAttribute="leading" secondItem="cEW-ZM-oeL" secondAttribute="trailing" constant="20" type="user" id="qMS-qh-egP"/>
-                                    <constraint firstItem="QXn-qy-L6f" firstAttribute="top" secondItem="VXc-NI-jF1" secondAttribute="top" constant="20" type="default" id="tjs-S8-tC1"/>
-                                </constraints>
+                <viewController id="0Nj-AL-4cy" customClass="TestAnswersInputViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bn4-jf-zUK">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="u10-cU-VYV">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.answer" id="udx-Ki-cWK" customClass="StatementTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5f-Q4-2Cu">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="39" type="user" id="cPA-9O-du6"/>
+                                                        <constraint firstAttribute="height" constant="21" id="xD9-0W-FkW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="631" translatesAutoresizingMaskIntoConstraints="NO" id="Llv-We-eUl">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="54" type="user" id="cTG-zO-uNv"/>
+                                                    </constraints>
+                                                    <string key="text">Текст вопроса, возможно длинный и располагающийся в две строчки; этого должно быть достаточно - в целом, все вопросы СМИЛ изложены достаточно сжато</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="НЕТ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4X-wn-SqB">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" type="user" id="i5s-pH-e8r"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="K4X-wn-SqB" firstAttribute="leading" secondItem="Llv-We-eUl" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="5OA-zH-beY"/>
+                                            <constraint firstItem="Llv-We-eUl" firstAttribute="centerY" secondItem="C5f-Q4-2Cu" secondAttribute="centerY" type="default" id="Fr2-xt-JCh"/>
+                                            <constraint firstAttribute="trailing" secondItem="K4X-wn-SqB" secondAttribute="trailing" constant="20" type="user" id="K4E-uY-GFK"/>
+                                            <constraint firstItem="K4X-wn-SqB" firstAttribute="top" secondItem="udx-Ki-cWK" secondAttribute="top" constant="20" type="default" id="ZZ1-fw-3U2"/>
+                                            <constraint firstItem="Llv-We-eUl" firstAttribute="centerY" secondItem="udx-Ki-cWK" secondAttribute="centerY" type="default" id="aa6-2N-cfu"/>
+                                            <constraint firstItem="Llv-We-eUl" firstAttribute="leading" secondItem="C5f-Q4-2Cu" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="dgO-ny-I9W"/>
+                                            <constraint firstItem="C5f-Q4-2Cu" firstAttribute="leading" secondItem="udx-Ki-cWK" secondAttribute="leading" constant="20" type="user" id="vYG-jt-fym"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="statementAnswerLabel" destination="K4X-wn-SqB" id="XEk-XH-hNB"/>
+                                            <outlet property="statementIDLabel" destination="C5f-Q4-2Cu" id="J7L-0a-Bwu"/>
+                                            <outlet property="statementTextLabel" destination="Llv-We-eUl" id="uhY-Ks-zm4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="statementAnswerLabel" destination="QXn-qy-L6f" id="xfF-Vj-yyx"/>
-                                    <outlet property="statementIDLabel" destination="2cF-4c-DzO" id="9QV-U9-Wp2"/>
-                                    <outlet property="statementTextLabel" destination="cEW-ZM-oeL" id="A9T-hg-xGx"/>
+                                    <outlet property="dataSource" destination="0Nj-AL-4cy" id="V3A-XD-MTl"/>
+                                    <outlet property="delegate" destination="0Nj-AL-4cy" id="EuK-z8-0br"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="QWv-EL-1cu" id="p0b-Ep-Ltd"/>
-                            <outlet property="delegate" destination="QWv-EL-1cu" id="IwP-EB-5vw"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Пред." id="UYr-v7-hNu">
-                            <connections>
-                                <action selector="prevBarButtonAction:" destination="QWv-EL-1cu" id="0y6-Qm-jgW"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="OeS-5Q-bMc"/>
-                        <barButtonItem title="НЕТ" width="200" id="vic-cp-KGi">
-                            <connections>
-                                <action selector="negativeAnswerButtonAction:" destination="QWv-EL-1cu" id="CCk-sN-q8N"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem title="ДА" width="200" id="kUC-Eo-4Hs">
-                            <connections>
-                                <action selector="positiveAnswerButtonAction:" destination="QWv-EL-1cu" id="n4X-Ts-J8U"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xvu-mK-tOi"/>
-                        <barButtonItem title="След." id="Zgn-Ih-vsg">
-                            <connections>
-                                <action selector="nextBarButtonAction:" destination="QWv-EL-1cu" id="JZR-LW-L64"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="40Z-vh-v6Y">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="gVz-fS-QQZ"/>
-                        <barButtonItem key="rightBarButtonItem" title="Анализ" id="Nde-Ez-BKg">
-                            <connections>
-                                <segue destination="F49-RI-GVa" kind="push" identifier="com.immpi.segue.analyzer" id="yzq-KO-2Lv"/>
-                            </connections>
-                        </barButtonItem>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0L8-Oi-WR2" userLabel="Input View">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="AnswersInputViewBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-3C-AY8">
+                                        <rect key="contentStretch" x="0.0" y="0.050000000000000003" width="1" height="0.89999999999999991"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="774" id="TH8-ha-cFK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4s-Vc-3Ws">
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" type="user" id="s1h-cj-POO"/>
+                                            <constraint firstAttribute="height" constant="44" id="stK-xI-yqr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <inset key="titleEdgeInsets" minX="-3" minY="-4" maxX="0.0" maxY="0.0"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="◄">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="prevButtonAction:" destination="0Nj-AL-4cy" eventType="touchUpInside" id="Lgi-Dz-cEr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4X-ow-mlq">
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" type="user" id="z6j-yv-W2o"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <inset key="titleEdgeInsets" minX="3" minY="-4" maxX="0.0" maxY="0.0"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="►">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextButtonAction:" destination="0Nj-AL-4cy" eventType="touchUpInside" id="djX-xm-itk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doc-jC-Rh9">
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="НЕТ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="negativeAnswerButtonAction:" destination="0Nj-AL-4cy" eventType="touchUpInside" id="Y1A-J5-hb3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAB-O1-gU1">
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="ДА">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="positiveAnswerButtonAction:" destination="0Nj-AL-4cy" eventType="touchUpInside" id="y7E-Pw-hHv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="g4s-Vc-3Ws" firstAttribute="bottom" secondItem="G4X-ow-mlq" secondAttribute="bottom" type="default" id="2mx-fk-s58"/>
+                                    <constraint firstAttribute="trailing" secondItem="G4X-ow-mlq" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="3Oo-hF-98n"/>
+                                    <constraint firstItem="cFh-3C-AY8" firstAttribute="top" secondItem="0L8-Oi-WR2" secondAttribute="top" type="user" id="7jY-Nq-hJG"/>
+                                    <constraint firstItem="gAB-O1-gU1" firstAttribute="leading" secondItem="doc-jC-Rh9" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="9OO-wq-T1q"/>
+                                    <constraint firstItem="g4s-Vc-3Ws" firstAttribute="leading" secondItem="0L8-Oi-WR2" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="BpF-0N-0LY"/>
+                                    <constraint firstItem="doc-jC-Rh9" firstAttribute="baseline" secondItem="g4s-Vc-3Ws" secondAttribute="baseline" type="default" id="Dh4-bN-lXD"/>
+                                    <constraint firstItem="gAB-O1-gU1" firstAttribute="top" secondItem="0L8-Oi-WR2" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FfV-jx-eho"/>
+                                    <constraint firstItem="doc-jC-Rh9" firstAttribute="leading" secondItem="g4s-Vc-3Ws" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="Fkc-1o-NwQ"/>
+                                    <constraint firstItem="cFh-3C-AY8" firstAttribute="bottom" secondItem="0L8-Oi-WR2" secondAttribute="bottom" type="user" id="IEt-Kh-BmL"/>
+                                    <constraint firstItem="G4X-ow-mlq" firstAttribute="leading" secondItem="gAB-O1-gU1" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="KhS-vR-ZtP"/>
+                                    <constraint firstItem="g4s-Vc-3Ws" firstAttribute="baseline" secondItem="G4X-ow-mlq" secondAttribute="baseline" type="user" id="L72-Ag-r6e"/>
+                                    <constraint firstAttribute="bottom" secondItem="gAB-O1-gU1" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Rnw-PI-hoX"/>
+                                    <constraint firstItem="doc-jC-Rh9" firstAttribute="top" secondItem="0L8-Oi-WR2" secondAttribute="top" constant="20" symbolic="YES" type="user" id="baT-Wy-QHy"/>
+                                    <constraint firstItem="gAB-O1-gU1" firstAttribute="width" secondItem="doc-jC-Rh9" secondAttribute="width" type="user" id="hCg-v0-jvF"/>
+                                    <constraint firstItem="cFh-3C-AY8" firstAttribute="leading" secondItem="0L8-Oi-WR2" secondAttribute="leading" type="default" id="oVd-xm-9uJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="doc-jC-Rh9" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="pX5-BV-R3T"/>
+                                    <constraint firstItem="doc-jC-Rh9" firstAttribute="centerY" secondItem="g4s-Vc-3Ws" secondAttribute="centerY" type="default" id="sZw-PE-e9P"/>
+                                    <constraint firstItem="g4s-Vc-3Ws" firstAttribute="top" secondItem="G4X-ow-mlq" secondAttribute="top" type="default" id="urF-I2-t81"/>
+                                    <constraint firstItem="doc-jC-Rh9" firstAttribute="baseline" secondItem="gAB-O1-gU1" secondAttribute="baseline" type="default" id="vO0-fg-RP9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="u10-cU-VYV" secondAttribute="bottom" constant="200" type="user" id="0Ta-D7-fs2"/>
+                            <constraint firstItem="u10-cU-VYV" firstAttribute="top" secondItem="Bn4-jf-zUK" secondAttribute="top" type="user" id="8Yy-16-oWR"/>
+                            <constraint firstItem="0L8-Oi-WR2" firstAttribute="leading" secondItem="Bn4-jf-zUK" secondAttribute="leading" type="user" id="Aci-8Y-NnP"/>
+                            <constraint firstItem="u10-cU-VYV" firstAttribute="leading" secondItem="Bn4-jf-zUK" secondAttribute="leading" type="user" id="MrF-Hj-p81"/>
+                            <constraint firstItem="0L8-Oi-WR2" firstAttribute="leading" secondItem="Bn4-jf-zUK" secondAttribute="leading" type="user" id="Rna-N8-O8j"/>
+                            <constraint firstItem="u10-cU-VYV" firstAttribute="trailing" secondItem="Bn4-jf-zUK" secondAttribute="trailing" type="user" id="SYm-od-ooF"/>
+                            <constraint firstItem="0L8-Oi-WR2" firstAttribute="trailing" secondItem="Bn4-jf-zUK" secondAttribute="trailing" type="user" id="cal-Vj-zPr"/>
+                            <constraint firstItem="0L8-Oi-WR2" firstAttribute="top" secondItem="u10-cU-VYV" secondAttribute="bottom" type="user" id="lBl-qf-y4P"/>
+                            <constraint firstItem="0L8-Oi-WR2" firstAttribute="bottom" secondItem="Bn4-jf-zUK" secondAttribute="bottom" type="user" id="mnh-MP-kud"/>
+                            <constraint firstItem="u10-cU-VYV" firstAttribute="top" secondItem="Bn4-jf-zUK" secondAttribute="top" type="user" id="pc7-zh-rkc"/>
+                            <constraint firstItem="0L8-Oi-WR2" firstAttribute="trailing" secondItem="Bn4-jf-zUK" secondAttribute="trailing" type="user" id="yOj-IX-0I3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ответы на тест" id="bkL-Tp-xIq">
+                        <barButtonItem key="rightBarButtonItem" title="Анализ" id="7pg-kI-PYi"/>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="_analyzisBarButton" destination="Nde-Ez-BKg" id="7XP-js-qPe"/>
+                        <outlet property="_analyzisBarButton" destination="7pg-kI-PYi" id="xhw-3u-Scm"/>
+                        <outlet property="_inputView" destination="0L8-Oi-WR2" id="pmG-VO-sIr"/>
+                        <outlet property="tableView" destination="u10-cU-VYV" id="uZ0-Sk-LeR"/>
+                        <segue destination="F49-RI-GVa" kind="push" identifier="com.immpi.segue.analyzer" id="0xe-yy-e5Q"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2cg-8N-z5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Inv-J9-S4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2644" y="1018"/>
         </scene>
@@ -794,7 +886,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yk3-KO-HE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5677" y="709"/>
+            <point key="canvasLocation" x="5593" y="709"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Del-10-ij9">
@@ -830,21 +922,95 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmf-7j-v2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4703" y="709"/>
+            <point key="canvasLocation" x="4671" y="357"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AnswersInputViewBackground.png" width="1" height="44"/>
+    </resources>
+    <classes>
+        <class className="AnalysisOptionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalysisOptionsViewController.h"/>
+        </class>
+        <class className="AnalysisViewController" superclassName="StoryboardManagedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalysisViewController.h"/>
+        </class>
+        <class className="AnalyzerTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyzerTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_groupNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_lcGroupNameLabelLeft" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="_scoreLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EditTestRecordViewController" superclassName="StoryboardManagedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTestRecordViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_ageGroupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_ageGroupTableViewCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_dateTableViewCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_fullNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="_genderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_genderTableViewCell" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PersonsListViewController" superclassName="StoryboardManagedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonsListViewController.h"/>
+        </class>
+        <class className="RecordsListViewController" superclassName="StoryboardManagedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecordsListViewController.h"/>
+        </class>
+        <class className="StatementTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatementTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="statementAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statementIDLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statementSegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="statementTextLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StoryboardManagedTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryboardManagedTableViewController.h"/>
+        </class>
+        <class className="StoryboardManagedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryboardManagedViewController.h"/>
+        </class>
+        <class className="TestAnswersInputViewController" superclassName="TestAnswersTableViewControllerBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersInputViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_analyzisBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="_inputView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="TestAnswersTableViewControllerBase" superclassName="StoryboardManagedViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersTableViewControllerBase.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TestAnswersViewController" superclassName="TestAnswersTableViewControllerBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersViewController.h"/>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="B1l-8X-pqZ"/>
         <segue reference="1n8-HN-ewy"/>
-        <segue reference="K8u-i7-vef"/>
-        <segue reference="THK-Zl-NF7"/>
-        <segue reference="wQm-8j-8wQ"/>
         <segue reference="pzp-1q-KmK"/>
-        <segue reference="cEz-YJ-d3N"/>
+        <segue reference="wQm-8j-8wQ"/>
+        <segue reference="B1l-8X-pqZ"/>
+        <segue reference="THK-Zl-NF7"/>
+        <segue reference="K8u-i7-vef"/>
+        <segue reference="0xe-yy-e5Q"/>
     </inferredMetricsTieBreakers>
 </document>

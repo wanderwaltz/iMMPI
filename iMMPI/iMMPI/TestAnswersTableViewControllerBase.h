@@ -24,10 +24,14 @@
  
  @see TestAnswersInputViewController, TestAnswersViewController
  */
-@interface TestAnswersTableViewControllerBase : StoryboardManagedTableViewController
-<StatementTableViewCellDelegate,
+@interface TestAnswersTableViewControllerBase : StoryboardManagedViewController
+<UITableViewDataSource, UITableViewDelegate,
+ StatementTableViewCellDelegate,
  SegueSourceAnalyzeRecord,
  SegueDestinationEditAnswers>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 /*! A TestRecordProtocol object to be managed by the view controller.
  
