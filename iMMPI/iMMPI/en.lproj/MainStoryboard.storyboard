@@ -775,7 +775,6 @@
                         <outlet property="_analyzisBarButton" destination="7pg-kI-PYi" id="xhw-3u-Scm"/>
                         <outlet property="_inputView" destination="0L8-Oi-WR2" id="pmG-VO-sIr"/>
                         <outlet property="tableView" destination="u10-cU-VYV" id="uZ0-Sk-LeR"/>
-                        <segue destination="F49-RI-GVa" kind="push" identifier="com.immpi.segue.analyzer" id="0xe-yy-e5Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Inv-J9-S4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1013,12 +1012,12 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="THK-Zl-NF7"/>
-        <segue reference="1n8-HN-ewy"/>
         <segue reference="wQm-8j-8wQ"/>
+        <segue reference="1n8-HN-ewy"/>
+        <segue reference="THK-Zl-NF7"/>
         <segue reference="B1l-8X-pqZ"/>
-        <segue reference="K8u-i7-vef"/>
         <segue reference="pzp-1q-KmK"/>
+        <segue reference="K8u-i7-vef"/>
         <segue reference="rcs-v6-40C"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@
 #import "AnalysisSettings.h"
 
 #import "JSONTestRecordSerialization.h"
+#import "HTMLTestRecordSerialization.h"
 
 #import <MessageUI/MessageUI.h>
 
@@ -188,6 +189,17 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
                              mimeType: @"application/json; charset=utf-8"
                              fileName: [NSString stringWithFormat:
                                         ___FORMAT_File_Name_JSON_Record_Backup,
+                                        personDateSuffix]];
+    }
+    
+    NSData *htmlAnswersData = [HTMLTestRecordSerialization dataWithTestRecord: self.record];
+    
+    if (htmlAnswersData != nil)
+    {
+        [controller addAttachmentData: htmlAnswersData
+                             mimeType: @"text/html; charset=utf-8"
+                             fileName: [NSString stringWithFormat:
+                                        ___FORMAT_File_Name_Answers,
                                         personDateSuffix]];
     }
     

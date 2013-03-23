@@ -49,6 +49,7 @@
 #define ___FORMAT_Test_Results_Email_Header @"Результаты тестирования %@"
 #define ___FORMAT_File_Name_Analysis_Report_Brief @"Анализ (краткий) - %@.html"
 #define ___FORMAT_File_Name_Analysis_Report_Full  @"Анализ (полный) - %@.html"
-#define ___FORMAT_File_Name_JSON_Record_Backup @"Ответы %@ (резервная копия).json"
+#define ___FORMAT_File_Name_Answers @"Ответы %@.html"
+#define ___FORMAT_File_Name_JSON_Record_Backup @"Резервная копия %@.json"
 
 #endif
