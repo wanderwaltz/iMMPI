@@ -15,6 +15,8 @@
 #import "AnalysisOptionsViewController.h"
 #import "AnalysisSettings.h"
 
+#import "JSONTestRecordSerialization.h"
+
 #import <MessageUI/MessageUI.h>
 
 
@@ -125,7 +127,8 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     [UIPrintInteractionController sharedPrintController];
     
     UIMarkupTextPrintFormatter *formatter =
-    [[UIMarkupTextPrintFormatter alloc] initWithMarkupText: [self composeHTMLAnalysisReport]];
+    [[UIMarkupTextPrintFormatter alloc] initWithMarkupText:
+     [self composeHTMLAnalysisReportIgnoringSettings: NO]];
     
     printController.printFormatter = formatter;
     
@@ -146,18 +149,47 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     
     controller.mailComposeDelegate = self;
     
-    [controller setToRecipients: @[@"sasha-e2000@mail.ru"]];
-    [controller setSubject: @"Результаты тестирования"];
+    NSString *personDateSuffix = [NSString stringWithFormat: @"%@ %@",
+                                  self.record.person.name,
+                                  [_dateFormatter stringFromDate: self.record.date]];
+    
+    [controller setToRecipients: @[___Default_Email_For_Sending_Reports]];
+    [controller setSubject:
+     [NSString stringWithFormat: ___FORMAT_Test_Results_Email_Header,
+      personDateSuffix]];
     
     
-    NSString *htmlReport   = [self composeHTMLAnalysisReport];
-    NSData *htmlReportData = [htmlReport dataUsingEncoding: NSUTF8StringEncoding];
+    NSString *htmlBriefReport     = [self composeHTMLAnalysisReportIgnoringSettings: NO];
+    NSData   *htmlBriefReportData = [htmlBriefReport dataUsingEncoding: NSUTF8StringEncoding];
     
-    [controller addAttachmentData: htmlReportData
-                         mimeType: @"text/html"
-                         fileName: [NSString stringWithFormat: @"%@%@.html",
-                                    self.record.person.name,
-                                    [_dateFormatter stringFromDate: self.record.date]]];
+    [controller addAttachmentData: htmlBriefReportData
+                         mimeType: @"text/html; charset=utf-8"
+                         fileName: [NSString stringWithFormat:
+                                    ___FORMAT_File_Name_Analysis_Report_Brief,
+                                    personDateSuffix]];
+    
+    
+    NSString *htmlFullReport     = [self composeHTMLAnalysisReportIgnoringSettings: YES];
+    NSData   *htmlFullReportData = [htmlFullReport dataUsingEncoding: NSUTF8StringEncoding];
+    
+    [controller addAttachmentData: htmlFullReportData
+                         mimeType: @"text/html; charset=utf-8"
+                         fileName: [NSString stringWithFormat:
+                                    ___FORMAT_File_Name_Analysis_Report_Full,
+                                    personDateSuffix]];
+    
+    
+    
+    NSData *jsonRecordData = [JSONTestRecordSerialization dataWithTestRecord: self.record];
+    
+    if (jsonRecordData != nil)
+    {
+        [controller addAttachmentData: jsonRecordData
+                             mimeType: @"application/json; charset=utf-8"
+                             fileName: [NSString stringWithFormat:
+                                        ___FORMAT_File_Name_JSON_Record_Backup,
+                                        personDateSuffix]];
+    }
     
     [self presentViewController: controller
                        animated: YES
@@ -165,7 +197,7 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 }
 
 
-- (NSString *) composeHTMLAnalysisReport
+- (NSString *) composeHTMLAnalysisReportIgnoringSettings: (BOOL) ignoreSettings
 {
     NSMutableString *html = [NSMutableString string];
     
@@ -193,11 +225,14 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     [html appendString: @"<col width=\"15%\">"];
     [html appendString: @"</colgroup>"];
     
-    for (NSNumber *groupIndexNumber in _analyzerGroupIndices)
+    // This block appends a row to the table corresponding the
+    // analyzer group having the provided index. It is used locally
+    // within this function in two possible scenarios: when creating
+    // a report ingoring analyzer settings and when not.
+    void (^appendGroupRow)(id<AnalyzerGroup> group, NSUInteger groupIndex)  =
+    ^(id<AnalyzerGroup> group, NSUInteger groupIndex)
     {
-        NSInteger groupIndex = [groupIndexNumber integerValue];
         
-        id<AnalyzerGroup> group = [_analyzer groupAtIndex: groupIndex];
         
         [html appendString: @"<tr>"];
         
@@ -224,12 +259,41 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
             } break;
         }
         
-        if ([group scoreIsWithinNorm])
+        // If ignoring settings, show the full report regardless of
+        // whether the score is within norm or not.
+        if ([group scoreIsWithinNorm] && !ignoreSettings)
             [html appendFormat: @"<td>%@</td>", ___Normal_Score_Placeholder];
         else
             [html appendFormat: @"<td>%@</td>", group.readableScore];
         
         [html appendString: @"</tr>"];
+    };
+    
+    
+    if (ignoreSettings)
+    {
+        // If ignoring analyzer settings, iterate through all
+        // available groups.
+        for (NSUInteger i = 0; i < _analyzer.groupsCount; ++i)
+        {
+            id<AnalyzerGroup> group = [_analyzer groupAtIndex: i];
+            
+            appendGroupRow(group, i);
+        }
+    }
+    else
+    {
+        // If not ignoring settings, then some filters may apply and
+        // some of the analyzer groups could be excluded from the list;
+        // use only the indices that are enabled for the current settings.
+        for (NSNumber *groupIndexNumber in _analyzerGroupIndices)
+        {
+            NSInteger groupIndex = [groupIndexNumber integerValue];
+            
+            id<AnalyzerGroup> group = [_analyzer groupAtIndex: groupIndex];
+            
+            appendGroupRow(group, groupIndex);
+        }
     }
     
     [html appendString: @"</table>"];

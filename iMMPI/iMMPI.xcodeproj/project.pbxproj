@@ -276,6 +276,7 @@
 		5D74CEF8169B085000BAA202 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5DC0B2C4168CDB790035A910 /* Strings.h */,
 				5DC68C8216D0F53200B338C2 /* Views */,
 				5D74CEFA169B086900BAA202 /* Storyboard */,
 				5DC40473168C2D49000AFBAE /* Table View Cells */,
@@ -396,7 +397,6 @@
 		5DA5C9EA163B018D00CF1601 /* iMMPI */ = {
 			isa = PBXGroup;
 			children = (
-				5DC0B2C4168CDB790035A910 /* Strings.h */,
 				5DCC9642168DC12B004F8D4E /* Utils */,
 				5D5E05B9164651A800A5A704 /* Model */,
 				5D74CEF8169B085000BAA202 /* UI */,

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+// TODO: include HTML answers report in the email
+
 #pragma mark -
 #pragma mark AppDelegate interface
 

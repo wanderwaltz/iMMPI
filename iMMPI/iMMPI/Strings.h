@@ -43,4 +43,12 @@
 
 #define ___Normal_Score_Placeholder @"-"
 
+
+#define ___Default_Email_For_Sending_Reports @"sasha-e2000@mail.ru"
+
+#define ___FORMAT_Test_Results_Email_Header @"Результаты тестирования %@"
+#define ___FORMAT_File_Name_Analysis_Report_Brief @"Анализ (краткий) - %@.html"
+#define ___FORMAT_File_Name_Analysis_Report_Full  @"Анализ (полный) - %@.html"
+#define ___FORMAT_File_Name_JSON_Record_Backup @"Ответы %@ (резервная копия).json"
+
 #endif
