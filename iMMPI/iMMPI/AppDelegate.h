@@ -10,7 +10,6 @@
 
 // TODO: check intellectual scale X (especially that the invalid statements are ignored)
 // TODO: add html details for intellectual scale X
-// TODO: check Ригидность and Стабильность профиля to invert the matches-median value
 
 #pragma mark -
 #pragma mark AppDelegate interface

@@ -74,7 +74,7 @@
     id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
     id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
-    NSUInteger T_aer =
+    NSUInteger TaerSum =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +
     [IScale_96 computePercentageForRecord: record analyser: analyser] +
     [IScale_97 computePercentageForRecord: record analyser: analyser] +
@@ -85,15 +85,15 @@
     addRow(___Details_Matches,          [NSString stringWithFormat: @"%d", matches]);
     addRow(___Details_Matches_Percent,  [NSString stringWithFormat: @"%d%%", percentage]);
     addRow(___Details_Brackets,         [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
-    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", T_aer]);
+    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", TaerSum]);
     
-    if (T_aer > 0)
+    if (TaerSum > 0)
     {
         NSUInteger oldPercentage = percentage;
-        percentage = percentage * 100 / T_aer;
+        percentage = percentage * 100 / TaerSum;
         
         addRow(___Details_Percentage_Taer_Sum,
-               [NSString stringWithFormat: @"%d * 100 / %d = %d", oldPercentage, T_aer, percentage]);
+               [NSString stringWithFormat: @"%d * 100 / %d = %d", oldPercentage, TaerSum, percentage]);
         
         if (percentage <= A)
         {
@@ -163,18 +163,18 @@
     id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
     id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
-    NSUInteger T_aer =
+    NSUInteger TaerSum =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +
     [IScale_96 computePercentageForRecord: record analyser: analyser] +
     [IScale_97 computePercentageForRecord: record analyser: analyser] +
     [IScale_98 computePercentageForRecord: record analyser: analyser];
     
-    if (T_aer > 0)
+    if (TaerSum > 0)
     {
         NSUInteger percentage = [self computePercentageForRecord: record
                                                         analyser: analyser];
         
-        percentage = percentage * 100 / T_aer;
+        percentage = percentage * 100 / TaerSum;
         
         if (percentage <= A)
             self.score = round(10 * 1.5 * (double)percentage/(double)A);

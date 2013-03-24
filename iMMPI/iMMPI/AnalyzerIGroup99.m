@@ -112,7 +112,7 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
     id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
-    NSUInteger T_aer =
+    NSUInteger TaerSum =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +
     [IScale_96 computePercentageForRecord: record analyser: analyser] +
     [IScale_97 computePercentageForRecord: record analyser: analyser] +
@@ -121,9 +121,9 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     
     addRow(___Details_Score,            self.readableScore);
     addRow(___Details_Brackets,         [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
-    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", T_aer]);
+    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", TaerSum]);
     
-    if (T_aer > 0)
+    if (TaerSum > 0)
     {
         NSUInteger percentage95 = [IScale_95 computePercentageForRecord: record analyser: analyser];
         NSUInteger percentage96 = [IScale_96 computePercentageForRecord: record analyser: analyser];
@@ -131,10 +131,10 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
         addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%d%%", percentage95]);
         addRow(___Details_Matches_IScale_96, [NSString stringWithFormat: @"%d%%", percentage96]);
         
-        NSUInteger percentage = (percentage95 + percentage96) * 100 / T_aer;
+        NSUInteger percentage = (percentage95 + percentage96) * 100 / TaerSum;
         
         addRow(___Details_Percentage_Taer_Sum,
-               [NSString stringWithFormat: @"(%d + %d) * 100 / %d = %d", percentage95, percentage96, T_aer, percentage]);
+               [NSString stringWithFormat: @"(%d + %d) * 100 / %d = %d", percentage95, percentage96, TaerSum, percentage]);
         
         if (percentage <= A)
         {
@@ -211,17 +211,17 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
     id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
-    NSUInteger T_aer =
+    NSUInteger TaerSum =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +
     [IScale_96 computePercentageForRecord: record analyser: analyser] +
     [IScale_97 computePercentageForRecord: record analyser: analyser] +
     [IScale_98 computePercentageForRecord: record analyser: analyser];
     
-    if (T_aer > 0)
+    if (TaerSum > 0)
     {
         NSUInteger percentage =
         ([IScale_95 computePercentageForRecord: record analyser: analyser] +
-         [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / T_aer;
+         [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / TaerSum;
         
         if (percentage <= A)
             self.score = round(10 * 1.5 * (double)percentage/(double)A);

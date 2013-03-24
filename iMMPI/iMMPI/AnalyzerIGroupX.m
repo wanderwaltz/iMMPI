@@ -114,7 +114,7 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
                         analyser: (id<AnalyzerProtocol>) analyser
 {
     NSInteger X = 0;
-    NSInteger T_aer = 0;
+    NSInteger TaerSum = 0;
     NSInteger FE99 = 0;
     
     NSInteger FE[3] = {0, 0, 0};
@@ -144,13 +144,13 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
     id<AnalyzerGroup> IScale_101 = [analyser firstGroupForType: kGroupType_IScale_101];
     id<AnalyzerGroup> IScale_102 = [analyser firstGroupForType: kGroupType_IScale_102];
     
-    T_aer =
+    TaerSum =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +
     [IScale_96 computePercentageForRecord: record analyser: analyser] +
     [IScale_97 computePercentageForRecord: record analyser: analyser] +
     [IScale_98 computePercentageForRecord: record analyser: analyser];
     
-    if (T_aer == 0)
+    if (TaerSum == 0)
     {
         self.score = -1;
         return self.score;
@@ -158,7 +158,7 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
     
     FE99 =
     ([IScale_95 computePercentageForRecord: record analyser: analyser] +
-     [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / T_aer;
+     [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / TaerSum;
     
     X =
     [IScale_100 computePercentageForRecord: record analyser: analyser] +

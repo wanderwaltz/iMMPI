@@ -129,7 +129,7 @@
 		5D85558716906E98004E3021 /* AnalyzerIGroupT1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIGroupT1.h; sourceTree = "<group>"; };
 		5D85558816906E98004E3021 /* AnalyzerIGroupT1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerIGroupT1.m; sourceTree = "<group>"; };
 		5D85558B16907158004E3021 /* AnalyzerIGroup99.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIGroup99.h; sourceTree = "<group>"; };
-		5D85558C16907158004E3021 /* AnalyzerIGroup99.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerIGroup99.m; sourceTree = "<group>"; };
+		5D85558C16907158004E3021 /* AnalyzerIGroup99.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AnalyzerIGroup99.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5D85558F169074D0004E3021 /* AnalyzerIGroupM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIGroupM.h; sourceTree = "<group>"; };
 		5D855590169074D0004E3021 /* AnalyzerIGroupM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerIGroupM.m; sourceTree = "<group>"; };
 		5D855593169076A4004E3021 /* AnalyzerIGroupX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIGroupX.h; sourceTree = "<group>"; };

@@ -119,7 +119,7 @@ static id _logMultiplierNotFound();
     id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
     id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
-    NSUInteger T_aer =
+    NSUInteger TaerSum =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +
     [IScale_96 computePercentageForRecord: record analyser: analyser] +
     [IScale_97 computePercentageForRecord: record analyser: analyser] +
@@ -128,9 +128,9 @@ static id _logMultiplierNotFound();
     
     addRow(___Details_Score,            self.readableScore);
     addRow(___Details_Brackets,         [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
-    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", T_aer]);
+    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", TaerSum]);
     
-    if (T_aer > 0)
+    if (TaerSum > 0)
     {
         NSUInteger percentage = 0;
         
@@ -144,11 +144,11 @@ static id _logMultiplierNotFound();
             
             percentage =
             ([IScale_95 computePercentageForRecord: record analyser: analyser] +
-             [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / T_aer;
+             [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / TaerSum;
             
             addRow(___Details_Percentage_Taer_Sum,
                    [NSString stringWithFormat: @"(%d + %d) * 100 / %d = %d",
-                    percentage95, percentage96, T_aer, percentage]);
+                    percentage95, percentage96, TaerSum, percentage]);
         }
         else
         {
@@ -157,11 +157,11 @@ static id _logMultiplierNotFound();
             addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%d%%", percentage95]);
             
             percentage =
-            [IScale_95 computePercentageForRecord: record analyser: analyser] * 100 / T_aer;
+            [IScale_95 computePercentageForRecord: record analyser: analyser] * 100 / TaerSum;
             
             addRow(___Details_Percentage_Taer_Sum,
                    [NSString stringWithFormat: @"%d * 100 / %d = %d",
-                    percentage95, T_aer, percentage]);
+                    percentage95, TaerSum, percentage]);
         }
         
         NSUInteger oldPercentage = percentage;
@@ -170,12 +170,12 @@ static id _logMultiplierNotFound();
         
         addRow(___Details_Matches_IScale_98, [NSString stringWithFormat: @"%d%%", percentage98]);
         
-        percentage = (percentage * percentage98 * 100 / T_aer / 10);
+        percentage = (percentage * percentage98 * 100 / TaerSum / 10);
         
         
         addRow(___Details_Final_Percentage,
                [NSString stringWithFormat: @"%d * %d * 100 / %d / 10 = %d",
-                oldPercentage, percentage98, T_aer, percentage]);
+                oldPercentage, percentage98, TaerSum, percentage]);
         
         if (percentage <= A)
         {
@@ -252,13 +252,13 @@ static id _logMultiplierNotFound();
     id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
     id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
-    NSUInteger T_aer =
+    NSUInteger TaerSum =
     [IScale_95 computePercentageForRecord: record analyser: analyser] +
     [IScale_96 computePercentageForRecord: record analyser: analyser] +
     [IScale_97 computePercentageForRecord: record analyser: analyser] +
     [IScale_98 computePercentageForRecord: record analyser: analyser];
     
-    if (T_aer > 0)
+    if (TaerSum > 0)
     {
         NSUInteger percentage = 0;
         
@@ -266,17 +266,17 @@ static id _logMultiplierNotFound();
         {
             percentage =
             ([IScale_95 computePercentageForRecord: record analyser: analyser] +
-             [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / T_aer;
+             [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / TaerSum;
         }
         else
         {
             percentage =
-            [IScale_95 computePercentageForRecord: record analyser: analyser] * 100 / T_aer;
+            [IScale_95 computePercentageForRecord: record analyser: analyser] * 100 / TaerSum;
         }
         
         percentage = (percentage * [IScale_98 computePercentageForRecord: record
                                                                 analyser: analyser] *
-                      100 / T_aer / 10);
+                      100 / TaerSum / 10);
         
         if (percentage <= A)
             self.score = round(10 * 1.5 * (double)percentage/(double)A);

@@ -12,7 +12,7 @@
 #pragma mark -
 #pragma mark AnalyzerBase5Group interface
 
-/*! Implements Base 5 Analysis scale ("Половая активность"). This scale is based on a standard FM scale type (F scale with gender-dependent answer sets), but the computation differs slightly for females - difference between number of matches and the median value is taken into account with the opposite sign.
+/*! Implements a special type of scale based on a standard FM scale type (F scale with gender-dependent answer sets), but the computation differs slightly for females - difference between number of matches and the median value is taken into account with the opposite sign.
  */
 @interface AnalyzerBase5Group : AnalyzerFGroupFM
 @end

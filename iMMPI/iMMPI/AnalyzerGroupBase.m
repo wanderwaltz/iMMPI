@@ -75,7 +75,10 @@ static id _logSubgroupNotDictionary(id object);
                       kGroupType_Group      : @"AnalyzerGroupBase",
                       
                       kGroupType_FScale     : @"AnalyzerFGroup",
-                      kGroupType_FScale_FM  : @"AnalyzerFGroupFM",
+                      
+                      // It seems that all of FScale_FM type scales should
+                      // compute their scores exactly as the Base5-type scale
+                      kGroupType_FScale_FM  : @"AnalyzerBase5Group",
                       
                       kGroupType_PScale     : @"AnalyzerPGroup",
                       
