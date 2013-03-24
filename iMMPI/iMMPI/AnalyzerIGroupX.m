@@ -61,6 +61,29 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (BOOL) canProvideDetailedInfo
+{
+    return YES;
+}
+
+
+- (NSString *) htmlDetailedInfoForRecord: (id<TestRecordProtocol>) record
+                                analyser: (id<AnalyzerProtocol>) analyser
+{
+    NSMutableString *html = [NSMutableString string];
+    
+    [html appendString: @"<!DOCTYPE html>"];
+    [html appendString: @"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
+    [html appendString: @"<html>"];
+    [html appendString: @"<body>"];
+    
+    [html appendString: @"</body>"];
+    [html appendString: @"</html>"];
+    
+    return html;
+}
+
+
 - (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record
 {
     return _positiveIndices;

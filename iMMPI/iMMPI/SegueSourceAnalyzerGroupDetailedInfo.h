@@ -19,6 +19,7 @@
 
 - (id<AnalyzerGroupDetailedInfoViewControllerDelegate>) delegateForAnalyzerGroupDetailedInfoWithSender: (id) sender;
 
+- (id<AnalyzerProtocol>) analyzerForDetailedInfoWithSender: (id) sender;
 - (id<AnalyzerGroup>) analyzerGroupForDetailedInfoWithSender: (id) sender;
 - (id<TestRecordProtocol>) recordForAnalyzerGroupDetailedInfoWithSender: (id) sender;
 

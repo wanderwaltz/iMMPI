@@ -81,10 +81,18 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     
     if (self != nil)
     {
-        _positiveIndices = [[answersPositiveString componentsSeparatedByString: @" "]
-                            valueForKey: @"intValue"];
-        _negativeIndices = [[answersNegativeString componentsSeparatedByString: @" "]
-                            valueForKey: @"intValue"];
+        if (answersPositiveString.length > 0)
+            _positiveIndices = [[answersPositiveString componentsSeparatedByString: @" "]
+                                valueForKey: @"intValue"];
+        else
+            _positiveIndices = @[];
+        
+        
+        if (answersNegativeString.length > 0)
+            _negativeIndices = [[answersNegativeString componentsSeparatedByString: @" "]
+                                valueForKey: @"intValue"];
+        else
+            _negativeIndices = @[];
         
         if (_positiveIndices.count + _negativeIndices.count == 0)
             return _logNoAnswersFound();
@@ -98,6 +106,114 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 
 #pragma mark -
 #pragma mark AnalyzerGroup
+
+- (BOOL) canProvideDetailedInfo
+{
+    return YES;
+}
+
+
+- (NSString *) htmlDetailedInfoForRecord: (id<TestRecordProtocol>) record
+                                analyser: (id<AnalyzerProtocol>) analyser
+{
+    NSMutableString *html = [NSMutableString string];
+    
+    [html appendString: @"<!DOCTYPE html>"];
+    [html appendString: @"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
+    [html appendString: @"<html>"];
+    [html appendString: @"<body>"];
+    
+    [html appendString: @"<table width=\"100%\">"];
+    [html appendString: @"<colgroup>"];
+    [html appendString: @"<col width=\"35%\">"];
+    [html appendString: @"<col width=\"65%\">"];
+    [html appendString: @"</colgroup>"];
+    
+    void (^addRow)(NSString *left,
+                   NSString *right) =
+    ^(NSString *left,
+      NSString *right)
+    {
+        [html appendString: @"<tr>"];
+        
+        [html appendFormat: @"<td colspan=\"1\">%@</td>", left];
+        [html appendFormat: @"<td colspan=\"1\">%@</td>", right];
+        
+        [html appendString: @"</tr>"];
+    };
+    
+    NSUInteger matches = [self computeMatchesForRecord: record
+                                              analyser: analyser];
+    
+    NSUInteger percentage = [self computePercentageForRecord: record
+                                                    analyser: analyser];
+    
+    NSArray *brackets = [self bracketsForRecord: record];
+    
+    NSUInteger A = [brackets[0] unsignedIntegerValue];
+    NSUInteger B = [brackets[1] unsignedIntegerValue];
+    NSUInteger C = [brackets[2] unsignedIntegerValue];
+    NSUInteger D = [brackets[3] unsignedIntegerValue];
+    
+    
+    addRow(___Details_Score,            self.readableScore);
+    addRow(___Details_Matches,          [NSString stringWithFormat: @"%d", matches]);
+    addRow(___Details_Matches_Percent,  [NSString stringWithFormat: @"%d%%", percentage]);
+    addRow(___Details_Brackets,         [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
+
+    if (percentage <= A)
+    {
+        double score = 1.5 * (double)percentage / (double)A;
+        
+        addRow(___Details_Computation,
+               [NSString stringWithFormat:
+                @"%d <= %d; 1.5 * %d / %d = %.2lf",
+               percentage, A, percentage, A, score]);
+    }
+    else if (percentage <= B)
+    {
+        double score = (1.5 + (double)(percentage-A) / (double)(B-A));
+        
+        addRow(___Details_Computation,
+               [NSString stringWithFormat:
+                @"%d < %d <= %d; 1.5 + (%d-%d) / (%d-%d) = %.2lf",
+                A, percentage, B, percentage, A, B, A, score]);
+    }
+    else if (percentage <= C)
+    {
+        double score = (2.5 + (double)(percentage-B) / (double)(C-B));
+        
+        addRow(___Details_Computation,
+               [NSString stringWithFormat:
+                @"%d < %d <= %d; 2.5 + (%d-%d) / (%d-%d) = %.2lf",
+                B, percentage, C, percentage, B, C, B, score]);
+    }
+    else if (percentage <= D)
+    {
+        double score = (3.5 + (double)(percentage-C) / (double)(D-C));
+        
+        addRow(___Details_Computation,
+               [NSString stringWithFormat:
+                @"%d < %d <= %d; 3.5 + (%d-%d) / (%d-%d) = %.2lf",
+                C, percentage, D, percentage, C, D, C, score]);
+    }
+    else
+    {
+        double score = (4.5 + 0.5 * (double)(percentage-D) / (double)(100-D));
+        
+        addRow(___Details_Computation,
+               [NSString stringWithFormat:
+                @"%d < %d; 4.5 * 0.5 + (%d-%d) / (100-%d) = %.2lf",
+                D, percentage, percentage, D, D, score]);
+    }
+    
+    [html appendString: @"</table>"];
+    [html appendString: @"</body>"];
+    [html appendString: @"</html>"];
+    
+    return html;
+}
+
 
 - (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record
 {

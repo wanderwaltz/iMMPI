@@ -18,6 +18,7 @@
 
 - (void) setDelegateForAnalyzerGroupDetailedInfo: (id<AnalyzerGroupDetailedInfoViewControllerDelegate>) delegate;
 
+- (void) setAnalyzerForDetailedInfo: (id<AnalyzerProtocol>) analyzer;
 - (void) setAnalyzerGroupForDetailedInfo: (id<AnalyzerGroup>) group;
 - (void) setRecordForAnalyzerGroupDetailedInfo: (id<TestRecordProtocol>) record;
 

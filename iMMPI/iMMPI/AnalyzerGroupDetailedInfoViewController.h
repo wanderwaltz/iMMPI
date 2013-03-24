@@ -32,6 +32,7 @@
 
 @property (weak, nonatomic) id<AnalyzerGroupDetailedInfoViewControllerDelegate> delegate;
 
+@property (strong, nonatomic) id<AnalyzerProtocol> analyzer;
 @property (strong, nonatomic) id<AnalyzerGroup> analyzerGroup;
 @property (strong, nonatomic) id<TestRecordProtocol> record;
 

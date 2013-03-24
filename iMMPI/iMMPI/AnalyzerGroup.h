@@ -27,6 +27,9 @@
 - (BOOL) scoreIsWithinNorm;
 - (BOOL) canProvideDetailedInfo;
 
+- (NSString *) htmlDetailedInfoForRecord: (id<TestRecordProtocol>) record
+                                analyser: (id<AnalyzerProtocol>) analyser;
+
 
 - (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index;
 

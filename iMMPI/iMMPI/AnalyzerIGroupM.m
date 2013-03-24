@@ -78,6 +78,158 @@ static id _logMultiplierNotFound();
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (NSString *) htmlDetailedInfoForRecord: (id<TestRecordProtocol>) record
+                                analyser: (id<AnalyzerProtocol>) analyser
+{
+    NSMutableString *html = [NSMutableString string];
+    
+    [html appendString: @"<!DOCTYPE html>"];
+    [html appendString: @"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
+    [html appendString: @"<html>"];
+    [html appendString: @"<body>"];
+    
+    [html appendString: @"<table width=\"100%\">"];
+    [html appendString: @"<colgroup>"];
+    [html appendString: @"<col width=\"35%\">"];
+    [html appendString: @"<col width=\"65%\">"];
+    [html appendString: @"</colgroup>"];
+    
+    void (^addRow)(NSString *left,
+                   NSString *right) =
+    ^(NSString *left,
+      NSString *right)
+    {
+        [html appendString: @"<tr>"];
+        
+        [html appendFormat: @"<td colspan=\"1\">%@</td>", left];
+        [html appendFormat: @"<td colspan=\"1\">%@</td>", right];
+        
+        [html appendString: @"</tr>"];
+    };
+    
+    NSArray *brackets = [self bracketsForRecord: record];
+    
+    NSUInteger A = [brackets[0] unsignedIntegerValue];
+    NSUInteger B = [brackets[1] unsignedIntegerValue];
+    NSUInteger C = [brackets[2] unsignedIntegerValue];
+    NSUInteger D = [brackets[3] unsignedIntegerValue];
+    
+    id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
+    id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
+    id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
+    id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
+    
+    NSUInteger T_aer =
+    [IScale_95 computePercentageForRecord: record analyser: analyser] +
+    [IScale_96 computePercentageForRecord: record analyser: analyser] +
+    [IScale_97 computePercentageForRecord: record analyser: analyser] +
+    [IScale_98 computePercentageForRecord: record analyser: analyser];
+    
+    
+    addRow(___Details_Score,            self.readableScore);
+    addRow(___Details_Brackets,         [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
+    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", T_aer]);
+    
+    if (T_aer > 0)
+    {
+        NSUInteger percentage = 0;
+        
+        if ([_multiplierType isEqualToString: kGroupType_IScale_99])
+        {
+            NSUInteger percentage95 = [IScale_95 computePercentageForRecord: record analyser: analyser];
+            NSUInteger percentage96 = [IScale_96 computePercentageForRecord: record analyser: analyser];
+            
+            addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%d%%", percentage95]);
+            addRow(___Details_Matches_IScale_96, [NSString stringWithFormat: @"%d%%", percentage96]);
+            
+            percentage =
+            ([IScale_95 computePercentageForRecord: record analyser: analyser] +
+             [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / T_aer;
+            
+            addRow(___Details_Percentage_Taer_Sum,
+                   [NSString stringWithFormat: @"(%d + %d) * 100 / %d = %d",
+                    percentage95, percentage96, T_aer, percentage]);
+        }
+        else
+        {
+            NSUInteger percentage95 = [IScale_95 computePercentageForRecord: record analyser: analyser];
+            
+            addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%d%%", percentage95]);
+            
+            percentage =
+            [IScale_95 computePercentageForRecord: record analyser: analyser] * 100 / T_aer;
+            
+            addRow(___Details_Percentage_Taer_Sum,
+                   [NSString stringWithFormat: @"%d * 100 / %d = %d",
+                    percentage95, T_aer, percentage]);
+        }
+        
+        NSUInteger oldPercentage = percentage;
+        NSUInteger percentage98  = [IScale_98 computePercentageForRecord: record
+                                                                analyser: analyser];
+        
+        addRow(___Details_Matches_IScale_98, [NSString stringWithFormat: @"%d%%", percentage98]);
+        
+        percentage = (percentage * percentage98 * 100 / T_aer / 10);
+        
+        
+        addRow(___Details_Final_Percentage,
+               [NSString stringWithFormat: @"%d * %d * 100 / %d / 10 = %d",
+                oldPercentage, percentage98, T_aer, percentage]);
+        
+        if (percentage <= A)
+        {
+            double score = 1.5 * (double)percentage / (double)A;
+            
+            addRow(___Details_Computation,
+                   [NSString stringWithFormat:
+                    @"%d <= %d; 1.5 * %d / %d = %.2lf",
+                    percentage, A, percentage, A, score]);
+        }
+        else if (percentage <= B)
+        {
+            double score = (1.5 + (double)(percentage-A) / (double)(B-A));
+            
+            addRow(___Details_Computation,
+                   [NSString stringWithFormat:
+                    @"%d < %d <= %d; 1.5 + (%d-%d) / (%d-%d) = %.2lf",
+                    A, percentage, B, percentage, A, B, A, score]);
+        }
+        else if (percentage <= C)
+        {
+            double score = (2.5 + (double)(percentage-B) / (double)(C-B));
+            
+            addRow(___Details_Computation,
+                   [NSString stringWithFormat:
+                    @"%d < %d <= %d; 2.5 + (%d-%d) / (%d-%d) = %.2lf",
+                    B, percentage, C, percentage, B, C, B, score]);
+        }
+        else if (percentage <= D)
+        {
+            double score = (3.5 + (double)(percentage-C) / (double)(D-C));
+            
+            addRow(___Details_Computation,
+                   [NSString stringWithFormat:
+                    @"%d < %d <= %d; 3.5 + (%d-%d) / (%d-%d) = %.2lf",
+                    C, percentage, D, percentage, C, D, C, score]);
+        }
+        else
+        {
+            addRow(___Details_Computation,
+                   [NSString stringWithFormat:
+                    @"%d < %d; 5.00",
+                    D, percentage]);
+        }
+    }
+    
+    [html appendString: @"</table>"];
+    [html appendString: @"</body>"];
+    [html appendString: @"</html>"];
+    
+    return html;
+}
+
+
 - (NSArray *) bracketsForRecord: (id<TestRecordProtocol>) record
 {
     NSAssert(_brackets.count == 4, @"");

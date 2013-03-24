@@ -968,6 +968,7 @@
                                     <subviews>
                                         <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgI-bF-37g">
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <dataDetectorType key="dataDetectorTypes"/>
                                         </webView>
                                     </subviews>
                                     <constraints>
@@ -1059,7 +1060,6 @@
         <class className="AnalyzerGroupDetailedInfoViewController" superclassName="StoryboardManagedViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyzerGroupDetailedInfoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelButtonAction:"/>
                 <relationship kind="outlet" name="_collectionView" candidateClass="UICollectionView"/>
             </relationships>
         </class>
@@ -1074,8 +1074,6 @@
         <class className="EditTestRecordViewController" superclassName="StoryboardManagedTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTestRecordViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="saveButtonAction:"/>
                 <relationship kind="outlet" name="_ageGroupLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="_ageGroupTableViewCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="_dateLabel" candidateClass="UILabel"/>
@@ -1124,10 +1122,6 @@
         <class className="TestAnswersInputViewController" superclassName="TestAnswersTableViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersInputViewController.h"/>
             <relationships>
-                <relationship kind="action" name="negativeAnswerButtonAction:"/>
-                <relationship kind="action" name="nextButtonAction:"/>
-                <relationship kind="action" name="positiveAnswerButtonAction:"/>
-                <relationship kind="action" name="prevButtonAction:"/>
                 <relationship kind="outlet" name="_analyzisBarButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="_inputView" candidateClass="UIView"/>
             </relationships>
@@ -1149,9 +1143,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="UIRefreshControl" superclassName="UIControl">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>

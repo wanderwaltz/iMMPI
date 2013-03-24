@@ -153,6 +153,13 @@ static id _logSubgroupNotDictionary(id object);
 }
 
 
+- (NSString *) htmlDetailedInfoForRecord: (id<TestRecordProtocol>) record
+                                analyser: (id<AnalyzerProtocol>) analyser
+{
+    return nil;
+}
+
+
 - (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record
 {
     return nil;

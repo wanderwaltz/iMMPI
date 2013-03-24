@@ -211,6 +211,9 @@ NSString * const kSegueIDAnalyzerGroupDetailedInfo = @"com.immpi.segue.analyzerG
     
     [destination setRecordForAnalyzerGroupDetailedInfo:
      [source recordForAnalyzerGroupDetailedInfoWithSender: sender]];
+    
+    [destination setAnalyzerForDetailedInfo:
+     [source analyzerForDetailedInfoWithSender: sender]];
 }
 
 @end

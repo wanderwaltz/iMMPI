@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-// TODO: popup windows with analyzer groups debug info
+// TODO: fix parsing empty string of answers
+// TODO: fix analyzer screen not showing properly for some of completed records
 
 #pragma mark -
 #pragma mark AppDelegate interface

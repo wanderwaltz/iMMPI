@@ -90,7 +90,7 @@ referenceSizeForFooterInSection: (NSInteger) section
 {
     if (section == kSectionDetails)
     {
-        return CGSizeMake(0.0, 200.0);
+        return CGSizeMake(0.0, 400.0);
     }
     else
     {
@@ -168,6 +168,15 @@ referenceSizeForFooterInSection: (NSInteger) section
                                                       forIndexPath: indexPath];
             FRB_AssertClass(footer, WebCollectionViewFooter);
             
+            NSString *htmlDetails = [self.analyzerGroup htmlDetailedInfoForRecord: self.record
+                                                                         analyser: self.analyzer];
+            
+            if (htmlDetails.length > 0)
+            {
+                [footer.webView loadHTMLString: htmlDetails
+                                       baseURL: nil];
+            }
+            
             return footer;
         }
         else
@@ -195,17 +204,27 @@ referenceSizeForFooterInSection: (NSInteger) section
             
             cell.label.text = [NSString stringWithFormat: @"%d", statementID];
             
-            if ([self.record.testAnswers
-                 answerTypeForStatementID: statementID] == AnswerTypeNegative)
+            if ([self.analyzer isValidStatementID: statementID])
             {
-                cell.backgroundColor = [UIColor colorWithRed: 1.0
-                                                       green: 0.5
-                                                        blue: 0.5
-                                                       alpha: 1.0];
+                if ([self.record.testAnswers
+                     answerTypeForStatementID: statementID] == AnswerTypeNegative)
+                {
+                    cell.backgroundColor = [UIColor colorWithRed: 1.0
+                                                           green: 0.5
+                                                            blue: 0.5
+                                                           alpha: 1.0];
+                    cell.label.textColor = [UIColor whiteColor];
+                }
+                else
+                {
+                    cell.backgroundColor = [UIColor clearColor];
+                    cell.label.textColor = [UIColor blackColor];
+                }
             }
             else
             {
                 cell.backgroundColor = [UIColor clearColor];
+                cell.label.textColor = [UIColor lightGrayColor];
             }
         } break;
             
@@ -215,17 +234,27 @@ referenceSizeForFooterInSection: (NSInteger) section
             
             cell.label.text = [NSString stringWithFormat: @"%d", statementID];
             
-            if ([self.record.testAnswers
-                 answerTypeForStatementID: statementID] == AnswerTypePositive)
+            if ([self.analyzer isValidStatementID: statementID])
             {
-                cell.backgroundColor = [UIColor colorWithRed: 0.5
-                                                       green: 0.5
-                                                        blue: 1.0
-                                                       alpha: 1.0];
+                if ([self.record.testAnswers
+                     answerTypeForStatementID: statementID] == AnswerTypePositive)
+                {
+                    cell.backgroundColor = [UIColor colorWithRed: 0.5
+                                                           green: 0.5
+                                                            blue: 1.0
+                                                           alpha: 1.0];
+                    cell.label.textColor = [UIColor whiteColor];
+                }
+                else
+                {
+                    cell.backgroundColor = [UIColor clearColor];
+                    cell.label.textColor = [UIColor blackColor];
+                }
             }
             else
             {
                 cell.backgroundColor = [UIColor clearColor];
+                cell.label.textColor = [UIColor lightGrayColor];
             }
         } break;
             
@@ -260,6 +289,12 @@ referenceSizeForFooterInSection: (NSInteger) section
 - (void) setRecordForAnalyzerGroupDetailedInfo: (id<TestRecordProtocol>) record
 {
     self.record = record;
+}
+
+
+- (void) setAnalyzerForDetailedInfo: (id<AnalyzerProtocol>) analyzer
+{
+    self.analyzer = analyzer;
 }
 
 @end

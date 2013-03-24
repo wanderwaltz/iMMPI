@@ -348,6 +348,10 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 }
 
 
+- (id<AnalyzerProtocol>) analyzerForDetailedInfoWithSender: (id) sender
+{
+    return _analyzer;
+}
 
 
 #pragma mark -
