@@ -114,6 +114,12 @@ static id _logExpectedFloat(NSString *key, id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (BOOL) canProvideDetailedInfo
+{
+    return YES;
+}
+
+
 - (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record
 {
     return _positiveIndices;

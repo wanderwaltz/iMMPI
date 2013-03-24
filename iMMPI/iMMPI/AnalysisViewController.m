@@ -13,6 +13,7 @@
 #import "AnalysisViewController.h"
 #import "AnalyzerTableViewCell.h"
 #import "AnalysisOptionsViewController.h"
+#import "AnalyzerGroupDetailedInfoViewController.h"
 #import "AnalysisSettings.h"
 
 #import "AnalysisHTMLReportGenerator.h"
@@ -34,6 +35,7 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 @interface AnalysisViewController()
 <UIPopoverControllerDelegate,
  AnalysisOptionsViewControllerDelegate,
+ AnalyzerGroupDetailedInfoViewControllerDelegate,
  MFMailComposeViewControllerDelegate>
 {
     Analyzer *_analyzer;
@@ -318,6 +320,36 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 }
 
 
+#pragma mark SegueSourceAnalyzerGroupDetailedInfo
+
+- (id<AnalyzerGroupDetailedInfoViewControllerDelegate>) delegateForAnalyzerGroupDetailedInfoWithSender: (id) sender
+{
+    return self;
+}
+
+
+- (id<AnalyzerGroup>) analyzerGroupForDetailedInfoWithSender: (id) sender
+{
+    if ([sender conformsToProtocol: @protocol(AnalyzerGroup)])
+    {
+        return sender;
+    }
+    else
+    {
+        NSAssert(NO, @"Unknown sender object in -analyzerGroupForDetailedInfoWithSender: method: %@", sender);
+        return nil;
+    }
+}
+
+
+- (id<TestRecordProtocol>) recordForAnalyzerGroupDetailedInfoWithSender: (id) sender
+{
+    return self.record;
+}
+
+
+
+
 #pragma mark -
 #pragma mark AnalysisOptionsViewControllerDelegate
 
@@ -370,6 +402,29 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     if (popoverController == _analysisOptionsPopover)
     {
         _analysisOptionsPopover = nil;
+    }
+}
+
+
+#pragma mark -
+#pragma mark UITableViewDelegate
+
+- (void)      tableView: (UITableView *) tableView
+didSelectRowAtIndexPath: (NSIndexPath *) indexPath
+{
+    NSUInteger groupIndex = [_analyzerGroupIndices[indexPath.row] integerValue];
+    
+    id<AnalyzerGroup> group = [_analyzer groupAtIndex: groupIndex];
+    
+    if ([group canProvideDetailedInfo])
+    {
+        [self performSegueWithIdentifier: kSegueIDAnalyzerGroupDetailedInfo
+                                  sender: group];
+    }
+    else
+    {
+        [tableView deselectRowAtIndexPath: indexPath
+                                 animated: YES];
     }
 }
 
@@ -445,6 +500,22 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 
     
     return cell;
+}
+
+
+#pragma mark -
+#pragma mark AnalyzerGroupDetailedInfoViewControllerDelegate
+
+- (void) analyzerGroudDetailedInfoViewControllerDidCancel: (AnalyzerGroupDetailedInfoViewController *) controller
+{
+    if (self.tableView.indexPathForSelectedRow != nil)
+    {
+        [self.tableView deselectRowAtIndexPath: self.tableView.indexPathForSelectedRow
+                                      animated: YES];
+    }
+    
+    [self dismissViewControllerAnimated: YES
+                             completion: nil];
 }
 
 @end

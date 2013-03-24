@@ -29,7 +29,9 @@ NSString * const kSegueIDBlankDetail  = @"com.immpi.segue.blankDetail";
 NSString * const kSegueIDListGroup    = @"com.immpi.segue.listGroup";
 NSString * const kSegueIDViewTrash    = @"com.immpi.segue.viewTrash";
 
-NSString * const kSegueIDAnalyzer      = @"com.immpi.segue.analyzer";
+NSString * const kSegueIDAnalyzer     = @"com.immpi.segue.analyzer";
+
+NSString * const kSegueIDAnalyzerGroupDetailedInfo = @"com.immpi.segue.analyzerGroupDetailedInfo";
 
 
 #pragma mark -
@@ -70,7 +72,9 @@ NSString * const kSegueIDAnalyzer      = @"com.immpi.segue.analyzer";
         kSegueIDListGroup    : @"handleListRecords:sender:",
         kSegueIDViewTrash    : @"handleListRecords:sender:",
         
-        kSegueIDAnalyzer     : @"handleAnalyzeRecord:sender:"
+        kSegueIDAnalyzer     : @"handleAnalyzeRecord:sender:",
+        
+        kSegueIDAnalyzerGroupDetailedInfo : @"handleAnalyzerGroupDetailedInfo:sender:"
         };
     }
     return self;
@@ -188,6 +192,25 @@ NSString * const kSegueIDAnalyzer      = @"com.immpi.segue.analyzer";
     
     [destination setRecordForAnalysis:  [source recordForAnalysisWithSender:  sender]];
     [destination setStorageForAnalysis: [source storageForAnalysisWithSender: sender]];
+}
+
+
+- (void) handleAnalyzerGroupDetailedInfo: (UIStoryboardSegue *) segue sender: (id) sender
+{
+    id<SegueSourceAnalyzerGroupDetailedInfo>      source      = (id)SelfOrFirstChild(segue.sourceViewController);
+    id<SegueDestinationAnalyzerGroupDetailedInfo> destination = (id)SelfOrFirstChild(segue.destinationViewController);
+    
+    FRB_AssertConformsTo(source,      SegueSourceAnalyzerGroupDetailedInfo);
+    FRB_AssertConformsTo(destination, SegueDestinationAnalyzerGroupDetailedInfo);
+    
+    [destination setDelegateForAnalyzerGroupDetailedInfo:
+     [source delegateForAnalyzerGroupDetailedInfoWithSender: sender]];
+    
+    [destination setAnalyzerGroupForDetailedInfo:
+     [source analyzerGroupForDetailedInfoWithSender: sender]];
+    
+    [destination setRecordForAnalyzerGroupDetailedInfo:
+     [source recordForAnalyzerGroupDetailedInfoWithSender: sender]];
 }
 
 @end

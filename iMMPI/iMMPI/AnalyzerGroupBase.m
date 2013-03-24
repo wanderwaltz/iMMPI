@@ -147,6 +147,12 @@ static id _logSubgroupNotDictionary(id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (BOOL) canProvideDetailedInfo
+{
+    return NO;
+}
+
+
 - (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record
 {
     return nil;

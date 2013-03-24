@@ -15,6 +15,7 @@
 
 @interface AnalysisViewController : StoryboardManagedTableViewController
 <SegueSourceEditAnswers,
+ SegueSourceAnalyzerGroupDetailedInfo,
  SegueDestinationAnalyzeRecord>
 
 @property (strong, nonatomic) id<TestRecordProtocol> record;

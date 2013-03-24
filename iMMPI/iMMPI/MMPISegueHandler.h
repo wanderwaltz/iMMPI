@@ -29,6 +29,11 @@
 #import "SegueDestinationAnalyzeRecord.h"
 
 
+// Getting detailed info on a certain analyzer group
+#import "SegueSourceAnalyzerGroupDetailedInfo.h"
+#import "SegueDestinationAnalyzerGroupDetailedInfo.h"
+
+
 #pragma mark -
 #pragma mark Constants
 
@@ -47,6 +52,8 @@ extern NSString * const kSegueIDListGroup;    // SegueSourceListRecords,  SegueD
 extern NSString * const kSegueIDViewTrash;    // SegueSourceListRecords,  SegueDestinationListRecords
 
 extern NSString * const kSegueIDAnalyzer;     // SegueSourceAnalyzeRecord, SegueDestinationAnalyzeRecord
+
+extern NSString * const kSegueIDAnalyzerGroupDetailedInfo; // SegueSourceAnalyzerGroupDetailedInfo, SegueDestinationAnalyzerGroupDetailedInfo
 
 
 #pragma mark -

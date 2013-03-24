@@ -25,6 +25,7 @@
 - (NSString *) readableScore;
 
 - (BOOL) scoreIsWithinNorm;
+- (BOOL) canProvideDetailedInfo;
 
 
 - (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index;

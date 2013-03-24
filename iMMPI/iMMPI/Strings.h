@@ -56,4 +56,9 @@
 
 #define ___Group_Name_Reliability @"Достоверность (невалидность)"
 
+
+#define ___Positive_Answers @"Положительные ответы"
+#define ___Negative_Answers @"Отрицательные ответы"
+#define ___Additional_Info  @"Дополнительная информация"
+
 #endif
