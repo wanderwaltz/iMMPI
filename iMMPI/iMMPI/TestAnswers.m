@@ -47,6 +47,12 @@
 #pragma mark -
 #pragma mark methods
 
+- (BOOL) allStatementsAnswered
+{
+    return (_answersByID.count == 566);
+}
+
+
 - (void) setAnswerType: (AnswerType) answerType
         forStatementID: (NSInteger) statementID
 {

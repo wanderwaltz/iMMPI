@@ -81,18 +81,8 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     
     if (self != nil)
     {
-        if (answersPositiveString.length > 0)
-            _positiveIndices = [[answersPositiveString componentsSeparatedByString: @" "]
-                                valueForKey: @"intValue"];
-        else
-            _positiveIndices = @[];
-        
-        
-        if (answersNegativeString.length > 0)
-            _negativeIndices = [[answersNegativeString componentsSeparatedByString: @" "]
-                                valueForKey: @"intValue"];
-        else
-            _negativeIndices = @[];
+        _positiveIndices = [AnalyzerGroupBase parseSpaceSeparatedInts: answersPositiveString];
+        _negativeIndices = [AnalyzerGroupBase parseSpaceSeparatedInts: answersNegativeString];
         
         if (_positiveIndices.count + _negativeIndices.count == 0)
             return _logNoAnswersFound();
@@ -314,9 +304,38 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     NSUInteger matches = [self computeMatchesForRecord: record
                                               analyser: analyser];
     
-    NSUInteger total = (_positiveIndices.count + _negativeIndices.count);
+    NSUInteger total = [self totalNumberOfValidStatementIDsForRecord: record
+                                                            analyser: analyser];
     
-    return matches * 100 / total;
+    if (total > 0)
+    {
+        return matches * 100 / total;
+    }
+    else return 0;
+}
+
+
+- (NSUInteger) totalNumberOfValidStatementIDsForRecord: (id<TestRecordProtocol>) record
+                                              analyser: (id<AnalyzerProtocol>) analyser
+{
+    NSUInteger count = 0;
+    
+    for (NSNumber *statementID in _positiveIndices)
+    {
+        FRB_AssertClass(statementID, NSNumber);
+        if ([analyser isValidStatementID: [statementID unsignedIntegerValue]])
+            count++;
+    }
+    
+    
+    for (NSNumber *statementID in _negativeIndices)
+    {
+        FRB_AssertClass(statementID, NSNumber);
+        if ([analyser isValidStatementID: [statementID unsignedIntegerValue]])
+            count++;
+    }
+    
+    return count;
 }
 
 

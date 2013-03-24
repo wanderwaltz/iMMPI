@@ -96,10 +96,8 @@ static id _logExpectedFloat(NSString *key, id object);
     
     if (self != nil)
     {
-        _positiveIndices = [[answersPositiveString componentsSeparatedByString: @" "]
-                            valueForKey: @"intValue"];
-        _negativeIndices = [[answersNegativeString componentsSeparatedByString: @" "]
-                            valueForKey: @"intValue"];
+        _positiveIndices = [AnalyzerGroupBase parseSpaceSeparatedInts: answersPositiveString];
+        _negativeIndices = [AnalyzerGroupBase parseSpaceSeparatedInts: answersNegativeString];
         
         _medianMale   = [maleMedian   doubleValue];
         _medianFemale = [femaleMedian doubleValue];
@@ -243,9 +241,39 @@ static id _logExpectedFloat(NSString *key, id object);
 - (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
                                  analyser: (id<AnalyzerProtocol>) analyser
 {
-    return [self computeMatchesForRecord: record
-                                analyser: analyser] * 100 /
-            (_positiveIndices.count + _negativeIndices.count);
+    NSUInteger total = [self totalNumberOfValidStatementIDsForRecord: record
+                                                            analyser: analyser];
+    
+    if (total > 0)
+    {
+        return [self computeMatchesForRecord: record
+                                    analyser: analyser] * 100 / total;
+    }
+    else return 0;
+}
+
+
+- (NSUInteger) totalNumberOfValidStatementIDsForRecord: (id<TestRecordProtocol>) record
+                                              analyser: (id<AnalyzerProtocol>) analyser
+{
+    NSUInteger count = 0;
+    
+    for (NSNumber *statementID in _positiveIndices)
+    {
+        FRB_AssertClass(statementID, NSNumber);
+        if ([analyser isValidStatementID: [statementID unsignedIntegerValue]])
+            count++;
+    }
+    
+    
+    for (NSNumber *statementID in _negativeIndices)
+    {
+        FRB_AssertClass(statementID, NSNumber);
+        if ([analyser isValidStatementID: [statementID unsignedIntegerValue]])
+            count++;
+    }
+    
+    return count;
 }
 
 

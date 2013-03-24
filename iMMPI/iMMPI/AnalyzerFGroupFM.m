@@ -84,15 +84,11 @@ static id _logExpectedFloat(NSString *key, id object);
     
     if (self != nil)
     {
-        _malePositiveIndices = [[maleAnswersPositiveString componentsSeparatedByString: @" "]
-                                valueForKey: @"intValue"];
-        _maleNegativeIndices = [[maleAnswersNegativeString componentsSeparatedByString: @" "]
-                                valueForKey: @"intValue"];
+        _malePositiveIndices = [AnalyzerGroupBase parseSpaceSeparatedInts: maleAnswersPositiveString];
+        _maleNegativeIndices = [AnalyzerGroupBase parseSpaceSeparatedInts: maleAnswersNegativeString];
         
-        _femalePositiveIndices = [[femaleAnswersPositiveString componentsSeparatedByString: @" "]
-                                  valueForKey: @"intValue"];
-        _femaleNegativeIndices = [[femaleAnswersNegativeString componentsSeparatedByString: @" "]
-                                  valueForKey: @"intValue"];
+        _femalePositiveIndices = [AnalyzerGroupBase parseSpaceSeparatedInts: femaleAnswersPositiveString];
+        _femaleNegativeIndices = [AnalyzerGroupBase parseSpaceSeparatedInts: femaleAnswersNegativeString];
         
         _medianMale   = [maleMedian   doubleValue];
         _medianFemale = [femaleMedian doubleValue];
@@ -242,6 +238,23 @@ static id _logExpectedFloat(NSString *key, id object);
 - (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
                                  analyser: (id<AnalyzerProtocol>) analyser
 {
+    NSUInteger total = [self totalNumberOfValidStatementIDsForRecord: record
+                                                            analyser: analyser];
+
+    if (total > 0)
+    {
+        return [self computeMatchesForRecord: record
+                                    analyser: analyser] * 100 / total;
+    }
+    else return 0;
+}
+
+
+- (NSUInteger) totalNumberOfValidStatementIDsForRecord: (id<TestRecordProtocol>) record
+                                              analyser: (id<AnalyzerProtocol>) analyser
+{
+    NSUInteger count = 0;
+    
     NSArray *positiveIndices =
     (record.person.gender == GenderFemale) ? _femalePositiveIndices : _malePositiveIndices;
     
@@ -249,10 +262,24 @@ static id _logExpectedFloat(NSString *key, id object);
     (record.person.gender == GenderFemale) ? _femaleNegativeIndices : _maleNegativeIndices;
 
     
-    return [self computeMatchesForRecord: record
-                                analyser: analyser] * 100 /
-            (positiveIndices.count + negativeIndices.count);
+    for (NSNumber *statementID in positiveIndices)
+    {
+        FRB_AssertClass(statementID, NSNumber);
+        if ([analyser isValidStatementID: [statementID unsignedIntegerValue]])
+            count++;
+    }
+    
+    
+    for (NSNumber *statementID in negativeIndices)
+    {
+        FRB_AssertClass(statementID, NSNumber);
+        if ([analyser isValidStatementID: [statementID unsignedIntegerValue]])
+            count++;
+    }
+    
+    return count;
 }
+
 
 @end
 

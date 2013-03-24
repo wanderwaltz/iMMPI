@@ -278,9 +278,7 @@ static const int32_t kMMPIQuestionsCount = 566; // Total questions count in the 
         testRecord.person.ageGroup = [self ageGroupFromQuestionnaireString: questionnaireString];
         
         testRecord.date = testDate;
-        
-        testRecord.testAnswers.allStatementsAnswered = (answers.count == kMMPIQuestionsCount);
-        
+                
         [answers enumerateObjectsUsingBlock:
          ^(NSNumber *answer, NSUInteger index, BOOL *stop) {
             [testRecord.testAnswers setAnswerType:

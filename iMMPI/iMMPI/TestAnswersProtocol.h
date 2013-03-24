@@ -19,7 +19,7 @@
 @required
 
 /// Determines whether this test answers object contains all answers for a certain questionnaire.
-@property (assign, nonatomic) BOOL allStatementsAnswered;
+- (BOOL) allStatementsAnswered;
 
 
 

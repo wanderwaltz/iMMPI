@@ -220,6 +220,13 @@ static id _logSubgroupNotDictionary(id object);
 }
 
 
+- (NSUInteger) totalNumberOfValidStatementIDsForRecord: (id<TestRecordProtocol>) record
+                                              analyser: (id<AnalyzerProtocol>) analyser
+{
+    return 0;
+}
+
+
 #pragma mark -
 #pragma mark methods
 
@@ -279,6 +286,20 @@ static id _logSubgroupNotDictionary(id object);
     
     
     return group;
+}
+
+
++ (NSArray *) parseSpaceSeparatedInts: (NSString *) string
+{
+    if ([string isKindOfClass: [NSString class]])
+    {
+        if (string.length > 0)
+        {
+            return [[string componentsSeparatedByString: @" "] valueForKey: @"intValue"];
+        }
+        else return @[];
+    }
+    else return @[];
 }
 
 @end

@@ -28,4 +28,6 @@
 
 + (id<AnalyzerGroup>) parseGroupJSON: (NSDictionary *) json;
 
++ (NSArray *) parseSpaceSeparatedInts: (NSString *) string;
+
 @end
