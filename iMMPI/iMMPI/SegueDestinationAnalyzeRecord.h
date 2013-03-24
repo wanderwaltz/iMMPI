@@ -15,6 +15,7 @@
 @protocol SegueDestinationAnalyzeRecord <NSObject>
 @required
 
-- (void) setRecordForAnalysis: (id<TestRecordProtocol>) record;
+- (void) setRecordForAnalysis:  (id<TestRecordProtocol>) record;
+- (void) setStorageForAnalysis: (id<TestRecordStorage>)  storage;
 
 @end

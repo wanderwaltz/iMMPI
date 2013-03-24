@@ -15,6 +15,7 @@
 @protocol SegueSourceAnalyzeRecord <NSObject>
 @required
 
-- (id<TestRecordProtocol>) recordForAnalysisWithSender: (id) sender;
+- (id<TestRecordProtocol>) recordForAnalysisWithSender:  (id) sender;
+- (id<TestRecordStorage>)  storageForAnalysisWithSender: (id) sender;
 
 @end

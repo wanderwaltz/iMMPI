@@ -112,6 +112,12 @@ static NSString * const kRecordCellIdentifier = @"com.immpi.cells.record";
 }
 
 
+- (id<TestRecordStorage>) storageForAnalysisWithSender: (id) sender
+{
+    return self.storage;
+}
+
+
 #pragma mark SegueSourceEditRecord
 
 - (NSString *) titleForEditingTestRecord: (id<TestRecordProtocol>) record withSender: (id) sender

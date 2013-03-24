@@ -102,6 +102,16 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
             });
         });
     }
+    else
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [_analyzer computeScoresForRecord: _record];
+    
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self reloadData];
+            });
+        });
+    }
 }
 
 
@@ -357,6 +367,37 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 }
 
 
+#pragma mark SegueSourceEditAnswers
+
+- (id<TestRecordProtocol>) testRecordToEditAnswersWithSender: (id) sender
+{
+    return self.record;
+}
+
+
+- (id<TestRecordStorage>) storageToEditAnswersWithSender: (id) sender
+{
+    return self.storage;
+}
+
+
+#pragma mark SegueDestinationAnalyzeRecord
+
+- (void) setRecordForAnalysis: (id<TestRecordProtocol>) record
+{
+    self.record = record;
+    
+    self.title = [NSString stringWithFormat: @"%@, %@",
+                  record.person.name, [_dateFormatter stringFromDate: record.date]];
+}
+
+
+- (void) setStorageForAnalysis: (id<TestRecordStorage>) storage
+{
+    self.storage = storage;
+}
+
+
 #pragma mark -
 #pragma mark AnalysisOptionsViewControllerDelegate
 
@@ -485,18 +526,5 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     
     return cell;
 }
-
-
-#pragma mark -
-#pragma mark SegueDestinationAnalyzeRecord
-
-- (void) setRecordForAnalysis: (id<TestRecordProtocol>) record
-{
-    self.record = record;
-    
-    self.title = [NSString stringWithFormat: @"%@, %@",
-                  record.person.name, [_dateFormatter stringFromDate: record.date]];
-}
-
 
 @end

@@ -163,4 +163,10 @@
     return self.record;
 }
 
+
+- (id<TestRecordStorage>) storageForAnalysisWithSender: (id) sender
+{
+    return self.storage;
+}
+
 @end

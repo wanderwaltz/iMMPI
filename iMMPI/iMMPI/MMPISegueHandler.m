@@ -186,7 +186,8 @@ NSString * const kSegueIDAnalyzer      = @"com.immpi.segue.analyzer";
     FRB_AssertConformsTo(source,      SegueSourceAnalyzeRecord);
     FRB_AssertConformsTo(destination, SegueDestinationAnalyzeRecord);
     
-    [destination setRecordForAnalysis: [source recordForAnalysisWithSender: sender]];
+    [destination setRecordForAnalysis:  [source recordForAnalysisWithSender:  sender]];
+    [destination setStorageForAnalysis: [source storageForAnalysisWithSender: sender]];
 }
 
 @end

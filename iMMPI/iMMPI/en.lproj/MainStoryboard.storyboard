@@ -52,7 +52,6 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="THK-Zl-NF7"/>
                         <segue destination="LqN-J3-mFC" kind="replace" identifier="com.immpi.segue.answersInput" splitViewControllerTargetIndex="1" id="wQm-8j-8wQ"/>
                         <segue destination="uVX-dK-n6S" kind="replace" identifier="com.immpi.segue.blankDetail" splitViewControllerTargetIndex="1" id="B1l-8X-pqZ"/>
                         <segue destination="Vda-1E-x1W" kind="replace" identifier="com.immpi.segue.analyzer" splitViewControllerTargetIndex="1" id="K8u-i7-vef"/>
@@ -344,7 +343,6 @@
                                         </label>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-OU-DB3">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="43" id="Hxc-O0-C7J"/>
                                                 <constraint firstAttribute="width" constant="133" type="user" id="PEU-8E-gSB"/>
                                             </constraints>
                                             <segments>
@@ -379,16 +377,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Ответы на тест" id="eyH-RJ-E94">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="Fk5-BQ-tHb"/>
-                        <barButtonItem key="rightBarButtonItem" title="Анализ" id="xhN-p9-zdZ">
-                            <connections>
-                                <segue destination="F49-RI-GVa" kind="push" identifier="com.immpi.segue.analyzer" id="D7C-fb-8Yk"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="wbn-Jg-gjv" id="3Y3-YO-eHK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tv2-b8-c0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2644" y="-147"/>
+            <point key="canvasLocation" x="4463" y="-200"/>
         </scene>
         <!--Analysis View Controller - Анализ-->
         <scene sceneID="O4d-EX-KCt">
@@ -443,6 +439,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Анализ" id="K46-iP-Xjs">
+                        <barButtonItem key="leftBarButtonItem" title="Ответы" id="FRL-oi-XNX">
+                            <connections>
+                                <segue destination="yLl-co-mCt" kind="push" identifier="com.immpi.segue.editAnswers" id="Wuz-Je-7gx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Z8I-3f-pjP">
                             <connections>
                                 <segue destination="Bnc-Hi-s3d" kind="popover" identifier="com.immpi.segue.analysisOptions" popoverAnchorBarButtonItem="Z8I-3f-pjP" id="H7H-xZ-Xme">
@@ -454,7 +455,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g11-S7-kr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3783" y="357"/>
+            <point key="canvasLocation" x="3247" y="309"/>
         </scene>
         <!--Persons List View Controller - Все записи-->
         <scene sceneID="VQi-TQ-cMF">
@@ -509,7 +510,6 @@
                         <attributedString key="attributedTitle"/>
                     </refreshControl>
                     <connections>
-                        <segue destination="8SY-99-Fda" kind="replace" identifier="com.immpi.segue.editAnswers" splitViewControllerTargetIndex="1" id="dBb-vP-UTt"/>
                         <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editGroup" modalPresentationStyle="formSheet" id="ghm-Jh-3HV"/>
                         <segue destination="zGB-ra-p1M" kind="push" identifier="com.immpi.segue.listGroup" id="hGM-y0-hAY"/>
                         <segue destination="LqN-J3-mFC" kind="replace" identifier="com.immpi.segue.answersInput" splitViewControllerTargetIndex="1" id="gZV-hG-uQK"/>
@@ -520,24 +520,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6V-I4-VnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-684" y="-147"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yOi-ik-Xg1">
-            <objects>
-                <navigationController id="8SY-99-Fda" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bFi-21-b5m">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="yLl-co-mCt" kind="relationship" relationship="rootViewController" id="LRV-9t-nyw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zjG-3W-QeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1784" y="-147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p6m-pL-62g">
@@ -577,7 +559,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cz-af-I7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="1018"/>
+            <point key="canvasLocation" x="1192" y="-318"/>
         </scene>
         <!--Test Answers Input View Controller - Ответы на тест-->
         <scene sceneID="xBm-Vm-KdH">
@@ -779,7 +761,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Inv-J9-S4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2644" y="1018"/>
+            <point key="canvasLocation" x="2052" y="-318"/>
         </scene>
         <!--Analysis Options View Controller-->
         <scene sceneID="uik-AA-rgr">
@@ -889,7 +871,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yk3-KO-HE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5593" y="709"/>
+            <point key="canvasLocation" x="5385" y="1292"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Del-10-ij9">
@@ -907,12 +889,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbl-4S-3B0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="2160"/>
+            <point key="canvasLocation" x="1192" y="824"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4th-Z0-w8A">
             <objects>
-                <navigationController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="currentContext" navigationBarHidden="YES" id="Bnc-Hi-s3d" sceneMemberID="viewController">
+                <navigationController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="formSheet" navigationBarHidden="YES" id="Bnc-Hi-s3d" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="H7y-67-ggh">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
@@ -925,24 +907,94 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmf-7j-v2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4671" y="357"/>
+            <point key="canvasLocation" x="4463" y="940"/>
         </scene>
     </scenes>
     <resources>
         <image name="AnswersInputViewBackground.png" width="1" height="44"/>
     </resources>
+    <classes>
+        <class className="AnalysisOptionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalysisOptionsViewController.h"/>
+        </class>
+        <class className="AnalysisViewController" superclassName="StoryboardManagedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalysisViewController.h"/>
+        </class>
+        <class className="AnalyzerTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyzerTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_groupNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_lcGroupNameLabelLeft" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="_scoreLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EditTestRecordViewController" superclassName="StoryboardManagedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTestRecordViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_ageGroupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_ageGroupTableViewCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_dateTableViewCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_fullNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="_genderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_genderTableViewCell" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PersonsListViewController" superclassName="StoryboardManagedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonsListViewController.h"/>
+        </class>
+        <class className="RecordsListViewController" superclassName="StoryboardManagedTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecordsListViewController.h"/>
+        </class>
+        <class className="StatementTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatementTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="statementAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statementIDLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statementSegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="statementTextLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StoryboardManagedTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryboardManagedTableViewController.h"/>
+        </class>
+        <class className="StoryboardManagedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryboardManagedViewController.h"/>
+        </class>
+        <class className="TestAnswersInputViewController" superclassName="TestAnswersTableViewControllerBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersInputViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_analyzisBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="_inputView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="TestAnswersTableViewControllerBase" superclassName="StoryboardManagedViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersTableViewControllerBase.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TestAnswersViewController" superclassName="TestAnswersTableViewControllerBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestAnswersViewController.h"/>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wQm-8j-8wQ"/>
-        <segue reference="1n8-HN-ewy"/>
-        <segue reference="THK-Zl-NF7"/>
-        <segue reference="B1l-8X-pqZ"/>
         <segue reference="pzp-1q-KmK"/>
+        <segue reference="1n8-HN-ewy"/>
+        <segue reference="wQm-8j-8wQ"/>
         <segue reference="K8u-i7-vef"/>
-        <segue reference="rcs-v6-40C"/>
+        <segue reference="B1l-8X-pqZ"/>
+        <segue reference="cEz-YJ-d3N"/>
     </inferredMetricsTieBreakers>
 </document>

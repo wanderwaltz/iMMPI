@@ -251,6 +251,12 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 }
 
 
+- (id<TestRecordStorage>) storageForAnalysisWithSender:(id)sender
+{
+    return _storage;
+}
+
+
 #pragma mark SegueSourceListRecords
 
 - (id<MutableTableViewModel>) modelForListRecordsWithSender: (id) sender
