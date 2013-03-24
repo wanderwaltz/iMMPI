@@ -17,3 +17,6 @@ id null2Nil(id object);
 
 
 UIViewController *SelfOrFirstChild(UIViewController *controller);
+
+
+NSString *TransliterateToLatin(NSString *string);

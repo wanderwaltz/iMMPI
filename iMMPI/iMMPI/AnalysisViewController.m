@@ -165,9 +165,9 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     
     [controller addAttachmentData: htmlBriefReportData
                          mimeType: @"text/html; charset=utf-8"
-                         fileName: [NSString stringWithFormat:
+                         fileName: TransliterateToLatin([NSString stringWithFormat:
                                     ___FORMAT_File_Name_Analysis_Report_Brief,
-                                    personDateSuffix]];
+                                    personDateSuffix])];
     
     
     NSString *htmlFullReport     = [self composeHTMLAnalysisReportIgnoringSettings: YES];
@@ -175,9 +175,9 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     
     [controller addAttachmentData: htmlFullReportData
                          mimeType: @"text/html; charset=utf-8"
-                         fileName: [NSString stringWithFormat:
+                         fileName: TransliterateToLatin([NSString stringWithFormat:
                                     ___FORMAT_File_Name_Analysis_Report_Full,
-                                    personDateSuffix]];
+                                    personDateSuffix])];
     
     
     
@@ -187,9 +187,9 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     {
         [controller addAttachmentData: jsonRecordData
                              mimeType: @"application/json; charset=utf-8"
-                             fileName: [NSString stringWithFormat:
+                             fileName: TransliterateToLatin([NSString stringWithFormat:
                                         ___FORMAT_File_Name_JSON_Record_Backup,
-                                        personDateSuffix]];
+                                        personDateSuffix])];
     }
     
     NSData *htmlAnswersData = [HTMLTestRecordSerialization dataWithTestRecord: self.record];
@@ -198,9 +198,9 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     {
         [controller addAttachmentData: htmlAnswersData
                              mimeType: @"text/html; charset=utf-8"
-                             fileName: [NSString stringWithFormat:
+                             fileName: TransliterateToLatin([NSString stringWithFormat:
                                         ___FORMAT_File_Name_Answers,
-                                        personDateSuffix]];
+                                        personDateSuffix])];
     }
     
     [self presentViewController: controller

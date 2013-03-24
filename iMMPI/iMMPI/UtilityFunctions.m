@@ -30,3 +30,18 @@ UIViewController *SelfOrFirstChild(UIViewController *controller)
     else
         return controller;
 }
+
+
+NSString *TransliterateToLatin(NSString *string)
+{
+    if (string.length > 0)
+    {
+        NSMutableString *mutable = [string mutableCopy];
+        CFMutableStringRef mutableRef = (__bridge CFMutableStringRef)mutable;
+        CFStringTransform(mutableRef, NULL, kCFStringTransformToLatin, false);
+        CFStringTransform(mutableRef, NULL, kCFStringTransformStripCombiningMarks,  false);
+        
+        return [mutable copy];
+    }
+    else return nil;
+}

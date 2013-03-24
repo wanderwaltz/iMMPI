@@ -10,7 +10,7 @@
 
 // TODO: popup windows with analyzer groups debug info
 // TODO: emailing a report about specific analyzer groups
-// TODO: transliteration of the file names included in the analysis report email
+// TODO: allow editing answers after the initial input
 
 #pragma mark -
 #pragma mark AppDelegate interface
