@@ -39,4 +39,7 @@
 - (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
                                  analyser: (id<AnalyzerProtocol>) analyser;
 
+- (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record;
+- (NSArray *) negativeStatementIDsForRecord: (id<TestRecordProtocol>) record;
+
 @end

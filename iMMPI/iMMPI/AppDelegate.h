@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 // TODO: popup windows with analyzer groups debug info
-// TODO: emailing a report about specific analyzer groups
 
 #pragma mark -
 #pragma mark AppDelegate interface

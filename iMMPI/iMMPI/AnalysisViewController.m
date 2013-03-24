@@ -15,8 +15,8 @@
 #import "AnalysisOptionsViewController.h"
 #import "AnalysisSettings.h"
 
+#import "AnalysisHTMLReportGenerator.h"
 #import "JSONTestRecordSerialization.h"
-#import "HTMLTestRecordSerialization.h"
 
 #import <MessageUI/MessageUI.h>
 
@@ -39,8 +39,10 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     Analyzer *_analyzer;
     NSMutableArray *_analyzerGroupIndices;
     
-    NSDateFormatter *_dateFormatter;
+    AnalysisHTMLReportGenerator *_reportGenerator;
     
+    
+    NSDateFormatter *_dateFormatter;
     UIPopoverController *_analysisOptionsPopover;
 }
 
@@ -91,9 +93,18 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 {
     if (_analyzer == nil)
     {
-        _analyzer = [Analyzer new];
+        _analyzer        = [Analyzer new];
+        _reportGenerator = [AnalysisHTMLReportGenerator new];
+        
+        _reportGenerator.analyzer = _analyzer;
+        _reportGenerator.record   = _record;
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            _reportGenerator.questionnaire =
+            [Questionnaire newForGender: _record.person.gender
+                               ageGroup: _record.person.ageGroup];
+            
             [_analyzer loadGroups];
             [_analyzer computeScoresForRecord: _record];
             
@@ -139,7 +150,8 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     
     UIMarkupTextPrintFormatter *formatter =
     [[UIMarkupTextPrintFormatter alloc] initWithMarkupText:
-     [self composeHTMLAnalysisReportIgnoringSettings: NO]];
+     [_reportGenerator composeOverallAnalysisReportForGroupIndices: _analyzerGroupIndices
+                                                  filterNormValues: [AnalysisSettings shouldFilterAnalysisResults]]];
     
     printController.printFormatter = formatter;
     
@@ -170,159 +182,67 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
       personDateSuffix]];
     
     
-    NSString *htmlBriefReport     = [self composeHTMLAnalysisReportIgnoringSettings: NO];
-    NSData   *htmlBriefReportData = [htmlBriefReport dataUsingEncoding: NSUTF8StringEncoding];
+    void (^attachFile)(NSString *htmlContents,
+                       NSData   *data,
+                       NSString *mimeType,
+                       NSString *nameFormat) =
     
-    [controller addAttachmentData: htmlBriefReportData
-                         mimeType: @"text/html; charset=utf-8"
-                         fileName: TransliterateToLatin([NSString stringWithFormat:
-                                    ___FORMAT_File_Name_Analysis_Report_Brief,
-                                    personDateSuffix])];
+    ^(NSString *htmlContents,
+      NSData   *data,
+      NSString *mimeType,
+      NSString *nameFormat)
+    {
+        if ((data == nil) && (htmlContents.length > 0))
+        {
+            data = [htmlContents dataUsingEncoding: NSUTF8StringEncoding];
+        }
+        
+        if (data != nil)
+        {
+            NSString *fileName =
+            TransliterateToLatin([NSString stringWithFormat: nameFormat,
+                                  personDateSuffix]);
+            
+            [controller addAttachmentData: data
+                                 mimeType: mimeType
+                                 fileName: fileName];
+        }
+    };
     
     
-    NSString *htmlFullReport     = [self composeHTMLAnalysisReportIgnoringSettings: YES];
-    NSData   *htmlFullReportData = [htmlFullReport dataUsingEncoding: NSUTF8StringEncoding];
+    NSString *htmlBriefReport =
+    [_reportGenerator
+     composeOverallAnalysisReportForGroupIndices: _analyzerGroupIndices
+                                filterNormValues: [AnalysisSettings shouldFilterAnalysisResults]];
     
-    [controller addAttachmentData: htmlFullReportData
-                         mimeType: @"text/html; charset=utf-8"
-                         fileName: TransliterateToLatin([NSString stringWithFormat:
-                                    ___FORMAT_File_Name_Analysis_Report_Full,
-                                    personDateSuffix])];
-    
-    
+    NSString *htmlFullReport =
+    [_reportGenerator composeOverallAnalysisReportForGroupIndices: nil
+                                                 filterNormValues: NO];
     
     NSData *jsonRecordData = [JSONTestRecordSerialization dataWithTestRecord: self.record];
     
-    if (jsonRecordData != nil)
-    {
-        [controller addAttachmentData: jsonRecordData
-                             mimeType: @"application/json; charset=utf-8"
-                             fileName: TransliterateToLatin([NSString stringWithFormat:
-                                        ___FORMAT_File_Name_JSON_Record_Backup,
-                                        personDateSuffix])];
-    }
+    NSString *htmlAnswersReport = [_reportGenerator composeAnswersReport];
     
-    NSData *htmlAnswersData = [HTMLTestRecordSerialization dataWithTestRecord: self.record];
+    NSString *htmlReliabilityReport =
+    [_reportGenerator composeDetailedReportForGroupNamed:
+     ___Group_Name_Reliability];
     
-    if (htmlAnswersData != nil)
-    {
-        [controller addAttachmentData: htmlAnswersData
-                             mimeType: @"text/html; charset=utf-8"
-                             fileName: TransliterateToLatin([NSString stringWithFormat:
-                                        ___FORMAT_File_Name_Answers,
-                                        personDateSuffix])];
-    }
+    NSString *mimeHTML = @"text/html; charset=utf-8";
+    NSString *mimeJSON = @"application/json; charset=utf-8";
+    
+    attachFile(htmlBriefReport,       nil, mimeHTML, ___FORMAT_File_Name_Analysis_Report_Brief);
+    attachFile(htmlFullReport,        nil, mimeHTML, ___FORMAT_File_Name_Analysis_Report_Full);
+    attachFile(htmlAnswersReport,     nil, mimeHTML, ___FORMAT_File_Name_Answers);
+    attachFile(htmlReliabilityReport, nil, mimeHTML, ___FORMAT_File_Name_Reliability_Report);
+    
+    attachFile(nil, jsonRecordData, mimeJSON, ___FORMAT_File_Name_JSON_Record_Backup);
+    
+    
+    
     
     [self presentViewController: controller
                        animated: YES
                      completion: nil];
-}
-
-
-- (NSString *) composeHTMLAnalysisReportIgnoringSettings: (BOOL) ignoreSettings
-{
-    NSMutableString *html = [NSMutableString string];
-    
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    dateFormatter.dateStyle = NSDateFormatterLongStyle;
-    dateFormatter.timeStyle = NSDateFormatterNoStyle;
-    
-    [html appendString: @"<!DOCTYPE html>"];
-    [html appendString: @"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
-    [html appendString: @"<html>"];
-    [html appendString: @"<body>"];
-    [html appendFormat: @"<h1>%@</h1>", self.record.person.name];
-    
-    NSString *dateString = [dateFormatter stringFromDate: self.record.date];
-    
-    if (dateString.length > 0)
-    [html appendFormat: @"<h2>%@</h2>", dateString];
-    
-    [html appendString: @"<table width=\"100%\">"];
-    [html appendString: @"<colgroup>"];
-    [html appendString: @"<col width=\" 1%\">"];
-    [html appendString: @"<col width=\" 4%\">"];
-    [html appendString: @"<col width=\" 5%\">"];
-    [html appendString: @"<col width=\"75%\">"];
-    [html appendString: @"<col width=\"15%\">"];
-    [html appendString: @"</colgroup>"];
-    
-    // This block appends a row to the table corresponding the
-    // analyzer group having the provided index. It is used locally
-    // within this function in two possible scenarios: when creating
-    // a report ingoring analyzer settings and when not.
-    void (^appendGroupRow)(id<AnalyzerGroup> group, NSUInteger groupIndex)  =
-    ^(id<AnalyzerGroup> group, NSUInteger groupIndex)
-    {
-        
-        
-        [html appendString: @"<tr>"];
-        
-        switch ([_analyzer depthOfGroupAtIndex: groupIndex])
-        {
-            case 0:
-            {
-                [html appendString: @"<td colspan=\"1\"></td>"];
-                [html appendFormat: @"<td colspan=\"3\"><b>%@</b></td>", group.name];
-            } break;
-                
-                
-            case 1:
-            {
-                [html appendString: @"<td colspan=\"2\"></td>"];
-                [html appendFormat: @"<td colspan=\"2\">%@</td>", group.name];
-            } break;
-                
-                
-            default:
-            {
-                [html appendString: @"<td colspan=\"3\"></td>"];
-                [html appendFormat: @"<td colspan=\"1\"><i>%@</i></td>", group.name];
-            } break;
-        }
-        
-        // If ignoring settings, show the full report regardless of
-        // whether the score is within norm or not.
-        if ([group scoreIsWithinNorm] && !ignoreSettings)
-            [html appendFormat: @"<td>%@</td>", ___Normal_Score_Placeholder];
-        else
-            [html appendFormat: @"<td>%@</td>", group.readableScore];
-        
-        [html appendString: @"</tr>"];
-    };
-    
-    
-    if (ignoreSettings)
-    {
-        // If ignoring analyzer settings, iterate through all
-        // available groups.
-        for (NSUInteger i = 0; i < _analyzer.groupsCount; ++i)
-        {
-            id<AnalyzerGroup> group = [_analyzer groupAtIndex: i];
-            
-            appendGroupRow(group, i);
-        }
-    }
-    else
-    {
-        // If not ignoring settings, then some filters may apply and
-        // some of the analyzer groups could be excluded from the list;
-        // use only the indices that are enabled for the current settings.
-        for (NSNumber *groupIndexNumber in _analyzerGroupIndices)
-        {
-            NSInteger groupIndex = [groupIndexNumber integerValue];
-            
-            id<AnalyzerGroup> group = [_analyzer groupAtIndex: groupIndex];
-            
-            appendGroupRow(group, groupIndex);
-        }
-    }
-    
-    [html appendString: @"</table>"];
-    [html appendString: @"</body>"];
-    [html appendString: @"</html>"];
-    
-    return html;
 }
 
 

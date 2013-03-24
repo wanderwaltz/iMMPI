@@ -114,6 +114,18 @@ static id _logExpectedFloat(NSString *key, id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record
+{
+    return _positiveIndices;
+}
+
+
+- (NSArray *) negativeStatementIDsForRecord: (id<TestRecordProtocol>) record
+{
+    return _negativeIndices;
+}
+
+
 - (BOOL) scoreIsWithinNorm
 {
     return (40.0 <= self.score) && (self.score <= 60.0);

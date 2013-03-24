@@ -58,6 +58,8 @@ extern NSString * const kGroupType_PlainPercentScale;
 - (id<AnalyzerGroup>) groupAtIndex: (NSUInteger) index;
 - (NSUInteger) depthOfGroupAtIndex: (NSUInteger) index;
 
+- (id<AnalyzerGroup>) groupWithName: (NSString *) name;
+
 - (BOOL) loadGroups;
 
 - (void) computeScoresForRecord: (id<TestRecordProtocol>) record;

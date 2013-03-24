@@ -99,6 +99,18 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record
+{
+    return _positiveIndices;
+}
+
+
+- (NSArray *) negativeStatementIDsForRecord: (id<TestRecordProtocol>) record
+{
+    return _negativeIndices;
+}
+
+
 - (BOOL) scoreIsWithinNorm
 {
     return fabs(self.score - 3.0) < 0.05;

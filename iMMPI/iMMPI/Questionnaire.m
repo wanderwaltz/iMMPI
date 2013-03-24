@@ -47,6 +47,7 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
 @interface Questionnaire()
 {
     NSArray *_statements;
+    NSDictionary *_statementsByID;
 }
 
 @end
@@ -135,6 +136,7 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
     
         
     NSMutableArray *statements = [NSMutableArray arrayWithCapacity: jsonStatements.count];
+    NSMutableDictionary *statementsByID = [NSMutableDictionary dictionaryWithCapacity: jsonStatements.count];
     
     for (NSDictionary *jsonStatement in jsonStatements)
     {
@@ -157,6 +159,7 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
         statement.statementID = [statementID intValue];
         
         [statements addObject: statement];
+        statementsByID[@(statement.statementID)] = statement;
     }
     
     [statements sortUsingDescriptors:
@@ -166,7 +169,8 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
     
     if (self != nil)
     {
-        _statements = [statements copy];
+        _statements     = [statements     copy];
+        _statementsByID = [statementsByID copy];
     }
     return self;
 }
@@ -184,6 +188,11 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
 - (id<StatementProtocol>) statementAtIndex: (NSUInteger) index
 {
     return _statements[index];
+}
+
+- (id<StatementProtocol>) statementWithID: (NSUInteger) statementID
+{
+    return _statementsByID[@(statementID)];
 }
 
 @end

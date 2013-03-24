@@ -147,6 +147,18 @@ static id _logSubgroupNotDictionary(id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
+- (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record
+{
+    return nil;
+}
+
+
+- (NSArray *) negativeStatementIDsForRecord: (id<TestRecordProtocol>) record
+{
+    return nil;
+}
+
+
 - (BOOL) scoreIsWithinNorm
 {
     // We have to default to NO here because if score is within

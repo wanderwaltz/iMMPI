@@ -32,4 +32,6 @@
  */
 - (id<StatementProtocol>) statementAtIndex: (NSUInteger) index;
 
+- (id<StatementProtocol>) statementWithID: (NSUInteger) statementID;
+
 @end

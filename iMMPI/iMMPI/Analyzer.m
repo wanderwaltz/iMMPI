@@ -134,6 +134,19 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 }
 
 
+- (id<AnalyzerGroup>) groupWithName: (NSString *) name
+{
+    for (id<AnalyzerGroup> group in _allGroups)
+    {
+        FRB_AssertConformsTo(group, AnalyzerGroup);
+        if ([group.name isEqualToString: name])
+            return group;
+    }
+    
+    return nil;
+}
+
+
 - (BOOL) loadGroups
 {
     _groups    = nil;
