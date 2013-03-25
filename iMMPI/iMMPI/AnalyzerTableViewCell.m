@@ -20,6 +20,7 @@
 {
     IBOutlet UILabel *_groupNameLabel;
     IBOutlet UILabel *_scoreLabel;
+    IBOutlet UILabel *_indexLabel;
     
     IBOutlet NSLayoutConstraint *_lcGroupNameLabelLeft;
 }

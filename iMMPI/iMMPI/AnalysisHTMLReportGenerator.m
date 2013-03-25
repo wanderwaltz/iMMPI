@@ -66,7 +66,7 @@
     if (dateString.length > 0)
         [html appendFormat: @"<h2>%@</h2>", dateString];
     
-    [html appendString: @"<table width=\"100%\">"];
+    [html appendString: @"<table style=\"border:1px solid black; border-collapse:collapse;\" width=\"100%\">"];
     [html appendString: @"<colgroup>"];
     [html appendString: @"<col width=\" 1%\">"];
     [html appendString: @"<col width=\" 4%\">"];
@@ -87,29 +87,30 @@
             {
                 case 0:
                 {
-                    [html appendString: @"<td colspan=\"1\"></td>"];
-                    [html appendFormat: @"<td colspan=\"3\"><b>%@</b></td>", group.name];
+                    [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"4\"><b>%@</b></td>", group.name];
                 } break;
                     
                     
                 case 1:
                 {
-                    [html appendString: @"<td colspan=\"2\"></td>"];
-                    [html appendFormat: @"<td colspan=\"2\">%@</td>", group.name];
+                    [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"2\">%d.</td>",
+                     [group indexForRecord: self.record]];
+                    [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"2\">%@</td>", group.name];
                 } break;
                     
                     
                 default:
                 {
-                    [html appendString: @"<td colspan=\"3\"></td>"];
-                    [html appendFormat: @"<td colspan=\"1\"><i>%@</i></td>", group.name];
+                    [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"3\">%d.</td>",
+                     [group indexForRecord: self.record]];
+                    [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\"><i>%@</i></td>", group.name];
                 } break;
             }
             
             if ([group scoreIsWithinNorm] && filter)
-                [html appendFormat: @"<td>%@</td>", ___Normal_Score_Placeholder];
+                [html appendFormat: @"<td style=\"border:1px solid black;\" align=\"center\">%@</td>", ___Normal_Score_Placeholder];
             else
-                [html appendFormat: @"<td>%@</td>", group.readableScore];
+                [html appendFormat: @"<td style=\"border:1px solid black;\" align=\"center\">%@</td>", group.readableScore];
             
             [html appendString: @"</tr>"];
         }
@@ -155,13 +156,6 @@
         NSArray *positiveIDs = [group positiveStatementIDsForRecord: _record];
         NSArray *negativeIDs = [group negativeStatementIDsForRecord: _record];
         
-        NSMutableArray *statementIDs = [NSMutableArray arrayWithCapacity:
-                                        positiveIDs.count + negativeIDs.count];
-        [statementIDs addObjectsFromArray: positiveIDs];
-        [statementIDs addObjectsFromArray: negativeIDs];
-        
-        [statementIDs sortUsingSelector: @selector(compare:)];
-        
         [html appendString: @"<!DOCTYPE html>"];
         [html appendString: @"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
         [html appendString: @"<html>"];
@@ -175,23 +169,38 @@
         
         [html appendFormat: @"<h3>%@</h3>", group.name];
         
-        [html appendString: @"<table width=\"100%\">"];
+        [html appendString: @"<table style=\"border:1px solid black; border-collapse:collapse;\" width=\"100%\">"];
         [html appendString: @"<colgroup>"];
         [html appendString: @"<col width=\"10%\">"];
-        [html appendString: @"<col width=\"80%\">"];
+        [html appendString: @"<col width=\"70%\">"];
+        [html appendString: @"<col width=\"10%\">"];
         [html appendString: @"<col width=\"10%\">"];
         [html appendString: @"</colgroup>"];
         
-        for (NSNumber *statementID in statementIDs)
-        {
-            FRB_AssertClass(statementID, NSNumber);
-            id<StatementProtocol> statement = [_questionnaire statementWithID:
-                                               [statementID unsignedIntegerValue]];
-            
+        [html appendString: @"<tr>"];
+        [html appendString: @"<th style=\"border:1px solid black;\">№</th>"];
+        [html appendString: @"<th style=\"border:1px solid black;\">Вопрос</th>"];
+        [html appendString: @"<th style=\"border:1px solid black;\">Шкала</th>"];
+        [html appendString: @"<th style=\"border:1px solid black;\">Ответ</th>"];
+        [html appendString: @"</tr>"];
+        
+        void (^appendRowForStatement)(id<StatementProtocol> statement, BOOL positive) =
+        ^(id<StatementProtocol> statement, BOOL positive){
             [html appendString: @"<tr>"];
             
-            [html appendFormat: @"<td colspan=\"1\">%d</td>", [statement statementID]];
-            [html appendFormat: @"<td colspan=\"1\">%@</td>", [statement text]];
+            [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">%d</td>", [statement statementID]];
+            [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\">%@</td>", [statement text]];
+            
+            
+            if (positive)
+            {
+                [html appendString: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">+</td>"];
+            }
+            else
+            {
+                [html appendString: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">-</td>"];
+            }
+            
             
             AnswerType answer = [_record.testAnswers answerTypeForStatementID:
                                  [statement statementID]];
@@ -200,21 +209,41 @@
             {
                 case AnswerTypeNegative:
                 {
-                    [html appendString: @"<td colspan=\"1\">-</td>"];
+                    [html appendString: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">-</td>"];
                 } break;
                     
                     
                 case AnswerTypePositive:
                 {
-                    [html appendString: @"<td colspan=\"1\">+</td>"];
+                    [html appendString: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">+</td>"];
                 }
                     
                 default:
                 {
-                    [html appendString: @"<td colspan=\"1\"></td>"];
+                    [html appendString: @"<td style=\"border:1px solid black;\" colspan=\"1\"></td>"];
                 } break;
             }
             [html appendString: @"</tr>"];
+        };
+        
+        
+        for (NSNumber *statementID in positiveIDs)
+        {
+            FRB_AssertClass(statementID, NSNumber);
+            id<StatementProtocol> statement = [_questionnaire statementWithID:
+                                               [statementID unsignedIntegerValue]];
+            
+            appendRowForStatement(statement, YES);
+        }
+        
+        
+        for (NSNumber *statementID in negativeIDs)
+        {
+            FRB_AssertClass(statementID, NSNumber);
+            id<StatementProtocol> statement = [_questionnaire statementWithID:
+                                               [statementID unsignedIntegerValue]];
+            
+            appendRowForStatement(statement, NO);
         }
         
         [html appendString: @"</table>"];
@@ -242,12 +271,20 @@
     if (dateString.length > 0)
         [html appendFormat: @"<h2>%@</h2>", dateString];
     
-    [html appendString: @"<table width=\"100%\">"];
+    [html appendString: @"<table style=\"border:1px solid black; border-collapse:collapse;\" width=\"100%\">"];
     [html appendString: @"<colgroup>"];
     [html appendString: @"<col width=\"10%\">"];
     [html appendString: @"<col width=\"80%\">"];
     [html appendString: @"<col width=\"10%\">"];
     [html appendString: @"</colgroup>"];
+    
+    
+    [html appendString: @"<tr>"];
+    [html appendString: @"<th style=\"border:1px solid black;\">№</th>"];
+    [html appendString: @"<th style=\"border:1px solid black;\">Вопрос</th>"];
+    [html appendString: @"<th style=\"border:1px solid black;\">Ответ</th>"];
+    [html appendString: @"</tr>"];
+
     
     for (NSUInteger i = 0; i < [_questionnaire statementsCount]; ++i)
     {
@@ -255,8 +292,8 @@
         
         [html appendString: @"<tr>"];
         
-        [html appendFormat: @"<td colspan=\"1\">%d</td>", [statement statementID]];
-        [html appendFormat: @"<td colspan=\"1\">%@</td>", [statement text]];
+        [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">%d</td>", [statement statementID]];
+        [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\">%@</td>", [statement text]];
         
         AnswerType answer = [_record.testAnswers answerTypeForStatementID:
                              [statement statementID]];
@@ -265,18 +302,18 @@
         {
             case AnswerTypeNegative:
             {
-                [html appendString: @"<td colspan=\"1\">-</td>"];
+                [html appendString: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">-</td>"];
             } break;
                 
                 
             case AnswerTypePositive:
             {
-                [html appendString: @"<td colspan=\"1\">+</td>"];
+                [html appendString: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">+</td>"];
             }
                 
             default:
             {
-                [html appendString: @"<td colspan=\"1\"></td>"];
+                [html appendString: @"<td style=\"border:1px solid black;\" colspan=\"1\"></td>"];
             } break;
         }
         [html appendString: @"</tr>"];

@@ -409,26 +409,39 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-p9-gNT">
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" type="user" id="Q0d-uC-juO"/>
-                                                <constraint firstAttribute="height" constant="21" id="dos-Lt-VAq"/>
+                                                <constraint firstAttribute="width" constant="75" type="user" id="Q0d-uC-juO"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.31764705879999999" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="164." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMl-Us-9Nq">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="34" type="user" id="IjK-Tq-AdO"/>
+                                                <constraint firstAttribute="height" constant="21" id="Vs0-ed-uOg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="fer-fQ-825" firstAttribute="top" secondItem="r2c-mq-F81" secondAttribute="top" constant="11" id="0P7-jK-lEb"/>
-                                    <constraint firstItem="fer-fQ-825" firstAttribute="leading" secondItem="r2c-mq-F81" secondAttribute="leading" constant="20" type="user" id="8s6-Bf-r38"/>
+                                    <constraint firstItem="tMl-Us-9Nq" firstAttribute="top" secondItem="r2c-mq-F81" secondAttribute="top" constant="11" id="6eh-YS-q09"/>
+                                    <constraint firstItem="tMl-Us-9Nq" firstAttribute="baseline" secondItem="fer-fQ-825" secondAttribute="baseline" type="default" id="Iu1-NK-cnY"/>
                                     <constraint firstItem="h1a-p9-gNT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fer-fQ-825" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="JGV-4S-hYS"/>
+                                    <constraint firstItem="tMl-Us-9Nq" firstAttribute="leading" secondItem="r2c-mq-F81" secondAttribute="leading" constant="8" type="user" id="PJa-UG-e1l"/>
                                     <constraint firstItem="h1a-p9-gNT" firstAttribute="top" secondItem="fer-fQ-825" secondAttribute="top" type="default" id="SUS-C7-M37"/>
+                                    <constraint firstItem="fer-fQ-825" firstAttribute="bottom" secondItem="h1a-p9-gNT" secondAttribute="bottom" type="default" id="VDc-pv-SQa"/>
                                     <constraint firstAttribute="trailing" secondItem="h1a-p9-gNT" secondAttribute="trailing" constant="20" type="user" id="YSR-hl-qd6"/>
+                                    <constraint firstItem="tMl-Us-9Nq" firstAttribute="top" secondItem="fer-fQ-825" secondAttribute="top" type="default" id="cO2-Qi-IZ1"/>
+                                    <constraint firstItem="fer-fQ-825" firstAttribute="leading" secondItem="tMl-Us-9Nq" secondAttribute="trailing" constant="18" type="user" id="x9Y-fr-0Xs"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="_groupNameLabel" destination="fer-fQ-825" id="7A8-cR-bL3"/>
-                                    <outlet property="_lcGroupNameLabelLeft" destination="8s6-Bf-r38" id="k3M-oA-jz6"/>
+                                    <outlet property="_indexLabel" destination="tMl-Us-9Nq" id="Q0q-gI-07U"/>
+                                    <outlet property="_lcGroupNameLabelLeft" destination="x9Y-fr-0Xs" id="K3u-Io-RyG"/>
                                     <outlet property="_scoreLabel" destination="h1a-p9-gNT" id="vxf-I6-35s"/>
                                 </connections>
                             </tableViewCell>
@@ -1067,6 +1080,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyzerTableViewCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="_groupNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_indexLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="_lcGroupNameLabelLeft" candidateClass="NSLayoutConstraint"/>
                 <relationship kind="outlet" name="_scoreLabel" candidateClass="UILabel"/>
             </relationships>
@@ -1160,11 +1174,11 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pzp-1q-KmK"/>
+        <segue reference="p41-jG-o3A"/>
+        <segue reference="4HI-R5-Cm1"/>
+        <segue reference="Vg7-Qs-0dP"/>
+        <segue reference="gZV-hG-uQK"/>
         <segue reference="1n8-HN-ewy"/>
-        <segue reference="wQm-8j-8wQ"/>
-        <segue reference="K8u-i7-vef"/>
-        <segue reference="B1l-8X-pqZ"/>
         <segue reference="cEz-YJ-d3N"/>
     </inferredMetricsTieBreakers>
 </document>

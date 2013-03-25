@@ -13,6 +13,7 @@
 #pragma mark AnalyzerGroupBase interface
 
 @interface AnalyzerGroupBase : NSObject<AnalyzerGroup>
+@property (strong,   nonatomic) NSArray   *indexesForGender;
 @property (strong,   nonatomic) NSString  *name;
 @property (strong,   nonatomic) NSString  *type;
 @property (assign,   nonatomic) double     score;

@@ -474,6 +474,13 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
     cell.groupNameLabel.text = group.name;
     cell.groupNameOffset     = depth * 40;
     
+    NSUInteger index = [group indexForRecord: self.record];
+    
+    if (index > 0)
+        cell.indexLabel.text = [NSString stringWithFormat: @"%d.", index];
+    else
+        cell.indexLabel.text = nil;
+    
     switch (depth)
     {
         case 0:

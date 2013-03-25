@@ -31,6 +31,7 @@
 static NSString * const kJSONKeyName      = @"name";
 static NSString * const kJSONKeyType      = @"type";
 static NSString * const kJSONKeySubgroups = @"subgroups";
+static NSString * const kJSONKeyIndex     = @"index";
 
 
 
@@ -76,9 +77,7 @@ static id _logSubgroupNotDictionary(id object);
                       
                       kGroupType_FScale     : @"AnalyzerFGroup",
                       
-                      // It seems that all of FScale_FM type scales should
-                      // compute their scores exactly as the Base5-type scale
-                      kGroupType_FScale_FM  : @"AnalyzerBase5Group",
+                      kGroupType_FScale_FM  : @"AnalyzerFGroupFM",
                       
                       kGroupType_PScale     : @"AnalyzerPGroup",
                       
@@ -149,6 +148,12 @@ static id _logSubgroupNotDictionary(id object);
 
 #pragma mark -
 #pragma mark AnalyzerGroup
+
+- (NSUInteger) indexForRecord: (id<TestRecordProtocol>) record
+{
+    return [self.indexesForGender[(record.person.gender == GenderFemale) ? 1 : 0] unsignedIntegerValue];
+}
+
 
 - (BOOL) canProvideDetailedInfo
 {
@@ -241,7 +246,6 @@ static id _logSubgroupNotDictionary(id object);
     if (name.length == 0) return _logGroupNameNotFound();
     if (type.length == 0) return _logGroupTypeNotFound();
     
-    
     AnalyzerGroupBase *group = nil;
     
     NSString *className = kGroupClassForType[type];
@@ -261,6 +265,15 @@ static id _logSubgroupNotDictionary(id object);
     {
         group.name = name;
         group.type = type;
+        
+        id index = json[kJSONKeyIndex];
+        
+        if ([index isKindOfClass: [NSNumber class]])
+            group.indexesForGender = @[index, index];
+        else if ([index isKindOfClass: [NSArray class]] && ([index count] == 2))
+            group.indexesForGender = index;
+        else
+            group.indexesForGender = @[@0, @0];
         
         NSArray *subgroups = json[kJSONKeySubgroups];
         
