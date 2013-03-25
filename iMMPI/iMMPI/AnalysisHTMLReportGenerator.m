@@ -186,6 +186,10 @@
         
         void (^appendRowForStatement)(id<StatementProtocol> statement, BOOL positive) =
         ^(id<StatementProtocol> statement, BOOL positive){
+            
+            if (![self.analyzer isValidStatementID: statement.statementID])
+                return; // Ignore invalid statements
+            
             [html appendString: @"<tr>"];
             
             [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">%d</td>", [statement statementID]];
