@@ -14,6 +14,9 @@
 
 @interface AnalyzerFGroup : AnalyzerGroupBase
 
+@property (readonly, nonatomic) NSArray *positiveIndices;
+@property (readonly, nonatomic) NSArray *negativeIndices;
+
 @property (readonly, nonatomic) double medianMale;
 @property (readonly, nonatomic) double medianFemale;
 @property (readonly, nonatomic) double deviationMale;
