@@ -158,22 +158,22 @@
     NSUInteger C = [brackets[2] unsignedIntegerValue];
     NSUInteger D = [brackets[3] unsignedIntegerValue];
     
-    id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
-    id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
-    id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
-    id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
+    // Сумма Тэра вычисляется как сумма процентов совпадений по шкалам 95-98
+    NSUInteger TaerSum = [analyser taerSumForRecord: record];
     
-    NSUInteger TaerSum =
-    [IScale_95 computePercentageForRecord: record analyser: analyser] +
-    [IScale_96 computePercentageForRecord: record analyser: analyser] +
-    [IScale_97 computePercentageForRecord: record analyser: analyser] +
-    [IScale_98 computePercentageForRecord: record analyser: analyser];
-    
+    // Сумма Тэра попадает в знаменатель, поэтому необходимо проверить,
+    // что она положительная.
     if (TaerSum > 0)
     {
+        // Формульные единицы для каждой из шкал 95-98 вычисляются на
+        // основе процента совпадений, умноженного на 10 и деленного на
+        // сумму Тэра.
         NSUInteger percentage = [self computePercentageForRecord: record
                                                         analyser: analyser];
         
+        // Здесь идет умножение на 100, которое потом компенсируется делением на 10
+        // в конце вычисления. Вероятно, это какой-то остаток из прошлой версии
+        // приложения на Delphi, где вычисления были организованы как-то иначе.
         percentage = percentage * 100 / TaerSum;
         
         if (percentage <= A)

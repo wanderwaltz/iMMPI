@@ -19,4 +19,13 @@
 
 - (BOOL) isValidStatementID: (NSInteger) statementID;
 
+
+/*! Сумма Тэра, используется при расчете баллов по шкалам 95-104,
+    представленных в данном приложении классами AnalyzerIGroupT1,
+    AnalyzerIGroupX, AnalyzerIGroup99.
+ 
+    Представляет собой сумму процентов совпадений по шкалам 95-98
+ */
+- (NSUInteger) taerSumForRecord: (id<TestRecordProtocol>) record;
+
 @end

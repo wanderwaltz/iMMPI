@@ -245,6 +245,26 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 }
 
 
+- (NSUInteger) taerSumForRecord: (id<TestRecordProtocol>) record
+{
+    // Предполагается, что шкалы с данными типами присутствуют в
+    // файле анализатора в единственном экземпляре.
+    id<AnalyzerGroup> IScale_95 = [self firstGroupForType: kGroupType_IScale_95];
+    id<AnalyzerGroup> IScale_96 = [self firstGroupForType: kGroupType_IScale_96];
+    id<AnalyzerGroup> IScale_97 = [self firstGroupForType: kGroupType_IScale_97];
+    id<AnalyzerGroup> IScale_98 = [self firstGroupForType: kGroupType_IScale_98];
+    
+    // Сумма Тэра вычисляется как сумма процентов совпадений по шкалам 95-98
+    NSUInteger TaerSum =
+    [IScale_95 computePercentageForRecord: record analyser: self] +
+    [IScale_96 computePercentageForRecord: record analyser: self] +
+    [IScale_97 computePercentageForRecord: record analyser: self] +
+    [IScale_98 computePercentageForRecord: record analyser: self];
+
+    return TaerSum;
+}
+
+
 #pragma mark -
 #pragma mark private
 

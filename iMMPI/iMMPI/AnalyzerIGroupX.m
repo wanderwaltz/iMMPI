@@ -75,6 +75,147 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
     [html appendString: @"<html>"];
     [html appendString: @"<body>"];
     
+    [html appendString: @"<table width=\"100%\">"];
+    [html appendString: @"<colgroup>"];
+    [html appendString: @"<col width=\"35%\">"];
+    [html appendString: @"<col width=\"65%\">"];
+    [html appendString: @"</colgroup>"];
+    
+    void (^addRow)(NSString *left,
+                   NSString *right) =
+    ^(NSString *left,
+      NSString *right)
+    {
+        [html appendString: @"<tr>"];
+        
+        [html appendFormat: @"<td colspan=\"1\">%@</td>", left];
+        [html appendFormat: @"<td colspan=\"1\">%@</td>", right];
+        
+        [html appendString: @"</tr>"];
+    };
+    
+    
+    NSUInteger TaerSum = [analyser taerSumForRecord: record];
+    
+    addRow(___Details_Score,    self.readableScore);
+    addRow(___Details_Taer_Sum, [NSString stringWithFormat: @"%d", TaerSum]);
+    
+    if (TaerSum > 0)
+    {
+        id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
+        id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
+        
+        NSUInteger p95 = [IScale_95 computePercentageForRecord: record analyser: analyser];
+        NSUInteger p96 = [IScale_96 computePercentageForRecord: record analyser: analyser];
+        
+        NSUInteger FE99 = (p95 + p96) * 100 / TaerSum;
+        
+        addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%d%%", p95]);
+        addRow(___Details_Matches_IScale_96, [NSString stringWithFormat: @"%d%%", p96]);
+        addRow(___Details_Matches_IScale_99, [NSString stringWithFormat:
+                                              @"(%d + %d) / %d == %d%%", p95, p96, TaerSum, FE99]);
+        
+        id<AnalyzerGroup> IScale_100 = [analyser firstGroupForType: kGroupType_IScale_100];
+        id<AnalyzerGroup> IScale_101 = [analyser firstGroupForType: kGroupType_IScale_101];
+        id<AnalyzerGroup> IScale_102 = [analyser firstGroupForType: kGroupType_IScale_102];
+        
+        NSUInteger p100 = [IScale_100 computePercentageForRecord: record analyser: analyser];
+        NSUInteger p101 = [IScale_101 computePercentageForRecord: record analyser: analyser];
+        NSUInteger p102 = [IScale_102 computePercentageForRecord: record analyser: analyser];
+        
+        addRow(___Details_Matches_IScale_100, [NSString stringWithFormat: @"%d%%", p100]);
+        addRow(___Details_Matches_IScale_101, [NSString stringWithFormat: @"%d%%", p101]);
+        addRow(___Details_Matches_IScale_102, [NSString stringWithFormat: @"%d%%", p102]);
+        
+        NSUInteger X = p100 + p101 + p102;
+        
+        addRow(___Details_X, [NSString stringWithFormat: @"%d", X]);
+        
+        
+        NSUInteger FE100 = round([IScale_100 computePercentageForRecord: record
+                                                               analyser: analyser] * FE99 / X);
+        
+        NSUInteger FE101 = round([IScale_101 computePercentageForRecord: record
+                                                               analyser: analyser] * FE99 / X);
+        
+        NSUInteger FE102 = round([IScale_102 computePercentageForRecord: record
+                                                               analyser: analyser] * FE99 / X);
+        
+        // Здесь идет дублирование кода, я убрал все комментарии;
+        // см. подробности вычислений в -computeScoreForRecord:analyzer:
+        NSMutableArray *scores = [NSMutableArray arrayWithCapacity: 3];
+        
+        static NSString * const kScore = @"score";
+        static NSString * const kType  = @"type";
+        
+        [scores addObject: @{kScore: @(FE100), kType: kGroupType_IScale_100}];
+        [scores addObject: @{kScore: @(FE101), kType: kGroupType_IScale_101}];
+        [scores addObject: @{kScore: @(FE102), kType: kGroupType_IScale_102}];
+        
+        [scores sortUsingDescriptors:
+         @[[NSSortDescriptor sortDescriptorWithKey: kScore ascending: YES]]];
+        
+        NSMutableDictionary *resultingScores = [NSMutableDictionary dictionary];
+        
+        NSDictionary *max = scores[2];
+        NSDictionary *med = scores[1];
+        NSDictionary *min = scores[0];
+        
+        NSUInteger maxDelta = [max[kScore] intValue] - [min[kScore] intValue];
+        NSUInteger medDelta = [med[kScore] intValue] - [min[kScore] intValue];
+        
+        NSUInteger maxFinal = 0;
+        NSUInteger medFinal = 0;
+        NSUInteger minFinal = 3;
+        
+        if (maxDelta > 4)
+        {
+            maxFinal = 5;
+        }
+        else if (maxDelta > 2)
+        {
+            maxFinal = 4;
+        }
+        else
+        {
+            maxFinal = 3;
+        }
+        
+        if (medDelta > 4)
+        {
+            medFinal = 5;
+        }
+        else if (medDelta > 2)
+        {
+            medFinal = 4;
+        }
+        else
+        {
+            medFinal = 3;
+        }
+        
+        resultingScores[max[kType]] = @(maxFinal);
+        resultingScores[med[kType]] = @(medFinal);
+        resultingScores[min[kType]] = @(minFinal);
+        
+        NSDictionary *typeTranslation =
+        @{
+            kGroupType_IScale_100 : ___Details_FE_IScale_100,
+            kGroupType_IScale_101 : ___Details_FE_IScale_101,
+            kGroupType_IScale_102 : ___Details_FE_IScale_102
+        };
+        
+        for (NSDictionary *dic in scores)
+        {
+            addRow(typeTranslation[dic[kType]],
+                   [NSString stringWithFormat: @"%d (%d)",
+                    [dic[kScore] intValue],
+                    [resultingScores[dic[kType]] intValue]]);
+        }
+    }
+    
+    [html appendString: @"</table>"];
+    
     [html appendString: @"</body>"];
     [html appendString: @"</html>"];
     
@@ -102,192 +243,165 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 
 - (NSString *) readableScore
 {
-    return [NSString stringWithFormat: @"%.1lf", self.score];
+    return [NSString stringWithFormat: @"%d", (int)self.score];
 }
 
 
-/* This is one ugly piece of code translated directly from Pascal.
- 
- I've written it a couple of years ago and actually have no clue what exactly does it do. I guess I'll have to rewrite it from scratch some time later when I'll get the original book with formulae of computing these values.
- */
 - (double) computeScoreForRecord: (id<TestRecordProtocol>) record
                         analyser: (id<AnalyzerProtocol>) analyser
 {
-    NSInteger X = 0;
-    NSInteger TaerSum = 0;
-    NSInteger FE99 = 0;
+    //---------------------------------------------------
+    // Считаем для начала формульные единицы по шкале 99
+    //---------------------------------------------------
+    // Сумма Тэра вычисляется как сумма процентов совпадений по шкалам 95-98
+    NSUInteger TaerSum = [analyser taerSumForRecord: record];
     
-    NSInteger FE[3] = {0, 0, 0};
-    NSInteger Delta[3] = {0, 0, 0};
-    
-    NSInteger MaxD  = 0;
-    NSInteger MaxDV = 0;
-    
-    NSInteger Res[3] = {0, 0, 0};
-    
-    NSInteger I = 0;
-    
-    NSInteger SecD  = 0;
-    NSInteger SecDV = 0;
-    
-    NSInteger Used = 0;
-    
-    NSInteger DS[3][2] = { {0, 1}, {0,2}, {1,2} };
-    
-    
-    id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
-    id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
-    id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
-    id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
-    
-    id<AnalyzerGroup> IScale_100 = [analyser firstGroupForType: kGroupType_IScale_100];
-    id<AnalyzerGroup> IScale_101 = [analyser firstGroupForType: kGroupType_IScale_101];
-    id<AnalyzerGroup> IScale_102 = [analyser firstGroupForType: kGroupType_IScale_102];
-    
-    TaerSum =
-    [IScale_95 computePercentageForRecord: record analyser: analyser] +
-    [IScale_96 computePercentageForRecord: record analyser: analyser] +
-    [IScale_97 computePercentageForRecord: record analyser: analyser] +
-    [IScale_98 computePercentageForRecord: record analyser: analyser];
-    
+    // Сумма Тэра попадает в знаменатель, поэтому должна быть положительной.
+    // Если она все-таки получается равной нулю, вернуть недопустимое значение.
     if (TaerSum == 0)
     {
         self.score = -1;
         return self.score;
     }
     
-    FE99 =
+    id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
+    id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
+    
+    // FE == "формульные единицы"
+    // Формкльные единицы шкалы 99 вычисляются как сумма процентов совпадений по
+    // шкалам 95 и 96, умноженная на 10 и деленная на сумму Тэра.
+    NSUInteger FE99 =
     ([IScale_95 computePercentageForRecord: record analyser: analyser] +
      [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / TaerSum;
     
-    X =
+    //---------------------------------------------------
+    // Вычисляем значение X по формуле из книги
+    //---------------------------------------------------
+    id<AnalyzerGroup> IScale_100 = [analyser firstGroupForType: kGroupType_IScale_100];
+    id<AnalyzerGroup> IScale_101 = [analyser firstGroupForType: kGroupType_IScale_101];
+    id<AnalyzerGroup> IScale_102 = [analyser firstGroupForType: kGroupType_IScale_102];
+    
+    // X - это сумма процентов совпадений по шкалам 100-102
+    NSUInteger X =
     [IScale_100 computePercentageForRecord: record analyser: analyser] +
     [IScale_101 computePercentageForRecord: record analyser: analyser] +
     [IScale_102 computePercentageForRecord: record analyser: analyser];
     
+    // X попадает в знаменатель, поэтому должен быть положительным.
+    // Если X оказался равным нулю, вернуть недопустимое значение. 
     if (X == 0)
     {
         self.score = -1;
         return self.score;
     }
     
-    FE[0] = round([IScale_100 computePercentageForRecord: record
-                                                analyser: analyser] * FE99 / X);
-    FE[1] = round([IScale_101 computePercentageForRecord: record
-                                                analyser: analyser] * FE99 / X);
-    FE[2] = round([IScale_102 computePercentageForRecord: record
-                                                analyser: analyser] * FE99 / X);
+    //---------------------------------------------------
+    // Подсчет формульных единиц по шкалам 100-102
+    //---------------------------------------------------
+    static NSString * const kScore = @"score";
+    static NSString * const kType  = @"type";
     
-    Delta[0] = abs(FE[0]-FE[1]);
-    Delta[1] = abs(FE[0]-FE[2]);
-    Delta[2] = abs(FE[1]-FE[2]);
+    // Формульные единицы нормализуются в соответствии с выражениями,
+    // перечисленными в "Большой толстой книге":
+    // 100фе = 100% * 99фе / Х
+    // 101фе = 101% * 99фе / Х
+    // 102фе = 102% * 99фе / X
     
-    for (I = 0; I <= 2; ++I)
+    // Формульные единицы для шкалы 100
+    NSUInteger FE100 = round([IScale_100 computePercentageForRecord: record
+                                                           analyser: analyser] * FE99 / X);
+    
+    // Формульные единицы для шкалы 101
+    NSUInteger FE101 = round([IScale_101 computePercentageForRecord: record
+                                                           analyser: analyser] * FE99 / X);
+    
+    // Формульные единицы для шкалы 102
+    NSUInteger FE102 = round([IScale_102 computePercentageForRecord: record
+                                                           analyser: analyser] * FE99 / X);
+    
+    // Далее необходимо упорядочить полученные значения по возрастанию,
+    // но не забыть, какой шкале они соответствуют. Поэтому пишем NSDictionary
+    NSMutableArray *scores = [NSMutableArray arrayWithCapacity: 3];
+    
+    [scores addObject: @{kScore: @(FE100), kType: kGroupType_IScale_100}];
+    [scores addObject: @{kScore: @(FE101), kType: kGroupType_IScale_101}];
+    [scores addObject: @{kScore: @(FE102), kType: kGroupType_IScale_102}];
+    
+    // Отсортировали пары (баллы, тип шкалы) по возрастанию
+    [scores sortUsingDescriptors: @[[NSSortDescriptor sortDescriptorWithKey: kScore ascending: YES]]];
+    
+    // Сюда положим финальные баллы
+    NSMutableDictionary *resultingScores = [NSMutableDictionary dictionary];
+    
+    // Для удобства читаем значения из упорядоченного массива
+    // в отдельные NSDictionary
+    NSDictionary *max = scores[2];
+    NSDictionary *med = scores[1];
+    NSDictionary *min = scores[0];
+    
+    // Далее необходимо воспользоваться формулой из книги:
+    //
+    // Оценочные баллы ставятся по следующему правилу:
+    // Превышение одного показателя над другим в пределах 0.2 < D < 0.4 формульных единиц
+    // оценивается в 4 балла; превышение D > 0.4 - в 5 баллов; по тому же принципу ставятся
+    // 2 и 1 балла; при D < 0.2 все показатели получают 3 балла.
+    //
+    // Здесь мне до сих пор не ясно точно, разницу между какой парой значений
+    // рассматривать в качестве D в формуле из книги - есть дельта между максимальным
+    // и минимальным, есть дельта между средним и минимальным и есть дельта между
+    // средним и максимальным.
+    //
+    // Обсуждая этот вопрос с клиентом, мы пришли к выводу, что нужно брать дельту между
+    // максимальным и минимальным, для подсчета очков максимального, после чего брать
+    // дельту между двумя оставшимися - средним и минимальным.
+    //
+    // Это кажется несколько странным, но пусть будет так.
+    NSUInteger maxDelta = [max[kScore] intValue] - [min[kScore] intValue];
+    NSUInteger medDelta = [med[kScore] intValue] - [min[kScore] intValue];
+    
+    NSUInteger maxFinal = 0;
+    NSUInteger medFinal = 0;
+    NSUInteger minFinal = 3; // В таком случае минимальный балл всегда получит 3 очка
+    
+    // Наши значения умножены на 10 лишний раз, поэтому берем целые числа вместо десятых долей.
+    // Вычисляем баллы для максимального значения по формуле из книги.
+    if (maxDelta > 4)
     {
-        if (Delta[I] > MaxDV)
-        {
-            MaxD  = I;
-            MaxDV = Delta[I];
-        }
+        maxFinal = 5;
     }
-    
-    if (MaxDV > 4)
+    else if (maxDelta > 2)
     {
-        if (FE[DS[MaxD][0]] >= FE[DS[MaxD][1]])
-        {
-            Res[DS[MaxD][0]] = 50;
-            Used = DS[MaxD][0];
-        }
-        else
-        {
-            Res[DS[MaxD][1]] = 50;
-            Used = DS[MaxD][1];
-        }
-    }
-    else if (MaxDV >= 2)
-    {
-        if (FE[DS[MaxD][0]] >= FE[DS[MaxD][1]])
-        {
-            Res[DS[MaxD][0]] = 40;
-            Used = DS[MaxD][0];
-        }
-        else
-        {
-            Res[DS[MaxD][1]] = 40;
-            Used = DS[MaxD][1];
-        }
+        maxFinal = 4;
     }
     else
     {
-        self.score = 30;
-        return self.score;
+        maxFinal = 3;
     }
     
-    switch (Used)
+    // Вычисляем баллы для среднего значения по формуле из книги
+    if (medDelta > 4)
     {
-        case 0: SecD = 2; break;
-        case 1: SecD = 1; break;
-        case 2: SecD = 0; break;
-            
-        default: SecD = -1; break;
+        medFinal = 5;
     }
-    
-    if (SecD < 0)
+    else if (medDelta > 2)
     {
-        self.score = -1;
-        return self.score;
-    }
-    
-    SecDV = Delta[SecD];
-    
-    if (SecDV > 4)
-    {
-        if (FE[DS[SecD][0]] > FE[DS[SecD][1]])
-        {
-            Res[DS[SecD][0]] = 50;
-            Res[DS[SecD][1]] = 30;
-        }
-        else
-        {
-            Res[DS[SecD][0]] = 30;
-            Res[DS[SecD][1]] = 50;
-        }
-    }
-    else if (SecDV >= 2)
-    {
-        if (FE[DS[SecD][0]] > FE[DS[SecD][1]])
-        {
-            Res[DS[SecD][0]] = 40;
-            Res[DS[SecD][1]] = 30;
-        }
-        else
-        {
-            Res[DS[SecD][0]] = 30;
-            Res[DS[SecD][1]] = 40;
-        }
+        medFinal = 4;
     }
     else
     {
-        Res[DS[SecD][0]] = 30;
-        Res[DS[SecD][1]] = 30;
+        medFinal = 3;
     }
     
-    if ([self.type isEqualToString: kGroupType_IScale_100])
-    {
-        self.score = Res[0];
-    }
-    else if ([self.type isEqualToString: kGroupType_IScale_101])
-    {
-        self.score = Res[1];
-    }
-    else if ([self.type isEqualToString: kGroupType_IScale_102])
-    {
-        self.score = Res[2];
-    }
-    else
-        self.score = -1;
+    // Минимальное значение получает 3 балла по умолчанию, поэтому для него ничего
+    // вычислять уже не нужно.
     
-    self.score /= 10.0;
+    
+    // Сопоставляем полученные балы соответствующим шкалам
+    resultingScores[max[kType]] = @(maxFinal);
+    resultingScores[med[kType]] = @(medFinal);
+    resultingScores[min[kType]] = @(minFinal);
+    
+    self.score = [resultingScores[self.type] intValue];
     
     return self.score;
 }
@@ -355,5 +469,9 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
     
     return count;
 }
+
+
+#pragma mark -
+#pragma mark private
 
 @end

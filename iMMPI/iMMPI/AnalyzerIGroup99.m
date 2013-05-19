@@ -109,19 +109,12 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     
     id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
     id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
-    id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
-    id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
-    NSUInteger TaerSum =
-    [IScale_95 computePercentageForRecord: record analyser: analyser] +
-    [IScale_96 computePercentageForRecord: record analyser: analyser] +
-    [IScale_97 computePercentageForRecord: record analyser: analyser] +
-    [IScale_98 computePercentageForRecord: record analyser: analyser];
-    
-    
-    addRow(___Details_Score,            self.readableScore);
-    addRow(___Details_Brackets,         [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
-    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", TaerSum]);
+    NSUInteger TaerSum = [analyser taerSumForRecord: record];
+        
+    addRow(___Details_Score,    self.readableScore);
+    addRow(___Details_Brackets, [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
+    addRow(___Details_Taer_Sum, [NSString stringWithFormat: @"%d", TaerSum]);
     
     if (TaerSum > 0)
     {
@@ -208,17 +201,19 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     
     id<AnalyzerGroup> IScale_95 = [analyser firstGroupForType: kGroupType_IScale_95];
     id<AnalyzerGroup> IScale_96 = [analyser firstGroupForType: kGroupType_IScale_96];
-    id<AnalyzerGroup> IScale_97 = [analyser firstGroupForType: kGroupType_IScale_97];
-    id<AnalyzerGroup> IScale_98 = [analyser firstGroupForType: kGroupType_IScale_98];
     
-    NSUInteger TaerSum =
-    [IScale_95 computePercentageForRecord: record analyser: analyser] +
-    [IScale_96 computePercentageForRecord: record analyser: analyser] +
-    [IScale_97 computePercentageForRecord: record analyser: analyser] +
-    [IScale_98 computePercentageForRecord: record analyser: analyser];
+    // Сумма Тэра вычисляется как сумма процентов совпадений по шкалам 95-98
+    NSUInteger TaerSum = [analyser taerSumForRecord: record];
     
+    // Сумма Тэра попадает в знаменатель, поэтому необходимо проверить,
+    // что она положительная.
     if (TaerSum > 0)
     {
+        // Формульные единицы шкал 95 и 96 вычисляются как процент совпадений,
+        // умноженный на 10 и деленный на сумму Тэра. Мы сразу разворачиваем
+        // эту формулу здесь, чтобы подсчитать баллы по шкале 99. Умножение
+        // производится на коэффициент 100 вместо 10, что далее компенсируется
+        // деление на 10 финальных баллов.
         NSUInteger percentage =
         ([IScale_95 computePercentageForRecord: record analyser: analyser] +
          [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / TaerSum;
