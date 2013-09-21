@@ -13,6 +13,7 @@
 #import "TestAnswersInputViewController.h"
 #import "StatementTableViewCell.h"
 #import "AnalysisViewController.h"
+#import "SystemSoundManager.h"
 
 
 #pragma mark -
@@ -30,6 +31,8 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
     __weak IBOutlet UIView *_inputView;
     
     NSUInteger _statementIndex;
+    
+    SystemSoundManager *_soundManager;
 }
 
 @end
@@ -39,6 +42,21 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 #pragma mark TestAnswersInputViewController implementations
 
 @implementation TestAnswersInputViewController
+
+#pragma mark -
+#pragma mark initialization methods
+
+- (id) initWithCoder: (NSCoder *) aDecoder
+{
+    self = [super initWithCoder: aDecoder];
+    
+    if (self != nil)
+    {
+        _soundManager = [SystemSoundManager new];
+    }
+    return self;
+}
+
 
 #pragma mark -
 #pragma mark view lifecycle
@@ -107,6 +125,8 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 - (IBAction) negativeAnswerButtonAction: (id) sender
 {
+    [_soundManager playSoundNamed: @"button_tap1.wav"];
+    
     id<StatementProtocol> statement = [self.questionnaire statementAtIndex: _statementIndex];
     FRB_AssertNotNil(statement);
     
@@ -123,6 +143,8 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 
 - (IBAction) positiveAnswerButtonAction: (id) sender
 {
+    [_soundManager playSoundNamed: @"button_tap2.wav"];
+    
     id<StatementProtocol> statement = [self.questionnaire statementAtIndex: _statementIndex];
     FRB_AssertNotNil(statement);
     

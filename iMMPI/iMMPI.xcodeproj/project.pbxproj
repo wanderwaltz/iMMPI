@@ -61,6 +61,10 @@
 		5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */; };
 		5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650A16D8EFCF004D4BBA /* AnalyzerBase5Group.m */; };
 		5DC2650F16D92441004D4BBA /* AnalyzerPlainPercentGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650E16D92441004D4BBA /* AnalyzerPlainPercentGroup.m */; };
+		5DC3044817ED835700FCE5D5 /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DC3044717ED835700FCE5D5 /* button_tap1.wav */; };
+		5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC3044C17ED83A300FCE5D5 /* SystemSoundManager.m */; };
+		5DC3044F17ED83EB00FCE5D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */; };
+		5DC3045117ED84CC00FCE5D5 /* button_tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DC3045017ED84CC00FCE5D5 /* button_tap2.wav */; };
 		5DC40472168C2596000AFBAE /* Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40471168C2596000AFBAE /* Statement.m */; };
 		5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */; };
 		5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
@@ -219,6 +223,11 @@
 		5DC2650A16D8EFCF004D4BBA /* AnalyzerBase5Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerBase5Group.m; sourceTree = "<group>"; };
 		5DC2650D16D92441004D4BBA /* AnalyzerPlainPercentGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerPlainPercentGroup.h; sourceTree = "<group>"; };
 		5DC2650E16D92441004D4BBA /* AnalyzerPlainPercentGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerPlainPercentGroup.m; sourceTree = "<group>"; };
+		5DC3044717ED835700FCE5D5 /* button_tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = button_tap1.wav; path = ../../../../../../Downloads/button_tap1.wav; sourceTree = "<group>"; };
+		5DC3044B17ED83A300FCE5D5 /* SystemSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemSoundManager.h; sourceTree = "<group>"; };
+		5DC3044C17ED83A300FCE5D5 /* SystemSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemSoundManager.m; sourceTree = "<group>"; };
+		5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5DC3045017ED84CC00FCE5D5 /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = button_tap2.wav; path = ../../../../../../Downloads/button_tap2.wav; sourceTree = "<group>"; };
 		5DC40470168C2596000AFBAE /* Statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
 		5DC40471168C2596000AFBAE /* Statement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statement.m; sourceTree = "<group>"; };
 		5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementTableViewCell.h; sourceTree = "<group>"; };
@@ -314,6 +323,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC3044F17ED83EB00FCE5D5 /* AudioToolbox.framework in Frameworks */,
 				5DC0C88916E27C0F006ED854 /* MessageUI.framework in Frameworks */,
 				5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */,
 				5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */,
@@ -504,6 +514,8 @@
 		5DA5C9D5163B018D00CF1601 = {
 			isa = PBXGroup;
 			children = (
+				5DC3045017ED84CC00FCE5D5 /* button_tap2.wav */,
+				5DC3044717ED835700FCE5D5 /* button_tap1.wav */,
 				5DD5572A1748B657002AE1B8 /* Icon-144.png */,
 				5DD557281748B652002AE1B8 /* Icon-72.png */,
 				5DA5C9EA163B018D00CF1601 /* iMMPI */,
@@ -526,6 +538,7 @@
 		5DA5C9E3163B018D00CF1601 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */,
 				5DC0C88816E27C0F006ED854 /* MessageUI.framework */,
 				5DC076DC1648124100897C17 /* AddressBook.framework */,
 				5DC076D91648123A00897C17 /* AddressBookUI.framework */,
@@ -900,6 +913,8 @@
 			children = (
 				5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */,
 				5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */,
+				5DC3044B17ED83A300FCE5D5 /* SystemSoundManager.h */,
+				5DC3044C17ED83A300FCE5D5 /* SystemSoundManager.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1044,6 +1059,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Egor Chiglintsev";
+				TargetAttributes = {
+					5DA5C9DF163B018D00CF1601 = {
+						DevelopmentTeam = SUAWT97CSE;
+					};
+				};
 			};
 			buildConfigurationList = 5DA5C9DA163B018D00CF1601 /* Build configuration list for PBXProject "iMMPI" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1072,7 +1092,9 @@
 				5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */,
 				5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */,
 				5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */,
+				5DC3045117ED84CC00FCE5D5 /* button_tap2.wav in Resources */,
 				5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */,
+				5DC3044817ED835700FCE5D5 /* button_tap1.wav in Resources */,
 				5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */,
 				5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */,
 				5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */,
@@ -1168,6 +1190,7 @@
 				5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */,
 				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
+				5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
 				5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */,
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
@@ -1330,6 +1353,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 886E7B631E6B483C8375754E /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1348,6 +1372,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 886E7B631E6B483C8375754E /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1473,6 +1498,7 @@
 				5DD556F81748A2E1002AE1B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
