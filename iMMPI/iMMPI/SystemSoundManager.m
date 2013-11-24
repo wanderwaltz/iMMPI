@@ -12,15 +12,16 @@
 
 #import "SystemSoundManager.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 
 #pragma mark -
 #pragma mark SystemSoundManager private
 
-@interface SystemSoundManager()
+@interface SystemSoundManager()<AVAudioPlayerDelegate>
 {
 @private
-    NSMutableDictionary *_systemSoundIDs;
+    NSMutableSet *_players;
 }
 
 @end
@@ -40,23 +41,9 @@
     
     if (self != nil)
     {
-        _systemSoundIDs = [NSMutableDictionary dictionary];
+        _players = [NSMutableSet set];
     }
     return self;
-}
-
-
-- (void) dealloc
-{
-    [_systemSoundIDs enumerateKeysAndObjectsUsingBlock:
-     ^(id key, NSNumber *number, BOOL *stop) {
-         NSNumber *soundIDNumber = number;
-         
-         if (soundIDNumber != nil)
-         {
-             AudioServicesDisposeSystemSoundID([soundIDNumber unsignedIntValue]);
-         }
-    }];
 }
 
 
@@ -65,28 +52,39 @@
 
 - (void) playSoundNamed: (NSString *) fileName
 {
-    if (fileName.length > 0)
+    NSParameterAssert(fileName.length > 0);
+    
+    NSURL *fileURL =
+    [[NSBundle mainBundle] URLForResource: [fileName stringByDeletingPathExtension]
+                            withExtension: [fileName pathExtension]];
+    
+    if (fileURL != nil)
     {
-        NSNumber *existingSound = _systemSoundIDs[fileName];
+        NSError        *error = nil;
+        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
+                                                                       error: &error];
         
-        if (existingSound == nil)
+        if (error == nil)
         {
-            NSString *resourcePath =
-            [[NSBundle mainBundle] pathForResource: [fileName stringByDeletingPathExtension]
-                                            ofType: [fileName pathExtension]];
-            
-            SystemSoundID soundID = 0;
-            
-            AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: resourcePath],
-                                             &soundID);
-            
-            existingSound = @(soundID);
-            
-            _systemSoundIDs[fileName] = existingSound;
+            player.delegate = self;
+            [player play];
+            [_players addObject: player];
         }
-        
-        AudioServicesPlaySystemSound([existingSound unsignedIntValue]);
+        else
+        {
+            NSLog(@"FAILED to play sound '%@' with error: %@", fileName, error);
+        }
     }
+}
+
+
+#pragma mark -
+#pragma mark AVAudioPlayerDelegate
+
+- (void) audioPlayerDidFinishPlaying: (AVAudioPlayer *) player
+                        successfully: (BOOL) flag
+{
+    [_players removeObject: player];
 }
 
 @end
