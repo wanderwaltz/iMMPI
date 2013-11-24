@@ -563,6 +563,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
                       - (void) tableView: (UITableView *) tableView
 accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
 {
+    __attribute__((unused))
     id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
     FRB_AssertConformsTo(group, TestRecordsGroupByName);
     

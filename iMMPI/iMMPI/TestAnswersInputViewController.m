@@ -215,6 +215,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
                          cellForRowAtIndexPath: indexPath];
     FRB_AssertClass(cell, StatementTableViewCell);
     
+    __attribute__((unused))
     id<StatementProtocol> statement = [self statementAtIndexPath: indexPath];
     FRB_AssertNotNil(statement);
     
