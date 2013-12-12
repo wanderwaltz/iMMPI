@@ -22,6 +22,7 @@
 static NSString * const kCellID   = @"cell";
 static NSString * const kHeaderID = @"header";
 static NSString * const kFooterID = @"footer";
+static NSString * const kUnuserID = @"unused";
 
 enum
 {
@@ -69,6 +70,29 @@ enum
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Register a couple of 'unused' identifiers with dummy views since
+    // we cannot return nil from
+    //
+    // - (UICollectionReusableView *) collectionView: (UICollectionView *) collectionView
+    //             viewForSupplementaryElementOfKind: (NSString *) kind
+    //                                   atIndexPath: (NSIndexPath *) indexPath
+    //
+    // So we will return these for sections without a header or footer.
+    //
+    // Seems somewhat strange to do that, but documentation states that this is
+    // an expected method of implementing sections without headers for the flow layout.
+    //
+    // I'm pretty sure that previously returning nil from that method just worked,
+    // but now it fails runtime assersion.
+    //
+    [_collectionView registerClass: [UICollectionReusableView class]
+        forSupplementaryViewOfKind: UICollectionElementKindSectionHeader
+               withReuseIdentifier: kUnuserID];
+    
+    [_collectionView registerClass: [UICollectionReusableView class]
+        forSupplementaryViewOfKind: UICollectionElementKindSectionFooter
+               withReuseIdentifier: kUnuserID];
     
     UICollectionViewFlowLayout *layout = (id)_collectionView.collectionViewLayout;
     FRB_AssertClass(layout, UICollectionViewFlowLayout);
@@ -181,11 +205,20 @@ referenceSizeForFooterInSection: (NSInteger) section
         }
         else
         {
-            return nil;
+            // We cannot return nil from this method
+            return [collectionView dequeueReusableSupplementaryViewOfKind: kind
+                                                      withReuseIdentifier: kUnuserID
+                                                             forIndexPath: indexPath];
         }
     }
-    else return nil;
+    // We cannot return nil from this method
+    else return [collectionView dequeueReusableSupplementaryViewOfKind: kind
+                                                   withReuseIdentifier: kUnuserID
+                                                          forIndexPath: indexPath];
 }
+
+
+
 
 
 - (UICollectionViewCell *) collectionView: (UICollectionView *) view
