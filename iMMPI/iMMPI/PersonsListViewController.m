@@ -29,7 +29,7 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 #pragma mark PersonsListViewController private
 
 @interface PersonsListViewController()
-<EditTestRecordViewControllerDelegate, TestRecordModelByDateDelegate>
+<EditTestRecordViewControllerDelegate, TestRecordModelByDateDelegate, UISearchDisplayDelegate>
 {
     id<TestRecordStorage> _storage;
     id<TestRecordStorage> _trashStorage;
@@ -40,6 +40,9 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     // functionality, so the coupling could not be loosened by using
     // MutableTableViewModel protocol
     TestRecordModelGroupedByName *_model;
+    
+    /// Filtered results to be shown while searching
+    TestRecordModelGroupedByName *_filteredModel;
 }
 
 @end
@@ -143,11 +146,14 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     // Either a table view cell can end up as a 'sender' for segue
     if ([sender isKindOfClass: [UITableViewCell class]])
     {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        NSLog(@"active <table: %p> <cell: %p>", [self activeTableView], sender);
+        
+        NSIndexPath *indexPath = [[self activeTableView] indexPathForCell: sender];
         FRB_AssertNotNil(indexPath);
         
         
-        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        id<TestRecordsGroupByName> group = [self groupForTableView: [self activeTableView]
+                                                       atIndexPath: indexPath];
         FRB_AssertConformsTo(group, TestRecordsGroupByName);
         
         NSAssert((group.numberOfRecords == 1), @"kSegueEditAnswers should be performed only if number of records in a group is exactly equal to 1");
@@ -206,11 +212,12 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     // first record in the group and return it for editing.
     if ([sender isKindOfClass: [UITableViewCell class]])
     {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        NSIndexPath *indexPath = [[self activeTableView] indexPathForCell: sender];
         FRB_AssertNotNil(indexPath);
         
         
-        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        id<TestRecordsGroupByName> group = [self groupForTableView: [self activeTableView]
+                                                       atIndexPath: indexPath];
         FRB_AssertConformsTo(group, TestRecordsGroupByName);
         
         return group.allRecords[0];
@@ -267,10 +274,11 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     // using the indexPath of the cell.
     if ([sender isKindOfClass: [UITableViewCell class]])
     {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        NSIndexPath *indexPath = [[self activeTableView] indexPathForCell: sender];
         FRB_AssertNotNil(indexPath);
         
-        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        id<TestRecordsGroupByName> group = [self groupForTableView: [self activeTableView]
+                                                       atIndexPath: indexPath];
         FRB_AssertConformsTo(group, TestRecordsGroupByName);
         
         TestRecordModelByDate *model = [TestRecordModelByDate new];
@@ -286,7 +294,7 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     // according to the group found.
     else if ([sender conformsToProtocol: @protocol(TestRecordProtocol)])
     {
-        id<TestRecordsGroupByName> group = [_model groupForRecord: sender];
+        id<TestRecordsGroupByName> group = [[self modelForTableView: [self activeTableView]] groupForRecord: sender];
         FRB_AssertConformsTo(group, TestRecordsGroupByName);
         
         TestRecordModelByDate *model = [TestRecordModelByDate new];
@@ -348,10 +356,11 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     // which is represented by this cell and return the group's name
     if ([sender isKindOfClass: [UITableViewCell class]])
     {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+        NSIndexPath *indexPath = [[self activeTableView] indexPathForCell: sender];
         FRB_AssertNotNil(indexPath);
         
-        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        id<TestRecordsGroupByName> group = [self groupForTableView: [self activeTableView]
+                                                       atIndexPath: indexPath];
         FRB_AssertConformsTo(group, TestRecordsGroupByName);
 
         return group.name;
@@ -361,7 +370,7 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     // which it belongs to and return the group's name.
     else if ([sender conformsToProtocol: @protocol(TestRecordProtocol)])
     {
-        id<TestRecordsGroupByName> group = [_model groupForRecord: sender];
+        id<TestRecordsGroupByName> group = [[self modelForTableView: [self activeTableView]] groupForRecord: sender];
         FRB_AssertConformsTo(group, TestRecordsGroupByName);
         
         return group.name;
@@ -471,6 +480,39 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 }
 
 
+- (UITableView *) activeTableView
+{
+    if (self.searchDisplayController.isActive)
+    {
+        return self.searchDisplayController.searchResultsTableView;
+    }
+    else
+    {
+        return self.tableView;
+    }
+}
+
+
+- (TestRecordModelGroupedByName *) modelForTableView: (UITableView *) tableView
+{
+    if (tableView == self.tableView)
+    {
+        return _model;
+    }
+    else
+    {
+        return _filteredModel;
+    }
+}
+
+
+- (id<TestRecordsGroupByName>) groupForTableView: (UITableView *) tableView
+                                     atIndexPath: (NSIndexPath *) indexPath
+{
+    return [[self modelForTableView: tableView] objectAtIndexPath: indexPath];
+}
+
+
 - (BOOL) deleteGroup: (id<TestRecordsGroupByName>) group
          atIndexPath: (NSIndexPath *) indexPath
 {
@@ -480,7 +522,8 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
         [_storage removeTestRecord: record];
     }
     
-    return [_model removeObject: group];
+    [_filteredModel removeObject: group];
+    return [_model  removeObject: group];
 }
 
 
@@ -489,10 +532,12 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     if (indexPath != nil)
     {
         // Expect a group of test records with a same person name in the model
-        id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+        id<TestRecordsGroupByName> group = [self groupForTableView: [self activeTableView]
+                                                       atIndexPath: indexPath];
+        
         FRB_AssertConformsTo(group, TestRecordsGroupByName);
         
-        id sender = [self.tableView cellForRowAtIndexPath: indexPath];
+        id sender = [[self activeTableView] cellForRowAtIndexPath: indexPath];
         
         // If group contains several records, show the group contents as a list,
         // if only one record in the group, select it immediately.
@@ -526,11 +571,12 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     FRB_AssertNotNil(record);
     FRB_AssertConformsTo(record, TestRecordProtocol);
     
-    id<TestRecordsGroupByName> group = [_model groupForRecord: record];
+    TestRecordModelGroupedByName *model = [self modelForTableView: [self activeTableView]];
+    id<TestRecordsGroupByName>    group = [model groupForRecord: record];
     
     if (group != nil)
     {
-        NSIndexPath *indexPath = [_model indexPathForObject: group];
+        NSIndexPath *indexPath = [model indexPathForObject: group];
         
         if (indexPath != nil)
         { 
@@ -564,7 +610,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
 {
     __attribute__((unused))
-    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    id<TestRecordsGroupByName> group = [self groupForTableView: tableView atIndexPath: indexPath];
     FRB_AssertConformsTo(group, TestRecordsGroupByName);
     
     id sender = [tableView cellForRowAtIndexPath: indexPath];
@@ -583,7 +629,7 @@ accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
                          - (NSString *) tableView: (UITableView *) tableView
 titleForDeleteConfirmationButtonForRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    id<TestRecordsGroupByName> group = [self groupForTableView: tableView atIndexPath: indexPath];
     FRB_AssertConformsTo(group, TestRecordsGroupByName);
     
     if (group.numberOfRecords == 1) return ___Delete;
@@ -597,24 +643,28 @@ titleForDeleteConfirmationButtonForRowAtIndexPath: (NSIndexPath *) indexPath
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView *) tableView
 {
-    return [_model numberOfSections];
+    return [[self modelForTableView: tableView] numberOfSections];
 }
 
 
 - (NSInteger) tableView: (UITableView *) tableView
   numberOfRowsInSection: (NSInteger) section
 {
-    return [_model numberOfRowsInSection: section];
+    return [[self modelForTableView: tableView] numberOfRowsInSection: section];
 }
 
 
 - (UITableViewCell *) tableView: (UITableView *) tableView
           cellForRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: kGroupCellIdentifier];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier: kGroupCellIdentifier];
     FRB_AssertNotNil(cell);
     
-    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    NSLog(@"<table: %p> <cell: %p>", tableView, cell);
+    
+    id<TestRecordsGroupByName> group = [self groupForTableView: tableView
+                                                   atIndexPath: indexPath];
+    
     FRB_AssertConformsTo(group, TestRecordsGroupByName);
     
     cell.textLabel.text = group.name;
@@ -641,14 +691,22 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
 {
     FRB_AssertNotNil(indexPath);
     
-    id<TestRecordsGroupByName> group = [_model objectAtIndexPath: indexPath];
+    id<TestRecordsGroupByName> group = [self groupForTableView: tableView
+                                                   atIndexPath: indexPath];
+    
+    
     FRB_AssertConformsTo(group, TestRecordsGroupByName);
 
     if ([self deleteGroup: group
               atIndexPath: indexPath])
     {
-        [self.tableView deleteRowsAtIndexPaths: @[indexPath]
-                              withRowAnimation: UITableViewRowAnimationAutomatic];
+        [tableView deleteRowsAtIndexPaths: @[indexPath]
+                         withRowAnimation: UITableViewRowAnimationAutomatic];
+        
+        if (tableView != self.tableView)
+        {
+            [self.tableView reloadData];
+        }
     }
 }
 
@@ -666,16 +724,19 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     {
         if ([_storage containsTestRecord: record])
         {
-            [_model       updateObject: record];
-            [_storage updateTestRecord: record];
+            [_model         updateObject: record];
+            [_filteredModel updateObject: record];
+            [_storage   updateTestRecord: record];
         }
         else
         {
-            [_model       addNewObject: record];
-            [_storage addNewTestRecord: record];
+            [_model         addNewObject: record];
+            [_filteredModel addNewObject: record];
+            [_storage   addNewTestRecord: record];
         }
         
-        [self.tableView reloadData];
+        [self.tableView                                      reloadData];
+        [self.searchDisplayController.searchResultsTableView reloadData];
         
         dispatch_async(dispatch_get_main_queue(), ^{
            
@@ -742,8 +803,12 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         // Instead we add the record to _model and pop the navigation stack
         // to show a list of all persons where the newly added record will
         // also be contained.
-        [_model addNewObject: record];
-        [self.tableView reloadData];
+        [_model         addNewObject: record];
+        [_filteredModel addNewObject: record];
+        
+        [self.tableView                                      reloadData];
+        [self.searchDisplayController.searchResultsTableView reloadData];
+        
         [self.navigationController popToViewController: self
                                               animated: YES];
         return NO;
@@ -766,8 +831,11 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     // If the -testRecordModelByDate:shouldAddNewObject: returned YES,
     // the record is already added to the TestRecordModelByDate, so
     // we only add it to _model and reload the table view.
-    [_model addNewObject: record];
-    [self.tableView reloadData];
+    [_model         addNewObject: record];
+    [_filteredModel addNewObject: record];
+    
+    [self.tableView                                      reloadData];
+    [self.searchDisplayController.searchResultsTableView reloadData];
 }
 
 
@@ -784,8 +852,12 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         return YES;
     else
     {
-        [_model updateObject: record];
-        [self.tableView reloadData];
+        [_model         updateObject: record];
+        [_filteredModel updateObject: record];
+        
+        [self.tableView                                      reloadData];
+        [self.searchDisplayController.searchResultsTableView reloadData];
+        
         [self.navigationController popToViewController: self
                                               animated: YES];
         return NO;
@@ -796,9 +868,11 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
 - (void) testRecordModelByDate: (TestRecordModelByDate *) model
                didUpdateObject: (id<TestRecordProtocol>) record
 {
-    [_model updateObject: record];
-    [self.tableView reloadData];
-
+    [_model         updateObject: record];
+    [_filteredModel updateObject: record];
+    
+    [self.tableView                                      reloadData];
+    [self.searchDisplayController.searchResultsTableView reloadData];
 }
 
 
@@ -815,8 +889,11 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         return YES;
     else
     {
-        [_model removeObject: record];
-        [self.tableView reloadData];
+        [_model         removeObject: record];
+        [_filteredModel removeObject: record];
+        [self.tableView                                      reloadData];
+        [self.searchDisplayController.searchResultsTableView reloadData];
+        
         [self.navigationController popToViewController: self
                                               animated: YES];
     
@@ -828,9 +905,28 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
 - (void) testRecordModelByDate: (TestRecordModelByDate *) model
                didRemoveObject: (id<TestRecordProtocol>) record
 {
-    [_model removeObject: record];
-    [self.tableView reloadData];
-    
+    [_model         removeObject: record];
+    [_filteredModel removeObject: record];
+    [self.tableView                                      reloadData];
+    [self.searchDisplayController.searchResultsTableView reloadData];
+}
+
+
+#pragma mark -
+#pragma mark UISearchDisplayDelegate
+
+- (BOOL) searchDisplayController: (UISearchDisplayController *) controller
+shouldReloadTableForSearchString: (NSString *) searchString
+{
+    if (searchString.length > 2)
+    {
+        _filteredModel = [_model modelByFilteringWithSearchQuery: searchString];
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 

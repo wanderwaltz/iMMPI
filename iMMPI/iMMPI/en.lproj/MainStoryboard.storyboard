@@ -349,8 +349,8 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-OU-DB3">
-                                            <rect key="frame" x="615" y="13" width="133" height="38"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-OU-DB3">
+                                            <rect key="frame" x="615" y="18" width="133" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="133" id="PEU-8E-gSB"/>
                                             </constraints>
@@ -490,9 +490,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="SBg-U5-agT">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="nvo-jh-oP6" id="N4m-3u-Oj5"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.personsGroup" textLabel="ZEV-cn-cEB" detailTextLabel="rn6-T8-ZdH" style="IBUITableViewCellStyleValue1" id="QHr-PC-MeF">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QHr-PC-MeF" id="pAo-hr-MAD">
                                     <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
@@ -536,6 +544,7 @@
                         <attributedString key="attributedTitle"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="searchDisplayController" destination="xSq-12-VF4" id="XWm-CT-EMD"/>
                         <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editGroup" modalPresentationStyle="formSheet" id="ghm-Jh-3HV"/>
                         <segue destination="zGB-ra-p1M" kind="push" identifier="com.immpi.segue.listGroup" id="hGM-y0-hAY"/>
                         <segue destination="LqN-J3-mFC" kind="replace" identifier="com.immpi.segue.answersInput" splitViewControllerTargetIndex="1" id="gZV-hG-uQK"/>
@@ -544,6 +553,15 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6V-I4-VnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="xSq-12-VF4">
+                    <connections>
+                        <outlet property="delegate" destination="nvo-jh-oP6" id="6JA-Ul-7Uz"/>
+                        <outlet property="searchBar" destination="SBg-U5-agT" id="Fi1-jg-p4F"/>
+                        <outlet property="searchContentsController" destination="nvo-jh-oP6" id="Fp5-p6-b4V"/>
+                        <outlet property="searchResultsDataSource" destination="nvo-jh-oP6" id="dib-L4-kt4"/>
+                        <outlet property="searchResultsDelegate" destination="nvo-jh-oP6" id="vAo-zI-cn1"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-684" y="-147"/>
         </scene>

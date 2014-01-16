@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+//TODO: add sound files with relative paths instead of absolute paths
+
 #pragma mark -
 #pragma mark AppDelegate interface
 

@@ -46,6 +46,27 @@
     return self;
 }
 
+
+#pragma mark -
+#pragma mark methods
+
+- (TestRecordModelGroupedByName *) modelByFilteringWithSearchQuery: (NSString *) searchTerm
+{
+    NSArray *filteredRecords =
+    [_records filteredArrayUsingPredicate:
+     [NSPredicate predicateWithBlock:
+      ^BOOL(id<TestRecordProtocol> record, NSDictionary *bindings) {
+          return [[[record person] name].lowercaseString rangeOfString:
+                  searchTerm.lowercaseString].location != NSNotFound;
+    }]];
+    
+    TestRecordModelGroupedByName *filteredModel = [TestRecordModelGroupedByName new];
+    [filteredModel addObjectsFromArray: filteredRecords];
+    
+    return filteredModel;
+}
+
+
 #pragma mark -
 #pragma mark MutableTableViewModel
 

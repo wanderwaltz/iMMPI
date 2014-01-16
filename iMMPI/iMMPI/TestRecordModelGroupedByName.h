@@ -125,4 +125,7 @@
  */
 - (BOOL) removeObject: (id) recordOrGroup;
 
+
+- (TestRecordModelGroupedByName *) modelByFilteringWithSearchQuery: (NSString *) searchTerm;
+
 @end
