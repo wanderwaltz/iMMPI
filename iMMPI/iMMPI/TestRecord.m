@@ -19,6 +19,15 @@
 @implementation TestRecord
 
 #pragma mark -
+#pragma mark property
+
+- (NSString *) personName
+{
+    return _person.name;
+}
+
+
+#pragma mark -
 #pragma mark initialization methods
 
 - (id) init

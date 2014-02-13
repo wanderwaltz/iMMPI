@@ -22,6 +22,9 @@
 /// Person who took the test
 @property (strong, nonatomic) id<PersonProtocol> person;
 
+/// Shortcut for self.person.name
+@property (copy, readonly, nonatomic) NSString *personName;
+
 
 /// Answers of the person
 @property (strong, nonatomic) id<TestAnswersProtocol> testAnswers;

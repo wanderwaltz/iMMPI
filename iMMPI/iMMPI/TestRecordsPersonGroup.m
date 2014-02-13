@@ -34,6 +34,8 @@
 
 - (id) initWithName: (NSString *) name
 {
+    NSParameterAssert(name.length > 0);
+    
     self = [super init];
     
     if (self != nil)
@@ -65,7 +67,7 @@
 {
     FRB_AssertConformsTo(record, TestRecordProtocol);
 
-    NSAssert([_name isEqualToString: record.person.name], @"Expected records with the same person name to be added to a TestRecordsPersonGroup");
+    NSAssert([_name isEqualToString: record.personName], @"Expected records with the same person name to be added to a TestRecordsPersonGroup");
     
     [_allRecords addObject: record];
 }

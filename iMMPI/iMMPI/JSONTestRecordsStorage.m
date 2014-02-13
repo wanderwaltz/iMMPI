@@ -12,13 +12,14 @@
 
 #import "JSONTestRecordsStorage.h"
 #import "JSONTestRecordStorageElement.h"
+#import "JSONTestRecordProxy.h"
 
 
 #pragma mark -
 #pragma mark Static constants
 
 static NSString * const kJSONPathExtension = @"json";
-
+static NSString * const kIndexFileName     = @"index";
 
 #pragma mark -
 #pragma mark Constants
@@ -35,6 +36,7 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
     NSMutableArray *_elements;
     NSMutableSet   *_loadedFileNames;
     
+    NSString    *_storageDirectoryName;
     NSString    *_storedRecordsPath;
     NSDateFormatter *_dateFormatter;
 }
@@ -74,8 +76,9 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
     {
         _elements        = [NSMutableArray array];
         _loadedFileNames = [NSMutableSet   set];
-        
-        _storedRecordsPath = storedRecordsPath;
+     
+        _storageDirectoryName = storageDirectoryName;
+        _storedRecordsPath    = storedRecordsPath;
         
         _dateFormatter = [NSDateFormatter new];
         _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
@@ -132,11 +135,41 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
 }
 
 
-- (BOOL) loadStoredTestRecords
+- (void) loadTestRecordsIndex
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString      *indexPath   = [[_storedRecordsPath stringByAppendingPathComponent: kIndexFileName]
+                                  stringByAppendingPathExtension: kJSONPathExtension];
     
-    NSArray *subpaths = [fileManager subpathsAtPath: _storedRecordsPath];
+    if ([fileManager fileExistsAtPath: indexPath isDirectory: NULL])
+    {
+        NSData *indexData = [NSData dataWithContentsOfFile: indexPath];
+        NSArray  *proxies = [JSONTestRecordSerialization recordProxiesFromIndexData: indexData];
+        
+        for (JSONTestRecordProxy *proxy in proxies)
+        {
+            NSParameterAssert(proxy.fileName != nil);
+            
+            if (![_loadedFileNames containsObject: proxy.fileName])
+            {
+                JSONTestRecordStorageElement *element = [JSONTestRecordStorageElement new];
+                element.record   = proxy;
+                element.fileName = proxy.fileName;
+                
+                [_loadedFileNames addObject: proxy.fileName];
+                [_elements        addObject:        element];
+            }
+        }
+    }
+}
+
+
+- (BOOL) loadStoredTestRecords
+{
+    [self loadTestRecordsIndex];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray       *subpaths    = [fileManager subpathsAtPath: _storedRecordsPath];
     
     for (NSString *fileName in subpaths)
     {
@@ -151,7 +184,9 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
             if (record != nil)
             {
                 JSONTestRecordStorageElement *element = [JSONTestRecordStorageElement new];
-                element.record   = record;
+                element.record   = [JSONTestRecordProxy proxyForRecord: record
+                                                          withFileName: fileName
+                                                           inDirectory: _storageDirectoryName];
                 element.fileName = fileName;
                 
                 [_loadedFileNames addObject: fileName];
@@ -159,6 +194,19 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
             }
         }
     }
+    
+    
+    NSArray  *indexProxies = [self allTestRecords];
+    NSData   *indexData    = [JSONTestRecordSerialization indexDataForRecordProxies: indexProxies];
+    
+    if (indexData != nil)
+    {
+        NSString *indexPath = [[_storedRecordsPath stringByAppendingPathComponent: kIndexFileName]
+                               stringByAppendingPathExtension: kJSONPathExtension];
+        
+        [indexData writeToFile: indexPath atomically: YES];
+    }
+    
     
     return YES;
 }

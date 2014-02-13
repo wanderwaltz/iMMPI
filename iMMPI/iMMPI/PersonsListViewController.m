@@ -146,8 +146,6 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     // Either a table view cell can end up as a 'sender' for segue
     if ([sender isKindOfClass: [UITableViewCell class]])
     {
-        NSLog(@"active <table: %p> <cell: %p>", [self activeTableView], sender);
-        
         NSIndexPath *indexPath = [[self activeTableView] indexPathForCell: sender];
         FRB_AssertNotNil(indexPath);
         
@@ -659,8 +657,6 @@ titleForDeleteConfirmationButtonForRowAtIndexPath: (NSIndexPath *) indexPath
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier: kGroupCellIdentifier];
     FRB_AssertNotNil(cell);
-    
-    NSLog(@"<table: %p> <cell: %p>", tableView, cell);
     
     id<TestRecordsGroupByName> group = [self groupForTableView: tableView
                                                    atIndexPath: indexPath];

@@ -56,7 +56,7 @@
     [_records filteredArrayUsingPredicate:
      [NSPredicate predicateWithBlock:
       ^BOOL(id<TestRecordProtocol> record, NSDictionary *bindings) {
-          return [[[record person] name].lowercaseString rangeOfString:
+          return [[record personName].lowercaseString rangeOfString:
                   searchTerm.lowercaseString].location != NSNotFound;
     }]];
     
@@ -110,7 +110,7 @@
     for (TestRecordsPersonGroup *group in _groups)
     {
         FRB_AssertClass(group, TestRecordsPersonGroup);
-        if ([group.name isEqualToString: object.person.name])
+        if ([group.name isEqualToString: object.personName])
         {
             [group addRecord: object];
             [group sortRecords];
@@ -123,7 +123,7 @@
     if (!foundGroup)
     {
         TestRecordsPersonGroup *group =
-        [[TestRecordsPersonGroup alloc] initWithName: object.person.name];
+        [[TestRecordsPersonGroup alloc] initWithName: object.personName];
         
         [group addRecord: object];
         
@@ -151,7 +151,7 @@
             
             if ([group.allRecords indexOfObject: object] != NSNotFound)
             {
-                if (![group.name isEqualToString: object.person.name])
+                if (![group.name isEqualToString: object.personName])
                 {
                     [group removeRecord: object];
                     
@@ -294,16 +294,16 @@
     if (_records.count > 0)
     {
         [_records sortUsingDescriptors:
-         @[[NSSortDescriptor sortDescriptorWithKey: @"person.name" ascending: YES]]];
+         @[[NSSortDescriptor sortDescriptorWithKey: @"personName" ascending: YES]]];
         
-        NSString *currentName = [_records[0] person].name;
+        NSString *currentName = [_records[0] personName];
         
         TestRecordsPersonGroup *group =
         [[TestRecordsPersonGroup alloc] initWithName: currentName];
         
         for (id<TestRecordProtocol> record in _records)
         {
-            if ([currentName isEqualToString: record.person.name])
+            if ([currentName isEqualToString: record.personName])
             {
                 [group addRecord: record];
             }
@@ -311,7 +311,7 @@
             {
                 [_groups addObject: group];
                 
-                currentName = record.person.name;
+                currentName = record.personName;
                 group       = [[TestRecordsPersonGroup alloc] initWithName: currentName];
                 
                 [group addRecord: record];

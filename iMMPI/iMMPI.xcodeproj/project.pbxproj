@@ -134,6 +134,7 @@
 		5DEE4BDD16E305770072F239 /* AnswersInputButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BDB16E305770072F239 /* AnswersInputButton@2x.png */; };
 		631F7A52D295429BB0A3F386 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D76D094067F4B558239B3CE /* libPods.a */; };
 		7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */; };
+		7CAB67D318ACA98200C194B8 /* JSONTestRecordProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB67D218ACA98200C194B8 /* JSONTestRecordProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -313,6 +314,8 @@
 		7C0F0268169C08C7006377B3 /* SegueDestinationEditRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationEditRecord.h; sourceTree = "<group>"; };
 		7C0F0269169C0E0C006377B3 /* SegueSourceListRecords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceListRecords.h; sourceTree = "<group>"; };
 		7C0F026A169C0E18006377B3 /* SegueDestinationListRecords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationListRecords.h; sourceTree = "<group>"; };
+		7CAB67D118ACA98200C194B8 /* JSONTestRecordProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordProxy.h; sourceTree = "<group>"; };
+		7CAB67D218ACA98200C194B8 /* JSONTestRecordProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordProxy.m; sourceTree = "<group>"; };
 		886E7B631E6B483C8375754E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -872,6 +875,8 @@
 		5DC973B4168F0D5F00C496F0 /* private */ = {
 			isa = PBXGroup;
 			children = (
+				7CAB67D118ACA98200C194B8 /* JSONTestRecordProxy.h */,
+				7CAB67D218ACA98200C194B8 /* JSONTestRecordProxy.m */,
 				5DC973B1168F0CD200C496F0 /* JSONTestRecordStorageElement.h */,
 				5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */,
 			);
@@ -1184,6 +1189,7 @@
 				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
 				5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */,
+				7CAB67D318ACA98200C194B8 /* JSONTestRecordProxy.m in Sources */,
 				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */,

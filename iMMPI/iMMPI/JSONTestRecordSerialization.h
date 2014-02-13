@@ -19,4 +19,7 @@
 
 + (NSString *) version;
 
++ (NSData  *) indexDataForRecordProxies:  (NSArray *) recordProxies;
++ (NSArray *) recordProxiesFromIndexData: (NSData  *) data;
+
 @end

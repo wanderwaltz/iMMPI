@@ -283,14 +283,14 @@ titleForDeleteConfirmationButtonForRowAtIndexPath: (NSIndexPath *) indexPath
     id<TestRecordProtocol> record = [_model objectAtIndexPath: indexPath];
     FRB_AssertConformsTo(record, TestRecordProtocol);
     
-    cell.textLabel.text       = [self abbreviatePersonName: record.person.name];
+    cell.textLabel.text       = [self abbreviatePersonName:     record.personName];
     cell.detailTextLabel.text = [_dateFormatter stringFromDate: record.date];
     
     return cell;
 }
 
 
-- (BOOL) tableView: (UITableView *) tableView
+- (BOOL)    tableView: (UITableView *) tableView
 canEditRowAtIndexPath: (NSIndexPath *) indexPath
 {
     return YES;

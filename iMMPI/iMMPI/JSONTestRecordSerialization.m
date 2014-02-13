@@ -11,6 +11,7 @@
 #endif
 
 #import "JSONTestRecordSerialization.h"
+#import "JSONTestRecordProxy.h"
 
 
 #pragma mark -
@@ -25,6 +26,11 @@ static NSString * const kJSONKeyAnswers         = @"answers";
 static NSString * const kJSONKeyStatemet        = @"statement";
 static NSString * const kJSONKeyStatementID     = @"id";
 static NSString * const kJSONKeyStatementAnswer = @"answer";
+
+static NSString * const kJSONKeyFileName        = @"fileName";
+static NSString * const kJSONKeyDirectory       = @"directory";
+
+
 
 static NSString * const kJSONValueGenderMale   = @"male";
 static NSString * const kJSONValueGenderFemale = @"female";
@@ -121,6 +127,65 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
 + (NSString *) version
 {
     return @"1.0";
+}
+
+
++ (NSData  *) indexDataForRecordProxies: (NSArray *) recordProxies
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    for (JSONTestRecordProxy *proxy in recordProxies)
+    {
+        NSParameterAssert([proxy isKindOfClass: [JSONTestRecordProxy class]]);
+        NSParameterAssert(proxy.fileName.length   > 0);
+        NSParameterAssert(proxy.directory.length  > 0);
+        NSParameterAssert(proxy.personName.length > 0);
+        NSParameterAssert(proxy.date != nil);
+        
+        [array addObject:
+         @{
+           kJSONKeyName      : nil2Null(proxy.personName),
+           kJSONKeyFileName  : nil2Null(proxy.fileName),
+           kJSONKeyDirectory : nil2Null(proxy.directory),
+           kJSONKeyDate      : nil2Null([[self dateFormatter] stringFromDate: proxy.date])
+           }];
+    }
+    
+    NSError *error = nil;
+    NSData  *data  = [NSJSONSerialization dataWithJSONObject: array
+                                                     options: NSJSONWritingPrettyPrinted
+                                                       error: &error];
+    return data;
+}
+
+
++ (NSArray *) recordProxiesFromIndexData: (NSData  *) data
+{
+    NSMutableArray *proxies     = [NSMutableArray array];
+    NSError        *error       = nil;
+    NSArray        *jsonProxies = [NSJSONSerialization JSONObjectWithData: data
+                                                                  options: 0
+                                                                    error: &error];
+    
+    for (NSDictionary *dictionary in jsonProxies)
+    {
+        JSONTestRecordProxy *proxy = [JSONTestRecordProxy new];
+        
+        proxy.personName = null2Nil(dictionary[kJSONKeyName]);
+        proxy.fileName   = null2Nil(dictionary[kJSONKeyFileName]);
+        proxy.directory  = null2Nil(dictionary[kJSONKeyDirectory]);
+        proxy.date       = [[self dateFormatter] dateFromString:
+                            null2Nil(dictionary[kJSONKeyDate])];
+        
+        NSParameterAssert(proxy.personName.length > 0);
+        NSParameterAssert(proxy.fileName.length   > 0);
+        NSParameterAssert(proxy.directory.length  > 0);
+        NSParameterAssert(proxy.date != nil);
+
+        [proxies addObject: proxy];
+    }
+    
+    return proxies;
 }
 
 
