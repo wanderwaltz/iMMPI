@@ -86,6 +86,8 @@
 		5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */; };
 		5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
 		5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
+		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
+		5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780418ACF81D009896FB /* button_tap2.wav */; };
 		5DD556E21748A2E1002AE1B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
 		5DD556E31748A2E1002AE1B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
 		5DD556E41748A2E1002AE1B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
@@ -279,6 +281,8 @@
 		5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
 		5DCC9647168DC1D8004F8D4E /* JSONTestRecordSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordSerialization.h; sourceTree = "<group>"; };
 		5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordSerialization.m; sourceTree = "<group>"; };
+		5DD3780318ACF81D009896FB /* button_tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap1.wav; sourceTree = "<group>"; };
+		5DD3780418ACF81D009896FB /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap2.wav; sourceTree = "<group>"; };
 		5DD556E11748A2E1002AE1B8 /* iMMPI-Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iMMPI-Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD556E71748A2E1002AE1B8 /* iMMPI-Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMMPI-Tests-Info.plist"; sourceTree = "<group>"; };
 		5DD556E91748A2E1002AE1B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -516,6 +520,8 @@
 		5DA5C9D5163B018D00CF1601 = {
 			isa = PBXGroup;
 			children = (
+				5DD3780318ACF81D009896FB /* button_tap1.wav */,
+				5DD3780418ACF81D009896FB /* button_tap2.wav */,
 				5DD5572A1748B657002AE1B8 /* Icon-144.png */,
 				5DD557281748B652002AE1B8 /* Icon-72.png */,
 				5DA5C9EA163B018D00CF1601 /* iMMPI */,
@@ -1092,6 +1098,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */,
 				5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */,
 				5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */,
 				5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */,
@@ -1102,6 +1109,7 @@
 				5DEE4BD816E304890072F239 /* AnswersInputViewBackground.png in Resources */,
 				5DEE4BD916E304890072F239 /* AnswersInputViewBackground@2x.png in Resources */,
 				5DEE4BDC16E305770072F239 /* AnswersInputButtonPressed@2x.png in Resources */,
+				5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */,
 				5DEE4BDD16E305770072F239 /* AnswersInputButton@2x.png in Resources */,
 				5DD5572C1748B68F002AE1B8 /* Icon-72.png in Resources */,
 				5DD5572D1748B691002AE1B8 /* Icon-144.png in Resources */,
