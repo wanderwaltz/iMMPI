@@ -164,6 +164,21 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
 }
 
 
+- (void) saveTestRecordsIndex
+{
+    NSArray  *indexProxies = [self allTestRecords];
+    NSData   *indexData    = [JSONTestRecordSerialization indexDataForRecordProxies: indexProxies];
+    
+    if (indexData != nil)
+    {
+        NSString *indexPath = [[_storedRecordsPath stringByAppendingPathComponent: kIndexFileName]
+                               stringByAppendingPathExtension: kJSONPathExtension];
+        
+        [indexData writeToFile: indexPath atomically: YES];
+    }
+}
+
+
 - (BOOL) loadStoredTestRecords
 {
     [self loadTestRecordsIndex];
@@ -195,18 +210,7 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
         }
     }
     
-    
-    NSArray  *indexProxies = [self allTestRecords];
-    NSData   *indexData    = [JSONTestRecordSerialization indexDataForRecordProxies: indexProxies];
-    
-    if (indexData != nil)
-    {
-        NSString *indexPath = [[_storedRecordsPath stringByAppendingPathComponent: kIndexFileName]
-                               stringByAppendingPathExtension: kJSONPathExtension];
-        
-        [indexData writeToFile: indexPath atomically: YES];
-    }
-    
+    [self saveTestRecordsIndex];
     
     return YES;
 }
@@ -287,6 +291,7 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
     if (didRemove)
     {
         [_elements removeObject: element];
+        [self saveTestRecordsIndex];
     }
     
     return didRemove;
