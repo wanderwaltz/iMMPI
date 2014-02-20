@@ -212,6 +212,8 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
     
     [self saveTestRecordsIndex];
     
+    NSLog(@"%d files loaded", _loadedFileNames.count);
+    
     return YES;
 }
 
