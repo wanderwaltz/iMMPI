@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="V0Y-wD-Tfh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="V0Y-wD-Tfh">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
-        <!--Records List View Controller - Все записи-->
+        <!--Все записи-->
         <scene sceneID="CCt-C6-Jur">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="zGB-ra-p1M" customClass="RecordsListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5VU-dV-5wm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="-134" y="-1423"/>
         </scene>
-        <!--Edit Test Record View Controller - Новая запись-->
+        <!--Новая запись-->
         <scene sceneID="cc3-9u-E1o">
             <objects>
                 <tableViewController modalPresentationStyle="formSheet" id="Pb1-6N-Afb" customClass="EditTestRecordViewController" sceneMemberID="viewController">
@@ -251,7 +251,7 @@
             </objects>
             <point key="canvasLocation" x="1699" y="-1307"/>
         </scene>
-        <!--Table View Controller - Выберите запись-->
+        <!--Выберите запись-->
         <scene sceneID="t8N-86-zGB">
             <objects>
                 <tableViewController id="M1Y-fs-9W7" sceneMemberID="viewController">
@@ -313,7 +313,7 @@
             </objects>
             <point key="canvasLocation" x="913" y="-1307"/>
         </scene>
-        <!--Test Answers View Controller - Ответы на тест-->
+        <!--Ответы на тест-->
         <scene sceneID="JL9-xO-BoI">
             <objects>
                 <tableViewController id="yLl-co-mCt" customClass="TestAnswersViewController" sceneMemberID="viewController">
@@ -394,7 +394,7 @@
             </objects>
             <point key="canvasLocation" x="4463" y="-200"/>
         </scene>
-        <!--Analysis View Controller - Анализ-->
+        <!--Анализ-->
         <scene sceneID="O4d-EX-KCt">
             <objects>
                 <tableViewController id="F49-RI-GVa" customClass="AnalysisViewController" sceneMemberID="viewController">
@@ -482,16 +482,16 @@
             </objects>
             <point key="canvasLocation" x="3247" y="309"/>
         </scene>
-        <!--Persons List View Controller - Все записи-->
+        <!--Все записи-->
         <scene sceneID="VQi-TQ-cMF">
             <objects>
                 <tableViewController id="nvo-jh-oP6" customClass="PersonsListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="txJ-t0-aON">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="SBg-U5-agT">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="64" width="308" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -605,7 +605,7 @@
             </objects>
             <point key="canvasLocation" x="1192" y="-318"/>
         </scene>
-        <!--Test Answers Input View Controller - Ответы на тест-->
+        <!--Ответы на тест-->
         <scene sceneID="xBm-Vm-KdH">
             <objects>
                 <viewController id="0Nj-AL-4cy" customClass="TestAnswersInputViewController" sceneMemberID="viewController">
@@ -927,6 +927,7 @@
                     <navigationItem key="navigationItem" id="FjZ-Rj-tXG"/>
                     <value key="contentSizeForViewInPopover" type="size" width="300" height="176"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yk3-KO-HE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1117,14 +1118,17 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination">
+            <size key="portraitSize" width="768" height="1024"/>
+            <size key="landscapeSize" width="1024" height="768"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="p41-jG-o3A"/>
-        <segue reference="4HI-R5-Cm1"/>
-        <segue reference="Vg7-Qs-0dP"/>
-        <segue reference="gZV-hG-uQK"/>
+        <segue reference="1MP-sZ-fLR"/>
         <segue reference="1n8-HN-ewy"/>
+        <segue reference="gZV-hG-uQK"/>
+        <segue reference="4HI-R5-Cm1"/>
+        <segue reference="p41-jG-o3A"/>
         <segue reference="cEz-YJ-d3N"/>
     </inferredMetricsTieBreakers>
 </document>

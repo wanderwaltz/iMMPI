@@ -82,10 +82,10 @@
     
     
     addRow(___Details_Score,            self.readableScore);
-    addRow(___Details_Matches,          [NSString stringWithFormat: @"%d", matches]);
-    addRow(___Details_Matches_Percent,  [NSString stringWithFormat: @"%d%%", percentage]);
-    addRow(___Details_Brackets,         [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
-    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", TaerSum]);
+    addRow(___Details_Matches,          [NSString stringWithFormat: @"%ld", (long)matches]);
+    addRow(___Details_Matches_Percent,  [NSString stringWithFormat: @"%ld%%", (long)percentage]);
+    addRow(___Details_Brackets,         [NSString stringWithFormat: @"%ld < %ld < %ld < %ld", (long)A, (long)B, (long)C, (long)D]);
+    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%ld", (long)TaerSum]);
     
     if (TaerSum > 0)
     {
@@ -93,7 +93,7 @@
         percentage = percentage * 100 / TaerSum;
         
         addRow(___Details_Percentage_Taer_Sum,
-               [NSString stringWithFormat: @"%d * 100 / %d = %d", oldPercentage, TaerSum, percentage]);
+               [NSString stringWithFormat: @"%ld * 100 / %ld = %ld", (long)oldPercentage, (long)TaerSum, (long)percentage]);
         
         if (percentage <= A)
         {
@@ -101,8 +101,8 @@
             
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d <= %d; 1.5 * %d / %d = %.2lf",
-                    percentage, A, percentage, A, score]);
+                    @"%ld <= %ld; 1.5 * %ld / %ld = %.2lf",
+                    (long)percentage, (long)A, (long)percentage, (long)A, score]);
         }
         else if (percentage <= B)
         {
@@ -110,8 +110,8 @@
             
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d < %d <= %d; 1.5 + (%d-%d) / (%d-%d) = %.2lf",
-                    A, percentage, B, percentage, A, B, A, score]);
+                    @"%ld < %ld <= %ld; 1.5 + (%ld-%ld) / (%ld-%ld) = %.2lf",
+                    (long)A, (long)percentage, (long)B, (long)percentage, (long)A, (long)B, (long)A, score]);
         }
         else if (percentage <= C)
         {
@@ -119,8 +119,8 @@
             
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d < %d <= %d; 2.5 + (%d-%d) / (%d-%d) = %.2lf",
-                    B, percentage, C, percentage, B, C, B, score]);
+                    @"%ld < %ld <= %ld; 2.5 + (%ld-%ld) / (%ld-%ld) = %.2lf",
+                    (long)B, (long)percentage, (long)C, (long)percentage, (long)B, (long)C, (long)B, score]);
         }
         else if (percentage <= D)
         {
@@ -128,15 +128,15 @@
             
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d < %d <= %d; 3.5 + (%d-%d) / (%d-%d) = %.2lf",
-                    C, percentage, D, percentage, C, D, C, score]);
+                    @"%ld < %ld <= %ld; 3.5 + (%ld-%ld) / (%ld-%ld) = %.2lf",
+                    (long)C, (long)percentage, (long)D, (long)percentage, (long)C, (long)D, (long)C, score]);
         }
         else
         {
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d < %d; 5.00",
-                    D, percentage]);
+                    @"%ld < %ld; 5.00",
+                    (long)D, (long)percentage]);
         }
     }
     

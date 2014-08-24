@@ -632,7 +632,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath: (NSIndexPath *) indexPath
     
     if (group.numberOfRecords == 1) return ___Delete;
     else
-        return [NSString stringWithFormat: ___FORMAT_Delete_N_Records, group.numberOfRecords];
+        return [NSString stringWithFormat: ___FORMAT_Delete_N_Records, (long)group.numberOfRecords];
 }
 
 
@@ -666,7 +666,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath: (NSIndexPath *) indexPath
     cell.textLabel.text = group.name;
     
     if (group.numberOfRecords > 1)
-        cell.detailTextLabel.text = [NSString stringWithFormat: @"%d", group.numberOfRecords];
+        cell.detailTextLabel.text = [NSString stringWithFormat: @"%ld", (long)group.numberOfRecords];
     else
         cell.detailTextLabel.text = nil;
     

@@ -64,7 +64,7 @@
 
     
     addRow(___Details_Score,            self.readableScore);
-    addRow(___Details_Matches,          [NSString stringWithFormat: @"%d", matches]);
+    addRow(___Details_Matches,          [NSString stringWithFormat: @"%ld", (long)matches]);
     addRow(___Details_Median_Male,      [NSString stringWithFormat: @"%.2lf", self.medianMale]);
     addRow(___Details_Deviation_Male,   [NSString stringWithFormat: @"%.2lf", self.deviationMale]);
     addRow(___Details_Median_Female,    [NSString stringWithFormat: @"%.2lf", self.medianFemale]);
@@ -73,8 +73,8 @@
     if (record.person.gender == GenderFemale)
     {
         addRow(___Details_Computation,
-               [NSString stringWithFormat: @"(50 + 10 * <b>(%.2lf - %d)</b>/%.2lf) = %.2lf",
-                median, matches, deviation, score]);
+               [NSString stringWithFormat: @"(50 + 10 * <b>(%.2lf - %ld)</b>/%.2lf) = %.2lf",
+                median, (long)matches, deviation, score]);
         
         [html appendString: @"<tr>"];
         
@@ -86,8 +86,8 @@
     else
     {
         addRow(___Details_Computation,
-               [NSString stringWithFormat: @"(50 + 10 * (%d - %.2lf)/%.2lf) = %.2lf",
-                matches, median, deviation, score]);
+               [NSString stringWithFormat: @"(50 + 10 * (%ld - %.2lf)/%.2lf) = %.2lf",
+                (long)matches, median, deviation, score]);
     }
     
     [html appendString: @"</table>"];

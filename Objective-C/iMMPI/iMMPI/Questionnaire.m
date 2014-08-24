@@ -203,89 +203,89 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
 
 static id _logFileNameNil(Gender gender, AgeGroup ageGroup)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"no questionnaire file name found for the given gender/ageGroup combination.",
-          gender, ageGroup);
+          (long)gender, (long)ageGroup);
     return nil;
 }
 
 
 static id _logFileNotFound(Gender gender, AgeGroup ageGroup, NSString *fileName)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"%@.%@ not found in the application bundle.",
-          gender, ageGroup, fileName, kQuestionnaireFilePathExtension);
+          (long)gender, (long)ageGroup, fileName, kQuestionnaireFilePathExtension);
     return nil;
 }
 
 
 static id _logFileCannotBeRead(Gender gender, AgeGroup ageGroup, NSString *fileName)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"%@.%@ cannot be read.",
-          gender, ageGroup, fileName, kQuestionnaireFilePathExtension);
+          (long)gender, (long)ageGroup, fileName, kQuestionnaireFilePathExtension);
     return nil;
 }
 
 
 static id _logErrorParsingJSON(Gender gender, AgeGroup ageGroup, NSString *fileName, NSError *error)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"failed to parse %@.%@ with error: %@.",
-          gender, ageGroup, fileName, kQuestionnaireFilePathExtension, error);
+          (long)gender, (long)ageGroup, fileName, kQuestionnaireFilePathExtension, error);
     return nil;
 }
 
 
 static id _logRootObjectNotDictionary(Gender gender, AgeGroup ageGroup, NSString *fileName)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"expected root object of %@.%@ to be of dictionary class.",
-          gender, ageGroup, fileName, kQuestionnaireFilePathExtension);
+          (long)gender, (long)ageGroup, fileName, kQuestionnaireFilePathExtension);
     return nil;
 }
 
 
 static id _logStatementsNotFound(Gender gender, AgeGroup ageGroup, NSString *fileName)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"'%@' not found in root object of %@.%@.",
-          gender, ageGroup, kJSONKey_Statements, fileName, kQuestionnaireFilePathExtension);
+          (long)gender, (long)ageGroup, kJSONKey_Statements, fileName, kQuestionnaireFilePathExtension);
     return nil;
 }
 
 
 static id _logStatementsNotArray(Gender gender, AgeGroup ageGroup)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"expected '%@' to be of an array class.",
-          gender, ageGroup, kJSONKey_Statements);
+          (long)gender, (long)ageGroup, kJSONKey_Statements);
     return nil;
 }
 
 
 static id _logStatementNotDictionary(Gender gender, AgeGroup ageGroup, id statement)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"unexpected object '%@' in '%@' array.",
-          gender, ageGroup, statement, kJSONKey_Statements);
+          (long)gender, (long)ageGroup, statement, kJSONKey_Statements);
     return nil;
 }
 
 
 static id _logStatementIDNotFound(Gender gender, AgeGroup ageGroup, id statement)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"statement '%@' does not have '%@' value.",
-          gender, ageGroup, statement, kJSONKey_StatementID);
+          (long)gender, (long)ageGroup, statement, kJSONKey_StatementID);
     return nil;
 }
 
 
 static id _logStatementTextNotFound(Gender gender, AgeGroup ageGroup, id statement)
 {
-    NSLog(@"Failed to create Questionnaire object with gender %d and ageGroup %d: "
+    NSLog(@"Failed to create Questionnaire object with gender %ld and ageGroup %ld: "
           @"statement '%@' does not have '%@' value.",
-          gender, ageGroup, statement, kJSONKey_StatementText);
+          (long)gender, (long)ageGroup, statement, kJSONKey_StatementText);
     return nil;
 }

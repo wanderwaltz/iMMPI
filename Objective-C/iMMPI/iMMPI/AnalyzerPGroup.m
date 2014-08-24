@@ -147,9 +147,9 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
     
     
     addRow(___Details_Score,            self.readableScore);
-    addRow(___Details_Matches,          [NSString stringWithFormat: @"%d", matches]);
-    addRow(___Details_Matches_Percent,  [NSString stringWithFormat: @"%d%%", percentage]);
-    addRow(___Details_Brackets,         [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
+    addRow(___Details_Matches,          [NSString stringWithFormat: @"%ld", (long)matches]);
+    addRow(___Details_Matches_Percent,  [NSString stringWithFormat: @"%ld%%", (long)percentage]);
+    addRow(___Details_Brackets,         [NSString stringWithFormat: @"%ld < %ld < %ld < %ld", (long)A, (long)B, (long)C, (long)D]);
 
     if (percentage <= A)
     {
@@ -157,8 +157,8 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
         
         addRow(___Details_Computation,
                [NSString stringWithFormat:
-                @"%d <= %d; 1.5 * %d / %d = %.2lf",
-               percentage, A, percentage, A, score]);
+                @"%ld <= %ld; 1.5 * %ld / %ld = %.2lf",
+               (long)percentage, (long)A, (long)percentage, (long)A, score]);
     }
     else if (percentage <= B)
     {
@@ -166,8 +166,8 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
         
         addRow(___Details_Computation,
                [NSString stringWithFormat:
-                @"%d < %d <= %d; 1.5 + (%d-%d) / (%d-%d) = %.2lf",
-                A, percentage, B, percentage, A, B, A, score]);
+                @"%ld < %ld <= %ld; 1.5 + (%ld-%ld) / (%ld-%ld) = %.2lf",
+                (long)A, (long)percentage, (long)B, (long)percentage, (long)A, (long)B, (long)A, score]);
     }
     else if (percentage <= C)
     {
@@ -175,8 +175,8 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
         
         addRow(___Details_Computation,
                [NSString stringWithFormat:
-                @"%d < %d <= %d; 2.5 + (%d-%d) / (%d-%d) = %.2lf",
-                B, percentage, C, percentage, B, C, B, score]);
+                @"%ld < %ld <= %ld; 2.5 + (%ld-%ld) / (%ld-%ld) = %.2lf",
+                (long)B, (long)percentage, (long)C, (long)percentage, (long)B, (long)C, (long)B, score]);
     }
     else if (percentage <= D)
     {
@@ -184,8 +184,8 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
         
         addRow(___Details_Computation,
                [NSString stringWithFormat:
-                @"%d < %d <= %d; 3.5 + (%d-%d) / (%d-%d) = %.2lf",
-                C, percentage, D, percentage, C, D, C, score]);
+                @"%ld < %ld <= %ld; 3.5 + (%ld-%ld) / (%ld-%ld) = %.2lf",
+                (long)C, (long)percentage, (long)D, (long)percentage, (long)C, (long)D, (long)C, score]);
     }
     else
     {
@@ -193,8 +193,8 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
         
         addRow(___Details_Computation,
                [NSString stringWithFormat:
-                @"%d < %d; 4.5 * 0.5 + (%d-%d) / (100-%d) = %.2lf",
-                D, percentage, percentage, D, D, score]);
+                @"%ld < %ld; 4.5 * 0.5 + (%ld-%ld) / (100-%ld) = %.2lf",
+                (long)D, (long)percentage, (long)percentage, (long)D, (long)D, score]);
     }
     
     [html appendString: @"</table>"];

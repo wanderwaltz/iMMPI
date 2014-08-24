@@ -477,7 +477,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
     NSUInteger index = [group indexForRecord: self.record];
     
     if (index > 0)
-        cell.indexLabel.text = [NSString stringWithFormat: @"%d.", index];
+        cell.indexLabel.text = [NSString stringWithFormat: @"%ld.", (long)index];
     else
         cell.indexLabel.text = nil;
     

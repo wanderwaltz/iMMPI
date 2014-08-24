@@ -28,11 +28,11 @@
 
 #define ___Delete @"Удалить"
 
-#define ___FORMAT_Delete_N_Records @"Удалить записи (%d)"
+#define ___FORMAT_Delete_N_Records @"Удалить записи (%ld)"
 
 #define ___Trash @"Корзина"
 
-#define ___FORMAT_N_of_M @"%d из %d"
+#define ___FORMAT_N_of_M @"%ld из %ld"
 
 #define ___YES @"ДА"
 #define ___NO  @"НЕТ"

@@ -98,7 +98,7 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
     NSUInteger TaerSum = [analyser taerSumForRecord: record];
     
     addRow(___Details_Score,    self.readableScore);
-    addRow(___Details_Taer_Sum, [NSString stringWithFormat: @"%d", TaerSum]);
+    addRow(___Details_Taer_Sum, [NSString stringWithFormat: @"%ld", (long)TaerSum]);
     
     if (TaerSum > 0)
     {
@@ -110,10 +110,10 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
         
         NSUInteger FE99 = (p95 + p96) * 100 / TaerSum;
         
-        addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%d%%", p95]);
-        addRow(___Details_Matches_IScale_96, [NSString stringWithFormat: @"%d%%", p96]);
+        addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%ld%%", (long)p95]);
+        addRow(___Details_Matches_IScale_96, [NSString stringWithFormat: @"%ld%%", (long)p96]);
         addRow(___Details_Matches_IScale_99, [NSString stringWithFormat:
-                                              @"(%d + %d) / %d == %d%%", p95, p96, TaerSum, FE99]);
+                                              @"(%ld + %ld) / %ld == %ld%%", (long)p95, (long)p96, (long)TaerSum, (long)FE99]);
         
         id<AnalyzerGroup> IScale_100 = [analyser firstGroupForType: kGroupType_IScale_100];
         id<AnalyzerGroup> IScale_101 = [analyser firstGroupForType: kGroupType_IScale_101];
@@ -123,13 +123,13 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
         NSUInteger p101 = [IScale_101 computePercentageForRecord: record analyser: analyser];
         NSUInteger p102 = [IScale_102 computePercentageForRecord: record analyser: analyser];
         
-        addRow(___Details_Matches_IScale_100, [NSString stringWithFormat: @"%d%%", p100]);
-        addRow(___Details_Matches_IScale_101, [NSString stringWithFormat: @"%d%%", p101]);
-        addRow(___Details_Matches_IScale_102, [NSString stringWithFormat: @"%d%%", p102]);
+        addRow(___Details_Matches_IScale_100, [NSString stringWithFormat: @"%ld%%", (long)p100]);
+        addRow(___Details_Matches_IScale_101, [NSString stringWithFormat: @"%ld%%", (long)p101]);
+        addRow(___Details_Matches_IScale_102, [NSString stringWithFormat: @"%ld%%", (long)p102]);
         
         NSUInteger X = p100 + p101 + p102;
         
-        addRow(___Details_X, [NSString stringWithFormat: @"%d", X]);
+        addRow(___Details_X, [NSString stringWithFormat: @"%ld", (long)X]);
         
         
         NSUInteger FE100 = round([IScale_100 computePercentageForRecord: record

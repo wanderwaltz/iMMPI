@@ -156,14 +156,14 @@ static id _logExpectedFloat(NSString *key, id object);
     double score = 50 + 10 * (matches-median)/deviation;
 
     addRow(___Details_Score,            self.readableScore);
-    addRow(___Details_Matches,          [NSString stringWithFormat: @"%d", matches]);
+    addRow(___Details_Matches,          [NSString stringWithFormat: @"%ld", (long)matches]);
     addRow(___Details_Median_Male,      [NSString stringWithFormat: @"%.2lf", _medianMale]);
     addRow(___Details_Deviation_Male,   [NSString stringWithFormat: @"%.2lf", _deviationMale]);
     addRow(___Details_Median_Female,    [NSString stringWithFormat: @"%.2lf", _medianFemale]);
     addRow(___Details_Deviation_Female, [NSString stringWithFormat: @"%.2lf", _deviationFemale]);
     addRow(___Details_Computation,
-           [NSString stringWithFormat: @"(50 + 10 * (%d - %.2lf)/%.2lf) = %.2lf",
-            matches, median, deviation, score]);
+           [NSString stringWithFormat: @"(50 + 10 * (%ld - %.2lf)/%.2lf) = %.2lf",
+            (long)matches, median, deviation, score]);
     
     [html appendString: @"</table>"];
     [html appendString: @"</body>"];
@@ -193,7 +193,7 @@ static id _logExpectedFloat(NSString *key, id object);
 
 - (NSString *) readableScore
 {
-    return [NSString stringWithFormat: @"%d", (NSInteger)self.score];
+    return [NSString stringWithFormat: @"%ld", (long)self.score];
 }
 
 

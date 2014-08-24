@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>667BFA0C-3B87-4A02-9834-45E85AB75F38</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>15306F49E51CF3ECA9338CA494776DAD6CF143AE</key>
+		<string>/Users/tsd/Library/Caches/CocoaPods/Git/e1adcf00db97df950ff3f9234c6a1e9598a8d9c3</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>15306F49E51CF3ECA9338CA494776DAD6CF143AE</key>
+		<string>Frostbit</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>/Users/tsd/Library/Caches/CocoaPods/Git/e1adcf00db97df950ff3f9234c6a1e9598a8d9c3</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>15306F49E51CF3ECA9338CA494776DAD6CF143AE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>15306F49E51CF3ECA9338CA494776DAD6CF143AE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Frostbit</string>
+		</dict>
+	</array>
+</dict>
+</plist>
