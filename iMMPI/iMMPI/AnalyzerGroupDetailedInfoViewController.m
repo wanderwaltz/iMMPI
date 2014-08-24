@@ -235,7 +235,7 @@ referenceSizeForFooterInSection: (NSInteger) section
         {
             NSUInteger statementID = [_negativeStatementIDs[indexPath.row] unsignedIntegerValue];
             
-            cell.label.text = [NSString stringWithFormat: @"%d", statementID];
+            cell.label.text = [NSString stringWithFormat: @"%ld", (long)statementID];
             
             if ([self.analyzer isValidStatementID: statementID])
             {
@@ -265,7 +265,7 @@ referenceSizeForFooterInSection: (NSInteger) section
         {
             NSUInteger statementID = [_positiveStatementIDs[indexPath.row] unsignedIntegerValue];
             
-            cell.label.text = [NSString stringWithFormat: @"%d", statementID];
+            cell.label.text = [NSString stringWithFormat: @"%ld", (long)statementID];
             
             if ([self.analyzer isValidStatementID: statementID])
             {

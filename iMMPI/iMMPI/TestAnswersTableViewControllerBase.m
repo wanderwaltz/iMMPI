@@ -83,7 +83,7 @@
     FRB_AssertNotNil(statement);
     
     cell.delegate                = self;
-    cell.statementIDLabel.text   = [NSString stringWithFormat: @"%d", statement.statementID];
+    cell.statementIDLabel.text   = [NSString stringWithFormat: @"%ld", (long)statement.statementID];
     cell.statementTextLabel.text = statement.text;
     
     switch ([_record.testAnswers answerTypeForStatementID: statement.statementID])

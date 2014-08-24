@@ -212,7 +212,7 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
     
     [self saveTestRecordsIndex];
     
-    NSLog(@"%d files loaded", _loadedFileNames.count);
+    NSLog(@"%ld files loaded", (long)_loadedFileNames.count);
     
     return YES;
 }
@@ -382,7 +382,7 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
     while (![self fileNameIsAvailable: fileName])
     {
         attempts++;
-        fileName = [[candidate stringByAppendingFormat: @" %d", attempts]
+        fileName = [[candidate stringByAppendingFormat: @" %ld", (long)attempts]
                     stringByAppendingPathExtension: kJSONPathExtension];
     }
     

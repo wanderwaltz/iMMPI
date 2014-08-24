@@ -39,7 +39,7 @@ didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
            withBarButtonItem: (UIBarButtonItem *) barButtonItem
         forPopoverController: (UIPopoverController *) popoverController
 {
-    NSAssert(splitViewController.viewControllers.count == 2, @"Unexpected number of child view controllers in %@: %d", splitViewController, splitViewController.viewControllers.count);
+    NSAssert(splitViewController.viewControllers.count == 2, @"Unexpected number of child view controllers in %@: %ld", splitViewController, (long)splitViewController.viewControllers.count);
     
     UIViewController *detailViewController = splitViewController.viewControllers[1];
     FRB_AssertClass(detailViewController, UIViewController);
@@ -57,7 +57,7 @@ didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
       willShowViewController: (UIViewController *) viewController
    invalidatingBarButtonItem: (UIBarButtonItem *) button
 {
-    NSAssert(splitViewController.viewControllers.count == 2, @"Unexpected number of child view controllers in %@: %d", splitViewController, splitViewController.viewControllers.count);
+    NSAssert(splitViewController.viewControllers.count == 2, @"Unexpected number of child view controllers in %@: %ld", splitViewController, (long)splitViewController.viewControllers.count);
     
     UIViewController *detailViewController = splitViewController.viewControllers[1];
     FRB_AssertClass(detailViewController, UIViewController);

@@ -127,8 +127,8 @@ static id _logMultiplierNotFound();
     
     
     addRow(___Details_Score,            self.readableScore);
-    addRow(___Details_Brackets,         [NSString stringWithFormat: @"%d < %d < %d < %d", A, B, C, D]);
-    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%d", TaerSum]);
+    addRow(___Details_Brackets,         [NSString stringWithFormat: @"%ld < %ld < %ld < %ld", (long)A, (long)B, (long)C, (long)D]);
+    addRow(___Details_Taer_Sum,         [NSString stringWithFormat: @"%ld", (long)TaerSum]);
     
     if (TaerSum > 0)
     {
@@ -139,43 +139,43 @@ static id _logMultiplierNotFound();
             NSUInteger percentage95 = [IScale_95 computePercentageForRecord: record analyser: analyser];
             NSUInteger percentage96 = [IScale_96 computePercentageForRecord: record analyser: analyser];
             
-            addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%d%%", percentage95]);
-            addRow(___Details_Matches_IScale_96, [NSString stringWithFormat: @"%d%%", percentage96]);
+            addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%ld%%", (long)percentage95]);
+            addRow(___Details_Matches_IScale_96, [NSString stringWithFormat: @"%ld%%", (long)percentage96]);
             
             percentage =
             ([IScale_95 computePercentageForRecord: record analyser: analyser] +
              [IScale_96 computePercentageForRecord: record analyser: analyser]) * 100 / TaerSum;
             
             addRow(___Details_Percentage_Taer_Sum,
-                   [NSString stringWithFormat: @"(%d + %d) * 100 / %d = %d",
-                    percentage95, percentage96, TaerSum, percentage]);
+                   [NSString stringWithFormat: @"(%ld + %ld) * 100 / %ld = %ld",
+                    (long)percentage95, (long)percentage96, (long)TaerSum, (long)percentage]);
         }
         else
         {
             NSUInteger percentage95 = [IScale_95 computePercentageForRecord: record analyser: analyser];
             
-            addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%d%%", percentage95]);
+            addRow(___Details_Matches_IScale_95, [NSString stringWithFormat: @"%ld%%", (long)percentage95]);
             
             percentage =
             [IScale_95 computePercentageForRecord: record analyser: analyser] * 100 / TaerSum;
             
             addRow(___Details_Percentage_Taer_Sum,
-                   [NSString stringWithFormat: @"%d * 100 / %d = %d",
-                    percentage95, TaerSum, percentage]);
+                   [NSString stringWithFormat: @"%ld * 100 / %ld = %ld",
+                    (long)percentage95, (long)TaerSum, (long)percentage]);
         }
         
         NSUInteger oldPercentage = percentage;
         NSUInteger percentage98  = [IScale_98 computePercentageForRecord: record
                                                                 analyser: analyser];
         
-        addRow(___Details_Matches_IScale_98, [NSString stringWithFormat: @"%d%%", percentage98]);
+        addRow(___Details_Matches_IScale_98, [NSString stringWithFormat: @"%ld%%", percentage98]);
         
         percentage = (percentage * percentage98 * 100 / TaerSum / 10);
         
         
         addRow(___Details_Final_Percentage,
-               [NSString stringWithFormat: @"%d * %d * 100 / %d / 10 = %d",
-                oldPercentage, percentage98, TaerSum, percentage]);
+               [NSString stringWithFormat: @"%ld * %ld * 100 / %ld / 10 = %ld",
+                (long)oldPercentage, (long)percentage98, (long)TaerSum, (long)percentage]);
         
         if (percentage <= A)
         {
@@ -183,8 +183,8 @@ static id _logMultiplierNotFound();
             
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d <= %d; 1.5 * %d / %d = %.2lf",
-                    percentage, A, percentage, A, score]);
+                    @"%ld <= %ld; 1.5 * %ld / %ld = %.2lf",
+                    (long)percentage, (long)A, (long)percentage, (long)A, score]);
         }
         else if (percentage <= B)
         {
@@ -192,8 +192,8 @@ static id _logMultiplierNotFound();
             
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d < %d <= %d; 1.5 + (%d-%d) / (%d-%d) = %.2lf",
-                    A, percentage, B, percentage, A, B, A, score]);
+                    @"%ld < %ld <= %ld; 1.5 + (%ld-%ld) / (%ld-%ld) = %.2lf",
+                    (long)A, (long)percentage, (long)B, (long)percentage, (long)A, (long)B, (long)A, score]);
         }
         else if (percentage <= C)
         {
@@ -201,8 +201,8 @@ static id _logMultiplierNotFound();
             
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d < %d <= %d; 2.5 + (%d-%d) / (%d-%d) = %.2lf",
-                    B, percentage, C, percentage, B, C, B, score]);
+                    @"%ld < %ld <= %ld; 2.5 + (%ld-%ld) / (%ld-%ld) = %.2lf",
+                    (long)B, (long)percentage, (long)C, (long)percentage, (long)B, (long)C, (long)B, score]);
         }
         else if (percentage <= D)
         {
@@ -210,15 +210,15 @@ static id _logMultiplierNotFound();
             
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d < %d <= %d; 3.5 + (%d-%d) / (%d-%d) = %.2lf",
-                    C, percentage, D, percentage, C, D, C, score]);
+                    @"%ld < %ld <= %ld; 3.5 + (%ld-%ld) / (%ld-%ld) = %.2lf",
+                    (long)C, (long)percentage, (long)D, (long)percentage, (long)C, (long)D, (long)C, score]);
         }
         else
         {
             addRow(___Details_Computation,
                    [NSString stringWithFormat:
-                    @"%d < %d; 5.00",
-                    D, percentage]);
+                    @"%ld < %ld; 5.00",
+                    (long)D, (long)percentage]);
         }
     }
     

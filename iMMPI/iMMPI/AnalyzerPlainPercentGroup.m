@@ -54,7 +54,7 @@
                                               analyser: analyser];
     
     addRow(___Details_Score,   self.readableScore);
-    addRow(___Details_Matches, [NSString stringWithFormat: @"%d", matches]);
+    addRow(___Details_Matches, [NSString stringWithFormat: @"%ld", (long)matches]);
     
     [html appendString: @"</table>"];
     [html appendString: @"</body>"];
@@ -66,7 +66,7 @@
 
 - (NSString *) readableScore
 {
-    return [NSString stringWithFormat: @"%d%%", (NSInteger)self.score];
+    return [NSString stringWithFormat: @"%ld%%", (long)self.score];
 }
 
 

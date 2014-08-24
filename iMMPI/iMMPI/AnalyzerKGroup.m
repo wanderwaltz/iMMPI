@@ -102,16 +102,16 @@ static NSString * const kJSONKeyCorrectionMultiplier = @"correctionMultiplier";
     double score = 50 + 10 * (matches+correctionMatches*_correctionMultiplier-median)/deviation;
     
     addRow(___Details_Score,                 self.readableScore);
-    addRow(___Details_Matches,               [NSString stringWithFormat: @"%d", matches]);
+    addRow(___Details_Matches,               [NSString stringWithFormat: @"%ld", (long)matches]);
     addRow(___Details_Median_Male,           [NSString stringWithFormat: @"%.2lf", self.medianMale]);
     addRow(___Details_Deviation_Male,        [NSString stringWithFormat: @"%.2lf", self.deviationMale]);
     addRow(___Details_Median_Female,         [NSString stringWithFormat: @"%.2lf", self.medianFemale]);
     addRow(___Details_Deviation_Female,      [NSString stringWithFormat: @"%.2lf", self.deviationFemale]);
     addRow(___Details_Correction_Multiplier, [NSString stringWithFormat: @"%.2lf", _correctionMultiplier]);
-    addRow(___Details_Correction,            [NSString stringWithFormat: @"%d", correctionMatches]);
+    addRow(___Details_Correction,            [NSString stringWithFormat: @"%ld", (long)correctionMatches]);
     addRow(___Details_Computation,
-           [NSString stringWithFormat: @"(50 + 10 * (%d + %d*%.2lf- %.2lf)/%.2lf) = %.2lf",
-            matches, correctionMatches, _correctionMultiplier, median, deviation, score]);
+           [NSString stringWithFormat: @"(50 + 10 * (%ld + %ld*%.2lf- %.2lf)/%.2lf) = %.2lf",
+            (long)matches, (long)correctionMatches, _correctionMultiplier, median, deviation, score]);
     
     [html appendString: @"</table>"];
     [html appendString: @"</body>"];

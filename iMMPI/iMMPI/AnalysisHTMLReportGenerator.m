@@ -93,16 +93,16 @@
                     
                 case 1:
                 {
-                    [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"2\">%d.</td>",
-                     [group indexForRecord: self.record]];
+                    [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"2\">%ld.</td>",
+                     (long)[group indexForRecord: self.record]];
                     [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"2\">%@</td>", group.name];
                 } break;
                     
                     
                 default:
                 {
-                    [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"3\">%d.</td>",
-                     [group indexForRecord: self.record]];
+                    [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"3\">%ld.</td>",
+                     (long)[group indexForRecord: self.record]];
                     [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\"><i>%@</i></td>", group.name];
                 } break;
             }
@@ -192,7 +192,7 @@
             
             [html appendString: @"<tr>"];
             
-            [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">%d</td>", [statement statementID]];
+            [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">%ld</td>", (long)[statement statementID]];
             [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\">%@</td>", [statement text]];
             
             
@@ -296,7 +296,7 @@
         
         [html appendString: @"<tr>"];
         
-        [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">%d</td>", [statement statementID]];
+        [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\" align=\"center\">%ld</td>", (long)[statement statementID]];
         [html appendFormat: @"<td style=\"border:1px solid black;\" colspan=\"1\">%@</td>", [statement text]];
         
         AnswerType answer = [_record.testAnswers answerTypeForStatementID:
