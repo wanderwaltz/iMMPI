@@ -18,7 +18,7 @@
  */
 @protocol PersonProtocol<NSObject>
 @required
-
+g
 /// Full name of a person
 @property (strong, nonatomic) NSString *name;
 
