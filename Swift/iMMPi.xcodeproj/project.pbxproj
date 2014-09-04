@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4445FDF519B8578300D63FB1 /* MockTestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445FDF419B8578300D63FB1 /* MockTestRecord.swift */; };
+		44CB7FA619B852E200B2E298 /* TestAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CB7FA519B852E200B2E298 /* TestAnswers.swift */; };
+		44CB7FA819B8537600B2E298 /* TestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CB7FA719B8537600B2E298 /* TestRecord.swift */; };
+		44CB7FAB19B853D800B2E298 /* MockPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CB7FAA19B853D800B2E298 /* MockPerson.swift */; };
+		44CB7FAD19B854AA00B2E298 /* MockTestAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CB7FAC19B854AA00B2E298 /* MockTestAnswers.swift */; };
 		5D845B8419AA001600FF3B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D845B8319AA001600FF3B97 /* AppDelegate.swift */; };
 		5D845B8819AA001600FF3B97 /* PersonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D845B8719AA001600FF3B97 /* PersonsListViewController.swift */; };
 		5D845B8B19AA001600FF3B97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D845B8919AA001600FF3B97 /* Main.storyboard */; };
@@ -115,6 +120,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4445FDF419B8578300D63FB1 /* MockTestRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTestRecord.swift; sourceTree = "<group>"; };
+		44CB7FA519B852E200B2E298 /* TestAnswers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswers.swift; sourceTree = "<group>"; };
+		44CB7FA719B8537600B2E298 /* TestRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecord.swift; sourceTree = "<group>"; };
+		44CB7FAA19B853D800B2E298 /* MockPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPerson.swift; sourceTree = "<group>"; };
+		44CB7FAC19B854AA00B2E298 /* MockTestAnswers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTestAnswers.swift; sourceTree = "<group>"; };
 		5D845B7E19AA001600FF3B97 /* iMMPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMMPi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D845B8219AA001600FF3B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D845B8319AA001600FF3B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +178,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44CB7FA919B853BB00B2E298 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				44CB7FAA19B853D800B2E298 /* MockPerson.swift */,
+				44CB7FAC19B854AA00B2E298 /* MockTestAnswers.swift */,
+				4445FDF419B8578300D63FB1 /* MockTestRecord.swift */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
 		5D845B7519AA001600FF3B97 = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +254,7 @@
 		5DA7DB6F19AA096B0023BE35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44CB7FA919B853BB00B2E298 /* Mocks */,
 				5DA7DB7719AA0ABC0023BE35 /* Protocols */,
 				5DA7DB7619AA0AB30023BE35 /* Basic Types */,
 				5DA7DB8419AA10160023BE35 /* Factories */,
@@ -258,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				5DA7DB7C19AA0CBA0023BE35 /* Questionnaire.swift */,
+				44CB7FA519B852E200B2E298 /* TestAnswers.swift */,
+				44CB7FA719B8537600B2E298 /* TestRecord.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -504,12 +527,17 @@
 				5DA7DB9319AA20CC0023BE35 /* JSONStatementFactory.swift in Sources */,
 				5DA7DB8019AA0E190023BE35 /* DefaultQuestionnaire.swift in Sources */,
 				5DA7DB8619AA10270023BE35 /* JSONQuestionnaireFactory.swift in Sources */,
+				44CB7FAB19B853D800B2E298 /* MockPerson.swift in Sources */,
+				44CB7FA819B8537600B2E298 /* TestRecord.swift in Sources */,
 				5DA7DB7519AA0A730023BE35 /* AnswerType.swift in Sources */,
+				44CB7FA619B852E200B2E298 /* TestAnswers.swift in Sources */,
 				5DA7DB8319AA0F000023BE35 /* SwiftyJSON.swift in Sources */,
 				5DA7DB7119AA09910023BE35 /* Gender.swift in Sources */,
 				5D845B8819AA001600FF3B97 /* PersonsListViewController.swift in Sources */,
+				4445FDF519B8578300D63FB1 /* MockTestRecord.swift in Sources */,
 				5DA7DB7919AA0ACF0023BE35 /* Person.swift in Sources */,
 				5D845B8419AA001600FF3B97 /* AppDelegate.swift in Sources */,
+				44CB7FAD19B854AA00B2E298 /* MockTestAnswers.swift in Sources */,
 				5DA7DB7B19AA0C0B0023BE35 /* Statement.swift in Sources */,
 				5DA7DB7D19AA0CBA0023BE35 /* Questionnaire.swift in Sources */,
 			);
