@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  PersonsListViewController.swift
 //  iMMPi
 //
 //  Created by Egor Chiglintsev on 24.08.14.
@@ -8,38 +8,32 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-                            
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    var detailItem: AnyObject? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
+class PersonsListViewController: UITableViewController {
+    
+    // MARK - initialization methods
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.title = "Все записи"
     }
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
+    
+    
+    // MARK - <UITableViewDataSource>
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 0;
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0;
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return UITableViewCell(style: .Default, reuseIdentifier: "cell")
     }
-
-
+    
 }
 
