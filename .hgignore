@@ -11,3 +11,6 @@ Unused/ini-Convert/iMMPI-ini-Convert.xcodeproj/xcuserdata/tsd.xcuserdatad/xcsche
 iMMPI/.idea
 Podfile.lock
 Breakpoints_v2.xcbkptlist
+Swift/iMMPi.xcodeproj/xcuserdata
+Swift/Third-Party/Quick/Externals/Nimble/Nimble.xcodeproj/xcuserdata
+Swift/Third-Party/Quick/Quick/Quick.xcodeproj/xcuserdata
