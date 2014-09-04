@@ -16,9 +16,9 @@ enum Gender : String {
     
     static func fromString(string: String) -> Gender {
         switch string {
-        case "male":
+        case Gender.Male.toRaw():
             return .Male
-        case "female":
+        case Gender.Female.toRaw():
             return .Female
         default:
             return .Unknown

@@ -16,9 +16,9 @@ enum AgeGroup : String {
     
     static func fromString(string: String) -> AgeGroup {
         switch string {
-        case "adult":
+        case AgeGroup.Adult.toRaw():
             return .Adult
-        case "teen":
+        case AgeGroup.Teen.toRaw():
             return .Teen
         default:
             return .Unknown
