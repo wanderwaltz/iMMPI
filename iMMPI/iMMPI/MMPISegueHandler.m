@@ -108,7 +108,8 @@ NSString * const kSegueIDAnalyzerGroupDetailedInfo = @"com.immpi.segue.analyzerG
     SEL selector = NSSelectorFromString(selectorName);
     FRB_AssertResponds(self, selector);
     
-    objc_msgSend(self, selector, segue, sender);
+    void (*segueHandler)(id, SEL, UIStoryboardSegue *, id) = (void(*)(id, SEL, UIStoryboardSegue *, id))objc_msgSend;
+    segueHandler(self, selector, segue, sender);
 }
 
 
