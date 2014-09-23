@@ -199,7 +199,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
                                       animated: NO];
         
         self.title = [NSString stringWithFormat: ___FORMAT_N_of_M,
-                      _statementIndex+1, self.questionnaire.statementsCount];
+                      (long)(_statementIndex+1), (long)self.questionnaire.statementsCount];
     }
 }
 

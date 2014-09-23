@@ -168,7 +168,7 @@ static id _logMultiplierNotFound();
         NSUInteger percentage98  = [IScale_98 computePercentageForRecord: record
                                                                 analyser: analyser];
         
-        addRow(___Details_Matches_IScale_98, [NSString stringWithFormat: @"%ld%%", percentage98]);
+        addRow(___Details_Matches_IScale_98, [NSString stringWithFormat: @"%ld%%", (long)percentage98]);
         
         percentage = (percentage * percentage98 * 100 / TaerSum / 10);
         

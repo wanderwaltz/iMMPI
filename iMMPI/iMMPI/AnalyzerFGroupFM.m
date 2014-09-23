@@ -147,7 +147,7 @@ static id _logExpectedFloat(NSString *key, id object);
     double score = 50 + 10 * (matches-median)/deviation;
     
     addRow(___Details_Score,            self.readableScore);
-    addRow(___Details_Matches,          [NSString stringWithFormat: @"%ld", matches]);
+    addRow(___Details_Matches,          [NSString stringWithFormat: @"%ld", (long)matches]);
     addRow(___Details_Median_Male,      [NSString stringWithFormat: @"%.2lf", _medianMale]);
     addRow(___Details_Deviation_Male,   [NSString stringWithFormat: @"%.2lf", _deviationMale]);
     addRow(___Details_Median_Female,    [NSString stringWithFormat: @"%.2lf", _medianFemale]);
