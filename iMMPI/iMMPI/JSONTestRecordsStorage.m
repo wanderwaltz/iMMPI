@@ -150,6 +150,12 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
         {
             NSParameterAssert(proxy.fileName != nil);
             
+            // Skip nonexistant files in index
+            NSString *proxiedFilePath = [_storedRecordsPath stringByAppendingPathComponent: proxy.fileName];
+            if (![fileManager fileExistsAtPath: proxiedFilePath isDirectory: NULL]) {
+                continue;
+            }
+            
             if (![_loadedFileNames containsObject: proxy.fileName])
             {
                 JSONTestRecordStorageElement *element = [JSONTestRecordStorageElement new];
