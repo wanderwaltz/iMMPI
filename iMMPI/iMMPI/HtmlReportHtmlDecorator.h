@@ -10,6 +10,8 @@
 #import "AnalyzerReportComposer.h"
 
 @interface HtmlReportHtmlDecorator : NSObject<AnalyzerReportComposer>
+@property (nonatomic, copy) NSString *doctype;
+@property (nonatomic, copy) NSString *meta;
 
 - (instancetype)initWithContentComposer:(id<AnalyzerReportComposer>)composer;
 

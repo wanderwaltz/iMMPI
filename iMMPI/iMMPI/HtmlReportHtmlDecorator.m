@@ -14,6 +14,11 @@
 
 @implementation HtmlReportHtmlDecorator
 
+- (instancetype)init
+{
+    return [self initWithContentComposer: nil];
+}
+
 - (instancetype)initWithContentComposer:(id<AnalyzerReportComposer>)composer
 {
     NSParameterAssert(composer != nil);
@@ -28,6 +33,8 @@
     }
     
     _childComposer = composer;
+    _doctype = @"<!DOCTYPE html>";
+    _meta = @"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">";
     
     return self;
 }
@@ -36,8 +43,8 @@
 {
     NSMutableString *html = [[NSMutableString alloc] init];
     
-    [html appendString: @"<!DOCTYPE html>"];
-    [html appendString: @"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
+    [html appendString: self.doctype ?: @""];
+    [html appendString: self.meta ?: @""];
     [html appendString: @"<html>"];
     
     NSString *content = [self.childComposer composeReportForTestRecord: record];
