@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		443B654D19D432900067FA6A /* HtmlAnswersReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B654C19D432900067FA6A /* HtmlAnswersReportComposer.m */; };
+		443B655319D434B20067FA6A /* HtmlReportHtmlDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B655219D434B20067FA6A /* HtmlReportHtmlDecorator.m */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -150,6 +152,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		443B654919D431D50067FA6A /* AnalyzerReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerReportComposer.h; sourceTree = "<group>"; };
+		443B654B19D432900067FA6A /* HtmlAnswersReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlAnswersReportComposer.h; sourceTree = "<group>"; };
+		443B654C19D432900067FA6A /* HtmlAnswersReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlAnswersReportComposer.m; sourceTree = "<group>"; };
+		443B655119D434B20067FA6A /* HtmlReportHtmlDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlReportHtmlDecorator.h; sourceTree = "<group>"; };
+		443B655219D434B20067FA6A /* HtmlReportHtmlDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlReportHtmlDecorator.m; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
@@ -356,6 +363,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		443B654A19D4323F0067FA6A /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				443B654919D431D50067FA6A /* AnalyzerReportComposer.h */,
+				443B654F19D434290067FA6A /* Html Reports */,
+				443B654E19D4340B0067FA6A /* Answers Report */,
+			);
+			name = Reports;
+			sourceTree = "<group>";
+		};
+		443B654E19D4340B0067FA6A /* Answers Report */ = {
+			isa = PBXGroup;
+			children = (
+				443B654B19D432900067FA6A /* HtmlAnswersReportComposer.h */,
+				443B654C19D432900067FA6A /* HtmlAnswersReportComposer.m */,
+			);
+			name = "Answers Report";
+			sourceTree = "<group>";
+		};
+		443B654F19D434290067FA6A /* Html Reports */ = {
+			isa = PBXGroup;
+			children = (
+				443B655119D434B20067FA6A /* HtmlReportHtmlDecorator.h */,
+				443B655219D434B20067FA6A /* HtmlReportHtmlDecorator.m */,
+			);
+			name = "Html Reports";
+			sourceTree = "<group>";
+		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +401,7 @@
 				5DC973C2168F240D00C496F0 /* Test Record Table Models */,
 				5DC0C88416E26AE6006ED854 /* Analysis Settings */,
 				5DC973AB168F082200C496F0 /* Data Model Objects */,
+				443B654A19D4323F0067FA6A /* Reports */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1181,6 +1217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
+				443B654D19D432900067FA6A /* HtmlAnswersReportComposer.m in Sources */,
 				5DA5C9F5163B018D00CF1601 /* AppDelegate.m in Sources */,
 				5DA5CA13163B061000CF1601 /* RecordsListViewController.m in Sources */,
 				5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */,
@@ -1193,6 +1230,7 @@
 				5DC4048C168C4AB3000AFBAE /* Person.m in Sources */,
 				5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
+				443B655319D434B20067FA6A /* HtmlReportHtmlDecorator.m in Sources */,
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
 				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
