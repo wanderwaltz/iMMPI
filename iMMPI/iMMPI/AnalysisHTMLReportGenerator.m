@@ -11,6 +11,7 @@
 #endif
 
 #import "AnalysisHTMLReportGenerator.h"
+#import "Model.h"
 
 
 #pragma mark -

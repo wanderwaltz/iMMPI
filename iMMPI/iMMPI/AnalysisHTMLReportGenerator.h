@@ -6,7 +6,11 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import "Model.h"
+#import <Foundation/Foundation.h>
+
+@class Analyzer;
+@protocol QuestionnaireProtocol;
+@protocol TestRecordProtocol;
 
 #pragma mark -
 #pragma mark AnalysisHTMLReportGenerator interface
