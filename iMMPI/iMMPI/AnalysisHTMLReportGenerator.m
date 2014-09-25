@@ -33,7 +33,7 @@
 #pragma mark -
 #pragma mark initialization methods
 
-- (id) init
+- (id)init
 {
     self = [super init];
     
@@ -50,8 +50,8 @@
 #pragma mark -
 #pragma mark methods
 
-- (NSString *) composeOverallAnalysisReportForGroupIndices: (NSArray *) groupIndices
-                                          filterNormValues: (BOOL) filter
+- (NSString *)composeOverallAnalysisReportForGroupIndices:(NSArray *)groupIndices
+                                         filterNormValues:(BOOL)filter
 {
     NSMutableString *html = [NSMutableString string];
     
@@ -145,7 +145,7 @@
 }
 
 
-- (NSString *) composeDetailedReportForGroupNamed: (NSString *) groupName
+- (NSString *)composeDetailedReportForGroupNamed:(NSString *)groupName
 {
     id<AnalyzerGroup> group = [_analyzer groupWithName: groupName];
     
@@ -260,7 +260,7 @@
 }
 
 
-- (NSString *) composeAnswersReport
+- (NSString *)composeAnswersReport
 {
     NSMutableString *html = [NSMutableString string];
     
