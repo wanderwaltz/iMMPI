@@ -22,4 +22,6 @@
     #import "Strings.h"
 
     #import "UtilityFunctions.h"
+
+    #import "NSArray+Helpers.h"
 #endif

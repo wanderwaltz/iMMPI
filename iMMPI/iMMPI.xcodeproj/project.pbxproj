@@ -27,6 +27,9 @@
 		44C39D9419D5597E0026672D /* HtmlReportHtmlDecoratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39D9319D5597E0026672D /* HtmlReportHtmlDecoratorTests.m */; };
 		44C39D9719D560830026672D /* HtmlReportTagDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39D9619D560830026672D /* HtmlReportTagDecorator.m */; };
 		44C39D9919D561B00026672D /* HtmlReportTagDecoratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39D9819D561B00026672D /* HtmlReportTagDecoratorTests.m */; };
+		44C39D9D19D565DC0026672D /* CompositeReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39D9C19D565DC0026672D /* CompositeReportComposer.m */; };
+		44C39DA119D5665B0026672D /* NSArray+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DA019D5665B0026672D /* NSArray+Helpers.m */; };
+		44C39DA319D567EE0026672D /* CompositeReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DA219D567EE0026672D /* CompositeReportComposer.m */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -133,6 +136,11 @@
 		44C39D9519D560830026672D /* HtmlReportTagDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlReportTagDecorator.h; sourceTree = "<group>"; };
 		44C39D9619D560830026672D /* HtmlReportTagDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlReportTagDecorator.m; sourceTree = "<group>"; };
 		44C39D9819D561B00026672D /* HtmlReportTagDecoratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlReportTagDecoratorTests.m; sourceTree = "<group>"; };
+		44C39D9B19D565DC0026672D /* CompositeReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompositeReportComposer.h; sourceTree = "<group>"; };
+		44C39D9C19D565DC0026672D /* CompositeReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompositeReportComposer.m; sourceTree = "<group>"; };
+		44C39D9F19D5665B0026672D /* NSArray+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Helpers.h"; sourceTree = "<group>"; };
+		44C39DA019D5665B0026672D /* NSArray+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Helpers.m"; sourceTree = "<group>"; };
+		44C39DA219D567EE0026672D /* CompositeReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompositeReportComposer.m; sourceTree = "<group>"; };
 		44F6C1AB19D555DD00E4B9A3 /* iMMPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMMPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F6C1AE19D555DD00E4B9A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -323,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				443B654919D431D50067FA6A /* AnalyzerReportComposer.h */,
+				44C39D9A19D565C40026672D /* Utility */,
 				443B654F19D434290067FA6A /* Html Reports */,
 				443B654E19D4340B0067FA6A /* Answers Report */,
 			);
@@ -349,11 +358,30 @@
 			name = "Html Reports";
 			sourceTree = "<group>";
 		};
+		44C39D9A19D565C40026672D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				44C39D9B19D565DC0026672D /* CompositeReportComposer.h */,
+				44C39D9C19D565DC0026672D /* CompositeReportComposer.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		44C39D9E19D566470026672D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				44C39D9F19D5665B0026672D /* NSArray+Helpers.h */,
+				44C39DA019D5665B0026672D /* NSArray+Helpers.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		44F6C1AC19D555DD00E4B9A3 /* iMMPI Tests */ = {
 			isa = PBXGroup;
 			children = (
 				44C39D9319D5597E0026672D /* HtmlReportHtmlDecoratorTests.m */,
 				44C39D9819D561B00026672D /* HtmlReportTagDecoratorTests.m */,
+				44C39DA219D567EE0026672D /* CompositeReportComposer.m */,
 				44F6C1AD19D555DD00E4B9A3 /* Supporting Files */,
 			);
 			path = "iMMPI Tests";
@@ -575,6 +603,7 @@
 		5DA5C9EA163B018D00CF1601 /* iMMPI */ = {
 			isa = PBXGroup;
 			children = (
+				44C39D9E19D566470026672D /* Categories */,
 				5DCC9642168DC12B004F8D4E /* Utils */,
 				5D5E05B9164651A800A5A704 /* Model */,
 				5D74CEF8169B085000BAA202 /* UI */,
@@ -1170,6 +1199,7 @@
 			files = (
 				44C39D9419D5597E0026672D /* HtmlReportHtmlDecoratorTests.m in Sources */,
 				44C39D9919D561B00026672D /* HtmlReportTagDecoratorTests.m in Sources */,
+				44C39DA319D567EE0026672D /* CompositeReportComposer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1189,6 +1219,7 @@
 				5DC4047D168C3259000AFBAE /* Answer.m in Sources */,
 				5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */,
 				5DC4048C168C4AB3000AFBAE /* Person.m in Sources */,
+				44C39DA119D5665B0026672D /* NSArray+Helpers.m in Sources */,
 				5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
 				443B655319D434B20067FA6A /* HtmlReportHtmlDecorator.m in Sources */,
@@ -1230,6 +1261,7 @@
 				44C39D9719D560830026672D /* HtmlReportTagDecorator.m in Sources */,
 				5D74049816FEC40F001747A1 /* LabelCollectionViewHeader.m in Sources */,
 				5D74049C16FEC7CE001747A1 /* WebCollectionViewFooter.m in Sources */,
+				44C39D9D19D565DC0026672D /* CompositeReportComposer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
