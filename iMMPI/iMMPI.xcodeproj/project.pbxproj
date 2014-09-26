@@ -35,6 +35,7 @@
 		44C39DAB19D5737B0026672D /* PersonNameReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DAA19D5737B0026672D /* PersonNameReportComposer.m */; };
 		44C39DAE19D58BD80026672D /* DateReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DAD19D58BD80026672D /* DateReportComposer.m */; };
 		44C39DB019D58CC10026672D /* DateReportComposerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DAF19D58CC10026672D /* DateReportComposerTests.m */; };
+		44C39DB319D58E7D0026672D /* AnalyzerReportComposerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DB219D58E7D0026672D /* AnalyzerReportComposerFactory.m */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -153,6 +154,8 @@
 		44C39DAC19D58BD80026672D /* DateReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateReportComposer.h; sourceTree = "<group>"; };
 		44C39DAD19D58BD80026672D /* DateReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateReportComposer.m; sourceTree = "<group>"; };
 		44C39DAF19D58CC10026672D /* DateReportComposerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateReportComposerTests.m; sourceTree = "<group>"; };
+		44C39DB119D58E7D0026672D /* AnalyzerReportComposerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerReportComposerFactory.h; sourceTree = "<group>"; };
+		44C39DB219D58E7D0026672D /* AnalyzerReportComposerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerReportComposerFactory.m; sourceTree = "<group>"; };
 		44F6C1AB19D555DD00E4B9A3 /* iMMPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMMPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F6C1AE19D555DD00E4B9A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -343,6 +346,8 @@
 			isa = PBXGroup;
 			children = (
 				443B654919D431D50067FA6A /* AnalyzerReportComposer.h */,
+				44C39DB119D58E7D0026672D /* AnalyzerReportComposerFactory.h */,
+				44C39DB219D58E7D0026672D /* AnalyzerReportComposerFactory.m */,
 				44C39D9A19D565C40026672D /* Utility */,
 				44C39DA619D572E90026672D /* Model-Specific Helpers */,
 				443B654F19D434290067FA6A /* Html Reports */,
@@ -1265,6 +1270,7 @@
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
 				44C39DA919D572FC0026672D /* PersonNameReportComposer.m in Sources */,
 				5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */,
+				44C39DB319D58E7D0026672D /* AnalyzerReportComposerFactory.m in Sources */,
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
 				5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */,
 				5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */,
