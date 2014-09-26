@@ -6,9 +6,7 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "Model.h"
-#import "TestAnswers.h"
-
+#import "TestRecordProtocol.h"
 
 #pragma mark -
 #pragma mark TestRecord interface

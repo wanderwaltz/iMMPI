@@ -11,7 +11,8 @@
 #endif
 
 #import "TestRecord.h"
-
+#import "Person.h"
+#import "TestAnswers.h"
 
 #pragma mark -
 #pragma mark TestRecord implementation

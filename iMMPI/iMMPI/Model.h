@@ -42,9 +42,9 @@ typedef enum : NSInteger
 #pragma mark -
 #pragma mark protocols
 
+#import "TestRecordProtocol.h"
 #import "PersonProtocol.h"
 #import "TestAnswersProtocol.h"
-#import "TestRecordProtocol.h"
 #import "StatementProtocol.h"
 #import "QuestionnaireProtocol.h"
 #import "AnalyzerGroup.h"

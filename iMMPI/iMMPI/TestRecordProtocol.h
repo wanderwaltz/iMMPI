@@ -6,8 +6,10 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "Model.h"
+#import <Foundation/Foundation.h>
 
+@protocol PersonProtocol;
+@protocol TestAnswersProtocol;
 
 #pragma mark -
 #pragma mark TestRecord protocol
