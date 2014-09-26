@@ -15,12 +15,14 @@ PODS:
     - Frostbit/UIKit/Headers
   - Frostbit/UIKit/Headers (0.0.1):
     - Frostbit/Common
+  - Kiwi (2.3.0)
 
 DEPENDENCIES:
   - Frostbit/Common (from `https://github.com/wanderwaltz/Frostbit.git`)
   - Frostbit/Dispatch (from `https://github.com/wanderwaltz/Frostbit.git`)
   - Frostbit/Geometry (from `https://github.com/wanderwaltz/Frostbit.git`)
   - Frostbit/UIKit/Classes/FRBDatePickerPopover (from `https://github.com/wanderwaltz/Frostbit.git`)
+  - Kiwi (~> 2.3.0)
 
 EXTERNAL SOURCES:
   Frostbit:
@@ -28,5 +30,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Frostbit: 1dfb2012c1749af4ace8c5694979ce5ec74b31fa
+  Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
 
 COCOAPODS: 0.33.1

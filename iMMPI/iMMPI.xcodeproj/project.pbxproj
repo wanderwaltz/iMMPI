@@ -24,6 +24,7 @@
 /* Begin PBXBuildFile section */
 		443B654D19D432900067FA6A /* HtmlAnswersReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B654C19D432900067FA6A /* HtmlAnswersReportComposer.m */; };
 		443B655319D434B20067FA6A /* HtmlReportHtmlDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B655219D434B20067FA6A /* HtmlReportHtmlDecorator.m */; };
+		44C39D9419D5597E0026672D /* HtmlReportHtmlDecoratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39D9319D5597E0026672D /* HtmlReportHtmlDecoratorTests.m */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -90,46 +91,6 @@
 		5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
 		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
 		5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780418ACF81D009896FB /* button_tap2.wav */; };
-		5DD556E21748A2E1002AE1B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
-		5DD556E31748A2E1002AE1B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
-		5DD556E41748A2E1002AE1B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
-		5DD556EA1748A2E1002AE1B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DD556E81748A2E1002AE1B8 /* InfoPlist.strings */; };
-		5DD556EC1748A2E1002AE1B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD556EB1748A2E1002AE1B8 /* main.m */; };
-		5DD556F21748A2E1002AE1B8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD556F11748A2E1002AE1B8 /* Default.png */; };
-		5DD556F41748A2E1002AE1B8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD556F31748A2E1002AE1B8 /* Default@2x.png */; };
-		5DD556F61748A2E1002AE1B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD556F51748A2E1002AE1B8 /* Default-568h@2x.png */; };
-		5DD556FB1748A30B002AE1B8 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD556FA1748A30B002AE1B8 /* GHUnitIOS.framework */; };
-		5DD556FF1748A382002AE1B8 /* TestGatherGroupRanges.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD556FE1748A382002AE1B8 /* TestGatherGroupRanges.m */; };
-		5DD557001748A3D4002AE1B8 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
-		5DD557011748A3EF002AE1B8 /* Analyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABFE16902FAF00E835B7 /* Analyzer.m */; };
-		5DD557021748A3F2002AE1B8 /* AnalyzerGroupBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF616902E9900E835B7 /* AnalyzerGroupBase.m */; };
-		5DD557031748A3F5002AE1B8 /* AnalyzerFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC081690448A00E835B7 /* AnalyzerFGroup.m */; };
-		5DD557041748A3F7002AE1B8 /* AnalyzerFGroupFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0C16905ACB00E835B7 /* AnalyzerFGroupFM.m */; };
-		5DD557051748A3F9002AE1B8 /* AnalyzerPGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC101690626800E835B7 /* AnalyzerPGroup.m */; };
-		5DD557061748A3FB002AE1B8 /* AnalyzerKGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558416906A9C004E3021 /* AnalyzerKGroup.m */; };
-		5DD557071748A3FE002AE1B8 /* AnalyzerIGroupT1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558816906E98004E3021 /* AnalyzerIGroupT1.m */; };
-		5DD557081748A400002AE1B8 /* AnalyzerIGroup99.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558C16907158004E3021 /* AnalyzerIGroup99.m */; };
-		5DD557091748A403002AE1B8 /* AnalyzerIGroupM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D855590169074D0004E3021 /* AnalyzerIGroupM.m */; };
-		5DD5570A1748A405002AE1B8 /* AnalyzerIGroupX.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D855594169076A4004E3021 /* AnalyzerIGroupX.m */; };
-		5DD5570B1748A407002AE1B8 /* AnalyzerBase5Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650A16D8EFCF004D4BBA /* AnalyzerBase5Group.m */; };
-		5DD5570C1748A40A002AE1B8 /* AnalyzerPlainPercentGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650E16D92441004D4BBA /* AnalyzerPlainPercentGroup.m */; };
-		5DD5570D1748A418002AE1B8 /* AnalysisSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C88616E26B03006ED854 /* AnalysisSettings.m */; };
-		5DD5570E1748A41E002AE1B8 /* TestRecordModelByDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */; };
-		5DD5570F1748A421002AE1B8 /* TestRecordModelGroupedByName.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */; };
-		5DD557101748A424002AE1B8 /* TestRecordsPersonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */; };
-		5DD557111748A428002AE1B8 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
-		5DD557121748A42B002AE1B8 /* JSONTestRecordStorageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */; };
-		5DD557131748A42F002AE1B8 /* MMPIATestRecordReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC68C8016D0D7D400B338C2 /* MMPIATestRecordReader.m */; };
-		5DD557141748A5BB002AE1B8 /* Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40471168C2596000AFBAE /* Statement.m */; };
-		5DD557151748A5BE002AE1B8 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
-		5DD557161748A5C3002AE1B8 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4048B168C4AB3000AFBAE /* Person.m */; };
-		5DD557171748A5C6002AE1B8 /* TestRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40481168C41A7000AFBAE /* TestRecord.m */; };
-		5DD557181748A5C9002AE1B8 /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
-		5DD557191748A5E4002AE1B8 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
-		5DD5571A1748A5FE002AE1B8 /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
-		5DD5571B1748A605002AE1B8 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4047C168C3259000AFBAE /* Answer.m */; };
-		5DD557261748A8B6002AE1B8 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD5571D1748A8B6002AE1B8 /* libOCMock.a */; };
-		5DD557271748A8B6002AE1B8 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DD5571E1748A8B6002AE1B8 /* License.txt */; };
 		5DD5572C1748B68F002AE1B8 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD557281748B652002AE1B8 /* Icon-72.png */; };
 		5DD5572D1748B691002AE1B8 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD5572A1748B657002AE1B8 /* Icon-144.png */; };
 		5DEE4BD816E304890072F239 /* AnswersInputViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */; };
@@ -137,11 +98,19 @@
 		5DEE4BDC16E305770072F239 /* AnswersInputButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */; };
 		5DEE4BDD16E305770072F239 /* AnswersInputButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BDB16E305770072F239 /* AnswersInputButton@2x.png */; };
 		631F7A52D295429BB0A3F386 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D76D094067F4B558239B3CE /* libPods.a */; };
+		7622982E32F6468C887EE44E /* libPods-iMMPITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A558876E91D4F79B32F22D9 /* libPods-iMMPITests.a */; };
 		7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */; };
 		7CAB67D318ACA98200C194B8 /* JSONTestRecordProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB67D218ACA98200C194B8 /* JSONTestRecordProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		44F6C1B119D555DD00E4B9A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DA5C9D7163B018D00CF1601 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DA5C9DF163B018D00CF1601;
+			remoteInfo = iMMPI;
+		};
 		5DC4048D168C4B3D000AFBAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5DA5C9D7163B018D00CF1601 /* Project object */;
@@ -152,11 +121,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40121AB03F604C51A9D7E89F /* Pods-iMMPITests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMMPITests.xcconfig"; path = "Pods/Pods-iMMPITests.xcconfig"; sourceTree = "<group>"; };
 		443B654919D431D50067FA6A /* AnalyzerReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerReportComposer.h; sourceTree = "<group>"; };
 		443B654B19D432900067FA6A /* HtmlAnswersReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlAnswersReportComposer.h; sourceTree = "<group>"; };
 		443B654C19D432900067FA6A /* HtmlAnswersReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlAnswersReportComposer.m; sourceTree = "<group>"; };
 		443B655119D434B20067FA6A /* HtmlReportHtmlDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlReportHtmlDecorator.h; sourceTree = "<group>"; };
 		443B655219D434B20067FA6A /* HtmlReportHtmlDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlReportHtmlDecorator.m; sourceTree = "<group>"; };
+		44C39D9319D5597E0026672D /* HtmlReportHtmlDecoratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlReportHtmlDecoratorTests.m; sourceTree = "<group>"; };
+		44F6C1AB19D555DD00E4B9A3 /* iMMPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMMPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44F6C1AE19D555DD00E4B9A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
@@ -290,25 +263,6 @@
 		5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordSerialization.m; sourceTree = "<group>"; };
 		5DD3780318ACF81D009896FB /* button_tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap1.wav; sourceTree = "<group>"; };
 		5DD3780418ACF81D009896FB /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap2.wav; sourceTree = "<group>"; };
-		5DD556E11748A2E1002AE1B8 /* iMMPI-Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iMMPI-Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DD556E71748A2E1002AE1B8 /* iMMPI-Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMMPI-Tests-Info.plist"; sourceTree = "<group>"; };
-		5DD556E91748A2E1002AE1B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5DD556EB1748A2E1002AE1B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5DD556ED1748A2E1002AE1B8 /* iMMPI-Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Tests-Prefix.pch"; sourceTree = "<group>"; };
-		5DD556F11748A2E1002AE1B8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		5DD556F31748A2E1002AE1B8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		5DD556F51748A2E1002AE1B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5DD556FA1748A30B002AE1B8 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
-		5DD556FD1748A382002AE1B8 /* TestGatherGroupRanges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestGatherGroupRanges.h; sourceTree = "<group>"; };
-		5DD556FE1748A382002AE1B8 /* TestGatherGroupRanges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestGatherGroupRanges.m; sourceTree = "<group>"; };
-		5DD5571D1748A8B6002AE1B8 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
-		5DD5571E1748A8B6002AE1B8 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		5DD557201748A8B6002AE1B8 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
-		5DD557211748A8B6002AE1B8 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
-		5DD557221748A8B6002AE1B8 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
-		5DD557231748A8B6002AE1B8 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
-		5DD557241748A8B6002AE1B8 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
-		5DD557251748A8B6002AE1B8 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		5DD557281748B652002AE1B8 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		5DD5572A1748B657002AE1B8 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
 		5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnswersInputViewBackground.png; sourceTree = "<group>"; };
@@ -316,6 +270,7 @@
 		5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputButtonPressed@2x.png"; sourceTree = "<group>"; };
 		5DEE4BDB16E305770072F239 /* AnswersInputButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputButton@2x.png"; sourceTree = "<group>"; };
 		6D76D094067F4B558239B3CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A558876E91D4F79B32F22D9 /* libPods-iMMPITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iMMPITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0F025C169BFF5D006377B3 /* StoryboardManagedViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedViewControllerProtocol.h; sourceTree = "<group>"; };
 		7C0F025F169C00B9006377B3 /* MMPISegueHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPISegueHandler.h; sourceTree = "<group>"; };
 		7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPISegueHandler.m; sourceTree = "<group>"; };
@@ -331,6 +286,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		44F6C1A819D555DD00E4B9A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7622982E32F6468C887EE44E /* libPods-iMMPITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DA5C9DD163B018D00CF1601 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,18 +308,6 @@
 				5DA5C9E7163B018D00CF1601 /* Foundation.framework in Frameworks */,
 				5DA5C9E9163B018D00CF1601 /* CoreGraphics.framework in Frameworks */,
 				631F7A52D295429BB0A3F386 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5DD556DE1748A2E1002AE1B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5DD556E21748A2E1002AE1B8 /* UIKit.framework in Frameworks */,
-				5DD556E31748A2E1002AE1B8 /* Foundation.framework in Frameworks */,
-				5DD556E41748A2E1002AE1B8 /* CoreGraphics.framework in Frameworks */,
-				5DD556FB1748A30B002AE1B8 /* GHUnitIOS.framework in Frameworks */,
-				5DD557261748A8B6002AE1B8 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +340,23 @@
 				443B655219D434B20067FA6A /* HtmlReportHtmlDecorator.m */,
 			);
 			name = "Html Reports";
+			sourceTree = "<group>";
+		};
+		44F6C1AC19D555DD00E4B9A3 /* iMMPI Tests */ = {
+			isa = PBXGroup;
+			children = (
+				44C39D9319D5597E0026672D /* HtmlReportHtmlDecoratorTests.m */,
+				44F6C1AD19D555DD00E4B9A3 /* Supporting Files */,
+			);
+			path = "iMMPI Tests";
+			sourceTree = "<group>";
+		};
+		44F6C1AD19D555DD00E4B9A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				44F6C1AE19D555DD00E4B9A3 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
@@ -561,10 +529,11 @@
 				5DD5572A1748B657002AE1B8 /* Icon-144.png */,
 				5DD557281748B652002AE1B8 /* Icon-72.png */,
 				5DA5C9EA163B018D00CF1601 /* iMMPI */,
-				5DD556E51748A2E1002AE1B8 /* iMMPI-Tests */,
+				44F6C1AC19D555DD00E4B9A3 /* iMMPI Tests */,
 				5DA5C9E3163B018D00CF1601 /* Frameworks */,
 				5DA5C9E1163B018D00CF1601 /* Products */,
 				886E7B631E6B483C8375754E /* Pods.xcconfig */,
+				40121AB03F604C51A9D7E89F /* Pods-iMMPITests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -572,7 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				5DA5C9E0163B018D00CF1601 /* iMMPI.app */,
-				5DD556E11748A2E1002AE1B8 /* iMMPI-Tests.app */,
+				44F6C1AB19D555DD00E4B9A3 /* iMMPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -590,6 +559,7 @@
 				5DA5C9E6163B018D00CF1601 /* Foundation.framework */,
 				5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */,
 				6D76D094067F4B558239B3CE /* libPods.a */,
+				7A558876E91D4F79B32F22D9 /* libPods-iMMPITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -973,63 +943,6 @@
 			name = "Test Record Serialization";
 			sourceTree = "<group>";
 		};
-		5DD556E51748A2E1002AE1B8 /* iMMPI-Tests */ = {
-			isa = PBXGroup;
-			children = (
-				5DD556FC1748A340002AE1B8 /* Test Gather Group Ranges */,
-				5DD5571C1748A8B5002AE1B8 /* OCMock */,
-				5DD556FA1748A30B002AE1B8 /* GHUnitIOS.framework */,
-				5DD556E61748A2E1002AE1B8 /* Supporting Files */,
-			);
-			path = "iMMPI-Tests";
-			sourceTree = "<group>";
-		};
-		5DD556E61748A2E1002AE1B8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5DD556E71748A2E1002AE1B8 /* iMMPI-Tests-Info.plist */,
-				5DD556E81748A2E1002AE1B8 /* InfoPlist.strings */,
-				5DD556EB1748A2E1002AE1B8 /* main.m */,
-				5DD556ED1748A2E1002AE1B8 /* iMMPI-Tests-Prefix.pch */,
-				5DD556F11748A2E1002AE1B8 /* Default.png */,
-				5DD556F31748A2E1002AE1B8 /* Default@2x.png */,
-				5DD556F51748A2E1002AE1B8 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5DD556FC1748A340002AE1B8 /* Test Gather Group Ranges */ = {
-			isa = PBXGroup;
-			children = (
-				5DD556FD1748A382002AE1B8 /* TestGatherGroupRanges.h */,
-				5DD556FE1748A382002AE1B8 /* TestGatherGroupRanges.m */,
-			);
-			name = "Test Gather Group Ranges";
-			sourceTree = "<group>";
-		};
-		5DD5571C1748A8B5002AE1B8 /* OCMock */ = {
-			isa = PBXGroup;
-			children = (
-				5DD5571D1748A8B6002AE1B8 /* libOCMock.a */,
-				5DD5571E1748A8B6002AE1B8 /* License.txt */,
-				5DD5571F1748A8B6002AE1B8 /* OCMock */,
-			);
-			path = OCMock;
-			sourceTree = "<group>";
-		};
-		5DD5571F1748A8B6002AE1B8 /* OCMock */ = {
-			isa = PBXGroup;
-			children = (
-				5DD557201748A8B6002AE1B8 /* NSNotificationCenter+OCMAdditions.h */,
-				5DD557211748A8B6002AE1B8 /* OCMArg.h */,
-				5DD557221748A8B6002AE1B8 /* OCMConstraint.h */,
-				5DD557231748A8B6002AE1B8 /* OCMock.h */,
-				5DD557241748A8B6002AE1B8 /* OCMockObject.h */,
-				5DD557251748A8B6002AE1B8 /* OCMockRecorder.h */,
-			);
-			path = OCMock;
-			sourceTree = "<group>";
-		};
 		7C0F025E169C0092006377B3 /* MMPI Segue Handler */ = {
 			isa = PBXGroup;
 			children = (
@@ -1060,6 +973,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		44F6C1AA19D555DD00E4B9A3 /* iMMPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44F6C1B319D555DD00E4B9A3 /* Build configuration list for PBXNativeTarget "iMMPITests" */;
+			buildPhases = (
+				DA4F04114D0F4621B4E1A52A /* Check Pods Manifest.lock */,
+				44F6C1A719D555DD00E4B9A3 /* Sources */,
+				44F6C1A819D555DD00E4B9A3 /* Frameworks */,
+				44F6C1A919D555DD00E4B9A3 /* Resources */,
+				DB42E10BDF034655AD5C26C7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44F6C1B219D555DD00E4B9A3 /* PBXTargetDependency */,
+			);
+			name = iMMPITests;
+			productName = "iMMPI Tests";
+			productReference = 44F6C1AB19D555DD00E4B9A3 /* iMMPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5DA5C9DF163B018D00CF1601 /* iMMPI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DA5CA04163B018D00CF1601 /* Build configuration list for PBXNativeTarget "iMMPI" */;
@@ -1079,23 +1012,6 @@
 			productReference = 5DA5C9E0163B018D00CF1601 /* iMMPI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5DD556E01748A2E1002AE1B8 /* iMMPI-Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5DD556F91748A2E1002AE1B8 /* Build configuration list for PBXNativeTarget "iMMPI-Tests" */;
-			buildPhases = (
-				5DD556DD1748A2E1002AE1B8 /* Sources */,
-				5DD556DE1748A2E1002AE1B8 /* Frameworks */,
-				5DD556DF1748A2E1002AE1B8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "iMMPI-Tests";
-			productName = "iMMPI-Tests";
-			productReference = 5DD556E11748A2E1002AE1B8 /* iMMPI-Tests.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1105,6 +1021,10 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Egor Chiglintsev";
 				TargetAttributes = {
+					44F6C1AA19D555DD00E4B9A3 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 5DA5C9DF163B018D00CF1601;
+					};
 					5DA5C9DF163B018D00CF1601 = {
 						DevelopmentTeam = SUAWT97CSE;
 					};
@@ -1123,13 +1043,20 @@
 			projectRoot = "";
 			targets = (
 				5DA5C9DF163B018D00CF1601 /* iMMPI */,
-				5DD556E01748A2E1002AE1B8 /* iMMPI-Tests */,
+				44F6C1AA19D555DD00E4B9A3 /* iMMPITests */,
 				5DC4046B168C2260000AFBAE /* Appledoc */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		44F6C1A919D555DD00E4B9A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DA5C9DE163B018D00CF1601 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1149,19 +1076,6 @@
 				5DEE4BDD16E305770072F239 /* AnswersInputButton@2x.png in Resources */,
 				5DD5572C1748B68F002AE1B8 /* Icon-72.png in Resources */,
 				5DD5572D1748B691002AE1B8 /* Icon-144.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5DD556DF1748A2E1002AE1B8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5DD556EA1748A2E1002AE1B8 /* InfoPlist.strings in Resources */,
-				5DD556F21748A2E1002AE1B8 /* Default.png in Resources */,
-				5DD556F41748A2E1002AE1B8 /* Default@2x.png in Resources */,
-				5DD556F61748A2E1002AE1B8 /* Default-568h@2x.png in Resources */,
-				5DD557001748A3D4002AE1B8 /* mmpi.analysis.json in Resources */,
-				5DD557271748A8B6002AE1B8 /* License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1194,7 +1108,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\n\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\n\nfind \"${SRCROOT}/iMMPI\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
 		5DC4046F168C2272000AFBAE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1209,9 +1123,47 @@
 			shellPath = /bin/sh;
 			shellScript = "appledoc --project-name iMMPI --project-company \"Frostbit\" --company-id com.frostbit --output Appledoc --logformat xcode --keep-intermediate-files --no-create-docset iMMPI";
 		};
+		DA4F04114D0F4621B4E1A52A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DB42E10BDF034655AD5C26C7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-iMMPITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		44F6C1A719D555DD00E4B9A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44C39D9419D5597E0026672D /* HtmlReportHtmlDecoratorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DA5C9DC163B018D00CF1601 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1271,45 +1223,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DD556DD1748A2E1002AE1B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5DD556EC1748A2E1002AE1B8 /* main.m in Sources */,
-				5DD556FF1748A382002AE1B8 /* TestGatherGroupRanges.m in Sources */,
-				5DD557011748A3EF002AE1B8 /* Analyzer.m in Sources */,
-				5DD557021748A3F2002AE1B8 /* AnalyzerGroupBase.m in Sources */,
-				5DD557031748A3F5002AE1B8 /* AnalyzerFGroup.m in Sources */,
-				5DD557041748A3F7002AE1B8 /* AnalyzerFGroupFM.m in Sources */,
-				5DD557051748A3F9002AE1B8 /* AnalyzerPGroup.m in Sources */,
-				5DD557061748A3FB002AE1B8 /* AnalyzerKGroup.m in Sources */,
-				5DD557071748A3FE002AE1B8 /* AnalyzerIGroupT1.m in Sources */,
-				5DD557081748A400002AE1B8 /* AnalyzerIGroup99.m in Sources */,
-				5DD557091748A403002AE1B8 /* AnalyzerIGroupM.m in Sources */,
-				5DD5570A1748A405002AE1B8 /* AnalyzerIGroupX.m in Sources */,
-				5DD5570B1748A407002AE1B8 /* AnalyzerBase5Group.m in Sources */,
-				5DD5570C1748A40A002AE1B8 /* AnalyzerPlainPercentGroup.m in Sources */,
-				5DD5570D1748A418002AE1B8 /* AnalysisSettings.m in Sources */,
-				5DD5570E1748A41E002AE1B8 /* TestRecordModelByDate.m in Sources */,
-				5DD5570F1748A421002AE1B8 /* TestRecordModelGroupedByName.m in Sources */,
-				5DD557101748A424002AE1B8 /* TestRecordsPersonGroup.m in Sources */,
-				5DD557111748A428002AE1B8 /* JSONTestRecordsStorage.m in Sources */,
-				5DD557121748A42B002AE1B8 /* JSONTestRecordStorageElement.m in Sources */,
-				5DD557131748A42F002AE1B8 /* MMPIATestRecordReader.m in Sources */,
-				5DD557141748A5BB002AE1B8 /* Statement.m in Sources */,
-				5DD557151748A5BE002AE1B8 /* Questionnaire.m in Sources */,
-				5DD557161748A5C3002AE1B8 /* Person.m in Sources */,
-				5DD557171748A5C6002AE1B8 /* TestRecord.m in Sources */,
-				5DD557181748A5C9002AE1B8 /* JSONTestRecordSerialization.m in Sources */,
-				5DD557191748A5E4002AE1B8 /* UtilityFunctions.m in Sources */,
-				5DD5571A1748A5FE002AE1B8 /* TestAnswers.m in Sources */,
-				5DD5571B1748A605002AE1B8 /* Answer.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		44F6C1B219D555DD00E4B9A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DA5C9DF163B018D00CF1601 /* iMMPI */;
+			targetProxy = 44F6C1B119D555DD00E4B9A3 /* PBXContainerItemProxy */;
+		};
 		5DC4048E168C4B3D000AFBAE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5DA5C9DF163B018D00CF1601 /* iMMPI */;
@@ -1334,17 +1255,78 @@
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
-		5DD556E81748A2E1002AE1B8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5DD556E91748A2E1002AE1B8 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		44F6C1B419D555DD00E4B9A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40121AB03F604C51A9D7E89F /* Pods-iMMPITests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iMMPI.app/iMMPI";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "iMMPI Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		44F6C1B519D555DD00E4B9A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40121AB03F604C51A9D7E89F /* Pods-iMMPITests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iMMPI.app/iMMPI";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "iMMPI Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
 		5DA5CA02163B018D00CF1601 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1405,6 +1387,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
@@ -1426,6 +1409,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
@@ -1453,69 +1437,18 @@
 			};
 			name = Release;
 		};
-		5DD556F71748A2E1002AE1B8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 886E7B631E6B483C8375754E /* Pods.xcconfig */;
-			buildSettings = {
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/iMMPI-Tests\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iMMPI-Tests/iMMPI-Tests-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/iMMPI-Tests/OCMock\"",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "iMMPI-Tests/iMMPI-Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/iMMPI-Tests/OCMock\"",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		5DD556F81748A2E1002AE1B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 886E7B631E6B483C8375754E /* Pods.xcconfig */;
-			buildSettings = {
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/iMMPI-Tests\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iMMPI-Tests/iMMPI-Tests-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/iMMPI-Tests/OCMock\"",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "iMMPI-Tests/iMMPI-Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/iMMPI-Tests/OCMock\"",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		44F6C1B319D555DD00E4B9A3 /* Build configuration list for PBXNativeTarget "iMMPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44F6C1B419D555DD00E4B9A3 /* Debug */,
+				44F6C1B519D555DD00E4B9A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5DA5C9DA163B018D00CF1601 /* Build configuration list for PBXProject "iMMPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1539,15 +1472,6 @@
 			buildConfigurations = (
 				5DC4046D168C2260000AFBAE /* Debug */,
 				5DC4046E168C2260000AFBAE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5DD556F91748A2E1002AE1B8 /* Build configuration list for PBXNativeTarget "iMMPI-Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5DD556F71748A2E1002AE1B8 /* Debug */,
-				5DD556F81748A2E1002AE1B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
