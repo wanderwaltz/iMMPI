@@ -33,6 +33,8 @@
 		44C39DA519D569DD0026672D /* NSArrayHelpersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DA419D569DD0026672D /* NSArrayHelpersTests.m */; };
 		44C39DA919D572FC0026672D /* PersonNameReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DA819D572FC0026672D /* PersonNameReportComposer.m */; };
 		44C39DAB19D5737B0026672D /* PersonNameReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DAA19D5737B0026672D /* PersonNameReportComposer.m */; };
+		44C39DAE19D58BD80026672D /* DateReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DAD19D58BD80026672D /* DateReportComposer.m */; };
+		44C39DB019D58CC10026672D /* DateReportComposerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DAF19D58CC10026672D /* DateReportComposerTests.m */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -148,6 +150,9 @@
 		44C39DA719D572FC0026672D /* PersonNameReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonNameReportComposer.h; sourceTree = "<group>"; };
 		44C39DA819D572FC0026672D /* PersonNameReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNameReportComposer.m; sourceTree = "<group>"; };
 		44C39DAA19D5737B0026672D /* PersonNameReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNameReportComposer.m; sourceTree = "<group>"; };
+		44C39DAC19D58BD80026672D /* DateReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateReportComposer.h; sourceTree = "<group>"; };
+		44C39DAD19D58BD80026672D /* DateReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateReportComposer.m; sourceTree = "<group>"; };
+		44C39DAF19D58CC10026672D /* DateReportComposerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateReportComposerTests.m; sourceTree = "<group>"; };
 		44F6C1AB19D555DD00E4B9A3 /* iMMPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMMPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F6C1AE19D555DD00E4B9A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -389,6 +394,8 @@
 			children = (
 				44C39DA719D572FC0026672D /* PersonNameReportComposer.h */,
 				44C39DA819D572FC0026672D /* PersonNameReportComposer.m */,
+				44C39DAC19D58BD80026672D /* DateReportComposer.h */,
+				44C39DAD19D58BD80026672D /* DateReportComposer.m */,
 			);
 			name = "Model-Specific Helpers";
 			sourceTree = "<group>";
@@ -401,6 +408,7 @@
 				44C39D9819D561B00026672D /* HtmlReportTagDecoratorTests.m */,
 				44C39DA219D567EE0026672D /* CompositeReportComposer.m */,
 				44C39DAA19D5737B0026672D /* PersonNameReportComposer.m */,
+				44C39DAF19D58CC10026672D /* DateReportComposerTests.m */,
 				44F6C1AD19D555DD00E4B9A3 /* Supporting Files */,
 			);
 			path = "iMMPI Tests";
@@ -1217,6 +1225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44C39D9419D5597E0026672D /* HtmlReportHtmlDecoratorTests.m in Sources */,
+				44C39DB019D58CC10026672D /* DateReportComposerTests.m in Sources */,
 				44C39D9919D561B00026672D /* HtmlReportTagDecoratorTests.m in Sources */,
 				44C39DAB19D5737B0026672D /* PersonNameReportComposer.m in Sources */,
 				44C39DA519D569DD0026672D /* NSArrayHelpersTests.m in Sources */,
@@ -1245,6 +1254,7 @@
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
 				443B655319D434B20067FA6A /* HtmlReportHtmlDecorator.m in Sources */,
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
+				44C39DAE19D58BD80026672D /* DateReportComposer.m in Sources */,
 				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
 				5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */,
