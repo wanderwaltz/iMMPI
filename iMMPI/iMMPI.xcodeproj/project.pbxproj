@@ -31,6 +31,8 @@
 		44C39DA119D5665B0026672D /* NSArray+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DA019D5665B0026672D /* NSArray+Helpers.m */; };
 		44C39DA319D567EE0026672D /* CompositeReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DA219D567EE0026672D /* CompositeReportComposer.m */; };
 		44C39DA519D569DD0026672D /* NSArrayHelpersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DA419D569DD0026672D /* NSArrayHelpersTests.m */; };
+		44C39DA919D572FC0026672D /* PersonNameReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DA819D572FC0026672D /* PersonNameReportComposer.m */; };
+		44C39DAB19D5737B0026672D /* PersonNameReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C39DAA19D5737B0026672D /* PersonNameReportComposer.m */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -143,6 +145,9 @@
 		44C39DA019D5665B0026672D /* NSArray+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Helpers.m"; sourceTree = "<group>"; };
 		44C39DA219D567EE0026672D /* CompositeReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompositeReportComposer.m; sourceTree = "<group>"; };
 		44C39DA419D569DD0026672D /* NSArrayHelpersTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayHelpersTests.m; sourceTree = "<group>"; };
+		44C39DA719D572FC0026672D /* PersonNameReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonNameReportComposer.h; sourceTree = "<group>"; };
+		44C39DA819D572FC0026672D /* PersonNameReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNameReportComposer.m; sourceTree = "<group>"; };
+		44C39DAA19D5737B0026672D /* PersonNameReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNameReportComposer.m; sourceTree = "<group>"; };
 		44F6C1AB19D555DD00E4B9A3 /* iMMPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMMPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F6C1AE19D555DD00E4B9A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -334,6 +339,7 @@
 			children = (
 				443B654919D431D50067FA6A /* AnalyzerReportComposer.h */,
 				44C39D9A19D565C40026672D /* Utility */,
+				44C39DA619D572E90026672D /* Model-Specific Helpers */,
 				443B654F19D434290067FA6A /* Html Reports */,
 				443B654E19D4340B0067FA6A /* Answers Report */,
 			);
@@ -378,6 +384,15 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		44C39DA619D572E90026672D /* Model-Specific Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				44C39DA719D572FC0026672D /* PersonNameReportComposer.h */,
+				44C39DA819D572FC0026672D /* PersonNameReportComposer.m */,
+			);
+			name = "Model-Specific Helpers";
+			sourceTree = "<group>";
+		};
 		44F6C1AC19D555DD00E4B9A3 /* iMMPI Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +400,7 @@
 				44C39D9319D5597E0026672D /* HtmlReportHtmlDecoratorTests.m */,
 				44C39D9819D561B00026672D /* HtmlReportTagDecoratorTests.m */,
 				44C39DA219D567EE0026672D /* CompositeReportComposer.m */,
+				44C39DAA19D5737B0026672D /* PersonNameReportComposer.m */,
 				44F6C1AD19D555DD00E4B9A3 /* Supporting Files */,
 			);
 			path = "iMMPI Tests";
@@ -1202,6 +1218,7 @@
 			files = (
 				44C39D9419D5597E0026672D /* HtmlReportHtmlDecoratorTests.m in Sources */,
 				44C39D9919D561B00026672D /* HtmlReportTagDecoratorTests.m in Sources */,
+				44C39DAB19D5737B0026672D /* PersonNameReportComposer.m in Sources */,
 				44C39DA519D569DD0026672D /* NSArrayHelpersTests.m in Sources */,
 				44C39DA319D567EE0026672D /* CompositeReportComposer.m in Sources */,
 			);
@@ -1236,6 +1253,7 @@
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
+				44C39DA919D572FC0026672D /* PersonNameReportComposer.m in Sources */,
 				5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */,
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
 				5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */,
