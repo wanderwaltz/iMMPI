@@ -104,6 +104,7 @@
 		5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780418ACF81D009896FB /* button_tap2.wav */; };
 		5DD5572C1748B68F002AE1B8 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD557281748B652002AE1B8 /* Icon-72.png */; };
 		5DD5572D1748B691002AE1B8 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD5572A1748B657002AE1B8 /* Icon-144.png */; };
+		5DE0A6C619E145C800EA0E83 /* DefaultHtmlTableReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0A6C519E145C800EA0E83 /* DefaultHtmlTableReportComposer.m */; };
 		5DEE4BD816E304890072F239 /* AnswersInputViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */; };
 		5DEE4BD916E304890072F239 /* AnswersInputViewBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD716E304890072F239 /* AnswersInputViewBackground@2x.png */; };
 		5DEE4BDC16E305770072F239 /* AnswersInputButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */; };
@@ -293,6 +294,9 @@
 		5DD3780418ACF81D009896FB /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap2.wav; sourceTree = "<group>"; };
 		5DD557281748B652002AE1B8 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		5DD5572A1748B657002AE1B8 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
+		5DE0A6C319E1457F00EA0E83 /* HtmlTableReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlTableReportComposer.h; sourceTree = "<group>"; };
+		5DE0A6C419E145C800EA0E83 /* DefaultHtmlTableReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultHtmlTableReportComposer.h; sourceTree = "<group>"; };
+		5DE0A6C519E145C800EA0E83 /* DefaultHtmlTableReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultHtmlTableReportComposer.m; sourceTree = "<group>"; };
 		5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnswersInputViewBackground.png; sourceTree = "<group>"; };
 		5DEE4BD716E304890072F239 /* AnswersInputViewBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputViewBackground@2x.png"; sourceTree = "<group>"; };
 		5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputButtonPressed@2x.png"; sourceTree = "<group>"; };
@@ -368,6 +372,7 @@
 		443B654F19D434290067FA6A /* Html Reports */ = {
 			isa = PBXGroup;
 			children = (
+				5DE0A6C219E1456B00EA0E83 /* Tables */,
 				443B655119D434B20067FA6A /* HtmlReportHtmlDecorator.h */,
 				443B655219D434B20067FA6A /* HtmlReportHtmlDecorator.m */,
 				44C39D9519D560830026672D /* HtmlReportTagDecorator.h */,
@@ -1012,6 +1017,16 @@
 			name = "Test Record Serialization";
 			sourceTree = "<group>";
 		};
+		5DE0A6C219E1456B00EA0E83 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				5DE0A6C319E1457F00EA0E83 /* HtmlTableReportComposer.h */,
+				5DE0A6C419E145C800EA0E83 /* DefaultHtmlTableReportComposer.h */,
+				5DE0A6C519E145C800EA0E83 /* DefaultHtmlTableReportComposer.m */,
+			);
+			name = Tables;
+			sourceTree = "<group>";
+		};
 		7C0F025E169C0092006377B3 /* MMPI Segue Handler */ = {
 			isa = PBXGroup;
 			children = (
@@ -1255,6 +1270,7 @@
 				5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */,
 				5DC4048C168C4AB3000AFBAE /* Person.m in Sources */,
 				44C39DA119D5665B0026672D /* NSArray+Helpers.m in Sources */,
+				5DE0A6C619E145C800EA0E83 /* DefaultHtmlTableReportComposer.m in Sources */,
 				5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
 				443B655319D434B20067FA6A /* HtmlReportHtmlDecorator.m in Sources */,
