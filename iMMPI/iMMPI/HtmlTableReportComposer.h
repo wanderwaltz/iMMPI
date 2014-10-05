@@ -21,4 +21,16 @@
 
 @protocol HtmlTableReportComposerDataSource<NSObject>
 
+- (NSDictionary *)tableAttributesForHtmlTableReportComposer:(id<HtmlTableReportComposer>)composer;
+
+- (NSInteger)numberOfColumnsInHtmlTableReportComposer:(id<HtmlTableReportComposer>)composer;
+- (NSInteger)numberOfRowsInHtmlTableReportComposer:(id<HtmlTableReportComposer>)composer;
+
+- (NSDictionary *)tableReportComposer:(id<HtmlTableReportComposer>)composer attributesForColumn:(NSInteger)column;
+
+- (NSDictionary *)tableReportComposer:(id<HtmlTableReportComposer>)composer attributesForHeaderCellInColumn:(NSInteger)column;
+- (NSString *)tableReportComposer:(id<HtmlTableReportComposer>)composer textForHeaderCellInColumn:(NSInteger)column;
+
+- (NSString *)tableReportcomposer:(id<HtmlTableReportComposer>)composer htmlTextForColumn:(NSInteger)column row:(NSInteger)row;
+
 @end

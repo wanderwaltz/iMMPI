@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "HtmlTableReportComposer.h"
 
+@protocol HtmlBuilder;
+
 @interface DefaultHtmlTableReportComposer : NSObject<HtmlTableReportComposer>
+
+- (instancetype)initWithHtmlBuilder:(id<HtmlBuilder>)htmlBuilder;
+
 @end
