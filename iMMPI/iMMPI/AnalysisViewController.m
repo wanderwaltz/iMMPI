@@ -21,6 +21,8 @@
 
 #import <MessageUI/MessageUI.h>
 
+#import "AnalyzerReportComposer.h"
+#import "AnalyzerReportComposerFactory.h"
 
 #pragma mark -
 #pragma mark Static constants
@@ -147,23 +149,23 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 
 - (void) presentPrintingInterface
 {
+    id<AnalyzerReportComposer> composer = [AnalyzerReportComposerFactory answersReportComposer];
+    
+    NSString *htmlText = [composer composeReportForTestRecord: _record];
+    
     UIPrintInteractionController *printController =
-    [UIPrintInteractionController sharedPrintController];
+        [UIPrintInteractionController sharedPrintController];
     
     UIMarkupTextPrintFormatter *formatter =
-    [[UIMarkupTextPrintFormatter alloc] initWithMarkupText:
-     [_reportGenerator composeOverallAnalysisReportForGroupIndices: _analyzerGroupIndices
-                                                  filterNormValues: [AnalysisSettings shouldFilterAnalysisResults]]];
+        [[UIMarkupTextPrintFormatter alloc] initWithMarkupText: htmlText];
     
     printController.printFormatter = formatter;
     
     [printController presentFromBarButtonItem: self.navigationItem.rightBarButtonItem
-                                     animated: YES
-                            completionHandler:
-     ^(UIPrintInteractionController *printInteractionController, BOOL completed, NSError *error)
-     {
-                                
-    }];
+        animated: YES
+        completionHandler:
+            ^(UIPrintInteractionController *printInteractionController, BOOL completed, NSError *error) {
+            }];
 }
 
 
