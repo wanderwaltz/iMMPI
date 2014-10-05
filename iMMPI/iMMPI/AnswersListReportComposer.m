@@ -7,6 +7,12 @@
 //
 
 #import "AnswersListReportComposer.h"
+#import "Model.h"
+
+#import "QuestionnaireProtocol.h"
+#import "StatementProtocol.h"
+#import "TestRecordProtocol.h"
+
 
 enum {
     kColumnStatementID,
@@ -18,8 +24,12 @@ enum {
 
 @interface AnswersListReportComposer()
 @property (nonatomic, strong, readonly) id<HtmlTableReportComposer> tableComposer;
+@property (nonatomic, strong, readonly) id<QuestionnaireProtocol> questionnaire;
+
 @property (nonatomic, strong, readonly) NSDictionary *attributesForColumn;
+@property (nonatomic, strong, readonly) NSDictionary *attributesForCellInColumn;
 @property (nonatomic, strong, readonly) NSDictionary *textForHeaderCellInColumn;
+
 @property (nonatomic, strong) id<TestRecordProtocol> testRecord;
 @end
 
@@ -30,13 +40,16 @@ enum {
 
 - (instancetype)init
 {
-    return [self initWithHtmlTableReportComposer: nil];
+    return [self initWithHtmlTableReportComposer: nil
+                questionnaire: nil];
 }
 
 - (instancetype)initWithHtmlTableReportComposer:(id<HtmlTableReportComposer>)tableComposer
+                    questionnaire:(id<QuestionnaireProtocol>)questionnaire
 {
     NSParameterAssert(tableComposer != nil);
-    if (!tableComposer) {
+    NSParameterAssert(questionnaire != nil);
+    if (!tableComposer || !questionnaire) {
         return nil;
     }
     
@@ -49,11 +62,28 @@ enum {
     _tableComposer = tableComposer;
     _tableComposer.dataSource = self;
     
+    _questionnaire = questionnaire;
+    
+   
+    
+    _attributesForCellInColumn = @{
+                             @(kColumnStatementID)   : @{ @"style"   : @"border:1px solid black;",
+                                                          @"colspan" : @"1",
+                                                          @"align"   : @"center" },
+                             
+                             @(kColumnStatementText) : @{ @"style"   : @"border:1px solid black;",
+                                                          @"colspan" : @"1" },
+                             
+                             @(kColumnAnswerType)    : @{ @"style"   : @"border:1px solid black;",
+                                                          @"colspan" : @"1",
+                                                          @"align"   : @"center" }
+                             };
+    
     _attributesForColumn = @{
                              @(kColumnStatementID)   : @{ @"width" : @"10%" },
                              @(kColumnStatementText) : @{ @"width" : @"80%" },
                              @(kColumnAnswerType)    : @{ @"width" : @"10%" }
-                             };
+                            };
     
     _textForHeaderCellInColumn = @{
                                    @(kColumnStatementID)   : @"№",
@@ -96,7 +126,7 @@ enum {
 
 - (NSInteger)numberOfRowsInHtmlTableReportComposer:(id<HtmlTableReportComposer>)composer
 {
-    return 0;
+    return [self.questionnaire statementsCount];
 }
 
 
@@ -118,10 +148,56 @@ enum {
 }
 
 
-- (NSString *)tableReportcomposer:(id<HtmlTableReportComposer>)composer htmlTextForColumn:(NSInteger)column row:(NSInteger)row
+- (NSDictionary *)tableReportComposer:(id<HtmlTableReportComposer>)composer
+                      attributesForCellInColumn:(NSInteger)column
+                      row:(NSInteger)row
 {
-    return nil;
+    return self.attributesForCellInColumn[@(column)];
 }
+
+- (NSString *)tableReportcomposer:(id<HtmlTableReportComposer>)composer
+                  textForCellInColumn:(NSInteger)column
+                  row:(NSInteger)row
+{
+    id<StatementProtocol> statement = [self.questionnaire statementAtIndex: row];
+    
+    switch (column) {
+        case kColumnStatementID: {
+            return [NSString stringWithFormat: @"%ld", (long)[statement statementID]];
+        } break;
+            
+            
+        case kColumnStatementText: {
+            return [statement text];
+        } break;
+            
+            
+        case kColumnAnswerType: {
+            AnswerType answer = [[self.testRecord testAnswers] answerTypeForStatementID: [statement statementID]];
+            
+            switch (answer) {
+                case AnswerTypePositive: {
+                    return @"+";
+                } break;
+                    
+                case AnswerTypeNegative: {
+                    return @"-";
+                } break;
+                    
+                default: {
+                    return @"";
+                } break;
+            }
+        } break;
+            
+            
+        default: {
+            NSAssert(NO, @"Unknown column %ld", (long)column);
+            return nil;
+        } break;
+    }
+}
+
 
 
 @end

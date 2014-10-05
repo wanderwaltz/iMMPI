@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @protocol AnalyzerReportComposer;
+@protocol QuestionnaireProtocol;
 
 @interface AnalyzerReportComposerFactory : NSObject
 
-+ (id<AnalyzerReportComposer>)answersReportComposer;
++ (id<AnalyzerReportComposer>)answersReportComposerWithQuestionnaire:(id<QuestionnaireProtocol>)questionnaire;
 
 @end

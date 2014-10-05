@@ -149,7 +149,8 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 
 - (void) presentPrintingInterface
 {
-    id<AnalyzerReportComposer> composer = [AnalyzerReportComposerFactory answersReportComposer];
+    id<AnalyzerReportComposer> composer =
+        [AnalyzerReportComposerFactory answersReportComposerWithQuestionnaire: _reportGenerator.questionnaire];
     
     NSString *htmlText = [composer composeReportForTestRecord: _record];
     

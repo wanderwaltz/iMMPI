@@ -10,8 +10,11 @@
 #import "AnalyzerReportComposer.h"
 #import "HtmlTableReportComposer.h"
 
+@protocol QuestionnaireProtocol;
+
 @interface AnswersListReportComposer : NSObject<AnalyzerReportComposer, HtmlTableReportComposerDataSource>
 
-- (instancetype)initWithHtmlTableReportComposer:(id<HtmlTableReportComposer>)tableComposer;
+- (instancetype)initWithHtmlTableReportComposer:(id<HtmlTableReportComposer>)tableComposer
+                    questionnaire:(id<QuestionnaireProtocol>)questionnaire;
 
 @end

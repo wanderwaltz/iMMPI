@@ -21,10 +21,10 @@
 
 @implementation AnalyzerReportComposerFactory
 
-+ (id<AnalyzerReportComposer>)answersReportComposer
++ (id<AnalyzerReportComposer>)answersReportComposerWithQuestionnaire:(id<QuestionnaireProtocol>)questionnaire
 {
     id<AnalyzerReportComposer> headerComposer = [self headerComposer];
-    id<AnalyzerReportComposer> answersListComposer = [self answersListComposer];
+    id<AnalyzerReportComposer> answersListComposer = [self answersListComposerWithQuestionnaire: questionnaire];
     
     id<AnalyzerReportComposer> contentComposer =
         [self sequence: @[headerComposer, answersListComposer]];
@@ -63,9 +63,11 @@
 }
 
 
-+ (id<AnalyzerReportComposer>)answersListComposer
++ (id<AnalyzerReportComposer>)answersListComposerWithQuestionnaire:(id<QuestionnaireProtocol>)questionnaire
 {
-    return [[AnswersListReportComposer alloc] initWithHtmlTableReportComposer: [self htmlTableReportComposer]];
+    return [[AnswersListReportComposer alloc]
+                initWithHtmlTableReportComposer: [self htmlTableReportComposer]
+                questionnaire: questionnaire];
 }
 
 
