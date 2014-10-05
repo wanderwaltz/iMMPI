@@ -378,6 +378,7 @@
 		443B654F19D434290067FA6A /* Html Reports */ = {
 			isa = PBXGroup;
 			children = (
+				5DE0A6CD19E1593D00EA0E83 /* Html Builder */,
 				5DE0A6C219E1456B00EA0E83 /* Tables */,
 				443B655119D434B20067FA6A /* HtmlReportHtmlDecorator.h */,
 				443B655219D434B20067FA6A /* HtmlReportHtmlDecorator.m */,
@@ -1028,13 +1029,20 @@
 			isa = PBXGroup;
 			children = (
 				5DE0A6C319E1457F00EA0E83 /* HtmlTableReportComposer.h */,
-				5DE0A6C719E148A000EA0E83 /* HtmlBuilder.h */,
-				5DE0A6C819E1491D00EA0E83 /* DefaultHtmlBuilder.h */,
-				5DE0A6C919E1491D00EA0E83 /* DefaultHtmlBuilder.m */,
 				5DE0A6C419E145C800EA0E83 /* DefaultHtmlTableReportComposer.h */,
 				5DE0A6C519E145C800EA0E83 /* DefaultHtmlTableReportComposer.m */,
 			);
 			name = Tables;
+			sourceTree = "<group>";
+		};
+		5DE0A6CD19E1593D00EA0E83 /* Html Builder */ = {
+			isa = PBXGroup;
+			children = (
+				5DE0A6C719E148A000EA0E83 /* HtmlBuilder.h */,
+				5DE0A6C819E1491D00EA0E83 /* DefaultHtmlBuilder.h */,
+				5DE0A6C919E1491D00EA0E83 /* DefaultHtmlBuilder.m */,
+			);
+			name = "Html Builder";
 			sourceTree = "<group>";
 		};
 		7C0F025E169C0092006377B3 /* MMPI Segue Handler */ = {
