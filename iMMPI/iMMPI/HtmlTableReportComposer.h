@@ -28,9 +28,18 @@
 
 - (NSDictionary *)tableReportComposer:(id<HtmlTableReportComposer>)composer attributesForColumn:(NSInteger)column;
 
-- (NSDictionary *)tableReportComposer:(id<HtmlTableReportComposer>)composer attributesForHeaderCellInColumn:(NSInteger)column;
-- (NSString *)tableReportComposer:(id<HtmlTableReportComposer>)composer textForHeaderCellInColumn:(NSInteger)column;
+- (NSDictionary *)tableReportComposer:(id<HtmlTableReportComposer>)composer
+                      attributesForHeaderCellInColumn:(NSInteger)column;
 
-- (NSString *)tableReportcomposer:(id<HtmlTableReportComposer>)composer htmlTextForColumn:(NSInteger)column row:(NSInteger)row;
+- (NSString *)tableReportComposer:(id<HtmlTableReportComposer>)composer
+                   textForHeaderCellInColumn:(NSInteger)column;
+
+- (NSDictionary *)tableReportComposer:(id<HtmlTableReportComposer>)composer
+                      attributesForCellInColumn:(NSInteger)column
+                      row:(NSInteger)row;
+
+- (NSString *)tableReportcomposer:(id<HtmlTableReportComposer>)composer
+                  textForCellInColumn:(NSInteger)column
+                  row:(NSInteger)row;
 
 @end
