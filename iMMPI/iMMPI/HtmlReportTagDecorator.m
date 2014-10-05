@@ -7,9 +7,11 @@
 //
 
 #import "HtmlReportTagDecorator.h"
+#import "HtmlBuilder.h"
 
 @interface HtmlReportTagDecorator()
 @property (nonatomic, copy, readonly) NSString *tag;
+@property (nonatomic, strong, readonly) id<HtmlBuilder> htmlBuilder;
 @property (nonatomic, strong, readonly) id<AnalyzerReportComposer> childComposer;
 @end
 
@@ -17,15 +19,19 @@
 
 - (instancetype)init
 {
-    return [self initWithTag: nil contentComposer: nil];
+    return [self initWithTag: nil htmlBuilder: nil contentComposer: nil];
 }
 
 
-- (instancetype)initWithTag:(NSString *)tag contentComposer:(id<AnalyzerReportComposer>)composer
+- (instancetype)initWithTag:(NSString *)tag
+                    htmlBuilder:(id<HtmlBuilder>)htmlBuilder
+                    contentComposer:(id<AnalyzerReportComposer>)composer
 {
     NSParameterAssert(composer != nil);
+    NSParameterAssert(htmlBuilder != nil);
+    NSParameterAssert(tag != nil);
     NSParameterAssert(tag.length > 0);
-    if ((tag.length == 0) || !composer) {
+    if ((tag.length == 0) || !composer || !htmlBuilder) {
         return nil;
     }
     
@@ -36,6 +42,7 @@
     }
     
     _tag = [tag copy];
+    _htmlBuilder = htmlBuilder;
     _childComposer = composer;
     
     return self;
@@ -44,18 +51,13 @@
 
 - (NSString *)composeReportForTestRecord:(id<TestRecordProtocol>)record
 {
-    NSMutableString *html = [[NSMutableString alloc] init];
+    [self.htmlBuilder open];
     
-    [html appendFormat: @"<%@>", self.tag];
-
     NSString *content = [self.childComposer composeReportForTestRecord: record];
-    if (content.length > 0) {
-        [html appendString: content];
-    }
+
+    [self.htmlBuilder addTag: self.tag attributes: nil text: content];
     
-    [html appendFormat: @"</%@>", self.tag];
-    
-    return [html copy];
+    return [self.htmlBuilder close];
 }
 
 @end

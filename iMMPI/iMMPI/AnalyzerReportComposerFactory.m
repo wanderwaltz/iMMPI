@@ -12,6 +12,7 @@
 #import "CompositeReportComposer.h"
 #import "HtmlReportHtmlDecorator.h"
 #import "HtmlReportTagDecorator.h"
+#import "DefaultHtmlBuilder.h"
 
 @implementation AnalyzerReportComposerFactory
 
@@ -54,13 +55,27 @@
 + (id<AnalyzerReportComposer>)decorateComposer:(id<AnalyzerReportComposer>)composer withHtmlHeaderLevel:(NSInteger)level
 {
     NSString *tag = [NSString stringWithFormat: @"H%ld", (long)level];
-    return [[HtmlReportTagDecorator alloc] initWithTag: tag contentComposer: composer];
+    return [[HtmlReportTagDecorator alloc]
+                initWithTag: tag
+                htmlBuilder: [self htmlBuilder]
+                contentComposer: composer];
 }
 
 
 + (id<AnalyzerReportComposer>)decorateComposerWithHtmlBody:(id<AnalyzerReportComposer>)composer
 {
-    return [[HtmlReportTagDecorator alloc] initWithTag: @"body" contentComposer: composer];
+    return [[HtmlReportTagDecorator alloc]
+                initWithTag: @"body"
+                htmlBuilder: [self htmlBuilder]
+                contentComposer: composer];
+}
+
+
+#pragma mark - helpers
+
++ (id<HtmlBuilder>)htmlBuilder
+{
+    return [[DefaultHtmlBuilder alloc] init];
 }
 
 @end

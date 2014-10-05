@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "AnalyzerReportComposer.h"
 
+@protocol HtmlBuilder;
+
 @interface HtmlReportTagDecorator : NSObject<AnalyzerReportComposer>
 
-- (instancetype)initWithTag:(NSString *)tag contentComposer:(id<AnalyzerReportComposer>)composer;
+- (instancetype)initWithTag:(NSString *)tag
+                    htmlBuilder:(id<HtmlBuilder>)htmlBuilder
+                    contentComposer:(id<AnalyzerReportComposer>)composer;
 
 @end

@@ -9,6 +9,7 @@
 #import "Kiwi.h"
 
 #import "HtmlReportTagDecorator.h"
+#import "HtmlBuilder.h"
 
 SPEC_BEGIN(HtmlReportTagDecoratorTests)
 
@@ -40,19 +41,40 @@ describe(@"HtmlReportTagDecorator", ^{
     });
     
     
+    let(html_builder, ^id{
+        return [KWMock nullMockForProtocol: @protocol(HtmlBuilder)];
+    });
+    
+    
     it(@"should not be able to be created without a tag", ^{
-        [[[[HtmlReportTagDecorator alloc] initWithTag: nil contentComposer: child_report_composer] should] beNil];
+        [[[[HtmlReportTagDecorator alloc]
+               initWithTag: nil htmlBuilder: html_builder
+               contentComposer: child_report_composer] should] beNil];
     });
     
     
     it(@"should not be able to be created without a content composer", ^{
-        [[[[HtmlReportTagDecorator alloc] initWithTag: tag contentComposer: nil] should] beNil];
+        [[[[HtmlReportTagDecorator alloc]
+           initWithTag: tag
+           htmlBuilder: html_builder
+           contentComposer: nil] should] beNil];
+    });
+    
+    
+    it(@"should not be able to be created without a html builder", ^{
+        [[[[HtmlReportTagDecorator alloc]
+               initWithTag: tag
+               htmlBuilder: nil
+               contentComposer: child_report_composer] should] beNil];
     });
     
     
     context(@"when newly created", ^{
         let(tag_decorator, ^HtmlReportTagDecorator *{
-            return [[HtmlReportTagDecorator alloc] initWithTag: tag contentComposer: child_report_composer];
+            return [[HtmlReportTagDecorator alloc]
+                        initWithTag: tag
+                        htmlBuilder: html_builder
+                        contentComposer: child_report_composer];
         });
         
         
@@ -62,9 +84,14 @@ describe(@"HtmlReportTagDecorator", ^{
         });
         
         
-        it(@"should wrap the child composer content into the given tag", ^{
+        it(@"should use the html builder to wrap the child composer content into the given tag", ^{
+            [[html_builder should] receive: @selector(open)];
+            [[html_builder should] receive: @selector(addTag:attributes:text:)
+                             withArguments: tag, nil, child_report_content];
+            [[html_builder should] receive: @selector(close) andReturn: @"html_builder_result"];
+            
             NSString *report = [tag_decorator composeReportForTestRecord: test_record];
-            [[report should] equal: [NSString stringWithFormat: @"<%@>%@</%@>", tag, child_report_content, tag]];
+            [[report should] equal: @"html_builder_result"];
         });
     });
 });
