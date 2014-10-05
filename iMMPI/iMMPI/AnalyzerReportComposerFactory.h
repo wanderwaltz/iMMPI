@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol AnalyzerReportComposer;
+
 @interface AnalyzerReportComposerFactory : NSObject
+
++ (id<AnalyzerReportComposer>)answersReportComposer;
 
 @end
