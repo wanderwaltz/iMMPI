@@ -107,6 +107,7 @@
 		5DE0A6C619E145C800EA0E83 /* DefaultHtmlTableReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0A6C519E145C800EA0E83 /* DefaultHtmlTableReportComposer.m */; };
 		5DE0A6CA19E1491D00EA0E83 /* DefaultHtmlBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0A6C919E1491D00EA0E83 /* DefaultHtmlBuilder.m */; };
 		5DE0A6CC19E14B0600EA0E83 /* HtmlBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0A6CB19E14B0600EA0E83 /* HtmlBuilderTests.m */; };
+		5DE0A6D019E15B4B00EA0E83 /* AnswersListReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0A6CF19E15B4B00EA0E83 /* AnswersListReportComposer.m */; };
 		5DEE4BD816E304890072F239 /* AnswersInputViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */; };
 		5DEE4BD916E304890072F239 /* AnswersInputViewBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD716E304890072F239 /* AnswersInputViewBackground@2x.png */; };
 		5DEE4BDC16E305770072F239 /* AnswersInputButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */; };
@@ -303,6 +304,8 @@
 		5DE0A6C819E1491D00EA0E83 /* DefaultHtmlBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultHtmlBuilder.h; sourceTree = "<group>"; };
 		5DE0A6C919E1491D00EA0E83 /* DefaultHtmlBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultHtmlBuilder.m; sourceTree = "<group>"; };
 		5DE0A6CB19E14B0600EA0E83 /* HtmlBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlBuilderTests.m; sourceTree = "<group>"; };
+		5DE0A6CE19E15B4B00EA0E83 /* AnswersListReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswersListReportComposer.h; sourceTree = "<group>"; };
+		5DE0A6CF19E15B4B00EA0E83 /* AnswersListReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswersListReportComposer.m; sourceTree = "<group>"; };
 		5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnswersInputViewBackground.png; sourceTree = "<group>"; };
 		5DEE4BD716E304890072F239 /* AnswersInputViewBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputViewBackground@2x.png"; sourceTree = "<group>"; };
 		5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputButtonPressed@2x.png"; sourceTree = "<group>"; };
@@ -413,6 +416,8 @@
 				44C39DA819D572FC0026672D /* PersonNameReportComposer.m */,
 				44C39DAC19D58BD80026672D /* DateReportComposer.h */,
 				44C39DAD19D58BD80026672D /* DateReportComposer.m */,
+				5DE0A6CE19E15B4B00EA0E83 /* AnswersListReportComposer.h */,
+				5DE0A6CF19E15B4B00EA0E83 /* AnswersListReportComposer.m */,
 			);
 			name = "Model-Specific Helpers";
 			sourceTree = "<group>";
@@ -1306,6 +1311,7 @@
 				44C39DA919D572FC0026672D /* PersonNameReportComposer.m in Sources */,
 				5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */,
 				44C39DB319D58E7D0026672D /* AnalyzerReportComposerFactory.m in Sources */,
+				5DE0A6D019E15B4B00EA0E83 /* AnswersListReportComposer.m in Sources */,
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
 				5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */,
 				5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */,

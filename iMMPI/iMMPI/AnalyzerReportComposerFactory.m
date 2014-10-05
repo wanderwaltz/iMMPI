@@ -7,20 +7,34 @@
 //
 
 #import "AnalyzerReportComposerFactory.h"
+
 #import "PersonNameReportComposer.h"
 #import "DateReportComposer.h"
+#import "AnswersListReportComposer.h"
+
 #import "CompositeReportComposer.h"
 #import "HtmlReportHtmlDecorator.h"
 #import "HtmlReportTagDecorator.h"
+
 #import "DefaultHtmlBuilder.h"
+#import "DefaultHtmlTableReportComposer.h"
 
 @implementation AnalyzerReportComposerFactory
 
 + (id<AnalyzerReportComposer>)answersReportComposer
 {
-    return [[HtmlReportHtmlDecorator alloc] initWithContentComposer:
-                [self decorateComposerWithHtmlBody:
-                     [self headerComposer]]];
+    id<AnalyzerReportComposer> headerComposer = [self headerComposer];
+    id<AnalyzerReportComposer> answersListComposer = [self answersListComposer];
+    
+    id<AnalyzerReportComposer> contentComposer =
+        [self sequence: @[headerComposer, answersListComposer]];
+    
+    id<AnalyzerReportComposer> bodyComposer = [self decorateComposerWithHtmlBody: contentComposer];
+    
+    id<AnalyzerReportComposer> htmlComposer =
+        [[HtmlReportHtmlDecorator alloc] initWithContentComposer: bodyComposer];
+    
+    return htmlComposer;
 }
 
 
@@ -28,8 +42,7 @@
 
 + (id<AnalyzerReportComposer>)headerComposer
 {
-    return [[CompositeReportComposer alloc] initWithChildComposers: @[[self personNameComposer], [self testDateComposer]]
-                separator: nil];
+    return [self sequence: @[[self personNameComposer], [self testDateComposer]]];
 }
 
 + (id<AnalyzerReportComposer>)personNameComposer
@@ -47,6 +60,12 @@
     
     return [self decorateComposer: [[DateReportComposer alloc] initWithDateFormatter: formatter]
               withHtmlHeaderLevel: 2];
+}
+
+
++ (id<AnalyzerReportComposer>)answersListComposer
+{
+    return [[AnswersListReportComposer alloc] initWithHtmlTableReportComposer: [self htmlTableReportComposer]];
 }
 
 
@@ -71,11 +90,23 @@
 }
 
 
++ (id<AnalyzerReportComposer>)sequence:(NSArray *)childComposers
+{
+    return [[CompositeReportComposer alloc] initWithChildComposers: childComposers separator: nil];
+}
+
+
 #pragma mark - helpers
 
 + (id<HtmlBuilder>)htmlBuilder
 {
     return [[DefaultHtmlBuilder alloc] init];
+}
+
+
++ (id<HtmlTableReportComposer>)htmlTableReportComposer
+{
+    return [[DefaultHtmlTableReportComposer alloc] initWithHtmlBuilder: [self htmlBuilder]];
 }
 
 @end
