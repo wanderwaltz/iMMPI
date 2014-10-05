@@ -7,6 +7,7 @@
 //
 
 #import "Model.h"
+#import "QuestionnaireProtocol.h"
 #import "Statement.h"
 
 

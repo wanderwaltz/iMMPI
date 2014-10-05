@@ -6,8 +6,7 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "Model.h"
-
+#import "StatementProtocol.h"
 
 #pragma mark -
 #pragma mark Statement interface

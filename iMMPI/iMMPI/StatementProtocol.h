@@ -6,8 +6,7 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "Model.h"
-
+#import <Foundation/Foundation.h>
 
 #pragma mark -
 #pragma mark Statement protocol

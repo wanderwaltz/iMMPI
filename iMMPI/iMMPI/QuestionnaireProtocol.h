@@ -6,8 +6,9 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "Model.h"
+#import <Foundation/Foundation.h>
 
+@protocol StatementProtocol;
 
 #pragma mark -
 #pragma mark Questionnaire protocol
