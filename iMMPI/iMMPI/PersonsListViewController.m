@@ -29,7 +29,8 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 #pragma mark PersonsListViewController private
 
 @interface PersonsListViewController()
-<EditTestRecordViewControllerDelegate, TestRecordModelByDateDelegate, UISearchDisplayDelegate>
+<EditTestRecordViewControllerDelegate, TestRecordModelByDateDelegate,
+ UISearchResultsUpdating, UISearchBarDelegate>
 {
     id<TestRecordStorage> _storage;
     id<TestRecordStorage> _trashStorage;
@@ -44,6 +45,8 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     /// Filtered results to be shown while searching
     TestRecordModelGroupedByName *_filteredModel;
 }
+
+@property (strong, nonatomic, readonly) UISearchController *searchController;
 
 @end
 
@@ -80,7 +83,7 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
         
         self.navigationItem.backBarButtonItem =
         [[UIBarButtonItem alloc] initWithTitle: ___Back
-                                         style: UIBarButtonItemStyleBordered
+                                         style: UIBarButtonItemStylePlain
                                         target: nil
                                         action: nil];
         
@@ -105,6 +108,7 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 
 - (void) awakeFromNib
 {
+    [super awakeFromNib];
     // For some weird reason setting the action for refresh control
     // in Interface Builder would not work, and setting the action
     // programmatically in -initWithCoder: would crash the app with
@@ -122,6 +126,22 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 
 #pragma mark -
 #pragma mark view lifecycle
+
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    _searchController.searchResultsUpdater = self;
+    _searchController.dimsBackgroundDuringPresentation = NO;
+    _searchController.searchBar.delegate = self;
+
+    [_searchController.searchBar sizeToFit];
+
+    self.tableView.tableHeaderView = _searchController.searchBar;
+    self.definesPresentationContext = YES;
+}
+
 
 - (void) viewWillAppear: (BOOL) animated
 {
@@ -478,28 +498,19 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
 }
 
 
-- (UITableView *) activeTableView
+- (UITableView *)activeTableView
 {
-    if (self.searchDisplayController.isActive)
-    {
-        return self.searchDisplayController.searchResultsTableView;
-    }
-    else
-    {
-        return self.tableView;
-    }
+    return self.tableView;
 }
 
 
 - (TestRecordModelGroupedByName *) modelForTableView: (UITableView *) tableView
 {
-    if (tableView == self.tableView)
-    {
-        return _model;
-    }
-    else
-    {
+    if (self.searchController.isActive) {
         return _filteredModel;
+    }
+    else {
+        return _model;
     }
 }
 
@@ -731,8 +742,7 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
             [_storage   addNewTestRecord: record];
         }
         
-        [self.tableView                                      reloadData];
-        [self.searchDisplayController.searchResultsTableView reloadData];
+        [self.tableView reloadData];
         
         dispatch_async(dispatch_get_main_queue(), ^{
            
@@ -802,8 +812,7 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         [_model         addNewObject: record];
         [_filteredModel addNewObject: record];
         
-        [self.tableView                                      reloadData];
-        [self.searchDisplayController.searchResultsTableView reloadData];
+        [self.tableView reloadData];
         
         [self.navigationController popToViewController: self
                                               animated: YES];
@@ -830,8 +839,7 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     [_model         addNewObject: record];
     [_filteredModel addNewObject: record];
     
-    [self.tableView                                      reloadData];
-    [self.searchDisplayController.searchResultsTableView reloadData];
+    [self.tableView reloadData];
 }
 
 
@@ -851,8 +859,7 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         [_model         updateObject: record];
         [_filteredModel updateObject: record];
         
-        [self.tableView                                      reloadData];
-        [self.searchDisplayController.searchResultsTableView reloadData];
+        [self.tableView reloadData];
         
         [self.navigationController popToViewController: self
                                               animated: YES];
@@ -867,8 +874,7 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     [_model         updateObject: record];
     [_filteredModel updateObject: record];
     
-    [self.tableView                                      reloadData];
-    [self.searchDisplayController.searchResultsTableView reloadData];
+    [self.tableView reloadData];
 }
 
 
@@ -887,8 +893,7 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     {
         [_model         removeObject: record];
         [_filteredModel removeObject: record];
-        [self.tableView                                      reloadData];
-        [self.searchDisplayController.searchResultsTableView reloadData];
+        [self.tableView reloadData];
         
         [self.navigationController popToViewController: self
                                               animated: YES];
@@ -903,27 +908,30 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
 {
     [_model         removeObject: record];
     [_filteredModel removeObject: record];
-    [self.tableView                                      reloadData];
-    [self.searchDisplayController.searchResultsTableView reloadData];
+    [self.tableView reloadData];
 }
 
 
 #pragma mark -
-#pragma mark UISearchDisplayDelegate
+#pragma mark UISearchResultsUpdating
 
-- (BOOL) searchDisplayController: (UISearchDisplayController *) controller
-shouldReloadTableForSearchString: (NSString *) searchString
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
-    if (searchString.length > 2)
+    if (searchController.searchBar.text.length > 2)
     {
-        _filteredModel = [_model modelByFilteringWithSearchQuery: searchString];
-        return YES;
+        _filteredModel = [_model modelByFilteringWithSearchQuery: searchController.searchBar.text];
     }
-    else
-    {
-        return NO;
-    }
+
+    [self.tableView reloadData];
 }
 
+
+#pragma mark -
+#pragma mark UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
+{
+    [self updateSearchResultsForSearchController: self.searchController];
+}
 
 @end

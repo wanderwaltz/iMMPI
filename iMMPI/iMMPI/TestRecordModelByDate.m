@@ -69,7 +69,7 @@
 
 - (void) addObjectsFromArray: (NSArray *) array
 {
-    for (id<TestRecordProtocol> object in array)
+    for (id<TestRecordProtocol> __unused object in array)
     {
         FRB_AssertConformsTo(object, TestRecordProtocol);
     }

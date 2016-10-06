@@ -32,6 +32,7 @@
 
 - (void) awakeFromNib
 {
+    [super awakeFromNib];
     [_statementSegmentedControl addTarget: self
                                    action: @selector(segmentedControlValueChanged:)
                          forControlEvents: UIControlEventValueChanged];
