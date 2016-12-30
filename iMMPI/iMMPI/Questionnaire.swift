@@ -47,13 +47,13 @@ extension Questionnaire {
     enum Error: Swift.Error {
         case nilFileName
         case fileNotFound
-        case failedReadingFile
         case jsonRootNotDictionary
         case statementsNotFound
         case statementJsonNotDictionary
         case statementIdentifierNotFound
         case statementTextNotFound
     }
+
 
     /// Initializes a Questionnarie object with the gender and age group values.
     ///
@@ -69,12 +69,22 @@ extension Questionnaire {
             throw Error.nilFileName
         }
 
-        guard let path = Bundle.main.path(forResource: fileName, ofType: questionnaireFilePathExtension),
+        try self.init(resourceName: fileName)
+    }
+
+
+    convenience init(resourceName: String, bundle: Bundle = .main) throws {
+        guard let path = bundle.path(forResource: resourceName, ofType: questionnaireFilePathExtension),
             path.isEmpty == false else {
                 throw Error.fileNotFound
         }
 
-        let data = try Data(contentsOf: URL(fileURLWithPath: path))
+        try self.init(url: URL(fileURLWithPath: path))
+    }
+
+
+    convenience init(url: URL) throws {
+        let data = try Data(contentsOf: url)
         let json = try JSONSerialization.jsonObject(with: data, options: [])
 
         guard let jsonDictionary = json as? [String:Any] else {
@@ -104,7 +114,7 @@ extension Questionnaire {
         }
 
         statements.sort(by: { (a, b) in a.statementID < b.statementID })
-
+        
         self.init(statements: statements)
     }
 }
