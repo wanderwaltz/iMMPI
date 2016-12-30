@@ -13,6 +13,7 @@
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
 		4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */; };
+		4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C79D1E1617AE0024C001 /* StatementTests.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -117,6 +118,7 @@
 		4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireTests.swift; sourceTree = "<group>"; };
 		4430C7931E160DDD0024C001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4430C7991E160F6E0024C001 /* iMMPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Bridging-Header.h"; sourceTree = "<group>"; };
+		4430C79D1E1617AE0024C001 /* StatementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementTests.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */,
+				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 				4430C7931E160DDD0024C001 /* Info.plist */,
 			);
 			path = iMMPITests;
@@ -1144,6 +1147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */,
+				4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
