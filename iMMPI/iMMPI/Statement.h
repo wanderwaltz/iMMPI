@@ -12,6 +12,7 @@
 #pragma mark -
 #pragma mark Statement interface
 
+NS_ASSUME_NONNULL_BEGIN
 /*! A concrete implementation of StatementProtocol.
  */
 @interface Statement : NSObject<StatementProtocol>
@@ -20,3 +21,4 @@
 @property (assign, nonatomic) NSInteger statementID;
 
 @end
+NS_ASSUME_NONNULL_END
