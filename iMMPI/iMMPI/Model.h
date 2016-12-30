@@ -15,28 +15,25 @@
 #pragma mark -
 #pragma mark Typedefs
 
-typedef enum : NSInteger
-{
+typedef NS_ENUM(NSInteger, Gender) {
     GenderUnknown,
     GenderMale,
     GenderFemale
-} Gender;
+};
 
 
-typedef enum : NSInteger
-{
+typedef NS_ENUM(NSInteger, AgeGroup) {
     AgeGroupUnknown,
     AgeGroupTeen,
     AgeGroupAdult
-} AgeGroup;
+};
 
 
-typedef enum : NSInteger
-{
+typedef NS_ENUM(NSInteger, AnswerType) {
     AnswerTypeUnknown,
     AnswerTypePositive,
     AnswerTypeNegative
-} AnswerType;
+};
 
 
 #pragma mark -
