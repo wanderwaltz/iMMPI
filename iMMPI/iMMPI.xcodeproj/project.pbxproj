@@ -98,13 +98,6 @@
 		5DD556E21748A2E1002AE1B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
 		5DD556E31748A2E1002AE1B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
 		5DD556E41748A2E1002AE1B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
-		5DD556EA1748A2E1002AE1B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DD556E81748A2E1002AE1B8 /* InfoPlist.strings */; };
-		5DD556EC1748A2E1002AE1B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD556EB1748A2E1002AE1B8 /* main.m */; };
-		5DD556F21748A2E1002AE1B8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD556F11748A2E1002AE1B8 /* Default.png */; };
-		5DD556F41748A2E1002AE1B8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD556F31748A2E1002AE1B8 /* Default@2x.png */; };
-		5DD556F61748A2E1002AE1B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD556F51748A2E1002AE1B8 /* Default-568h@2x.png */; };
-		5DD556FB1748A30B002AE1B8 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD556FA1748A30B002AE1B8 /* GHUnitIOS.framework */; };
-		5DD556FF1748A382002AE1B8 /* TestGatherGroupRanges.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD556FE1748A382002AE1B8 /* TestGatherGroupRanges.m */; };
 		5DD557001748A3D4002AE1B8 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
 		5DD557011748A3EF002AE1B8 /* Analyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABFE16902FAF00E835B7 /* Analyzer.m */; };
 		5DD557021748A3F2002AE1B8 /* AnalyzerGroupBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF616902E9900E835B7 /* AnalyzerGroupBase.m */; };
@@ -133,8 +126,6 @@
 		5DD557191748A5E4002AE1B8 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
 		5DD5571A1748A5FE002AE1B8 /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
 		5DD5571B1748A605002AE1B8 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4047C168C3259000AFBAE /* Answer.m */; };
-		5DD557261748A8B6002AE1B8 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD5571D1748A8B6002AE1B8 /* libOCMock.a */; };
-		5DD557271748A8B6002AE1B8 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DD5571E1748A8B6002AE1B8 /* License.txt */; };
 		5DD5572C1748B68F002AE1B8 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD557281748B652002AE1B8 /* Icon-72.png */; };
 		5DD5572D1748B691002AE1B8 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD5572A1748B657002AE1B8 /* Icon-144.png */; };
 		5DEE4BD816E304890072F239 /* AnswersInputViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */; };
@@ -314,24 +305,6 @@
 		5DD3780318ACF81D009896FB /* button_tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap1.wav; sourceTree = "<group>"; };
 		5DD3780418ACF81D009896FB /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap2.wav; sourceTree = "<group>"; };
 		5DD556E11748A2E1002AE1B8 /* iMMPI-Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iMMPI-Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DD556E71748A2E1002AE1B8 /* iMMPI-Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMMPI-Tests-Info.plist"; sourceTree = "<group>"; };
-		5DD556E91748A2E1002AE1B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5DD556EB1748A2E1002AE1B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5DD556ED1748A2E1002AE1B8 /* iMMPI-Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Tests-Prefix.pch"; sourceTree = "<group>"; };
-		5DD556F11748A2E1002AE1B8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		5DD556F31748A2E1002AE1B8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		5DD556F51748A2E1002AE1B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5DD556FA1748A30B002AE1B8 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
-		5DD556FD1748A382002AE1B8 /* TestGatherGroupRanges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestGatherGroupRanges.h; sourceTree = "<group>"; };
-		5DD556FE1748A382002AE1B8 /* TestGatherGroupRanges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestGatherGroupRanges.m; sourceTree = "<group>"; };
-		5DD5571D1748A8B6002AE1B8 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
-		5DD5571E1748A8B6002AE1B8 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		5DD557201748A8B6002AE1B8 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
-		5DD557211748A8B6002AE1B8 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
-		5DD557221748A8B6002AE1B8 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
-		5DD557231748A8B6002AE1B8 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
-		5DD557241748A8B6002AE1B8 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
-		5DD557251748A8B6002AE1B8 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		5DD557281748B652002AE1B8 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		5DD5572A1748B657002AE1B8 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
 		5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnswersInputViewBackground.png; sourceTree = "<group>"; };
@@ -375,8 +348,6 @@
 				5DD556E21748A2E1002AE1B8 /* UIKit.framework in Frameworks */,
 				5DD556E31748A2E1002AE1B8 /* Foundation.framework in Frameworks */,
 				5DD556E41748A2E1002AE1B8 /* CoreGraphics.framework in Frameworks */,
-				5DD556FB1748A30B002AE1B8 /* GHUnitIOS.framework in Frameworks */,
-				5DD557261748A8B6002AE1B8 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,7 +641,6 @@
 			isa = PBXGroup;
 			children = (
 				5DA5C9EA163B018D00CF1601 /* iMMPI */,
-				5DD556E51748A2E1002AE1B8 /* iMMPI-Tests */,
 				4430C7851E15FA170024C001 /* Resources */,
 				4430C7381E15F9FF0024C001 /* Frostbit */,
 				5DA5C9E3163B018D00CF1601 /* Frameworks */,
@@ -1082,63 +1052,6 @@
 			name = "Test Record Serialization";
 			sourceTree = "<group>";
 		};
-		5DD556E51748A2E1002AE1B8 /* iMMPI-Tests */ = {
-			isa = PBXGroup;
-			children = (
-				5DD556FC1748A340002AE1B8 /* Test Gather Group Ranges */,
-				5DD5571C1748A8B5002AE1B8 /* OCMock */,
-				5DD556FA1748A30B002AE1B8 /* GHUnitIOS.framework */,
-				5DD556E61748A2E1002AE1B8 /* Supporting Files */,
-			);
-			path = "iMMPI-Tests";
-			sourceTree = "<group>";
-		};
-		5DD556E61748A2E1002AE1B8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5DD556E71748A2E1002AE1B8 /* iMMPI-Tests-Info.plist */,
-				5DD556E81748A2E1002AE1B8 /* InfoPlist.strings */,
-				5DD556EB1748A2E1002AE1B8 /* main.m */,
-				5DD556ED1748A2E1002AE1B8 /* iMMPI-Tests-Prefix.pch */,
-				5DD556F11748A2E1002AE1B8 /* Default.png */,
-				5DD556F31748A2E1002AE1B8 /* Default@2x.png */,
-				5DD556F51748A2E1002AE1B8 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5DD556FC1748A340002AE1B8 /* Test Gather Group Ranges */ = {
-			isa = PBXGroup;
-			children = (
-				5DD556FD1748A382002AE1B8 /* TestGatherGroupRanges.h */,
-				5DD556FE1748A382002AE1B8 /* TestGatherGroupRanges.m */,
-			);
-			name = "Test Gather Group Ranges";
-			sourceTree = "<group>";
-		};
-		5DD5571C1748A8B5002AE1B8 /* OCMock */ = {
-			isa = PBXGroup;
-			children = (
-				5DD5571D1748A8B6002AE1B8 /* libOCMock.a */,
-				5DD5571E1748A8B6002AE1B8 /* License.txt */,
-				5DD5571F1748A8B6002AE1B8 /* OCMock */,
-			);
-			path = OCMock;
-			sourceTree = "<group>";
-		};
-		5DD5571F1748A8B6002AE1B8 /* OCMock */ = {
-			isa = PBXGroup;
-			children = (
-				5DD557201748A8B6002AE1B8 /* NSNotificationCenter+OCMAdditions.h */,
-				5DD557211748A8B6002AE1B8 /* OCMArg.h */,
-				5DD557221748A8B6002AE1B8 /* OCMConstraint.h */,
-				5DD557231748A8B6002AE1B8 /* OCMock.h */,
-				5DD557241748A8B6002AE1B8 /* OCMockObject.h */,
-				5DD557251748A8B6002AE1B8 /* OCMockRecorder.h */,
-			);
-			path = OCMock;
-			sourceTree = "<group>";
-		};
 		7C0F025E169C0092006377B3 /* MMPI Segue Handler */ = {
 			isa = PBXGroup;
 			children = (
@@ -1264,12 +1177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DD556EA1748A2E1002AE1B8 /* InfoPlist.strings in Resources */,
-				5DD556F21748A2E1002AE1B8 /* Default.png in Resources */,
-				5DD556F41748A2E1002AE1B8 /* Default@2x.png in Resources */,
-				5DD556F61748A2E1002AE1B8 /* Default-568h@2x.png in Resources */,
 				5DD557001748A3D4002AE1B8 /* mmpi.analysis.json in Resources */,
-				5DD557271748A8B6002AE1B8 /* License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1374,8 +1282,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DD556EC1748A2E1002AE1B8 /* main.m in Sources */,
-				5DD556FF1748A382002AE1B8 /* TestGatherGroupRanges.m in Sources */,
 				5DD557011748A3EF002AE1B8 /* Analyzer.m in Sources */,
 				5DD557021748A3F2002AE1B8 /* AnalyzerGroupBase.m in Sources */,
 				5DD557031748A3F5002AE1B8 /* AnalyzerFGroup.m in Sources */,
@@ -1431,14 +1337,6 @@
 				5DA5C9FD163B018D00CF1601 /* en */,
 			);
 			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		5DD556E81748A2E1002AE1B8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5DD556E91748A2E1002AE1B8 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
