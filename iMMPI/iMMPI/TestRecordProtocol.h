@@ -12,6 +12,8 @@
 #pragma mark -
 #pragma mark TestRecord protocol
 
+@protocol PersonProtocol;
+
 /*! Encapsulates information about a single test session.
  
  Test session consists of a person taking test, his/her answers for the test and the date of the test session.

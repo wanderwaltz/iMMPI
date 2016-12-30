@@ -25,6 +25,7 @@
 		4430C7B51E16377F0024C001 /* questionnaire.error.statementTextNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */; };
 		4430C7B71E163F450024C001 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7B61E163F450024C001 /* PersonTests.swift */; };
 		4430C7B91E16408A0024C001 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7B81E16408A0024C001 /* Person.swift */; };
+		4430C7BB1E1670010024C001 /* PersonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7BA1E1670010024C001 /* PersonProtocol.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -134,6 +135,7 @@
 		4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementTextNotFound.json; sourceTree = "<group>"; };
 		4430C7B61E163F450024C001 /* PersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		4430C7B81E16408A0024C001 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		4430C7BA1E1670010024C001 /* PersonProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProtocol.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -219,7 +221,6 @@
 		5DC4047C168C3259000AFBAE /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		5DC40480168C41A7000AFBAE /* TestRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecord.h; sourceTree = "<group>"; };
 		5DC40481168C41A7000AFBAE /* TestRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecord.m; sourceTree = "<group>"; };
-		5DC40484168C447C000AFBAE /* PersonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonProtocol.h; sourceTree = "<group>"; };
 		5DC40485168C44BF000AFBAE /* TestAnswersProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAnswersProtocol.h; sourceTree = "<group>"; };
 		5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordProtocol.h; sourceTree = "<group>"; };
 		5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTestRecordViewController.h; sourceTree = "<group>"; };
@@ -821,7 +822,7 @@
 		5DC40483168C446C000AFBAE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				5DC40484168C447C000AFBAE /* PersonProtocol.h */,
+				4430C7BA1E1670010024C001 /* PersonProtocol.swift */,
 				5DC40485168C44BF000AFBAE /* TestAnswersProtocol.h */,
 				5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */,
 				4430C7A31E161A6B0024C001 /* StatementProtocol.swift */,
@@ -1167,6 +1168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4430C7BB1E1670010024C001 /* PersonProtocol.swift in Sources */,
 				4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */,
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
 				5DA5C9F5163B018D00CF1601 /* AppDelegate.m in Sources */,

@@ -39,7 +39,6 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 #pragma mark -
 #pragma mark protocols
 
-#import "PersonProtocol.h"
 #import "TestAnswersProtocol.h"
 #import "TestRecordProtocol.h"
 #import "AnalyzerGroup.h"
