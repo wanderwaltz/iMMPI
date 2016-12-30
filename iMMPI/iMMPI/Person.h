@@ -12,6 +12,7 @@
 #pragma mark -
 #pragma mark Person interface
 
+NS_ASSUME_NONNULL_BEGIN
 /*! A concrete implementation of PersonProtocol.
  
  Note that when initializing a Person instance with -init method, default gender value will be GenderMale and default ageGroup value will be AgeGroupAdult; name property defaults to nil.
@@ -23,3 +24,4 @@
 @property (assign, nonatomic) AgeGroup ageGroup;
 
 @end
+NS_ASSUME_NONNULL_END

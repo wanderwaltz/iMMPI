@@ -12,6 +12,7 @@
 #pragma mark -
 #pragma mark Person protocol
 
+NS_ASSUME_NONNULL_BEGIN
 /*! Encapsulates personal information of a person taking MMPI test.
  
  Gender and the age group are relevant for selecting a proper questionnaire for the person.
@@ -31,4 +32,4 @@
 @property (assign, nonatomic) AgeGroup ageGroup;
 
 @end
-
+NS_ASSUME_NONNULL_END
