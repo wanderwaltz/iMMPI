@@ -23,6 +23,7 @@
 		4430C7B11E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7B01E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json */; };
 		4430C7B31E1637720024C001 /* questionnaire.error.statementIdentifierNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7B21E1637720024C001 /* questionnaire.error.statementIdentifierNotFound.json */; };
 		4430C7B51E16377F0024C001 /* questionnaire.error.statementTextNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */; };
+		4430C7B71E163F450024C001 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7B61E163F450024C001 /* PersonTests.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -131,6 +132,7 @@
 		4430C7B01E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementJsonNotDictionary.json; sourceTree = "<group>"; };
 		4430C7B21E1637720024C001 /* questionnaire.error.statementIdentifierNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementIdentifierNotFound.json; sourceTree = "<group>"; };
 		4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementTextNotFound.json; sourceTree = "<group>"; };
+		4430C7B61E163F450024C001 /* PersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 			children = (
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
+				4430C7B61E163F450024C001 /* PersonTests.swift */,
 				4430C7931E160DDD0024C001 /* Info.plist */,
 			);
 			path = iMMPITests;
@@ -1157,6 +1160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */,
+				4430C7B71E163F450024C001 /* PersonTests.swift in Sources */,
 				4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
