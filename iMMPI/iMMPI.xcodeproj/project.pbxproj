@@ -8,13 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4430C77D1E15F9FF0024C001 /* FRBDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C75C1E15F9FF0024C001 /* FRBDispatchFunctions.m */; };
-		4430C77E1E15F9FF0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C75E1E15F9FF0024C001 /* FRBKeyedTargetAction.m */; };
-		4430C77F1E15F9FF0024C001 /* FRBPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7651E15F9FF0024C001 /* FRBPointFunctions.m */; };
-		4430C7801E15F9FF0024C001 /* FRBRectFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7671E15F9FF0024C001 /* FRBRectFunctions.m */; };
-		4430C7811E15F9FF0024C001 /* FRBSizeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7691E15F9FF0024C001 /* FRBSizeFunctions.m */; };
 		4430C7821E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C76E1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
+		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -97,24 +94,14 @@
 		4430C75A1E15F9FF0024C001 /* FRBDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDispatch.h; sourceTree = "<group>"; };
 		4430C75B1E15F9FF0024C001 /* FRBDispatchFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDispatchFunctions.h; sourceTree = "<group>"; };
 		4430C75C1E15F9FF0024C001 /* FRBDispatchFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDispatchFunctions.m; sourceTree = "<group>"; };
-		4430C75D1E15F9FF0024C001 /* FRBKeyedTargetAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBKeyedTargetAction.h; sourceTree = "<group>"; };
-		4430C75E1E15F9FF0024C001 /* FRBKeyedTargetAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBKeyedTargetAction.m; sourceTree = "<group>"; };
-		4430C75F1E15F9FF0024C001 /* Frostbit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Frostbit-Prefix.pch"; sourceTree = "<group>"; };
-		4430C7601E15F9FF0024C001 /* Frostbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Frostbit.h; sourceTree = "<group>"; };
-		4430C7621E15F9FF0024C001 /* FRBGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBGeometry.h; sourceTree = "<group>"; };
-		4430C7631E15F9FF0024C001 /* FRBGeometryTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBGeometryTypes.h; sourceTree = "<group>"; };
-		4430C7641E15F9FF0024C001 /* FRBPointFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBPointFunctions.h; sourceTree = "<group>"; };
-		4430C7651E15F9FF0024C001 /* FRBPointFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBPointFunctions.m; sourceTree = "<group>"; };
-		4430C7661E15F9FF0024C001 /* FRBRectFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBRectFunctions.h; sourceTree = "<group>"; };
-		4430C7671E15F9FF0024C001 /* FRBRectFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBRectFunctions.m; sourceTree = "<group>"; };
-		4430C7681E15F9FF0024C001 /* FRBSizeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBSizeFunctions.h; sourceTree = "<group>"; };
-		4430C7691E15F9FF0024C001 /* FRBSizeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBSizeFunctions.m; sourceTree = "<group>"; };
 		4430C76D1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FRBNavigationStack.h"; sourceTree = "<group>"; };
 		4430C76E1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FRBNavigationStack.m"; sourceTree = "<group>"; };
 		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDatePickerPopover.h; sourceTree = "<group>"; };
 		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDatePickerPopover.m; sourceTree = "<group>"; };
 		4430C7761E15F9FF0024C001 /* FRBUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBUIKit.h; sourceTree = "<group>"; };
 		4430C7861E15FB950024C001 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		4430C7881E16038A0024C001 /* FRBKeyedTargetAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBKeyedTargetAction.h; sourceTree = "<group>"; };
+		4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBKeyedTargetAction.m; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
@@ -290,9 +277,6 @@
 			children = (
 				4430C7391E15F9FF0024C001 /* Common */,
 				4430C7591E15F9FF0024C001 /* Dispatch */,
-				4430C75F1E15F9FF0024C001 /* Frostbit-Prefix.pch */,
-				4430C7601E15F9FF0024C001 /* Frostbit.h */,
-				4430C7611E15F9FF0024C001 /* Geometry */,
 				4430C76A1E15F9FF0024C001 /* UIKit */,
 			);
 			path = Frostbit;
@@ -331,25 +315,10 @@
 				4430C75A1E15F9FF0024C001 /* FRBDispatch.h */,
 				4430C75B1E15F9FF0024C001 /* FRBDispatchFunctions.h */,
 				4430C75C1E15F9FF0024C001 /* FRBDispatchFunctions.m */,
-				4430C75D1E15F9FF0024C001 /* FRBKeyedTargetAction.h */,
-				4430C75E1E15F9FF0024C001 /* FRBKeyedTargetAction.m */,
+				4430C7881E16038A0024C001 /* FRBKeyedTargetAction.h */,
+				4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */,
 			);
 			path = Dispatch;
-			sourceTree = "<group>";
-		};
-		4430C7611E15F9FF0024C001 /* Geometry */ = {
-			isa = PBXGroup;
-			children = (
-				4430C7621E15F9FF0024C001 /* FRBGeometry.h */,
-				4430C7631E15F9FF0024C001 /* FRBGeometryTypes.h */,
-				4430C7641E15F9FF0024C001 /* FRBPointFunctions.h */,
-				4430C7651E15F9FF0024C001 /* FRBPointFunctions.m */,
-				4430C7661E15F9FF0024C001 /* FRBRectFunctions.h */,
-				4430C7671E15F9FF0024C001 /* FRBRectFunctions.m */,
-				4430C7681E15F9FF0024C001 /* FRBSizeFunctions.h */,
-				4430C7691E15F9FF0024C001 /* FRBSizeFunctions.m */,
-			);
-			path = Geometry;
 			sourceTree = "<group>";
 		};
 		4430C76A1E15F9FF0024C001 /* UIKit */ = {
@@ -1106,6 +1075,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */,
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
 				5DA5C9F5163B018D00CF1601 /* AppDelegate.m in Sources */,
 				5DA5CA13163B061000CF1601 /* RecordsListViewController.m in Sources */,
@@ -1116,7 +1086,6 @@
 				5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */,
 				5DC4047D168C3259000AFBAE /* Answer.m in Sources */,
 				5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */,
-				4430C7801E15F9FF0024C001 /* FRBRectFunctions.m in Sources */,
 				5DC4048C168C4AB3000AFBAE /* Person.m in Sources */,
 				5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
@@ -1130,7 +1099,6 @@
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
-				4430C77F1E15F9FF0024C001 /* FRBPointFunctions.m in Sources */,
 				4430C7821E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m in Sources */,
 				4430C77D1E15F9FF0024C001 /* FRBDispatchFunctions.m in Sources */,
 				5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */,
@@ -1142,7 +1110,6 @@
 				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
 				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
 				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
-				4430C7811E15F9FF0024C001 /* FRBSizeFunctions.m in Sources */,
 				5DBE76D6169351200018C728 /* TestRecordModelGroupedByName.m in Sources */,
 				5DBE76DA169356F50018C728 /* PersonsListViewController.m in Sources */,
 				5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */,
@@ -1151,7 +1118,6 @@
 				5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */,
 				5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */,
 				7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */,
-				4430C77E1E15F9FF0024C001 /* FRBKeyedTargetAction.m in Sources */,
 				5DC68C8116D0D7D400B338C2 /* MMPIATestRecordReader.m in Sources */,
 				5DC68C8616D0F55800B338C2 /* ProgressAlertView.m in Sources */,
 				5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */,
@@ -1191,25 +1157,29 @@
 		5DA5CA02163B018D00CF1601 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1218,14 +1188,23 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1234,33 +1213,46 @@
 		5DA5CA03163B018D00CF1601 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
 				COPY_PHASE_STRIP = YES;
-				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -1276,7 +1268,6 @@
 				DEVELOPMENT_TEAM = B87M5YBQ84;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					"$(inherited)",
@@ -1295,12 +1286,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = B87M5YBQ84;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					"$(inherited)",

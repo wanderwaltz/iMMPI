@@ -26,8 +26,8 @@
     if ((_questionnaire == nil) && (_record != nil))
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            _questionnaire = [Questionnaire newForGender: _record.person.gender
-                                                ageGroup: _record.person.ageGroup];
+            self.questionnaire = [Questionnaire newForGender: self.record.person.gender
+                                                    ageGroup: self.record.person.ageGroup];
             
             if (completion)
                 dispatch_async(dispatch_get_main_queue(), completion);
@@ -46,7 +46,7 @@
 
 - (id<StatementProtocol>) statementAtIndexPath: (NSIndexPath *) indexPath
 {
-    if ((indexPath.section == 0) && (indexPath.row < _questionnaire.statementsCount))
+    if ((indexPath.section == 0) && (indexPath.row < (NSInteger)self.questionnaire.statementsCount))
         return [_questionnaire statementAtIndex: indexPath.row];
     else
         return nil;

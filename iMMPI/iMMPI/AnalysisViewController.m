@@ -103,12 +103,12 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
-            _reportGenerator.questionnaire =
-            [Questionnaire newForGender: _record.person.gender
-                               ageGroup: _record.person.ageGroup];
+            self->_reportGenerator.questionnaire =
+            [Questionnaire newForGender: self.record.person.gender
+                               ageGroup: self.record.person.ageGroup];
             
-            [_analyzer loadGroups];
-            [_analyzer computeScoresForRecord: _record];
+            [self->_analyzer loadGroups];
+            [self->_analyzer computeScoresForRecord: self.record];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self reloadData];
@@ -118,7 +118,7 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
     else
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [_analyzer computeScoresForRecord: _record];
+            [self->_analyzer computeScoresForRecord: self.record];
     
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self reloadData];

@@ -432,15 +432,15 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
         [(id)_storage setTrashStorage: _trashStorage];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [_storage      loadStoredTestRecords];
-            [_trashStorage loadStoredTestRecords];
+            [self->_storage      loadStoredTestRecords];
+            [self->_trashStorage loadStoredTestRecords];
             
-            NSArray *allRecords = [_storage allTestRecords];
+            NSArray *allRecords = [self->_storage allTestRecords];
             
             if (allRecords.count > 0)
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [_model addObjectsFromArray: allRecords];
+                    [self->_model addObjectsFromArray: allRecords];
                     [self.tableView reloadData];
                     [self loadLegacyMMPIARecords];
                 });
@@ -484,8 +484,8 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
              [progressAlert setNeedsDisplay];
              [progressAlert setNeedsLayout];
              
-             [_model       addNewObject: record];
-             [_storage addNewTestRecord: record];
+             [self->_model       addNewObject: record];
+             [self->_storage addNewTestRecord: record];
              
              [self.tableView reloadData];
          }
@@ -746,11 +746,11 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
         
         dispatch_async(dispatch_get_main_queue(), ^{
            
-            id<TestRecordsGroupByName> group = [_model groupForRecord: record];
+            id<TestRecordsGroupByName> group = [self->_model groupForRecord: record];
             
             if (group != nil)
             {
-                NSIndexPath *indexPath = [_model indexPathForObject: group];
+                NSIndexPath *indexPath = [self->_model indexPathForObject: group];
                 
                 if (indexPath != nil)
                 {

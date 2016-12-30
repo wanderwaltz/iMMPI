@@ -115,7 +115,7 @@ __unused static const int32_t kMMPIQuestionsCount = 566; // Total questions coun
             {
                 if ([fileName.pathExtension isEqualToString: kMMPIAPathExtension])
                 {
-                    NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
+                    NSString *path = [self->_storedRecordsPath stringByAppendingPathComponent: fileName];
                     
                     id<TestRecordProtocol> testRecord =
                     [self tryReadingTestRecordFromMMPIAFileWithPath: path];
@@ -131,14 +131,14 @@ __unused static const int32_t kMMPIQuestionsCount = 566; // Total questions coun
                             });
                         }
                         
-                        NSError *error = nil;
+                        NSError *removeError = nil;
                         
                         BOOL deleted = [fileManager removeItemAtPath: path
-                                                               error: &error];
+                                                               error: &removeError];
                         
                         if (!deleted)
                         {
-                            NSLog(@"Failed to delete file at path: '%@' with error: %@", path, error);
+                            NSLog(@"Failed to delete file at path: '%@' with error: %@", path, removeError);
                         }
                     }
                 }
@@ -240,7 +240,7 @@ __unused static const int32_t kMMPIQuestionsCount = 566; // Total questions coun
             answers = [NSMutableArray arrayWithCapacity: answersCount];
             
             // Answes were written as Boolean (int8_t) type
-            for (NSUInteger i = 0; i < answersCount; ++i)
+            for (NSInteger i = 0; i < answersCount; ++i)
             {
                 int8_t answer = (*(int8_t *)bytes);
                 bytes += sizeof(int8_t);
@@ -251,7 +251,7 @@ __unused static const int32_t kMMPIQuestionsCount = 566; // Total questions coun
             // Not every record contained test date, and originally it
             // was checked as EOF(F) where F was a file record. Now we
             // check if we have not read all the data yey.
-            if (bytes - initialBytes < data.length)
+            if (bytes - initialBytes < (NSInteger)data.length)
             {
                 // TDateTime type is a double floating point number
                 double dateTime = 0.0;

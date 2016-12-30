@@ -87,7 +87,7 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
     id<TestRecordProtocol> record     = nil;
     NSError       *error      = nil;
     NSDictionary  *dictionary = [NSJSONSerialization JSONObjectWithData: data
-                                                                options: 0
+                                                                options: (NSJSONReadingOptions)0
                                                                   error: &error];
     
     if ([dictionary isKindOfClass: [NSDictionary class]])
@@ -164,7 +164,7 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
     NSMutableArray *proxies     = [NSMutableArray array];
     NSError        *error       = nil;
     NSArray        *jsonProxies = [NSJSONSerialization JSONObjectWithData: data
-                                                                  options: 0
+                                                                  options: (NSJSONReadingOptions)0
                                                                     error: &error];
     
     for (NSDictionary *dictionary in jsonProxies)

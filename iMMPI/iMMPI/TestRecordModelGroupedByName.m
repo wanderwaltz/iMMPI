@@ -84,7 +84,7 @@
 
 - (id<TestRecordProtocol>) objectAtIndexPath: (NSIndexPath *) indexPath
 {
-    if ((indexPath.section == 0) && (indexPath.row < _groups.count))
+    if ((indexPath.section == 0) && (indexPath.row < (NSInteger)_groups.count))
         return _groups[indexPath.row];
     else
         return nil;

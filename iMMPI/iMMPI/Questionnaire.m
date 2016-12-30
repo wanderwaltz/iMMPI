@@ -115,7 +115,7 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
     
     NSError     *error = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData: jsonData
-                                                         options: 0
+                                                         options: (NSJSONReadingOptions)0
                                                            error: &error];
     if (json == nil)
         return _logErrorParsingJSON(gender, ageGroup, fileName, error);

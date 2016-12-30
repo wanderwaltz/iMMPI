@@ -34,39 +34,32 @@ didFinishLaunchingWithOptions: (NSDictionary  *) launchOptions
 #pragma mark -
 #pragma mark UISplitViewControllerDelegate
 
-- (void) splitViewController: (UISplitViewController *) splitViewController
-      willHideViewController: (UIViewController *) viewController
-           withBarButtonItem: (UIBarButtonItem *) barButtonItem
-        forPopoverController: (UIPopoverController *) popoverController
-{
-    NSAssert(splitViewController.viewControllers.count == 2, @"Unexpected number of child view controllers in %@: %ld", splitViewController, (long)splitViewController.viewControllers.count);
-    
-    UIViewController *detailViewController = splitViewController.viewControllers[1];
+- (void)splitViewController:(UISplitViewController *)svc
+    willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode {
+
+    NSAssert(svc.viewControllers.count == 2, @"Unexpected number of child view controllers in %@: %ld", svc, (long)svc.viewControllers.count);
+
+    UIViewController *detailViewController = svc.viewControllers[1];
     FRB_AssertClass(detailViewController, UIViewController);
-    
+
     detailViewController = SelfOrFirstChild(detailViewController);
-    
-    barButtonItem.title = ___Records;
-    
-    if (detailViewController.navigationItem.leftBarButtonItem == nil)
-        detailViewController.navigationItem.leftBarButtonItem = barButtonItem;
-}
 
+    UIBarButtonItem *barButtonItem = svc.displayModeButtonItem;
 
-- (void) splitViewController: (UISplitViewController *) splitViewController
-      willShowViewController: (UIViewController *) viewController
-   invalidatingBarButtonItem: (UIBarButtonItem *) button
-{
-    NSAssert(splitViewController.viewControllers.count == 2, @"Unexpected number of child view controllers in %@: %ld", splitViewController, (long)splitViewController.viewControllers.count);
-    
-    UIViewController *detailViewController = splitViewController.viewControllers[1];
-    FRB_AssertClass(detailViewController, UIViewController);
-    
-    detailViewController = SelfOrFirstChild(detailViewController);
-    
-    if (detailViewController.navigationItem.leftBarButtonItem == button)
-        detailViewController.navigationItem.leftBarButtonItem = nil;
+    switch (displayMode) {
+        case UISplitViewControllerDisplayModePrimaryHidden:
+        case UISplitViewControllerDisplayModePrimaryOverlay: {
+            barButtonItem.title = ___Records;
 
+            if (detailViewController.navigationItem.leftBarButtonItem == nil)
+                detailViewController.navigationItem.leftBarButtonItem = barButtonItem;
+        } break;
+
+        default: {
+            if (detailViewController.navigationItem.leftBarButtonItem == barButtonItem)
+                detailViewController.navigationItem.leftBarButtonItem = nil;
+        } break;
+    }
 }
 
 @end

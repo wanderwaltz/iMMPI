@@ -163,7 +163,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
     
     NSError     *error = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData: data
-                                                         options: 0
+                                                         options: (NSJSONReadingOptions)0
                                                            error: &error];
     if (json == nil) return _logAnalysisJSONCannotBeParsed(error);
     if (![json isKindOfClass: [NSDictionary class]]) return _logJSONRootObjectNotDictionary();
@@ -204,8 +204,8 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
         [self visitSubgroupsOfGroupDFS: group
                              withBlock:
          ^(id<AnalyzerGroup> subgroup, NSUInteger depth) {
-             [_allGroups addObject: subgroup];
-             [_depths addObject: @(depth)];
+             [self->_allGroups addObject: subgroup];
+             [self->_depths addObject: @(depth)];
          }
                                  depth: 1];
     }

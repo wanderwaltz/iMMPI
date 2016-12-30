@@ -159,22 +159,22 @@ static NSString * const kRecordCellIdentifier = @"com.immpi.cells.record";
 
 - (void) initStorageInBackgroundIfNeeded
 {
-    if (_storage == nil)
+    if (self.storage == nil)
     {
-        _storage = [JSONTestRecordsStorage new];
+        self.storage = [JSONTestRecordsStorage new];
     }
     
     
     if (_storage.allTestRecords.count == 0)
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [_storage loadStoredTestRecords];
-            NSArray *allRecords = [_storage allTestRecords];
+            [self.storage loadStoredTestRecords];
+            NSArray *allRecords = [self.storage allTestRecords];
             
             if (allRecords.count > 0)
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [_model addObjectsFromArray: allRecords];
+                    [self.model addObjectsFromArray: allRecords];
                     [self.tableView reloadData];
                 });
             }

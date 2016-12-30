@@ -219,7 +219,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
     id<StatementProtocol> statement = [self statementAtIndexPath: indexPath];
     FRB_AssertNotNil(statement);
     
-    if (_statementIndex == indexPath.row)
+    if ((NSInteger)_statementIndex == indexPath.row)
     {
         cell.statementIDLabel.alpha     = 1.0;
         cell.statementTextLabel.alpha   = 1.0;

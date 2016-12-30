@@ -84,7 +84,7 @@
         {
             [html appendString: @"<tr>"];
             
-            switch ([_analyzer depthOfGroupAtIndex: groupIndex])
+            switch ([self.analyzer depthOfGroupAtIndex: groupIndex])
             {
                 case 0:
                 {
@@ -207,7 +207,7 @@
             }
             
             
-            AnswerType answer = [_record.testAnswers answerTypeForStatementID:
+            AnswerType answer = [self.record.testAnswers answerTypeForStatementID:
                                  [statement statementID]];
             
             switch (answer)

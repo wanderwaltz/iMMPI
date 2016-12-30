@@ -56,13 +56,13 @@
          FRB_AssertNotNil(key);
          FRB_AssertClass(selectorString, NSString);
          
-         if (_target)
+         if (self.target)
          {
              __attribute__((unused)) SEL selector = NSSelectorFromString(selectorString);
-             FRB_AssertResponds(_target, selector);
+             FRB_AssertResponds(self.target, selector);
          }
          
-         _actions[key] = selectorString;
+         self->_actions[key] = selectorString;
      }];
 }
 
