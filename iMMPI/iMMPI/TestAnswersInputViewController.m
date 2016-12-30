@@ -30,7 +30,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
     __weak IBOutlet UIBarButtonItem *_analyzisBarButton;
     __weak IBOutlet UIView *_inputView;
     
-    NSUInteger _statementIndex;
+    NSInteger _statementIndex;
     
     SystemSoundManager *_soundManager;
 }
@@ -187,7 +187,7 @@ static NSString * const kSegueAnalyzer = @"com.immpi.segue.analyzer";
 }
 
 
-- (void) setStatementIndex: (NSUInteger) index
+- (void) setStatementIndex: (NSInteger) index
 {
     if (index < self.questionnaire.statementsCount)
     {

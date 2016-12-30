@@ -291,7 +291,7 @@
     [html appendString: @"</tr>"];
 
     
-    for (NSUInteger i = 0; i < [_questionnaire statementsCount]; ++i)
+    for (NSInteger i = 0; i < [_questionnaire statementsCount]; ++i)
     {
         id<StatementProtocol> statement = [_questionnaire statementAtIndex: i];
         

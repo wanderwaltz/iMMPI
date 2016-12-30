@@ -47,7 +47,7 @@ final class QuestionnaireTests: XCTestCase {
     func testThat__statement_by_id_returns_nonnull_statement_for_valid_ids() {
         for questionnaire in validQuestionnaires {
             for index in 0..<questionnaire.statementsCount() {
-                XCTAssertNotNil(questionnaire.statement(withID: UInt(Int(index)+1)))
+                XCTAssertNotNil(questionnaire.statement(withID: index+1))
             }
         }
     }
@@ -55,15 +55,15 @@ final class QuestionnaireTests: XCTestCase {
     func testThat__statement_at_index_returns_nil_for_invalid_indexes() {
         for questionnaire in validQuestionnaires {
             XCTAssertNil(questionnaire.statement(at: questionnaire.statementsCount()))
-            XCTAssertNil(questionnaire.statement(at: UInt(Int(questionnaire.statementsCount())+1)))
-            XCTAssertNil(questionnaire.statement(at: UInt(Int(questionnaire.statementsCount())+1)))
+            XCTAssertNil(questionnaire.statement(at: questionnaire.statementsCount()+1))
+            XCTAssertNil(questionnaire.statement(at: questionnaire.statementsCount()+1))
         }
     }
 
     func testThat__statement_by_id_returns_nil_for_invalid_ids() {
         for questionnaire in validQuestionnaires {
             XCTAssertNil(questionnaire.statement(withID: 0))
-            XCTAssertNil(questionnaire.statement(withID: UInt(Int(questionnaire.statementsCount())+2)))
+            XCTAssertNil(questionnaire.statement(withID: questionnaire.statementsCount()+2))
         }
     }
 

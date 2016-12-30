@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 
 /// This method should return number of statements included in the certain questionnaire.
-- (NSUInteger) statementsCount;
+- (NSInteger)statementsCount;
 
 
 /*! This method should return a statement with a given index.
@@ -33,9 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param index Index of statement to return.
  */
-- (id<StatementProtocol> _Nullable) statementAtIndex: (NSUInteger) index;
+- (id<StatementProtocol> _Nullable)statementAtIndex:(NSInteger)index;
 
-- (id<StatementProtocol> _Nullable) statementWithID: (NSUInteger) statementID;
+- (id<StatementProtocol> _Nullable)statementWithID:(NSInteger)statementID;
 
 @end
 NS_ASSUME_NONNULL_END

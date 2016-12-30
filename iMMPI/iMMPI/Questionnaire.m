@@ -179,15 +179,15 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
 #pragma mark -
 #pragma mark methods
 
-- (NSUInteger) statementsCount
+- (NSInteger)statementsCount
 {
     return _statements.count;
 }
 
 
-- (id<StatementProtocol>) statementAtIndex: (NSUInteger) index
+- (id<StatementProtocol>)statementAtIndex:(NSInteger)index
 {
-    if (index < _statements.count) {
+    if (index < (NSInteger)_statements.count) {
         return _statements[index];
     }
     else {
@@ -195,7 +195,7 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
     }
 }
 
-- (id<StatementProtocol>) statementWithID: (NSUInteger) statementID
+- (id<StatementProtocol>)statementWithID:(NSInteger)statementID
 {
     return _statementsByID[@(statementID)];
 }

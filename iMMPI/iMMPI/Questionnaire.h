@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
                       ageGroup:(AgeGroup)ageGroup;
 
 /// Returns the number of statements included in the questionnaire.
-- (NSUInteger)statementsCount;
+- (NSInteger)statementsCount;
 
 
 /*! This method return a statement with a given index.
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param index Index of statement to return.
  */
-- (id<StatementProtocol> _Nullable)statementAtIndex:(NSUInteger)index;
+- (id<StatementProtocol> _Nullable)statementAtIndex:(NSInteger)index;
 
 @end
 NS_ASSUME_NONNULL_END
