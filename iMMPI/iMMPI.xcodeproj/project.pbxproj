@@ -29,6 +29,7 @@
 		4430C7811E15F9FF0024C001 /* FRBSizeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7691E15F9FF0024C001 /* FRBSizeFunctions.m */; };
 		4430C7821E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C76E1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
+		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -126,8 +127,6 @@
 		5DD557191748A5E4002AE1B8 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
 		5DD5571A1748A5FE002AE1B8 /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
 		5DD5571B1748A605002AE1B8 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4047C168C3259000AFBAE /* Answer.m */; };
-		5DD5572C1748B68F002AE1B8 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD557281748B652002AE1B8 /* Icon-72.png */; };
-		5DD5572D1748B691002AE1B8 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD5572A1748B657002AE1B8 /* Icon-144.png */; };
 		5DEE4BD816E304890072F239 /* AnswersInputViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */; };
 		5DEE4BD916E304890072F239 /* AnswersInputViewBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BD716E304890072F239 /* AnswersInputViewBackground@2x.png */; };
 		5DEE4BDC16E305770072F239 /* AnswersInputButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */; };
@@ -171,6 +170,7 @@
 		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDatePickerPopover.h; sourceTree = "<group>"; };
 		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDatePickerPopover.m; sourceTree = "<group>"; };
 		4430C7761E15F9FF0024C001 /* FRBUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBUIKit.h; sourceTree = "<group>"; };
+		4430C7861E15FB950024C001 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
@@ -305,8 +305,6 @@
 		5DD3780318ACF81D009896FB /* button_tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap1.wav; sourceTree = "<group>"; };
 		5DD3780418ACF81D009896FB /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap2.wav; sourceTree = "<group>"; };
 		5DD556E11748A2E1002AE1B8 /* iMMPI-Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iMMPI-Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DD557281748B652002AE1B8 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
-		5DD5572A1748B657002AE1B8 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
 		5DEE4BD616E304890072F239 /* AnswersInputViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnswersInputViewBackground.png; sourceTree = "<group>"; };
 		5DEE4BD716E304890072F239 /* AnswersInputViewBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputViewBackground@2x.png"; sourceTree = "<group>"; };
 		5DEE4BDA16E305770072F239 /* AnswersInputButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnswersInputButtonPressed@2x.png"; sourceTree = "<group>"; };
@@ -468,8 +466,6 @@
 		4430C7851E15FA170024C001 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5DD5572A1748B657002AE1B8 /* Icon-144.png */,
-				5DD557281748B652002AE1B8 /* Icon-72.png */,
 				5DD3780318ACF81D009896FB /* button_tap1.wav */,
 				5DD3780418ACF81D009896FB /* button_tap2.wav */,
 			);
@@ -640,6 +636,7 @@
 		5DA5C9D5163B018D00CF1601 = {
 			isa = PBXGroup;
 			children = (
+				4430C7861E15FB950024C001 /* Media.xcassets */,
 				5DA5C9EA163B018D00CF1601 /* iMMPI */,
 				4430C7851E15FA170024C001 /* Resources */,
 				4430C7381E15F9FF0024C001 /* Frostbit */,
@@ -1165,11 +1162,10 @@
 				5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */,
 				5DEE4BD816E304890072F239 /* AnswersInputViewBackground.png in Resources */,
 				5DEE4BD916E304890072F239 /* AnswersInputViewBackground@2x.png in Resources */,
+				4430C7871E15FB950024C001 /* Media.xcassets in Resources */,
 				5DEE4BDC16E305770072F239 /* AnswersInputButtonPressed@2x.png in Resources */,
 				5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */,
 				5DEE4BDD16E305770072F239 /* AnswersInputButton@2x.png in Resources */,
-				5DD5572C1748B68F002AE1B8 /* Icon-72.png in Resources */,
-				5DD5572D1748B691002AE1B8 /* Icon-144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1424,6 +1420,7 @@
 		5DA5CA05163B018D00CF1601 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B87M5YBQ84;
@@ -1437,7 +1434,7 @@
 				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hirerussians.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.frostbit.iMMPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1447,6 +1444,7 @@
 		5DA5CA06163B018D00CF1601 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B87M5YBQ84;
@@ -1460,7 +1458,7 @@
 				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hirerussians.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.frostbit.iMMPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
