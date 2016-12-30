@@ -19,11 +19,30 @@ final class QuestionnaireTests: XCTestCase {
     }()
 
     func testThat__invalid_questionnaires_throw_when_initializing() {
-        XCTAssertThrowsError(try Questionnaire(gender: .unknown, ageGroup: .adult))
-        XCTAssertThrowsError(try Questionnaire(gender: .unknown, ageGroup: .teen))
-        XCTAssertThrowsError(try Questionnaire(gender: .male, ageGroup: .unknown))
-        XCTAssertThrowsError(try Questionnaire(gender: .female, ageGroup: .unknown))
-        XCTAssertThrowsError(try Questionnaire(gender: .unknown, ageGroup: .unknown))
+        XCTAssert(try Questionnaire(gender: .unknown, ageGroup: .adult), throws: .nilFileName)
+        XCTAssert(try Questionnaire(gender: .unknown, ageGroup: .teen), throws: .nilFileName)
+        XCTAssert(try Questionnaire(gender: .male, ageGroup: .unknown), throws: .nilFileName)
+        XCTAssert(try Questionnaire(gender: .female, ageGroup: .unknown), throws: .nilFileName)
+        XCTAssert(try Questionnaire(gender: .unknown, ageGroup: .unknown), throws: .nilFileName)
+
+        XCTAssert(try Questionnaire(resourceName: "invalid"), throws: .fileNotFound)
+
+        let bundle = Bundle(for: type(of: self))
+
+        XCTAssert(try Questionnaire(resourceName: "questionnaire.error.jsonRootNotDictionary", bundle: bundle),
+                  throws: .jsonRootNotDictionary)
+
+        XCTAssert(try Questionnaire(resourceName: "questionnaire.error.statementsNotFound", bundle: bundle),
+                  throws: .statementsNotFound)
+
+        XCTAssert(try Questionnaire(resourceName: "questionnaire.error.statementJsonNotDictionary", bundle: bundle),
+                  throws: .statementJsonNotDictionary)
+
+        XCTAssert(try Questionnaire(resourceName: "questionnaire.error.statementIdentifierNotFound", bundle: bundle),
+                  throws: .statementIdentifierNotFound)
+
+        XCTAssert(try Questionnaire(resourceName: "questionnaire.error.statementTextNotFound", bundle: bundle),
+                  throws: .statementTextNotFound)
     }
 
     func testThat__default_questionnaires_have_statement_ids_corresponding_to_indexes() {
@@ -82,4 +101,25 @@ final class QuestionnaireTests: XCTestCase {
             }
         }
     }
+}
+
+
+fileprivate func XCTAssert<T>(_ code: @autoclosure () throws -> T, throws error: Questionnaire.Error,
+                           file: StaticString = #file, line: UInt = #line) {
+    var receivedError: Error? = nil
+
+    do {
+        _ = try code()
+    }
+    catch let e {
+        receivedError = e
+    }
+
+    XCTAssertNotNil(receivedError, "Expected to throw an error", file: file, line: line)
+
+    XCTAssertTrue(receivedError! is Questionnaire.Error,
+                  "Expected to throw Questionnaire.Error, got \(receivedError!) instead", file: file, line: line)
+
+    XCTAssertTrue((receivedError! as! Questionnaire.Error) ~= error,
+                  "Expected to throw \(error), got \(receivedError!) instead", file: file, line: line)
 }

@@ -18,6 +18,11 @@
 		4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A31E161A6B0024C001 /* StatementProtocol.swift */; };
 		4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A51E161B430024C001 /* Questionnaire.swift */; };
 		4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */; };
+		4430C7AD1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7AC1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json */; };
+		4430C7AF1E1637580024C001 /* questionnaire.error.statementsNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7AE1E1637580024C001 /* questionnaire.error.statementsNotFound.json */; };
+		4430C7B11E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7B01E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json */; };
+		4430C7B31E1637720024C001 /* questionnaire.error.statementIdentifierNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7B21E1637720024C001 /* questionnaire.error.statementIdentifierNotFound.json */; };
+		4430C7B51E16377F0024C001 /* questionnaire.error.statementTextNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -125,6 +130,11 @@
 		4430C7A31E161A6B0024C001 /* StatementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementProtocol.swift; sourceTree = "<group>"; };
 		4430C7A51E161B430024C001 /* Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire.swift; sourceTree = "<group>"; };
 		4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireProtocol.swift; sourceTree = "<group>"; };
+		4430C7AC1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.jsonRootNotDictionary.json; sourceTree = "<group>"; };
+		4430C7AE1E1637580024C001 /* questionnaire.error.statementsNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementsNotFound.json; sourceTree = "<group>"; };
+		4430C7B01E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementJsonNotDictionary.json; sourceTree = "<group>"; };
+		4430C7B21E1637720024C001 /* questionnaire.error.statementIdentifierNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementIdentifierNotFound.json; sourceTree = "<group>"; };
+		4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementTextNotFound.json; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -401,11 +411,24 @@
 		4430C7901E160DDD0024C001 /* iMMPITests */ = {
 			isa = PBXGroup;
 			children = (
-				4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */,
+				4430C7AB1E1635EF0024C001 /* Questionnaire */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 				4430C7931E160DDD0024C001 /* Info.plist */,
 			);
 			path = iMMPITests;
+			sourceTree = "<group>";
+		};
+		4430C7AB1E1635EF0024C001 /* Questionnaire */ = {
+			isa = PBXGroup;
+			children = (
+				4430C7AC1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json */,
+				4430C7AE1E1637580024C001 /* questionnaire.error.statementsNotFound.json */,
+				4430C7B01E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json */,
+				4430C7B21E1637720024C001 /* questionnaire.error.statementIdentifierNotFound.json */,
+				4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */,
+				4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */,
+			);
+			name = Questionnaire;
 			sourceTree = "<group>";
 		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
@@ -1096,6 +1119,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4430C7AD1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json in Resources */,
+				4430C7AF1E1637580024C001 /* questionnaire.error.statementsNotFound.json in Resources */,
+				4430C7B31E1637720024C001 /* questionnaire.error.statementIdentifierNotFound.json in Resources */,
+				4430C7B51E16377F0024C001 /* questionnaire.error.statementTextNotFound.json in Resources */,
+				4430C7B11E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1489,6 +1517,7 @@
 				4430C7981E160DDD0024C001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DA5C9DA163B018D00CF1601 /* Build configuration list for PBXProject "iMMPI" */ = {
 			isa = XCConfigurationList;
