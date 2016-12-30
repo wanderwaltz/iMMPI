@@ -17,6 +17,7 @@
 		4430C7A21E1619000024C001 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A11E1619000024C001 /* Statement.swift */; };
 		4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A31E161A6B0024C001 /* StatementProtocol.swift */; };
 		4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A51E161B430024C001 /* Questionnaire.swift */; };
+		4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -123,6 +124,7 @@
 		4430C7A11E1619000024C001 /* Statement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 		4430C7A31E161A6B0024C001 /* StatementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementProtocol.swift; sourceTree = "<group>"; };
 		4430C7A51E161B430024C001 /* Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire.swift; sourceTree = "<group>"; };
+		4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireProtocol.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -211,7 +213,6 @@
 		5DC40484168C447C000AFBAE /* PersonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonProtocol.h; sourceTree = "<group>"; };
 		5DC40485168C44BF000AFBAE /* TestAnswersProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAnswersProtocol.h; sourceTree = "<group>"; };
 		5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordProtocol.h; sourceTree = "<group>"; };
-		5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionnaireProtocol.h; sourceTree = "<group>"; };
 		5DC4048A168C4AB3000AFBAE /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		5DC4048B168C4AB3000AFBAE /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTestRecordViewController.h; sourceTree = "<group>"; };
@@ -812,7 +813,7 @@
 				5DC40485168C44BF000AFBAE /* TestAnswersProtocol.h */,
 				5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */,
 				4430C7A31E161A6B0024C001 /* StatementProtocol.swift */,
-				5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */,
+				4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */,
 				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
 				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
 				5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */,
@@ -1175,6 +1176,7 @@
 				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */,
+				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
 				4430C7821E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m in Sources */,
 				4430C77D1E15F9FF0024C001 /* FRBDispatchFunctions.m in Sources */,

@@ -8,8 +8,8 @@ import Foundation
 final class Questionnaire: NSObject {
     typealias StatementIdentifier = Int
 
-    fileprivate init(statements: [StatementProtocol]) {
-        var statementsById: [StatementIdentifier:StatementProtocol] = [:]
+    fileprivate init(statements: [Statement]) {
+        var statementsById: [StatementIdentifier:Statement] = [:]
 
         for statement in statements {
             statementsById[statement.statementID] = statement
@@ -19,17 +19,17 @@ final class Questionnaire: NSObject {
         self.statementsById = statementsById
     }
 
-    fileprivate let statements: [StatementProtocol]
-    fileprivate let statementsById: [StatementIdentifier:StatementProtocol]
+    fileprivate let statements: [Statement]
+    fileprivate let statementsById: [StatementIdentifier:Statement]
 }
 
 
 extension Questionnaire: QuestionnaireProtocol {
-    func statementsCount() -> Int {
+    var statementsCount: Int {
         return statements.count
     }
 
-    func statement(at index: Int) -> StatementProtocol? {
+    func statement(at index: Int) -> Statement? {
         guard 0 <= index && index < statements.count else {
             return nil
         }
@@ -37,7 +37,7 @@ extension Questionnaire: QuestionnaireProtocol {
         return statements[index]
     }
 
-    func statement(withID id: Int) -> StatementProtocol? {
+    func statement(id: Int) -> Statement? {
         return statementsById[id]
     }
 }
@@ -85,7 +85,7 @@ extension Questionnaire {
             throw Error.statementsNotFound
         }
 
-        var statements: [StatementProtocol] = []
+        var statements: [Statement] = []
 
         for jsonStatementRaw in statementsRaw {
             guard let jsonStatement = jsonStatementRaw as? [String:Any] else {
