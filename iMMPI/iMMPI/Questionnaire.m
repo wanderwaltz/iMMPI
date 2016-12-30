@@ -187,7 +187,12 @@ static id _logStatementTextNotFound  (Gender gender, AgeGroup ageGroup, id state
 
 - (id<StatementProtocol>) statementAtIndex: (NSUInteger) index
 {
-    return _statements[index];
+    if (index < _statements.count) {
+        return _statements[index];
+    }
+    else {
+        return nil;
+    }
 }
 
 - (id<StatementProtocol>) statementWithID: (NSUInteger) statementID
