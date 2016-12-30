@@ -356,10 +356,11 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-OU-DB3">
-                                            <rect key="frame" x="615" y="-466.5" width="133" height="998"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-OU-DB3">
+                                            <rect key="frame" x="615" y="10" width="133" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="133" id="PEU-8E-gSB"/>
+                                                <constraint firstAttribute="height" constant="44" id="Qcu-0n-NPP"/>
                                             </constraints>
                                             <segments>
                                                 <segment title="НЕТ"/>
