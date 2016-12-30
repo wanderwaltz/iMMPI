@@ -4,10 +4,10 @@ import XCTest
 final class QuestionnaireTests: XCTestCase {
     lazy var validQuestionnaires: [Questionnaire] = {
         let result: [Questionnaire?] = [
-            Questionnaire(gender: .female, ageGroup: .adult),
-            Questionnaire(gender: .female, ageGroup: .teen),
-            Questionnaire(gender: .male, ageGroup: .adult),
-            Questionnaire(gender: .male, ageGroup: .teen)
+            try? Questionnaire(gender: .female, ageGroup: .adult),
+            try? Questionnaire(gender: .female, ageGroup: .teen),
+            try? Questionnaire(gender: .male, ageGroup: .adult),
+            try? Questionnaire(gender: .male, ageGroup: .teen)
         ]
 
         for questionnaire in result {
@@ -17,6 +17,14 @@ final class QuestionnaireTests: XCTestCase {
 
         return result.flatMap { $0 }
     }()
+
+    func testThat__invalid_questionnaires_throw_when_initializing() {
+        XCTAssertThrowsError(try Questionnaire(gender: .unknown, ageGroup: .adult))
+        XCTAssertThrowsError(try Questionnaire(gender: .unknown, ageGroup: .teen))
+        XCTAssertThrowsError(try Questionnaire(gender: .male, ageGroup: .unknown))
+        XCTAssertThrowsError(try Questionnaire(gender: .female, ageGroup: .unknown))
+        XCTAssertThrowsError(try Questionnaire(gender: .unknown, ageGroup: .unknown))
+    }
 
     func testThat__default_questionnaires_have_statement_ids_corresponding_to_indexes() {
         for questionnaire in validQuestionnaires {

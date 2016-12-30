@@ -52,8 +52,6 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 #pragma mark -
 #pragma mark classes
 
-#import "Questionnaire.h"
-
 #import "TestRecord.h"
 #import "Person.h"
 

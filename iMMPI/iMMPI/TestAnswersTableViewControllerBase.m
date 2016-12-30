@@ -26,9 +26,11 @@
     if ((_questionnaire == nil) && (_record != nil))
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            self.questionnaire = [Questionnaire newForGender: self.record.person.gender
-                                                    ageGroup: self.record.person.ageGroup];
-            
+            self.questionnaire =
+                [[Questionnaire alloc] initWithGender: self.record.person.gender
+                                             ageGroup: self.record.person.ageGroup
+                                                error: nil];
+
             if (completion)
                 dispatch_async(dispatch_get_main_queue(), completion);
         });

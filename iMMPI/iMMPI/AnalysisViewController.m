@@ -104,9 +104,10 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             self->_reportGenerator.questionnaire =
-            [Questionnaire newForGender: self.record.person.gender
-                               ageGroup: self.record.person.ageGroup];
-            
+                [[Questionnaire alloc] initWithGender: self.record.person.gender
+                                             ageGroup: self.record.person.ageGroup
+                                                error: nil];
+
             [self->_analyzer loadGroups];
             [self->_analyzer computeScoresForRecord: self.record];
             
