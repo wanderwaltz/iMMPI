@@ -7,8 +7,6 @@
 //
 
 #import "Model.h"
-#import "Statement.h"
-
 
 #pragma mark -
 #pragma mark Questionnaire interface

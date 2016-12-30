@@ -1,4 +1,5 @@
 import XCTest
+@testable import iMMPI
 
 final class StatementTests: XCTestCase {
     func testThat__default_statement_has_nonnull_text() {

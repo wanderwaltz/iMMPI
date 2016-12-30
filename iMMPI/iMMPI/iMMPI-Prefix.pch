@@ -21,4 +21,6 @@
     #import "Strings.h"
 
     #import "UtilityFunctions.h"
+
+    #import "iMMPI-Swift.h"
 #endif

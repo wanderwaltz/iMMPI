@@ -14,6 +14,7 @@
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
 		4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */; };
 		4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C79D1E1617AE0024C001 /* StatementTests.swift */; };
+		4430C7A21E1619000024C001 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A11E1619000024C001 /* Statement.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -56,7 +57,6 @@
 		5DC2650F16D92441004D4BBA /* AnalyzerPlainPercentGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650E16D92441004D4BBA /* AnalyzerPlainPercentGroup.m */; };
 		5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC3044C17ED83A300FCE5D5 /* SystemSoundManager.m */; };
 		5DC3044F17ED83EB00FCE5D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */; };
-		5DC40472168C2596000AFBAE /* Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40471168C2596000AFBAE /* Statement.m */; };
 		5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */; };
 		5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
 		5DC4047D168C3259000AFBAE /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4047C168C3259000AFBAE /* Answer.m */; };
@@ -119,6 +119,7 @@
 		4430C7931E160DDD0024C001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4430C7991E160F6E0024C001 /* iMMPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Bridging-Header.h"; sourceTree = "<group>"; };
 		4430C79D1E1617AE0024C001 /* StatementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementTests.swift; sourceTree = "<group>"; };
+		4430C7A11E1619000024C001 /* Statement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
@@ -198,8 +199,6 @@
 		5DC3044B17ED83A300FCE5D5 /* SystemSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemSoundManager.h; sourceTree = "<group>"; };
 		5DC3044C17ED83A300FCE5D5 /* SystemSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemSoundManager.m; sourceTree = "<group>"; };
 		5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		5DC40470168C2596000AFBAE /* Statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
-		5DC40471168C2596000AFBAE /* Statement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statement.m; sourceTree = "<group>"; };
 		5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementTableViewCell.h; sourceTree = "<group>"; };
 		5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatementTableViewCell.m; sourceTree = "<group>"; };
 		5DC40478168C324F000AFBAE /* TestAnswers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswers.h; sourceTree = "<group>"; };
@@ -427,8 +426,7 @@
 			children = (
 				5D5E05BB164651FD00A5A704 /* Questionnaire.h */,
 				5D5E05BC164651FD00A5A704 /* Questionnaire.m */,
-				5DC40470168C2596000AFBAE /* Statement.h */,
-				5DC40471168C2596000AFBAE /* Statement.m */,
+				4430C7A11E1619000024C001 /* Statement.swift */,
 			);
 			name = Questionnaire;
 			sourceTree = "<group>";
@@ -1161,7 +1159,6 @@
 				5DA5CA13163B061000CF1601 /* RecordsListViewController.m in Sources */,
 				5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */,
 				5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */,
-				5DC40472168C2596000AFBAE /* Statement.m in Sources */,
 				5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */,
 				5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */,
 				5DC4047D168C3259000AFBAE /* Answer.m in Sources */,
@@ -1209,6 +1206,7 @@
 				5D74049416FEC107001747A1 /* LabelCollectionViewCell.m in Sources */,
 				5D74049816FEC40F001747A1 /* LabelCollectionViewHeader.m in Sources */,
 				5D74049C16FEC7CE001747A1 /* WebCollectionViewFooter.m in Sources */,
+				4430C7A21E1619000024C001 /* Statement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1245,6 +1243,7 @@
 		4430C7971E160DDD0024C001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1277,6 +1276,7 @@
 		4430C7981E160DDD0024C001 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1420,6 +1420,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B87M5YBQ84;
+				ENABLE_TESTABILITY = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1449,6 +1450,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = B87M5YBQ84;
+				ENABLE_TESTABILITY = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMMPI/iMMPI-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
