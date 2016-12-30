@@ -1,0 +1,14 @@
+lane :test do
+  scan(
+  	project: "iMMPI/iMMPI.xcodeproj",
+  	scheme: "iMMPI",
+  	devices: ["iPad Pro (9.7 inch)"],
+  	code_coverage: true
+  )
+
+  xcov(
+  	project: "iMMPI/iMMPI.xcodeproj",
+  	scheme: "iMMPI",
+  	output_directory: "fastlane/xcov_output"
+  )  
+end

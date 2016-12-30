@@ -5,3 +5,7 @@ iMMPI/iMMPI.xcodeproj/xcuserdata
 iMMPI/iMMPI.xcodeproj/project.xcworkspace/xcshareddata
 iMMPI/iMMPI.xcworkspace/xcshareddata
 iMMPI/iMMPI.xcworkspace/xcuserdata/wanderw.xcuserdatad/xcdebugger
+fastlane/xcov_output
+fastlane/test_output
+README.md
+report.xml
