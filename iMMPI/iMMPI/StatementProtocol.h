@@ -12,6 +12,7 @@
 #pragma mark -
 #pragma mark Statement protocol
 
+NS_ASSUME_NONNULL_BEGIN
 /*! A single statement of the questionnaire. 
  
  @see QuestionnaireProtocol
@@ -30,3 +31,4 @@
 @property (copy, nonatomic) NSString *text;
 
 @end
+NS_ASSUME_NONNULL_END

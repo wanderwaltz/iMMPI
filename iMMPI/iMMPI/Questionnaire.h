@@ -13,12 +13,13 @@
 #pragma mark -
 #pragma mark Questionnaire interface
 
+NS_ASSUME_NONNULL_BEGIN
 /*! 
  Questionnaire class encapsulates an ordered array of MMPI test statements.
  
  Questionnaries are stored in json format in the application bundle. There are separate sets of questions depending on the gender and age group of the person, and these are stored in separate files.
  */
-@interface Questionnaire : NSObject<QuestionnaireProtocol>
+@interface Questionnaire: NSObject<QuestionnaireProtocol>
 
 /*! 
  A class method for creating Questionnarie objects.
@@ -28,8 +29,8 @@
  @param gender    Gender value of the Questionnaire
  @param ageGroup  Age group value of the Questionnaire
  */
-+ (id) newForGender: (Gender) gender
-           ageGroup: (AgeGroup) ageGroup;
++ (id _Nullable)newForGender:(Gender)gender
+                    ageGroup:(AgeGroup)ageGroup;
 
 
 /*! 
@@ -40,11 +41,11 @@
  @param gender    Gender value of the Questionnaire
  @param ageGroup  Age group value of the Questionnaire
  */
-- (id) initWithGender: (Gender)   gender
-             ageGroup: (AgeGroup) ageGroup;
+- (id _Nullable)initWithGender:(Gender)gender
+                      ageGroup:(AgeGroup)ageGroup;
 
 /// Returns the number of statements included in the questionnaire.
-- (NSUInteger) statementsCount;
+- (NSUInteger)statementsCount;
 
 
 /*! This method return a statement with a given index.
@@ -53,6 +54,7 @@
  
  @param index Index of statement to return.
  */
-- (id<StatementProtocol>) statementAtIndex: (NSUInteger) index;
+- (id<StatementProtocol> _Nullable)statementAtIndex:(NSUInteger)index;
 
 @end
+NS_ASSUME_NONNULL_END

@@ -12,6 +12,7 @@
 #pragma mark -
 #pragma mark Questionnaire protocol
 
+NS_ASSUME_NONNULL_BEGIN
 /*!
  QuestionnaireProtocol encapsulates an ordered array of MMPI test statements.
  
@@ -30,8 +31,9 @@
  
  @param index Index of statement to return.
  */
-- (id<StatementProtocol>) statementAtIndex: (NSUInteger) index;
+- (id<StatementProtocol> _Nullable) statementAtIndex: (NSUInteger) index;
 
-- (id<StatementProtocol>) statementWithID: (NSUInteger) statementID;
+- (id<StatementProtocol> _Nullable) statementWithID: (NSUInteger) statementID;
 
 @end
+NS_ASSUME_NONNULL_END
