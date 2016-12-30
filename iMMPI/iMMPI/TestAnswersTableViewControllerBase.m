@@ -122,7 +122,7 @@
     
     if (indexPath)
     {
-        Statement *statement = [self statementAtIndexPath: indexPath];
+        id<StatementProtocol> statement = [self statementAtIndexPath: indexPath];
         FRB_AssertNotNil(statement);
         
         switch (selectedSegmentIndex)

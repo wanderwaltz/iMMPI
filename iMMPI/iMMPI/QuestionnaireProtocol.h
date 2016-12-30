@@ -12,6 +12,8 @@
 #pragma mark -
 #pragma mark Questionnaire protocol
 
+@protocol StatementProtocol;
+
 NS_ASSUME_NONNULL_BEGIN
 /*!
  QuestionnaireProtocol encapsulates an ordered array of MMPI test statements.

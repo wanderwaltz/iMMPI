@@ -15,6 +15,7 @@
 		4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */; };
 		4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C79D1E1617AE0024C001 /* StatementTests.swift */; };
 		4430C7A21E1619000024C001 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A11E1619000024C001 /* Statement.swift */; };
+		4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A31E161A6B0024C001 /* StatementProtocol.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D5E05BD164651FD00A5A704 /* Questionnaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E05BC164651FD00A5A704 /* Questionnaire.m */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
@@ -120,6 +121,7 @@
 		4430C7991E160F6E0024C001 /* iMMPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Bridging-Header.h"; sourceTree = "<group>"; };
 		4430C79D1E1617AE0024C001 /* StatementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementTests.swift; sourceTree = "<group>"; };
 		4430C7A11E1619000024C001 /* Statement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
+		4430C7A31E161A6B0024C001 /* StatementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementProtocol.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BB164651FD00A5A704 /* Questionnaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionnaire.h; sourceTree = "<group>"; };
 		5D5E05BC164651FD00A5A704 /* Questionnaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionnaire.m; sourceTree = "<group>"; };
@@ -210,7 +212,6 @@
 		5DC40484168C447C000AFBAE /* PersonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonProtocol.h; sourceTree = "<group>"; };
 		5DC40485168C44BF000AFBAE /* TestAnswersProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAnswersProtocol.h; sourceTree = "<group>"; };
 		5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordProtocol.h; sourceTree = "<group>"; };
-		5DC40487168C452E000AFBAE /* StatementProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatementProtocol.h; sourceTree = "<group>"; };
 		5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionnaireProtocol.h; sourceTree = "<group>"; };
 		5DC4048A168C4AB3000AFBAE /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		5DC4048B168C4AB3000AFBAE /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
@@ -812,7 +813,7 @@
 				5DC40484168C447C000AFBAE /* PersonProtocol.h */,
 				5DC40485168C44BF000AFBAE /* TestAnswersProtocol.h */,
 				5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */,
-				5DC40487168C452E000AFBAE /* StatementProtocol.h */,
+				4430C7A31E161A6B0024C001 /* StatementProtocol.swift */,
 				5DC40488168C4551000AFBAE /* QuestionnaireProtocol.h */,
 				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
 				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
@@ -1169,6 +1170,7 @@
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
 				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
 				4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */,
+				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
 				5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */,
 				7CAB67D318ACA98200C194B8 /* JSONTestRecordProxy.m in Sources */,

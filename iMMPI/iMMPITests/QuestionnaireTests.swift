@@ -1,4 +1,5 @@
 import XCTest
+@testable import iMMPI
 
 final class QuestionnaireTests: XCTestCase {
     lazy var validQuestionnaires: [Questionnaire] = {

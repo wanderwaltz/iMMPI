@@ -42,7 +42,6 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 #import "PersonProtocol.h"
 #import "TestAnswersProtocol.h"
 #import "TestRecordProtocol.h"
-#import "StatementProtocol.h"
 #import "QuestionnaireProtocol.h"
 #import "AnalyzerGroup.h"
 #import "AnalyzerProtocol.h"
