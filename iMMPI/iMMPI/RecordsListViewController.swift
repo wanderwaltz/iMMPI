@@ -1,0 +1,292 @@
+import UIKit
+
+final class RecordsListViewController: StoryboardManagedTableViewController {
+    var storage: TestRecordStorage?
+    lazy var model: MutableTableViewModel? = TestRecordModelByDate()
+
+    fileprivate let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter
+    }()
+}
+
+
+extension RecordsListViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // We do init storage here since if the view never appears
+        // there is no sense loading the records anyway.
+        //
+        // Once the storage has been initialized, this method does
+        // nothing.
+        initStorageInBackgroundIfNeeded()
+    }
+}
+
+
+extension RecordsListViewController {
+    fileprivate func initStorageInBackgroundIfNeeded() {
+        guard self.storage == nil else {
+            return
+        }
+
+        let storage = JSONTestRecordsStorage()
+        self.storage = storage
+
+        if storage.all().isEmpty {
+            DispatchQueue.global().async {
+                storage.load()
+                let allRecords = storage.all()
+
+                if allRecords.count > 0 {
+                    DispatchQueue.main.async {
+                        self.model?.addObjects(from: allRecords)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+
+
+    // TODO: extract this logic into a formatter class, add tests
+    fileprivate func abbreviatePersonName(_ name: String) -> String {
+        let components = name.components(separatedBy: .whitespacesAndNewlines)
+
+        guard components.count > 0 else {
+            return ""
+        }
+
+        var abbreviated: [String] = []
+
+        abbreviated.append(components.first!)
+
+        for i in 1..<components.count {
+            let component = components[i]
+
+            if false == component.isEmpty {
+                abbreviated.append(
+                    String(format: "%@.",
+                           component.substring(to: component.index(after: component.startIndex)).uppercased()))
+            }
+        }
+
+        return abbreviated.joined(separator: " ")
+    }
+
+
+    fileprivate func delete(_ record: TestRecordProtocol, at indexPath: IndexPath) -> Bool {
+        storage?.remove(record)
+        return model?.remove(record) ?? false
+    }
+}
+
+
+
+// MARK: - SegueSourceEditAnswers
+extension RecordsListViewController: SegueSourceEditAnswers {
+    func testRecordToEditAnswers(with sender: Any?) -> TestRecordProtocol? {
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+            return nil
+        }
+
+        return model?.object(at: indexPath) as? TestRecordProtocol
+    }
+
+
+    func storageToEditAnswers(with sender: Any?) -> TestRecordStorage? {
+        return storage
+    }
+}
+
+
+
+// MARK: - SegueSourceAnalyzeRecord
+extension RecordsListViewController: SegueSourceAnalyzeRecord {
+    func recordForAnalysis(with sender: Any?) -> TestRecordProtocol? {
+        // Essentialy we can open the analyzer screen only in the
+        // same circumstances as if we were editing answers for
+        // a certain record - when the corresponding records group
+        // contains a single record. So we return the value of an
+        // existing method to avoid duplication of code
+        return testRecordToEditAnswers(with: sender)
+    }
+
+
+    func storageForAnalysis(with sender: Any?) -> TestRecordStorage? {
+        return storage
+    }
+}
+
+
+
+// MARK: - SegueSourceEditRecord
+extension RecordsListViewController: SegueSourceEditRecord {
+    func titleForEditing(_ record: TestRecordProtocol, with sender: Any?) -> String {
+        if sender is UITableViewCell {
+            return NSLocalizedString("Редактировать запись", comment: "Заголовок экрана редактирования записи")
+        }
+        else {
+            return NSLocalizedString("Новая запись", comment: "Заголовок экрана создания записи")
+        }
+    }
+
+
+    public func testRecordToEdit(with sender: Any?) -> TestRecordProtocol? {
+        if sender is UITableViewCell {
+            return testRecordToEditAnswers(with: sender)
+        }
+        else {
+            return TestRecord()
+        }
+    }
+
+    public func delegateForEditingTestRecord(with sender: Any?) -> EditTestRecordViewControllerDelegate {
+        return self
+    }
+}
+
+
+
+// MARK: - SegueDestinationListRecords
+extension RecordsListViewController: SegueDestinationListRecords {
+    func setModelForListRecords(_ model: MutableTableViewModel) {
+        self.model = model
+    }
+
+
+    func setStorageForListRecords(_ storage: TestRecordStorage) {
+        self.storage = storage
+    }
+
+
+    func setTitleForListRecords(_ title: String) {
+        self.title = title
+    }
+
+
+    func setSelectedTestRecord(_ record: TestRecordProtocol?) {
+        guard let record = record, let indexPath = model?.indexPath(for: record) else {
+            return
+        }
+
+        // For some reason row cannot be selected without dispatch_async here
+        // even though 'Selection: clear on appearance' is set to NO in the storyboard
+        DispatchQueue.main.async {
+            self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        }
+    }
+}
+
+
+
+// MARK: - EditTestRecordViewControllerDelegate
+extension RecordsListViewController: EditTestRecordViewControllerDelegate {
+    func editTestRecordViewController(_ controller: EditTestRecordViewController,
+                                      didFinishEditing record: TestRecordProtocol?) {
+        dismiss(animated: true, completion: nil)
+
+        if let record = record {
+            guard let storage = storage else {
+                preconditionFailure()
+            }
+
+            if storage.contains(record) {
+                model?.update(record)
+                storage.update(record)
+            }
+            else {
+                model?.addNewObject(record)
+                storage.add(record)
+            }
+
+            tableView.reloadData()
+            performSegue(withIdentifier: kSegueIDBlankDetail, sender: self)
+        }
+    }
+}
+
+
+
+// MARK: - UITableViewDataSource
+extension RecordsListViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return Int(model?.numberOfSections() ?? 0)
+    }
+
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Int(model?.numberOfRows(inSection: UInt(section)) ?? 0)
+    }
+
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kRecordCellIdentifier) ??
+            UITableViewCell(style: .default, reuseIdentifier: kRecordCellIdentifier)
+
+        if let record = model?.object(at: indexPath) as? TestRecordProtocol {
+            cell.textLabel?.text = abbreviatePersonName(record.personName)
+            cell.detailTextLabel?.text = dateFormatter.string(from: record.date)
+        }
+
+        return cell
+    }
+
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCellEditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        guard let record = model?.object(at: indexPath) as? TestRecordProtocol else {
+            return
+        }
+
+        if delete(record, at: indexPath) {
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+}
+
+
+
+// MARK: - UITableViewDelegate
+extension RecordsListViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let record = model?.object(at: indexPath) as? TestRecordProtocol else {
+            return
+        }
+
+        let sender = tableView.cellForRow(at: indexPath)
+
+        // If already answered the test, go straight to analyzer
+        if record.testAnswers.allStatementsAnswered() {
+            performSegue(withIdentifier: kSegueIDAnalyzer, sender: sender)
+        }
+        // Else we have to input all answers first
+        else {
+            performSegue(withIdentifier: kSegueIDAnswersInput, sender: sender)
+        }
+    }
+
+
+    override func tableView(_ tableView: UITableView,
+                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+
+
+    override func tableView(_ tableView: UITableView,
+                            titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return NSLocalizedString("Удалить", comment: "Кнопка удаления")
+    }
+}
+
+
+fileprivate let kRecordCellIdentifier = "com.immpi.cells.record"

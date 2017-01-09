@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442CE10B1E1E9E13006C34A6 /* RecordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE10A1E1E9E13006C34A6 /* RecordsListViewController.swift */; };
 		4430C77D1E15F9FF0024C001 /* FRBDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C75C1E15F9FF0024C001 /* FRBDispatchFunctions.m */; };
 		4430C7821E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C76E1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
@@ -47,7 +48,6 @@
 		5DA5C9F1163B018D00CF1601 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5C9F0163B018D00CF1601 /* main.m */; };
 		5DA5C9F5163B018D00CF1601 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5C9F4163B018D00CF1601 /* AppDelegate.m */; };
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
-		5DA5CA13163B061000CF1601 /* RecordsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA12163B061000CF1601 /* RecordsListViewController.m */; };
 		5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */; };
 		5DBD5659169714EE00728BB4 /* TestAnswersInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD5658169714EE00728BB4 /* TestAnswersInputViewController.m */; };
 		5DBD568D1697274700728BB4 /* TestAnswersTableViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD568C1697274700728BB4 /* TestAnswersTableViewControllerBase.m */; };
@@ -104,6 +104,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		442CE10A1E1E9E13006C34A6 /* RecordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewController.swift; sourceTree = "<group>"; };
 		4430C73A1E15F9FF0024C001 /* FRBCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBCommon.h; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C73D1E15F9FF0024C001 /* FRBCompilerAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBCompilerAttributes.h; sourceTree = "<group>"; };
@@ -178,8 +179,6 @@
 		5DA5C9F3163B018D00CF1601 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DA5C9F4163B018D00CF1601 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5DA5C9FD163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5DA5CA11163B061000CF1601 /* RecordsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsListViewController.h; sourceTree = "<group>"; };
-		5DA5CA12163B061000CF1601 /* RecordsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsListViewController.m; sourceTree = "<group>"; };
 		5DA5CA14163B080B00CF1601 /* TestAnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersViewController.h; sourceTree = "<group>"; };
 		5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersViewController.m; sourceTree = "<group>"; };
 		5DBD5657169714EE00728BB4 /* TestAnswersInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersInputViewController.h; sourceTree = "<group>"; };
@@ -661,18 +660,9 @@
 				5DA5CA10163B050700CF1601 /* Analysis View Controller */,
 				5DA5CA0E163B04E800CF1601 /* Edit Test Record View Controller */,
 				5DBE76D7169356D40018C728 /* Persons List View Controller */,
-				5DA5CA0D163B04DB00CF1601 /* Records List View Controller */,
+				442CE10A1E1E9E13006C34A6 /* RecordsListViewController.swift */,
 			);
 			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		5DA5CA0D163B04DB00CF1601 /* Records List View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5DA5CA11163B061000CF1601 /* RecordsListViewController.h */,
-				5DA5CA12163B061000CF1601 /* RecordsListViewController.m */,
-			);
-			name = "Records List View Controller";
 			sourceTree = "<group>";
 		};
 		5DA5CA0E163B04E800CF1601 /* Edit Test Record View Controller */ = {
@@ -1172,7 +1162,6 @@
 				4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */,
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
 				5DA5C9F5163B018D00CF1601 /* AppDelegate.m in Sources */,
-				5DA5CA13163B061000CF1601 /* RecordsListViewController.m in Sources */,
 				5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */,
 				5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */,
 				5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */,
@@ -1191,6 +1180,7 @@
 				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */,
+				442CE10B1E1E9E13006C34A6 /* RecordsListViewController.swift in Sources */,
 				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
 				4430C7821E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m in Sources */,
