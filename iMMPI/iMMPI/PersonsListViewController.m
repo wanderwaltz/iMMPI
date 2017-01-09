@@ -217,7 +217,7 @@ static NSString * const kGroupCellIdentifier = @"com.immpi.cells.personsGroup";
     else
     {
         NSAssert(NO, @"Unknown sender object in -titleForEditingTestRecord:withSender: method: %@", sender);
-        return nil;
+        return @"";
     }
 }
 
