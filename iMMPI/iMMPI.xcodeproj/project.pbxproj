@@ -11,8 +11,6 @@
 		442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */; };
 		442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */; };
 		442CE1AA1E235156006C34A6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A91E235156006C34A6 /* Strings.swift */; };
-		4430C77D1E15F9FF0024C001 /* FRBDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C75C1E15F9FF0024C001 /* FRBDispatchFunctions.m */; };
-		4430C7821E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C76E1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
@@ -111,21 +109,12 @@
 		442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatter.swift; sourceTree = "<group>"; };
 		442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatterTests.swift; sourceTree = "<group>"; };
 		442CE1A91E235156006C34A6 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		4430C73A1E15F9FF0024C001 /* FRBCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBCommon.h; sourceTree = "<group>"; };
-		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBAssertMacros.h; sourceTree = "<group>"; };
-		4430C73D1E15F9FF0024C001 /* FRBCompilerAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBCompilerAttributes.h; sourceTree = "<group>"; };
-		4430C73F1E15F9FF0024C001 /* FRBTypesCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTypesCommon.h; sourceTree = "<group>"; };
-		4430C75A1E15F9FF0024C001 /* FRBDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDispatch.h; sourceTree = "<group>"; };
-		4430C75B1E15F9FF0024C001 /* FRBDispatchFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDispatchFunctions.h; sourceTree = "<group>"; };
-		4430C75C1E15F9FF0024C001 /* FRBDispatchFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDispatchFunctions.m; sourceTree = "<group>"; };
-		4430C76D1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FRBNavigationStack.h"; sourceTree = "<group>"; };
-		4430C76E1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FRBNavigationStack.m"; sourceTree = "<group>"; };
-		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDatePickerPopover.h; sourceTree = "<group>"; };
-		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDatePickerPopover.m; sourceTree = "<group>"; };
-		4430C7761E15F9FF0024C001 /* FRBUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBUIKit.h; sourceTree = "<group>"; };
+		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
+		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBDatePickerPopover.h; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.h; sourceTree = "<group>"; };
+		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBDatePickerPopover.m; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.m; sourceTree = "<group>"; };
 		4430C7861E15FB950024C001 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		4430C7881E16038A0024C001 /* FRBKeyedTargetAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBKeyedTargetAction.h; sourceTree = "<group>"; };
-		4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBKeyedTargetAction.m; sourceTree = "<group>"; };
+		4430C7881E16038A0024C001 /* FRBKeyedTargetAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBKeyedTargetAction.h; path = Dispatch/FRBKeyedTargetAction.h; sourceTree = "<group>"; };
+		4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBKeyedTargetAction.m; path = Dispatch/FRBKeyedTargetAction.m; sourceTree = "<group>"; };
 		4430C78F1E160DDC0024C001 /* iMMPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMMPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireTests.swift; sourceTree = "<group>"; };
 		4430C7931E160DDD0024C001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -316,94 +305,13 @@
 		4430C7381E15F9FF0024C001 /* Frostbit */ = {
 			isa = PBXGroup;
 			children = (
-				4430C7391E15F9FF0024C001 /* Common */,
-				4430C7591E15F9FF0024C001 /* Dispatch */,
-				4430C76A1E15F9FF0024C001 /* UIKit */,
-			);
-			path = Frostbit;
-			sourceTree = "<group>";
-		};
-		4430C7391E15F9FF0024C001 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				4430C73A1E15F9FF0024C001 /* FRBCommon.h */,
-				4430C73B1E15F9FF0024C001 /* Meta */,
-				4430C73E1E15F9FF0024C001 /* Types */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		4430C73B1E15F9FF0024C001 /* Meta */ = {
-			isa = PBXGroup;
-			children = (
 				4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */,
-				4430C73D1E15F9FF0024C001 /* FRBCompilerAttributes.h */,
-			);
-			path = Meta;
-			sourceTree = "<group>";
-		};
-		4430C73E1E15F9FF0024C001 /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				4430C73F1E15F9FF0024C001 /* FRBTypesCommon.h */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		4430C7591E15F9FF0024C001 /* Dispatch */ = {
-			isa = PBXGroup;
-			children = (
-				4430C75A1E15F9FF0024C001 /* FRBDispatch.h */,
-				4430C75B1E15F9FF0024C001 /* FRBDispatchFunctions.h */,
-				4430C75C1E15F9FF0024C001 /* FRBDispatchFunctions.m */,
 				4430C7881E16038A0024C001 /* FRBKeyedTargetAction.h */,
 				4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */,
-			);
-			path = Dispatch;
-			sourceTree = "<group>";
-		};
-		4430C76A1E15F9FF0024C001 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				4430C76B1E15F9FF0024C001 /* Categories */,
-				4430C76F1E15F9FF0024C001 /* Classes */,
-				4430C7761E15F9FF0024C001 /* FRBUIKit.h */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		4430C76B1E15F9FF0024C001 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				4430C76C1E15F9FF0024C001 /* UIViewController */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		4430C76C1E15F9FF0024C001 /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				4430C76D1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.h */,
-				4430C76E1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m */,
-			);
-			path = UIViewController;
-			sourceTree = "<group>";
-		};
-		4430C76F1E15F9FF0024C001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				4430C7731E15F9FF0024C001 /* FRBDatePickerPopover */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		4430C7731E15F9FF0024C001 /* FRBDatePickerPopover */ = {
-			isa = PBXGroup;
-			children = (
 				4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */,
 				4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */,
 			);
-			path = FRBDatePickerPopover;
+			path = Frostbit;
 			sourceTree = "<group>";
 		};
 		4430C7851E15FA170024C001 /* Resources */ = {
@@ -1201,8 +1109,6 @@
 				442CE10B1E1E9E13006C34A6 /* RecordsListViewController.swift in Sources */,
 				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
-				4430C7821E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m in Sources */,
-				4430C77D1E15F9FF0024C001 /* FRBDispatchFunctions.m in Sources */,
 				5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */,
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
 				5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */,

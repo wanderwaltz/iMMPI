@@ -6,9 +6,6 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "FRBDispatch.h"
-
-
 #pragma mark -
 #pragma mark FRBKeyedTargetAction interface
 
