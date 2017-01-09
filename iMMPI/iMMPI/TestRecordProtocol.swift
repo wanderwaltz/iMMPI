@@ -16,3 +16,14 @@ import Foundation
     /// Date of the test session
     var date: Date { get set }
 }
+
+
+extension TestRecordProtocol {
+    func makeCopy() -> TestRecord {
+        return TestRecord(
+            person: person.makeCopy(),
+            testAnswers: testAnswers.makeCopy(),
+            date: date
+        )
+    }
+}

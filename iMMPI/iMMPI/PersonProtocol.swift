@@ -13,3 +13,14 @@ import Foundation
     /// Age group of a person
     var ageGroup: AgeGroup { get set }
 }
+
+
+extension PersonProtocol {
+    func makeCopy() -> Person {
+        return Person(
+            name: name,
+            gender: gender,
+            ageGroup: ageGroup
+        )
+    }
+}

@@ -25,9 +25,20 @@ import Foundation
     ///
     /// Ordering of the enumerating answers is undefined.
     ///
-    /// Used for serialization of test records.
-    ///
     /// - Parameter block: Block to be called on each answer/statement identifier pair where answer != `.unknown`.
     @objc(enumerateAnswers:)
     func enumerateAnswers(with block: (Int, AnswerType) -> ())
+}
+
+
+extension TestAnswersProtocol {
+    func makeCopy() -> TestAnswers {
+        let result = TestAnswers()
+
+        enumerateAnswers { (identifier, answer) in
+            result.setAnswer(answer, for: identifier)
+        }
+
+        return result
+    }
 }
