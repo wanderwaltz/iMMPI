@@ -8,18 +8,25 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark SegueDestinationEditRecord protocol
 
 @protocol EditTestRecordViewControllerDelegate;
 
-@protocol SegueDestinationEditRecord <NSObject>
+@protocol SegueDestinationEditRecord<NSObject>
 @required
 
-- (void) setTitleForEditingTestRecord: (NSString *) title;
+- (void)setTitleForEditingTestRecord:(NSString *)title
+            NS_SWIFT_NAME(setTitleForEditingTestRecord(_:));
 
-- (void) setTestRecordToEdit:             (id<TestRecordProtocol>) record;
-- (void) setDelegateForEditingTestRecord: (id<EditTestRecordViewControllerDelegate>) delegate;
+- (void)setTestRecordToEdit:(id<TestRecordProtocol>)record
+            NS_SWIFT_NAME(setTestRecordToEdit(_:));
+
+- (void)setDelegateForEditingTestRecord:(id<EditTestRecordViewControllerDelegate>)delegate
+            NS_SWIFT_NAME(setDelegateForEditingTestRecord(_:));
 
 @end
+
+NS_ASSUME_NONNULL_END
