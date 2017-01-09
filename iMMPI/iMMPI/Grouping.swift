@@ -10,8 +10,13 @@ struct Grouping<Item> {
 
         let sortedItems = items.sorted(by: areInIncreasingOrder)
 
-        allItems = sortedItems
-        sections = sortedItems.split(with: sectionDescriptor)
+        self.init(allItems: sortedItems, sections: sortedItems.split(with: sectionDescriptor))
+    }
+
+
+    fileprivate init(allItems: [Item], sections: [Section<Item>]) {
+        self.allItems = allItems
+        self.sections = sections
     }
 }
 
@@ -30,5 +35,12 @@ extension Grouping {
                 sectionTitleForItem: Constant.string("")
             )
         )
+    }
+}
+
+
+extension Grouping {
+    func map<T>(_ mapping: (Item) -> T) -> Grouping<T> {
+        return Grouping<T>(allItems: allItems.map(mapping), sections: sections.map({ $0.map(mapping) }))
     }
 }
