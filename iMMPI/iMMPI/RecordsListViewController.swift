@@ -4,14 +4,7 @@ final class RecordsListViewController: StoryboardManagedTableViewController {
     var storage: TestRecordStorage?
     var model: MutableTableViewModel?
 
-    fileprivate let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        return formatter
-    }()
-
-
+    fileprivate let dateFormatter: DateFormatter = .medium
     fileprivate let nameFormatter: Formatter = AbbreviatedNameFormatter()
 }
 
