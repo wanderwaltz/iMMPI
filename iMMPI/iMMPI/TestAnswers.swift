@@ -10,7 +10,7 @@ final class TestAnswers: NSObject {
 
 
 extension TestAnswers: TestAnswersProtocol {
-    func allStatementsAnswered() -> Bool {
+    var allStatementsAnswered: Bool {
         // TODO: think of a better way to check this
         return answersByIdentifier.count == 566
     }
@@ -26,7 +26,7 @@ extension TestAnswers: TestAnswersProtocol {
     }
 
 
-    func enumerateAnswers(_ block: (Int, AnswerType) -> Void) {
+    func enumerateAnswers(with block: (Int, AnswerType) -> Void) {
         answersByIdentifier.forEach { (identifier, record) in
             if record.answer != .unknown {
                 block(identifier, record.answer)

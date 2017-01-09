@@ -199,7 +199,7 @@ extension RecordsListViewController {
         let sender = tableView.cellForRow(at: indexPath)
 
         // If already answered the test, go straight to analyzer
-        if record.testAnswers.allStatementsAnswered() {
+        if record.testAnswers.allStatementsAnswered {
             performSegue(withIdentifier: kSegueIDAnalyzer, sender: sender)
         }
         // Else we have to input all answers first

@@ -18,6 +18,7 @@
 		442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1B61E235D12006C34A6 /* AgeGroup.swift */; };
 		442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1B81E235D3D006C34A6 /* Gender.swift */; };
 		442CE1BE1E2366F7006C34A6 /* TestAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */; };
+		442CE1C01E236915006C34A6 /* TestAnswersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
@@ -114,12 +115,12 @@
 		442CE1A91E235156006C34A6 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		442CE1AB1E235397006C34A6 /* TestRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecord.swift; sourceTree = "<group>"; };
 		442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordProtocol.swift; sourceTree = "<group>"; };
-		442CE1B11E23572D006C34A6 /* TestAnswersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersProtocol.h; sourceTree = "<group>"; };
 		442CE1B21E2357AA006C34A6 /* EditTestRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTestRecordViewController.swift; sourceTree = "<group>"; };
 		442CE1B41E235A1B006C34A6 /* DateFormatter+iMMPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+iMMPI.swift"; sourceTree = "<group>"; };
 		442CE1B61E235D12006C34A6 /* AgeGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeGroup.swift; sourceTree = "<group>"; };
 		442CE1B81E235D3D006C34A6 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswers.swift; sourceTree = "<group>"; };
+		442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersProtocol.swift; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBDatePickerPopover.h; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.h; sourceTree = "<group>"; };
 		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBDatePickerPopover.m; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.m; sourceTree = "<group>"; };
@@ -731,7 +732,7 @@
 			isa = PBXGroup;
 			children = (
 				4430C7BA1E1670010024C001 /* PersonProtocol.swift */,
-				442CE1B11E23572D006C34A6 /* TestAnswersProtocol.h */,
+				442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */,
 				442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */,
 				4430C7A31E161A6B0024C001 /* StatementProtocol.swift */,
 				4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */,
@@ -1096,6 +1097,7 @@
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
 				5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */,
 				442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */,
+				442CE1C01E236915006C34A6 /* TestAnswersProtocol.swift in Sources */,
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
 				5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */,
 				5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */,
