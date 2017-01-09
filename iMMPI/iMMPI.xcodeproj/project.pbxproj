@@ -27,6 +27,8 @@
 		442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1D81E238379006C34A6 /* UtilityFunctions.swift */; };
 		442CE1DB1E238581006C34A6 /* UtilityFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */; };
 		442CE1DD1E23862A006C34A6 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1DC1E23862A006C34A6 /* Section.swift */; };
+		442CE1E31E238BBB006C34A6 /* TestRecordsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1E21E238BBB006C34A6 /* TestRecordsGroup.swift */; };
+		442CE1E51E238C75006C34A6 /* TestRecordsGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1E41E238C75006C34A6 /* TestRecordsGroupTests.swift */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
@@ -137,6 +139,8 @@
 		442CE1D81E238379006C34A6 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctionsTests.swift; sourceTree = "<group>"; };
 		442CE1DC1E23862A006C34A6 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		442CE1E21E238BBB006C34A6 /* TestRecordsGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordsGroup.swift; sourceTree = "<group>"; };
+		442CE1E41E238C75006C34A6 /* TestRecordsGroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordsGroupTests.swift; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBDatePickerPopover.h; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.h; sourceTree = "<group>"; };
 		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBDatePickerPopover.m; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.m; sourceTree = "<group>"; };
@@ -369,6 +373,7 @@
 				442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 				4430C7B61E163F450024C001 /* PersonTests.swift */,
+				442CE1E41E238C75006C34A6 /* TestRecordsGroupTests.swift */,
 				442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */,
 				4430C7931E160DDD0024C001 /* Info.plist */,
 			);
@@ -696,6 +701,7 @@
 			children = (
 				5DBE76D8169356F50018C728 /* PersonsListViewController.h */,
 				5DBE76D9169356F50018C728 /* PersonsListViewController.m */,
+				442CE1E21E238BBB006C34A6 /* TestRecordsGroup.swift */,
 			);
 			name = "Persons List View Controller";
 			sourceTree = "<group>";
@@ -1097,6 +1103,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442CE1E51E238C75006C34A6 /* TestRecordsGroupTests.swift in Sources */,
 				442CE1D11E2378D7006C34A6 /* SectionSplittingTests.swift in Sources */,
 				4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */,
 				4430C7B71E163F450024C001 /* PersonTests.swift in Sources */,
@@ -1146,6 +1153,7 @@
 				5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */,
 				5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */,
 				5D85558516906A9C004E3021 /* AnalyzerKGroup.m in Sources */,
+				442CE1E31E238BBB006C34A6 /* TestRecordsGroup.swift in Sources */,
 				5D85558916906E98004E3021 /* AnalyzerIGroupT1.m in Sources */,
 				442CE1DD1E23862A006C34A6 /* Section.swift in Sources */,
 				4430C7B91E16408A0024C001 /* Person.swift in Sources */,
