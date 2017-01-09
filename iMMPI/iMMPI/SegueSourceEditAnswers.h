@@ -8,14 +8,20 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark SegueSourceEditAnswers protocol
 
-@protocol SegueSourceEditAnswers <NSObject>
+@protocol SegueSourceEditAnswers<NSObject>
 @required
 
-- (id<TestRecordProtocol>) testRecordToEditAnswersWithSender: (id) sender;
-- (id<TestRecordStorage>)     storageToEditAnswersWithSender: (id) sender;
+- (id<TestRecordProtocol> _Nullable)testRecordToEditAnswersWithSender:(id _Nullable)sender
+NS_SWIFT_NAME(testRecordToEditAnswers(with:));
+
+- (id<TestRecordStorage> _Nullable)storageToEditAnswersWithSender:(id _Nullable)sender
+NS_SWIFT_NAME(storageToEditAnswers(with:));
 
 @end
+
+NS_ASSUME_NONNULL_END

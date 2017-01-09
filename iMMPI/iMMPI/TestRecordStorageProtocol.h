@@ -8,13 +8,14 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark TestRecordStorage protocol
 
 /*! Encapsulates a persistent storage for objects conforming to TestRecordProtocol.
  */
-@protocol TestRecordStorage <NSObject>
+@protocol TestRecordStorage<NSObject>
 @required
 
 /*! This method should add a new test record into the storage. 
@@ -27,7 +28,7 @@
  
  @return YES if the record has been added to storage, NO otherwise.
  */
-- (BOOL) addNewTestRecord: (id<TestRecordProtocol>) testRecord;
+- (BOOL)addNewTestRecord:(id<TestRecordProtocol>)testRecord NS_SWIFT_NAME(add(_:));
 
 
 
@@ -39,7 +40,7 @@
  
  @return YES if the record exists in storage and has been successfully updated. NO if update failed or record does not exist.
  */
-- (BOOL) updateTestRecord: (id<TestRecordProtocol>) testRecord;
+- (BOOL)updateTestRecord:(id<TestRecordProtocol>)testRecord NS_SWIFT_NAME(update(_:));
 
 
 
@@ -51,7 +52,7 @@
  
  @return YES if the record existed in storage and has been successfully removed. NO if removal failed or record does not exist.
  */
-- (BOOL) removeTestRecord: (id<TestRecordProtocol>) testRecord;
+- (BOOL)removeTestRecord:(id<TestRecordProtocol>)testRecord NS_SWIFT_NAME(remove(_:));
 
 
 
@@ -61,7 +62,7 @@
  
  @return YES if the record does exist in storage, NO otherwise.
  */
-- (BOOL) containsTestRecord: (id<TestRecordProtocol>) testRecord;
+- (BOOL)containsTestRecord:(id<TestRecordProtocol>)testRecord NS_SWIFT_NAME(contains(_:));
 
 
 
@@ -69,7 +70,7 @@
  
  @return YES if operation succeeded, NO otherwise.
  */
-- (BOOL) loadStoredTestRecords;
+- (BOOL)loadStoredTestRecords NS_SWIFT_NAME(load());
 
 
 
@@ -77,6 +78,8 @@
  
  @return An array of TestRecordProtocol objects.
  */
-- (NSArray *) allTestRecords;
+- (NSArray<id<TestRecordProtocol>> *)allTestRecords NS_SWIFT_NAME(all());
 
 @end
+
+NS_ASSUME_NONNULL_END

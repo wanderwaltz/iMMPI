@@ -8,6 +8,8 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 #pragma mark -
 #pragma mark Constants
 
@@ -20,12 +22,12 @@ extern NSString * const kJSONTestRecordStorageDirectoryTrash;
 
 /*! An implementation of TestRecordStorage which stores each TestRecordProtocol object in JSON format in a separate file in Documents directory.
  */
-@interface JSONTestRecordsStorage : NSObject<TestRecordStorage>
+@interface JSONTestRecordsStorage: NSObject<TestRecordStorage>
 
 /*! Another TestRecordStorage object which will be used to store records deleted
  from the current storage.
  */
-@property (strong, nonatomic) id<TestRecordStorage> trashStorage;
+@property (strong, nonatomic) id<TestRecordStorage> _Nullable trashStorage;
 
 
 /*! Initializes the storage with a directory name to store the records within.
@@ -34,7 +36,7 @@ extern NSString * const kJSONTestRecordStorageDirectoryTrash;
  
  @param storageDirectoryName Name of a directory to store the records within.
  */
-- (id) initWithDirectoryName: (NSString *) storageDirectoryName;
+- (id)initWithDirectoryName:(NSString *)storageDirectoryName;
 
 
 
@@ -44,7 +46,7 @@ extern NSString * const kJSONTestRecordStorageDirectoryTrash;
  
  @return YES if the record has been added to storage, NO otherwise.
  */
-- (BOOL) addNewTestRecord: (id<TestRecordProtocol>) testRecord;
+- (BOOL)addNewTestRecord:(id<TestRecordProtocol>)testRecord;
 
 
 
@@ -56,7 +58,7 @@ extern NSString * const kJSONTestRecordStorageDirectoryTrash;
  
  @return YES if the record exists in storage and has been successfully updated. NO if update failed or record does not exist.
  */
-- (BOOL) updateTestRecord: (id<TestRecordProtocol>) testRecord;
+- (BOOL)updateTestRecord:(id<TestRecordProtocol>)testRecord;
 
 
 /*! This method checks whether the provided TestRecordProtocol object does exist in the storage.
@@ -67,7 +69,7 @@ extern NSString * const kJSONTestRecordStorageDirectoryTrash;
  
  @return YES if the record does exist in storage, NO otherwise.
  */
-- (BOOL) containsTestRecord: (id<TestRecordProtocol>) testRecord;
+- (BOOL)containsTestRecord:(id<TestRecordProtocol>)testRecord;
 
 
 
@@ -75,7 +77,7 @@ extern NSString * const kJSONTestRecordStorageDirectoryTrash;
  
  @return YES if operation succeeded, NO otherwise.
  */
-- (BOOL) loadStoredTestRecords;
+- (BOOL)loadStoredTestRecords;
 
 
 
@@ -85,6 +87,7 @@ extern NSString * const kJSONTestRecordStorageDirectoryTrash;
  
  @return An array of TestRecordProtocol objects.
  */
-- (NSArray *) allTestRecords;
+- (NSArray<id<TestRecordProtocol>> *)allTestRecords;
 
 @end
+NS_ASSUME_NONNULL_END

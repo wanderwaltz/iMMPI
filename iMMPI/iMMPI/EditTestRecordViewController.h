@@ -9,6 +9,7 @@
 #import "Storyboard.h"
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark EditTestRecordViewControllerDelegate protocol
@@ -18,8 +19,9 @@
 @protocol EditTestRecordViewControllerDelegate<NSObject>
 @required
 
-- (void) editTestRecordViewController: (EditTestRecordViewController *) controller
-               didFinishEditingRecord: (id<TestRecordProtocol>) record;
+- (void)editTestRecordViewController:(EditTestRecordViewController *)controller
+              didFinishEditingRecord:(id<TestRecordProtocol> _Nullable)record
+                NS_SWIFT_NAME(editTestRecordViewController(_:didFinishEditing:));
 
 @end
 
@@ -30,7 +32,9 @@
 @interface EditTestRecordViewController : StoryboardManagedTableViewController
 <SegueDestinationEditRecord>
 
-@property (weak,   nonatomic) id<EditTestRecordViewControllerDelegate> delegate;
-@property (strong, nonatomic) id<TestRecordProtocol> record;
+@property (weak, nonatomic) id<EditTestRecordViewControllerDelegate> _Nullable delegate;
+@property (strong, nonatomic) id<TestRecordProtocol> _Nullable record;
 
 @end
+
+NS_ASSUME_NONNULL_END

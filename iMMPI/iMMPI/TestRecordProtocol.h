@@ -8,6 +8,7 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark TestRecord protocol
@@ -36,3 +37,5 @@
 @property (strong, nonatomic) NSDate *date;
 
 @end
+
+NS_ASSUME_NONNULL_END
