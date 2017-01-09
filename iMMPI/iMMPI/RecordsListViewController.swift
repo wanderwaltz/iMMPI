@@ -104,10 +104,10 @@ extension RecordsListViewController: SegueSourceAnalyzeRecord {
 extension RecordsListViewController: SegueSourceEditRecord {
     func titleForEditing(_ record: TestRecordProtocol, with sender: Any?) -> String {
         if sender is UITableViewCell {
-            return NSLocalizedString("Редактировать запись", comment: "Заголовок экрана редактирования записи")
+            return Strings.editRecord
         }
         else {
-            return NSLocalizedString("Новая запись", comment: "Заголовок экрана создания записи")
+            return Strings.newRecord
         }
     }
 
@@ -261,7 +261,7 @@ extension RecordsListViewController {
 
     override func tableView(_ tableView: UITableView,
                             titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return NSLocalizedString("Удалить", comment: "Кнопка удаления")
+        return Strings.delete
     }
 }
 
