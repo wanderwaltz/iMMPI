@@ -11,6 +11,8 @@
 		442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */; };
 		442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */; };
 		442CE1AA1E235156006C34A6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A91E235156006C34A6 /* Strings.swift */; };
+		442CE1AC1E235397006C34A6 /* TestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1AB1E235397006C34A6 /* TestRecord.swift */; };
+		442CE1AE1E23551D006C34A6 /* TestRecordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
@@ -71,7 +73,6 @@
 		5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */; };
 		5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
 		5DC4047D168C3259000AFBAE /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4047C168C3259000AFBAE /* Answer.m */; };
-		5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40481168C41A7000AFBAE /* TestRecord.m */; };
 		5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */; };
 		5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
 		5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF616902E9900E835B7 /* AnalyzerGroupBase.m */; };
@@ -109,6 +110,9 @@
 		442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatter.swift; sourceTree = "<group>"; };
 		442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatterTests.swift; sourceTree = "<group>"; };
 		442CE1A91E235156006C34A6 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		442CE1AB1E235397006C34A6 /* TestRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecord.swift; sourceTree = "<group>"; };
+		442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordProtocol.swift; sourceTree = "<group>"; };
+		442CE1B11E23572D006C34A6 /* TestAnswersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersProtocol.h; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBDatePickerPopover.h; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.h; sourceTree = "<group>"; };
 		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBDatePickerPopover.m; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.m; sourceTree = "<group>"; };
@@ -213,10 +217,6 @@
 		5DC40479168C324F000AFBAE /* TestAnswers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswers.m; sourceTree = "<group>"; };
 		5DC4047B168C3259000AFBAE /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
 		5DC4047C168C3259000AFBAE /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
-		5DC40480168C41A7000AFBAE /* TestRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecord.h; sourceTree = "<group>"; };
-		5DC40481168C41A7000AFBAE /* TestRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecord.m; sourceTree = "<group>"; };
-		5DC40485168C44BF000AFBAE /* TestAnswersProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAnswersProtocol.h; sourceTree = "<group>"; };
-		5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordProtocol.h; sourceTree = "<group>"; };
 		5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTestRecordViewController.h; sourceTree = "<group>"; };
 		5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTestRecordViewController.m; sourceTree = "<group>"; };
 		5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.analysis.json; sourceTree = "<group>"; };
@@ -726,8 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				5DCC9646168DC1BD004F8D4E /* Test Record Serialization */,
-				5DC40480168C41A7000AFBAE /* TestRecord.h */,
-				5DC40481168C41A7000AFBAE /* TestRecord.m */,
+				442CE1AB1E235397006C34A6 /* TestRecord.swift */,
 				4430C7B81E16408A0024C001 /* Person.swift */,
 			);
 			name = "Test Record";
@@ -737,8 +736,8 @@
 			isa = PBXGroup;
 			children = (
 				4430C7BA1E1670010024C001 /* PersonProtocol.swift */,
-				5DC40485168C44BF000AFBAE /* TestAnswersProtocol.h */,
-				5DC40486168C44E7000AFBAE /* TestRecordProtocol.h */,
+				442CE1B11E23572D006C34A6 /* TestAnswersProtocol.h */,
+				442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */,
 				4430C7A31E161A6B0024C001 /* StatementProtocol.swift */,
 				4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */,
 				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
@@ -1092,7 +1091,6 @@
 				5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */,
 				5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */,
 				5DC4047D168C3259000AFBAE /* Answer.m in Sources */,
-				5DC40482168C41A7000AFBAE /* TestRecord.m in Sources */,
 				5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
 				4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */,
@@ -1104,10 +1102,12 @@
 				5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */,
 				7CAB67D318ACA98200C194B8 /* JSONTestRecordProxy.m in Sources */,
 				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
+				442CE1AC1E235397006C34A6 /* TestRecord.swift in Sources */,
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */,
 				442CE10B1E1E9E13006C34A6 /* RecordsListViewController.swift in Sources */,
 				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
+				442CE1AE1E23551D006C34A6 /* TestRecordProtocol.swift in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
 				5DC4AC0516903EA400E835B7 /* AnalyzerTableViewCell.m in Sources */,
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,

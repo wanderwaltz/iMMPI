@@ -13,6 +13,7 @@
 #pragma mark AnalyzerGroup protocol
 
 @protocol AnalyzerProtocol;
+@protocol TestRecordProtocol;
 
 @protocol AnalyzerGroup <NSObject>
 @required

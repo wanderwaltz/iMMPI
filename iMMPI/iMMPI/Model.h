@@ -40,7 +40,6 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 #pragma mark protocols
 
 #import "TestAnswersProtocol.h"
-#import "TestRecordProtocol.h"
 #import "AnalyzerGroup.h"
 #import "AnalyzerProtocol.h"
 
@@ -49,8 +48,6 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 
 #pragma mark -
 #pragma mark classes
-
-#import "TestRecord.h"
 
 #import "TestAnswers.h"
 #import "Answer.h"

@@ -14,10 +14,10 @@
 #pragma mark JSONTestRecordProxy interface
 
 @interface JSONTestRecordProxy : NSObject<TestRecordProtocol>
-@property (copy,   nonatomic) NSString *personName;
-@property (copy,   nonatomic) NSString *fileName;
-@property (copy,   nonatomic) NSString *directory;
-@property (strong, nonatomic) NSDate   *date;
+@property (copy, nonatomic) NSString *personName;
+@property (copy, nonatomic) NSString *fileName;
+@property (copy, nonatomic) NSString *directory;
+@property (copy, nonatomic) NSDate   *date;
 
 
 + (id) proxyForRecord: (id<TestRecordProtocol>) record
