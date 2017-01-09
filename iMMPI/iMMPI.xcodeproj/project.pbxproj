@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		442CE10B1E1E9E13006C34A6 /* RecordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE10A1E1E9E13006C34A6 /* RecordsListViewController.swift */; };
+		442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */; };
+		442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */; };
 		4430C77D1E15F9FF0024C001 /* FRBDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C75C1E15F9FF0024C001 /* FRBDispatchFunctions.m */; };
 		4430C7821E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C76E1E15F9FF0024C001 /* UIViewController+FRBNavigationStack.m */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
@@ -105,6 +107,8 @@
 
 /* Begin PBXFileReference section */
 		442CE10A1E1E9E13006C34A6 /* RecordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewController.swift; sourceTree = "<group>"; };
+		442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatter.swift; sourceTree = "<group>"; };
+		442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatterTests.swift; sourceTree = "<group>"; };
 		4430C73A1E15F9FF0024C001 /* FRBCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBCommon.h; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C73D1E15F9FF0024C001 /* FRBCompilerAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBCompilerAttributes.h; sourceTree = "<group>"; };
@@ -299,6 +303,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		442CE1A41E234DCE006C34A6 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */,
+			);
+			name = Formatters;
+			sourceTree = "<group>";
+		};
 		4430C7381E15F9FF0024C001 /* Frostbit */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
+				442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 				4430C7B61E163F450024C001 /* PersonTests.swift */,
 				4430C7931E160DDD0024C001 /* Info.plist */,
@@ -971,6 +984,7 @@
 		5DCC9642168DC12B004F8D4E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				442CE1A41E234DCE006C34A6 /* Formatters */,
 				5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */,
 				5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */,
 				5DC3044B17ED83A300FCE5D5 /* SystemSoundManager.h */,
@@ -1151,6 +1165,7 @@
 				4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */,
 				4430C7B71E163F450024C001 /* PersonTests.swift in Sources */,
 				4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */,
+				442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1211,6 +1226,7 @@
 				5DC0C88716E26B03006ED854 /* AnalysisSettings.m in Sources */,
 				5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */,
 				5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */,
+				442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */,
 				5D74049416FEC107001747A1 /* LabelCollectionViewCell.m in Sources */,
 				5D74049816FEC40F001747A1 /* LabelCollectionViewHeader.m in Sources */,
 				5D74049C16FEC7CE001747A1 /* WebCollectionViewFooter.m in Sources */,

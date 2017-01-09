@@ -10,6 +10,9 @@ final class RecordsListViewController: StoryboardManagedTableViewController {
         formatter.timeStyle = .none
         return formatter
     }()
+
+
+    fileprivate let nameFormatter: Formatter = AbbreviatedNameFormatter()
 }
 
 
@@ -49,32 +52,6 @@ extension RecordsListViewController {
                 }
             }
         }
-    }
-
-
-    // TODO: extract this logic into a formatter class, add tests
-    fileprivate func abbreviatePersonName(_ name: String) -> String {
-        let components = name.components(separatedBy: .whitespacesAndNewlines)
-
-        guard components.count > 0 else {
-            return ""
-        }
-
-        var abbreviated: [String] = []
-
-        abbreviated.append(components.first!)
-
-        for i in 1..<components.count {
-            let component = components[i]
-
-            if false == component.isEmpty {
-                abbreviated.append(
-                    String(format: "%@.",
-                           component.substring(to: component.index(after: component.startIndex)).uppercased()))
-            }
-        }
-
-        return abbreviated.joined(separator: " ")
     }
 
 
@@ -228,7 +205,7 @@ extension RecordsListViewController {
             UITableViewCell(style: .default, reuseIdentifier: kRecordCellIdentifier)
 
         if let record = model?.object(at: indexPath) as? TestRecordProtocol {
-            cell.textLabel?.text = abbreviatePersonName(record.personName)
+            cell.textLabel?.text = nameFormatter.string(for: record.personName)
             cell.detailTextLabel?.text = dateFormatter.string(from: record.date)
         }
 
