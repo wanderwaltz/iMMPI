@@ -49,9 +49,6 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 #pragma mark -
 #pragma mark classes
 
-#import "TestAnswers.h"
-#import "Answer.h"
-
 #import "Analyzer.h"
 
 #import "JSONTestRecordSerialization.h"

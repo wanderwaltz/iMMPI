@@ -8,6 +8,7 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark TestAnswers protocol
@@ -19,7 +20,7 @@
 @required
 
 /// Determines whether this test answers object contains all answers for a certain questionnaire.
-- (BOOL) allStatementsAnswered;
+- (BOOL)allStatementsAnswered;
 
 
 
@@ -28,8 +29,8 @@
  @param answerType  answer type (agree, disagree, undefined - see source for the exact enum values)
  @param statementID ID of the statement to relate the answer with
  */
-- (void) setAnswerType: (AnswerType) answerType
-        forStatementID: (NSInteger) statementID;
+- (void)setAnswerType:(AnswerType)answerType
+       forStatementID:(NSInteger)statementID NS_SWIFT_NAME(setAnswer(_:for:));
 
 
 
@@ -40,7 +41,7 @@
  
  @return AnswerType for a recorded answer. If the statement has not yet been answered, returns AnswerTypeUnknown.
  */
-- (AnswerType) answerTypeForStatementID: (NSInteger) statementID;
+- (AnswerType)answerTypeForStatementID:(NSInteger)statementID NS_SWIFT_NAME(answer(for:));
 
 
 
@@ -53,6 +54,8 @@
  
  @param block Block to be called on each answer/statementID pair where answer != AnswerTypeUnknown
  */
-- (void) enumerateAnswers: (void(^)(NSInteger statementID, AnswerType answer)) block;
+- (void)enumerateAnswers:(void(^ __attribute((noescape)))(NSInteger statementID, AnswerType answer))block NS_SWIFT_NAME(enumerateAnswers(_:));
 
 @end
+
+NS_ASSUME_NONNULL_END
