@@ -14,3 +14,21 @@ struct Grouping<Item> {
         sections = sortedItems.split(with: sectionDescriptor)
     }
 }
+
+
+extension Grouping {
+    var isEmpty: Bool {
+        return allItems.isEmpty
+    }
+
+    static var empty: Grouping {
+        return Grouping(
+            items: [],
+            areInIncreasingOrder: { _ in false },
+            sectionDescriptor: SectionDescriptor(
+                itemsBelongToSameSection: { _ in true },
+                sectionTitleForItem: { _ in "" }
+            )
+        )
+    }
+}
