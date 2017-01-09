@@ -13,6 +13,7 @@
 		442CE1AA1E235156006C34A6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A91E235156006C34A6 /* Strings.swift */; };
 		442CE1AC1E235397006C34A6 /* TestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1AB1E235397006C34A6 /* TestRecord.swift */; };
 		442CE1AE1E23551D006C34A6 /* TestRecordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */; };
+		442CE1B31E2357AA006C34A6 /* EditTestRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1B21E2357AA006C34A6 /* EditTestRecordViewController.swift */; };
 		442CE1B51E235A1B006C34A6 /* DateFormatter+iMMPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1B41E235A1B006C34A6 /* DateFormatter+iMMPI.swift */; };
 		442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1B61E235D12006C34A6 /* AgeGroup.swift */; };
 		442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1B81E235D3D006C34A6 /* Gender.swift */; };
@@ -76,7 +77,6 @@
 		5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */; };
 		5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40479168C324F000AFBAE /* TestAnswers.m */; };
 		5DC4047D168C3259000AFBAE /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4047C168C3259000AFBAE /* Answer.m */; };
-		5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */; };
 		5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
 		5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF616902E9900E835B7 /* AnalyzerGroupBase.m */; };
 		5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */; };
@@ -116,6 +116,7 @@
 		442CE1AB1E235397006C34A6 /* TestRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecord.swift; sourceTree = "<group>"; };
 		442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordProtocol.swift; sourceTree = "<group>"; };
 		442CE1B11E23572D006C34A6 /* TestAnswersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersProtocol.h; sourceTree = "<group>"; };
+		442CE1B21E2357AA006C34A6 /* EditTestRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTestRecordViewController.swift; sourceTree = "<group>"; };
 		442CE1B41E235A1B006C34A6 /* DateFormatter+iMMPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+iMMPI.swift"; sourceTree = "<group>"; };
 		442CE1B61E235D12006C34A6 /* AgeGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeGroup.swift; sourceTree = "<group>"; };
 		442CE1B81E235D3D006C34A6 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
@@ -223,8 +224,6 @@
 		5DC40479168C324F000AFBAE /* TestAnswers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswers.m; sourceTree = "<group>"; };
 		5DC4047B168C3259000AFBAE /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
 		5DC4047C168C3259000AFBAE /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
-		5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTestRecordViewController.h; sourceTree = "<group>"; };
-		5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTestRecordViewController.m; sourceTree = "<group>"; };
 		5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.analysis.json; sourceTree = "<group>"; };
 		5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroup.h; sourceTree = "<group>"; };
 		5DC4ABF516902E9900E835B7 /* AnalyzerGroupBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroupBase.h; sourceTree = "<group>"; };
@@ -591,20 +590,11 @@
 			children = (
 				5DBD56891697272000728BB4 /* Test Answers */,
 				5DA5CA10163B050700CF1601 /* Analysis View Controller */,
-				5DA5CA0E163B04E800CF1601 /* Edit Test Record View Controller */,
 				5DBE76D7169356D40018C728 /* Persons List View Controller */,
+				442CE1B21E2357AA006C34A6 /* EditTestRecordViewController.swift */,
 				442CE10A1E1E9E13006C34A6 /* RecordsListViewController.swift */,
 			);
 			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		5DA5CA0E163B04E800CF1601 /* Edit Test Record View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5DC4048F168C4E11000AFBAE /* EditTestRecordViewController.h */,
-				5DC40490168C4E11000AFBAE /* EditTestRecordViewController.m */,
-			);
-			name = "Edit Test Record View Controller";
 			sourceTree = "<group>";
 		};
 		5DA5CA0F163B04F200CF1601 /* Test Answers View Controller */ = {
@@ -1094,6 +1084,7 @@
 			files = (
 				4430C7BB1E1670010024C001 /* PersonProtocol.swift in Sources */,
 				4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */,
+				442CE1B31E2357AA006C34A6 /* EditTestRecordViewController.swift in Sources */,
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
 				442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */,
 				5DA5C9F5163B018D00CF1601 /* AppDelegate.m in Sources */,
@@ -1101,7 +1092,6 @@
 				5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */,
 				5DC4047A168C324F000AFBAE /* TestAnswers.m in Sources */,
 				5DC4047D168C3259000AFBAE /* Answer.m in Sources */,
-				5DC40491168C4E11000AFBAE /* EditTestRecordViewController.m in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
 				4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */,
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
