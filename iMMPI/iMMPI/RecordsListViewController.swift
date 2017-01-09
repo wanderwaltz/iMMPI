@@ -2,7 +2,7 @@ import UIKit
 
 final class RecordsListViewController: StoryboardManagedTableViewController {
     var storage: TestRecordStorage?
-    lazy var model: MutableTableViewModel? = TestRecordModelByDate()
+    var model: MutableTableViewModel?
 
     fileprivate let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -16,45 +16,8 @@ final class RecordsListViewController: StoryboardManagedTableViewController {
 }
 
 
-extension RecordsListViewController {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        // We do init storage here since if the view never appears
-        // there is no sense loading the records anyway.
-        //
-        // Once the storage has been initialized, this method does
-        // nothing.
-        initStorageInBackgroundIfNeeded()
-    }
-}
-
 
 extension RecordsListViewController {
-    fileprivate func initStorageInBackgroundIfNeeded() {
-        guard self.storage == nil else {
-            return
-        }
-
-        let storage = JSONTestRecordsStorage()
-        self.storage = storage
-
-        if storage.all().isEmpty {
-            DispatchQueue.global().async {
-                storage.load()
-                let allRecords = storage.all()
-
-                if allRecords.count > 0 {
-                    DispatchQueue.main.async {
-                        self.model?.addObjects(from: allRecords)
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        }
-    }
-
-
     fileprivate func delete(_ record: TestRecordProtocol, at indexPath: IndexPath) -> Bool {
         storage?.remove(record)
         return model?.remove(record) ?? false
