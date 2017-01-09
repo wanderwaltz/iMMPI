@@ -8,24 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark MutableTableViewModel protocol
 
-@protocol MutableTableViewModel <NSObject>
+@protocol MutableTableViewModel<NSObject>
 @required
 
-- (NSUInteger) numberOfSections;
-- (NSUInteger) numberOfRowsInSection: (NSUInteger) section;
+- (NSUInteger)numberOfSections;
+- (NSUInteger)numberOfRowsInSection:(NSUInteger)section;
 
-- (id) objectAtIndexPath: (NSIndexPath *) indexPath;
+- (id _Nullable)objectAtIndexPath:(NSIndexPath *)indexPath;
 
-- (NSIndexPath *) indexPathForObject: (id) object;
+- (NSIndexPath * _Nullable)indexPathForObject:(id)object;
 
-- (void) addObjectsFromArray: (NSArray *) array;
+- (void)addObjectsFromArray:(NSArray *)array;
 
-- (BOOL) addNewObject: (id) object;
-- (BOOL) updateObject: (id) object;
-- (BOOL) removeObject: (id) object;
+- (BOOL)addNewObject:(id)object;
+- (BOOL)updateObject:(id)object;
+- (BOOL)removeObject:(id)object;
 
 @end
+
+NS_ASSUME_NONNULL_END

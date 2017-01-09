@@ -19,6 +19,7 @@
 		442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1B81E235D3D006C34A6 /* Gender.swift */; };
 		442CE1BE1E2366F7006C34A6 /* TestAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */; };
 		442CE1C01E236915006C34A6 /* TestAnswersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */; };
+		442CE1C21E236CA9006C34A6 /* MutableTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1C11E236CA9006C34A6 /* MutableTableViewModel.swift */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
@@ -121,6 +122,7 @@
 		442CE1B81E235D3D006C34A6 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswers.swift; sourceTree = "<group>"; };
 		442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersProtocol.swift; sourceTree = "<group>"; };
+		442CE1C11E236CA9006C34A6 /* MutableTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableTableViewModel.swift; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBDatePickerPopover.h; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.h; sourceTree = "<group>"; };
 		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBDatePickerPopover.m; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.m; sourceTree = "<group>"; };
@@ -737,6 +739,7 @@
 				4430C7A31E161A6B0024C001 /* StatementProtocol.swift */,
 				4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */,
 				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
+				442CE1C11E236CA9006C34A6 /* MutableTableViewModel.swift */,
 				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
 				5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */,
 				5DC4AC121690672F00E835B7 /* AnalyzerProtocol.h */,
@@ -1104,6 +1107,7 @@
 				5D85558516906A9C004E3021 /* AnalyzerKGroup.m in Sources */,
 				5D85558916906E98004E3021 /* AnalyzerIGroupT1.m in Sources */,
 				4430C7B91E16408A0024C001 /* Person.swift in Sources */,
+				442CE1C21E236CA9006C34A6 /* MutableTableViewModel.swift in Sources */,
 				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
 				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
 				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
