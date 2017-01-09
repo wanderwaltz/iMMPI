@@ -24,10 +24,10 @@ extension Grouping {
     static var empty: Grouping {
         return Grouping(
             items: [],
-            areInIncreasingOrder: { _ in false },
+            areInIncreasingOrder: Constant.bool(false),
             sectionDescriptor: SectionDescriptor(
-                itemsBelongToSameSection: { _ in true },
-                sectionTitleForItem: { _ in "" }
+                itemsBelongToSameSection: Constant.bool(true),
+                sectionTitleForItem: Constant.string("")
             )
         )
     }

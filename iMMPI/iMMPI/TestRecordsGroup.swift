@@ -17,10 +17,10 @@ extension TestRecordsGroup {
             title: record.personName,
             records: Grouping(
                 items: [record],
-                areInIncreasingOrder: { _ in false },
+                areInIncreasingOrder: Constant.bool(false),
                 sectionDescriptor: SectionDescriptor(
-                    itemsBelongToSameSection: { _ in true },
-                    sectionTitleForItem: { $0.personName }
+                    itemsBelongToSameSection: Constant.bool(true),
+                    sectionTitleForItem: Constant.string(record.personName)
                 )
             )
         )
