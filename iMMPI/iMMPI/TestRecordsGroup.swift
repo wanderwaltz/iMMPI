@@ -16,3 +16,14 @@ extension TestRecordsGroup {
         self.init(record: record, group: .empty)
     }
 }
+
+
+extension TestRecordsGroup {
+    init?(_ group: Grouping<TestRecordProtocol>) {
+        guard let record = group.allItems.max(by: { $0.date < $1.date }) else {
+            return nil
+        }
+
+        self.init(record: record, group: group.map { TestRecordsGroup(single: $0) })
+    }
+}
