@@ -20,8 +20,13 @@
 		442CE1BE1E2366F7006C34A6 /* TestAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */; };
 		442CE1C01E236915006C34A6 /* TestAnswersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */; };
 		442CE1C21E236CA9006C34A6 /* MutableTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1C11E236CA9006C34A6 /* MutableTableViewModel.swift */; };
+		442CE1CE1E23718C006C34A6 /* Grouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1CD1E23718C006C34A6 /* Grouping.swift */; };
 		442CE1D11E2378D7006C34A6 /* SectionSplittingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1D01E2378D7006C34A6 /* SectionSplittingTests.swift */; };
 		442CE1D51E237AB5006C34A6 /* SectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1D41E237AB5006C34A6 /* SectionDescriptor.swift */; };
+		442CE1D71E238257006C34A6 /* GroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1D61E238257006C34A6 /* GroupingTests.swift */; };
+		442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1D81E238379006C34A6 /* UtilityFunctions.swift */; };
+		442CE1DB1E238581006C34A6 /* UtilityFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */; };
+		442CE1DD1E23862A006C34A6 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1DC1E23862A006C34A6 /* Section.swift */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
@@ -125,8 +130,13 @@
 		442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswers.swift; sourceTree = "<group>"; };
 		442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersProtocol.swift; sourceTree = "<group>"; };
 		442CE1C11E236CA9006C34A6 /* MutableTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableTableViewModel.swift; sourceTree = "<group>"; };
+		442CE1CD1E23718C006C34A6 /* Grouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grouping.swift; sourceTree = "<group>"; };
 		442CE1D01E2378D7006C34A6 /* SectionSplittingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSplittingTests.swift; sourceTree = "<group>"; };
 		442CE1D41E237AB5006C34A6 /* SectionDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDescriptor.swift; sourceTree = "<group>"; };
+		442CE1D61E238257006C34A6 /* GroupingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupingTests.swift; sourceTree = "<group>"; };
+		442CE1D81E238379006C34A6 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
+		442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctionsTests.swift; sourceTree = "<group>"; };
+		442CE1DC1E23862A006C34A6 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBDatePickerPopover.h; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.h; sourceTree = "<group>"; };
 		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBDatePickerPopover.m; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.m; sourceTree = "<group>"; };
@@ -314,6 +324,8 @@
 		442CE1CC1E23714A006C34A6 /* Table View Models */ = {
 			isa = PBXGroup;
 			children = (
+				442CE1CD1E23718C006C34A6 /* Grouping.swift */,
+				442CE1DC1E23862A006C34A6 /* Section.swift */,
 				442CE1D41E237AB5006C34A6 /* SectionDescriptor.swift */,
 			);
 			name = "Table View Models";
@@ -322,6 +334,7 @@
 		442CE1CF1E2378CA006C34A6 /* Grouping */ = {
 			isa = PBXGroup;
 			children = (
+				442CE1D61E238257006C34A6 /* GroupingTests.swift */,
 				442CE1D01E2378D7006C34A6 /* SectionSplittingTests.swift */,
 			);
 			name = Grouping;
@@ -351,10 +364,12 @@
 		4430C7901E160DDD0024C001 /* iMMPITests */ = {
 			isa = PBXGroup;
 			children = (
+				442CE1CF1E2378CA006C34A6 /* Grouping */,
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
 				442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 				4430C7B61E163F450024C001 /* PersonTests.swift */,
+				442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */,
 				4430C7931E160DDD0024C001 /* Info.plist */,
 			);
 			path = iMMPITests;
@@ -906,6 +921,7 @@
 				442CE1A41E234DCE006C34A6 /* Formatters */,
 				5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */,
 				5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */,
+				442CE1D81E238379006C34A6 /* UtilityFunctions.swift */,
 				5DC3044B17ED83A300FCE5D5 /* SystemSoundManager.h */,
 				5DC3044C17ED83A300FCE5D5 /* SystemSoundManager.m */,
 			);
@@ -1085,6 +1101,8 @@
 				4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */,
 				4430C7B71E163F450024C001 /* PersonTests.swift in Sources */,
 				4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */,
+				442CE1DB1E238581006C34A6 /* UtilityFunctionsTests.swift in Sources */,
+				442CE1D71E238257006C34A6 /* GroupingTests.swift in Sources */,
 				442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1105,6 +1123,7 @@
 				4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */,
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
 				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
+				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
 				4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */,
 				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
@@ -1128,6 +1147,7 @@
 				5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */,
 				5D85558516906A9C004E3021 /* AnalyzerKGroup.m in Sources */,
 				5D85558916906E98004E3021 /* AnalyzerIGroupT1.m in Sources */,
+				442CE1DD1E23862A006C34A6 /* Section.swift in Sources */,
 				4430C7B91E16408A0024C001 /* Person.swift in Sources */,
 				442CE1C21E236CA9006C34A6 /* MutableTableViewModel.swift in Sources */,
 				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
@@ -1144,6 +1164,7 @@
 				5DC68C8116D0D7D400B338C2 /* MMPIATestRecordReader.m in Sources */,
 				5DC68C8616D0F55800B338C2 /* ProgressAlertView.m in Sources */,
 				5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */,
+				442CE1CE1E23718C006C34A6 /* Grouping.swift in Sources */,
 				5DC2650F16D92441004D4BBA /* AnalyzerPlainPercentGroup.m in Sources */,
 				5DC0C87F16E26207006ED854 /* AnalysisOptionsViewController.m in Sources */,
 				5DC0C88716E26B03006ED854 /* AnalysisSettings.m in Sources */,

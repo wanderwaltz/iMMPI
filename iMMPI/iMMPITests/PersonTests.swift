@@ -72,4 +72,20 @@ final class PersonTests: XCTestCase {
         XCTAssertFalse(person.isEqual(NSObject()))
         XCTAssertFalse(person.isEqual(nil))
     }
+
+    func testThat__person_copy_has_the_same_properties() {
+        let person = Person(name: "Mary Poppins", gender: .female, ageGroup: .teen)
+        let clone = person.makeCopy()
+
+        XCTAssertEqual(person.name, clone.name)
+        XCTAssertEqual(person.gender, clone.gender)
+        XCTAssertEqual(person.ageGroup, clone.ageGroup)
+    }
+
+    func testThat__person_copy_is_different_instance() {
+        let person = Person(name: "Mary Poppins", gender: .female, ageGroup: .teen)
+        let clone = person.makeCopy()
+
+        XCTAssertTrue(person !== clone)
+    }
 }

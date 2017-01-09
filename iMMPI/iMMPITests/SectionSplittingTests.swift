@@ -2,12 +2,12 @@ import XCTest
 @testable import iMMPI
 
 final class SectionSplittingTests: XCTestCase {
-    var descriptor = SectionDescriptor<String>(
+    let descriptor = SectionDescriptor<String>(
         itemsBelongToSameSection: { l, r in
-            return firstLetterUppercase(l) == firstLetterUppercase(r)
+            return l.uppercasedFirstCharacter == r.uppercasedFirstCharacter
     },
         sectionTitleForItem: { item in
-            return firstLetterUppercase(item)
+            return item.uppercasedFirstCharacter
     })
 
 
@@ -140,13 +140,4 @@ final class SectionSplittingTests: XCTestCase {
         XCTAssertEqual(sections[2].title, "C")
         XCTAssertEqual(sections[3].title, "S")
     }
-}
-
-
-fileprivate func firstLetterUppercase(_ string: String) -> String {
-    guard string.isEmpty == false else {
-        return string
-    }
-
-    return string.substring(to: string.index(after: string.startIndex)).uppercased()
 }
