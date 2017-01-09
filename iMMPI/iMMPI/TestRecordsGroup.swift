@@ -1,28 +1,18 @@
 import Foundation
 
 struct TestRecordsGroup {
-    let title: String
-    let records: Grouping<TestRecordProtocol>
+    let record: TestRecordProtocol
+    let group: Grouping<TestRecordsGroup>
 
-    init(title: String, records: Grouping<TestRecordProtocol>) {
-        self.title = title
-        self.records = records
+    init(record: TestRecordProtocol, group: Grouping<TestRecordsGroup>) {
+        self.record = record
+        self.group = group
     }
 }
 
 
 extension TestRecordsGroup {
     init(single record: TestRecordProtocol) {
-        self.init(
-            title: record.personName,
-            records: Grouping(
-                items: [record],
-                areInIncreasingOrder: Constant.bool(false),
-                sectionDescriptor: SectionDescriptor(
-                    itemsBelongToSameSection: Constant.bool(true),
-                    sectionTitleForItem: Constant.string(record.personName)
-                )
-            )
-        )
+        self.init(record: record, group: .empty)
     }
 }
