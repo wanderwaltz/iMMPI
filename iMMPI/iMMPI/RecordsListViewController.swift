@@ -73,7 +73,10 @@ extension RecordsListViewController: SegueSourceEditRecord {
             return testRecordToEditAnswers(with: sender)
         }
         else {
-            return TestRecord()
+            let recordToEdit = (model?.first as? TestRecordProtocol)?.makeCopy() ?? TestRecord()
+            recordToEdit.date = Date()
+
+            return recordToEdit
         }
     }
 
