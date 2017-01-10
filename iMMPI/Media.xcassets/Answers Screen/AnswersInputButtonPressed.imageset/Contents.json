@@ -8,9 +8,9 @@
       "resizing" : {
         "mode" : "9-part",
         "center" : {
-          "mode" : "tile",
+          "mode" : "stretch",
           "width" : 1,
-          "height" : 39
+          "height" : 22
         },
         "cap-insets" : {
           "bottom" : 12,

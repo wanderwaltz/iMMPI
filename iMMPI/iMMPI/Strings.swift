@@ -17,4 +17,6 @@ enum Strings {
     static let genderFemale = NSLocalizedString("Женский", comment: "Пол")
 
     static let unknown = NSLocalizedString("Неизвестно", comment: "Незивестное значение")
+
+    static let format_N_of_M = NSLocalizedString("%ld из %ld", comment: "N из M")
 }
