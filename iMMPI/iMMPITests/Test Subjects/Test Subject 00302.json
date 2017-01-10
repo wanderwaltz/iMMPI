@@ -1,0 +1,2273 @@
+{
+  "gender" : "male",
+  "ageGroup" : "adult",
+  "date" : "23-09-2014",
+  "answers" : [
+    {
+      "id" : 415,
+      "answer" : "NO"
+    },
+    {
+      "id" : 383,
+      "answer" : "NO"
+    },
+    {
+      "id" : 561,
+      "answer" : "NO"
+    },
+    {
+      "id" : 440,
+      "answer" : "YES"
+    },
+    {
+      "id" : 254,
+      "answer" : "NO"
+    },
+    {
+      "id" : 182,
+      "answer" : "YES"
+    },
+    {
+      "id" : 443,
+      "answer" : "NO"
+    },
+    {
+      "id" : 480,
+      "answer" : "NO"
+    },
+    {
+      "id" : 451,
+      "answer" : "YES"
+    },
+    {
+      "id" : 222,
+      "answer" : "YES"
+    },
+    {
+      "id" : 32,
+      "answer" : "YES"
+    },
+    {
+      "id" : 201,
+      "answer" : "YES"
+    },
+    {
+      "id" : 223,
+      "answer" : "NO"
+    },
+    {
+      "id" : 108,
+      "answer" : "YES"
+    },
+    {
+      "id" : 153,
+      "answer" : "YES"
+    },
+    {
+      "id" : 103,
+      "answer" : "YES"
+    },
+    {
+      "id" : 342,
+      "answer" : "NO"
+    },
+    {
+      "id" : 552,
+      "answer" : "YES"
+    },
+    {
+      "id" : 386,
+      "answer" : "NO"
+    },
+    {
+      "id" : 566,
+      "answer" : "NO"
+    },
+    {
+      "id" : 5,
+      "answer" : "NO"
+    },
+    {
+      "id" : 216,
+      "answer" : "NO"
+    },
+    {
+      "id" : 195,
+      "answer" : "YES"
+    },
+    {
+      "id" : 63,
+      "answer" : "YES"
+    },
+    {
+      "id" : 348,
+      "answer" : "YES"
+    },
+    {
+      "id" : 11,
+      "answer" : "YES"
+    },
+    {
+      "id" : 116,
+      "answer" : "YES"
+    },
+    {
+      "id" : 333,
+      "answer" : "YES"
+    },
+    {
+      "id" : 242,
+      "answer" : "NO"
+    },
+    {
+      "id" : 364,
+      "answer" : "NO"
+    },
+    {
+      "id" : 243,
+      "answer" : "YES"
+    },
+    {
+      "id" : 268,
+      "answer" : "YES"
+    },
+    {
+      "id" : 417,
+      "answer" : "YES"
+    },
+    {
+      "id" : 294,
+      "answer" : "NO"
+    },
+    {
+      "id" : 425,
+      "answer" : "NO"
+    },
+    {
+      "id" : 107,
+      "answer" : "NO"
+    },
+    {
+      "id" : 105,
+      "answer" : "YES"
+    },
+    {
+      "id" : 257,
+      "answer" : "YES"
+    },
+    {
+      "id" : 274,
+      "answer" : "NO"
+    },
+    {
+      "id" : 323,
+      "answer" : "YES"
+    },
+    {
+      "id" : 402,
+      "answer" : "NO"
+    },
+    {
+      "id" : 189,
+      "answer" : "YES"
+    },
+    {
+      "id" : 238,
+      "answer" : "YES"
+    },
+    {
+      "id" : 224,
+      "answer" : "NO"
+    },
+    {
+      "id" : 490,
+      "answer" : "NO"
+    },
+    {
+      "id" : 533,
+      "answer" : "YES"
+    },
+    {
+      "id" : 536,
+      "answer" : "YES"
+    },
+    {
+      "id" : 375,
+      "answer" : "YES"
+    },
+    {
+      "id" : 448,
+      "answer" : "YES"
+    },
+    {
+      "id" : 376,
+      "answer" : "NO"
+    },
+    {
+      "id" : 412,
+      "answer" : "NO"
+    },
+    {
+      "id" : 419,
+      "answer" : "NO"
+    },
+    {
+      "id" : 437,
+      "answer" : "YES"
+    },
+    {
+      "id" : 361,
+      "answer" : "YES"
+    },
+    {
+      "id" : 145,
+      "answer" : "NO"
+    },
+    {
+      "id" : 9,
+      "answer" : "NO"
+    },
+    {
+      "id" : 114,
+      "answer" : "YES"
+    },
+    {
+      "id" : 435,
+      "answer" : "NO"
+    },
+    {
+      "id" : 152,
+      "answer" : "YES"
+    },
+    {
+      "id" : 453,
+      "answer" : "NO"
+    },
+    {
+      "id" : 381,
+      "answer" : "NO"
+    },
+    {
+      "id" : 35,
+      "answer" : "YES"
+    },
+    {
+      "id" : 483,
+      "answer" : "YES"
+    },
+    {
+      "id" : 279,
+      "answer" : "NO"
+    },
+    {
+      "id" : 416,
+      "answer" : "YES"
+    },
+    {
+      "id" : 204,
+      "answer" : "NO"
+    },
+    {
+      "id" : 326,
+      "answer" : "NO"
+    },
+    {
+      "id" : 520,
+      "answer" : "YES"
+    },
+    {
+      "id" : 97,
+      "answer" : "NO"
+    },
+    {
+      "id" : 535,
+      "answer" : "NO"
+    },
+    {
+      "id" : 191,
+      "answer" : "YES"
+    },
+    {
+      "id" : 556,
+      "answer" : "YES"
+    },
+    {
+      "id" : 468,
+      "answer" : "NO"
+    },
+    {
+      "id" : 473,
+      "answer" : "YES"
+    },
+    {
+      "id" : 22,
+      "answer" : "NO"
+    },
+    {
+      "id" : 29,
+      "answer" : "NO"
+    },
+    {
+      "id" : 275,
+      "answer" : "YES"
+    },
+    {
+      "id" : 508,
+      "answer" : "YES"
+    },
+    {
+      "id" : 539,
+      "answer" : "YES"
+    },
+    {
+      "id" : 57,
+      "answer" : "YES"
+    },
+    {
+      "id" : 438,
+      "answer" : "YES"
+    },
+    {
+      "id" : 69,
+      "answer" : "YES"
+    },
+    {
+      "id" : 319,
+      "answer" : "YES"
+    },
+    {
+      "id" : 494,
+      "answer" : "NO"
+    },
+    {
+      "id" : 183,
+      "answer" : "NO"
+    },
+    {
+      "id" : 355,
+      "answer" : "NO"
+    },
+    {
+      "id" : 340,
+      "answer" : "NO"
+    },
+    {
+      "id" : 91,
+      "answer" : "NO"
+    },
+    {
+      "id" : 335,
+      "answer" : "NO"
+    },
+    {
+      "id" : 41,
+      "answer" : "NO"
+    },
+    {
+      "id" : 229,
+      "answer" : "NO"
+    },
+    {
+      "id" : 331,
+      "answer" : "YES"
+    },
+    {
+      "id" : 159,
+      "answer" : "NO"
+    },
+    {
+      "id" : 132,
+      "answer" : "NO"
+    },
+    {
+      "id" : 545,
+      "answer" : "NO"
+    },
+    {
+      "id" : 120,
+      "answer" : "NO"
+    },
+    {
+      "id" : 214,
+      "answer" : "NO"
+    },
+    {
+      "id" : 368,
+      "answer" : "NO"
+    },
+    {
+      "id" : 158,
+      "answer" : "NO"
+    },
+    {
+      "id" : 529,
+      "answer" : "YES"
+    },
+    {
+      "id" : 166,
+      "answer" : "NO"
+    },
+    {
+      "id" : 430,
+      "answer" : "YES"
+    },
+    {
+      "id" : 558,
+      "answer" : "YES"
+    },
+    {
+      "id" : 42,
+      "answer" : "YES"
+    },
+    {
+      "id" : 67,
+      "answer" : "NO"
+    },
+    {
+      "id" : 394,
+      "answer" : "NO"
+    },
+    {
+      "id" : 562,
+      "answer" : "YES"
+    },
+    {
+      "id" : 564,
+      "answer" : "YES"
+    },
+    {
+      "id" : 266,
+      "answer" : "YES"
+    },
+    {
+      "id" : 487,
+      "answer" : "NO"
+    },
+    {
+      "id" : 389,
+      "answer" : "YES"
+    },
+    {
+      "id" : 253,
+      "answer" : "YES"
+    },
+    {
+      "id" : 169,
+      "answer" : "YES"
+    },
+    {
+      "id" : 515,
+      "answer" : "YES"
+    },
+    {
+      "id" : 211,
+      "answer" : "YES"
+    },
+    {
+      "id" : 485,
+      "answer" : "YES"
+    },
+    {
+      "id" : 180,
+      "answer" : "NO"
+    },
+    {
+      "id" : 251,
+      "answer" : "NO"
+    },
+    {
+      "id" : 471,
+      "answer" : "NO"
+    },
+    {
+      "id" : 156,
+      "answer" : "YES"
+    },
+    {
+      "id" : 7,
+      "answer" : "YES"
+    },
+    {
+      "id" : 526,
+      "answer" : "NO"
+    },
+    {
+      "id" : 127,
+      "answer" : "YES"
+    },
+    {
+      "id" : 43,
+      "answer" : "NO"
+    },
+    {
+      "id" : 344,
+      "answer" : "NO"
+    },
+    {
+      "id" : 433,
+      "answer" : "NO"
+    },
+    {
+      "id" : 551,
+      "answer" : "YES"
+    },
+    {
+      "id" : 500,
+      "answer" : "YES"
+    },
+    {
+      "id" : 51,
+      "answer" : "YES"
+    },
+    {
+      "id" : 380,
+      "answer" : "YES"
+    },
+    {
+      "id" : 307,
+      "answer" : "NO"
+    },
+    {
+      "id" : 489,
+      "answer" : "YES"
+    },
+    {
+      "id" : 66,
+      "answer" : "YES"
+    },
+    {
+      "id" : 414,
+      "answer" : "YES"
+    },
+    {
+      "id" : 565,
+      "answer" : "NO"
+    },
+    {
+      "id" : 290,
+      "answer" : "YES"
+    },
+    {
+      "id" : 392,
+      "answer" : "NO"
+    },
+    {
+      "id" : 61,
+      "answer" : "YES"
+    },
+    {
+      "id" : 65,
+      "answer" : "NO"
+    },
+    {
+      "id" : 407,
+      "answer" : "YES"
+    },
+    {
+      "id" : 24,
+      "answer" : "YES"
+    },
+    {
+      "id" : 339,
+      "answer" : "NO"
+    },
+    {
+      "id" : 365,
+      "answer" : "NO"
+    },
+    {
+      "id" : 70,
+      "answer" : "NO"
+    },
+    {
+      "id" : 19,
+      "answer" : "YES"
+    },
+    {
+      "id" : 170,
+      "answer" : "YES"
+    },
+    {
+      "id" : 148,
+      "answer" : "YES"
+    },
+    {
+      "id" : 400,
+      "answer" : "YES"
+    },
+    {
+      "id" : 292,
+      "answer" : "NO"
+    },
+    {
+      "id" : 160,
+      "answer" : "NO"
+    },
+    {
+      "id" : 538,
+      "answer" : "NO"
+    },
+    {
+      "id" : 491,
+      "answer" : "YES"
+    },
+    {
+      "id" : 218,
+      "answer" : "NO"
+    },
+    {
+      "id" : 86,
+      "answer" : "NO"
+    },
+    {
+      "id" : 136,
+      "answer" : "YES"
+    },
+    {
+      "id" : 422,
+      "answer" : "NO"
+    },
+    {
+      "id" : 111,
+      "answer" : "YES"
+    },
+    {
+      "id" : 424,
+      "answer" : "NO"
+    },
+    {
+      "id" : 55,
+      "answer" : "YES"
+    },
+    {
+      "id" : 463,
+      "answer" : "NO"
+    },
+    {
+      "id" : 347,
+      "answer" : "NO"
+    },
+    {
+      "id" : 537,
+      "answer" : "YES"
+    },
+    {
+      "id" : 121,
+      "answer" : "YES"
+    },
+    {
+      "id" : 426,
+      "answer" : "YES"
+    },
+    {
+      "id" : 157,
+      "answer" : "YES"
+    },
+    {
+      "id" : 227,
+      "answer" : "NO"
+    },
+    {
+      "id" : 519,
+      "answer" : "NO"
+    },
+    {
+      "id" : 94,
+      "answer" : "NO"
+    },
+    {
+      "id" : 555,
+      "answer" : "NO"
+    },
+    {
+      "id" : 4,
+      "answer" : "NO"
+    },
+    {
+      "id" : 382,
+      "answer" : "YES"
+    },
+    {
+      "id" : 17,
+      "answer" : "YES"
+    },
+    {
+      "id" : 154,
+      "answer" : "NO"
+    },
+    {
+      "id" : 516,
+      "answer" : "YES"
+    },
+    {
+      "id" : 503,
+      "answer" : "YES"
+    },
+    {
+      "id" : 306,
+      "answer" : "YES"
+    },
+    {
+      "id" : 406,
+      "answer" : "YES"
+    },
+    {
+      "id" : 68,
+      "answer" : "YES"
+    },
+    {
+      "id" : 409,
+      "answer" : "NO"
+    },
+    {
+      "id" : 396,
+      "answer" : "YES"
+    },
+    {
+      "id" : 408,
+      "answer" : "YES"
+    },
+    {
+      "id" : 258,
+      "answer" : "YES"
+    },
+    {
+      "id" : 84,
+      "answer" : "YES"
+    },
+    {
+      "id" : 50,
+      "answer" : "YES"
+    },
+    {
+      "id" : 444,
+      "answer" : "YES"
+    },
+    {
+      "id" : 144,
+      "answer" : "NO"
+    },
+    {
+      "id" : 124,
+      "answer" : "YES"
+    },
+    {
+      "id" : 131,
+      "answer" : "YES"
+    },
+    {
+      "id" : 449,
+      "answer" : "YES"
+    },
+    {
+      "id" : 458,
+      "answer" : "YES"
+    },
+    {
+      "id" : 498,
+      "answer" : "NO"
+    },
+    {
+      "id" : 25,
+      "answer" : "NO"
+    },
+    {
+      "id" : 377,
+      "answer" : "NO"
+    },
+    {
+      "id" : 118,
+      "answer" : "NO"
+    },
+    {
+      "id" : 78,
+      "answer" : "YES"
+    },
+    {
+      "id" : 45,
+      "answer" : "YES"
+    },
+    {
+      "id" : 367,
+      "answer" : "YES"
+    },
+    {
+      "id" : 513,
+      "answer" : "YES"
+    },
+    {
+      "id" : 338,
+      "answer" : "YES"
+    },
+    {
+      "id" : 2,
+      "answer" : "NO"
+    },
+    {
+      "id" : 398,
+      "answer" : "YES"
+    },
+    {
+      "id" : 316,
+      "answer" : "YES"
+    },
+    {
+      "id" : 530,
+      "answer" : "NO"
+    },
+    {
+      "id" : 527,
+      "answer" : "NO"
+    },
+    {
+      "id" : 553,
+      "answer" : "NO"
+    },
+    {
+      "id" : 98,
+      "answer" : "YES"
+    },
+    {
+      "id" : 391,
+      "answer" : "NO"
+    },
+    {
+      "id" : 373,
+      "answer" : "YES"
+    },
+    {
+      "id" : 123,
+      "answer" : "YES"
+    },
+    {
+      "id" : 225,
+      "answer" : "YES"
+    },
+    {
+      "id" : 141,
+      "answer" : "NO"
+    },
+    {
+      "id" : 181,
+      "answer" : "YES"
+    },
+    {
+      "id" : 27,
+      "answer" : "YES"
+    },
+    {
+      "id" : 356,
+      "answer" : "YES"
+    },
+    {
+      "id" : 387,
+      "answer" : "YES"
+    },
+    {
+      "id" : 493,
+      "answer" : "YES"
+    },
+    {
+      "id" : 87,
+      "answer" : "NO"
+    },
+    {
+      "id" : 452,
+      "answer" : "YES"
+    },
+    {
+      "id" : 21,
+      "answer" : "YES"
+    },
+    {
+      "id" : 370,
+      "answer" : "YES"
+    },
+    {
+      "id" : 143,
+      "answer" : "YES"
+    },
+    {
+      "id" : 280,
+      "answer" : "YES"
+    },
+    {
+      "id" : 256,
+      "answer" : "YES"
+    },
+    {
+      "id" : 260,
+      "answer" : "NO"
+    },
+    {
+      "id" : 456,
+      "answer" : "YES"
+    },
+    {
+      "id" : 311,
+      "answer" : "YES"
+    },
+    {
+      "id" : 427,
+      "answer" : "NO"
+    },
+    {
+      "id" : 231,
+      "answer" : "YES"
+    },
+    {
+      "id" : 454,
+      "answer" : "NO"
+    },
+    {
+      "id" : 173,
+      "answer" : "YES"
+    },
+    {
+      "id" : 271,
+      "answer" : "NO"
+    },
+    {
+      "id" : 85,
+      "answer" : "NO"
+    },
+    {
+      "id" : 466,
+      "answer" : "YES"
+    },
+    {
+      "id" : 322,
+      "answer" : "YES"
+    },
+    {
+      "id" : 432,
+      "answer" : "NO"
+    },
+    {
+      "id" : 346,
+      "answer" : "NO"
+    },
+    {
+      "id" : 534,
+      "answer" : "YES"
+    },
+    {
+      "id" : 155,
+      "answer" : "YES"
+    },
+    {
+      "id" : 265,
+      "answer" : "NO"
+    },
+    {
+      "id" : 371,
+      "answer" : "YES"
+    },
+    {
+      "id" : 514,
+      "answer" : "NO"
+    },
+    {
+      "id" : 106,
+      "answer" : "YES"
+    },
+    {
+      "id" : 230,
+      "answer" : "YES"
+    },
+    {
+      "id" : 296,
+      "answer" : "NO"
+    },
+    {
+      "id" : 38,
+      "answer" : "NO"
+    },
+    {
+      "id" : 349,
+      "answer" : "YES"
+    },
+    {
+      "id" : 179,
+      "answer" : "NO"
+    },
+    {
+      "id" : 309,
+      "answer" : "YES"
+    },
+    {
+      "id" : 208,
+      "answer" : "YES"
+    },
+    {
+      "id" : 39,
+      "answer" : "NO"
+    },
+    {
+      "id" : 34,
+      "answer" : "NO"
+    },
+    {
+      "id" : 546,
+      "answer" : "NO"
+    },
+    {
+      "id" : 295,
+      "answer" : "YES"
+    },
+    {
+      "id" : 95,
+      "answer" : "NO"
+    },
+    {
+      "id" : 81,
+      "answer" : "YES"
+    },
+    {
+      "id" : 46,
+      "answer" : "NO"
+    },
+    {
+      "id" : 369,
+      "answer" : "NO"
+    },
+    {
+      "id" : 220,
+      "answer" : "YES"
+    },
+    {
+      "id" : 332,
+      "answer" : "NO"
+    },
+    {
+      "id" : 150,
+      "answer" : "YES"
+    },
+    {
+      "id" : 298,
+      "answer" : "YES"
+    },
+    {
+      "id" : 237,
+      "answer" : "YES"
+    },
+    {
+      "id" : 540,
+      "answer" : "YES"
+    },
+    {
+      "id" : 481,
+      "answer" : "YES"
+    },
+    {
+      "id" : 459,
+      "answer" : "YES"
+    },
+    {
+      "id" : 291,
+      "answer" : "YES"
+    },
+    {
+      "id" : 360,
+      "answer" : "NO"
+    },
+    {
+      "id" : 289,
+      "answer" : "YES"
+    },
+    {
+      "id" : 388,
+      "answer" : "NO"
+    },
+    {
+      "id" : 313,
+      "answer" : "NO"
+    },
+    {
+      "id" : 64,
+      "answer" : "NO"
+    },
+    {
+      "id" : 372,
+      "answer" : "YES"
+    },
+    {
+      "id" : 104,
+      "answer" : "NO"
+    },
+    {
+      "id" : 205,
+      "answer" : "YES"
+    },
+    {
+      "id" : 261,
+      "answer" : "NO"
+    },
+    {
+      "id" : 362,
+      "answer" : "YES"
+    },
+    {
+      "id" : 474,
+      "answer" : "YES"
+    },
+    {
+      "id" : 532,
+      "answer" : "YES"
+    },
+    {
+      "id" : 8,
+      "answer" : "NO"
+    },
+    {
+      "id" : 151,
+      "answer" : "YES"
+    },
+    {
+      "id" : 354,
+      "answer" : "NO"
+    },
+    {
+      "id" : 172,
+      "answer" : "YES"
+    },
+    {
+      "id" : 441,
+      "answer" : "NO"
+    },
+    {
+      "id" : 405,
+      "answer" : "YES"
+    },
+    {
+      "id" : 82,
+      "answer" : "NO"
+    },
+    {
+      "id" : 13,
+      "answer" : "YES"
+    },
+    {
+      "id" : 461,
+      "answer" : "YES"
+    },
+    {
+      "id" : 259,
+      "answer" : "YES"
+    },
+    {
+      "id" : 343,
+      "answer" : "YES"
+    },
+    {
+      "id" : 138,
+      "answer" : "YES"
+    },
+    {
+      "id" : 234,
+      "answer" : "YES"
+    },
+    {
+      "id" : 185,
+      "answer" : "YES"
+    },
+    {
+      "id" : 161,
+      "answer" : "NO"
+    },
+    {
+      "id" : 149,
+      "answer" : "NO"
+    },
+    {
+      "id" : 447,
+      "answer" : "YES"
+    },
+    {
+      "id" : 133,
+      "answer" : "YES"
+    },
+    {
+      "id" : 54,
+      "answer" : "YES"
+    },
+    {
+      "id" : 397,
+      "answer" : "YES"
+    },
+    {
+      "id" : 235,
+      "answer" : "NO"
+    },
+    {
+      "id" : 495,
+      "answer" : "YES"
+    },
+    {
+      "id" : 92,
+      "answer" : "NO"
+    },
+    {
+      "id" : 557,
+      "answer" : "NO"
+    },
+    {
+      "id" : 492,
+      "answer" : "NO"
+    },
+    {
+      "id" : 119,
+      "answer" : "YES"
+    },
+    {
+      "id" : 501,
+      "answer" : "NO"
+    },
+    {
+      "id" : 14,
+      "answer" : "YES"
+    },
+    {
+      "id" : 30,
+      "answer" : "NO"
+    },
+    {
+      "id" : 502,
+      "answer" : "NO"
+    },
+    {
+      "id" : 462,
+      "answer" : "YES"
+    },
+    {
+      "id" : 177,
+      "answer" : "YES"
+    },
+    {
+      "id" : 510,
+      "answer" : "NO"
+    },
+    {
+      "id" : 523,
+      "answer" : "YES"
+    },
+    {
+      "id" : 198,
+      "answer" : "NO"
+    },
+    {
+      "id" : 477,
+      "answer" : "YES"
+    },
+    {
+      "id" : 484,
+      "answer" : "YES"
+    },
+    {
+      "id" : 549,
+      "answer" : "YES"
+    },
+    {
+      "id" : 58,
+      "answer" : "YES"
+    },
+    {
+      "id" : 206,
+      "answer" : "YES"
+    },
+    {
+      "id" : 3,
+      "answer" : "YES"
+    },
+    {
+      "id" : 353,
+      "answer" : "YES"
+    },
+    {
+      "id" : 385,
+      "answer" : "NO"
+    },
+    {
+      "id" : 455,
+      "answer" : "YES"
+    },
+    {
+      "id" : 167,
+      "answer" : "YES"
+    },
+    {
+      "id" : 284,
+      "answer" : "YES"
+    },
+    {
+      "id" : 23,
+      "answer" : "NO"
+    },
+    {
+      "id" : 401,
+      "answer" : "YES"
+    },
+    {
+      "id" : 90,
+      "answer" : "YES"
+    },
+    {
+      "id" : 232,
+      "answer" : "YES"
+    },
+    {
+      "id" : 236,
+      "answer" : "YES"
+    },
+    {
+      "id" : 410,
+      "answer" : "YES"
+    },
+    {
+      "id" : 273,
+      "answer" : "NO"
+    },
+    {
+      "id" : 496,
+      "answer" : "NO"
+    },
+    {
+      "id" : 476,
+      "answer" : "YES"
+    },
+    {
+      "id" : 411,
+      "answer" : "YES"
+    },
+    {
+      "id" : 320,
+      "answer" : "NO"
+    },
+    {
+      "id" : 310,
+      "answer" : "YES"
+    },
+    {
+      "id" : 193,
+      "answer" : "YES"
+    },
+    {
+      "id" : 164,
+      "answer" : "YES"
+    },
+    {
+      "id" : 374,
+      "answer" : "YES"
+    },
+    {
+      "id" : 506,
+      "answer" : "NO"
+    },
+    {
+      "id" : 505,
+      "answer" : "NO"
+    },
+    {
+      "id" : 246,
+      "answer" : "YES"
+    },
+    {
+      "id" : 71,
+      "answer" : "NO"
+    },
+    {
+      "id" : 442,
+      "answer" : "YES"
+    },
+    {
+      "id" : 543,
+      "answer" : "YES"
+    },
+    {
+      "id" : 209,
+      "answer" : "NO"
+    },
+    {
+      "id" : 202,
+      "answer" : "NO"
+    },
+    {
+      "id" : 328,
+      "answer" : "YES"
+    },
+    {
+      "id" : 210,
+      "answer" : "NO"
+    },
+    {
+      "id" : 282,
+      "answer" : "YES"
+    },
+    {
+      "id" : 44,
+      "answer" : "NO"
+    },
+    {
+      "id" : 297,
+      "answer" : "NO"
+    },
+    {
+      "id" : 262,
+      "answer" : "NO"
+    },
+    {
+      "id" : 197,
+      "answer" : "YES"
+    },
+    {
+      "id" : 327,
+      "answer" : "YES"
+    },
+    {
+      "id" : 472,
+      "answer" : "YES"
+    },
+    {
+      "id" : 550,
+      "answer" : "NO"
+    },
+    {
+      "id" : 135,
+      "answer" : "NO"
+    },
+    {
+      "id" : 276,
+      "answer" : "YES"
+    },
+    {
+      "id" : 15,
+      "answer" : "YES"
+    },
+    {
+      "id" : 317,
+      "answer" : "YES"
+    },
+    {
+      "id" : 137,
+      "answer" : "YES"
+    },
+    {
+      "id" : 302,
+      "answer" : "NO"
+    },
+    {
+      "id" : 445,
+      "answer" : "YES"
+    },
+    {
+      "id" : 129,
+      "answer" : "NO"
+    },
+    {
+      "id" : 267,
+      "answer" : "NO"
+    },
+    {
+      "id" : 219,
+      "answer" : "NO"
+    },
+    {
+      "id" : 178,
+      "answer" : "NO"
+    },
+    {
+      "id" : 563,
+      "answer" : "YES"
+    },
+    {
+      "id" : 357,
+      "answer" : "NO"
+    },
+    {
+      "id" : 250,
+      "answer" : "YES"
+    },
+    {
+      "id" : 194,
+      "answer" : "NO"
+    },
+    {
+      "id" : 329,
+      "answer" : "YES"
+    },
+    {
+      "id" : 213,
+      "answer" : "YES"
+    },
+    {
+      "id" : 518,
+      "answer" : "NO"
+    },
+    {
+      "id" : 36,
+      "answer" : "YES"
+    },
+    {
+      "id" : 269,
+      "answer" : "NO"
+    },
+    {
+      "id" : 475,
+      "answer" : "YES"
+    },
+    {
+      "id" : 215,
+      "answer" : "YES"
+    },
+    {
+      "id" : 74,
+      "answer" : "NO"
+    },
+    {
+      "id" : 350,
+      "answer" : "YES"
+    },
+    {
+      "id" : 285,
+      "answer" : "NO"
+    },
+    {
+      "id" : 49,
+      "answer" : "YES"
+    },
+    {
+      "id" : 321,
+      "answer" : "NO"
+    },
+    {
+      "id" : 325,
+      "answer" : "YES"
+    },
+    {
+      "id" : 102,
+      "answer" : "YES"
+    },
+    {
+      "id" : 47,
+      "answer" : "YES"
+    },
+    {
+      "id" : 130,
+      "answer" : "YES"
+    },
+    {
+      "id" : 470,
+      "answer" : "NO"
+    },
+    {
+      "id" : 190,
+      "answer" : "YES"
+    },
+    {
+      "id" : 176,
+      "answer" : "YES"
+    },
+    {
+      "id" : 125,
+      "answer" : "YES"
+    },
+    {
+      "id" : 522,
+      "answer" : "YES"
+    },
+    {
+      "id" : 228,
+      "answer" : "YES"
+    },
+    {
+      "id" : 142,
+      "answer" : "NO"
+    },
+    {
+      "id" : 517,
+      "answer" : "YES"
+    },
+    {
+      "id" : 560,
+      "answer" : "YES"
+    },
+    {
+      "id" : 497,
+      "answer" : "YES"
+    },
+    {
+      "id" : 429,
+      "answer" : "NO"
+    },
+    {
+      "id" : 341,
+      "answer" : "NO"
+    },
+    {
+      "id" : 531,
+      "answer" : "NO"
+    },
+    {
+      "id" : 241,
+      "answer" : "YES"
+    },
+    {
+      "id" : 16,
+      "answer" : "NO"
+    },
+    {
+      "id" : 303,
+      "answer" : "YES"
+    },
+    {
+      "id" : 264,
+      "answer" : "NO"
+    },
+    {
+      "id" : 418,
+      "answer" : "YES"
+    },
+    {
+      "id" : 393,
+      "answer" : "YES"
+    },
+    {
+      "id" : 421,
+      "answer" : "YES"
+    },
+    {
+      "id" : 486,
+      "answer" : "YES"
+    },
+    {
+      "id" : 73,
+      "answer" : "YES"
+    },
+    {
+      "id" : 304,
+      "answer" : "NO"
+    },
+    {
+      "id" : 26,
+      "answer" : "YES"
+    },
+    {
+      "id" : 79,
+      "answer" : "YES"
+    },
+    {
+      "id" : 521,
+      "answer" : "YES"
+    },
+    {
+      "id" : 165,
+      "answer" : "NO"
+    },
+    {
+      "id" : 390,
+      "answer" : "NO"
+    },
+    {
+      "id" : 352,
+      "answer" : "YES"
+    },
+    {
+      "id" : 308,
+      "answer" : "YES"
+    },
+    {
+      "id" : 83,
+      "answer" : "YES"
+    },
+    {
+      "id" : 72,
+      "answer" : "NO"
+    },
+    {
+      "id" : 351,
+      "answer" : "NO"
+    },
+    {
+      "id" : 109,
+      "answer" : "YES"
+    },
+    {
+      "id" : 88,
+      "answer" : "YES"
+    },
+    {
+      "id" : 239,
+      "answer" : "NO"
+    },
+    {
+      "id" : 479,
+      "answer" : "NO"
+    },
+    {
+      "id" : 80,
+      "answer" : "YES"
+    },
+    {
+      "id" : 113,
+      "answer" : "NO"
+    },
+    {
+      "id" : 379,
+      "answer" : "NO"
+    },
+    {
+      "id" : 10,
+      "answer" : "NO"
+    },
+    {
+      "id" : 358,
+      "answer" : "NO"
+    },
+    {
+      "id" : 281,
+      "answer" : "YES"
+    },
+    {
+      "id" : 147,
+      "answer" : "YES"
+    },
+    {
+      "id" : 221,
+      "answer" : "NO"
+    },
+    {
+      "id" : 48,
+      "answer" : "YES"
+    },
+    {
+      "id" : 404,
+      "answer" : "YES"
+    },
+    {
+      "id" : 33,
+      "answer" : "YES"
+    },
+    {
+      "id" : 378,
+      "answer" : "NO"
+    },
+    {
+      "id" : 174,
+      "answer" : "NO"
+    },
+    {
+      "id" : 413,
+      "answer" : "YES"
+    },
+    {
+      "id" : 199,
+      "answer" : "YES"
+    },
+    {
+      "id" : 464,
+      "answer" : "YES"
+    },
+    {
+      "id" : 162,
+      "answer" : "NO"
+    },
+    {
+      "id" : 140,
+      "answer" : "YES"
+    },
+    {
+      "id" : 288,
+      "answer" : "NO"
+    },
+    {
+      "id" : 77,
+      "answer" : "NO"
+    },
+    {
+      "id" : 286,
+      "answer" : "NO"
+    },
+    {
+      "id" : 277,
+      "answer" : "YES"
+    },
+    {
+      "id" : 278,
+      "answer" : "NO"
+    },
+    {
+      "id" : 99,
+      "answer" : "YES"
+    },
+    {
+      "id" : 293,
+      "answer" : "YES"
+    },
+    {
+      "id" : 504,
+      "answer" : "YES"
+    },
+    {
+      "id" : 196,
+      "answer" : "YES"
+    },
+    {
+      "id" : 334,
+      "answer" : "YES"
+    },
+    {
+      "id" : 446,
+      "answer" : "YES"
+    },
+    {
+      "id" : 428,
+      "answer" : "NO"
+    },
+    {
+      "id" : 28,
+      "answer" : "YES"
+    },
+    {
+      "id" : 200,
+      "answer" : "YES"
+    },
+    {
+      "id" : 6,
+      "answer" : "NO"
+    },
+    {
+      "id" : 512,
+      "answer" : "YES"
+    },
+    {
+      "id" : 12,
+      "answer" : "NO"
+    },
+    {
+      "id" : 511,
+      "answer" : "YES"
+    },
+    {
+      "id" : 134,
+      "answer" : "YES"
+    },
+    {
+      "id" : 207,
+      "answer" : "YES"
+    },
+    {
+      "id" : 301,
+      "answer" : "YES"
+    },
+    {
+      "id" : 509,
+      "answer" : "NO"
+    },
+    {
+      "id" : 542,
+      "answer" : "YES"
+    },
+    {
+      "id" : 524,
+      "answer" : "YES"
+    },
+    {
+      "id" : 37,
+      "answer" : "YES"
+    },
+    {
+      "id" : 337,
+      "answer" : "YES"
+    },
+    {
+      "id" : 366,
+      "answer" : "YES"
+    },
+    {
+      "id" : 255,
+      "answer" : "YES"
+    },
+    {
+      "id" : 403,
+      "answer" : "NO"
+    },
+    {
+      "id" : 188,
+      "answer" : "NO"
+    },
+    {
+      "id" : 146,
+      "answer" : "YES"
+    },
+    {
+      "id" : 117,
+      "answer" : "NO"
+    },
+    {
+      "id" : 101,
+      "answer" : "NO"
+    },
+    {
+      "id" : 547,
+      "answer" : "YES"
+    },
+    {
+      "id" : 460,
+      "answer" : "YES"
+    },
+    {
+      "id" : 300,
+      "answer" : "NO"
+    },
+    {
+      "id" : 363,
+      "answer" : "NO"
+    },
+    {
+      "id" : 359,
+      "answer" : "YES"
+    },
+    {
+      "id" : 245,
+      "answer" : "YES"
+    },
+    {
+      "id" : 478,
+      "answer" : "NO"
+    },
+    {
+      "id" : 76,
+      "answer" : "YES"
+    },
+    {
+      "id" : 163,
+      "answer" : "YES"
+    },
+    {
+      "id" : 324,
+      "answer" : "NO"
+    },
+    {
+      "id" : 450,
+      "answer" : "YES"
+    },
+    {
+      "id" : 457,
+      "answer" : "NO"
+    },
+    {
+      "id" : 431,
+      "answer" : "NO"
+    },
+    {
+      "id" : 184,
+      "answer" : "YES"
+    },
+    {
+      "id" : 488,
+      "answer" : "YES"
+    },
+    {
+      "id" : 528,
+      "answer" : "NO"
+    },
+    {
+      "id" : 171,
+      "answer" : "YES"
+    },
+    {
+      "id" : 100,
+      "answer" : "YES"
+    },
+    {
+      "id" : 52,
+      "answer" : "NO"
+    },
+    {
+      "id" : 56,
+      "answer" : "NO"
+    },
+    {
+      "id" : 423,
+      "answer" : "YES"
+    },
+    {
+      "id" : 89,
+      "answer" : "YES"
+    },
+    {
+      "id" : 186,
+      "answer" : "NO"
+    },
+    {
+      "id" : 18,
+      "answer" : "NO"
+    },
+    {
+      "id" : 53,
+      "answer" : "NO"
+    },
+    {
+      "id" : 345,
+      "answer" : "YES"
+    },
+    {
+      "id" : 62,
+      "answer" : "NO"
+    },
+    {
+      "id" : 482,
+      "answer" : "NO"
+    },
+    {
+      "id" : 263,
+      "answer" : "YES"
+    },
+    {
+      "id" : 312,
+      "answer" : "NO"
+    },
+    {
+      "id" : 299,
+      "answer" : "YES"
+    },
+    {
+      "id" : 93,
+      "answer" : "YES"
+    },
+    {
+      "id" : 20,
+      "answer" : "YES"
+    },
+    {
+      "id" : 249,
+      "answer" : "YES"
+    },
+    {
+      "id" : 226,
+      "answer" : "YES"
+    },
+    {
+      "id" : 436,
+      "answer" : "YES"
+    },
+    {
+      "id" : 233,
+      "answer" : "NO"
+    },
+    {
+      "id" : 217,
+      "answer" : "YES"
+    },
+    {
+      "id" : 59,
+      "answer" : "YES"
+    },
+    {
+      "id" : 554,
+      "answer" : "NO"
+    },
+    {
+      "id" : 330,
+      "answer" : "YES"
+    },
+    {
+      "id" : 168,
+      "answer" : "YES"
+    },
+    {
+      "id" : 314,
+      "answer" : "YES"
+    },
+    {
+      "id" : 247,
+      "answer" : "YES"
+    },
+    {
+      "id" : 336,
+      "answer" : "NO"
+    },
+    {
+      "id" : 287,
+      "answer" : "NO"
+    },
+    {
+      "id" : 541,
+      "answer" : "NO"
+    },
+    {
+      "id" : 96,
+      "answer" : "YES"
+    },
+    {
+      "id" : 305,
+      "answer" : "YES"
+    },
+    {
+      "id" : 469,
+      "answer" : "YES"
+    },
+    {
+      "id" : 272,
+      "answer" : "NO"
+    },
+    {
+      "id" : 525,
+      "answer" : "YES"
+    },
+    {
+      "id" : 434,
+      "answer" : "YES"
+    },
+    {
+      "id" : 115,
+      "answer" : "YES"
+    },
+    {
+      "id" : 252,
+      "answer" : "NO"
+    },
+    {
+      "id" : 399,
+      "answer" : "YES"
+    },
+    {
+      "id" : 110,
+      "answer" : "YES"
+    },
+    {
+      "id" : 31,
+      "answer" : "NO"
+    },
+    {
+      "id" : 384,
+      "answer" : "YES"
+    },
+    {
+      "id" : 175,
+      "answer" : "NO"
+    },
+    {
+      "id" : 270,
+      "answer" : "NO"
+    },
+    {
+      "id" : 128,
+      "answer" : "YES"
+    },
+    {
+      "id" : 212,
+      "answer" : "YES"
+    },
+    {
+      "id" : 40,
+      "answer" : "YES"
+    },
+    {
+      "id" : 420,
+      "answer" : "YES"
+    },
+    {
+      "id" : 548,
+      "answer" : "NO"
+    },
+    {
+      "id" : 283,
+      "answer" : "YES"
+    },
+    {
+      "id" : 499,
+      "answer" : "YES"
+    },
+    {
+      "id" : 240,
+      "answer" : "YES"
+    },
+    {
+      "id" : 248,
+      "answer" : "NO"
+    },
+    {
+      "id" : 192,
+      "answer" : "YES"
+    },
+    {
+      "id" : 122,
+      "answer" : "NO"
+    },
+    {
+      "id" : 467,
+      "answer" : "NO"
+    },
+    {
+      "id" : 60,
+      "answer" : "NO"
+    },
+    {
+      "id" : 559,
+      "answer" : "NO"
+    },
+    {
+      "id" : 318,
+      "answer" : "NO"
+    },
+    {
+      "id" : 203,
+      "answer" : "NO"
+    },
+    {
+      "id" : 1,
+      "answer" : "NO"
+    },
+    {
+      "id" : 439,
+      "answer" : "YES"
+    },
+    {
+      "id" : 75,
+      "answer" : "YES"
+    },
+    {
+      "id" : 544,
+      "answer" : "YES"
+    },
+    {
+      "id" : 139,
+      "answer" : "NO"
+    },
+    {
+      "id" : 507,
+      "answer" : "YES"
+    },
+    {
+      "id" : 315,
+      "answer" : "YES"
+    },
+    {
+      "id" : 395,
+      "answer" : "NO"
+    },
+    {
+      "id" : 112,
+      "answer" : "YES"
+    },
+    {
+      "id" : 465,
+      "answer" : "NO"
+    },
+    {
+      "id" : 126,
+      "answer" : "NO"
+    },
+    {
+      "id" : 187,
+      "answer" : "YES"
+    },
+    {
+      "id" : 244,
+      "answer" : "YES"
+    }
+  ],
+  "name" : "Test Subject 302",
+  "version" : "1.0"
+}

@@ -1,0 +1,37 @@
+{
+  "gender" : "male",
+  "ageGroup" : "adult",
+  "date" : "30-12-2016",
+  "answers" : [
+    {
+      "id" : 2,
+      "answer" : "NO"
+    },
+    {
+      "id" : 4,
+      "answer" : "YES"
+    },
+    {
+      "id" : 5,
+      "answer" : "NO"
+    },
+    {
+      "id" : 6,
+      "answer" : "YES"
+    },
+    {
+      "id" : 7,
+      "answer" : "NO"
+    },
+    {
+      "id" : 3,
+      "answer" : "YES"
+    },
+    {
+      "id" : 1,
+      "answer" : "YES"
+    }
+  ],
+  "name" : "Test Subject 387",
+  "version" : "1.0"
+}
