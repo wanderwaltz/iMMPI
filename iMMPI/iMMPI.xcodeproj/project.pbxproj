@@ -974,6 +974,7 @@
 		44673FDA1E2526DC001758C0 /* Test Subject 00451.json in Resources */ = {isa = PBXBuildFile; fileRef = 44673E131E2526DB001758C0 /* Test Subject 00451.json */; };
 		44673FDB1E2526DC001758C0 /* Test Subject 00452.json in Resources */ = {isa = PBXBuildFile; fileRef = 44673E141E2526DB001758C0 /* Test Subject 00452.json */; };
 		44673FDC1E2526DC001758C0 /* Test Subject 00453.json in Resources */ = {isa = PBXBuildFile; fileRef = 44673E151E2526DB001758C0 /* Test Subject 00453.json */; };
+		44DF5B4A1E25307F00C43F16 /* TestAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF5B491E25307F00C43F16 /* TestAnswersViewController.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -994,7 +995,6 @@
 		5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */; };
 		5DA5C9F1163B018D00CF1601 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5C9F0163B018D00CF1601 /* main.m */; };
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
-		5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */; };
 		5DBD5659169714EE00728BB4 /* TestAnswersInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD5658169714EE00728BB4 /* TestAnswersInputViewController.m */; };
 		5DBD568D1697274700728BB4 /* TestAnswersTableViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD568C1697274700728BB4 /* TestAnswersTableViewControllerBase.m */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
@@ -2008,6 +2008,7 @@
 		44673E131E2526DB001758C0 /* Test Subject 00451.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00451.json"; sourceTree = "<group>"; };
 		44673E141E2526DB001758C0 /* Test Subject 00452.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00452.json"; sourceTree = "<group>"; };
 		44673E151E2526DB001758C0 /* Test Subject 00453.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00453.json"; sourceTree = "<group>"; };
+		44DF5B491E25307F00C43F16 /* TestAnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersViewController.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -2048,8 +2049,6 @@
 		5DA5C9F0163B018D00CF1601 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DA5C9F2163B018D00CF1601 /* iMMPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Prefix.pch"; sourceTree = "<group>"; };
 		5DA5C9FD163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5DA5CA14163B080B00CF1601 /* TestAnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersViewController.h; sourceTree = "<group>"; };
-		5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersViewController.m; sourceTree = "<group>"; };
 		5DBD5657169714EE00728BB4 /* TestAnswersInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersInputViewController.h; sourceTree = "<group>"; };
 		5DBD5658169714EE00728BB4 /* TestAnswersInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersInputViewController.m; sourceTree = "<group>"; };
 		5DBD568B1697274700728BB4 /* TestAnswersTableViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersTableViewControllerBase.h; sourceTree = "<group>"; };
@@ -3423,15 +3422,6 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		5DA5CA0F163B04F200CF1601 /* Test Answers View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5DA5CA14163B080B00CF1601 /* TestAnswersViewController.h */,
-				5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */,
-			);
-			name = "Test Answers View Controller";
-			sourceTree = "<group>";
-		};
 		5DA5CA10163B050700CF1601 /* Analysis View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -3458,7 +3448,7 @@
 			children = (
 				5DBD568A1697273200728BB4 /* Test Answers View Controller Base */,
 				5DBD5655169714D100728BB4 /* Test Answers Input View Controller */,
-				5DA5CA0F163B04F200CF1601 /* Test Answers View Controller */,
+				44DF5B491E25307F00C43F16 /* TestAnswersViewController.swift */,
 			);
 			name = "Test Answers";
 			sourceTree = "<group>";
@@ -4759,10 +4749,10 @@
 				44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */,
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
 				442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */,
-				5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */,
 				5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */,
 				44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
+				44DF5B4A1E25307F00C43F16 /* TestAnswersViewController.swift in Sources */,
 				44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */,
 				4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */,
 				44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */,
