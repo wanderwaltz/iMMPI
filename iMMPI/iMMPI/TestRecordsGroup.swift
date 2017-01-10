@@ -55,7 +55,7 @@ extension TestRecordsGroup {
 
 func makeTestRecordGroups(from records: [TestRecordProtocol]) -> Grouping<TestRecordsGroup> {
     let groups = records.flatMap({ TestRecordsGroup(single: $0) })
-    return Grouping(items: groups, areInIncreasingOrder: { $0.record.date < $1.record.date })
+    return Grouping(items: groups, areInIncreasingOrder: { $0.record.date > $1.record.date })
 }
 
 
@@ -64,7 +64,7 @@ func makeTestRecordGroups(from grouping: Grouping<TestRecordProtocol>) -> Groupi
         TestRecordsGroup(
             Grouping(
                 items: section.items,
-                areInIncreasingOrder: { $0.date < $1.date }
+                areInIncreasingOrder: { $0.date > $1.date }
             )
         )
     }).groupAlphabetically(by: { $0.personName })
