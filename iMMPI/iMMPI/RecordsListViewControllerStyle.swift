@@ -29,6 +29,7 @@ extension RecordsListViewControllerStyle {
         updateCell: { cell, item in
             cell.textLabel?.text = item.record.personName
             cell.detailTextLabel?.text = item.group.isEmpty ? "" : "\(item.group.allItems.count)"
+            cell.accessoryType = .detailDisclosureButton
     },
         makeNewRecord: {
             return TestRecord()
@@ -43,6 +44,7 @@ extension RecordsListViewControllerStyle {
             updateCell: { cell, item in
                 cell.textLabel?.text = nameFormatter.string(for: item.record.personName)
                 cell.detailTextLabel?.text = dateFormatter.string(from: item.record.date)
+                cell.accessoryType = .detailDisclosureButton
         },
             makeNewRecord: {
                 let clone = record.makeCopy()

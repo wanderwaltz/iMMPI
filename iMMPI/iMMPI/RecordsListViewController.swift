@@ -30,8 +30,25 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
     }
 
 
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+        setup()
+    }
+
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setup()
+    }
+
+
+    fileprivate func setup() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
 
         NotificationCenter.default.addObserver(
@@ -85,10 +102,6 @@ extension RecordsListViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if navigationController?.viewControllers.first != self {
-            navigationItem.leftBarButtonItem = nil
-        }
-
         becomeFirstResponder()
     }
 
@@ -108,7 +121,7 @@ extension RecordsListViewController {
 
 
 extension RecordsListViewController {
-    @objc @IBAction fileprivate func addRecordButtonAction(_ sender: Any?) {
+    @IBAction func addRecordButtonAction(_ sender: Any?) {
         try? router?.edit(style.makeNewRecord(), sender: self)
     }
 }
@@ -211,7 +224,7 @@ extension RecordsListViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kGroupCellIdentifier)
-            ?? UITableViewCell(style: .default, reuseIdentifier: kGroupCellIdentifier)
+            ?? UITableViewCell(style: .value1, reuseIdentifier: kGroupCellIdentifier)
 
         if let item = groups.item(at: indexPath) {
             style.update(cell, with: item)

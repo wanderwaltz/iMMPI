@@ -1,19 +1,18 @@
 import UIKit
 
 final class MMPIRouter {
-    enum Error: Swift.Error {
-        case failedInstantiatingViewController
-    }
-
-    let storyboard: UIStoryboard
     let storage: TestRecordStorage
     let trashStorage: TestRecordStorage
 
-    init(storyboard: UIStoryboard, storage: TestRecordStorage, trashStorage: TestRecordStorage) {
-        self.storyboard = storyboard
+    let viewControllersFactory: RoutedViewControllersFactory
+
+    init(factory: ViewControllersFactory, storage: TestRecordStorage, trashStorage: TestRecordStorage) {
+        self.viewControllersFactory = RoutedViewControllersFactory(base: factory)
         self.storage = storage
         self.trashStorage = trashStorage
         self.editingDelegate = EditingDelegate(storage: storage)
+
+        viewControllersFactory.router = self
     }
 
     fileprivate let editingDelegate: EditingDelegate
@@ -21,13 +20,35 @@ final class MMPIRouter {
 
 
 extension MMPIRouter: Router {
-    func displayAllRecords(sender: UIViewController) throws {
-        try displayRecordsList(with: storage, sender: sender)
+    func displayAllRecords(sender: UIViewController) {
+        let controller = makeRecordsList(with: storage)
+
+        controller.title = Strings.records
+        attachAddRecordButton(to: controller)
+
+        if let navigationController = sender as? UINavigationController {
+            let trashButton = UIBarButtonItem(
+                barButtonSystemItem: .trash,
+                target: nil,
+                action: #selector(AppDelegate.trashButtonAction(_:))
+            )
+
+            controller.navigationItem.leftBarButtonItem = trashButton
+            navigationController.viewControllers = [controller]
+        }
+        else {
+            sender.show(controller, sender: nil)
+        }
     }
 
 
-    func displayTrash(sender: UIViewController) throws {
-        try displayRecordsList(with: trashStorage, sender: sender)
+    func displayTrash(sender: UIViewController) {
+        let controller = makeRecordsList(with: trashStorage)
+
+        controller.title = Strings.trash
+        controller.grouping = .flat
+
+        sender.show(controller, sender: nil)
     }
 
 
@@ -36,15 +57,13 @@ extension MMPIRouter: Router {
             try displayDetails(for: group.record, sender: sender)
         }
         else {
-            try expand(group, sender: sender)
+            expand(group, sender: sender)
         }
     }
 
 
     func edit(_ record: TestRecordProtocol, sender: UIViewController) throws {
-        guard let controller = makeEditRecordViewController() else {
-            throw Error.failedInstantiatingViewController
-        }
+        let controller = try viewControllersFactory.makeEditRecordViewController()
 
         controller.setTestRecordToEdit(record)
         controller.setTitleForEditingTestRecord(Strings.editRecord)
@@ -57,9 +76,7 @@ extension MMPIRouter: Router {
 
 
     func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws {
-        guard let controller = makeAnswersInputViewController() else {
-            throw Error.failedInstantiatingViewController
-        }
+        let controller = try viewControllersFactory.makeAnswersInputViewController()
 
         controller.setRecordToEditAnswers(record)
         controller.setStorageToEditAnswers(storage)
@@ -71,27 +88,33 @@ extension MMPIRouter: Router {
 
 
 extension MMPIRouter {
-    func displayRecordsList(with storage: TestRecordStorage, sender: UIViewController) throws {
-        guard let controller = makeRecordsListViewController() else {
-            throw Error.failedInstantiatingViewController
-        }
-
-        controller.router = self
-        controller.viewModel = storage.makeViewModel()
-        controller.title = Strings.trash
-
-        sender.show(controller, sender: nil)
+    fileprivate func attachAddRecordButton(to controller: UIViewController) {
+        let button = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: nil,
+            action: #selector(RecordsListViewController.addRecordButtonAction(_:))
+        )
+        
+        controller.navigationItem.rightBarButtonItem = button
     }
 
-    fileprivate func expand(_ group: TestRecordsGroup, sender: UIViewController) throws {
-        guard let controller = makeRecordsListViewController() else {
-            throw Error.failedInstantiatingViewController
-        }
+
+    fileprivate func makeRecordsList(with storage: TestRecordStorage) -> RecordsListViewController {
+        let controller = viewControllersFactory.makeRecordsListViewController()
+        controller.viewModel = storage.makeViewModel()
+
+        return controller
+    }
+
+
+    fileprivate func expand(_ group: TestRecordsGroup, sender: UIViewController) {
+        let controller = viewControllersFactory.makeRecordsListViewController()
 
         controller.title = group.personName
         controller.style = .nested(basedOn: group.record)
         controller.grouping = .flat
-        controller.router = self
+
+        attachAddRecordButton(to: controller)
 
         controller.viewModel = storage.makeViewModel(includeRecord: { record in
             if record.personName.isEqual(group.personName) {
@@ -122,9 +145,7 @@ extension MMPIRouter {
 
 
     fileprivate func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController) throws {
-        guard let controller = makeAnalysisViewController() else {
-            throw Error.failedInstantiatingViewController
-        }
+        let controller = try viewControllersFactory.makeAnalysisViewController()
 
         controller.setRecordForAnalysis(record)
         controller.setStorageForAnalysis(storage)
@@ -132,42 +153,4 @@ extension MMPIRouter {
         let navigationController = UINavigationController(rootViewController: controller)
         sender.showDetailViewController(navigationController, sender: record)
     }
-}
-
-
-extension MMPIRouter {
-    fileprivate func makeRecordsListViewController() -> RecordsListViewController? {
-        return storyboard.instantiateViewController(
-            withIdentifier: ViewController.testRecords
-            ) as? RecordsListViewController
-    }
-
-
-    fileprivate func makeEditRecordViewController() -> EditTestRecordViewController? {
-        return storyboard.instantiateViewController(
-            withIdentifier: ViewController.editRecord
-            ) as? EditTestRecordViewController
-    }
-
-
-    fileprivate func makeAnalysisViewController() -> AnalysisViewController? {
-        return storyboard.instantiateViewController(
-            withIdentifier: ViewController.analysis
-            ) as? AnalysisViewController
-    }
-
-
-    fileprivate func makeAnswersInputViewController() -> TestAnswersInputViewController? {
-        return storyboard.instantiateViewController(
-            withIdentifier: ViewController.answersInput
-            ) as? TestAnswersInputViewController
-    }
-}
-
-
-fileprivate enum ViewController {
-    static let testRecords = "com.immpi.viewControllers.testRecords"
-    static let editRecord = "com.immpi.viewControllers.editRecord"
-    static let answersInput = "com.immpi.viewControllers.answersInput"
-    static let analysis = "com.immpi.viewControllers.analysis"
 }

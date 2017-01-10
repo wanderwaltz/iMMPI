@@ -57,6 +57,9 @@
 		44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */; };
 		44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */; };
 		44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */; };
+		44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */; };
+		44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */; };
+		44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -179,6 +182,9 @@
 		44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMPIRouter.swift; sourceTree = "<group>"; };
 		44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+EditingDelegate.swift"; sourceTree = "<group>"; };
 		44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerGrouping.swift; sourceTree = "<group>"; };
+		44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
+		44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMPIViewControllersFactory.swift; sourceTree = "<group>"; };
+		44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutedViewControllersFactory.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -397,11 +403,22 @@
 		44673C1A1E23C9BD001758C0 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				44673C321E24CF91001758C0 /* View Controllers Factory */,
 				44673C1B1E23C9CA001758C0 /* Router.swift */,
 				44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */,
 				44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */,
 			);
 			name = Router;
+			sourceTree = "<group>";
+		};
+		44673C321E24CF91001758C0 /* View Controllers Factory */ = {
+			isa = PBXGroup;
+			children = (
+				44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */,
+				44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */,
+				44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */,
+			);
+			name = "View Controllers Factory";
 			sourceTree = "<group>";
 		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
@@ -1074,6 +1091,7 @@
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
 				44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */,
 				4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */,
+				44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */,
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
 				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
 				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
@@ -1115,6 +1133,7 @@
 				5DBD568D1697274700728BB4 /* TestAnswersTableViewControllerBase.m in Sources */,
 				5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */,
 				442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */,
+				44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */,
 				5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */,
 				7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */,
 				44673C191E23C1C0001758C0 /* SectionIndex.swift in Sources */,
@@ -1127,6 +1146,7 @@
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
 				5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */,
 				442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */,
+				44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */,
 				5D74049416FEC107001747A1 /* LabelCollectionViewCell.m in Sources */,
 				5D74049816FEC40F001747A1 /* LabelCollectionViewHeader.m in Sources */,
 				442CE1D51E237AB5006C34A6 /* SectionDescriptor.swift in Sources */,

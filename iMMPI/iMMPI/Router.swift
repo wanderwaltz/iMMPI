@@ -1,8 +1,8 @@
 import UIKit
 
-protocol Router {
-    func displayAllRecords(sender: UIViewController) throws
-    func displayTrash(sender: UIViewController) throws
+protocol Router: class {
+    func displayAllRecords(sender: UIViewController)
+    func displayTrash(sender: UIViewController)
 
     func displayDetails(for group: TestRecordsGroup, sender: UIViewController) throws
 

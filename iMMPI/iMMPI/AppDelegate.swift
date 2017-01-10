@@ -12,8 +12,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
 
         storage.trashStorage = trashStorage
+
+        let viewControllersFactory = MMPIViewControllersFactory(storyboard: window!.rootViewController!.storyboard!)
+
         router = MMPIRouter(
-            storyboard: window!.rootViewController!.storyboard!,
+            factory: viewControllersFactory,
             storage: storage,
             trashStorage: trashStorage
         )
@@ -24,10 +27,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
             self.splitViewController(splitViewController, willChangeTo: splitViewController.displayMode)
 
-            if let recordsList = SelfOrFirstChild(splitViewController.viewControllers.first)
-                as? RecordsListViewController {
-                recordsList.router = router
-                recordsList.viewModel = storage.makeViewModel()
+            if let first = splitViewController.viewControllers.first {
+                router?.displayAllRecords(sender: first)
             }
         }
 
@@ -66,11 +67,11 @@ extension AppDelegate: UISplitViewControllerDelegate {
 
 
 extension AppDelegate {
-    @objc @IBAction fileprivate func trashButtonAction(_ sender: Any?) {
+    @IBAction func trashButtonAction(_ sender: Any?) {
         guard let root = (window?.rootViewController as? UISplitViewController)?.viewControllers.first else {
             return
         }
 
-        try? router?.displayTrash(sender: root)
+        router?.displayTrash(sender: root)
     }
 }
