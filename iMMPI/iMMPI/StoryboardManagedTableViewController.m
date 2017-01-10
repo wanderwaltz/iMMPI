@@ -18,15 +18,25 @@
 
 @implementation StoryboardManagedTableViewController
 
+- (id<SegueHandler>)segueHandler
+{
+    if (_segueHandler == nil) {
+        _segueHandler = [[MMPISegueHandler alloc] init];
+    }
+
+    return _segueHandler;
+}
+
+
 #pragma mark -
 #pragma mark navigation
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue
                   sender: (id) sender
 {
-    if ([_segueHandler canHandleSegue: segue sender: sender])
+    if ([self.segueHandler canHandleSegue: segue sender: sender])
     {
-        [_segueHandler handleSegue: segue sender: sender];
+        [self.segueHandler handleSegue: segue sender: sender];
     }
 }
 
