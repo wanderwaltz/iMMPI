@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#import "AppDelegate.h"
+#import "iMMPI-Swift.h"
 
 int main(int argc, char *argv[])
 {

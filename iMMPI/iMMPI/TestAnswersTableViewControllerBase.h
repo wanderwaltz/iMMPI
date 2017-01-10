@@ -14,6 +14,9 @@
 #pragma mark -
 #pragma mark TestAnswersTableViewControllerBase interface
 
+@protocol QuestionnaireProtocol;
+@protocol StatementProtocol;
+
 /*! A base class for presenting and editing TestRecordProtocol record answers in a UITableView-driven UI.
  
  This class uses StatementTableViewCell cells to display the statements of the questionnaire. The UITableViewDataSource methods are implemented to display the questionnaire contents in a single section list.

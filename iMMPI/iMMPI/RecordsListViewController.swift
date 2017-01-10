@@ -1,214 +1,172 @@
 import UIKit
 
-final class RecordsListViewController: StoryboardManagedTableViewController {
-    var storage: TestRecordStorage?
-    var model: MutableTableViewModel?
+final class RecordsListViewController: UITableViewController, UsingRouting {
+    var style: RecordsListViewControllerStyle = .root
 
-    fileprivate let dateFormatter: DateFormatter = .medium
-    fileprivate let nameFormatter: Formatter = AbbreviatedNameFormatter()
+    var grouping: RecordsListViewControllerGrouping = .alphabetical {
+        didSet {
+            if isViewLoaded {
+                viewModel?.setNeedsUpdate()
+            }
+        }
+    }
+
+    var searchController = UISearchController(searchResultsController: nil)
+
+    var viewModel: ListViewModel<TestRecordProtocol>? {
+        willSet {
+            viewModel?.onDidUpdate = Constant.void()
+        }
+
+        didSet {
+            viewModel?.onDidUpdate = { [weak self] records in
+                self?.records = records
+            }
+
+            if isViewLoaded {
+                viewModel?.setNeedsUpdate()
+            }
+        }
+    }
+
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleDidEditRecordNotification(_:)),
+            name: .didEditRecord,
+            object: nil
+        )
+
+        searchController.searchResultsUpdater = self
+    }
+
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+
+    fileprivate var records: [TestRecordProtocol] = [] {
+        didSet {
+            groups = grouping.group(records.filter(recordsFilter))
+        }
+    }
+
+
+    fileprivate var recordsFilter: (TestRecordProtocol) -> Bool = Constant.bool(true) {
+        didSet {
+            groups = grouping.group(records.filter(recordsFilter))
+        }
+    }
+
+
+    fileprivate var groups: Grouping<TestRecordsGroup> = .empty {
+        didSet {
+            reloadData()
+        }
+    }
+
+
+    fileprivate var index: SectionIndex?
 }
-
 
 
 extension RecordsListViewController {
-    fileprivate func delete(_ record: TestRecordProtocol, at indexPath: IndexPath) -> Bool {
-        storage?.remove(record)
-        return model?.remove(record) ?? false
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel?.setNeedsUpdate()
+        tableView.tableHeaderView = searchController.searchBar
+    }
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if navigationController?.viewControllers.first != self {
+            navigationItem.leftBarButtonItem = nil
+        }
+
+        becomeFirstResponder()
+    }
+
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resignFirstResponder()
     }
 }
 
 
-
-// MARK: - SegueSourceEditAnswers
-extension RecordsListViewController: SegueSourceEditAnswers {
-    func testRecordToEditAnswers(with sender: Any?) -> TestRecordProtocol? {
-        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
-            return nil
-        }
-
-        return model?.object(at: indexPath) as? TestRecordProtocol
-    }
-
-
-    func storageToEditAnswers(with sender: Any?) -> TestRecordStorage? {
-        return storage
-    }
-}
-
-
-
-// MARK: - SegueSourceAnalyzeRecord
-extension RecordsListViewController: SegueSourceAnalyzeRecord {
-    func recordForAnalysis(with sender: Any?) -> TestRecordProtocol? {
-        // Essentialy we can open the analyzer screen only in the
-        // same circumstances as if we were editing answers for
-        // a certain record - when the corresponding records group
-        // contains a single record. So we return the value of an
-        // existing method to avoid duplication of code
-        return testRecordToEditAnswers(with: sender)
-    }
-
-
-    func storageForAnalysis(with sender: Any?) -> TestRecordStorage? {
-        return storage
-    }
-}
-
-
-
-// MARK: - SegueSourceEditRecord
-extension RecordsListViewController: SegueSourceEditRecord {
-    func titleForEditing(_ record: TestRecordProtocol, with sender: Any?) -> String {
-        if sender is UITableViewCell {
-            return Strings.editRecord
-        }
-        else {
-            return Strings.newRecord
-        }
-    }
-
-
-    public func testRecordToEdit(with sender: Any?) -> TestRecordProtocol? {
-        if sender is UITableViewCell {
-            return testRecordToEditAnswers(with: sender)
-        }
-        else {
-            let recordToEdit = (model?.first as? TestRecordProtocol)?.makeCopy() ?? TestRecord()
-            recordToEdit.date = Date()
-
-            return recordToEdit
-        }
-    }
-
-    public func delegateForEditingTestRecord(with sender: Any?) -> EditTestRecordViewControllerDelegate {
-        return self
-    }
-}
-
-
-
-// MARK: - SegueDestinationListRecords
-extension RecordsListViewController: SegueDestinationListRecords {
-    func setModelForListRecords(_ model: MutableTableViewModel) {
-        self.model = model
-    }
-
-
-    func setStorageForListRecords(_ storage: TestRecordStorage) {
-        self.storage = storage
-    }
-
-
-    func setTitleForListRecords(_ title: String) {
-        self.title = title
-    }
-
-
-    func setSelectedTestRecord(_ record: TestRecordProtocol?) {
-        guard let record = record, let indexPath = model?.indexPath(for: record) else {
-            return
-        }
-
-        // For some reason row cannot be selected without dispatch_async here
-        // even though 'Selection: clear on appearance' is set to NO in the storyboard
-        DispatchQueue.main.async {
-            self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-        }
-    }
-}
-
-
-
-// MARK: - EditTestRecordViewControllerDelegate
-extension RecordsListViewController: EditTestRecordViewControllerDelegate {
-    func editTestRecordViewController(_ controller: EditTestRecordViewController,
-                                      didFinishEditing record: TestRecordProtocol?) {
-        dismiss(animated: true, completion: nil)
-
-        if let record = record {
-            guard let storage = storage else {
-                preconditionFailure()
-            }
-
-            if storage.contains(record) {
-                model?.update(record)
-                storage.update(record)
-            }
-            else {
-                model?.addNewObject(record)
-                storage.add(record)
-            }
-
-            tableView.reloadData()
-            performSegue(withIdentifier: kSegueIDBlankDetail, sender: self)
-        }
-    }
-}
-
-
-
-// MARK: - UITableViewDataSource
 extension RecordsListViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return Int(model?.numberOfSections() ?? 0)
-    }
-
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(model?.numberOfRows(inSection: UInt(section)) ?? 0)
-    }
-
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kRecordCellIdentifier) ??
-            UITableViewCell(style: .default, reuseIdentifier: kRecordCellIdentifier)
-
-        if let record = model?.object(at: indexPath) as? TestRecordProtocol {
-            cell.textLabel?.text = nameFormatter.string(for: record.personName)
-            cell.detailTextLabel?.text = dateFormatter.string(from: record.date)
-        }
-
-        return cell
-    }
-
-
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    override var canBecomeFirstResponder: Bool {
         return true
     }
+}
 
 
-    override func tableView(_ tableView: UITableView,
-                            commit editingStyle: UITableViewCellEditingStyle,
-                            forRowAt indexPath: IndexPath) {
-        guard let record = model?.object(at: indexPath) as? TestRecordProtocol else {
-            return
-        }
-
-        if delete(record, at: indexPath) {
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
+extension RecordsListViewController {
+    @objc @IBAction fileprivate func addRecordButtonAction(_ sender: Any?) {
+        try? router?.edit(style.makeNewRecord(), sender: self)
     }
 }
 
+
+extension RecordsListViewController {
+    fileprivate func reloadData() {
+        if (viewModel?.shouldProvideIndex ?? false) && groups.sections.count > 1 {
+            index = groups.makeIndex()
+        }
+        else {
+            index = nil
+        }
+
+        tableView.reloadData()
+    }
+
+
+    @objc fileprivate func handleDidEditRecordNotification(_ notification: Notification) {
+        assert(Thread.isMainThread)
+        guard let record = notification.object as? TestRecordProtocol else {
+            return
+        }
+
+        viewModel?.setNeedsUpdate(completion: { _ in
+            if let indexPath = self.groups.indexPathOfItem(matching: { $0.personName == record.personName }) {
+                self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            }
+        })
+
+        try? router?.displayAnswersInput(for: record, sender: self)
+    }
+}
 
 
 // MARK: - UITableViewDelegate
 extension RecordsListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let record = model?.object(at: indexPath) as? TestRecordProtocol else {
+        guard let item = groups.item(at: indexPath) else {
             return
         }
 
-        let sender = tableView.cellForRow(at: indexPath)
+        try? router?.displayDetails(for: item, sender: self)
+    }
 
-        // If already answered the test, go straight to analyzer
-        if record.testAnswers.allStatementsAnswered {
-            performSegue(withIdentifier: kSegueIDAnalyzer, sender: sender)
+
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        guard let item = groups.item(at: indexPath) else {
+            return
         }
-        // Else we have to input all answers first
-        else {
-            performSegue(withIdentifier: kSegueIDAnswersInput, sender: sender)
-        }
+
+        try? router?.edit(item.record, sender: self)
+    }
+
+
+    override func tableView(_ tableView: UITableView,
+                            titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return Strings.delete
     }
 
 
@@ -219,10 +177,96 @@ extension RecordsListViewController {
 
 
     override func tableView(_ tableView: UITableView,
-                            titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return Strings.delete
+                            commit editingStyle: UITableViewCellEditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        guard let item = groups.item(at: indexPath) else {
+            return
+        }
+
+        for record in item.allRecords() {
+            viewModel?.delete(record)
+        }
+
+        viewModel?.setNeedsUpdate()
     }
 }
 
 
-fileprivate let kRecordCellIdentifier = "com.immpi.cells.record"
+// MARK: - UITableViewDataSource
+extension RecordsListViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return groups.numberOfSections
+    }
+
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groups.numberOfItems(inSection: section)
+    }
+
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return groups.title(forSection: section)
+    }
+
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kGroupCellIdentifier)
+            ?? UITableViewCell(style: .default, reuseIdentifier: kGroupCellIdentifier)
+
+        if let item = groups.item(at: indexPath) {
+            style.update(cell, with: item)
+        }
+
+        return cell
+    }
+
+
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return index?.indexTitles
+    }
+
+
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return self.index?.section(forIndexTitle: title) ?? 0
+    }
+}
+
+
+extension RecordsListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+
+        if text.characters.count > 2 {
+            let components = text.lowercased()
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+                .components(separatedBy: .whitespacesAndNewlines)
+
+            recordsFilter = { record in
+                let personName = record.personName.lowercased()
+
+                for searchTerm in components {
+                    if false == searchTerm.isEmpty && false == personName.contains(searchTerm) {
+                        return false
+                    }
+                }
+
+                return true
+            }
+        }
+        else {
+            recordsFilter = Constant.bool(true)
+        }
+    }
+}
+
+
+extension RecordsListViewController: UISearchControllerDelegate {
+    func didDismissSearchController(_ searchController: UISearchController) {
+        recordsFilter = Constant.bool(true)
+    }
+}
+
+
+fileprivate let kGroupCellIdentifier = "com.immpi.cells.personsGroup"

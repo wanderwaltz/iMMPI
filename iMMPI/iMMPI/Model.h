@@ -42,7 +42,6 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 #import "AnalyzerGroup.h"
 #import "AnalyzerProtocol.h"
 
-#import "MutableTableViewModel.h"
 #import "TestRecordStorageProtocol.h"
 
 #pragma mark -
@@ -53,8 +52,5 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 #import "JSONTestRecordSerialization.h"
 
 #import "JSONTestRecordsStorage.h"
-
-#import "TestRecordModelByDate.h"
-#import "TestRecordModelGroupedByName.h"
 
 #endif

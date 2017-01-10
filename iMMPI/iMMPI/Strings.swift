@@ -4,6 +4,9 @@ enum Strings {
     static let newRecord = NSLocalizedString("Новая запись", comment: "Заголовок экрана создания записи")
     static let editRecord = NSLocalizedString("Редактировать запись", comment: "Заголовок экрана редактирования записи")
     static let selectDate = NSLocalizedString("Выберите дату", comment: "Заголовок экрана выбора даты")
+    static let trash = NSLocalizedString("Корзина", comment: "Заголовок экрана корзины")
+
+    static let records = NSLocalizedString("Записи", comment: "Кнопка перехода ко всем записям")
 
     static let delete = NSLocalizedString("Удалить", comment: "Кнопка удаления")
 

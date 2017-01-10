@@ -10,69 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Все записи-->
-        <scene sceneID="CCt-C6-Jur">
-            <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="zGB-ra-p1M" customClass="RecordsListViewController" customModule="iMMPI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5VU-dV-5wm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.record" textLabel="GOF-40-pqb" detailTextLabel="KZo-xJ-oe5" rowHeight="44" style="IBUITableViewCellStyleValue1" id="WFc-UM-AKy">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WFc-UM-AKy" id="zzr-5D-MoC">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Иванов Иван Иванович" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GOF-40-pqb">
-                                            <rect key="frame" x="15" y="12" width="199.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="21.12.2012" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KZo-xJ-oe5">
-                                            <rect key="frame" x="220.5" y="12" width="32.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editRecord" trigger="accessoryAction" modalPresentationStyle="formSheet" id="V8Q-xd-vbY"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="zGB-ra-p1M" id="S3p-jT-wus"/>
-                            <outlet property="delegate" destination="zGB-ra-p1M" id="DYJ-1Q-EZK"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Все записи" id="gtE-pR-cVv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oJO-KV-quv">
-                            <connections>
-                                <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.addRecord" modalPresentationStyle="formSheet" id="pzp-1q-KmK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="LqN-J3-mFC" kind="replace" identifier="com.immpi.segue.answersInput" splitViewControllerTargetIndex="1" id="wQm-8j-8wQ"/>
-                        <segue destination="uVX-dK-n6S" kind="replace" identifier="com.immpi.segue.blankDetail" splitViewControllerTargetIndex="1" id="B1l-8X-pqZ"/>
-                        <segue destination="Vda-1E-x1W" kind="replace" identifier="com.immpi.segue.analyzer" splitViewControllerTargetIndex="1" id="K8u-i7-vef"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="83j-qF-MIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="37" y="1292"/>
-        </scene>
         <!--Новая запись-->
         <scene sceneID="cc3-9u-E1o">
             <objects>
-                <tableViewController modalPresentationStyle="formSheet" id="Pb1-6N-Afb" customClass="EditTestRecordViewController" customModule="iMMPI" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="com.immpi.viewControllers.editRecord" modalPresentationStyle="formSheet" id="Pb1-6N-Afb" customClass="EditTestRecordViewController" customModule="iMMPI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Sq6-bx-XkD">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="35" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9bC-p2-ocw" id="UYE-5G-gEF">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ФИО" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIw-Eq-pRb">
@@ -124,7 +65,7 @@
                                         <rect key="frame" x="0.0" y="79" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5aa-FY-mjS" id="9eB-RC-jKb">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Пол" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyt-tw-dSH">
@@ -158,7 +99,7 @@
                                         <rect key="frame" x="0.0" y="123" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GS1-in-4a8" id="qgu-i4-MDM">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Возрастная группа" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="110" translatesAutoresizingMaskIntoConstraints="NO" id="Qpt-Mq-XOC">
@@ -192,7 +133,7 @@
                                         <rect key="frame" x="0.0" y="167" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yny-Pd-Q65" id="tce-Y8-9wU">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Дата тестирования" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="110" translatesAutoresizingMaskIntoConstraints="NO" id="bG2-Oj-KV8">
@@ -269,7 +210,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEl-k1-RqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792" y="3554"/>
+            <point key="canvasLocation" x="1772" y="3554"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wv7-qr-V0V">
@@ -285,7 +226,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWr-mo-gaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-106" y="3554"/>
+            <point key="canvasLocation" x="874" y="3554"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="KZH-4F-g7f">
@@ -332,7 +273,7 @@
                                 <rect key="frame" x="0.0" y="22" width="768" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iwU-6S-iub" id="p0w-ha-8Nc">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mnm-Gt-j3X">
@@ -404,7 +345,7 @@
         <!--Анализ-->
         <scene sceneID="O4d-EX-KCt">
             <objects>
-                <tableViewController id="F49-RI-GVa" customClass="AnalysisViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="com.immpi.viewControllers.analysis" id="F49-RI-GVa" customClass="AnalysisViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pKI-E6-RgH">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -414,7 +355,7 @@
                                 <rect key="frame" x="0.0" y="22" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r2c-mq-F81" id="jfL-tq-UqR">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fer-fQ-825">
@@ -495,7 +436,7 @@
         <!--Все записи-->
         <scene sceneID="VQi-TQ-cMF">
             <objects>
-                <tableViewController id="nvo-jh-oP6" customClass="PersonsListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="com.immpi.viewControllers.testRecords" id="nvo-jh-oP6" customClass="RecordsListViewController" customModule="iMMPI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="txJ-t0-aON">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -505,18 +446,18 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QHr-PC-MeF" id="pAo-hr-MAD">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Иванов Иван Иванович" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZEV-cn-cEB">
-                                            <rect key="frame" x="15" y="12" width="199.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="11" width="200" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rn6-T8-ZdH">
-                                            <rect key="frame" x="242" y="12" width="11" height="20.5"/>
+                                            <rect key="frame" x="242" y="11" width="11" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -534,23 +475,17 @@
                     <navigationItem key="navigationItem" title="Все записи" id="Egf-o3-H6R">
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="80L-XY-zna">
                             <connections>
-                                <segue destination="zGB-ra-p1M" kind="push" identifier="com.immpi.segue.viewTrash" id="1n8-HN-ewy"/>
+                                <action selector="trashButtonAction:" destination="d6V-I4-VnL" id="OkJ-RO-87d"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lnr-7U-As0">
                             <connections>
-                                <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.addRecord" modalPresentationStyle="formSheet" id="p41-jG-o3A"/>
+                                <action selector="addRecordButtonAction:" destination="d6V-I4-VnL" id="Ijj-kY-iXa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="mZx-MM-2JJ">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <attributedString key="attributedTitle"/>
-                    </refreshControl>
                     <connections>
                         <segue destination="hIa-aR-c5k" kind="modal" identifier="com.immpi.segue.editGroup" modalPresentationStyle="formSheet" id="ghm-Jh-3HV"/>
-                        <segue destination="zGB-ra-p1M" kind="push" identifier="com.immpi.segue.listGroup" id="hGM-y0-hAY"/>
                         <segue destination="LqN-J3-mFC" kind="replace" identifier="com.immpi.segue.answersInput" splitViewControllerTargetIndex="1" id="gZV-hG-uQK"/>
                         <segue destination="uVX-dK-n6S" kind="replace" identifier="com.immpi.segue.blankDetail" splitViewControllerTargetIndex="1" id="Vg7-Qs-0dP"/>
                         <segue destination="Vda-1E-x1W" kind="replace" identifier="com.immpi.segue.analyzer" splitViewControllerTargetIndex="1" id="4HI-R5-Cm1"/>
@@ -603,7 +538,7 @@
         <!--Ответы на тест-->
         <scene sceneID="xBm-Vm-KdH">
             <objects>
-                <viewController id="0Nj-AL-4cy" customClass="TestAnswersInputViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="com.immpi.viewControllers.answersInput" id="0Nj-AL-4cy" customClass="TestAnswersInputViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lyw-LK-9qo"/>
                         <viewControllerLayoutGuide type="bottom" id="Mpr-0l-yZq"/>
@@ -620,7 +555,7 @@
                                         <rect key="frame" x="0.0" y="22" width="768" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="udx-Ki-cWK" id="Yxc-tM-wAf">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="63.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5f-Q4-2Cu">
@@ -828,7 +763,7 @@
                                 <rect key="frame" x="0.0" y="22" width="300" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CEn-l6-U3n" id="qtJ-XI-5dm">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Фильтр значений" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLt-Pr-Eb8">
@@ -856,7 +791,7 @@
                                 <rect key="frame" x="0.0" y="66" width="300" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f7R-S8-hJp" id="CIS-T6-zv0">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Скрыть норму" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eav-4p-Ocs">
@@ -884,11 +819,11 @@
                                 <rect key="frame" x="0.0" y="110" width="300" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GFJ-0w-mft" id="hYb-Ut-d9d">
-                                    <rect key="frame" x="0.0" y="0.0" width="267" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="267" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Отправить по E-Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Poc-Xl-oyn">
-                                            <rect key="frame" x="15" y="0.0" width="250" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="250" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -901,11 +836,11 @@
                                 <rect key="frame" x="0.0" y="154" width="300" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oBE-0b-i5x" id="Dre-ap-Lbu">
-                                    <rect key="frame" x="0.0" y="0.0" width="267" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="267" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Печать" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q52-LQ-Sxo">
-                                            <rect key="frame" x="15" y="0.0" width="250" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="250" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1069,7 +1004,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yf-Tg-cpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5323" y="2108"/>
+            <point key="canvasLocation" x="6303" y="2108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4th-Z0-w8A">
@@ -1105,7 +1040,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1m-kh-akv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4577" y="2108"/>
+            <point key="canvasLocation" x="5557" y="2108"/>
         </scene>
     </scenes>
     <resources>
@@ -1117,11 +1052,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cEz-YJ-d3N"/>
-        <segue reference="K8u-i7-vef"/>
-        <segue reference="hGM-y0-hAY"/>
-        <segue reference="wQm-8j-8wQ"/>
-        <segue reference="B1l-8X-pqZ"/>
-        <segue reference="pzp-1q-KmK"/>
+        <segue reference="Vg7-Qs-0dP"/>
+        <segue reference="rcs-v6-40C"/>
     </inferredMetricsTieBreakers>
 </document>

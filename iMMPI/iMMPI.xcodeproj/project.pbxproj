@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		442CE10B1E1E9E13006C34A6 /* RecordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE10A1E1E9E13006C34A6 /* RecordsListViewController.swift */; };
 		442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */; };
 		442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */; };
 		442CE1AA1E235156006C34A6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A91E235156006C34A6 /* Strings.swift */; };
@@ -19,7 +18,7 @@
 		442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1B81E235D3D006C34A6 /* Gender.swift */; };
 		442CE1BE1E2366F7006C34A6 /* TestAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */; };
 		442CE1C01E236915006C34A6 /* TestAnswersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */; };
-		442CE1C21E236CA9006C34A6 /* MutableTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1C11E236CA9006C34A6 /* MutableTableViewModel.swift */; };
+		442CE1C41E236EEC006C34A6 /* RecordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1C31E236EEC006C34A6 /* RecordsListViewController.swift */; };
 		442CE1CE1E23718C006C34A6 /* Grouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1CD1E23718C006C34A6 /* Grouping.swift */; };
 		442CE1D11E2378D7006C34A6 /* SectionSplittingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1D01E2378D7006C34A6 /* SectionSplittingTests.swift */; };
 		442CE1D51E237AB5006C34A6 /* SectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1D41E237AB5006C34A6 /* SectionDescriptor.swift */; };
@@ -31,6 +30,8 @@
 		442CE1E51E238C75006C34A6 /* TestRecordsGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1E41E238C75006C34A6 /* TestRecordsGroupTests.swift */; };
 		442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1EC1E23A265006C34A6 /* Grouping+Alphabetically.swift */; };
 		442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1EE1E23A3A7006C34A6 /* Grouping+TestRecord.swift */; };
+		442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1F01E23A939006C34A6 /* AsyncProvider.swift */; };
+		442CE1F51E23A957006C34A6 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1F41E23A957006C34A6 /* ListViewModel.swift */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
@@ -48,6 +49,14 @@
 		4430C7B71E163F450024C001 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7B61E163F450024C001 /* PersonTests.swift */; };
 		4430C7B91E16408A0024C001 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7B81E16408A0024C001 /* Person.swift */; };
 		4430C7BB1E1670010024C001 /* PersonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7BA1E1670010024C001 /* PersonProtocol.swift */; };
+		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
+		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
+		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
+		44673C191E23C1C0001758C0 /* SectionIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C181E23C1C0001758C0 /* SectionIndex.swift */; };
+		44673C1C1E23C9CA001758C0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C1B1E23C9CA001758C0 /* Router.swift */; };
+		44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */; };
+		44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */; };
+		44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -67,14 +76,10 @@
 		5DA5C9E9163B018D00CF1601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
 		5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */; };
 		5DA5C9F1163B018D00CF1601 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5C9F0163B018D00CF1601 /* main.m */; };
-		5DA5C9F5163B018D00CF1601 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5C9F4163B018D00CF1601 /* AppDelegate.m */; };
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
 		5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */; };
 		5DBD5659169714EE00728BB4 /* TestAnswersInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD5658169714EE00728BB4 /* TestAnswersInputViewController.m */; };
 		5DBD568D1697274700728BB4 /* TestAnswersTableViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD568C1697274700728BB4 /* TestAnswersTableViewControllerBase.m */; };
-		5DBE76D6169351200018C728 /* TestRecordModelGroupedByName.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */; };
-		5DBE76DA169356F50018C728 /* PersonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76D9169356F50018C728 /* PersonsListViewController.m */; };
-		5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
 		5DC0C87F16E26207006ED854 /* AnalysisOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87E16E26207006ED854 /* AnalysisOptionsViewController.m */; };
@@ -97,11 +102,8 @@
 		5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC081690448A00E835B7 /* AnalyzerFGroup.m */; };
 		5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC0C16905ACB00E835B7 /* AnalyzerFGroupFM.m */; };
 		5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC101690626800E835B7 /* AnalyzerPGroup.m */; };
-		5DC68C8116D0D7D400B338C2 /* MMPIATestRecordReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC68C8016D0D7D400B338C2 /* MMPIATestRecordReader.m */; };
-		5DC68C8616D0F55800B338C2 /* ProgressAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC68C8516D0F55800B338C2 /* ProgressAlertView.m */; };
 		5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */; };
 		5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
-		5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */; };
 		5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
 		5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
 		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
@@ -121,7 +123,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		442CE10A1E1E9E13006C34A6 /* RecordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewController.swift; sourceTree = "<group>"; };
 		442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatter.swift; sourceTree = "<group>"; };
 		442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatterTests.swift; sourceTree = "<group>"; };
 		442CE1A91E235156006C34A6 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -133,7 +134,7 @@
 		442CE1B81E235D3D006C34A6 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswers.swift; sourceTree = "<group>"; };
 		442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersProtocol.swift; sourceTree = "<group>"; };
-		442CE1C11E236CA9006C34A6 /* MutableTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableTableViewModel.swift; sourceTree = "<group>"; };
+		442CE1C31E236EEC006C34A6 /* RecordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewController.swift; sourceTree = "<group>"; };
 		442CE1CD1E23718C006C34A6 /* Grouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grouping.swift; sourceTree = "<group>"; };
 		442CE1D01E2378D7006C34A6 /* SectionSplittingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSplittingTests.swift; sourceTree = "<group>"; };
 		442CE1D41E237AB5006C34A6 /* SectionDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDescriptor.swift; sourceTree = "<group>"; };
@@ -145,6 +146,8 @@
 		442CE1E41E238C75006C34A6 /* TestRecordsGroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordsGroupTests.swift; sourceTree = "<group>"; };
 		442CE1EC1E23A265006C34A6 /* Grouping+Alphabetically.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Grouping+Alphabetically.swift"; sourceTree = "<group>"; };
 		442CE1EE1E23A3A7006C34A6 /* Grouping+TestRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Grouping+TestRecord.swift"; sourceTree = "<group>"; };
+		442CE1F01E23A939006C34A6 /* AsyncProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncProvider.swift; sourceTree = "<group>"; };
+		442CE1F41E23A957006C34A6 /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBDatePickerPopover.h; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.h; sourceTree = "<group>"; };
 		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBDatePickerPopover.m; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.m; sourceTree = "<group>"; };
@@ -168,6 +171,14 @@
 		4430C7B61E163F450024C001 /* PersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		4430C7B81E16408A0024C001 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		4430C7BA1E1670010024C001 /* PersonProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProtocol.swift; sourceTree = "<group>"; };
+		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
+		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
+		44673C181E23C1C0001758C0 /* SectionIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionIndex.swift; sourceTree = "<group>"; };
+		44673C1B1E23C9CA001758C0 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMPIRouter.swift; sourceTree = "<group>"; };
+		44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+EditingDelegate.swift"; sourceTree = "<group>"; };
+		44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerGrouping.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -207,8 +218,6 @@
 		5DA5C9EE163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DA5C9F0163B018D00CF1601 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DA5C9F2163B018D00CF1601 /* iMMPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Prefix.pch"; sourceTree = "<group>"; };
-		5DA5C9F3163B018D00CF1601 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5DA5C9F4163B018D00CF1601 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5DA5C9FD163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5DA5CA14163B080B00CF1601 /* TestAnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersViewController.h; sourceTree = "<group>"; };
 		5DA5CA15163B080B00CF1601 /* TestAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersViewController.m; sourceTree = "<group>"; };
@@ -218,12 +227,6 @@
 		5DBD568C1697274700728BB4 /* TestAnswersTableViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersTableViewControllerBase.m; sourceTree = "<group>"; };
 		5DBE6BD0169C3C05005F5E1B /* SegueSourceAnalyzeRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceAnalyzeRecord.h; sourceTree = "<group>"; };
 		5DBE6BD2169C3C14005F5E1B /* SegueDestinationAnalyzeRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationAnalyzeRecord.h; sourceTree = "<group>"; };
-		5DBE76D4169351200018C728 /* TestRecordModelGroupedByName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordModelGroupedByName.h; sourceTree = "<group>"; };
-		5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordModelGroupedByName.m; sourceTree = "<group>"; };
-		5DBE76D8169356F50018C728 /* PersonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsListViewController.h; sourceTree = "<group>"; };
-		5DBE76D9169356F50018C728 /* PersonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsListViewController.m; sourceTree = "<group>"; };
-		5DBE76DC169358BD0018C728 /* TestRecordsPersonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordsPersonGroup.h; sourceTree = "<group>"; };
-		5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordsPersonGroup.m; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5DC0B2C4168CDB790035A910 /* Strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
@@ -262,18 +265,11 @@
 		5DC4AC0F1690626800E835B7 /* AnalyzerPGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerPGroup.h; sourceTree = "<group>"; };
 		5DC4AC101690626800E835B7 /* AnalyzerPGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerPGroup.m; sourceTree = "<group>"; };
 		5DC4AC121690672F00E835B7 /* AnalyzerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzerProtocol.h; sourceTree = "<group>"; };
-		5DC68C7F16D0D7D400B338C2 /* MMPIATestRecordReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPIATestRecordReader.h; sourceTree = "<group>"; };
-		5DC68C8016D0D7D400B338C2 /* MMPIATestRecordReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPIATestRecordReader.m; sourceTree = "<group>"; };
-		5DC68C8416D0F55800B338C2 /* ProgressAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressAlertView.h; sourceTree = "<group>"; };
-		5DC68C8516D0F55800B338C2 /* ProgressAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressAlertView.m; sourceTree = "<group>"; };
-		5DC973AC168F085100C496F0 /* MutableTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutableTableViewModel.h; sourceTree = "<group>"; };
 		5DC973B1168F0CD200C496F0 /* JSONTestRecordStorageElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordStorageElement.h; sourceTree = "<group>"; };
 		5DC973B2168F0CD200C496F0 /* JSONTestRecordStorageElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordStorageElement.m; sourceTree = "<group>"; };
 		5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordStorageProtocol.h; sourceTree = "<group>"; };
 		5DC973BF168F214A00C496F0 /* JSONTestRecordsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordsStorage.h; sourceTree = "<group>"; };
 		5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordsStorage.m; sourceTree = "<group>"; };
-		5DC973C4168F243800C496F0 /* TestRecordModelByDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRecordModelByDate.h; sourceTree = "<group>"; };
-		5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRecordModelByDate.m; sourceTree = "<group>"; };
 		5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityFunctions.h; sourceTree = "<group>"; };
 		5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
 		5DCC9647168DC1D8004F8D4E /* JSONTestRecordSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordSerialization.h; sourceTree = "<group>"; };
@@ -287,8 +283,6 @@
 		7C0F0266169C02F0006377B3 /* SegueDestinationEditAnswers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationEditAnswers.h; sourceTree = "<group>"; };
 		7C0F0267169C08B3006377B3 /* SegueSourceEditRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceEditRecord.h; sourceTree = "<group>"; };
 		7C0F0268169C08C7006377B3 /* SegueDestinationEditRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationEditRecord.h; sourceTree = "<group>"; };
-		7C0F0269169C0E0C006377B3 /* SegueSourceListRecords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceListRecords.h; sourceTree = "<group>"; };
-		7C0F026A169C0E18006377B3 /* SegueDestinationListRecords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationListRecords.h; sourceTree = "<group>"; };
 		7CAB67D118ACA98200C194B8 /* JSONTestRecordProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordProxy.h; sourceTree = "<group>"; };
 		7CAB67D218ACA98200C194B8 /* JSONTestRecordProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -337,6 +331,7 @@
 				442CE1EE1E23A3A7006C34A6 /* Grouping+TestRecord.swift */,
 				442CE1DC1E23862A006C34A6 /* Section.swift */,
 				442CE1D41E237AB5006C34A6 /* SectionDescriptor.swift */,
+				44673C181E23C1C0001758C0 /* SectionIndex.swift */,
 			);
 			name = "Table View Models";
 			sourceTree = "<group>";
@@ -399,14 +394,22 @@
 			name = Questionnaire;
 			sourceTree = "<group>";
 		};
+		44673C1A1E23C9BD001758C0 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44673C1B1E23C9CA001758C0 /* Router.swift */,
+				44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */,
+				44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5D5E05BE1646521700A5A704 /* Model.h */,
 				5DC40483168C446C000AFBAE /* Protocols */,
-				5DC68C7E16D0D7AD00B338C2 /* Legacy MMPIA Import */,
 				5DC973BC168F20C200C496F0 /* JSON Test Records Storage */,
-				5DC973C2168F240D00C496F0 /* Test Record Table Models */,
 				5DC0C88416E26AE6006ED854 /* Analysis Settings */,
 				5DC973AB168F082200C496F0 /* Data Model Objects */,
 				442CE1CC1E23714A006C34A6 /* Table View Models */,
@@ -478,7 +481,7 @@
 			children = (
 				5DC0B2C4168CDB790035A910 /* Strings.h */,
 				442CE1A91E235156006C34A6 /* Strings.swift */,
-				5DC68C8216D0F53200B338C2 /* Views */,
+				44673C1A1E23C9BD001758C0 /* Router */,
 				5D74CEFA169B086900BAA202 /* Storyboard */,
 				5DC40473168C2D49000AFBAE /* Table View Cells */,
 				5DA5CA0C163B04D200CF1601 /* View Controllers */,
@@ -607,8 +610,7 @@
 				5DCC9642168DC12B004F8D4E /* Utils */,
 				5D5E05B9164651A800A5A704 /* Model */,
 				5D74CEF8169B085000BAA202 /* UI */,
-				5DA5C9F3163B018D00CF1601 /* AppDelegate.h */,
-				5DA5C9F4163B018D00CF1601 /* AppDelegate.m */,
+				44673C0C1E23ADA0001758C0 /* AppDelegate.swift */,
 				5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */,
 				5DA5C9EB163B018D00CF1601 /* Supporting Files */,
 			);
@@ -636,9 +638,8 @@
 			children = (
 				5DBD56891697272000728BB4 /* Test Answers */,
 				5DA5CA10163B050700CF1601 /* Analysis View Controller */,
-				5DBE76D7169356D40018C728 /* Persons List View Controller */,
+				5DBE76D7169356D40018C728 /* Records List View Controller */,
 				442CE1B21E2357AA006C34A6 /* EditTestRecordViewController.swift */,
-				442CE10A1E1E9E13006C34A6 /* RecordsListViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -692,33 +693,16 @@
 			name = "Test Answers View Controller Base";
 			sourceTree = "<group>";
 		};
-		5DBE76D2169350F40018C728 /* Test Record Model Grouped By Name */ = {
+		5DBE76D7169356D40018C728 /* Records List View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5DBE76DB169358960018C728 /* private */,
-				5DBE76D4169351200018C728 /* TestRecordModelGroupedByName.h */,
-				5DBE76D5169351200018C728 /* TestRecordModelGroupedByName.m */,
-			);
-			name = "Test Record Model Grouped By Name";
-			sourceTree = "<group>";
-		};
-		5DBE76D7169356D40018C728 /* Persons List View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5DBE76D8169356F50018C728 /* PersonsListViewController.h */,
-				5DBE76D9169356F50018C728 /* PersonsListViewController.m */,
+				442CE1C31E236EEC006C34A6 /* RecordsListViewController.swift */,
+				44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */,
+				44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */,
+				442CE1F41E23A957006C34A6 /* ListViewModel.swift */,
 				442CE1E21E238BBB006C34A6 /* TestRecordsGroup.swift */,
 			);
-			name = "Persons List View Controller";
-			sourceTree = "<group>";
-		};
-		5DBE76DB169358960018C728 /* private */ = {
-			isa = PBXGroup;
-			children = (
-				5DBE76DC169358BD0018C728 /* TestRecordsPersonGroup.h */,
-				5DBE76DD169358BD0018C728 /* TestRecordsPersonGroup.m */,
-			);
-			name = private;
+			name = "Records List View Controller";
 			sourceTree = "<group>";
 		};
 		5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */ = {
@@ -786,9 +770,8 @@
 				442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */,
 				4430C7A31E161A6B0024C001 /* StatementProtocol.swift */,
 				4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */,
-				5DC973AC168F085100C496F0 /* MutableTableViewModel.h */,
-				442CE1C11E236CA9006C34A6 /* MutableTableViewModel.swift */,
 				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
+				44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */,
 				5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */,
 				5DC4AC121690672F00E835B7 /* AnalyzerProtocol.h */,
 			);
@@ -851,32 +834,6 @@
 			name = "P Group";
 			sourceTree = "<group>";
 		};
-		5DC68C7E16D0D7AD00B338C2 /* Legacy MMPIA Import */ = {
-			isa = PBXGroup;
-			children = (
-				5DC68C7F16D0D7D400B338C2 /* MMPIATestRecordReader.h */,
-				5DC68C8016D0D7D400B338C2 /* MMPIATestRecordReader.m */,
-			);
-			name = "Legacy MMPIA Import";
-			sourceTree = "<group>";
-		};
-		5DC68C8216D0F53200B338C2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				5DC68C8316D0F53900B338C2 /* Progress Alert View */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		5DC68C8316D0F53900B338C2 /* Progress Alert View */ = {
-			isa = PBXGroup;
-			children = (
-				5DC68C8416D0F55800B338C2 /* ProgressAlertView.h */,
-				5DC68C8516D0F55800B338C2 /* ProgressAlertView.m */,
-			);
-			name = "Progress Alert View";
-			sourceTree = "<group>";
-		};
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -909,28 +866,11 @@
 			name = "JSON Test Records Storage";
 			sourceTree = "<group>";
 		};
-		5DC973C2168F240D00C496F0 /* Test Record Table Models */ = {
-			isa = PBXGroup;
-			children = (
-				5DBE76D2169350F40018C728 /* Test Record Model Grouped By Name */,
-				5DC973C3168F241C00C496F0 /* Test Record Model By Date */,
-			);
-			name = "Test Record Table Models";
-			sourceTree = "<group>";
-		};
-		5DC973C3168F241C00C496F0 /* Test Record Model By Date */ = {
-			isa = PBXGroup;
-			children = (
-				5DC973C4168F243800C496F0 /* TestRecordModelByDate.h */,
-				5DC973C5168F243800C496F0 /* TestRecordModelByDate.m */,
-			);
-			name = "Test Record Model By Date";
-			sourceTree = "<group>";
-		};
 		5DCC9642168DC12B004F8D4E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				442CE1A41E234DCE006C34A6 /* Formatters */,
+				442CE1F01E23A939006C34A6 /* AsyncProvider.swift */,
 				5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */,
 				5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */,
 				442CE1D81E238379006C34A6 /* UtilityFunctions.swift */,
@@ -966,8 +906,6 @@
 				7C0F0266169C02F0006377B3 /* SegueDestinationEditAnswers.h */,
 				7C0F0267169C08B3006377B3 /* SegueSourceEditRecord.h */,
 				7C0F0268169C08C7006377B3 /* SegueDestinationEditRecord.h */,
-				7C0F0269169C0E0C006377B3 /* SegueSourceListRecords.h */,
-				7C0F026A169C0E18006377B3 /* SegueDestinationListRecords.h */,
 				5DBE6BD0169C3C05005F5E1B /* SegueSourceAnalyzeRecord.h */,
 				5DBE6BD2169C3C14005F5E1B /* SegueDestinationAnalyzeRecord.h */,
 				5D74048F16FEB9BB001747A1 /* SegueSourceAnalyzerGroupDetailedInfo.h */,
@@ -1127,12 +1065,14 @@
 				4430C7BB1E1670010024C001 /* PersonProtocol.swift in Sources */,
 				4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */,
 				442CE1B31E2357AA006C34A6 /* EditTestRecordViewController.swift in Sources */,
+				44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */,
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
 				442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */,
-				5DA5C9F5163B018D00CF1601 /* AppDelegate.m in Sources */,
 				5DA5CA16163B080B00CF1601 /* TestAnswersViewController.m in Sources */,
 				5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */,
+				44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
+				44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */,
 				4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */,
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
 				5DC973B3168F0CD200C496F0 /* JSONTestRecordStorageElement.m in Sources */,
@@ -1141,14 +1081,13 @@
 				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
-				5DC973C6168F243800C496F0 /* TestRecordModelByDate.m in Sources */,
 				7CAB67D318ACA98200C194B8 /* JSONTestRecordProxy.m in Sources */,
 				442CE1BE1E2366F7006C34A6 /* TestAnswers.swift in Sources */,
 				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
 				442CE1AC1E235397006C34A6 /* TestRecord.swift in Sources */,
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
+				44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */,
 				5DC3044D17ED83A300FCE5D5 /* SystemSoundManager.m in Sources */,
-				442CE10B1E1E9E13006C34A6 /* RecordsListViewController.swift in Sources */,
 				442CE1B51E235A1B006C34A6 /* DateFormatter+iMMPI.swift in Sources */,
 				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
 				442CE1AE1E23551D006C34A6 /* TestRecordProtocol.swift in Sources */,
@@ -1157,6 +1096,7 @@
 				442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */,
 				442CE1C01E236915006C34A6 /* TestAnswersProtocol.swift in Sources */,
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
+				442CE1C41E236EEC006C34A6 /* RecordsListViewController.swift in Sources */,
 				5DC4AC0D16905ACB00E835B7 /* AnalyzerFGroupFM.m in Sources */,
 				5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */,
 				5D85558516906A9C004E3021 /* AnalyzerKGroup.m in Sources */,
@@ -1164,27 +1104,27 @@
 				5D85558916906E98004E3021 /* AnalyzerIGroupT1.m in Sources */,
 				442CE1DD1E23862A006C34A6 /* Section.swift in Sources */,
 				4430C7B91E16408A0024C001 /* Person.swift in Sources */,
-				442CE1C21E236CA9006C34A6 /* MutableTableViewModel.swift in Sources */,
 				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
+				442CE1F51E23A957006C34A6 /* ListViewModel.swift in Sources */,
 				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
+				44673C1C1E23C9CA001758C0 /* Router.swift in Sources */,
+				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
 				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
-				5DBE76D6169351200018C728 /* TestRecordModelGroupedByName.m in Sources */,
-				5DBE76DA169356F50018C728 /* PersonsListViewController.m in Sources */,
-				5DBE76DE169358BD0018C728 /* TestRecordsPersonGroup.m in Sources */,
 				5DBD5659169714EE00728BB4 /* TestAnswersInputViewController.m in Sources */,
+				44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */,
 				5DBD568D1697274700728BB4 /* TestAnswersTableViewControllerBase.m in Sources */,
 				5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */,
 				442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */,
 				5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */,
 				7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */,
-				5DC68C8116D0D7D400B338C2 /* MMPIATestRecordReader.m in Sources */,
-				5DC68C8616D0F55800B338C2 /* ProgressAlertView.m in Sources */,
+				44673C191E23C1C0001758C0 /* SectionIndex.swift in Sources */,
 				5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */,
 				442CE1CE1E23718C006C34A6 /* Grouping.swift in Sources */,
 				5DC2650F16D92441004D4BBA /* AnalyzerPlainPercentGroup.m in Sources */,
 				5DC0C87F16E26207006ED854 /* AnalysisOptionsViewController.m in Sources */,
 				5DC0C88716E26B03006ED854 /* AnalysisSettings.m in Sources */,
 				5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */,
+				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
 				5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */,
 				442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */,
 				5D74049416FEC107001747A1 /* LabelCollectionViewCell.m in Sources */,

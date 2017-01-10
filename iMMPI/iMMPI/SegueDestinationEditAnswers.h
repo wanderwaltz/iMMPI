@@ -8,6 +8,7 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark SegueDestinationEditAnswers protocol
@@ -15,7 +16,9 @@
 @protocol SegueDestinationEditAnswers <NSObject>
 @required
 
-- (void) setRecordToEditAnswers:  (id<TestRecordProtocol>) record;
-- (void) setStorageToEditAnswers: (id<TestRecordStorage>) storage;
+- (void)setRecordToEditAnswers:(id<TestRecordProtocol>)record NS_SWIFT_NAME(setRecordToEditAnswers(_:));
+- (void)setStorageToEditAnswers:(id<TestRecordStorage>)storage NS_SWIFT_NAME(setStorageToEditAnswers(_:));
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -6,6 +6,16 @@ struct SectionDescriptor<Item> {
 }
 
 
+extension SectionDescriptor {
+    static func singleSection(named title: String) -> SectionDescriptor {
+        return SectionDescriptor(
+            itemsBelongToSameSection: Constant.bool(true),
+            sectionTitleForItem: Constant.string(title)
+        )
+    }
+}
+
+
 extension Array {
     func split(with descriptor: SectionDescriptor<Element>) -> [Section<Element>] {
         guard false == self.isEmpty else {

@@ -161,28 +161,6 @@ NSString * const kSegueIDAnalyzerGroupDetailedInfo = @"com.immpi.segue.analyzerG
 }
 
 
-- (void) handleListRecords: (UIStoryboardSegue *) segue sender: (id) sender
-{
-    id<SegueSourceListRecords>      source      = (id)SelfOrFirstChild(segue.sourceViewController);
-    id<SegueDestinationListRecords> destination = (id)SelfOrFirstChild(segue.destinationViewController);
-    
-    FRB_AssertConformsTo(source,      SegueSourceListRecords);
-    FRB_AssertConformsTo(destination, SegueDestinationListRecords);
-    
-    [destination setModelForListRecords:   [source modelForListRecordsWithSender:   sender]];
-    [destination setStorageForListRecords: [source storageForListRecordsWithSender: sender]];
-    [destination setTitleForListRecords:   [source titleForListRecordsWithSender:   sender]];
-    
-    
-    if ([source respondsToSelector: @selector(selectedTestRecordForListRecordsWithSender:)] &&
-        [destination respondsToSelector: @selector(setSelectedTestRecord:)])
-    {
-        [destination setSelectedTestRecord:
-         [source selectedTestRecordForListRecordsWithSender: sender]];
-    }
-}
-
-
 - (void) handleAnalyzeRecord: (UIStoryboardSegue *) segue sender: (id) sender
 {
     id<SegueSourceAnalyzeRecord>      source      = (id)SelfOrFirstChild(segue.sourceViewController);
