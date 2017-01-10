@@ -7,9 +7,6 @@ import Foundation
     /// Person who took the test
     var person: PersonProtocol { get set }
 
-    /// Shortcut for person.name
-    var personName: String { get }
-
     /// Answers of the person
     var testAnswers: TestAnswersProtocol { get set }
 
