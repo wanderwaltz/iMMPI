@@ -65,9 +65,9 @@ extension MMPIRouter: Router {
     func edit(_ record: TestRecordProtocol, sender: UIViewController) throws {
         let controller = try viewControllersFactory.makeEditRecordViewController()
 
-        controller.setTestRecordToEdit(record)
-        controller.setTitleForEditingTestRecord(Strings.editRecord)
-        controller.setDelegateForEditingTestRecord(editingDelegate)
+        controller.record = record
+        controller.title = Strings.editRecord
+        controller.delegate = editingDelegate
 
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.modalPresentationStyle = .formSheet

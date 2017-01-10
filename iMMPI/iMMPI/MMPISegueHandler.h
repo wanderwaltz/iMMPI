@@ -15,9 +15,6 @@
 #import "SegueSourceEditAnswers.h"
 #import "SegueDestinationEditAnswers.h"
 
-// Edit/Add Test Record
-#import "SegueSourceEditRecord.h"
-#import "SegueDestinationEditRecord.h"
 
 // Analysing a TestRecordProtocol object
 #import "SegueSourceAnalyzeRecord.h"
@@ -36,10 +33,6 @@
  */
 extern NSString * const kSegueIDEditAnswers;  // SegueSourceEditAnswers, SegueDestinationEditAnswers
 extern NSString * const kSegueIDAnswersInput; // SegueSourceEditAnswers, SegueDestinationEditAnswers
-
-extern NSString * const kSegueIDAddRecord;    // SegueSourceEditRecord,  SegueDestinationEditRecord
-extern NSString * const kSegueIDEditRecord;   // SegueSourceEditRecord,  SegueDestinationEditRecord
-extern NSString * const kSegueIDEditGroup;    // SegueSourceEditRecord,  SegueDestinationEditRecord
 
 extern NSString * const kSegueIDBlankDetail;  // No protocols required
 

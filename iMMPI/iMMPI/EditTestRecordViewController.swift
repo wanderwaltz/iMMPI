@@ -114,25 +114,6 @@ extension EditTestRecordViewController {
 
 
 
-// MARK: - SegueDestinationEditRecord
-extension EditTestRecordViewController: SegueDestinationEditRecord {
-    func setTitleForEditingTestRecord(_ title: String) {
-        self.title = title
-    }
-
-
-    func setTestRecordToEdit(_ record: TestRecordProtocol) {
-        self.record = record
-    }
-
-
-    func setDelegateForEditingTestRecord(_ delegate: EditTestRecordViewControllerDelegate) {
-        self.delegate = delegate
-    }
-}
-
-
-
 // MARK: - FRBDatePickerPopoverDateDelegate
 extension EditTestRecordViewController: FRBDatePickerPopoverDateDelegate {
     func frbDatePickerPopover(_ popover: FRBDatePickerPopover, didSelect date: Date) {

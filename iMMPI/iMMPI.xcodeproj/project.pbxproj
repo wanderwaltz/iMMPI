@@ -287,8 +287,6 @@
 		7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPISegueHandler.m; sourceTree = "<group>"; };
 		7C0F0265169C02E4006377B3 /* SegueSourceEditAnswers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceEditAnswers.h; sourceTree = "<group>"; };
 		7C0F0266169C02F0006377B3 /* SegueDestinationEditAnswers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationEditAnswers.h; sourceTree = "<group>"; };
-		7C0F0267169C08B3006377B3 /* SegueSourceEditRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceEditRecord.h; sourceTree = "<group>"; };
-		7C0F0268169C08C7006377B3 /* SegueDestinationEditRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationEditRecord.h; sourceTree = "<group>"; };
 		7CAB67D118ACA98200C194B8 /* JSONTestRecordProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordProxy.h; sourceTree = "<group>"; };
 		7CAB67D218ACA98200C194B8 /* JSONTestRecordProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -921,8 +919,6 @@
 			children = (
 				7C0F0265169C02E4006377B3 /* SegueSourceEditAnswers.h */,
 				7C0F0266169C02F0006377B3 /* SegueDestinationEditAnswers.h */,
-				7C0F0267169C08B3006377B3 /* SegueSourceEditRecord.h */,
-				7C0F0268169C08C7006377B3 /* SegueDestinationEditRecord.h */,
 				5DBE6BD0169C3C05005F5E1B /* SegueSourceAnalyzeRecord.h */,
 				5DBE6BD2169C3C14005F5E1B /* SegueDestinationAnalyzeRecord.h */,
 				5D74048F16FEB9BB001747A1 /* SegueSourceAnalyzerGroupDetailedInfo.h */,

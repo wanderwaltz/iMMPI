@@ -18,11 +18,6 @@
 #pragma mark Constants
 
 NSString * const kSegueIDEditAnswers  = @"com.immpi.segue.editAnswers";
-NSString * const kSegueIDAnswersInput = @"com.immpi.segue.answersInput";
-
-NSString * const kSegueIDAddRecord    = @"com.immpi.segue.addRecord";
-NSString * const kSegueIDEditRecord   = @"com.immpi.segue.editRecord";
-NSString * const kSegueIDEditGroup    = @"com.immpi.segue.editGroup";
 
 NSString * const kSegueIDBlankDetail  = @"com.immpi.segue.blankDetail";
 
@@ -61,12 +56,7 @@ NSString * const kSegueIDAnalyzerGroupDetailedInfo = @"com.immpi.segue.analyzerG
     {
         _registeredSelectors = @{
         kSegueIDEditAnswers  : @"handleEditAnswers:sender:",
-        kSegueIDAnswersInput : @"handleEditAnswers:sender:",
-        
-        kSegueIDAddRecord    : @"handleEditRecord:sender:",
-        kSegueIDEditRecord   : @"handleEditRecord:sender:",
-        kSegueIDEditGroup    : @"handleEditRecord:sender:",
-        
+
         kSegueIDBlankDetail  : @"doNothing:sender:",
         
         kSegueIDListGroup    : @"handleListRecords:sender:",
@@ -141,23 +131,6 @@ NSString * const kSegueIDAnalyzerGroupDetailedInfo = @"com.immpi.segue.analyzerG
     
     [destination setRecordToEditAnswers:  [source testRecordToEditAnswersWithSender: sender]];
     [destination setStorageToEditAnswers: [source    storageToEditAnswersWithSender: sender]];
-}
-
-
-- (void) handleEditRecord: (UIStoryboardSegue *) segue sender: (id) sender
-{
-    id<SegueSourceEditRecord>      source      = (id)SelfOrFirstChild(segue.sourceViewController);
-    id<SegueDestinationEditRecord> destination = (id)SelfOrFirstChild(segue.destinationViewController);
-    
-    FRB_AssertConformsTo(source,      SegueSourceEditRecord);
-    FRB_AssertConformsTo(destination, SegueDestinationEditRecord);
-    
-    id<TestRecordProtocol> record = [source testRecordToEditWithSender: sender];
-    
-    [destination setTestRecordToEdit:             record];
-    [destination setDelegateForEditingTestRecord: [source delegateForEditingTestRecordWithSender: sender]];
-    [destination setTitleForEditingTestRecord:    [source titleForEditingTestRecord: record
-                                                                         withSender: sender]];
 }
 
 
