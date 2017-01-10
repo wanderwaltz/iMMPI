@@ -12,10 +12,15 @@ extension String {
 
 
 enum Constant {
-    static func bool<A, B>(_ value: Bool) -> (A, B) -> Bool {
-        return { _ in value }
+    static func void<A>() -> (A) -> () {
+        return { _ in () }
     }
 
+
+    static func bool<A>(_ value: Bool) -> (A) -> Bool {
+        return { _ in value }
+    }
+    
 
     static func string<A>(_ value: String) -> (A) -> String {
         return { _ in value }
