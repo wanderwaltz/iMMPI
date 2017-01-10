@@ -122,7 +122,7 @@ extension RecordsListViewController {
 
 extension RecordsListViewController {
     @IBAction func addRecordButtonAction(_ sender: Any?) {
-        try? router?.edit(style.makeNewRecord(), sender: self)
+        try? router?.addRecord(basedOn: style.makeNewRecord(), sender: self)
     }
 }
 

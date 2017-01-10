@@ -6,6 +6,7 @@ protocol Router: class {
 
     func displayDetails(for group: TestRecordsGroup, sender: UIViewController) throws
 
+    func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) throws
     func edit(_ record: TestRecordProtocol, sender: UIViewController) throws
     func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws
 }

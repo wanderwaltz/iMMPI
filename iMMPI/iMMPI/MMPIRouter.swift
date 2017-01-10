@@ -62,16 +62,13 @@ extension MMPIRouter: Router {
     }
 
 
+    func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) throws {
+        try edit(record, title: Strings.newRecord, sender: sender)
+    }
+
+
     func edit(_ record: TestRecordProtocol, sender: UIViewController) throws {
-        let controller = try viewControllersFactory.makeEditRecordViewController()
-
-        controller.record = record
-        controller.title = Strings.editRecord
-        controller.delegate = editingDelegate
-
-        let navigationController = UINavigationController(rootViewController: controller)
-        navigationController.modalPresentationStyle = .formSheet
-        sender.present(navigationController, animated: true, completion: nil)
+        try edit(record, title: Strings.editRecord, sender: sender)
     }
 
 
@@ -131,6 +128,19 @@ extension MMPIRouter {
         })
 
         sender.show(controller, sender: group)
+    }
+
+
+    fileprivate func edit(_ record: TestRecordProtocol, title: String, sender: UIViewController) throws {
+        let controller = try viewControllersFactory.makeEditRecordViewController()
+
+        controller.record = record
+        controller.title = title
+        controller.delegate = editingDelegate
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .formSheet
+        sender.present(navigationController, animated: true, completion: nil)
     }
 
 
