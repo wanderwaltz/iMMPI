@@ -12,7 +12,7 @@ final class TestAnswersInputViewController: TestAnswersTableViewControllerBase {
 
     fileprivate var statementIndex: Int = 0
 
-    fileprivate let soundManager = SystemSoundManager()
+    fileprivate let soundPlayer = SoundPlayer()
 }
 
 
@@ -89,7 +89,7 @@ extension TestAnswersInputViewController {
             return
         }
 
-        soundManager.playSoundNamed("button_tap1.wav")
+        soundPlayer.play(.clickNegative)
 
         if let statement = questionnaire?.statement(at: statementIndex) {
             record.testAnswers.setAnswer(.negative, for: statement.statementID)
@@ -106,7 +106,7 @@ extension TestAnswersInputViewController {
             return
         }
 
-        soundManager.playSoundNamed("button_tap2.wav")
+        soundPlayer.play(.clickPositive)
 
         if let statement = questionnaire?.statement(at: statementIndex) {
             record.testAnswers.setAnswer(.positive, for: statement.statementID)
