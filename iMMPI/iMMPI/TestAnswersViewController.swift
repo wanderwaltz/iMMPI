@@ -33,6 +33,7 @@ class TestAnswersViewController: UIViewController, UsingRouting {
     }
 
     fileprivate(set) var answers = TestAnswers()
+    fileprivate let cellSource = StatementTableViewCell.makePreregisteredSource()
 }
 
 
@@ -80,31 +81,8 @@ extension TestAnswersViewController: UITableViewDataSource {
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StatementTableViewCell.reuseIdentifier())
-            as! StatementTableViewCell
-
-        cell.delegate = self
-
-        if let statement = viewModel?.statement(at: indexPath.row) {
-            cell.statementIDLabel?.text = "\(statement.statementID)"
-            cell.statementTextLabel?.text = statement.text
-
-            switch answers.answer(for: statement.statementID) {
-            case .positive:
-                cell.statementAnswerLabel?.text = Strings.yes
-                cell.statementSegmentedControl?.selectedSegmentIndex = 1
-
-            case .negative:
-                cell.statementAnswerLabel?.text = Strings.no
-                cell.statementSegmentedControl?.selectedSegmentIndex = 0
-
-            case .unknown:
-                cell.statementAnswerLabel?.text = ""
-                cell.statementSegmentedControl?.selectedSegmentIndex = UISegmentedControlNoSegment
-            }
-        }
-
-        return cell
+        return cellSource.dequeue(from: tableView, with: viewModel?.statement(at: indexPath.row)
+            .map { ($0, answers.answer(for: $0.statementID), self) })
     }
 }
 
