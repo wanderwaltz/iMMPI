@@ -22,13 +22,21 @@ class TestAnswersTableViewControllerBase: UIViewController, UsingRouting {
     /// This property should be set prior to showing the view contorller's view on screen, 
     /// so the questionnaire can be properly set up (questionnaire depends on the `PersonProtocol` 
     /// object properties which are retrieved from the record).
-    var record: TestRecordProtocol?
+    var record: TestRecordProtocol? {
+        didSet {
+            if let record = record {
+                answers = record.testAnswers.makeCopy()
+            }
+        }
+    }
 
     /// The QuestionnaireProtocol object which provides the questionnaire info.
     ///
     /// If this property is not set manually, it can be set automatically using the 
     /// `loadQuestionnaireAsyncIfNeeded(_:)` method.
     var questionnaire: Questionnaire?
+
+    fileprivate var answers = TestAnswers()
 }
 
 
@@ -51,7 +59,7 @@ extension TestAnswersTableViewControllerBase {
             return
         }
 
-        record.testAnswers.setAnswer(answer, for: statement.statementID)
+        answers.setAnswer(answer, for: statement.statementID)
         inputDelegate?.testAnswersViewController(self, didSet: answer, for: statement, record: record)
     }
 
@@ -80,7 +88,7 @@ extension TestAnswersTableViewControllerBase {
 extension TestAnswersTableViewControllerBase {
     fileprivate func saveRecord() {
         if let record = record {
-            inputDelegate?.testAnswersInputViewController(self, didSet: record.testAnswers, for: record)
+            inputDelegate?.testAnswersInputViewController(self, didSet: answers, for: record)
         }
     }
 }
@@ -103,7 +111,7 @@ extension TestAnswersTableViewControllerBase: UITableViewDataSource {
             cell.statementIDLabel?.text = "\(statement.statementID)"
             cell.statementTextLabel?.text = statement.text
 
-            switch record?.testAnswers.answer(for: statement.statementID) ?? .unknown {
+            switch answers.answer(for: statement.statementID) {
             case .positive:
                 cell.statementAnswerLabel?.text = Strings.yes
                 cell.statementSegmentedControl?.selectedSegmentIndex = 1
