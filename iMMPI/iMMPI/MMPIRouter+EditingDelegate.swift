@@ -1,7 +1,7 @@
 import Foundation
 
 extension MMPIRouter {
-    final class EditingDelegate: NSObject {
+    final class EditingDelegate {
         init(storage: TestRecordStorage) {
             self.storage = storage
         }

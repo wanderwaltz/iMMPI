@@ -1,8 +1,7 @@
 import UIKit
 
-@objc protocol EditTestRecordViewControllerDelegate {
+protocol EditTestRecordViewControllerDelegate: class {
     // TODO: add a dedicated cancellation method and make test record nonoptional
-    @objc(editTestRecordViewController:didFinishEditingRecord:)
     func editTestRecordViewController(_ controller: EditTestRecordViewController,
                                       didFinishEditing record: TestRecordProtocol?)
 }
