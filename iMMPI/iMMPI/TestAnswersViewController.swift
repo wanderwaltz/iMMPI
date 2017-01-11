@@ -16,10 +16,4 @@ final class TestAnswersViewController: TestAnswersTableViewControllerBase {
         super.viewWillAppear(animated)
         loadQuestionnaireAsyncIfNeeded()
     }
-
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        saveRecord()
-    }
 }

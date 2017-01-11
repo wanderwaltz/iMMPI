@@ -24,12 +24,6 @@ extension TestAnswersInputViewController {
             self.setStatementIndex(0)
         }
     }
-
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        saveRecord()
-    }
 }
 
 

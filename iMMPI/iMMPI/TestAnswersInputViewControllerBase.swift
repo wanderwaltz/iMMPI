@@ -38,6 +38,14 @@ class TestAnswersTableViewControllerBase: UIViewController, UsingRouting {
 
 
 extension TestAnswersTableViewControllerBase {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveRecord()
+    }
+}
+
+
+extension TestAnswersTableViewControllerBase {
     /// Loads the questionnaire asynchronously if questionnaire property value is nil.
     ///
     /// Creates a new `Questionnaire` object depending on the values of the `PersonProtocol` 
