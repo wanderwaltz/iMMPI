@@ -13,25 +13,28 @@ extension MMPIRouter {
 
 extension MMPIRouter.EditingDelegate: EditTestRecordViewControllerDelegate {
     func editTestRecordViewController(_ controller: EditTestRecordViewController,
-                                      didFinishEditing record: TestRecordProtocol?) {
+                                      didFinishEditing record: TestRecordProtocol) {
         controller.dismiss(animated: true, completion: nil)
 
-        if let record = record {
-            if storage.contains(record) {
-                storage.update(record)
-            }
-            else {
-                storage.add(record)
-            }
-
-            NotificationCenter.default.post(
-                Notification(
-                    name: .didEditRecord,
-                    object: record,
-                    userInfo: nil
-                )
-            )
+        if storage.contains(record) {
+            storage.update(record)
         }
+        else {
+            storage.add(record)
+        }
+
+        NotificationCenter.default.post(
+            Notification(
+                name: .didEditRecord,
+                object: record,
+                userInfo: nil
+            )
+        )
+    }
+
+
+    func editTestRecordViewControllerDidCancel(_ controller: EditTestRecordViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

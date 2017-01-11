@@ -1,9 +1,10 @@
 import UIKit
 
 protocol EditTestRecordViewControllerDelegate: class {
-    // TODO: add a dedicated cancellation method and make test record nonoptional
     func editTestRecordViewController(_ controller: EditTestRecordViewController,
-                                      didFinishEditing record: TestRecordProtocol?)
+                                      didFinishEditing record: TestRecordProtocol)
+
+    func editTestRecordViewControllerDidCancel(_ controller: EditTestRecordViewController)
 }
 
 
@@ -92,15 +93,19 @@ extension EditTestRecordViewController {
 
 extension EditTestRecordViewController {
     @objc @IBAction fileprivate func cancelButtonAction(_ sender: Any?) {
-        delegate?.editTestRecordViewController(self, didFinishEditing: nil)
+        delegate?.editTestRecordViewControllerDidCancel(self)
     }
 
 
     @objc @IBAction fileprivate func saveButtonAction(_ sender: Any?) {
-        record?.person.name = personName.trimmingCharacters(in: .whitespacesAndNewlines)
-        record?.person.gender = selectedGender
-        record?.person.ageGroup = selectedAgeGroup
-        record?.date = selectedDate
+        guard let record = record else {
+            return
+        }
+
+        record.person.name = personName.trimmingCharacters(in: .whitespacesAndNewlines)
+        record.person.gender = selectedGender
+        record.person.ageGroup = selectedAgeGroup
+        record.date = selectedDate
 
         delegate?.editTestRecordViewController(self, didFinishEditing: record)
     }
