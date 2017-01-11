@@ -88,7 +88,7 @@ extension MMPIRouter: Router {
     func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws {
         let controller = try viewControllersFactory.makeAnswersInputViewController()
 
-        controller.record = record
+        controller.viewModel = DefaultTestAnswersViewModel(record: record)
         controller.inputDelegate = editingDelegate
         
         let navigationController = UINavigationController(rootViewController: controller)

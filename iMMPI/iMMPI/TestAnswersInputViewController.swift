@@ -15,15 +15,15 @@ final class TestAnswersInputViewController: TestAnswersTableViewControllerBase {
 
 extension TestAnswersInputViewController {
     fileprivate func setStatementIndex(_ index: Int) {
-        guard let questionnaire = questionnaire else {
+        guard let viewModel = viewModel else {
             return
         }
 
-        if 0 <= index && index < questionnaire.statementsCount {
+        if 0 <= index && index < viewModel.statementsCount {
             statementIndex = index
             tableView?.reloadData()
             tableView?.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: false)
-            title = String(format: Strings.format_N_of_M, statementIndex+1, questionnaire.statementsCount)
+            title = String(format: Strings.format_N_of_M, statementIndex+1, viewModel.statementsCount)
         }
     }
 
@@ -42,13 +42,13 @@ extension TestAnswersInputViewController {
 
     @discardableResult
     fileprivate func setNextStatementIndex() -> Bool {
-        guard let questionnaire = questionnaire else {
+        guard let viewModel = viewModel else {
             return false
         }
 
-        if let statement = questionnaire.statement(at: statementIndex) {
-            if statementIndex < questionnaire.statementsCount - 1
-                && record?.testAnswers.answer(for: statement.statementID) != .unknown {
+        if let statement = viewModel.statement(at: statementIndex) {
+            if statementIndex < viewModel.statementsCount - 1
+                && answers.answer(for: statement.statementID) != .unknown {
                 setStatementIndex(statementIndex + 1)
                 return true
             }
@@ -59,16 +59,16 @@ extension TestAnswersInputViewController {
 
 
     fileprivate func recordAnswer(_ answer: AnswerType) {
-        guard let record = record else {
+        guard let viewModel = viewModel else {
             return
         }
 
-        if let statement = questionnaire?.statement(at: statementIndex) {
+        if let statement = viewModel.statement(at: statementIndex) {
             setAnswer(answer, for: statement)
         }
 
         if false == setNextStatementIndex() {
-            try? router?.displayAnalysis(for: record, sender: self)
+            try? router?.displayAnalysis(for: viewModel.record, sender: self)
         }
     }
 }

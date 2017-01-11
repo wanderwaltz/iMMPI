@@ -17,33 +17,29 @@ class TestAnswersTableViewControllerBase: UIViewController, UsingRouting {
 
     @IBOutlet var tableView: UITableView?
 
-    /// A `TestRecordProtocol` object to be managed by the view controller.
-    ///
-    /// This property should be set prior to showing the view contorller's view on screen, 
-    /// so the questionnaire can be properly set up (questionnaire depends on the `PersonProtocol` 
-    /// object properties which are retrieved from the record).
-    var record: TestRecordProtocol? {
+    var viewModel: TestAnswersViewModel? {
+        willSet {
+            viewModel?.onDidUpdate = Constant.void()
+        }
+
         didSet {
-            if let record = record {
-                answers = record.testAnswers.makeCopy()
+            if let viewModel = viewModel {
+                answers = viewModel.record.testAnswers.makeCopy()
+                viewModel.onDidUpdate = { [weak self] in
+                    self?.tableView?.reloadData()
+                }
             }
         }
     }
 
-    /// The QuestionnaireProtocol object which provides the questionnaire info.
-    ///
-    /// If this property is not set manually, it can be set automatically using the 
-    /// `loadQuestionnaireAsyncIfNeeded(_:)` method.
-    var questionnaire: Questionnaire?
-
-    fileprivate var answers = TestAnswers()
+    fileprivate(set) var answers = TestAnswers()
 }
 
 
 extension TestAnswersTableViewControllerBase {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadQuestionnaireAsyncIfNeeded()
+        viewModel?.setNeedsUpdate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,41 +51,23 @@ extension TestAnswersTableViewControllerBase {
 
 extension TestAnswersTableViewControllerBase {
     func setAnswer(_ answer: AnswerType, for statement: Statement) {
-        guard let record = record else {
+        guard let record = viewModel?.record else {
             return
         }
 
         answers.setAnswer(answer, for: statement.statementID)
         inputDelegate?.testAnswersViewController(self, didSet: answer, for: statement, record: record)
     }
-
-
-    /// Loads the questionnaire asynchronously if questionnaire property value is nil.
-    ///
-    /// Creates a new `Questionnaire` object depending on the values of the `PersonProtocol` 
-    /// object read from the record property.
-    ///
-    /// This method does nothing if record property value is nil.
-    func loadQuestionnaireAsyncIfNeeded() {
-        if let record = record, questionnaire == nil {
-            DispatchQueue.global().async {
-                let questionnaire = try? Questionnaire(gender: record.person.gender, ageGroup: record.person.ageGroup)
-
-                DispatchQueue.main.async {
-                    self.questionnaire = questionnaire
-                    self.tableView?.reloadData()
-                }
-            }
-        }
-    }
 }
 
 
 extension TestAnswersTableViewControllerBase {
     fileprivate func saveRecord() {
-        if let record = record {
-            inputDelegate?.testAnswersInputViewController(self, didSet: answers, for: record)
+        guard let record = viewModel?.record else {
+            return
         }
+
+        inputDelegate?.testAnswersInputViewController(self, didSet: answers, for: record)
     }
 }
 
@@ -97,7 +75,7 @@ extension TestAnswersTableViewControllerBase {
 // MARK: - UITableViewDataSource
 extension TestAnswersTableViewControllerBase: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionnaire?.statementsCount ?? 0
+        return viewModel?.statementsCount ?? 0
     }
 
 
@@ -107,7 +85,7 @@ extension TestAnswersTableViewControllerBase: UITableViewDataSource {
 
         cell.delegate = self
 
-        if let statement = questionnaire?.statement(at: indexPath.row) {
+        if let statement = viewModel?.statement(at: indexPath.row) {
             cell.statementIDLabel?.text = "\(statement.statementID)"
             cell.statementTextLabel?.text = statement.text
 
@@ -133,7 +111,7 @@ extension TestAnswersTableViewControllerBase: UITableViewDataSource {
 
 extension TestAnswersTableViewControllerBase: StatementTableViewCellDelegate {
     func statementTableViewCell(_ cell: StatementTableViewCell, segmentedControlChanged selectedSegmentIndex: Int) {
-        if let indexPath = tableView?.indexPath(for: cell), let statement = questionnaire?.statement(at: indexPath.row) {
+        if let indexPath = tableView?.indexPath(for: cell), let statement = viewModel?.statement(at: indexPath.row) {
             switch selectedSegmentIndex {
             case 0: setAnswer(.negative, for: statement)
             case 1: setAnswer(.positive, for: statement)
