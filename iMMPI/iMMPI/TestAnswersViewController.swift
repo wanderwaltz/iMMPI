@@ -11,9 +11,4 @@ import UIKit
 ///
 /// The form of presentation implemented by this controller is not very comfortable
 /// to enter lots of answers at once.
-final class TestAnswersViewController: TestAnswersTableViewControllerBase {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadQuestionnaireAsyncIfNeeded()
-    }
-}
+final class TestAnswersViewController: TestAnswersTableViewControllerBase {}

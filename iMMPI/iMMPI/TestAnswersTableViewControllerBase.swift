@@ -40,6 +40,11 @@ class TestAnswersTableViewControllerBase: UIViewController, UsingRouting {
 
 
 extension TestAnswersTableViewControllerBase {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadQuestionnaireAsyncIfNeeded()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveRecord()

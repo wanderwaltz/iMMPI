@@ -13,15 +13,6 @@ final class TestAnswersInputViewController: TestAnswersTableViewControllerBase {
 }
 
 
-
-extension TestAnswersInputViewController {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadQuestionnaireAsyncIfNeeded()
-    }
-}
-
-
 extension TestAnswersInputViewController {
     fileprivate func setStatementIndex(_ index: Int) {
         guard let questionnaire = questionnaire else {
