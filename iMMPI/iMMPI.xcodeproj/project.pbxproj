@@ -981,6 +981,7 @@
 		44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */; };
 		44F97A371E26243E004F4E14 /* JSONTestRecordStorageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A361E26243E004F4E14 /* JSONTestRecordStorageElement.swift */; };
+		44F97A391E2624D2004F4E14 /* JSONTestRecordProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A381E2624D2004F4E14 /* JSONTestRecordProxy.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -1028,7 +1029,6 @@
 		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
 		5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780418ACF81D009896FB /* button_tap2.wav */; };
 		7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */; };
-		7CAB67D318ACA98200C194B8 /* JSONTestRecordProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB67D218ACA98200C194B8 /* JSONTestRecordProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2017,6 +2017,7 @@
 		44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+TestAnswersInput.swift"; sourceTree = "<group>"; };
 		44F97A361E26243E004F4E14 /* JSONTestRecordStorageElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordStorageElement.swift; sourceTree = "<group>"; };
+		44F97A381E2624D2004F4E14 /* JSONTestRecordProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordProxy.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -2109,8 +2110,6 @@
 		7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPISegueHandler.m; sourceTree = "<group>"; };
 		7C0F0265169C02E4006377B3 /* SegueSourceEditAnswers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceEditAnswers.h; sourceTree = "<group>"; };
 		7C0F0266169C02F0006377B3 /* SegueDestinationEditAnswers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationEditAnswers.h; sourceTree = "<group>"; };
-		7CAB67D118ACA98200C194B8 /* JSONTestRecordProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordProxy.h; sourceTree = "<group>"; };
-		7CAB67D218ACA98200C194B8 /* JSONTestRecordProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3601,8 +3600,7 @@
 		5DC973B4168F0D5F00C496F0 /* private */ = {
 			isa = PBXGroup;
 			children = (
-				7CAB67D118ACA98200C194B8 /* JSONTestRecordProxy.h */,
-				7CAB67D218ACA98200C194B8 /* JSONTestRecordProxy.m */,
+				44F97A381E2624D2004F4E14 /* JSONTestRecordProxy.swift */,
 				44F97A361E26243E004F4E14 /* JSONTestRecordStorageElement.swift */,
 			);
 			name = private;
@@ -4727,6 +4725,7 @@
 			files = (
 				4430C7BB1E1670010024C001 /* PersonProtocol.swift in Sources */,
 				4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */,
+				44F97A391E2624D2004F4E14 /* JSONTestRecordProxy.swift in Sources */,
 				442CE1B31E2357AA006C34A6 /* EditTestRecordViewController.swift in Sources */,
 				44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */,
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
@@ -4745,7 +4744,6 @@
 				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
-				7CAB67D318ACA98200C194B8 /* JSONTestRecordProxy.m in Sources */,
 				442CE1BE1E2366F7006C34A6 /* TestAnswers.swift in Sources */,
 				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
 				442CE1AC1E235397006C34A6 /* TestRecord.swift in Sources */,

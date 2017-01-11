@@ -11,8 +11,6 @@
 #endif
 
 #import "JSONTestRecordSerialization.h"
-#import "JSONTestRecordProxy.h"
-
 
 #pragma mark -
 #pragma mark Static constatnts
@@ -169,11 +167,11 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
     
     for (NSDictionary *dictionary in jsonProxies)
     {
-        JSONTestRecordProxy *proxy = [JSONTestRecordProxy new];
+        JSONTestRecordProxy *proxy =
+            [[JSONTestRecordProxy alloc] initWithFileName: null2Nil(dictionary[kJSONKeyFileName])
+                                                directory: null2Nil(dictionary[kJSONKeyDirectory])];
         
         proxy.personName = null2Nil(dictionary[kJSONKeyName]);
-        proxy.fileName   = null2Nil(dictionary[kJSONKeyFileName]);
-        proxy.directory  = null2Nil(dictionary[kJSONKeyDirectory]);
         proxy.date       = [[self dateFormatter] dateFromString:
                             null2Nil(dictionary[kJSONKeyDate])];
         

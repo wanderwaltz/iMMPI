@@ -11,8 +11,6 @@
 #endif
 
 #import "JSONTestRecordsStorage.h"
-#import "JSONTestRecordProxy.h"
-
 
 #pragma mark -
 #pragma mark Static constants
@@ -204,9 +202,10 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
             if (record != nil)
             {
                 JSONTestRecordStorageElement *element = [JSONTestRecordStorageElement new];
-                element.record   = [JSONTestRecordProxy proxyForRecord: record
-                                                          withFileName: fileName
-                                                           inDirectory: _storageDirectoryName];
+                element.record =
+                [[JSONTestRecordProxy alloc] initWithRecord: record
+                                                   fileName: fileName
+                                                  directory: _storageDirectoryName];
                 element.fileName = fileName;
                 
                 [_loadedFileNames addObject: fileName];
