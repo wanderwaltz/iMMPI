@@ -2,6 +2,8 @@ import Foundation
 
 extension MMPIRouter {
     final class EditingDelegate {
+        weak var answersInputDelegate: TestAnswersInputDelegate?
+        
         init(storage: TestRecordStorage) {
             self.storage = storage
         }
@@ -35,6 +37,16 @@ extension MMPIRouter.EditingDelegate: EditTestRecordViewControllerDelegate {
 
     func editTestRecordViewControllerDidCancel(_ controller: EditTestRecordViewController) {
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+
+extension MMPIRouter.EditingDelegate: TestAnswersInputDelegate {
+    func testAnswersViewController(_ controller: TestAnswersTableViewControllerBase,
+                                   didSet answer: AnswerType,
+                                   for statement: Statement,
+                                   record: TestRecordProtocol) {
+        // does nothing
     }
 }
 
