@@ -89,7 +89,6 @@ extension MMPIRouter: Router {
         let controller = try viewControllersFactory.makeAnswersInputViewController()
 
         controller.record = record
-        controller.storage = storage
         controller.inputDelegate = editingDelegate
         
         let navigationController = UINavigationController(rootViewController: controller)

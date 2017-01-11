@@ -24,13 +24,6 @@ class TestAnswersTableViewControllerBase: UIViewController, UsingRouting {
     /// object properties which are retrieved from the record).
     var record: TestRecordProtocol?
 
-    /// A storage for the `TestRecordProtocol` record.
-    ///
-    /// Records managed by the `TestAnswersTableViewControllerBase` are assumed to be stored in the 
-    /// `TestRecordStorage` object provided in this property. When saving state of the record, 
-    /// the `update(_:)` method is called on the provided storage object.
-    var storage: TestRecordStorage?
-
     /// The QuestionnaireProtocol object which provides the questionnaire info.
     ///
     /// If this property is not set manually, it can be set automatically using the 
@@ -81,16 +74,16 @@ extension TestAnswersTableViewControllerBase {
             }
         }
     }
+}
 
 
-    /// Updates the record in the storage object provided.
-    func saveRecord() {
+extension TestAnswersTableViewControllerBase {
+    fileprivate func saveRecord() {
         if let record = record {
-            storage?.update(record)
+            inputDelegate?.testAnswersInputViewController(self, didSet: record.testAnswers, for: record)
         }
     }
 }
-
 
 
 // MARK: - UITableViewDataSource
