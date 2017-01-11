@@ -120,7 +120,7 @@
     
     if (groupIndices == nil)
     {
-        for (NSUInteger i = 0; i < _analyzer.groupsCount; ++i)
+        for (NSInteger i = 0; i < _analyzer.groupsCount; ++i)
         {
             id<AnalyzerGroup> group = [_analyzer groupAtIndex: i];
             appendGroupRow(group, i);

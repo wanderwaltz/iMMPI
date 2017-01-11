@@ -8,6 +8,7 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark AnalyzerGroup protocol
@@ -15,41 +16,43 @@
 @protocol AnalyzerProtocol;
 @protocol TestRecordProtocol;
 
-@protocol AnalyzerGroup <NSObject>
+@protocol AnalyzerGroup<NSObject>
 @required
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *type;
 
-@property (readonly, nonatomic) NSUInteger subgroupsCount;
+@property (readonly, nonatomic) NSInteger subgroupsCount;
 
-- (NSString *) readableScore;
+- (NSString *)readableScore;
 
-- (BOOL) scoreIsWithinNorm;
-- (BOOL) canProvideDetailedInfo;
+- (BOOL)scoreIsWithinNorm;
+- (BOOL)canProvideDetailedInfo;
 
-- (NSUInteger) indexForRecord: (id<TestRecordProtocol>) record;
+- (NSInteger)indexForRecord:(id<TestRecordProtocol>)record;
 
-- (NSString *) htmlDetailedInfoForRecord: (id<TestRecordProtocol>) record
-                                analyser: (id<AnalyzerProtocol>) analyser;
-
-
-- (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index;
+- (NSString *)htmlDetailedInfoForRecord:(id<TestRecordProtocol>)record
+                               analyser:(id<AnalyzerProtocol>)analyser;
 
 
-- (double) computeScoreForRecord: (id<TestRecordProtocol>) record
-                        analyser: (id<AnalyzerProtocol>) analyser;
+- (id<AnalyzerGroup>)subgroupAtIndex:(NSInteger)index;
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
-                              analyser: (id<AnalyzerProtocol>) analyser;
 
-- (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
-                                 analyser: (id<AnalyzerProtocol>) analyser;
+- (double)computeScoreForRecord:(id<TestRecordProtocol>)record
+                       analyser:(id<AnalyzerProtocol>)analyser;
 
-- (NSUInteger) totalNumberOfValidStatementIDsForRecord: (id<TestRecordProtocol>) record
-                                              analyser: (id<AnalyzerProtocol>) analyser;
+- (NSInteger)computeMatchesForRecord:(id<TestRecordProtocol>)record
+                            analyser:(id<AnalyzerProtocol>)analyser;
 
-- (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record;
-- (NSArray *) negativeStatementIDsForRecord: (id<TestRecordProtocol>) record;
+- (NSInteger)computePercentageForRecord:(id<TestRecordProtocol>)record
+                                 analyser:(id<AnalyzerProtocol>)analyser;
+
+- (NSInteger)totalNumberOfValidStatementIDsForRecord:(id<TestRecordProtocol>)record
+                                            analyser:(id<AnalyzerProtocol>)analyser;
+
+- (NSArray<NSNumber *> *)positiveStatementIDsForRecord:(id<TestRecordProtocol>)record;
+- (NSArray<NSNumber *> *)negativeStatementIDsForRecord:(id<TestRecordProtocol>)record;
 
 @end
+
+NS_ASSUME_NONNULL_END

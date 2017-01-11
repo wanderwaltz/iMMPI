@@ -273,11 +273,11 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 }
 
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
-                              analyser: (id<AnalyzerProtocol>) analyser
+- (NSInteger)computeMatchesForRecord:(id<TestRecordProtocol>)record
+                            analyser:(id<AnalyzerProtocol>)analyser
 {
-    NSUInteger positiveMatches = 0;
-    NSUInteger negativeMatches = 0;
+    NSInteger positiveMatches = 0;
+    NSInteger negativeMatches = 0;
     
     for (NSNumber *index in _positiveIndices)
     {
@@ -298,13 +298,13 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 }
 
 
-- (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
-                                 analyser: (id<AnalyzerProtocol>) analyser
+- (NSInteger)computePercentageForRecord:(id<TestRecordProtocol>)record
+                               analyser:(id<AnalyzerProtocol>)analyser
 {
-    NSUInteger matches = [self computeMatchesForRecord: record
+    NSInteger matches = [self computeMatchesForRecord: record
                                               analyser: analyser];
     
-    NSUInteger total = [self totalNumberOfValidStatementIDsForRecord: record
+    NSInteger total = [self totalNumberOfValidStatementIDsForRecord: record
                                                             analyser: analyser];
     
     if (total > 0)
@@ -315,10 +315,10 @@ static id _logWrongNumberOfComponents(NSString *key, id object);
 }
 
 
-- (NSUInteger) totalNumberOfValidStatementIDsForRecord: (id<TestRecordProtocol>) record
-                                              analyser: (id<AnalyzerProtocol>) analyser
+- (NSInteger) totalNumberOfValidStatementIDsForRecord:(id<TestRecordProtocol>)record
+                                              analyser:(id<AnalyzerProtocol>)analyser
 {
-    NSUInteger count = 0;
+    NSInteger count = 0;
     
     for (NSNumber *statementID in _positiveIndices)
     {

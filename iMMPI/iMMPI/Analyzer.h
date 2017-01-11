@@ -8,6 +8,7 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark Constants
@@ -51,17 +52,19 @@ extern NSString * const kGroupType_PlainPercentScale;
 #pragma mark -
 #pragma mark Analyzer interface
 
-@interface Analyzer : NSObject<AnalyzerProtocol>
+@interface Analyzer: NSObject<AnalyzerProtocol>
 
-@property (readonly, nonatomic) NSUInteger groupsCount;
+@property (readonly, nonatomic) NSInteger groupsCount;
 
-- (id<AnalyzerGroup>) groupAtIndex: (NSUInteger) index;
-- (NSUInteger) depthOfGroupAtIndex: (NSUInteger) index;
+- (id<AnalyzerGroup> _Nullable)groupAtIndex:(NSInteger)index;
+- (NSInteger)depthOfGroupAtIndex:(NSInteger)index;
 
-- (id<AnalyzerGroup>) groupWithName: (NSString *) name;
+- (id<AnalyzerGroup> _Nullable)groupWithName:(NSString *)name;
 
-- (BOOL) loadGroups;
+- (BOOL)loadGroups;
 
-- (void) computeScoresForRecord: (id<TestRecordProtocol>) record;
+- (void)computeScoresForRecord:(id<TestRecordProtocol>)record;
 
 @end
+
+NS_ASSUME_NONNULL_END

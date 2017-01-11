@@ -133,7 +133,7 @@ static NSString * const kSegueIDAnalysisOptions = @"com.immpi.segue.analysisOpti
 {
     [_analyzerGroupIndices removeAllObjects];
     
-    for (NSUInteger i = 0; i < _analyzer.groupsCount; ++i)
+    for (NSInteger i = 0; i < _analyzer.groupsCount; ++i)
     {
         id<AnalyzerGroup> group = [_analyzer groupAtIndex: i];
         

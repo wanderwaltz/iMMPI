@@ -8,6 +8,7 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark Analyzer protocol
@@ -15,9 +16,9 @@
 @protocol AnalyzerProtocol<NSObject>
 @required
 
-- (id<AnalyzerGroup>) firstGroupForType: (NSString *) type;
+- (id<AnalyzerGroup> _Nullable)firstGroupForType:(NSString *)type;
 
-- (BOOL) isValidStatementID: (NSInteger) statementID;
+- (BOOL)isValidStatementID:(NSInteger)statementID;
 
 
 /*! Сумма Тэра, используется при расчете баллов по шкалам 95-104,
@@ -26,6 +27,8 @@
  
     Представляет собой сумму процентов совпадений по шкалам 95-98
  */
-- (NSUInteger) taerSumForRecord: (id<TestRecordProtocol>) record;
+- (NSInteger)taerSumForRecord:(id<TestRecordProtocol>)record;
 
 @end
+
+NS_ASSUME_NONNULL_END

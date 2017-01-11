@@ -13,22 +13,22 @@
 #pragma mark AnalyzerGroupBase interface
 
 @interface AnalyzerGroupBase : NSObject<AnalyzerGroup>
-@property (strong,   nonatomic) NSArray   *indexesForGender;
-@property (strong,   nonatomic) NSString  *name;
-@property (strong,   nonatomic) NSString  *type;
-@property (assign,   nonatomic) double     score;
-@property (readonly, nonatomic) NSUInteger subgroupsCount;
+@property (strong, nonatomic) NSArray *indexesForGender;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *type;
+@property (assign, nonatomic) double score;
+@property (readonly, nonatomic) NSInteger subgroupsCount;
 
-- (id) initWithJSON: (NSDictionary *) json;
+- (instancetype)initWithJSON:(NSDictionary *)json;
 
-- (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index;
+- (id<AnalyzerGroup>)subgroupAtIndex:(NSInteger)index;
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
-                              analyser: (id<AnalyzerProtocol>) analyser;
+- (NSInteger)computeMatchesForRecord:(id<TestRecordProtocol>)record
+                            analyser:(id<AnalyzerProtocol>)analyser;
 
 
-+ (id<AnalyzerGroup>) parseGroupJSON: (NSDictionary *) json;
++ (id<AnalyzerGroup>)parseGroupJSON:(NSDictionary *)json;
 
-+ (NSArray *) parseSpaceSeparatedInts: (NSString *) string;
++ (NSArray *)parseSpaceSeparatedInts:(NSString *)string;
 
 @end

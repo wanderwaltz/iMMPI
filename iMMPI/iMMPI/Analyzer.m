@@ -97,7 +97,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 #pragma mark -
 #pragma mark properties
 
-- (NSUInteger) groupsCount
+- (NSInteger)groupsCount
 {
     return _allGroups.count;
 }
@@ -122,19 +122,19 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 #pragma mark -
 #pragma mark methods
 
-- (id<AnalyzerGroup>) groupAtIndex: (NSUInteger) index
+- (id<AnalyzerGroup>)groupAtIndex:(NSInteger)index
 {
     return _allGroups[index];
 }
 
 
-- (NSUInteger) depthOfGroupAtIndex: (NSUInteger) index
+- (NSInteger)depthOfGroupAtIndex:(NSInteger)index
 {
-    return [_depths[index] unsignedIntegerValue];
+    return [_depths[index] integerValue];
 }
 
 
-- (id<AnalyzerGroup>) groupWithName: (NSString *) name
+- (id<AnalyzerGroup>)groupWithName:(NSString *)name
 {
     for (id<AnalyzerGroup> group in _allGroups)
     {
@@ -245,7 +245,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 }
 
 
-- (NSUInteger) taerSumForRecord: (id<TestRecordProtocol>) record
+- (NSInteger)taerSumForRecord:(id<TestRecordProtocol>)record
 {
     // Предполагается, что шкалы с данными типами присутствуют в
     // файле анализатора в единственном экземпляре.
@@ -274,7 +274,7 @@ static BOOL _logJSONGroupNotNSDictionary(id object);
 {
     if (block)
     {
-        for (NSUInteger i = 0; i < group.subgroupsCount; ++i)
+        for (NSInteger i = 0; i < group.subgroupsCount; ++i)
         {
             id<AnalyzerGroup> subgroup = [group subgroupAtIndex: i];
             

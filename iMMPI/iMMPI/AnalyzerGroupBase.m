@@ -140,7 +140,7 @@ static id _logSubgroupNotDictionary(id object);
 #pragma mark -
 #pragma mark properties
 
-- (NSUInteger) subgroupsCount
+- (NSInteger)subgroupsCount
 {
     return _subgroups.count;
 }
@@ -149,7 +149,7 @@ static id _logSubgroupNotDictionary(id object);
 #pragma mark -
 #pragma mark AnalyzerGroup
 
-- (NSUInteger) indexForRecord: (id<TestRecordProtocol>) record
+- (NSInteger)indexForRecord:(id<TestRecordProtocol>)record
 {
     return [self.indexesForGender[(record.person.gender == GenderFemale) ? 1 : 0] unsignedIntegerValue];
 }
@@ -161,22 +161,22 @@ static id _logSubgroupNotDictionary(id object);
 }
 
 
-- (NSString *) htmlDetailedInfoForRecord: (id<TestRecordProtocol>) record
-                                analyser: (id<AnalyzerProtocol>) analyser
+- (NSString *)htmlDetailedInfoForRecord:(id<TestRecordProtocol>)record
+                               analyser:(id<AnalyzerProtocol>)analyser
 {
-    return nil;
+    return @"";
 }
 
 
-- (NSArray *) positiveStatementIDsForRecord: (id<TestRecordProtocol>) record
+- (NSArray *)positiveStatementIDsForRecord:(id<TestRecordProtocol>)record
 {
-    return nil;
+    return @[];
 }
 
 
-- (NSArray *) negativeStatementIDsForRecord: (id<TestRecordProtocol>) record
+- (NSArray *)negativeStatementIDsForRecord:(id<TestRecordProtocol>)record
 {
-    return nil;
+    return @[];
 }
 
 
@@ -197,7 +197,7 @@ static id _logSubgroupNotDictionary(id object);
 }
 
 
-- (id<AnalyzerGroup>) subgroupAtIndex: (NSUInteger) index
+- (id<AnalyzerGroup>)subgroupAtIndex:(NSInteger)index
 {
     id<AnalyzerGroup> subgroup = _subgroups[index];
     FRB_AssertConformsTo(subgroup, AnalyzerGroup);
@@ -206,29 +206,29 @@ static id _logSubgroupNotDictionary(id object);
 }
 
 
-- (double) computeScoreForRecord: (id<TestRecordProtocol>) record
-                        analyser: (id<AnalyzerProtocol>) analyser
+- (double)computeScoreForRecord:(id<TestRecordProtocol>)record
+                       analyser:(id<AnalyzerProtocol>)analyser
 {
     self.score = NAN;
     return self.score;
 }
 
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
+- (NSInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
                               analyser: (id<AnalyzerProtocol>) analyser
 {
     return 0;
 }
 
 
-- (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
+- (NSInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
                                  analyser: (id<AnalyzerProtocol>) analyser
 {
     return 0;
 }
 
 
-- (NSUInteger) totalNumberOfValidStatementIDsForRecord: (id<TestRecordProtocol>) record
+- (NSInteger) totalNumberOfValidStatementIDsForRecord: (id<TestRecordProtocol>) record
                                               analyser: (id<AnalyzerProtocol>) analyser
 {
     return 0;

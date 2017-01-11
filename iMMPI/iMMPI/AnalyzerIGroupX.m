@@ -407,8 +407,8 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 }
 
 
-- (NSUInteger) computeMatchesForRecord: (id<TestRecordProtocol>) record
-                              analyser: (id<AnalyzerProtocol>) analyser
+- (NSInteger)computeMatchesForRecord:(id<TestRecordProtocol>)record
+                              analyser:(id<AnalyzerProtocol>)analyser
 {
     NSUInteger positiveMatches = 0;
     NSUInteger negativeMatches = 0;
@@ -432,11 +432,11 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 }
 
 
-- (NSUInteger) computePercentageForRecord: (id<TestRecordProtocol>) record
-                                 analyser: (id<AnalyzerProtocol>) analyser
+- (NSInteger)computePercentageForRecord:(id<TestRecordProtocol>)record
+                               analyser:(id<AnalyzerProtocol>)analyser
 {
-    NSUInteger total = [self totalNumberOfValidStatementIDsForRecord: record
-                                                            analyser: analyser];
+    NSInteger total = [self totalNumberOfValidStatementIDsForRecord: record
+                                                           analyser: analyser];
     
     if (total > 0)
     {
@@ -447,10 +447,10 @@ static NSString * const kJSONKeyAnswersNegative = @"answersNegative";
 }
 
 
-- (NSUInteger) totalNumberOfValidStatementIDsForRecord: (id<TestRecordProtocol>) record
-                                              analyser: (id<AnalyzerProtocol>) analyser
+- (NSInteger)totalNumberOfValidStatementIDsForRecord:(id<TestRecordProtocol>)record
+                                            analyser:(id<AnalyzerProtocol>)analyser
 {
-    NSUInteger count = 0;
+    NSInteger count = 0;
     
     for (NSNumber *statementID in _positiveIndices)
     {
