@@ -67,6 +67,21 @@ extension TestAnswersInputViewController {
 
         return false
     }
+
+
+    fileprivate func recordAnswer(_ answer: AnswerType) {
+        guard let record = record else {
+            return
+        }
+
+        if let statement = questionnaire?.statement(at: statementIndex) {
+            setAnswer(answer, for: statement)
+        }
+
+        if false == setNextStatementIndex() {
+            try? router?.displayAnalysis(for: record, sender: self)
+        }
+    }
 }
 
 
@@ -82,32 +97,12 @@ extension TestAnswersInputViewController {
 
 
     @objc @IBAction fileprivate func negativeAnswerButtonAction(_ sender: Any?) {
-        guard let record = record else {
-            return
-        }
-
-        if let statement = questionnaire?.statement(at: statementIndex) {
-            setAnswer(.negative, for: statement)
-        }
-
-        if false == setNextStatementIndex() {
-            try? router?.displayAnalysis(for: record, sender: self)
-        }
+        recordAnswer(.negative)
     }
 
 
     @objc @IBAction fileprivate func positiveAnswerButtonAction(_ sender: Any?) {
-        guard let record = record else {
-            return
-        }
-
-        if let statement = questionnaire?.statement(at: statementIndex) {
-            setAnswer(.positive, for: statement)
-        }
-
-        if false == setNextStatementIndex() {
-            try? router?.displayAnalysis(for: record, sender: self)
-        }
+        recordAnswer(.positive)
     }
 }
 
