@@ -13,6 +13,8 @@ import UIKit
 ///
 /// **See also:** `TestAnswersInputViewController`, `TestAnswersViewController`.
 class TestAnswersTableViewControllerBase: UIViewController, UsingRouting {
+    weak var inputDelegate: TestAnswersInputDelegate?
+
     @IBOutlet var tableView: UITableView?
 
     /// A `TestRecordProtocol` object to be managed by the view controller.
@@ -46,6 +48,16 @@ extension TestAnswersTableViewControllerBase {
 
 
 extension TestAnswersTableViewControllerBase {
+    func setAnswer(_ answer: AnswerType, for statement: Statement) {
+        guard let record = record else {
+            return
+        }
+
+        record.testAnswers.setAnswer(answer, for: statement.statementID)
+        inputDelegate?.testAnswersViewController(self, didSet: answer, for: statement, record: record)
+    }
+
+
     /// Loads the questionnaire asynchronously if questionnaire property value is nil.
     ///
     /// Creates a new `Questionnaire` object depending on the values of the `PersonProtocol` 
@@ -129,9 +141,9 @@ extension TestAnswersTableViewControllerBase: StatementTableViewCellDelegate {
     func statementTableViewCell(_ cell: StatementTableViewCell, segmentedControlChanged selectedSegmentIndex: Int) {
         if let indexPath = tableView?.indexPath(for: cell), let statement = questionnaire?.statement(at: indexPath.row) {
             switch selectedSegmentIndex {
-            case 0: record?.testAnswers.setAnswer(.negative, for: statement.statementID)
-            case 1: record?.testAnswers.setAnswer(.positive, for: statement.statementID)
-            default: record?.testAnswers.setAnswer(.unknown, for: statement.statementID)
+            case 0: setAnswer(.negative, for: statement)
+            case 1: setAnswer(.positive, for: statement)
+            default: setAnswer(.unknown, for: statement)
             }
         }
     }

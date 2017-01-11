@@ -92,7 +92,7 @@ extension TestAnswersInputViewController {
         soundPlayer.play(.clickNegative)
 
         if let statement = questionnaire?.statement(at: statementIndex) {
-            record.testAnswers.setAnswer(.negative, for: statement.statementID)
+            setAnswer(.negative, for: statement)
         }
 
         if false == setNextStatementIndex() {
@@ -109,7 +109,7 @@ extension TestAnswersInputViewController {
         soundPlayer.play(.clickPositive)
 
         if let statement = questionnaire?.statement(at: statementIndex) {
-            record.testAnswers.setAnswer(.positive, for: statement.statementID)
+            setAnswer(.positive, for: statement)
         }
 
         if false == setNextStatementIndex() {
