@@ -11,7 +11,6 @@
 #endif
 
 #import "JSONTestRecordsStorage.h"
-#import "JSONTestRecordStorageElement.h"
 #import "JSONTestRecordProxy.h"
 
 
