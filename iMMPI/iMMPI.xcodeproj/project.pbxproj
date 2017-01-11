@@ -982,6 +982,7 @@
 		44F97A371E26243E004F4E14 /* JSONTestRecordStorageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A361E26243E004F4E14 /* JSONTestRecordStorageElement.swift */; };
 		44F97A391E2624D2004F4E14 /* JSONTestRecordProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A381E2624D2004F4E14 /* JSONTestRecordProxy.swift */; };
 		44F97A3D1E26348A004F4E14 /* TestAnswersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A3C1E26348A004F4E14 /* TestAnswersViewModel.swift */; };
+		44F97A411E26652F004F4E14 /* TableViewCellSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A401E26652F004F4E14 /* TableViewCellSource.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -2018,6 +2019,7 @@
 		44F97A361E26243E004F4E14 /* JSONTestRecordStorageElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordStorageElement.swift; sourceTree = "<group>"; };
 		44F97A381E2624D2004F4E14 /* JSONTestRecordProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordProxy.swift; sourceTree = "<group>"; };
 		44F97A3C1E26348A004F4E14 /* TestAnswersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersViewModel.swift; sourceTree = "<group>"; };
+		44F97A401E26652F004F4E14 /* TableViewCellSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellSource.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -3500,6 +3502,7 @@
 				5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */,
 				5DC4AC0316903EA400E835B7 /* AnalyzerTableViewCell.h */,
 				5DC4AC0416903EA400E835B7 /* AnalyzerTableViewCell.m */,
+				44F97A401E26652F004F4E14 /* TableViewCellSource.swift */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -4768,6 +4771,7 @@
 				4430C7B91E16408A0024C001 /* Person.swift in Sources */,
 				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
 				442CE1F51E23A957006C34A6 /* ListViewModel.swift in Sources */,
+				44F97A411E26652F004F4E14 /* TableViewCellSource.swift in Sources */,
 				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
 				44673C1C1E23C9CA001758C0 /* Router.swift in Sources */,
 				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
