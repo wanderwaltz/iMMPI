@@ -61,31 +61,19 @@ extension TestAnswersTableViewControllerBase {
     /// Loads the questionnaire asynchronously if questionnaire property value is nil.
     ///
     /// Creates a new `Questionnaire` object depending on the values of the `PersonProtocol` 
-    /// object read from the record property. The questionnaire is loaded asynchronously 
-    /// in background and a completion callback block is dispatched on main queue then.
+    /// object read from the record property.
     ///
     /// This method does nothing if record property value is nil.
-    ///
-    /// - Parameter completion: A block to be dispatched on main queue when the questionnaire is loaded.
-    func loadQuestionnaireAsyncIfNeeded(completion: @escaping () -> ()) {
+    func loadQuestionnaireAsyncIfNeeded() {
         if let record = record, questionnaire == nil {
             DispatchQueue.global().async {
                 let questionnaire = try? Questionnaire(gender: record.person.gender, ageGroup: record.person.ageGroup)
 
                 DispatchQueue.main.async {
                     self.questionnaire = questionnaire
-                    completion()
+                    self.tableView?.reloadData()
                 }
             }
-        }
-    }
-
-
-    /// A default variant of the -loadQuestionnaireAsyncIfNeeded: method which calls 
-    /// `reloadData()` on the table view when the questionnaire finishes loading.
-    func loadQuestionnaireAsyncIfNeeded() {
-        loadQuestionnaireAsyncIfNeeded {
-            self.tableView?.reloadData()
         }
     }
 

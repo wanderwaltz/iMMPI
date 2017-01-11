@@ -17,9 +17,7 @@ final class TestAnswersInputViewController: TestAnswersTableViewControllerBase {
 extension TestAnswersInputViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadQuestionnaireAsyncIfNeeded { 
-            self.setStatementIndex(0)
-        }
+        loadQuestionnaireAsyncIfNeeded()
     }
 }
 
