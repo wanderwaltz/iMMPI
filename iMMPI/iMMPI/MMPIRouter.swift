@@ -16,6 +16,7 @@ final class MMPIRouter {
     }
 
     fileprivate let editingDelegate: EditingDelegate
+    fileprivate let soundPlayer = SoundPlayer()
 }
 
 
@@ -88,6 +89,7 @@ extension MMPIRouter: Router {
 
         controller.record = record
         controller.storage = storage
+        controller.inputDelegate = soundPlayer
         
         let navigationController = UINavigationController(rootViewController: controller)
         sender.showDetailViewController(navigationController, sender: record)

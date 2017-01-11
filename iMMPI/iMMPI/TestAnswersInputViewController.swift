@@ -9,10 +9,7 @@ import UIKit
 /// is focused on a single selected statement.
 final class TestAnswersInputViewController: TestAnswersTableViewControllerBase {
     @objc @IBOutlet fileprivate var answersInputView: UIView?
-
     fileprivate var statementIndex: Int = 0
-
-    fileprivate let soundPlayer = SoundPlayer()
 }
 
 
@@ -89,8 +86,6 @@ extension TestAnswersInputViewController {
             return
         }
 
-        soundPlayer.play(.clickNegative)
-
         if let statement = questionnaire?.statement(at: statementIndex) {
             setAnswer(.negative, for: statement)
         }
@@ -105,8 +100,6 @@ extension TestAnswersInputViewController {
         guard let record = record else {
             return
         }
-
-        soundPlayer.play(.clickPositive)
 
         if let statement = questionnaire?.statement(at: statementIndex) {
             setAnswer(.positive, for: statement)
