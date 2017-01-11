@@ -982,6 +982,7 @@
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */; };
 		44F97A371E26243E004F4E14 /* JSONTestRecordStorageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A361E26243E004F4E14 /* JSONTestRecordStorageElement.swift */; };
 		44F97A391E2624D2004F4E14 /* JSONTestRecordProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A381E2624D2004F4E14 /* JSONTestRecordProxy.swift */; };
+		44F97A3D1E26348A004F4E14 /* TestAnswersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A3C1E26348A004F4E14 /* TestAnswersViewModel.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
@@ -2018,6 +2019,7 @@
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+TestAnswersInput.swift"; sourceTree = "<group>"; };
 		44F97A361E26243E004F4E14 /* JSONTestRecordStorageElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordStorageElement.swift; sourceTree = "<group>"; };
 		44F97A381E2624D2004F4E14 /* JSONTestRecordProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordProxy.swift; sourceTree = "<group>"; };
+		44F97A3C1E26348A004F4E14 /* TestAnswersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersViewModel.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
@@ -3437,6 +3439,7 @@
 			isa = PBXGroup;
 			children = (
 				44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */,
+				44F97A3C1E26348A004F4E14 /* TestAnswersViewModel.swift */,
 				4422BC151E253CE000355D71 /* TestAnswersTableViewControllerBase.swift */,
 				4422BC131E25350B00355D71 /* TestAnswersInputViewController.swift */,
 				44DF5B491E25307F00C43F16 /* TestAnswersViewController.swift */,
@@ -4792,6 +4795,7 @@
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
 				5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */,
 				442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */,
+				44F97A3D1E26348A004F4E14 /* TestAnswersViewModel.swift in Sources */,
 				44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */,
 				5D74049416FEC107001747A1 /* LabelCollectionViewCell.m in Sources */,
 				5D74049816FEC40F001747A1 /* LabelCollectionViewHeader.m in Sources */,
