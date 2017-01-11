@@ -462,6 +462,7 @@
 		4406A9A61E2527B400A813D0 /* Test Subject 00452 - scores.json in Resources */ = {isa = PBXBuildFile; fileRef = 4406A7E01E2527B400A813D0 /* Test Subject 00452 - scores.json */; };
 		4406A9A71E2527B400A813D0 /* Test Subject 00453 - scores.json in Resources */ = {isa = PBXBuildFile; fileRef = 4406A7E11E2527B400A813D0 /* Test Subject 00453 - scores.json */; };
 		4422BC141E25350B00355D71 /* TestAnswersInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4422BC131E25350B00355D71 /* TestAnswersInputViewController.swift */; };
+		4422BC161E253CE000355D71 /* TestAnswersInputViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4422BC151E253CE000355D71 /* TestAnswersInputViewControllerBase.swift */; };
 		442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */; };
 		442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */; };
 		442CE1AA1E235156006C34A6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1A91E235156006C34A6 /* Strings.swift */; };
@@ -996,7 +997,6 @@
 		5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */; };
 		5DA5C9F1163B018D00CF1601 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5C9F0163B018D00CF1601 /* main.m */; };
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
-		5DBD568D1697274700728BB4 /* TestAnswersTableViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD568C1697274700728BB4 /* TestAnswersTableViewControllerBase.m */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
 		5DC0C87F16E26207006ED854 /* AnalysisOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87E16E26207006ED854 /* AnalysisOptionsViewController.m */; };
@@ -1495,6 +1495,7 @@
 		4406A7E01E2527B400A813D0 /* Test Subject 00452 - scores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00452 - scores.json"; sourceTree = "<group>"; };
 		4406A7E11E2527B400A813D0 /* Test Subject 00453 - scores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00453 - scores.json"; sourceTree = "<group>"; };
 		4422BC131E25350B00355D71 /* TestAnswersInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputViewController.swift; sourceTree = "<group>"; };
+		4422BC151E253CE000355D71 /* TestAnswersInputViewControllerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputViewControllerBase.swift; sourceTree = "<group>"; };
 		442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatter.swift; sourceTree = "<group>"; };
 		442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedNameFormatterTests.swift; sourceTree = "<group>"; };
 		442CE1A91E235156006C34A6 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -2050,8 +2051,6 @@
 		5DA5C9F0163B018D00CF1601 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DA5C9F2163B018D00CF1601 /* iMMPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Prefix.pch"; sourceTree = "<group>"; };
 		5DA5C9FD163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5DBD568B1697274700728BB4 /* TestAnswersTableViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAnswersTableViewControllerBase.h; sourceTree = "<group>"; };
-		5DBD568C1697274700728BB4 /* TestAnswersTableViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAnswersTableViewControllerBase.m; sourceTree = "<group>"; };
 		5DBE6BD0169C3C05005F5E1B /* SegueSourceAnalyzeRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceAnalyzeRecord.h; sourceTree = "<group>"; };
 		5DBE6BD2169C3C14005F5E1B /* SegueDestinationAnalyzeRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationAnalyzeRecord.h; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -3436,20 +3435,11 @@
 		5DBD56891697272000728BB4 /* Test Answers */ = {
 			isa = PBXGroup;
 			children = (
-				5DBD568A1697273200728BB4 /* Test Answers View Controller Base */,
+				4422BC151E253CE000355D71 /* TestAnswersInputViewControllerBase.swift */,
 				4422BC131E25350B00355D71 /* TestAnswersInputViewController.swift */,
 				44DF5B491E25307F00C43F16 /* TestAnswersViewController.swift */,
 			);
 			name = "Test Answers";
-			sourceTree = "<group>";
-		};
-		5DBD568A1697273200728BB4 /* Test Answers View Controller Base */ = {
-			isa = PBXGroup;
-			children = (
-				5DBD568B1697274700728BB4 /* TestAnswersTableViewControllerBase.h */,
-				5DBD568C1697274700728BB4 /* TestAnswersTableViewControllerBase.m */,
-			);
-			name = "Test Answers View Controller Base";
 			sourceTree = "<group>";
 		};
 		5DBE76D7169356D40018C728 /* Records List View Controller */ = {
@@ -4784,7 +4774,7 @@
 				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
 				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
 				44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */,
-				5DBD568D1697274700728BB4 /* TestAnswersTableViewControllerBase.m in Sources */,
+				4422BC161E253CE000355D71 /* TestAnswersInputViewControllerBase.swift in Sources */,
 				5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */,
 				442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */,
 				44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */,

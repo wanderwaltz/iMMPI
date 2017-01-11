@@ -35,10 +35,14 @@ extension TestAnswersInputViewController {
 
 extension TestAnswersInputViewController {
     fileprivate func setStatementIndex(_ index: Int) {
+        guard let questionnaire = questionnaire else {
+            return
+        }
+
         if 0 <= index && index < questionnaire.statementsCount {
             statementIndex = index
-            tableView.reloadData()
-            tableView.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: false)
+            tableView?.reloadData()
+            tableView?.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: false)
             title = String(format: Strings.format_N_of_M, statementIndex+1, questionnaire.statementsCount)
         }
     }
@@ -58,9 +62,13 @@ extension TestAnswersInputViewController {
 
     @discardableResult
     fileprivate func setNextStatementIndex() -> Bool {
+        guard let questionnaire = questionnaire else {
+            return false
+        }
+
         if let statement = questionnaire.statement(at: statementIndex) {
             if statementIndex < questionnaire.statementsCount - 1
-                && record.testAnswers.answer(for: statement.statementID) != .unknown {
+                && record?.testAnswers.answer(for: statement.statementID) != .unknown {
                 setStatementIndex(statementIndex + 1)
                 return true
             }
@@ -85,8 +93,8 @@ extension TestAnswersInputViewController {
     @objc @IBAction fileprivate func negativeAnswerButtonAction(_ sender: Any?) {
         soundManager.playSoundNamed("button_tap1.wav")
 
-        if let statement = questionnaire.statement(at: statementIndex) {
-            record.testAnswers.setAnswer(.negative, for: statement.statementID)
+        if let statement = questionnaire?.statement(at: statementIndex) {
+            record?.testAnswers.setAnswer(.negative, for: statement.statementID)
         }
 
         if false == setNextStatementIndex() {
@@ -98,8 +106,8 @@ extension TestAnswersInputViewController {
     @objc @IBAction fileprivate func positiveAnswerButtonAction(_ sender: Any?) {
         soundManager.playSoundNamed("button_tap2.wav")
 
-        if let statement = questionnaire.statement(at: statementIndex) {
-            record.testAnswers.setAnswer(.positive, for: statement.statementID)
+        if let statement = questionnaire?.statement(at: statementIndex) {
+            record?.testAnswers.setAnswer(.positive, for: statement.statementID)
         }
 
         if false == setNextStatementIndex() {

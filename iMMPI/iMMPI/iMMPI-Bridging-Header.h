@@ -6,6 +6,5 @@
 #import "Storyboard.h"
 
 #import "AnalysisViewController.h"
-#import "TestAnswersTableViewControllerBase.h"
 
 #import "StatementTableViewCell.h"
