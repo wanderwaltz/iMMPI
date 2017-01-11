@@ -8,6 +8,7 @@
 
 #import "Model.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark JSONTestRecordStorageElement interface
@@ -18,3 +19,5 @@
 @property (strong, nonatomic) NSString *fileName;
 
 @end
+
+NS_ASSUME_NONNULL_END
