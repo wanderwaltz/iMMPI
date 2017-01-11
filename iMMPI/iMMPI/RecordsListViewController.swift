@@ -49,6 +49,15 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
 
 
     fileprivate func setup() {
+        cellSource = TableViewCellSource(
+            style: .value1,
+            identifier: "com.immpi.cells.recordsGroup",
+            update: { [weak self] cell, group in
+                if let group = group {
+                    self?.style.update(cell, with: group)
+                }
+        })
+
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
 
         NotificationCenter.default.addObserver(
@@ -89,6 +98,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
 
 
     fileprivate var index: SectionIndex?
+    fileprivate var cellSource: TableViewCellSource<TestRecordsGroup>!
 }
 
 
@@ -223,14 +233,7 @@ extension RecordsListViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kGroupCellIdentifier)
-            ?? UITableViewCell(style: .value1, reuseIdentifier: kGroupCellIdentifier)
-
-        if let item = groups.item(at: indexPath) {
-            style.update(cell, with: item)
-        }
-
-        return cell
+        return cellSource.dequeue(from: tableView, with: groups.item(at: indexPath))
     }
 
 
@@ -280,6 +283,3 @@ extension RecordsListViewController: UISearchControllerDelegate {
         recordsFilter = Constant.bool(true)
     }
 }
-
-
-fileprivate let kGroupCellIdentifier = "com.immpi.cells.personsGroup"
