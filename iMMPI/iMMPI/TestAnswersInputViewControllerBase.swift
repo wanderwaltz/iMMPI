@@ -12,7 +12,7 @@ import UIKit
 /// `StatementTableViewCell.reuseIdentifier()` string (this is set up in the storyboard).
 ///
 /// **See also:** `TestAnswersInputViewController`, `TestAnswersViewController`.
-class TestAnswersTableViewControllerBase: UIViewController {
+class TestAnswersTableViewControllerBase: UIViewController, UsingRouting {
     @IBOutlet var tableView: UITableView?
 
     /// A `TestRecordProtocol` object to be managed by the view controller.
@@ -126,29 +126,5 @@ extension TestAnswersTableViewControllerBase: StatementTableViewCellDelegate {
             default: record?.testAnswers.setAnswer(.unknown, for: statement.statementID)
             }
         }
-    }
-}
-
-
-extension TestAnswersTableViewControllerBase: SegueDestinationEditAnswers {
-    func setRecordToEditAnswers(_ record: TestRecordProtocol) {
-        self.record = record
-    }
-
-
-    func setStorageToEditAnswers(_ storage: TestRecordStorage) {
-        self.storage = storage
-    }
-}
-
-
-extension TestAnswersTableViewControllerBase: SegueSourceAnalyzeRecord {
-    func recordForAnalysis(with sender: Any?) -> TestRecordProtocol? {
-        return record
-    }
-
-
-    func storageForAnalysis(with sender: Any?) -> TestRecordStorage? {
-        return storage
     }
 }

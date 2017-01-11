@@ -62,6 +62,17 @@ extension MMPIRouter: Router {
     }
 
 
+    func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController) throws {
+        let controller = try viewControllersFactory.makeAnalysisViewController()
+
+        controller.setRecordForAnalysis(record)
+        controller.setStorageForAnalysis(storage)
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        sender.showDetailViewController(navigationController, sender: record)
+    }
+
+
     func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) throws {
         try edit(record, title: Strings.newRecord, sender: sender)
     }
@@ -75,9 +86,9 @@ extension MMPIRouter: Router {
     func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws {
         let controller = try viewControllersFactory.makeAnswersInputViewController()
 
-        controller.setRecordToEditAnswers(record)
-        controller.setStorageToEditAnswers(storage)
-
+        controller.record = record
+        controller.storage = storage
+        
         let navigationController = UINavigationController(rootViewController: controller)
         sender.showDetailViewController(navigationController, sender: record)
     }
@@ -151,16 +162,5 @@ extension MMPIRouter {
         else {
             try displayAnswersInput(for: record, sender: sender)
         }
-    }
-
-
-    fileprivate func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController) throws {
-        let controller = try viewControllersFactory.makeAnalysisViewController()
-
-        controller.setRecordForAnalysis(record)
-        controller.setStorageForAnalysis(storage)
-
-        let navigationController = UINavigationController(rootViewController: controller)
-        sender.showDetailViewController(navigationController, sender: record)
     }
 }

@@ -8,7 +8,7 @@ import UIKit
 }
 
 
-final class EditTestRecordViewController: StoryboardManagedTableViewController {
+final class EditTestRecordViewController: UITableViewController, UsingRouting {
     weak var delegate: EditTestRecordViewControllerDelegate?
 
     var record: TestRecordProtocol? {

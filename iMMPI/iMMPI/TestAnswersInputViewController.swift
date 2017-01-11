@@ -91,27 +91,35 @@ extension TestAnswersInputViewController {
 
 
     @objc @IBAction fileprivate func negativeAnswerButtonAction(_ sender: Any?) {
+        guard let record = record else {
+            return
+        }
+
         soundManager.playSoundNamed("button_tap1.wav")
 
         if let statement = questionnaire?.statement(at: statementIndex) {
-            record?.testAnswers.setAnswer(.negative, for: statement.statementID)
+            record.testAnswers.setAnswer(.negative, for: statement.statementID)
         }
 
         if false == setNextStatementIndex() {
-            performSegue(withIdentifier: kSegueIDAnalyzer, sender: nil)
+            try? router?.displayAnalysis(for: record, sender: self)
         }
     }
 
 
     @objc @IBAction fileprivate func positiveAnswerButtonAction(_ sender: Any?) {
+        guard let record = record else {
+            return
+        }
+
         soundManager.playSoundNamed("button_tap2.wav")
 
         if let statement = questionnaire?.statement(at: statementIndex) {
-            record?.testAnswers.setAnswer(.positive, for: statement.statementID)
+            record.testAnswers.setAnswer(.positive, for: statement.statementID)
         }
 
         if false == setNextStatementIndex() {
-            performSegue(withIdentifier: kSegueIDAnalyzer, sender: nil)
+            try? router?.displayAnalysis(for: record, sender: self)
         }
     }
 }
