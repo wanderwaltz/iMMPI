@@ -1,24 +1,24 @@
 import Foundation
 
 protocol TestAnswersInputDelegate: class {
-    func testAnswersViewController(_ controller: TestAnswersTableViewControllerBase,
+    func testAnswersViewController(_ controller: TestAnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
                                    record: TestRecordProtocol)
 
-    func testAnswersInputViewController(_ controller: TestAnswersTableViewControllerBase,
+    func testAnswersInputViewController(_ controller: TestAnswersViewController,
                                         didSet answers: TestAnswersProtocol,
                                         for record: TestRecordProtocol)
 }
 
 
 extension TestAnswersInputDelegate {
-    func testAnswersViewController(_ controller: TestAnswersTableViewControllerBase,
+    func testAnswersViewController(_ controller: TestAnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
                                    record: TestRecordProtocol) {}
 
-    func testAnswersInputViewController(_ controller: TestAnswersTableViewControllerBase,
+    func testAnswersInputViewController(_ controller: TestAnswersViewController,
                                         didSet answers: TestAnswersProtocol,
                                         for record: TestRecordProtocol) {}
 }

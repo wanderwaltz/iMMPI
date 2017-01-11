@@ -42,7 +42,7 @@ extension MMPIRouter.EditingDelegate: EditTestRecordViewControllerDelegate {
 
 
 extension MMPIRouter.EditingDelegate: TestAnswersInputDelegate {
-    func testAnswersInputViewController(_ controller: TestAnswersTableViewControllerBase,
+    func testAnswersInputViewController(_ controller: TestAnswersViewController,
                                         didSet answers: TestAnswersProtocol,
                                         for record: TestRecordProtocol) {
         record.testAnswers = answers

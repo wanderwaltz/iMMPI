@@ -1,14 +1,122 @@
 import UIKit
 
-/// A view controller suited to review `TestAnswersProtocol` answers provided
-/// in the `TestRecordProtocol` record and possibly correct some of them.
+/// A base class for presenting and editing TestRecordProtocol record answers in a UITableView-driven UI.
 ///
-/// This view controller displays a segmented control in each of the `StatementTableViewCell` 
-/// cells which it creates, and allows setting each of the answers individually. 
+/// This class uses StatementTableViewCell cells to display the statements of the questionnaire. 
+/// The UITableViewDataSource methods are implemented to display the questionnaire contents in a single section list.
 ///
-/// Note that this functionality should be provided by the storyboard (i.e. storyboard should 
-/// set the proper outlets of the corresponding prototype cells).
+/// `TestAnswersTableViewControllerBase` is automatically set as the delegate for each of the `StatementTableViewCell`
+/// used in the table view.
 ///
-/// The form of presentation implemented by this controller is not very comfortable
-/// to enter lots of answers at once.
-final class TestAnswersViewController: TestAnswersTableViewControllerBase {}
+/// It is expected that the table view does return a `StatementTableViewCell` object for 
+/// `StatementTableViewCell.reuseIdentifier()` string (this is set up in the storyboard).
+///
+/// **See also:** `TestAnswersInputViewController`, `TestAnswersViewController`.
+class TestAnswersViewController: UIViewController, UsingRouting {
+    weak var inputDelegate: TestAnswersInputDelegate?
+
+    @IBOutlet var tableView: UITableView?
+
+    var viewModel: TestAnswersViewModel? {
+        willSet {
+            viewModel?.onDidUpdate = Constant.void()
+        }
+
+        didSet {
+            if let viewModel = viewModel {
+                answers = viewModel.record.testAnswers.makeCopy()
+                viewModel.onDidUpdate = { [weak self] in
+                    self?.tableView?.reloadData()
+                }
+            }
+        }
+    }
+
+    fileprivate(set) var answers = TestAnswers()
+}
+
+
+extension TestAnswersViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.setNeedsUpdate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveRecord()
+    }
+}
+
+
+extension TestAnswersViewController {
+    func setAnswer(_ answer: AnswerType, for statement: Statement) {
+        guard let record = viewModel?.record else {
+            return
+        }
+
+        answers.setAnswer(answer, for: statement.statementID)
+        inputDelegate?.testAnswersViewController(self, didSet: answer, for: statement, record: record)
+    }
+}
+
+
+extension TestAnswersViewController {
+    fileprivate func saveRecord() {
+        guard let record = viewModel?.record else {
+            return
+        }
+
+        inputDelegate?.testAnswersInputViewController(self, didSet: answers, for: record)
+    }
+}
+
+
+// MARK: - UITableViewDataSource
+extension TestAnswersViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.statementsCount ?? 0
+    }
+
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: StatementTableViewCell.reuseIdentifier())
+            as! StatementTableViewCell
+
+        cell.delegate = self
+
+        if let statement = viewModel?.statement(at: indexPath.row) {
+            cell.statementIDLabel?.text = "\(statement.statementID)"
+            cell.statementTextLabel?.text = statement.text
+
+            switch answers.answer(for: statement.statementID) {
+            case .positive:
+                cell.statementAnswerLabel?.text = Strings.yes
+                cell.statementSegmentedControl?.selectedSegmentIndex = 1
+
+            case .negative:
+                cell.statementAnswerLabel?.text = Strings.no
+                cell.statementSegmentedControl?.selectedSegmentIndex = 0
+
+            case .unknown:
+                cell.statementAnswerLabel?.text = ""
+                cell.statementSegmentedControl?.selectedSegmentIndex = UISegmentedControlNoSegment
+            }
+        }
+
+        return cell
+    }
+}
+
+
+extension TestAnswersViewController: StatementTableViewCellDelegate {
+    func statementTableViewCell(_ cell: StatementTableViewCell, segmentedControlChanged selectedSegmentIndex: Int) {
+        if let indexPath = tableView?.indexPath(for: cell), let statement = viewModel?.statement(at: indexPath.row) {
+            switch selectedSegmentIndex {
+            case 0: setAnswer(.negative, for: statement)
+            case 1: setAnswer(.positive, for: statement)
+            default: setAnswer(.unknown, for: statement)
+            }
+        }
+    }
+}

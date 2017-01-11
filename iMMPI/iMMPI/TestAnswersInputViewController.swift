@@ -7,7 +7,7 @@ import UIKit
 /// positive/negative answers to each statement. A current statement is displayed as usual, 
 /// all other (not currently selected) statements are dimmed so the attention of the user
 /// is focused on a single selected statement.
-final class TestAnswersInputViewController: TestAnswersTableViewControllerBase {
+final class TestAnswersInputViewController: TestAnswersViewController {
     @objc @IBOutlet fileprivate var answersInputView: UIView?
     fileprivate var statementIndex: Int = 0
 }
