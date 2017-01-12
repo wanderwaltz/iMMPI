@@ -3199,6 +3199,17 @@
 			name = AnalyserTableViewCell;
 			sourceTree = "<group>";
 		};
+		448C30B41E277C43003D355D /* StatementTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				448C30AE1E277193003D355D /* StatementTableViewCell.swift */,
+				44F97A421E266B94004F4E14 /* StatementTableViewCell+Source.swift */,
+				448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */,
+				448C30B01E277353003D355D /* StatementTableViewCell+Review.xib */,
+			);
+			name = StatementTableViewCell;
+			sourceTree = "<group>";
+		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3517,10 +3528,7 @@
 			children = (
 				44F97A401E26652F004F4E14 /* TableViewCellSource.swift */,
 				448C30A81E276CA7003D355D /* AnalyserTableViewCell */,
-				448C30AE1E277193003D355D /* StatementTableViewCell.swift */,
-				44F97A421E266B94004F4E14 /* StatementTableViewCell+Source.swift */,
-				448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */,
-				448C30B01E277353003D355D /* StatementTableViewCell+Review.xib */,
+				448C30B41E277C43003D355D /* StatementTableViewCell */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
