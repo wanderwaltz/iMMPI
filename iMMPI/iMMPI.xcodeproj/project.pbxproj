@@ -487,7 +487,7 @@
 		442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1EC1E23A265006C34A6 /* Grouping+Alphabetically.swift */; };
 		442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1EE1E23A3A7006C34A6 /* Grouping+TestRecord.swift */; };
 		442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1F01E23A939006C34A6 /* AsyncProvider.swift */; };
-		442CE1F51E23A957006C34A6 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1F41E23A957006C34A6 /* ListViewModel.swift */; };
+		442CE1F51E23A957006C34A6 /* RecordsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */; };
 		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C78A1E16038A0024C001 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7891E16038A0024C001 /* FRBKeyedTargetAction.m */; };
@@ -1529,7 +1529,7 @@
 		442CE1EC1E23A265006C34A6 /* Grouping+Alphabetically.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Grouping+Alphabetically.swift"; sourceTree = "<group>"; };
 		442CE1EE1E23A3A7006C34A6 /* Grouping+TestRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Grouping+TestRecord.swift"; sourceTree = "<group>"; };
 		442CE1F01E23A939006C34A6 /* AsyncProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncProvider.swift; sourceTree = "<group>"; };
-		442CE1F41E23A957006C34A6 /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewModel.swift; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBDatePickerPopover.h; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.h; sourceTree = "<group>"; };
 		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBDatePickerPopover.m; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.m; sourceTree = "<group>"; };
@@ -3481,7 +3481,7 @@
 				442CE1C31E236EEC006C34A6 /* RecordsListViewController.swift */,
 				44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */,
 				44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */,
-				442CE1F41E23A957006C34A6 /* ListViewModel.swift */,
+				442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */,
 				442CE1E21E238BBB006C34A6 /* TestRecordsGroup.swift */,
 			);
 			name = "Records List View Controller";
@@ -4795,7 +4795,7 @@
 				442CE1DD1E23862A006C34A6 /* Section.swift in Sources */,
 				4430C7B91E16408A0024C001 /* Person.swift in Sources */,
 				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
-				442CE1F51E23A957006C34A6 /* ListViewModel.swift in Sources */,
+				442CE1F51E23A957006C34A6 /* RecordsListViewModel.swift in Sources */,
 				44F97A441E266D13004F4E14 /* TableViewCellSource.swift in Sources */,
 				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
 				44673C1C1E23C9CA001758C0 /* Router.swift in Sources */,

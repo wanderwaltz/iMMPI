@@ -13,7 +13,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
 
     var searchController = UISearchController(searchResultsController: nil)
 
-    var viewModel: ListViewModel<TestRecordProtocol>? {
+    var viewModel: RecordsListViewModel<TestRecordProtocol>? {
         willSet {
             viewModel?.onDidUpdate = Constant.void()
         }

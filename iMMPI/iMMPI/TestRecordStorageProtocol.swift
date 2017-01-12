@@ -8,8 +8,8 @@ extension TestRecordStorage {
 
 extension TestRecordStorage {
     func makeViewModel(includeRecord: @escaping (TestRecordProtocol) -> Bool = Constant.bool(true))
-        -> ListViewModel<TestRecordProtocol> {
-            return ListViewModel(
+        -> RecordsListViewModel<TestRecordProtocol> {
+            return RecordsListViewModel(
                 provider: AsyncProvider({ completion in
                     DispatchQueue.global().async {
                         if self.isEmpty {

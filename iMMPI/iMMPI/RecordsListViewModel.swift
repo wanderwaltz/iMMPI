@@ -1,6 +1,6 @@
 import Foundation
 
-final class ListViewModel<Item> {
+final class RecordsListViewModel<Item> {
     var onDidUpdate: ([Item]) -> () = Constant.void()
 
     let delete: (Item) -> ()
@@ -16,7 +16,7 @@ final class ListViewModel<Item> {
 }
 
 
-extension ListViewModel {
+extension RecordsListViewModel {
     func setNeedsUpdate(completion: @escaping ([Item]) -> () = Constant.void()) {
         provider.provide({ result in
             self.onDidUpdate(result)
