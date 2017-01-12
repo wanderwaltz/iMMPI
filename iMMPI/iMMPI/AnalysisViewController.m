@@ -1,3 +1,4 @@
+#if 0
 //
 //  AnalysisViewController.m
 //  iMMPI
@@ -531,3 +532,4 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 }
 
 @end
+#endif

@@ -1,3 +1,4 @@
+#if 0
 //
 //  AnalysisViewController.h
 //  iMMPI
@@ -26,3 +27,4 @@
 @property (strong, nonatomic) id<TestRecordStorage>  storage;
 
 @end
+#endif
