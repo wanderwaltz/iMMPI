@@ -17,15 +17,7 @@
 #pragma mark -
 #pragma mark Constants
 
-NSString * const kSegueIDEditAnswers  = @"com.immpi.segue.editAnswers";
-
 NSString * const kSegueIDBlankDetail  = @"com.immpi.segue.blankDetail";
-
-NSString * const kSegueIDListGroup    = @"com.immpi.segue.listGroup";
-NSString * const kSegueIDViewTrash    = @"com.immpi.segue.viewTrash";
-
-NSString * const kSegueIDAnalyzer     = @"com.immpi.segue.analyzer";
-
 NSString * const kSegueIDAnalyzerGroupDetailedInfo = @"com.immpi.segue.analyzerGroupDetailedInfo";
 
 
@@ -55,15 +47,7 @@ NSString * const kSegueIDAnalyzerGroupDetailedInfo = @"com.immpi.segue.analyzerG
     if (self != nil)
     {
         _registeredSelectors = @{
-        kSegueIDEditAnswers  : @"handleEditAnswers:sender:",
-
         kSegueIDBlankDetail  : @"doNothing:sender:",
-        
-        kSegueIDListGroup    : @"handleListRecords:sender:",
-        kSegueIDViewTrash    : @"handleListRecords:sender:",
-        
-        kSegueIDAnalyzer     : @"handleAnalyzeRecord:sender:",
-        
         kSegueIDAnalyzerGroupDetailedInfo : @"handleAnalyzerGroupDetailedInfo:sender:"
         };
     }
@@ -118,32 +102,6 @@ NSString * const kSegueIDAnalyzerGroupDetailedInfo = @"com.immpi.segue.analyzerG
 {
     // This method does nothing and is reserved for segues which do not need
     // any special processing.
-}
-
-
-- (void) handleEditAnswers: (UIStoryboardSegue *) segue sender: (id) sender
-{
-    id<SegueSourceEditAnswers>      source      = (id)SelfOrFirstChild(segue.sourceViewController);
-    id<SegueDestinationEditAnswers> destination = (id)SelfOrFirstChild(segue.destinationViewController);
-    
-    FRB_AssertConformsTo(source,      SegueSourceEditAnswers);
-    FRB_AssertConformsTo(destination, SegueDestinationEditAnswers);
-    
-    [destination setRecordToEditAnswers:  [source testRecordToEditAnswersWithSender: sender]];
-    [destination setStorageToEditAnswers: [source    storageToEditAnswersWithSender: sender]];
-}
-
-
-- (void) handleAnalyzeRecord: (UIStoryboardSegue *) segue sender: (id) sender
-{
-    id<SegueSourceAnalyzeRecord>      source      = (id)SelfOrFirstChild(segue.sourceViewController);
-    id<SegueDestinationAnalyzeRecord> destination = (id)SelfOrFirstChild(segue.destinationViewController);
-    
-    FRB_AssertConformsTo(source,      SegueSourceAnalyzeRecord);
-    FRB_AssertConformsTo(destination, SegueDestinationAnalyzeRecord);
-    
-    [destination setRecordForAnalysis:  [source recordForAnalysisWithSender:  sender]];
-    [destination setStorageForAnalysis: [source storageForAnalysisWithSender: sender]];
 }
 
 

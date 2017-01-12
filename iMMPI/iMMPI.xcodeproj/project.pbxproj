@@ -1023,7 +1023,6 @@
 		5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650A16D8EFCF004D4BBA /* AnalyzerBase5Group.m */; };
 		5DC2650F16D92441004D4BBA /* AnalyzerPlainPercentGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2650E16D92441004D4BBA /* AnalyzerPlainPercentGroup.m */; };
 		5DC3044F17ED83EB00FCE5D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */; };
-		5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */; };
 		5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
 		5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF616902E9900E835B7 /* AnalyzerGroupBase.m */; };
 		5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */; };
@@ -2075,8 +2074,6 @@
 		5DA5C9F0163B018D00CF1601 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DA5C9F2163B018D00CF1601 /* iMMPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Prefix.pch"; sourceTree = "<group>"; };
 		5DA5C9FD163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5DBE6BD0169C3C05005F5E1B /* SegueSourceAnalyzeRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceAnalyzeRecord.h; sourceTree = "<group>"; };
-		5DBE6BD2169C3C14005F5E1B /* SegueDestinationAnalyzeRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationAnalyzeRecord.h; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5DC0B2C4168CDB790035A910 /* Strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
@@ -2094,8 +2091,6 @@
 		5DC2650D16D92441004D4BBA /* AnalyzerPlainPercentGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerPlainPercentGroup.h; sourceTree = "<group>"; };
 		5DC2650E16D92441004D4BBA /* AnalyzerPlainPercentGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerPlainPercentGroup.m; sourceTree = "<group>"; };
 		5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatementTableViewCell.h; sourceTree = "<group>"; };
-		5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatementTableViewCell.m; sourceTree = "<group>"; };
 		5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.analysis.json; sourceTree = "<group>"; };
 		5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroup.h; sourceTree = "<group>"; };
 		5DC4ABF516902E9900E835B7 /* AnalyzerGroupBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroupBase.h; sourceTree = "<group>"; };
@@ -2123,8 +2118,6 @@
 		7C0F025C169BFF5D006377B3 /* StoryboardManagedViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedViewControllerProtocol.h; sourceTree = "<group>"; };
 		7C0F025F169C00B9006377B3 /* MMPISegueHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPISegueHandler.h; sourceTree = "<group>"; };
 		7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPISegueHandler.m; sourceTree = "<group>"; };
-		7C0F0265169C02E4006377B3 /* SegueSourceEditAnswers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceEditAnswers.h; sourceTree = "<group>"; };
-		7C0F0266169C02F0006377B3 /* SegueDestinationEditAnswers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationEditAnswers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3524,8 +3517,6 @@
 			children = (
 				44F97A401E26652F004F4E14 /* TableViewCellSource.swift */,
 				448C30A81E276CA7003D355D /* AnalyserTableViewCell */,
-				5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */,
-				5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */,
 				448C30AE1E277193003D355D /* StatementTableViewCell.swift */,
 				44F97A421E266B94004F4E14 /* StatementTableViewCell+Source.swift */,
 				448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */,
@@ -3681,10 +3672,6 @@
 		7C0F0264169C027E006377B3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7C0F0265169C02E4006377B3 /* SegueSourceEditAnswers.h */,
-				7C0F0266169C02F0006377B3 /* SegueDestinationEditAnswers.h */,
-				5DBE6BD0169C3C05005F5E1B /* SegueSourceAnalyzeRecord.h */,
-				5DBE6BD2169C3C14005F5E1B /* SegueDestinationAnalyzeRecord.h */,
 				5D74048F16FEB9BB001747A1 /* SegueSourceAnalyzerGroupDetailedInfo.h */,
 				5D74049016FEB9E6001747A1 /* SegueDestinationAnalyzerGroupDetailedInfo.h */,
 			);
@@ -4764,7 +4751,6 @@
 				44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */,
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
 				442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */,
-				5DC40476168C2D62000AFBAE /* StatementTableViewCell.m in Sources */,
 				44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
 				44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */,
