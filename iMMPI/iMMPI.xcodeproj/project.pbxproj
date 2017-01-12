@@ -983,6 +983,9 @@
 		448C30B31E277360003D355D /* StatementTableViewCell+Input.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */; };
 		448C30F11E27B929003D355D /* TableViewCellSource+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30F01E27B929003D355D /* TableViewCellSource+Nib.swift */; };
 		448C30F31E27B9BA003D355D /* TableViewCellSource+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30F21E27B9BA003D355D /* TableViewCellSource+Default.swift */; };
+		448C30F51E27BD63003D355D /* TableViewCellSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30F41E27BD63003D355D /* TableViewCellSourceTests.swift */; };
+		448C30F81E27DE1B003D355D /* TableViewCellSource+DefaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30F71E27DE1B003D355D /* TableViewCellSource+DefaultTests.swift */; };
+		448C30FA1E27E0DF003D355D /* TableViewCellSource+NibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30F91E27E0DF003D355D /* TableViewCellSource+NibTests.swift */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */; };
@@ -2028,6 +2031,9 @@
 		448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "StatementTableViewCell+Input.xib"; sourceTree = "<group>"; };
 		448C30F01E27B929003D355D /* TableViewCellSource+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCellSource+Nib.swift"; sourceTree = "<group>"; };
 		448C30F21E27B9BA003D355D /* TableViewCellSource+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCellSource+Default.swift"; sourceTree = "<group>"; };
+		448C30F41E27BD63003D355D /* TableViewCellSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellSourceTests.swift; sourceTree = "<group>"; };
+		448C30F71E27DE1B003D355D /* TableViewCellSource+DefaultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCellSource+DefaultTests.swift"; sourceTree = "<group>"; };
+		448C30F91E27E0DF003D355D /* TableViewCellSource+NibTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCellSource+NibTests.swift"; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+TestAnswersInput.swift"; sourceTree = "<group>"; };
@@ -2209,6 +2215,7 @@
 				44673C3F1E2522D5001758C0 /* Analyzer */,
 				442CE1CF1E2378CA006C34A6 /* Grouping */,
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
+				448C30F61E27DE01003D355D /* TableViewCellSource */,
 				442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 				4430C7B61E163F450024C001 /* PersonTests.swift */,
@@ -3220,6 +3227,16 @@
 				44F97A401E26652F004F4E14 /* TableViewCellSource.swift */,
 				448C30F21E27B9BA003D355D /* TableViewCellSource+Default.swift */,
 				448C30F01E27B929003D355D /* TableViewCellSource+Nib.swift */,
+			);
+			name = TableViewCellSource;
+			sourceTree = "<group>";
+		};
+		448C30F61E27DE01003D355D /* TableViewCellSource */ = {
+			isa = PBXGroup;
+			children = (
+				448C30F41E27BD63003D355D /* TableViewCellSourceTests.swift */,
+				448C30F71E27DE1B003D355D /* TableViewCellSource+DefaultTests.swift */,
+				448C30F91E27E0DF003D355D /* TableViewCellSource+NibTests.swift */,
 			);
 			name = TableViewCellSource;
 			sourceTree = "<group>";
@@ -4749,9 +4766,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				448C30FA1E27E0DF003D355D /* TableViewCellSource+NibTests.swift in Sources */,
 				442CE1E51E238C75006C34A6 /* TestRecordsGroupTests.swift in Sources */,
 				442CE1D11E2378D7006C34A6 /* SectionSplittingTests.swift in Sources */,
+				448C30F51E27BD63003D355D /* TableViewCellSourceTests.swift in Sources */,
 				4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */,
+				448C30F81E27DE1B003D355D /* TableViewCellSource+DefaultTests.swift in Sources */,
 				4430C7B71E163F450024C001 /* PersonTests.swift in Sources */,
 				44673C471E252339001758C0 /* AnalyzerTests.swift in Sources */,
 				4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */,
