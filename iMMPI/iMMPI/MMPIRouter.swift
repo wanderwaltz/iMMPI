@@ -64,8 +64,8 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController) throws {
-        let controller = try viewControllersFactory.makeAnalysisViewController()
+    func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController) {
+        let controller = viewControllersFactory.makeAnalysisViewController()
 
         controller.record = record
         controller.storage = storage
@@ -159,7 +159,7 @@ extension MMPIRouter {
 
     fileprivate func displayDetails(for record: TestRecordProtocol, sender: UIViewController) throws {
         if record.testAnswers.allStatementsAnswered {
-            try displayAnalysis(for: record, sender: sender)
+            displayAnalysis(for: record, sender: sender)
         }
         else {
             try displayAnswersInput(for: record, sender: sender)

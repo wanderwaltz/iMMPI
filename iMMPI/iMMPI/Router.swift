@@ -4,8 +4,9 @@ protocol Router: class {
     func displayAllRecords(sender: UIViewController)
     func displayTrash(sender: UIViewController)
 
+    func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController)
+
     func displayDetails(for group: TestRecordsGroup, sender: UIViewController) throws
-    func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController) throws
 
     func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) throws
     func edit(_ record: TestRecordProtocol, sender: UIViewController) throws

@@ -324,41 +324,6 @@
             </objects>
             <point key="canvasLocation" x="4463" y="-200"/>
         </scene>
-        <!--Анализ-->
-        <scene sceneID="O4d-EX-KCt">
-            <objects>
-                <tableViewController storyboardIdentifier="com.immpi.viewControllers.analysis" id="F49-RI-GVa" customClass="AnalysisViewController" customModule="iMMPI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pKI-E6-RgH">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <connections>
-                            <outlet property="dataSource" destination="F49-RI-GVa" id="Ekq-2G-jue"/>
-                            <outlet property="delegate" destination="F49-RI-GVa" id="GuE-ev-gRi"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Анализ" id="K46-iP-Xjs">
-                        <barButtonItem key="leftBarButtonItem" title="Ответы" id="FRL-oi-XNX">
-                            <connections>
-                                <segue destination="yLl-co-mCt" kind="push" identifier="com.immpi.segue.editAnswers" id="Wuz-Je-7gx"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Z8I-3f-pjP">
-                            <connections>
-                                <segue destination="Bnc-Hi-s3d" kind="popover" identifier="com.immpi.segue.analysisOptions" popoverAnchorBarButtonItem="Z8I-3f-pjP" id="H7H-xZ-Xme">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="WRh-A9-Vpi" kind="modal" identifier="com.immpi.segue.analyzerGroupDetailedInfo" modalPresentationStyle="formSheet" id="w7U-n1-gTk"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g11-S7-kr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3247" y="309"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="p6m-pL-62g">
             <objects>
@@ -596,11 +561,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ответы на тест" id="bkL-Tp-xIq">
-                        <barButtonItem key="rightBarButtonItem" title="Анализ" id="7pg-kI-PYi">
-                            <connections>
-                                <segue destination="F49-RI-GVa" kind="push" identifier="com.immpi.segue.analyzer" id="rcs-v6-40C"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Анализ" id="7pg-kI-PYi"/>
                     </navigationItem>
                     <connections>
                         <outlet property="answersInputView" destination="cFh-3C-AY8" id="s1O-VZ-kFv"/>
@@ -735,11 +696,11 @@
                         <viewControllerLayoutGuide type="bottom" id="LjO-g5-9Dp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mmX-Tf-4vn">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dEK-iK-V6j">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <color key="backgroundColor" red="0.94522696733474731" green="0.94522696733474731" blue="0.94522696733474731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="23o-dm-jNg">
                                     <size key="itemSize" width="44" height="44"/>
@@ -778,7 +739,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="rgn-Ks-24c" customClass="LabelCollectionViewHeader">
-                                    <rect key="frame" x="0.0" y="0.0" width="540" height="39"/>
+                                    <rect key="frame" x="0.0" y="404" width="540" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Положительные ответы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxK-l9-Rni">
@@ -801,7 +762,7 @@
                                     </connections>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="footer" id="rn5-P6-nmA" customClass="WebCollectionViewFooter">
-                                    <rect key="frame" x="0.0" y="83" width="540" height="200"/>
+                                    <rect key="frame" x="0.0" y="487" width="540" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <subviews>
                                         <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgI-bF-37g">
@@ -883,7 +844,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1m-kh-akv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5557" y="2108"/>
+            <point key="canvasLocation" x="5182" y="2108"/>
         </scene>
     </scenes>
     <resources>

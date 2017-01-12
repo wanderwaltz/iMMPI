@@ -15,14 +15,15 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
-    func makeEditRecordViewController() throws -> EditTestRecordViewController {
-        let controller = try base.makeEditRecordViewController()
+    func makeAnalysisViewController() -> AnalysisViewController {
+        let controller = base.makeAnalysisViewController()
         controller.router = router
         return controller
     }
 
-    func makeAnalysisViewController() throws -> AnalysisViewController {
-        let controller = try base.makeAnalysisViewController()
+    func makeEditRecordViewController() throws -> EditTestRecordViewController {
+        let controller = try base.makeEditRecordViewController()
+        controller.router = router
         return controller
     }
 

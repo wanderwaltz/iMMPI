@@ -14,21 +14,15 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
 
+    func makeAnalysisViewController() -> AnalysisViewController {
+        return AnalysisViewController(style: .plain)
+    }
+
+
     func makeEditRecordViewController() throws -> EditTestRecordViewController {
         guard let controller = storyboard.instantiateViewController(
             withIdentifier: ViewController.editRecord
             ) as? EditTestRecordViewController else {
-                throw Error.failedInstantiatingViewController
-        }
-
-        return controller
-    }
-
-
-    func makeAnalysisViewController() throws -> AnalysisViewController {
-        guard let controller = storyboard.instantiateViewController(
-            withIdentifier: ViewController.analysis
-            ) as? AnalysisViewController else {
                 throw Error.failedInstantiatingViewController
         }
 
