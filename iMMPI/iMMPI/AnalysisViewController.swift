@@ -10,6 +10,27 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
 
     var storage: TestRecordStorage?
 
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    fileprivate func setup() {
+        setEmptyBackBarButtonTitle()
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: Strings.answers,
+            style: .plain,
+            target: self,
+            action: #selector(handleAnswersReviewButtonAction(_:))
+        )
+    }
+
     fileprivate let dateFormatter = DateFormatter.medium
     fileprivate let reportGenerator = AnalysisHTMLReportGenerator()
     fileprivate let cellSource = AnalyserTableViewCell.makePreregisteredSource()
@@ -28,6 +49,17 @@ extension AnalysisViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initAnalyzerInBackgroundIfNeeded()
+    }
+}
+
+
+extension AnalysisViewController {
+    @IBAction func handleAnswersReviewButtonAction(_ sender: Any?) {
+        guard let record = record else {
+            return
+        }
+
+        router?.displayAnswersReview(for: record, sender: self)
     }
 }
 

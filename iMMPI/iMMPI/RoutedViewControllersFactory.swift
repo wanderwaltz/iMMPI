@@ -21,6 +21,12 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
+    func makeAnswersReviewViewController() -> TestAnswersViewController {
+        let controller = base.makeAnswersReviewViewController()
+        controller.router = router
+        return controller
+    }
+
     func makeEditRecordViewController() throws -> EditTestRecordViewController {
         let controller = try base.makeEditRecordViewController()
         controller.router = router

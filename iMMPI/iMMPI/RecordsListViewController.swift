@@ -58,7 +58,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
                 }
         })
 
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        setEmptyBackBarButtonTitle()
 
         NotificationCenter.default.addObserver(
             self,

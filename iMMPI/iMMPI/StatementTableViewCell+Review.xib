@@ -48,6 +48,9 @@
                             <segment title="НЕТ"/>
                             <segment title="ДА"/>
                         </segments>
+                        <connections>
+                            <action selector="handleStatementCellSegmentedControlChanged:" destination="-2" eventType="valueChanged" id="mRb-cB-bux"/>
+                        </connections>
                     </segmentedControl>
                 </subviews>
             </tableViewCellContentView>

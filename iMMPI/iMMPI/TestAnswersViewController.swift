@@ -41,8 +41,16 @@ class TestAnswersViewController: UIViewController, UsingRouting {
 extension TestAnswersViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if let tableView = tableView {
+            if view != tableView && view != tableView.superview {
+                view.addSubview(tableView)
+                tableView.removeConstraints(tableView.constraints)
+                tableView.translatesAutoresizingMaskIntoConstraints = true
+                tableView.frame = view.bounds
+                tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            }
+
             cellSource.register(in: tableView)
         }
     }
@@ -51,12 +59,19 @@ extension TestAnswersViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.setNeedsUpdate()
+        becomeFirstResponder()
     }
 
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveRecord()
+        resignFirstResponder()
+    }
+
+
+    override var canBecomeFirstResponder: Bool {
+        return true
     }
 }
 
@@ -98,16 +113,22 @@ extension TestAnswersViewController: UITableViewDataSource {
 }
 
 
-#if false // TODO: implement
-extension TestAnswersViewController: StatementTableViewCellDelegate {
-    func statementTableViewCell(_ cell: StatementTableViewCell, segmentedControlChanged selectedSegmentIndex: Int) {
-        if let indexPath = tableView?.indexPath(for: cell), let statement = viewModel?.statement(at: indexPath.row) {
-            switch selectedSegmentIndex {
-            case 0: setAnswer(.negative, for: statement)
-            case 1: setAnswer(.positive, for: statement)
-            default: setAnswer(.unknown, for: statement)
-            }
+extension TestAnswersViewController {
+    @IBAction func handleStatementCellSegmentedControlChanged(_ sender: Any?) {
+        guard let segmentedControl = sender as? UISegmentedControl, let tableView = tableView else {
+            return
+        }
+
+        let touchPoint = tableView.convert(segmentedControl.center, from: segmentedControl.superview)
+
+        guard let indexPath = tableView.indexPathForRow(at: touchPoint), let statement = viewModel?.statement(at: indexPath.row) else {
+            return
+        }
+
+        switch segmentedControl.selectedSegmentIndex {
+        case 0: setAnswer(.negative, for: statement)
+        case 1: setAnswer(.positive, for: statement)
+        default: setAnswer(.unknown, for: statement)
         }
     }
 }
-#endif

@@ -75,6 +75,17 @@ extension MMPIRouter: Router {
     }
 
 
+    func displayAnswersReview(for record: TestRecordProtocol, sender: UIViewController) {
+        let controller = viewControllersFactory.makeAnswersReviewViewController()
+
+        controller.viewModel = DefaultTestAnswersViewModel(record: record)
+        controller.inputDelegate = editingDelegate
+        controller.cellSource = StatementTableViewCell.makeSourceForReview()
+
+        sender.show(controller, sender: record)
+    }
+
+
     func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) throws {
         try edit(record, title: Strings.newRecord, sender: sender)
     }

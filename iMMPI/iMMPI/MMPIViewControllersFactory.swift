@@ -19,6 +19,19 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
 
+    func makeAnswersReviewViewController() -> TestAnswersViewController {
+        let controller = TestAnswersViewController()
+        let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
+
+        tableView.rowHeight = 64.0
+
+        tableView.dataSource = controller
+        controller.tableView = tableView
+
+        return controller
+    }
+
+
     func makeEditRecordViewController() throws -> EditTestRecordViewController {
         guard let controller = storyboard.instantiateViewController(
             withIdentifier: ViewController.editRecord
