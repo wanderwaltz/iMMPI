@@ -1,13 +1,13 @@
 import Foundation
 
-extension AnalyzerTableViewCell {
+extension AnalyserTableViewCell {
     typealias Source = TableViewCellSource<Data>
     typealias Data = (group: AnalyzerGroup, record: TestRecordProtocol, depth: Int)
 
     static func makePreregisteredSource(with style: Style = .default) -> Source {
         return .preregistered(
-            identifier: "com.immpi.cells.analyzerGroup",
-            update: { (cell: AnalyzerTableViewCell, data: Data?) in
+            identifier: "com.immpi.cells.analyserGroup",
+            update: { (cell: AnalyserTableViewCell, data: Data?) in
                 guard let data = data else {
                     return
                 }
@@ -29,7 +29,7 @@ extension AnalyzerTableViewCell {
 }
 
 
-extension AnalyzerTableViewCell {
+extension AnalyserTableViewCell {
     struct Style {
         init(fontWithDepth: @escaping (Int) -> UIFont,
              groupNameOffsetWithDepth: @escaping (Int) -> CGFloat,
@@ -65,8 +65,8 @@ extension AnalyzerTableViewCell {
 }
 
 
-extension AnalyzerTableViewCell.Style {
-    static let `default`: AnalyzerTableViewCell.Style =  {
+extension AnalyserTableViewCell.Style {
+    static let `default`: AnalyserTableViewCell.Style =  {
         // TODO: make dependency on AnalysisSettings explicit
         let shouldFilterResults = AnalysisSettings.shouldFilterAnalysisResults()
         let shouldHideNormalResults = AnalysisSettings.shouldHideNormalResults()
@@ -86,7 +86,7 @@ extension AnalyzerTableViewCell.Style {
             return depth
         }
 
-        let style = AnalyzerTableViewCell.Style(
+        let style = AnalyserTableViewCell.Style(
             fontWithDepth: { depth in
                 switch effectiveDepth(depth) {
                 case 0: return .boldSystemFont(ofSize: 18.0)

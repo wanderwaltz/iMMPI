@@ -12,7 +12,7 @@ final class AnalysisViewController: UITableViewController {
 
     fileprivate let dateFormatter = DateFormatter.medium
     fileprivate let reportGenerator = AnalysisHTMLReportGenerator()
-    fileprivate let cellSource = AnalyzerTableViewCell.makePreregisteredSource()
+    fileprivate let cellSource = AnalyserTableViewCell.makePreregisteredSource()
 
     fileprivate var analyser: Analyzer?
     fileprivate var analyserGroupIndices: [Int] = []

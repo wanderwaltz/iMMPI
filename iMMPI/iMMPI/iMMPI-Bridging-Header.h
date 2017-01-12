@@ -5,7 +5,6 @@
 #import "Storyboard.h"
 
 #import "AnalysisViewController.h"
-#import "AnalyzerTableViewCell.h"
 #import "AnalysisOptionsViewController.h"
 #import "AnalyzerGroupDetailedInfoViewController.h"
 #import "AnalysisSettings.h"
