@@ -1,7 +1,16 @@
 import XCTest
+import UIKit
 @testable import iMMPI
 
 final class UtilityFunctionsTests: XCTestCase {
+    func test_setting_empty_back_button_title() {
+        let controller = UIViewController()
+        XCTAssertNotEqual(controller.navigationItem.backBarButtonItem?.title, " ")
+        controller.setEmptyBackBarButtonTitle()
+        XCTAssertEqual(controller.navigationItem.backBarButtonItem?.title, " ")
+    }
+
+
     func test_uppercasedFirstCharacter() {
         XCTAssertEqual("".uppercasedFirstCharacter, "")
         XCTAssertEqual("apple".uppercasedFirstCharacter, "A")
@@ -40,5 +49,16 @@ final class UtilityFunctionsTests: XCTestCase {
         XCTAssertEqual(qwerty(true), "qwerty")
         XCTAssertEqual(qwerty(NSObject()), "qwerty")
         XCTAssertEqual(qwerty(Date()), "qwerty")
+    }
+
+
+    func testThat__constant_void__does_not_have_side_effects() {
+        let void: (Any) -> Void = Constant.void()
+
+        let expectedArray: NSMutableArray = [1,2,3]
+        let array = expectedArray
+        void(array)
+        XCTAssertEqual(array, expectedArray)
+        XCTAssertTrue(array.isEqual(expectedArray))
     }
 }
