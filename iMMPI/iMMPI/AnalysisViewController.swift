@@ -20,6 +20,11 @@ final class AnalysisViewController: UITableViewController {
 
 
 extension AnalysisViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cellSource.register(in: tableView)
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initAnalyzerInBackgroundIfNeeded()

@@ -332,62 +332,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.immpi.cells.analyserGroup" id="r2c-mq-F81" customClass="AnalyserTableViewCell" customModule="iMMPI" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r2c-mq-F81" id="jfL-tq-UqR">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fer-fQ-825">
-                                            <rect key="frame" x="60" y="11" width="98" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-p9-gNT">
-                                            <rect key="frame" x="673" y="11" width="75" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="75" id="Q0d-uC-juO"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" red="0.31764705879999999" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="164." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMl-Us-9Nq">
-                                            <rect key="frame" x="8" y="11" width="34" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="34" id="IjK-Tq-AdO"/>
-                                                <constraint firstAttribute="height" constant="21" id="Vs0-ed-uOg"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="fer-fQ-825" firstAttribute="leading" secondItem="jfL-tq-UqR" secondAttribute="leadingMargin" constant="52" id="jwC-Kk-Dsx"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstItem="tMl-Us-9Nq" firstAttribute="leading" secondItem="r2c-mq-F81" secondAttribute="leading" constant="8" id="7cG-bT-QUi"/>
-                                    <constraint firstItem="h1a-p9-gNT" firstAttribute="top" secondItem="fer-fQ-825" secondAttribute="top" id="E4Y-p7-Pvi"/>
-                                    <constraint firstItem="tMl-Us-9Nq" firstAttribute="top" secondItem="fer-fQ-825" secondAttribute="top" id="I3j-h0-7qr"/>
-                                    <constraint firstAttribute="trailing" secondItem="h1a-p9-gNT" secondAttribute="trailing" constant="20" id="P9y-Sh-yOD"/>
-                                    <constraint firstItem="tMl-Us-9Nq" firstAttribute="baseline" secondItem="fer-fQ-825" secondAttribute="baseline" id="XvD-eS-Ntz"/>
-                                    <constraint firstItem="h1a-p9-gNT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fer-fQ-825" secondAttribute="trailing" constant="8" symbolic="YES" id="nFH-3I-01P"/>
-                                    <constraint firstItem="fer-fQ-825" firstAttribute="bottom" secondItem="h1a-p9-gNT" secondAttribute="bottom" id="uQz-SD-wbd"/>
-                                    <constraint firstItem="tMl-Us-9Nq" firstAttribute="top" secondItem="r2c-mq-F81" secondAttribute="top" constant="11" id="w1D-qt-v1b"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="groupNameLabel" destination="fer-fQ-825" id="lPr-dP-aou"/>
-                                    <outlet property="groupNameLabelLeft" destination="jwC-Kk-Dsx" id="78p-ru-ORt"/>
-                                    <outlet property="indexLabel" destination="tMl-Us-9Nq" id="tej-0q-rG9"/>
-                                    <outlet property="scoreLabel" destination="h1a-p9-gNT" id="RN6-vH-ygT"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="F49-RI-GVa" id="Ekq-2G-jue"/>
                             <outlet property="delegate" destination="F49-RI-GVa" id="GuE-ev-gRi"/>

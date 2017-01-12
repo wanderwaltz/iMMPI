@@ -977,6 +977,7 @@
 		44673FDB1E2526DC001758C0 /* Test Subject 00452.json in Resources */ = {isa = PBXBuildFile; fileRef = 44673E141E2526DB001758C0 /* Test Subject 00452.json */; };
 		44673FDC1E2526DC001758C0 /* Test Subject 00453.json in Resources */ = {isa = PBXBuildFile; fileRef = 44673E151E2526DB001758C0 /* Test Subject 00453.json */; };
 		448C30A71E276A2C003D355D /* AnalyserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30A61E276A2C003D355D /* AnalyserTableViewCell.swift */; };
+		448C30AA1E276CB9003D355D /* AnalyserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448C30A91E276CB9003D355D /* AnalyserTableViewCell.xib */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */; };
@@ -2017,6 +2018,7 @@
 		44673E141E2526DB001758C0 /* Test Subject 00452.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00452.json"; sourceTree = "<group>"; };
 		44673E151E2526DB001758C0 /* Test Subject 00453.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00453.json"; sourceTree = "<group>"; };
 		448C30A61E276A2C003D355D /* AnalyserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyserTableViewCell.swift; sourceTree = "<group>"; };
+		448C30A91E276CB9003D355D /* AnalyserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalyserTableViewCell.xib; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+TestAnswersInput.swift"; sourceTree = "<group>"; };
@@ -3188,6 +3190,16 @@
 			path = "Test Subjects";
 			sourceTree = "<group>";
 		};
+		448C30A81E276CA7003D355D /* AnalyserTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				448C30A61E276A2C003D355D /* AnalyserTableViewCell.swift */,
+				44F97A461E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift */,
+				448C30A91E276CB9003D355D /* AnalyserTableViewCell.xib */,
+			);
+			name = AnalyserTableViewCell;
+			sourceTree = "<group>";
+		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3504,12 +3516,11 @@
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				44F97A401E26652F004F4E14 /* TableViewCellSource.swift */,
+				448C30A81E276CA7003D355D /* AnalyserTableViewCell */,
 				5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */,
 				5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */,
 				44F97A421E266B94004F4E14 /* StatementTableViewCell+Source.swift */,
-				448C30A61E276A2C003D355D /* AnalyserTableViewCell.swift */,
-				44F97A461E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift */,
-				44F97A401E26652F004F4E14 /* TableViewCellSource.swift */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -4686,6 +4697,7 @@
 				5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */,
 				5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */,
 				5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */,
+				448C30AA1E276CB9003D355D /* AnalyserTableViewCell.xib in Resources */,
 				5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */,
 				5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */,
 				4430C7871E15FB950024C001 /* Media.xcassets in Resources */,

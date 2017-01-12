@@ -5,8 +5,7 @@ extension AnalyserTableViewCell {
     typealias Data = (group: AnalyzerGroup, record: TestRecordProtocol, depth: Int)
 
     static func makePreregisteredSource(with style: Style = .default) -> Source {
-        return .preregistered(
-            identifier: "com.immpi.cells.analyserGroup",
+        return .nib(
             update: { (cell: AnalyserTableViewCell, data: Data?) in
                 guard let data = data else {
                     return
