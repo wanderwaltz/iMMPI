@@ -22,4 +22,6 @@ enum Strings {
 
     static let yes = NSLocalizedString("ДА", comment: "Позитивный ответ")
     static let no = NSLocalizedString("НЕТ", comment: "Негативный ответ")
+
+    static let normalScorePlaceholder = "-"
 }
