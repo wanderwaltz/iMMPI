@@ -102,9 +102,9 @@ extension TestAnswersInputViewController {
 
         let alpha: CGFloat = (statementIndex == indexPath.row) ? 1.0 : 0.125
 
-        cell.statementIDLabel?.alpha = alpha
+        cell.identifierLabel?.alpha = alpha
         cell.statementTextLabel?.alpha = alpha
-        cell.statementAnswerLabel?.alpha = alpha
+        cell.answerLabel?.alpha = alpha
 
         return cell
     }

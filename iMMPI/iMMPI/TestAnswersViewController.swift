@@ -15,6 +15,8 @@ import UIKit
 class TestAnswersViewController: UIViewController, UsingRouting {
     weak var inputDelegate: TestAnswersInputDelegate?
 
+    var cellSource = StatementTableViewCell.makeSourceForReview()
+
     @IBOutlet var tableView: UITableView?
 
     var viewModel: TestAnswersViewModel? {
@@ -33,15 +35,24 @@ class TestAnswersViewController: UIViewController, UsingRouting {
     }
 
     fileprivate(set) var answers = TestAnswers()
-    fileprivate let cellSource = StatementTableViewCell.makePreregisteredSource()
 }
 
 
 extension TestAnswersViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let tableView = tableView {
+            cellSource.register(in: tableView)
+        }
+    }
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.setNeedsUpdate()
     }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -82,11 +93,12 @@ extension TestAnswersViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cellSource.dequeue(from: tableView, with: viewModel?.statement(at: indexPath.row)
-            .map { ($0, answers.answer(for: $0.statementID), self) })
+            .map { ($0, answers.answer(for: $0.statementID)) })
     }
 }
 
 
+#if false // TODO: implement
 extension TestAnswersViewController: StatementTableViewCellDelegate {
     func statementTableViewCell(_ cell: StatementTableViewCell, segmentedControlChanged selectedSegmentIndex: Int) {
         if let indexPath = tableView?.indexPath(for: cell), let statement = viewModel?.statement(at: indexPath.row) {
@@ -98,3 +110,4 @@ extension TestAnswersViewController: StatementTableViewCellDelegate {
         }
     }
 }
+#endif

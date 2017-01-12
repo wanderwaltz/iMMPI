@@ -1,3 +1,4 @@
+#if 0
 //
 //  StatementTableViewCell.m
 //  iMMPI
@@ -52,3 +53,4 @@
 }
 
 @end
+#endif

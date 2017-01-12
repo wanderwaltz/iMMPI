@@ -90,6 +90,7 @@ extension MMPIRouter: Router {
 
         controller.viewModel = DefaultTestAnswersViewModel(record: record)
         controller.inputDelegate = editingDelegate
+        controller.cellSource = StatementTableViewCell.makeSourceForInput()
         
         let navigationController = UINavigationController(rootViewController: controller)
         sender.showDetailViewController(navigationController, sender: record)

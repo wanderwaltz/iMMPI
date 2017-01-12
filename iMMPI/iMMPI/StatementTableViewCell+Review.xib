@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StatementTableViewCell" rowHeight="64" id="IsD-MA-sh7" customClass="StatementTableViewCell" customModule="iMMPI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IsD-MA-sh7" id="Hhp-nf-JcU">
+                <rect key="frame" x="0.0" y="0.0" width="768" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP5-1l-ggf">
+                        <rect key="frame" x="14" y="22" width="39" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="39" id="G41-Vf-Ybc"/>
+                            <constraint firstAttribute="height" constant="21" id="TXC-qw-jRK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="521" translatesAutoresizingMaskIntoConstraints="NO" id="JjJ-3c-Wzf">
+                        <rect key="frame" x="73" y="5.5" width="521" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="54" id="2kC-lg-ka5"/>
+                        </constraints>
+                        <string key="text">Текст вопроса, возможно длинный и располагающийся в две строчки; этого должно быть достаточно - в целом, все вопросы СМИЛ изложены достаточно сжато</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </label>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="5Vn-Bf-SkL">
+                        <rect key="frame" x="615" y="10" width="133" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="133" id="nCf-yp-x2M"/>
+                            <constraint firstAttribute="height" constant="44" id="yuk-tM-X5g"/>
+                        </constraints>
+                        <segments>
+                            <segment title="НЕТ"/>
+                            <segment title="ДА"/>
+                        </segments>
+                    </segmentedControl>
+                </subviews>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="UP5-1l-ggf" firstAttribute="leading" secondItem="IsD-MA-sh7" secondAttribute="leading" constant="14" id="8DG-0j-LSr"/>
+                <constraint firstAttribute="trailing" secondItem="5Vn-Bf-SkL" secondAttribute="trailing" constant="20" id="Qrl-rz-64C"/>
+                <constraint firstItem="5Vn-Bf-SkL" firstAttribute="baseline" secondItem="UP5-1l-ggf" secondAttribute="baseline" id="TQl-JP-miI"/>
+                <constraint firstItem="JjJ-3c-Wzf" firstAttribute="leading" secondItem="UP5-1l-ggf" secondAttribute="trailing" constant="20" id="WmM-cQ-bCH"/>
+                <constraint firstItem="UP5-1l-ggf" firstAttribute="centerY" secondItem="JjJ-3c-Wzf" secondAttribute="centerY" id="Xn0-N2-Zko"/>
+                <constraint firstAttribute="centerY" secondItem="5Vn-Bf-SkL" secondAttribute="centerY" id="fYy-5u-bGs"/>
+                <constraint firstItem="5Vn-Bf-SkL" firstAttribute="leading" secondItem="JjJ-3c-Wzf" secondAttribute="trailing" constant="21" id="hJg-DL-R6T"/>
+                <constraint firstItem="JjJ-3c-Wzf" firstAttribute="centerY" secondItem="5Vn-Bf-SkL" secondAttribute="centerY" id="hUj-eb-gaI"/>
+            </constraints>
+            <connections>
+                <outlet property="identifierLabel" destination="UP5-1l-ggf" id="QBC-f1-CyF"/>
+                <outlet property="segmentedControl" destination="5Vn-Bf-SkL" id="Ges-OQ-Vtn"/>
+                <outlet property="statementTextLabel" destination="JjJ-3c-Wzf" id="uoz-bx-eCU"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

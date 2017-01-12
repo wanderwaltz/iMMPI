@@ -2,34 +2,45 @@ import Foundation
 
 extension StatementTableViewCell {
     typealias Source = TableViewCellSource<Data>
-    typealias Data = (statement: Statement, answer: AnswerType, delegate: StatementTableViewCellDelegate)
+    typealias Data = (statement: Statement, answer: AnswerType)
 
-    static func makePreregisteredSource() -> Source {
-        return .preregistered(
-            identifier: StatementTableViewCell.reuseIdentifier(),
-            update: { (cell: StatementTableViewCell, data: Data?) in
-                guard let data = data else {
-                    return
-                }
 
-                cell.delegate = data.delegate
+    static func makeSourceForInput() -> Source {
+        return .nib(UINib(nibName: "StatementTableViewCell+Input", bundle: .main),
+            identifier: "StatementTableViewCell",
+            update: update
+        )
+    }
 
-                cell.statementIDLabel?.text = "\(data.statement.statementID)"
-                cell.statementTextLabel?.text = data.statement.text
 
-                switch data.answer {
-                case .positive:
-                    cell.statementAnswerLabel?.text = Strings.yes
-                    cell.statementSegmentedControl?.selectedSegmentIndex = 1
+    static func makeSourceForReview() -> Source {
+        return .nib(UINib(nibName: "StatementTableViewCell+Review", bundle: .main),
+        identifier: "StatementTableViewCell",
+        update: update
+        )
+    }
+}
 
-                case .negative:
-                    cell.statementAnswerLabel?.text = Strings.no
-                    cell.statementSegmentedControl?.selectedSegmentIndex = 0
 
-                case .unknown:
-                    cell.statementAnswerLabel?.text = ""
-                    cell.statementSegmentedControl?.selectedSegmentIndex = UISegmentedControlNoSegment
-                }
-        })
+fileprivate func update(_ cell: StatementTableViewCell, with data: StatementTableViewCell.Data?) {
+    guard let data = data else {
+        return
+    }
+
+    cell.identifierLabel?.text = "\(data.statement.statementID)"
+    cell.statementTextLabel?.text = data.statement.text
+
+    switch data.answer {
+    case .positive:
+        cell.answerLabel?.text = Strings.yes
+        cell.segmentedControl?.selectedSegmentIndex = 1
+
+    case .negative:
+        cell.answerLabel?.text = Strings.no
+        cell.segmentedControl?.selectedSegmentIndex = 0
+
+    case .unknown:
+        cell.answerLabel?.text = ""
+        cell.segmentedControl?.selectedSegmentIndex = UISegmentedControlNoSegment
     }
 }

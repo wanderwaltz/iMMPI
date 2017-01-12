@@ -978,6 +978,9 @@
 		44673FDC1E2526DC001758C0 /* Test Subject 00453.json in Resources */ = {isa = PBXBuildFile; fileRef = 44673E151E2526DB001758C0 /* Test Subject 00453.json */; };
 		448C30A71E276A2C003D355D /* AnalyserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30A61E276A2C003D355D /* AnalyserTableViewCell.swift */; };
 		448C30AA1E276CB9003D355D /* AnalyserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448C30A91E276CB9003D355D /* AnalyserTableViewCell.xib */; };
+		448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30AE1E277193003D355D /* StatementTableViewCell.swift */; };
+		448C30B11E277353003D355D /* StatementTableViewCell+Review.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448C30B01E277353003D355D /* StatementTableViewCell+Review.xib */; };
+		448C30B31E277360003D355D /* StatementTableViewCell+Input.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */; };
@@ -2019,6 +2022,9 @@
 		44673E151E2526DB001758C0 /* Test Subject 00453.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00453.json"; sourceTree = "<group>"; };
 		448C30A61E276A2C003D355D /* AnalyserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyserTableViewCell.swift; sourceTree = "<group>"; };
 		448C30A91E276CB9003D355D /* AnalyserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalyserTableViewCell.xib; sourceTree = "<group>"; };
+		448C30AE1E277193003D355D /* StatementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
+		448C30B01E277353003D355D /* StatementTableViewCell+Review.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "StatementTableViewCell+Review.xib"; sourceTree = "<group>"; };
+		448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "StatementTableViewCell+Input.xib"; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+TestAnswersInput.swift"; sourceTree = "<group>"; };
@@ -3520,7 +3526,10 @@
 				448C30A81E276CA7003D355D /* AnalyserTableViewCell */,
 				5DC40474168C2D62000AFBAE /* StatementTableViewCell.h */,
 				5DC40475168C2D62000AFBAE /* StatementTableViewCell.m */,
+				448C30AE1E277193003D355D /* StatementTableViewCell.swift */,
 				44F97A421E266B94004F4E14 /* StatementTableViewCell+Source.swift */,
+				448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */,
+				448C30B01E277353003D355D /* StatementTableViewCell+Review.xib */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -4692,8 +4701,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */,
+				448C30B11E277353003D355D /* StatementTableViewCell+Review.xib in Resources */,
 				5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */,
 				5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */,
+				448C30B31E277360003D355D /* StatementTableViewCell+Input.xib in Resources */,
 				5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */,
 				5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */,
 				5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */,
@@ -4761,6 +4772,7 @@
 				44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */,
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
 				44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */,
+				448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */,
 				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
 				4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */,
 				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
