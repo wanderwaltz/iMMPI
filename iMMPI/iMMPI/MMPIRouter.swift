@@ -68,8 +68,7 @@ extension MMPIRouter: Router {
         let controller = viewControllersFactory.makeAnalysisViewController()
 
         controller.record = record
-        controller.storage = storage
-
+    
         let navigationController = UINavigationController(rootViewController: controller)
         sender.showDetailViewController(navigationController, sender: record)
     }

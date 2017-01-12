@@ -8,8 +8,6 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
         }
     }
 
-    var storage: TestRecordStorage?
-
     override init(style: UITableViewStyle) {
         super.init(style: style)
         setup()
