@@ -31,7 +31,7 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
 
     fileprivate let dateFormatter = DateFormatter.medium
     fileprivate let reportGenerator = AnalysisHTMLReportGenerator()
-    fileprivate let cellSource = AnalyserTableViewCell.makePreregisteredSource()
+    fileprivate let cellSource = AnalyserTableViewCell.makeSource()
 
     fileprivate var analyser: Analyzer?
     fileprivate var analyserGroupIndices: [Int] = []

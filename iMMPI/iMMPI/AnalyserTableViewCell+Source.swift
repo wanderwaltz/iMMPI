@@ -4,7 +4,7 @@ extension AnalyserTableViewCell {
     typealias Source = TableViewCellSource<Data>
     typealias Data = (group: AnalyzerGroup, record: TestRecordProtocol, depth: Int)
 
-    static func makePreregisteredSource(with style: Style = .default) -> Source {
+    static func makeSource(with style: Style = .default) -> Source {
         return .nib(
             update: { (cell: AnalyserTableViewCell, data: Data?) in
                 guard let data = data else {
