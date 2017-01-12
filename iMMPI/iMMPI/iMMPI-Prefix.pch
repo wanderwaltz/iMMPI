@@ -15,7 +15,6 @@
     #import <QuartzCore/QuartzCore.h>
 
     #import "FRBAssertMacros.h"
-    #import "FRBKeyedTargetAction.h"
     #import "FRBDatePickerPopover.h"
 
     #import "Strings.h"
