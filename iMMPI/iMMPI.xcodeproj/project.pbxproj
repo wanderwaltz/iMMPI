@@ -981,6 +981,8 @@
 		448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30AE1E277193003D355D /* StatementTableViewCell.swift */; };
 		448C30B11E277353003D355D /* StatementTableViewCell+Review.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448C30B01E277353003D355D /* StatementTableViewCell+Review.xib */; };
 		448C30B31E277360003D355D /* StatementTableViewCell+Input.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */; };
+		448C30F11E27B929003D355D /* TableViewCellSource+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30F01E27B929003D355D /* TableViewCellSource+Nib.swift */; };
+		448C30F31E27B9BA003D355D /* TableViewCellSource+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30F21E27B9BA003D355D /* TableViewCellSource+Default.swift */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */; };
@@ -2024,6 +2026,8 @@
 		448C30AE1E277193003D355D /* StatementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
 		448C30B01E277353003D355D /* StatementTableViewCell+Review.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "StatementTableViewCell+Review.xib"; sourceTree = "<group>"; };
 		448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "StatementTableViewCell+Input.xib"; sourceTree = "<group>"; };
+		448C30F01E27B929003D355D /* TableViewCellSource+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCellSource+Nib.swift"; sourceTree = "<group>"; };
+		448C30F21E27B9BA003D355D /* TableViewCellSource+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCellSource+Default.swift"; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+TestAnswersInput.swift"; sourceTree = "<group>"; };
@@ -3210,6 +3214,16 @@
 			name = StatementTableViewCell;
 			sourceTree = "<group>";
 		};
+		448C30EF1E27B8FD003D355D /* TableViewCellSource */ = {
+			isa = PBXGroup;
+			children = (
+				44F97A401E26652F004F4E14 /* TableViewCellSource.swift */,
+				448C30F21E27B9BA003D355D /* TableViewCellSource+Default.swift */,
+				448C30F01E27B929003D355D /* TableViewCellSource+Nib.swift */,
+			);
+			name = TableViewCellSource;
+			sourceTree = "<group>";
+		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3526,9 +3540,9 @@
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
-				44F97A401E26652F004F4E14 /* TableViewCellSource.swift */,
 				448C30A81E276CA7003D355D /* AnalyserTableViewCell */,
 				448C30B41E277C43003D355D /* StatementTableViewCell */,
+				448C30EF1E27B8FD003D355D /* TableViewCellSource */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -4779,6 +4793,7 @@
 				44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */,
 				442CE1B51E235A1B006C34A6 /* DateFormatter+iMMPI.swift in Sources */,
 				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
+				448C30F11E27B929003D355D /* TableViewCellSource+Nib.swift in Sources */,
 				442CE1AE1E23551D006C34A6 /* TestRecordProtocol.swift in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
 				442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */,
@@ -4794,6 +4809,7 @@
 				5D85558916906E98004E3021 /* AnalyzerIGroupT1.m in Sources */,
 				442CE1DD1E23862A006C34A6 /* Section.swift in Sources */,
 				4430C7B91E16408A0024C001 /* Person.swift in Sources */,
+				448C30F31E27B9BA003D355D /* TableViewCellSource+Default.swift in Sources */,
 				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
 				442CE1F51E23A957006C34A6 /* RecordsListViewModel.swift in Sources */,
 				44F97A441E266D13004F4E14 /* TableViewCellSource.swift in Sources */,
