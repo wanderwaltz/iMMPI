@@ -92,11 +92,10 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
     {
         record = [TestRecord new];
         
-        record.person.name     = null2Nil(dictionary[kJSONKeyName]);
+        record.person.name     = dictionary[kJSONKeyName] ?: @"";
         record.person.gender   = [self   decodeGender: dictionary[kJSONKeyGender]];
         record.person.ageGroup = [self decodeAgeGroup: dictionary[kJSONKeyAgeGroup]];
-        record.date            = [[self dateFormatter] dateFromString:
-                                  null2Nil(dictionary[kJSONKeyDate])];
+        record.date            = [[self dateFormatter] dateFromString: dictionary[kJSONKeyDate] ?: @""] ?: [NSDate date];
         
         NSArray *answers = dictionary[kJSONKeyAnswers];
         
@@ -106,7 +105,7 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
             {
                 if ([answer isKindOfClass: [NSDictionary class]])
                 {
-                    id statementIDJSON = null2Nil(answer[kJSONKeyStatementID]);
+                    id statementIDJSON = answer[kJSONKeyStatementID];
                     
                     if ([statementIDJSON isKindOfClass: [NSNumber class]])
                     {
@@ -172,8 +171,7 @@ static NSString * const kJSONValueAnswerTypeNegative = @"NO";
                                                 directory: null2Nil(dictionary[kJSONKeyDirectory])];
         
         proxy.personName = null2Nil(dictionary[kJSONKeyName]);
-        proxy.date       = [[self dateFormatter] dateFromString:
-                            null2Nil(dictionary[kJSONKeyDate])];
+        proxy.date       = [[self dateFormatter] dateFromString: dictionary[kJSONKeyDate] ?: @""] ?: [NSDate date];
         
         NSParameterAssert(proxy.personName.length > 0);
         NSParameterAssert(proxy.fileName.length   > 0);
