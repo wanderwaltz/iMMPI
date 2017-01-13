@@ -8,6 +8,8 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
         }
     }
 
+    var analyser: Analyzer?
+
     override init(style: UITableViewStyle) {
         super.init(style: style)
         setup()
@@ -33,13 +35,23 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
             target: self,
             action: #selector(handleAnalysisOptionsButtonAction(_:))
         )
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAnalysisSettingsDidChangeNotificaion(_:)),
+            name: .analysisSettingsChanged,
+            object: nil
+        )
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     fileprivate let dateFormatter = DateFormatter.medium
     fileprivate let reportGenerator = AnalysisHTMLReportGenerator()
     fileprivate let cellSource = AnalyserTableViewCell.makeSource()
 
-    fileprivate var analyser: Analyzer?
     fileprivate var analyserGroupIndices: [Int] = []
 }
 
@@ -74,7 +86,14 @@ extension AnalysisViewController {
 
 
 extension AnalysisViewController {
-    fileprivate func reloadData() {
+    @objc fileprivate func handleAnalysisSettingsDidChangeNotificaion(_ notification: Notification) {
+        reloadData()
+    }
+}
+
+
+extension AnalysisViewController {
+    func reloadData() {
         guard let analyser = analyser else {
             return
         }

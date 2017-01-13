@@ -17,6 +17,7 @@ final class MMPIRouter {
     }
 
     fileprivate let editingDelegate: EditingDelegate
+    fileprivate let analysisOptionsDelegate = AnalysisOptionsDelegate()
     fileprivate let soundPlayer = SoundPlayer()
 }
 
@@ -109,6 +110,8 @@ extension MMPIRouter: Router {
 
     func displayAnalysisOptions(sender: UIViewController, origin: UIBarButtonItem) throws {
         let controller = try viewControllersFactory.makeAnalysisOptionsViewController()
+
+        controller.delegate = analysisOptionsDelegate
 
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.modalPresentationStyle = .popover

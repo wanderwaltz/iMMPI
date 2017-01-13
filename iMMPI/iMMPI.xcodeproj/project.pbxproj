@@ -995,6 +995,8 @@
 		448C310D1E2880DA003D355D /* Grouping+AlphabeticallyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C310C1E2880DA003D355D /* Grouping+AlphabeticallyTests.swift */; };
 		448C31101E289328003D355D /* AnalysisViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C310F1E289328003D355D /* AnalysisViewControllerTests.swift */; };
 		448C31121E289454003D355D /* UITestFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31111E289454003D355D /* UITestFunctions.swift */; };
+		448C31141E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */; };
+		448C31171E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */; };
@@ -2051,6 +2053,8 @@
 		448C310C1E2880DA003D355D /* Grouping+AlphabeticallyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Grouping+AlphabeticallyTests.swift"; sourceTree = "<group>"; };
 		448C310F1E289328003D355D /* AnalysisViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewControllerTests.swift; sourceTree = "<group>"; };
 		448C31111E289454003D355D /* UITestFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestFunctions.swift; sourceTree = "<group>"; };
+		448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+AnalysisOptionsDelegate.swift"; sourceTree = "<group>"; };
+		448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+AnalysisOptionsDelegateTests.swift"; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+TestAnswersInput.swift"; sourceTree = "<group>"; };
@@ -2233,6 +2237,7 @@
 				44673C3F1E2522D5001758C0 /* Analyzer */,
 				442CE1CF1E2378CA006C34A6 /* Grouping */,
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
+				448C31151E289808003D355D /* Router */,
 				448C30F61E27DE01003D355D /* TableViewCellSource */,
 				448C310E1E289313003D355D /* View Controllers */,
 				442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */,
@@ -2269,6 +2274,7 @@
 				44673C1B1E23C9CA001758C0 /* Router.swift */,
 				44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */,
 				44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */,
+				448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -3279,6 +3285,14 @@
 				448C310F1E289328003D355D /* AnalysisViewControllerTests.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		448C31151E289808003D355D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */,
+			);
+			name = Router;
 			sourceTree = "<group>";
 		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
@@ -4807,6 +4821,7 @@
 			files = (
 				448C30FA1E27E0DF003D355D /* TableViewCellSource+NibTests.swift in Sources */,
 				448C310D1E2880DA003D355D /* Grouping+AlphabeticallyTests.swift in Sources */,
+				448C31171E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift in Sources */,
 				442CE1E51E238C75006C34A6 /* TestRecordsGroupTests.swift in Sources */,
 				448C31001E27E7BA003D355D /* SectionTests.swift in Sources */,
 				448C31041E2875B9003D355D /* SectionIndexTests.swift in Sources */,
@@ -4857,6 +4872,7 @@
 				442CE1BE1E2366F7006C34A6 /* TestAnswers.swift in Sources */,
 				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
 				442CE1AC1E235397006C34A6 /* TestRecord.swift in Sources */,
+				448C31141E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift in Sources */,
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */,
 				442CE1B51E235A1B006C34A6 /* DateFormatter+iMMPI.swift in Sources */,

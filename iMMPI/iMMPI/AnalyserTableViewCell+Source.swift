@@ -67,8 +67,8 @@ extension AnalyserTableViewCell {
 extension AnalyserTableViewCell.Style {
     static let `default`: AnalyserTableViewCell.Style =  {
         // TODO: make dependency on AnalysisSettings explicit
-        let shouldFilterResults = AnalysisSettings.shouldFilterAnalysisResults()
-        let shouldHideNormalResults = AnalysisSettings.shouldHideNormalResults()
+        let shouldFilterResults: () -> Bool = { AnalysisSettings.shouldFilterAnalysisResults() }
+        let shouldHideNormalResults: () -> Bool = { AnalysisSettings.shouldHideNormalResults() }
 
         let effectiveDepth: (Int) -> Int = { depth in
             // If we hide the scores which are within the norm, there may be a situation
@@ -78,7 +78,7 @@ extension AnalyserTableViewCell.Style {
             // which is wrong. So we reset all of the offsets if 'hide normal' setting
             // is set to on. Offset zero is reserved for the larger groups which are
             // always present, so we cap the offset at the value of 1
-            if shouldHideNormalResults && depth > 1 {
+            if shouldHideNormalResults() && depth > 1 {
                 return 1
             }
 
@@ -100,7 +100,7 @@ extension AnalyserTableViewCell.Style {
                 $0 > 0 ? "\($0)." : ""
             },
             scoreFormatter: { group in
-                if shouldFilterResults && group.scoreIsWithinNorm() {
+                if shouldFilterResults() && group.scoreIsWithinNorm() {
                     return Strings.normalScorePlaceholder
                 }
                 else {

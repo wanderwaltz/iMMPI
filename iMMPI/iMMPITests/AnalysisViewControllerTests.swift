@@ -70,4 +70,28 @@ final class AnalysisViewControllerTests: XCTestCase {
         XCTAssertTrue(receivedSender === expectedSender)
         XCTAssertTrue(receivedOrigin === expectedOrigin)
     }
+
+
+    func testThat__if_it_has_an_analyser_it_reloads_data_when_receiving_analysis_settings_change_notification() {
+        controller.analyser = Analyzer()
+        controller.tableView = CheckReloadTataTableView()
+        NotificationCenter.default.post(name: .analysisSettingsChanged, object: nil)
+        XCTAssertEqual((controller.tableView as! CheckReloadTataTableView).reloadDataCallsCount, 1)
+    }
+
+
+    func testThat__with_nil_analyser_it_does_not_reload_data_when_receiving_analysis_settings_change_notification() {
+        controller.tableView = CheckReloadTataTableView()
+        NotificationCenter.default.post(name: .analysisSettingsChanged, object: nil)
+        XCTAssertEqual((controller.tableView as! CheckReloadTataTableView).reloadDataCallsCount, 0)
+    }
+
+
+    class CheckReloadTataTableView: UITableView {
+        var reloadDataCallsCount = 0
+
+        override func reloadData() {
+            reloadDataCallsCount += 1
+        }
+    }
 }
