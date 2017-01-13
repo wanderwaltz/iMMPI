@@ -58,7 +58,7 @@ extension AnalysisViewController {
 
 
 extension AnalysisViewController {
-    @IBAction func handleAnswersReviewButtonAction(_ sender: Any?) {
+    @objc @IBAction fileprivate func handleAnswersReviewButtonAction(_ sender: Any?) {
         guard let record = record else {
             return
         }
@@ -67,12 +67,8 @@ extension AnalysisViewController {
     }
 
 
-    @IBAction func handleAnalysisOptionsButtonAction(_ sender: Any?) {
-        guard let barButtonItem = sender as? UIBarButtonItem else {
-            return
-        }
-
-        try? router?.displayAnalysisOptions(sender: self, origin: barButtonItem)
+    @objc @IBAction fileprivate func handleAnalysisOptionsButtonAction(_ sender: Any?) {
+        try? router?.displayAnalysisOptions(sender: self, origin: navigationItem.rightBarButtonItem!)
     }
 }
 
