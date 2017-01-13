@@ -1012,10 +1012,6 @@
 		44F97A471E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A461E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
-		5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */; };
-		5D74049416FEC107001747A1 /* LabelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74049316FEC107001747A1 /* LabelCollectionViewCell.m */; };
-		5D74049816FEC40F001747A1 /* LabelCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74049716FEC40F001747A1 /* LabelCollectionViewHeader.m */; };
-		5D74049C16FEC7CE001747A1 /* WebCollectionViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74049B16FEC7CE001747A1 /* WebCollectionViewFooter.m */; };
 		5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74CF00169B08D500BAA202 /* StoryboardManagedViewController.m */; };
 		5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74CF03169B08E600BAA202 /* StoryboardManagedTableViewController.m */; };
 		5D81F94A1841BD97008E3B0A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D81F9491841BD97008E3B0A /* AVFoundation.framework */; };
@@ -2074,16 +2070,8 @@
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
 		5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisHTMLReportGenerator.m; sourceTree = "<group>"; };
-		5D74048C16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroupDetailedInfoViewController.h; sourceTree = "<group>"; };
-		5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerGroupDetailedInfoViewController.m; sourceTree = "<group>"; };
 		5D74048F16FEB9BB001747A1 /* SegueSourceAnalyzerGroupDetailedInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceAnalyzerGroupDetailedInfo.h; sourceTree = "<group>"; };
 		5D74049016FEB9E6001747A1 /* SegueDestinationAnalyzerGroupDetailedInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationAnalyzerGroupDetailedInfo.h; sourceTree = "<group>"; };
-		5D74049216FEC107001747A1 /* LabelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCollectionViewCell.h; sourceTree = "<group>"; };
-		5D74049316FEC107001747A1 /* LabelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCollectionViewCell.m; sourceTree = "<group>"; };
-		5D74049616FEC40F001747A1 /* LabelCollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCollectionViewHeader.h; sourceTree = "<group>"; };
-		5D74049716FEC40F001747A1 /* LabelCollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCollectionViewHeader.m; sourceTree = "<group>"; };
-		5D74049A16FEC7CE001747A1 /* WebCollectionViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCollectionViewFooter.h; sourceTree = "<group>"; };
-		5D74049B16FEC7CE001747A1 /* WebCollectionViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCollectionViewFooter.m; sourceTree = "<group>"; };
 		5D74CEFF169B08D500BAA202 /* StoryboardManagedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedViewController.h; sourceTree = "<group>"; };
 		5D74CF00169B08D500BAA202 /* StoryboardManagedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardManagedViewController.m; sourceTree = "<group>"; };
 		5D74CF02169B08E600BAA202 /* StoryboardManagedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedTableViewController.h; sourceTree = "<group>"; };
@@ -3332,45 +3320,6 @@
 			name = "Analysis HTML Report Generator";
 			sourceTree = "<group>";
 		};
-		5D74048B16FEB8B4001747A1 /* Analyzer Group Detailed Info View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5D74049916FEC7BB001747A1 /* Web Collection View Footer */,
-				5D74049516FEC3F0001747A1 /* Label Collection View Header */,
-				5D74049116FEC0E7001747A1 /* Label Collection View Cell */,
-				5D74048C16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.h */,
-				5D74048D16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m */,
-			);
-			name = "Analyzer Group Detailed Info View Controller";
-			sourceTree = "<group>";
-		};
-		5D74049116FEC0E7001747A1 /* Label Collection View Cell */ = {
-			isa = PBXGroup;
-			children = (
-				5D74049216FEC107001747A1 /* LabelCollectionViewCell.h */,
-				5D74049316FEC107001747A1 /* LabelCollectionViewCell.m */,
-			);
-			name = "Label Collection View Cell";
-			sourceTree = "<group>";
-		};
-		5D74049516FEC3F0001747A1 /* Label Collection View Header */ = {
-			isa = PBXGroup;
-			children = (
-				5D74049616FEC40F001747A1 /* LabelCollectionViewHeader.h */,
-				5D74049716FEC40F001747A1 /* LabelCollectionViewHeader.m */,
-			);
-			name = "Label Collection View Header";
-			sourceTree = "<group>";
-		};
-		5D74049916FEC7BB001747A1 /* Web Collection View Footer */ = {
-			isa = PBXGroup;
-			children = (
-				5D74049A16FEC7CE001747A1 /* WebCollectionViewFooter.h */,
-				5D74049B16FEC7CE001747A1 /* WebCollectionViewFooter.m */,
-			);
-			name = "Web Collection View Footer";
-			sourceTree = "<group>";
-		};
 		5D74CEF8169B085000BAA202 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -3542,7 +3491,6 @@
 		5DA5CA10163B050700CF1601 /* Analysis View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5D74048B16FEB8B4001747A1 /* Analyzer Group Detailed Info View Controller */,
 				5D74048716FEAC1F001747A1 /* Analysis HTML Report Generator */,
 				5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */,
 				5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */,
@@ -4927,14 +4875,10 @@
 				5DC0C87F16E26207006ED854 /* AnalysisOptionsViewController.m in Sources */,
 				5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */,
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
-				5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */,
 				442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */,
 				44F97A3D1E26348A004F4E14 /* TestAnswersViewModel.swift in Sources */,
 				44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */,
-				5D74049416FEC107001747A1 /* LabelCollectionViewCell.m in Sources */,
-				5D74049816FEC40F001747A1 /* LabelCollectionViewHeader.m in Sources */,
 				442CE1D51E237AB5006C34A6 /* SectionDescriptor.swift in Sources */,
-				5D74049C16FEC7CE001747A1 /* WebCollectionViewFooter.m in Sources */,
 				442CE1AA1E235156006C34A6 /* Strings.swift in Sources */,
 				4430C7A21E1619000024C001 /* Statement.swift in Sources */,
 			);

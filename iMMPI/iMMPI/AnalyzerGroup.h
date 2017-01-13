@@ -27,13 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)readableScore;
 
 - (BOOL)scoreIsWithinNorm;
-- (BOOL)canProvideDetailedInfo;
 
 - (NSInteger)indexForRecord:(id<TestRecordProtocol>)record;
-
-- (NSString *)htmlDetailedInfoForRecord:(id<TestRecordProtocol>)record
-                               analyser:(id<AnalyzerProtocol>)analyser;
-
 
 - (id<AnalyzerGroup>)subgroupAtIndex:(NSInteger)index;
 

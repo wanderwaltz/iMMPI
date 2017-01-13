@@ -5,5 +5,4 @@
 #import "Storyboard.h"
 
 #import "AnalysisOptionsViewController.h"
-#import "AnalyzerGroupDetailedInfoViewController.h"
 #import "AnalysisHTMLReportGenerator.h"

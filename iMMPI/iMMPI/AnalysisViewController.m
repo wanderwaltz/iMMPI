@@ -165,44 +165,5 @@
                              completion: nil];
 }
 
-
-#pragma mark -
-#pragma mark UITableViewDelegate
-
-- (void)      tableView: (UITableView *) tableView
-didSelectRowAtIndexPath: (NSIndexPath *) indexPath
-{
-    NSUInteger groupIndex = [_analyzerGroupIndices[indexPath.row] integerValue];
-    
-    id<AnalyzerGroup> group = [_analyzer groupAtIndex: groupIndex];
-    
-    if ([group canProvideDetailedInfo])
-    {
-        [self performSegueWithIdentifier: kSegueIDAnalyzerGroupDetailedInfo
-                                  sender: group];
-    }
-    else
-    {
-        [tableView deselectRowAtIndexPath: indexPath
-                                 animated: YES];
-    }
-}
-
-
-#pragma mark -
-#pragma mark AnalyzerGroupDetailedInfoViewControllerDelegate
-
-- (void) analyzerGroudDetailedInfoViewControllerDidCancel: (AnalyzerGroupDetailedInfoViewController *) controller
-{
-    if (self.tableView.indexPathForSelectedRow != nil)
-    {
-        [self.tableView deselectRowAtIndexPath: self.tableView.indexPathForSelectedRow
-                                      animated: YES];
-    }
-    
-    [self dismissViewControllerAnimated: YES
-                             completion: nil];
-}
-
 @end
 #endif

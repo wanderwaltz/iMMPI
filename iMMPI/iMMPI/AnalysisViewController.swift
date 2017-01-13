@@ -147,15 +147,6 @@ extension AnalysisViewController {
 }
 
 
-// MARK: - UITableViewDelegate
-extension AnalysisViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        // TODO: provide detailed info
-    }
-}
-
-
 // MARK: - UITableViewDataSource
 extension AnalysisViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {

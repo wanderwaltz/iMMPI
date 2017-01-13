@@ -155,19 +155,6 @@ static id _logSubgroupNotDictionary(id object);
 }
 
 
-- (BOOL) canProvideDetailedInfo
-{
-    return NO;
-}
-
-
-- (NSString *)htmlDetailedInfoForRecord:(id<TestRecordProtocol>)record
-                               analyser:(id<AnalyzerProtocol>)analyser
-{
-    return @"";
-}
-
-
 - (NSArray *)positiveStatementIDsForRecord:(id<TestRecordProtocol>)record
 {
     return @[];
