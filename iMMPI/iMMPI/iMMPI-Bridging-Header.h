@@ -6,5 +6,4 @@
 
 #import "AnalysisOptionsViewController.h"
 #import "AnalyzerGroupDetailedInfoViewController.h"
-#import "AnalysisSettings.h"
 #import "AnalysisHTMLReportGenerator.h"

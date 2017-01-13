@@ -997,6 +997,8 @@
 		448C31121E289454003D355D /* UITestFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31111E289454003D355D /* UITestFunctions.swift */; };
 		448C31141E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */; };
 		448C31171E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */; };
+		448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31181E289CAF003D355D /* AnalysisSettings.swift */; };
+		448C311B1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C311A1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */; };
@@ -1030,7 +1032,6 @@
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
 		5DC0C87F16E26207006ED854 /* AnalysisOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87E16E26207006ED854 /* AnalysisOptionsViewController.m */; };
-		5DC0C88716E26B03006ED854 /* AnalysisSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C88616E26B03006ED854 /* AnalysisSettings.m */; };
 		5DC0C88916E27C0F006ED854 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC0C88816E27C0F006ED854 /* MessageUI.framework */; };
 		5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */; };
 		5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */; };
@@ -2055,6 +2056,8 @@
 		448C31111E289454003D355D /* UITestFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestFunctions.swift; sourceTree = "<group>"; };
 		448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+AnalysisOptionsDelegate.swift"; sourceTree = "<group>"; };
 		448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+AnalysisOptionsDelegateTests.swift"; sourceTree = "<group>"; };
+		448C31181E289CAF003D355D /* AnalysisSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisSettings.swift; sourceTree = "<group>"; };
+		448C311A1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsAnalysisSettings.swift; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+TestAnswersInput.swift"; sourceTree = "<group>"; };
@@ -2110,8 +2113,6 @@
 		5DC0B2C4168CDB790035A910 /* Strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
 		5DC0C87D16E26207006ED854 /* AnalysisOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisOptionsViewController.h; sourceTree = "<group>"; };
 		5DC0C87E16E26207006ED854 /* AnalysisOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisOptionsViewController.m; sourceTree = "<group>"; };
-		5DC0C88516E26B03006ED854 /* AnalysisSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisSettings.h; sourceTree = "<group>"; };
-		5DC0C88616E26B03006ED854 /* AnalysisSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisSettings.m; sourceTree = "<group>"; };
 		5DC0C88816E27C0F006ED854 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.adult.json; sourceTree = "<group>"; };
 		5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.female.teen.json; sourceTree = "<group>"; };
@@ -3583,8 +3584,8 @@
 		5DC0C88416E26AE6006ED854 /* Analysis Settings */ = {
 			isa = PBXGroup;
 			children = (
-				5DC0C88516E26B03006ED854 /* AnalysisSettings.h */,
-				5DC0C88616E26B03006ED854 /* AnalysisSettings.m */,
+				448C31181E289CAF003D355D /* AnalysisSettings.swift */,
+				448C311A1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift */,
 			);
 			name = "Analysis Settings";
 			sourceTree = "<group>";
@@ -4862,10 +4863,12 @@
 				4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */,
 				44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */,
 				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
+				448C311B1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift in Sources */,
 				44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */,
 				448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */,
 				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
 				4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */,
+				448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */,
 				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
@@ -4918,7 +4921,6 @@
 				44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */,
 				5DC2650F16D92441004D4BBA /* AnalyzerPlainPercentGroup.m in Sources */,
 				5DC0C87F16E26207006ED854 /* AnalysisOptionsViewController.m in Sources */,
-				5DC0C88716E26B03006ED854 /* AnalysisSettings.m in Sources */,
 				5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */,
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
 				5D74048E16FEB8DB001747A1 /* AnalyzerGroupDetailedInfoViewController.m in Sources */,

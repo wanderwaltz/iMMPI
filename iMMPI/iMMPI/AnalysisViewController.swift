@@ -10,6 +10,9 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
 
     var analyser: Analyzer?
 
+    var settings: AnalysisSettings?
+    var cellSource: AnalyserTableViewCell.Source = AnalyserTableViewCell.makeSource()
+
     override init(style: UITableViewStyle) {
         super.init(style: style)
         setup()
@@ -50,8 +53,6 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
 
     fileprivate let dateFormatter = DateFormatter.medium
     fileprivate let reportGenerator = AnalysisHTMLReportGenerator()
-    fileprivate let cellSource = AnalyserTableViewCell.makeSource()
-
     fileprivate var analyserGroupIndices: [Int] = []
 }
 
@@ -105,7 +106,7 @@ extension AnalysisViewController {
                 continue
             }
 
-            if false == group.scoreIsWithinNorm() || false == AnalysisSettings.shouldHideNormalResults() {
+            if false == group.scoreIsWithinNorm() || false == settings?.shouldHideNormalResults {
                 indices.append(i)
             }
         }

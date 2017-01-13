@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark -
 #pragma mark AnalysisOptionsViewControllerDelegate protocol
 
+@protocol AnalysisSettings;
 @class AnalysisOptionsViewController;
 
 @protocol AnalysisOptionsViewControllerDelegate<NSObject>
@@ -30,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AnalysisOptionsViewController: UITableViewController
 @property (weak, nonatomic) id<AnalysisOptionsViewControllerDelegate> _Nullable delegate;
+@property (strong, nonatomic) id<AnalysisSettings> _Nullable settings;
 @end
 
 NS_ASSUME_NONNULL_END

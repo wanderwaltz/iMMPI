@@ -10,9 +10,8 @@
 #error "This file should be compiled with ARC support"
 #endif
 
+#import "iMMPI-Swift.h"
 #import "AnalysisOptionsViewController.h"
-#import "AnalysisSettings.h"
-
 #import <MessageUI/MessageUI.h>
 
 
@@ -56,7 +55,7 @@ static const NSInteger kCellUISwitchTag = 1;
         
         [_cellIdentifiers addObject:  kCellIdentifierEnableFilter];
         
-        if ([AnalysisSettings shouldFilterAnalysisResults])
+        if ([self.settings shouldFilterResults])
             [_cellIdentifiers addObject: kCellIdentifierHideFiltered];
         
         if ([MFMailComposeViewController canSendMail])
@@ -69,12 +68,21 @@ static const NSInteger kCellUISwitchTag = 1;
 }
 
 
+#pragma mark - view lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.tableView reloadData];
+}
+
+
 #pragma mark -
 #pragma mark actions
 
 - (void) enableFilterSwitchChanged: (UISwitch *) sender
 {
-    [AnalysisSettings setShouldFilterAnalysisResults: sender.on];
+    [self.settings setShouldFilterResults: sender.on];
     
     if (sender.on)
     {
@@ -85,7 +93,7 @@ static const NSInteger kCellUISwitchTag = 1;
     }
     else
     {
-        [AnalysisSettings setShouldHideNormalResults: NO];
+        [self.settings setShouldHideNormalResults: NO];
         
         [_cellIdentifiers removeObject: kCellIdentifierHideFiltered];
         [self.tableView deleteRowsAtIndexPaths: @[[NSIndexPath indexPathForRow: 1
@@ -99,7 +107,7 @@ static const NSInteger kCellUISwitchTag = 1;
 
 - (void) hideFilteredSwitchChanged: (UISwitch *) sender
 {
-    [AnalysisSettings setShouldHideNormalResults: sender.on];
+    [self.settings setShouldHideNormalResults: sender.on];
     [_delegate analysisOptionsViewControllerSettingsChanged: self];
 }
 
@@ -144,7 +152,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
         UISwitch *uiswitch = (UISwitch *)[cell viewWithTag: kCellUISwitchTag];
         FRB_AssertClass(uiswitch, UISwitch);
         
-        uiswitch.on = [AnalysisSettings shouldFilterAnalysisResults];
+        uiswitch.on = [self.settings shouldFilterResults];
         
         [uiswitch addTarget: self
                      action: @selector(enableFilterSwitchChanged:)
@@ -155,7 +163,7 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath
         UISwitch *uiswitch = (UISwitch *)[cell viewWithTag: kCellUISwitchTag];
         FRB_AssertClass(uiswitch, UISwitch);
         
-        uiswitch.on = [AnalysisSettings shouldHideNormalResults];
+        uiswitch.on = [self.settings shouldHideNormalResults];
         
         [uiswitch addTarget: self
                      action: @selector(hideFilteredSwitchChanged:)

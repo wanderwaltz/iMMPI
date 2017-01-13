@@ -4,7 +4,7 @@ extension AnalyserTableViewCell {
     typealias Source = TableViewCellSource<Data>
     typealias Data = (group: AnalyzerGroup, record: TestRecordProtocol, depth: Int)
 
-    static func makeSource(with style: Style = .default) -> Source {
+    static func makeSource(with style: Style = .default(with: UserDefaultsAnalysisSettings())) -> Source {
         return .nib(
             update: { (cell: AnalyserTableViewCell, data: Data?) in
                 guard let data = data else {
@@ -65,11 +65,7 @@ extension AnalyserTableViewCell {
 
 
 extension AnalyserTableViewCell.Style {
-    static let `default`: AnalyserTableViewCell.Style =  {
-        // TODO: make dependency on AnalysisSettings explicit
-        let shouldFilterResults: () -> Bool = { AnalysisSettings.shouldFilterAnalysisResults() }
-        let shouldHideNormalResults: () -> Bool = { AnalysisSettings.shouldHideNormalResults() }
-
+    static func `default`(with settings: AnalysisSettings) -> AnalyserTableViewCell.Style {
         let effectiveDepth: (Int) -> Int = { depth in
             // If we hide the scores which are within the norm, there may be a situation
             // when the group's parent group is hidden, while the group itself is not.
@@ -78,7 +74,7 @@ extension AnalyserTableViewCell.Style {
             // which is wrong. So we reset all of the offsets if 'hide normal' setting
             // is set to on. Offset zero is reserved for the larger groups which are
             // always present, so we cap the offset at the value of 1
-            if shouldHideNormalResults() && depth > 1 {
+            if settings.shouldHideNormalResults && depth > 1 {
                 return 1
             }
 
@@ -100,7 +96,7 @@ extension AnalyserTableViewCell.Style {
                 $0 > 0 ? "\($0)." : ""
             },
             scoreFormatter: { group in
-                if shouldFilterResults() && group.scoreIsWithinNorm() {
+                if settings.shouldFilterResults && group.scoreIsWithinNorm() {
                     return Strings.normalScorePlaceholder
                 }
                 else {
@@ -109,5 +105,5 @@ extension AnalyserTableViewCell.Style {
             })
 
         return style
-    }()
+    }
 }
