@@ -2118,7 +2118,6 @@
 		5DC4ABF216902E5200E835B7 /* AnalyzerGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroup.h; sourceTree = "<group>"; };
 		5DC4ABF516902E9900E835B7 /* AnalyzerGroupBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerGroupBase.h; sourceTree = "<group>"; };
 		5DC4ABF616902E9900E835B7 /* AnalyzerGroupBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerGroupBase.m; sourceTree = "<group>"; };
-		5DC4ABF816902F2C00E835B7 /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
 		5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
 		5DC4ABFD16902FAF00E835B7 /* Analyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analyzer.h; sourceTree = "<group>"; };
 		5DC4ABFE16902FAF00E835B7 /* Analyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analyzer.m; sourceTree = "<group>"; };
@@ -3514,7 +3513,6 @@
 				5D74048B16FEB8B4001747A1 /* Analyzer Group Detailed Info View Controller */,
 				5D74048716FEAC1F001747A1 /* Analysis HTML Report Generator */,
 				5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */,
-				5DC4ABF816902F2C00E835B7 /* AnalysisViewController.h */,
 				5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */,
 				44F97A3E1E263B26004F4E14 /* AnalysisViewController.swift */,
 			);
