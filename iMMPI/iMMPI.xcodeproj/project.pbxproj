@@ -1012,8 +1012,6 @@
 		44F97A471E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A461E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
-		5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74CF00169B08D500BAA202 /* StoryboardManagedViewController.m */; };
-		5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74CF03169B08E600BAA202 /* StoryboardManagedTableViewController.m */; };
 		5D81F94A1841BD97008E3B0A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D81F9491841BD97008E3B0A /* AVFoundation.framework */; };
 		5D85558516906A9C004E3021 /* AnalyzerKGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558416906A9C004E3021 /* AnalyzerKGroup.m */; };
 		5D85558916906E98004E3021 /* AnalyzerIGroupT1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85558816906E98004E3021 /* AnalyzerIGroupT1.m */; };
@@ -1049,7 +1047,6 @@
 		5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
 		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
 		5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780418ACF81D009896FB /* button_tap2.wav */; };
-		7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2070,14 +2067,6 @@
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
 		5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisHTMLReportGenerator.m; sourceTree = "<group>"; };
-		5D74048F16FEB9BB001747A1 /* SegueSourceAnalyzerGroupDetailedInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueSourceAnalyzerGroupDetailedInfo.h; sourceTree = "<group>"; };
-		5D74049016FEB9E6001747A1 /* SegueDestinationAnalyzerGroupDetailedInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueDestinationAnalyzerGroupDetailedInfo.h; sourceTree = "<group>"; };
-		5D74CEFF169B08D500BAA202 /* StoryboardManagedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedViewController.h; sourceTree = "<group>"; };
-		5D74CF00169B08D500BAA202 /* StoryboardManagedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardManagedViewController.m; sourceTree = "<group>"; };
-		5D74CF02169B08E600BAA202 /* StoryboardManagedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedTableViewController.h; sourceTree = "<group>"; };
-		5D74CF03169B08E600BAA202 /* StoryboardManagedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardManagedTableViewController.m; sourceTree = "<group>"; };
-		5D74CF05169B094B00BAA202 /* Storyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Storyboard.h; sourceTree = "<group>"; };
-		5D74CF07169B097B00BAA202 /* SegueHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegueHandler.h; sourceTree = "<group>"; };
 		5D81F9491841BD97008E3B0A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5D85558316906A9C004E3021 /* AnalyzerKGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerKGroup.h; sourceTree = "<group>"; };
 		5D85558416906A9C004E3021 /* AnalyzerKGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerKGroup.m; sourceTree = "<group>"; };
@@ -2136,9 +2125,6 @@
 		5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordSerialization.m; sourceTree = "<group>"; };
 		5DD3780318ACF81D009896FB /* button_tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap1.wav; sourceTree = "<group>"; };
 		5DD3780418ACF81D009896FB /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap2.wav; sourceTree = "<group>"; };
-		7C0F025C169BFF5D006377B3 /* StoryboardManagedViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryboardManagedViewControllerProtocol.h; sourceTree = "<group>"; };
-		7C0F025F169C00B9006377B3 /* MMPISegueHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPISegueHandler.h; sourceTree = "<group>"; };
-		7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPISegueHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3326,42 +3312,10 @@
 				5DC0B2C4168CDB790035A910 /* Strings.h */,
 				442CE1A91E235156006C34A6 /* Strings.swift */,
 				44673C1A1E23C9BD001758C0 /* Router */,
-				5D74CEFA169B086900BAA202 /* Storyboard */,
 				5DC40473168C2D49000AFBAE /* Table View Cells */,
 				5DA5CA0C163B04D200CF1601 /* View Controllers */,
 			);
 			name = UI;
-			sourceTree = "<group>";
-		};
-		5D74CEFA169B086900BAA202 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				5D74CF05169B094B00BAA202 /* Storyboard.h */,
-				5D74CF06169B095200BAA202 /* Protocols */,
-				7C0F025E169C0092006377B3 /* MMPI Segue Handler */,
-				5D74CEFE169B08B200BAA202 /* Managed View Controllers */,
-			);
-			name = Storyboard;
-			sourceTree = "<group>";
-		};
-		5D74CEFE169B08B200BAA202 /* Managed View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				5D74CEFF169B08D500BAA202 /* StoryboardManagedViewController.h */,
-				5D74CF00169B08D500BAA202 /* StoryboardManagedViewController.m */,
-				5D74CF02169B08E600BAA202 /* StoryboardManagedTableViewController.h */,
-				5D74CF03169B08E600BAA202 /* StoryboardManagedTableViewController.m */,
-			);
-			name = "Managed View Controllers";
-			sourceTree = "<group>";
-		};
-		5D74CF06169B095200BAA202 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				5D74CF07169B097B00BAA202 /* SegueHandler.h */,
-				7C0F025C169BFF5D006377B3 /* StoryboardManagedViewControllerProtocol.h */,
-			);
-			name = Protocols;
 			sourceTree = "<group>";
 		};
 		5D85558116906A57004E3021 /* K Group */ = {
@@ -3701,25 +3655,6 @@
 				5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */,
 			);
 			name = "Test Record Serialization";
-			sourceTree = "<group>";
-		};
-		7C0F025E169C0092006377B3 /* MMPI Segue Handler */ = {
-			isa = PBXGroup;
-			children = (
-				7C0F0264169C027E006377B3 /* Protocols */,
-				7C0F025F169C00B9006377B3 /* MMPISegueHandler.h */,
-				7C0F0260169C00B9006377B3 /* MMPISegueHandler.m */,
-			);
-			name = "MMPI Segue Handler";
-			sourceTree = "<group>";
-		};
-		7C0F0264169C027E006377B3 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				5D74048F16FEB9BB001747A1 /* SegueSourceAnalyzerGroupDetailedInfo.h */,
-				5D74049016FEB9E6001747A1 /* SegueDestinationAnalyzerGroupDetailedInfo.h */,
-			);
-			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4860,12 +4795,9 @@
 				44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */,
 				4422BC161E253CE000355D71 /* TestAnswersViewController.swift in Sources */,
 				448C30A71E276A2C003D355D /* AnalyserTableViewCell.swift in Sources */,
-				5D74CF01169B08D500BAA202 /* StoryboardManagedViewController.m in Sources */,
 				442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */,
 				44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */,
-				5D74CF04169B08E600BAA202 /* StoryboardManagedTableViewController.m in Sources */,
 				44F97A471E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift in Sources */,
-				7C0F0261169C00B9006377B3 /* MMPISegueHandler.m in Sources */,
 				44F97A451E266D1F004F4E14 /* StatementTableViewCell+Source.swift in Sources */,
 				44673C191E23C1C0001758C0 /* SectionIndex.swift in Sources */,
 				5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */,
