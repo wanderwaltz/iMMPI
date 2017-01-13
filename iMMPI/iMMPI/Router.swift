@@ -15,11 +15,20 @@ protocol Router: class {
 }
 
 
+/// A protocol for objects having a `router` property.
+///
+/// With default implementation of the protocol for `NSObject` subclasses,
+/// this protocol can be used as a mixin for easy adding of routing functionality
+/// to view controllers.
 protocol UsingRouting: class {
+    /// `Router` contained in a `UsingRouting` instance.
     var router: Router? { get set }
 }
 
 
+/// Default implementation of `UsingRouting` for `NSObject` subclasses.
+///
+/// Uses associated objects for storage.
 extension UsingRouting where Self: NSObject {
     var router: Router? {
         get {
