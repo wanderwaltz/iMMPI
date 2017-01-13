@@ -7,4 +7,6 @@ protocol ViewControllersFactory {
 
     func makeEditRecordViewController() throws -> EditTestRecordViewController
     func makeAnswersInputViewController() throws -> TestAnswersInputViewController
+
+    func makeAnalysisOptionsViewController() throws -> AnalysisOptionsViewController
 }

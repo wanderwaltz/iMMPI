@@ -52,6 +52,17 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
 
         return controller
     }
+
+
+    func makeAnalysisOptionsViewController() throws -> AnalysisOptionsViewController {
+        guard let controller = storyboard.instantiateViewController(
+            withIdentifier: ViewController.analysisOptions
+            ) as? AnalysisOptionsViewController else {
+                throw Error.failedInstantiatingViewController
+        }
+
+        return controller
+    }
 }
 
 
@@ -59,5 +70,5 @@ fileprivate enum ViewController {
     static let testRecords = "com.immpi.viewControllers.testRecords"
     static let editRecord = "com.immpi.viewControllers.editRecord"
     static let answersInput = "com.immpi.viewControllers.answersInput"
-    static let analysis = "com.immpi.viewControllers.analysis"
+    static let analysisOptions = "com.immpi.viewControllers.analysisOptions"
 }

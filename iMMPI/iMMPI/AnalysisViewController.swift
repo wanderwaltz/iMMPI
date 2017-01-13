@@ -27,6 +27,12 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
             target: self,
             action: #selector(handleAnswersReviewButtonAction(_:))
         )
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(handleAnalysisOptionsButtonAction(_:))
+        )
     }
 
     fileprivate let dateFormatter = DateFormatter.medium
@@ -58,6 +64,15 @@ extension AnalysisViewController {
         }
 
         router?.displayAnswersReview(for: record, sender: self)
+    }
+
+
+    @IBAction func handleAnalysisOptionsButtonAction(_ sender: Any?) {
+        guard let barButtonItem = sender as? UIBarButtonItem else {
+            return
+        }
+
+        try? router?.displayAnalysisOptions(sender: self, origin: barButtonItem)
     }
 }
 

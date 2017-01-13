@@ -438,7 +438,7 @@
         <!--Analysis Options View Controller-->
         <scene sceneID="uik-AA-rgr">
             <objects>
-                <tableViewController id="jnv-YN-dJC" customClass="AnalysisOptionsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="com.immpi.viewControllers.analysisOptions" id="jnv-YN-dJC" customClass="AnalysisOptionsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vr6-TP-Kz4">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -606,7 +606,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Положительные ответы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxK-l9-Rni">
-                                            <rect key="frame" x="14.5" y="9.5" width="511" height="20.5"/>
+                                            <rect key="frame" x="128.5" y="9.5" width="511" height="20.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="511" id="s0E-h1-ogo"/>
                                             </constraints>
@@ -629,7 +629,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <subviews>
                                         <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgI-bF-37g">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="200"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <dataDetectorType key="dataDetectorTypes"/>
                                         </webView>
@@ -672,24 +672,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yf-Tg-cpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6303" y="2108"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="4th-Z0-w8A">
-            <objects>
-                <navigationController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="formSheet" navigationBarHidden="YES" id="Bnc-Hi-s3d" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H7y-67-ggh">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jnv-YN-dJC" kind="relationship" relationship="rootViewController" id="okT-af-wdj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vmf-7j-v2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4463" y="940"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fpw-eC-yJZ">

@@ -12,4 +12,6 @@ final class StubRouter: Router {
     func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) throws {}
     func edit(_ record: TestRecordProtocol, sender: UIViewController) throws {}
     func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws {}
+
+    func displayAnalysisOptions(sender: UIViewController, origin: UIBarButtonItem) throws {}
 }

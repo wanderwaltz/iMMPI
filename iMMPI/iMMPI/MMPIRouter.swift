@@ -105,6 +105,17 @@ extension MMPIRouter: Router {
         let navigationController = UINavigationController(rootViewController: controller)
         sender.showDetailViewController(navigationController, sender: record)
     }
+
+
+    func displayAnalysisOptions(sender: UIViewController, origin: UIBarButtonItem) throws {
+        let controller = try viewControllersFactory.makeAnalysisOptionsViewController()
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .popover
+        navigationController.popoverPresentationController?.barButtonItem = origin
+        navigationController.isNavigationBarHidden = true
+        sender.present(navigationController, animated: true, completion: nil)
+    }
 }
 
 

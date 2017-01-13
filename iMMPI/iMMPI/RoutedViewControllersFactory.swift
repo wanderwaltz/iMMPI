@@ -38,4 +38,8 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         controller.router = router
         return controller
     }
+
+    func makeAnalysisOptionsViewController() throws -> AnalysisOptionsViewController {
+        return try base.makeAnalysisOptionsViewController()
+    }
 }
