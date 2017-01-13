@@ -103,15 +103,7 @@ extension Grouping {
         self.init(
             items: items,
             areInIncreasingOrder: areInIncreasingOrder,
-            sectionDescriptor: .singleSection(named: "")
-        )
-    }
-
-
-    convenience init(sections: [Section<Item>]) {
-        self.init(
-            allItems: Array(sections.map { $0.items }.joined()),
-            sections: sections
+            sectionDescriptor: .singleSection(named: sectionTitle)
         )
     }
 }
