@@ -1,3 +1,4 @@
+#if 0
 //
 //  AnalysisHTMLReportGenerator.h
 //  iMMPI
@@ -29,3 +30,4 @@
 - (NSString *)composeAnswersReport;
 
 @end
+#endif

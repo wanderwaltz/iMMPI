@@ -52,7 +52,6 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
     }
 
     fileprivate let dateFormatter = DateFormatter.medium
-    fileprivate let reportGenerator = AnalysisHTMLReportGenerator()
     fileprivate var analyserGroupIndices: [Int] = []
 }
 
@@ -128,12 +127,6 @@ extension AnalysisViewController {
 
         DispatchQueue.global().async {
             let analyser = Analyzer()
-
-            self.reportGenerator.analyzer = analyser
-            self.reportGenerator.record = record
-
-            self.reportGenerator.questionnaire =
-                try? Questionnaire(gender: record.person.gender, ageGroup: record.person.ageGroup)
 
             analyser.loadGroups()
             analyser.computeScores(forRecord: record)
