@@ -100,7 +100,7 @@ enum Html: CustomStringConvertible {
     }
 
 
-    fileprivate static func tag(_ name: String,
+    static func tag(_ name: String,
                     attributes: [String:CustomStringConvertible] = [:],
                     content: Html) -> Html {
         let flatAttributes = attributes.isEmpty

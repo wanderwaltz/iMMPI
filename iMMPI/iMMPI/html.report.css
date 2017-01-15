@@ -14,25 +14,31 @@ h2 {
     font-size: 38px;
 }
 
-h3 {
-    font-size: 36px;
-}
-
 ul.analysis, .analysis ul {
     list-style: none;
 }
 
-ul.analysis {
-    padding-left: 0;
+.analysis .depth0 {
+    font-size: 36px;
+    font-weight: bold;
 }
 
-.analysis li li {
+.analysis .depth1 {
     font-size: 30px;
+    font-weight: normal;
 }
 
-.analysis li li li {
+.analysis .depth2 {
     font-size: 28px;
     font-style: italic;
+    font-weight: normal;
+}
+
+li li { background: lavender; }
+li li:nth-child(odd) { background: white; }
+
+li li ul {
+				background-color: white;
 }
 
 index {
