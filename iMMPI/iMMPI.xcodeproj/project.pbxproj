@@ -3279,6 +3279,24 @@
 			name = Router;
 			sourceTree = "<group>";
 		};
+		448C31931E2B63EE003D355D /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Reports;
+			sourceTree = "<group>";
+		};
+		448C31941E2B63F6003D355D /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				448C31931E2B63EE003D355D /* Reports */,
+				5DC4ABF416902E8200E835B7 /* private */,
+				5DC4ABFD16902FAF00E835B7 /* Analyzer.h */,
+				5DC4ABFE16902FAF00E835B7 /* Analyzer.m */,
+			);
+			name = Analysis;
+			sourceTree = "<group>";
+		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3287,6 +3305,7 @@
 				5DC973BC168F20C200C496F0 /* JSON Test Records Storage */,
 				5DC0C88416E26AE6006ED854 /* Analysis Settings */,
 				5DC973AB168F082200C496F0 /* Data Model Objects */,
+				448C31941E2B63F6003D355D /* Analysis */,
 				442CE1CC1E23714A006C34A6 /* Table View Models */,
 				442CE1B61E235D12006C34A6 /* AgeGroup.swift */,
 				442CE1B81E235D3D006C34A6 /* Gender.swift */,
@@ -3575,16 +3594,6 @@
 			name = private;
 			sourceTree = "<group>";
 		};
-		5DC4ABFB16902F9500E835B7 /* Analysis */ = {
-			isa = PBXGroup;
-			children = (
-				5DC4ABF416902E8200E835B7 /* private */,
-				5DC4ABFD16902FAF00E835B7 /* Analyzer.h */,
-				5DC4ABFE16902FAF00E835B7 /* Analyzer.m */,
-			);
-			name = Analysis;
-			sourceTree = "<group>";
-		};
 		5DC4AC061690447300E835B7 /* F Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -3615,7 +3624,6 @@
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
 			isa = PBXGroup;
 			children = (
-				5DC4ABFB16902F9500E835B7 /* Analysis */,
 				5DC40477168C3228000AFBAE /* Test Record */,
 				5D5E05BA164651AE00A5A704 /* Questionnaire */,
 				442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */,
