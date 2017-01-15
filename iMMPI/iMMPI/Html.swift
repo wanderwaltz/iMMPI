@@ -13,12 +13,6 @@ enum Html: CustomStringConvertible {
         }
     }
 
-    enum Header: String {
-        case h1 = "h1"
-        case h2 = "h2"
-        case h3 = "h3"
-    }
-
     static let empty: Html = .content("")
 
 
@@ -71,27 +65,37 @@ enum Html: CustomStringConvertible {
     }
 
 
-    static func header(_ type: Header, content: Html) -> Html {
-        return tag(type.rawValue, content: content)
+    static func h1(_ text: String) -> Html {
+        return tag("h1", content: .content(text))
     }
 
 
-    static func list(attributes: Attributes = [:], _ content: Html...) -> Html {
-        return list(attributes: attributes, content: content)
+    static func h2(_ text: String) -> Html {
+        return tag("h2", content: .content(text))
     }
 
 
-    static func list(attributes: Attributes = [:], content: [Html]) -> Html {
+    static func h3(_ text: String) -> Html {
+        return tag("h3", content: .content(text))
+    }
+
+
+    static func ul(attributes: Attributes = [:], _ content: Html...) -> Html {
+        return ul(attributes: attributes, content: content)
+    }
+
+
+    static func ul(attributes: Attributes = [:], content: [Html]) -> Html {
         return tag("ul", attributes: attributes, content: .joined(content))
     }
 
 
-    static func item(attributes: Attributes = [:], _ content: Html...) -> Html {
-        return item(attributes: attributes, content: content)
+    static func li(attributes: Attributes = [:], _ content: Html...) -> Html {
+        return li(attributes: attributes, content: content)
     }
 
 
-    static func item(attributes: Attributes = [:], content: [Html]) -> Html {
+    static func li(attributes: Attributes = [:], content: [Html]) -> Html {
         return tag("li", attributes: attributes, content: .joined(content))
     }
 

@@ -64,7 +64,7 @@ final class HtmlTests: XCTestCase {
 
 
     func test__header_h1_tag() {
-        let html = Html.header(.h1, content: .content("content")).description
+        let html = Html.h1("content").description
 
         XCTAssertEqual(html, [
             "<h1>",
@@ -75,7 +75,7 @@ final class HtmlTests: XCTestCase {
 
 
     func test__header_h2_tag() {
-        let html = Html.header(.h2, content: .content("content")).description
+        let html = Html.h2("content").description
 
         XCTAssertEqual(html, [
             "<h2>",
@@ -86,7 +86,7 @@ final class HtmlTests: XCTestCase {
 
 
     func test__header_h3_tag() {
-        let html = Html.header(.h3, content: .content("content")).description
+        let html = Html.h3("content").description
 
         XCTAssertEqual(html, [
             "<h3>",
@@ -96,8 +96,8 @@ final class HtmlTests: XCTestCase {
     }
 
 
-    func test__list_tag() {
-        let html = Html.list(
+    func test__ul_tag() {
+        let html = Html.ul(
             .content("item 1"),
             .content("item 2"),
             .content("item 3")
@@ -113,8 +113,8 @@ final class HtmlTests: XCTestCase {
     }
 
 
-    func test__item_tag() {
-        let html = Html.item(
+    func test__li_tag() {
+        let html = Html.li(
             .content("a"),
             .content("b"),
             .content("c")
