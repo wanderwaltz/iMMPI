@@ -1,0 +1,45 @@
+.analysis {
+    width: 75%;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 38px;
+}
+
+h3 {
+    font-size: 36px;
+}
+
+ul.analysis, .analysis ul {
+    list-style: none;
+}
+
+ul.analysis {
+    padding-left: 0;
+}
+
+.analysis li li {
+    font-size: 30px;
+}
+
+.analysis li li li {
+    font-size: 28px;
+    font-style: italic;
+}
+
+index {
+    position: absolute;
+    left: 0;
+}
+
+score {
+    float: right;
+}
