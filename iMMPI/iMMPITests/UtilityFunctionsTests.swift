@@ -52,6 +52,18 @@ final class UtilityFunctionsTests: XCTestCase {
     }
 
 
+    func testThat__constant_array__always_returns_the_given_value() {
+        let qwerty: (Any) -> [Int] = Constant.array([1,2,3,4])
+
+        XCTAssertEqual(qwerty(123), [1,2,3,4])
+        XCTAssertEqual(qwerty("asdfg"), [1,2,3,4])
+        XCTAssertEqual(qwerty(false), [1,2,3,4])
+        XCTAssertEqual(qwerty(true), [1,2,3,4])
+        XCTAssertEqual(qwerty(NSObject()), [1,2,3,4])
+        XCTAssertEqual(qwerty(Date()), [1,2,3,4])
+    }
+
+
     func testThat__constant_void__does_not_have_side_effects() {
         let void: (Any) -> Void = Constant.void()
 

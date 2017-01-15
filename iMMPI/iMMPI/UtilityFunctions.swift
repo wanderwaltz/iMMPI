@@ -32,6 +32,16 @@ enum Constant {
     static func string<A>(_ value: String) -> (A) -> String {
         return { _ in value }
     }
+
+
+    static func html<A>(_ value: Html) -> (A) -> Html {
+        return { _ in value }
+    }
+
+
+    static func array<A, B>(_ value: [B]) -> (A) -> [B] {
+        return { _ in value }
+    }
 }
 
 
