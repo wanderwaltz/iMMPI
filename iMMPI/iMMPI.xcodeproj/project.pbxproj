@@ -488,7 +488,6 @@
 		442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1EE1E23A3A7006C34A6 /* Grouping+TestRecord.swift */; };
 		442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1F01E23A939006C34A6 /* AsyncProvider.swift */; };
 		442CE1F51E23A957006C34A6 /* RecordsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */; };
-		4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
 		4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */; };
 		4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C79D1E1617AE0024C001 /* StatementTests.swift */; };
@@ -1549,8 +1548,6 @@
 		442CE1F01E23A939006C34A6 /* AsyncProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncProvider.swift; sourceTree = "<group>"; };
 		442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewModel.swift; sourceTree = "<group>"; };
 		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
-		4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBDatePickerPopover.h; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.h; sourceTree = "<group>"; };
-		4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRBDatePickerPopover.m; path = UIKit/Classes/FRBDatePickerPopover/FRBDatePickerPopover.m; sourceTree = "<group>"; };
 		4430C7861E15FB950024C001 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4430C78F1E160DDC0024C001 /* iMMPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMMPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireTests.swift; sourceTree = "<group>"; };
@@ -2205,8 +2202,6 @@
 			isa = PBXGroup;
 			children = (
 				4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */,
-				4430C7741E15F9FF0024C001 /* FRBDatePickerPopover.h */,
-				4430C7751E15F9FF0024C001 /* FRBDatePickerPopover.m */,
 			);
 			path = Frostbit;
 			sourceTree = "<group>";
@@ -4799,7 +4794,6 @@
 				44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */,
 				448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */,
 				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
-				4430C7841E15F9FF0024C001 /* FRBDatePickerPopover.m in Sources */,
 				448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */,
 				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */,
