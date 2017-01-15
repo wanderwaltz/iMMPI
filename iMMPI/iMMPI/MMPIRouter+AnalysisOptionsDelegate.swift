@@ -10,14 +10,6 @@ extension MMPIRouter.AnalysisOptionsDelegate: AnalysisOptionsViewControllerDeleg
     func analysisOptionsViewControllerSettingsChanged(_ controller: AnalysisOptionsViewController) {
         NotificationCenter.default.post(name: .analysisSettingsChanged, object: nil)
     }
-
-    func analysisOptionsViewControllerPrintOptionSelected(_ controller: AnalysisOptionsViewController) {
-        // TODO: implement
-    }
-
-    func analysisOptionsViewControllerEmailOptionSelected(_ controller: AnalysisOptionsViewController) {
-        // TODO: implement
-    }
 }
 
 

@@ -11,6 +11,9 @@ enum Strings {
 
     static let delete = NSLocalizedString("Удалить", comment: "Кнопка удаления")
 
+    static let filterResults = NSLocalizedString("Фильтр значений", comment: "Опция анализа")
+    static let hideNormalResults = NSLocalizedString("Скрыть норму", comment: "Опция анализа")
+
     static let ageGroupAdult = NSLocalizedString("Взрослая", comment: "Название возрастной группы")
     static let ageGroupTeen = NSLocalizedString("Подростковая", comment: "Название возрастной группы")
 

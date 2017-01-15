@@ -11,7 +11,7 @@ final class MMPIRouterAnalysisOptionsDelegateTests: XCTestCase {
 
     func testThat__it_sends_notification_when_analysis_settings_change() {
         expectation(forNotification: Notification.Name.analysisSettingsChanged.rawValue, object: nil)
-        delegate.analysisOptionsViewControllerSettingsChanged(AnalysisOptionsViewController())
+        delegate.analysisOptionsViewControllerSettingsChanged(AnalysisOptionsViewController(style: .plain))
         waitForExpectations(timeout: 0.125)
     }
 }

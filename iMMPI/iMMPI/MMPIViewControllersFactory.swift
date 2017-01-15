@@ -7,7 +7,7 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
 
 
     let storyboard: UIStoryboard
-    let analysisSettings: AnalysisSettings = UserDefaultsAnalysisSettings()
+    let analysisSettings: AnalysisSettings = ValidatingAnalysisSettings(UserDefaultsAnalysisSettings())
 
 
     func makeRecordsListViewController() -> RecordsListViewController {
@@ -21,6 +21,14 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
         controller.settings = analysisSettings
         controller.cellSource = AnalyserTableViewCell.makeSource(with: .default(with: analysisSettings))
 
+        return controller
+    }
+
+
+    func makeAnalysisOptionsViewController() -> AnalysisOptionsViewController {
+        let controller = AnalysisOptionsViewController(style: .plain)
+
+        controller.viewModel = AnalysisOptionsViewModel(settings: analysisSettings)
         return controller
     }
 
@@ -56,18 +64,6 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
                 throw Error.failedInstantiatingViewController
         }
 
-        return controller
-    }
-
-
-    func makeAnalysisOptionsViewController() throws -> AnalysisOptionsViewController {
-        guard let controller = storyboard.instantiateViewController(
-            withIdentifier: ViewController.analysisOptions
-            ) as? AnalysisOptionsViewController else {
-                throw Error.failedInstantiatingViewController
-        }
-
-        controller.settings = analysisSettings
         return controller
     }
 }
