@@ -1,5 +1,9 @@
 import UIKit
 
+// TODO: analysis bar button does not work
+// TODO: input view background stretches incorrectly: ipad pro 13
+// TODO: sound does not work
+
 /// This class presents interface suitable to entering answers for the MMPI test 
 /// in order starting with first and finishing with last question.
 ///
