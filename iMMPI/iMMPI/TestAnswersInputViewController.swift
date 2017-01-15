@@ -1,6 +1,5 @@
 import UIKit
 
-// TODO: analysis bar button does not work
 // TODO: input view background stretches incorrectly: ipad pro 13
 // TODO: sound does not work
 
