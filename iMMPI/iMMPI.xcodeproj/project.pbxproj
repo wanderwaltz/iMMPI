@@ -1005,6 +1005,8 @@
 		448C31901E29FE5E003D355D /* ValidatingAnalysisSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C318F1E29FE5E003D355D /* ValidatingAnalysisSettings.swift */; };
 		448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */; };
 		448C31961E2B6479003D355D /* AnalysisReportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */; };
+		448C319C1E2B7CBC003D355D /* HtmlTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C319B1E2B7CBC003D355D /* HtmlTags.swift */; };
+		44DE9AFD1E2B874B00CFE13E /* HtmlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE9AFC1E2B874B00CFE13E /* HtmlTests.swift */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */; };
@@ -2062,6 +2064,8 @@
 		448C318F1E29FE5E003D355D /* ValidatingAnalysisSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatingAnalysisSettings.swift; sourceTree = "<group>"; };
 		448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisOptionsViewModel.swift; sourceTree = "<group>"; };
 		448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisReportGenerator.swift; sourceTree = "<group>"; };
+		448C319B1E2B7CBC003D355D /* HtmlTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlTags.swift; sourceTree = "<group>"; };
+		44DE9AFC1E2B874B00CFE13E /* HtmlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlTests.swift; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* TestAnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+TestAnswersInput.swift"; sourceTree = "<group>"; };
@@ -2224,6 +2228,7 @@
 				448C31151E289808003D355D /* Router */,
 				448C30F61E27DE01003D355D /* TableViewCellSource */,
 				448C310E1E289313003D355D /* View Controllers */,
+				44DE9AFB1E2B873700CFE13E /* Html */,
 				442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */,
 				448C30FB1E27E511003D355D /* AgeGroupTests.swift */,
 				448C31011E28735C003D355D /* AsyncProviderTests.swift */,
@@ -3300,6 +3305,22 @@
 			name = Analysis;
 			sourceTree = "<group>";
 		};
+		448C31981E2B6510003D355D /* Html */ = {
+			isa = PBXGroup;
+			children = (
+				448C319B1E2B7CBC003D355D /* HtmlTags.swift */,
+			);
+			name = Html;
+			sourceTree = "<group>";
+		};
+		44DE9AFB1E2B873700CFE13E /* Html */ = {
+			isa = PBXGroup;
+			children = (
+				44DE9AFC1E2B874B00CFE13E /* HtmlTests.swift */,
+			);
+			name = Html;
+			sourceTree = "<group>";
+		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3657,6 +3678,7 @@
 			isa = PBXGroup;
 			children = (
 				442CE1A41E234DCE006C34A6 /* Formatters */,
+				448C31981E2B6510003D355D /* Html */,
 				442CE1F01E23A939006C34A6 /* AsyncProvider.swift */,
 				5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */,
 				5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */,
@@ -4724,6 +4746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44DE9AFD1E2B874B00CFE13E /* HtmlTests.swift in Sources */,
 				448C30FA1E27E0DF003D355D /* TableViewCellSource+NibTests.swift in Sources */,
 				448C310D1E2880DA003D355D /* Grouping+AlphabeticallyTests.swift in Sources */,
 				448C31171E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift in Sources */,
@@ -4776,6 +4799,7 @@
 				448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */,
 				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */,
+				448C319C1E2B7CBC003D355D /* HtmlTags.swift in Sources */,
 				448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
 				442CE1BE1E2366F7006C34A6 /* TestAnswers.swift in Sources */,
