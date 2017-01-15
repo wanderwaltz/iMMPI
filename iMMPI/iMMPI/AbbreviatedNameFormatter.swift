@@ -9,7 +9,7 @@ final class AbbreviatedNameFormatter: Formatter {
         let components = name.components(separatedBy: .whitespacesAndNewlines)
         var abbreviated: [String] = []
 
-        abbreviated.append(components.first ?? "")
+        abbreviated.append(nilToEmptyString(components.first))
 
         for i in 1..<components.count {
             let component = components[i]

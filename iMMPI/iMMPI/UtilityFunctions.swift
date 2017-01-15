@@ -33,3 +33,8 @@ enum Constant {
         return { _ in value }
     }
 }
+
+
+func nilToEmptyString(_ value: Any?) -> String {
+    return value.map { String(describing: $0) } ?? ""
+}
