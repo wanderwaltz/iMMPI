@@ -110,8 +110,16 @@ extension AnalysisViewController {
             }
         }
 
+        let oldIndicesWereEmpty = analyserGroupIndices.isEmpty
+
         analyserGroupIndices = indices
-        tableView.reloadData()
+
+        if oldIndicesWereEmpty {
+            tableView.reloadData()
+        }
+        else {
+            tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        }
     }
 
 
