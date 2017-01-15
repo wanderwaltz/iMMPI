@@ -109,7 +109,7 @@ extension MMPIRouter: Router {
 
 
     func displayAnalysisOptions(sender: UIViewController, origin: UIBarButtonItem) throws {
-        let controller = try viewControllersFactory.makeAnalysisOptionsViewController()
+        let controller = viewControllersFactory.makeAnalysisOptionsViewController()
 
         controller.delegate = analysisOptionsDelegate
 
