@@ -1,11 +1,15 @@
 import Foundation
 
 struct HtmlReportGenerator {
-    init(css: String, content: @escaping (TestRecordProtocol, Analyzer) -> Html) {
+    init(dateFormatter: DateFormatter = .medium,
+         css: String,
+         content: @escaping (TestRecordProtocol, Analyzer) -> Html) {
+        self.dateFormatter = dateFormatter
         self.css = css
         self.content = content
     }
 
+    fileprivate let dateFormatter: DateFormatter
     fileprivate let css: String
     fileprivate let content: (TestRecordProtocol, Analyzer) -> Html
 }
@@ -13,9 +17,6 @@ struct HtmlReportGenerator {
 
 extension HtmlReportGenerator: AnalysisReportGenerator {
     func generate(for record: TestRecordProtocol, with analyser: Analyzer) -> Html {
-        let css = self.css
-        let content = self.content
-
         return Html.document(
             .head(
                 .meta(),
@@ -23,6 +24,8 @@ extension HtmlReportGenerator: AnalysisReportGenerator {
             ),
             .html(
                 .body(
+                    .h1(record.personName),
+                    .h2(dateFormatter.string(from: record.date)),
                     content(record, analyser)
                 )
             )
