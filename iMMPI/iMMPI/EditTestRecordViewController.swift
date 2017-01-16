@@ -37,7 +37,12 @@ final class EditTestRecordViewController: UITableViewController, UsingRouting {
     fileprivate var personName = ""
 
     fileprivate let dateFormatter: DateFormatter = .medium
-    fileprivate let datePickerPopover = FRBDatePickerPopover()
+
+    fileprivate lazy var datePickerController: UIViewController = {
+        let datePicker = DatePickerController()
+        datePicker.modalPresentationStyle = .popover
+        return datePicker
+    }()
 }
 
 
@@ -45,9 +50,6 @@ extension EditTestRecordViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         reloadData()
-
-        datePickerPopover.title = Strings.selectDate;
-        datePickerPopover.dateDelegate = self;
     }
 
 
@@ -84,9 +86,11 @@ extension EditTestRecordViewController {
             return
         }
 
-        datePickerPopover.dismiss(animated: false)
-        datePickerPopover.present(from: dateTableViewCell.bounds, in: dateTableViewCell,
-                                  permittedArrowDirections: .any, animated: true)
+        datePickerController.dismiss(animated: false)
+        datePickerController.popoverPresentationController?.sourceView = dateTableViewCell
+        datePickerController.popoverPresentationController?.sourceRect = dateTableViewCell.bounds
+
+        present(datePickerController, animated: true, completion: nil)
     }
 }
 
@@ -118,9 +122,9 @@ extension EditTestRecordViewController {
 
 
 
-// MARK: - FRBDatePickerPopoverDateDelegate
-extension EditTestRecordViewController: FRBDatePickerPopoverDateDelegate {
-    func frbDatePickerPopover(_ popover: FRBDatePickerPopover, didSelect date: Date) {
+// MARK: - DatePickerControllerDateDelegate
+extension EditTestRecordViewController: DatePickerControllerDateDelegate {
+    func datePickerController(_ datePickerController: DatePickerController, didSelect date: Date) {
         selectedDate = date
         reloadData()
     }
