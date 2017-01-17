@@ -75,6 +75,19 @@ extension MMPIRouter: Router {
     }
 
 
+    func displayAnalysisOptions(sender: UIViewController, origin: UIBarButtonItem) {
+        let controller = viewControllersFactory.makeAnalysisOptionsViewController()
+
+        controller.delegate = analysisOptionsDelegate
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .popover
+        navigationController.popoverPresentationController?.barButtonItem = origin
+        navigationController.isNavigationBarHidden = true
+        sender.present(navigationController, animated: true, completion: nil)
+    }
+
+
     func displayAnswersReview(for record: TestRecordProtocol, sender: UIViewController) {
         let controller = viewControllersFactory.makeAnswersReviewViewController()
 
@@ -84,6 +97,8 @@ extension MMPIRouter: Router {
 
         sender.show(controller, sender: record)
     }
+
+
 
 
     func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) throws {
@@ -105,19 +120,6 @@ extension MMPIRouter: Router {
         
         let navigationController = UINavigationController(rootViewController: controller)
         sender.showDetailViewController(navigationController, sender: record)
-    }
-
-
-    func displayAnalysisOptions(sender: UIViewController, origin: UIBarButtonItem) throws {
-        let controller = viewControllersFactory.makeAnalysisOptionsViewController()
-
-        controller.delegate = analysisOptionsDelegate
-
-        let navigationController = UINavigationController(rootViewController: controller)
-        navigationController.modalPresentationStyle = .popover
-        navigationController.popoverPresentationController?.barButtonItem = origin
-        navigationController.isNavigationBarHidden = true
-        sender.present(navigationController, animated: true, completion: nil)
     }
 }
 
