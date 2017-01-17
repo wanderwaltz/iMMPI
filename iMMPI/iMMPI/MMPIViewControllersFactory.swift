@@ -58,11 +58,3 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
         )
     }
 }
-
-
-fileprivate enum ViewController {
-    static let testRecords = "com.immpi.viewControllers.testRecords"
-    static let editRecord = "com.immpi.viewControllers.editRecord"
-    static let answersInput = "com.immpi.viewControllers.answersInput"
-    static let analysisOptions = "com.immpi.viewControllers.analysisOptions"
-}
