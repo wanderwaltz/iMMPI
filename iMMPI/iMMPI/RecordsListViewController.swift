@@ -156,7 +156,7 @@ extension RecordsListViewController {
             }
         })
 
-        try? router?.displayDetails(for: record, sender: self)
+        router?.displayDetails(for: record, sender: self)
     }
 }
 
@@ -168,7 +168,7 @@ extension RecordsListViewController {
             return
         }
 
-        try? router?.displayDetails(for: item, sender: self)
+        router?.displayDetails(for: item, sender: self)
     }
 
 

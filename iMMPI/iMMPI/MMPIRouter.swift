@@ -65,9 +65,9 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayDetails(for group: TestRecordsGroup, sender: UIViewController) throws {
+    func displayDetails(for group: TestRecordsGroup, sender: UIViewController) {
         if group.group.isEmpty {
-            try displayDetails(for: group.record, sender: sender)
+            displayDetails(for: group.record, sender: sender)
         }
         else {
             expand(group, sender: sender)
@@ -75,12 +75,12 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayDetails(for record: TestRecordProtocol, sender: UIViewController) throws {
+    func displayDetails(for record: TestRecordProtocol, sender: UIViewController) {
         if record.testAnswers.allStatementsAnswered {
             displayAnalysis(for: record, sender: sender)
         }
         else {
-            try displayAnswersInput(for: record, sender: sender)
+            displayAnswersInput(for: record, sender: sender)
         }
     }
 
@@ -180,8 +180,8 @@ extension MMPIRouter {
     }
 
 
-    fileprivate func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws {
-        let controller = try viewControllersFactory.makeAnswersInputViewController()
+    fileprivate func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) {
+        let controller = viewControllersFactory.makeAnswersInputViewController()
 
         controller.viewModel = DefaultTestAnswersViewModel(record: record)
         controller.inputDelegate = editingDelegate

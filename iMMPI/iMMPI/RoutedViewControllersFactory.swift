@@ -39,8 +39,8 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
-    func makeAnswersInputViewController() throws -> TestAnswersInputViewController {
-        let controller = try base.makeAnswersInputViewController()
+    func makeAnswersInputViewController() -> TestAnswersInputViewController {
+        let controller = base.makeAnswersInputViewController()
         controller.router = router
         return controller
     }

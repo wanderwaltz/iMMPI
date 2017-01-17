@@ -51,14 +51,11 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
 
-    func makeAnswersInputViewController() throws -> TestAnswersInputViewController {
-        guard let controller = storyboard.instantiateViewController(
-            withIdentifier: ViewController.answersInput
-            ) as? TestAnswersInputViewController else {
-                throw Error.failedInstantiatingViewController
-        }
-
-        return controller
+    func makeAnswersInputViewController() -> TestAnswersInputViewController {
+        return TestAnswersInputViewController(
+            nibName: "TestAnswersInputViewController",
+            bundle: Bundle(for: TestAnswersInputViewController.self)
+        )
     }
 }
 

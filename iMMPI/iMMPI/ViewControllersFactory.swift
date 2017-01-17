@@ -8,7 +8,5 @@ protocol ViewControllersFactory {
     func makeAnalysisOptionsViewController() -> AnalysisOptionsViewController
 
     func makeAnswersReviewViewController() -> TestAnswersViewController
-
-    func makeAnswersInputViewController() throws -> TestAnswersInputViewController
-
+    func makeAnswersInputViewController() -> TestAnswersInputViewController
 }
