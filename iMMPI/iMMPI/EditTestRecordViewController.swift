@@ -37,13 +37,6 @@ final class EditTestRecordViewController: UITableViewController, UsingRouting {
     fileprivate var personName = ""
 
     fileprivate let dateFormatter: DateFormatter = .medium
-
-    fileprivate lazy var datePickerController: UIViewController = {
-        let datePicker = DatePickerController()
-        datePicker.modalPresentationStyle = .popover
-        datePicker.dateDelegate = self
-        return datePicker
-    }()
 }
 
 
@@ -87,11 +80,16 @@ extension EditTestRecordViewController {
             return
         }
 
-        datePickerController.dismiss(animated: false)
-        datePickerController.popoverPresentationController?.sourceView = dateTableViewCell
-        datePickerController.popoverPresentationController?.sourceRect = dateTableViewCell.bounds
+        let datePicker = DatePickerController()
 
-        present(datePickerController, animated: true, completion: nil)
+        datePicker.modalPresentationStyle = .popover
+        datePicker.popoverPresentationController?.sourceView = dateTableViewCell
+        datePicker.popoverPresentationController?.sourceRect = dateTableViewCell.bounds
+
+        datePicker.date = record?.date ?? Date()
+        datePicker.dateDelegate = self
+
+        present(datePicker, animated: true, completion: nil)
     }
 }
 
