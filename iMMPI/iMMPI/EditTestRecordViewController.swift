@@ -41,6 +41,7 @@ final class EditTestRecordViewController: UITableViewController, UsingRouting {
     fileprivate lazy var datePickerController: UIViewController = {
         let datePicker = DatePickerController()
         datePicker.modalPresentationStyle = .popover
+        datePicker.dateDelegate = self
         return datePicker
     }()
 }

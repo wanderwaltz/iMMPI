@@ -3483,8 +3483,8 @@
 				5DBD56891697272000728BB4 /* Test Answers */,
 				5DA5CA10163B050700CF1601 /* Analysis View Controller */,
 				5DBE76D7169356D40018C728 /* Records List View Controller */,
-				442CE1B21E2357AA006C34A6 /* EditTestRecordViewController.swift */,
 				5876FDC61E2BE4C600255227 /* DatePickerController.swift */,
+				442CE1B21E2357AA006C34A6 /* EditTestRecordViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
