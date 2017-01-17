@@ -11,6 +11,20 @@ enum Strings {
 
     static let delete = NSLocalizedString("Удалить", comment: "Кнопка удаления")
 
+    static let formPersonName = NSLocalizedString("ФИО", comment: "Поле 'ФИО' формы редактирования записи")
+
+    static let formPersonNamePlaceholder =
+        NSLocalizedString("Иванов Иван Иванович",
+                          comment: "Плейсхолдер поля 'ФИО' формы редактирования записи")
+
+    static let formGender = NSLocalizedString("Пол", comment: "Поле 'Пол' формы редактирования записи")
+
+    static let formAgeGroup =
+        NSLocalizedString("Возрастная группа", comment: "Поле 'Возрастная группа' формы редактирования записи")
+
+    static let formDate =
+        NSLocalizedString("Дата тестирования", comment: "Поле 'Дата тестирования' формы редактирования записи")
+
     static let filterResults = NSLocalizedString("Фильтр значений", comment: "Опция анализа")
     static let hideNormalResults = NSLocalizedString("Скрыть норму", comment: "Опция анализа")
 

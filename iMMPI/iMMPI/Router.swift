@@ -4,6 +4,9 @@ protocol Router: class {
     func displayAllRecords(sender: UIViewController)
     func displayTrash(sender: UIViewController)
 
+    func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController)
+    func edit(_ record: TestRecordProtocol, sender: UIViewController)
+
     func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController)
     func displayAnalysisOptions(sender: UIViewController, origin: UIBarButtonItem)
 
@@ -11,9 +14,6 @@ protocol Router: class {
 
 
     func displayDetails(for group: TestRecordsGroup, sender: UIViewController) throws
-
-    func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) throws
-    func edit(_ record: TestRecordProtocol, sender: UIViewController) throws
     func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws
 }
 

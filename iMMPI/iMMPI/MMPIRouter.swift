@@ -55,6 +55,16 @@ extension MMPIRouter: Router {
     }
 
 
+    func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) {
+        edit(record, title: Strings.newRecord, sender: sender)
+    }
+
+
+    func edit(_ record: TestRecordProtocol, sender: UIViewController) {
+        edit(record, title: Strings.editRecord, sender: sender)
+    }
+
+
     func displayDetails(for group: TestRecordsGroup, sender: UIViewController) throws {
         if group.group.isEmpty {
             try displayDetails(for: group.record, sender: sender)
@@ -98,17 +108,6 @@ extension MMPIRouter: Router {
         sender.show(controller, sender: record)
     }
 
-
-
-
-    func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) throws {
-        try edit(record, title: Strings.newRecord, sender: sender)
-    }
-
-
-    func edit(_ record: TestRecordProtocol, sender: UIViewController) throws {
-        try edit(record, title: Strings.editRecord, sender: sender)
-    }
 
 
     func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws {
@@ -171,8 +170,8 @@ extension MMPIRouter {
     }
 
 
-    fileprivate func edit(_ record: TestRecordProtocol, title: String, sender: UIViewController) throws {
-        let controller = try viewControllersFactory.makeEditRecordViewController()
+    fileprivate func edit(_ record: TestRecordProtocol, title: String, sender: UIViewController) {
+        let controller = viewControllersFactory.makeEditRecordViewController()
 
         controller.record = record
         controller.title = title

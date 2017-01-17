@@ -15,6 +15,11 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
 
+    func makeEditRecordViewController() -> EditTestRecordViewController {
+        return EditTestRecordViewController(style: .grouped)
+    }
+
+
     func makeAnalysisViewController() -> AnalysisViewController {
         let controller = AnalysisViewController(style: .plain)
 
@@ -41,17 +46,6 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
 
         tableView.dataSource = controller
         controller.tableView = tableView
-
-        return controller
-    }
-
-
-    func makeEditRecordViewController() throws -> EditTestRecordViewController {
-        guard let controller = storyboard.instantiateViewController(
-            withIdentifier: ViewController.editRecord
-            ) as? EditTestRecordViewController else {
-                throw Error.failedInstantiatingViewController
-        }
 
         return controller
     }

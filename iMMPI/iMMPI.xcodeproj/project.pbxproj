@@ -503,6 +503,9 @@
 		4430C7B71E163F450024C001 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7B61E163F450024C001 /* PersonTests.swift */; };
 		4430C7B91E16408A0024C001 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7B81E16408A0024C001 /* Person.swift */; };
 		4430C7BB1E1670010024C001 /* PersonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7BA1E1670010024C001 /* PersonProtocol.swift */; };
+		444F23711E2E1C9300BB8003 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23701E2E1C9300BB8003 /* FormTableViewCell.swift */; };
+		444F23731E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23721E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift */; };
+		444F23751E2E241900BB8003 /* FormLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1566,6 +1569,9 @@
 		4430C7B61E163F450024C001 /* PersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		4430C7B81E16408A0024C001 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		4430C7BA1E1670010024C001 /* PersonProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProtocol.swift; sourceTree = "<group>"; };
+		444F23701E2E1C9300BB8003 /* FormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
+		444F23721E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabelTableViewCell.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -2252,6 +2258,16 @@
 				4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */,
 			);
 			name = Questionnaire;
+			sourceTree = "<group>";
+		};
+		444F236F1E2E1C7F00BB8003 /* FormTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				444F23701E2E1C9300BB8003 /* FormTableViewCell.swift */,
+				444F23721E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift */,
+				444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */,
+			);
+			name = FormTableViewCell;
 			sourceTree = "<group>";
 		};
 		44673C1A1E23C9BD001758C0 /* Router */ = {
@@ -3567,6 +3583,7 @@
 				448C30A81E276CA7003D355D /* AnalyserTableViewCell */,
 				448C30B41E277C43003D355D /* StatementTableViewCell */,
 				448C30EF1E27B8FD003D355D /* TableViewCellSource */,
+				444F236F1E2E1C7F00BB8003 /* FormTableViewCell */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -4807,6 +4824,7 @@
 				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */,
 				442CE1B51E235A1B006C34A6 /* DateFormatter+iMMPI.swift in Sources */,
+				444F23731E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift in Sources */,
 				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
 				448C30F11E27B929003D355D /* TableViewCellSource+Nib.swift in Sources */,
 				442CE1AE1E23551D006C34A6 /* TestRecordProtocol.swift in Sources */,
@@ -4833,6 +4851,7 @@
 				44673C1C1E23C9CA001758C0 /* Router.swift in Sources */,
 				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
 				44F97A371E26243E004F4E14 /* JSONTestRecordStorageElement.swift in Sources */,
+				444F23711E2E1C9300BB8003 /* FormTableViewCell.swift in Sources */,
 				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
 				44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */,
 				4422BC161E253CE000355D71 /* TestAnswersViewController.swift in Sources */,
@@ -4852,6 +4871,7 @@
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
 				442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */,
 				44F97A3D1E26348A004F4E14 /* TestAnswersViewModel.swift in Sources */,
+				444F23751E2E241900BB8003 /* FormLabelTableViewCell.swift in Sources */,
 				448C31901E29FE5E003D355D /* ValidatingAnalysisSettings.swift in Sources */,
 				44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */,
 				442CE1D51E237AB5006C34A6 /* SectionDescriptor.swift in Sources */,

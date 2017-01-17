@@ -15,6 +15,12 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
+    func makeEditRecordViewController() -> EditTestRecordViewController {
+        let controller = base.makeEditRecordViewController()
+        controller.router = router
+        return controller
+    }
+
     func makeAnalysisViewController() -> AnalysisViewController {
         let controller = base.makeAnalysisViewController()
         controller.router = router
@@ -29,12 +35,6 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
 
     func makeAnswersReviewViewController() -> TestAnswersViewController {
         let controller = base.makeAnswersReviewViewController()
-        controller.router = router
-        return controller
-    }
-
-    func makeEditRecordViewController() throws -> EditTestRecordViewController {
-        let controller = try base.makeEditRecordViewController()
         controller.router = router
         return controller
     }
