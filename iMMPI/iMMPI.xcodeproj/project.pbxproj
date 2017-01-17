@@ -507,6 +507,7 @@
 		444F23731E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23721E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift */; };
 		444F23751E2E241900BB8003 /* FormLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */; };
 		444F23771E2E28E000BB8003 /* TestAnswersInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 444F23761E2E28E000BB8003 /* TestAnswersInputViewController.xib */; };
+		444F23791E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23781E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1574,6 +1575,7 @@
 		444F23721E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabelTableViewCell.swift; sourceTree = "<group>"; };
 		444F23761E2E28E000BB8003 /* TestAnswersInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestAnswersInputViewController.xib; sourceTree = "<group>"; };
+		444F23781E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordSerializationTests.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -2237,6 +2239,7 @@
 				448C30FB1E27E511003D355D /* AgeGroupTests.swift */,
 				448C31011E28735C003D355D /* AsyncProviderTests.swift */,
 				448C30FD1E27E743003D355D /* GenderTests.swift */,
+				444F23781E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 				4430C7B61E163F450024C001 /* PersonTests.swift */,
 				442CE1E41E238C75006C34A6 /* TestRecordsGroupTests.swift */,
@@ -4786,6 +4789,7 @@
 				442CE1D71E238257006C34A6 /* GroupingTests.swift in Sources */,
 				448C30FE1E27E743003D355D /* GenderTests.swift in Sources */,
 				442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */,
+				444F23791E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift in Sources */,
 				448C311D1E28A144003D355D /* UserDefaultsAnalysisSettingsTests.swift in Sources */,
 				448C31021E28735C003D355D /* AsyncProviderTests.swift in Sources */,
 			);
