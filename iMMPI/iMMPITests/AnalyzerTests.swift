@@ -13,10 +13,47 @@ final class AnalyzerIntegrationTests: XCTestCase {
     }
 
 
-    func testThat_samples_match_scores() {
+    func testThat_samples_match_scores_group_0() {
+        validateTestCases(in: 0..<50)
+    }
+
+    func testThat_samples_match_scores_group_1() {
+        validateTestCases(in: 50..<100)
+    }
+
+    func testThat_samples_match_scores_group_2() {
+        validateTestCases(in: 100..<150)
+    }
+
+    func testThat_samples_match_scores_group_3() {
+        validateTestCases(in: 150..<200)
+    }
+
+    func testThat_samples_match_scores_group_4() {
+        validateTestCases(in: 200..<250)
+    }
+
+    func testThat_samples_match_scores_group_5() {
+        validateTestCases(in: 250..<300)
+    }
+
+    func testThat_samples_match_scores_group_6() {
+        validateTestCases(in: 300..<350)
+    }
+
+    func testThat_samples_match_scores_group_7() {
+        validateTestCases(in: 350..<400)
+    }
+
+    func testThat_samples_match_scores_group_8() {
+        validateTestCases(in: 400..<numberOfTestCases)
+    }
+
+
+    func validateTestCases(in range: CountableRange<Int>) {
         let bundle = Bundle(for: type(of: self))
 
-        for i in 0..<numberOfTestCases {
+        for i in (0..<numberOfTestCases).clamped(to: range) {
             let answersFileName = String(format: "Test Subject 00%.3d", i)
             let scoresFileName = "\(answersFileName) - scores"
 
