@@ -49,8 +49,6 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 
 #import "Analyzer.h"
 
-#import "JSONTestRecordSerialization.h"
-
 #import "JSONTestRecordsStorage.h"
 
 #endif

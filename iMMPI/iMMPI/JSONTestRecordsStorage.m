@@ -141,7 +141,7 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
     if ([fileManager fileExistsAtPath: indexPath isDirectory: NULL])
     {
         NSData *indexData = [NSData dataWithContentsOfFile: indexPath];
-        NSArray  *proxies = [JSONTestRecordSerialization recordProxiesFromIndexData: indexData];
+        NSArray  *proxies = [self.indexSerialization decode: indexData];
         
         for (JSONTestRecordProxy *proxy in proxies)
         {
@@ -170,7 +170,7 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
 - (void) saveTestRecordsIndex
 {
     NSArray  *indexProxies = [self allTestRecords];
-    NSData   *indexData    = [JSONTestRecordSerialization indexDataForRecordProxies: indexProxies];
+    NSData   *indexData    = [self.indexSerialization encode: indexProxies];
     
     if (indexData != nil)
     {
@@ -197,7 +197,7 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
             NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
             NSData   *data = [NSData dataWithContentsOfFile: path];
             
-            id<TestRecordProtocol> record = [JSONTestRecordSerialization testRecordFromData: data];
+            id<TestRecordProtocol> record = [self.serialization decode: data];
             
             if (record != nil)
             {
@@ -312,7 +312,7 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
     {
         FRB_AssertConformsTo(element.record, TestRecordProtocol);
         
-        NSData *jsonData = [JSONTestRecordSerialization dataWithTestRecord: element.record];
+        NSData *jsonData = [self.serialization encode: element.record];
         
         if (jsonData)
         {

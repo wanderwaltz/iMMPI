@@ -37,8 +37,37 @@ extension TestAnswers: TestAnswersProtocol {
 
 
 extension TestAnswers {
-    fileprivate struct Record {
+    fileprivate struct Record: Hashable {
         let statementIdentifier: Int
         let answer: AnswerType
+
+        fileprivate var hashValue: Int {
+            return statementIdentifier ^ answer.rawValue
+        }
+
+
+        fileprivate static func == (left: Record, right: Record) -> Bool {
+            return left.statementIdentifier == right.statementIdentifier
+                && left.answer == right.answer
+        }
+    }
+}
+
+
+extension TestAnswers {
+    override var hash: Int {
+        return Array(answersByIdentifier.enumerated()).map({ $1.value.hashValue }).reduce(0, ^)
+    }
+
+
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let other = object as? TestAnswers else {
+            return false
+        }
+
+        let thisAnswers = Array(answersByIdentifier.values.sorted { $0.statementIdentifier < $1.statementIdentifier })
+        let otherAnswers = Array(other.answersByIdentifier.values.sorted { $0.statementIdentifier < $1.statementIdentifier })
+
+        return thisAnswers == otherAnswers
     }
 }

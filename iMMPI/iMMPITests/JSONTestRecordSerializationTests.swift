@@ -2,6 +2,14 @@ import XCTest
 @testable import iMMPI
 
 final class JSONTestRecordSerializationTests: XCTestCase {
+    var serialization: JSONTestRecordSerialization!
+
+    override func setUp() {
+        super.setUp()
+        serialization = JSONTestRecordSerialization()
+    }
+
+
     func testThat__json_serialization_properly_loads_records() {
         let first = loadSample(at: 3)
         let second = loadSample(at: 4)
@@ -26,8 +34,8 @@ final class JSONTestRecordSerializationTests: XCTestCase {
     func testThat__json_serialization_is_bidirectional() {
         let record = loadSample(at: 3)
 
-        let data = JSONTestRecordSerialization.data(withTestRecord: record)!
-        let restoredRecord = JSONTestRecordSerialization.testRecord(from: data)!
+        let data = serialization.encode(record)!
+        let restoredRecord = serialization.decode(data)!
 
 
         XCTAssertEqual(record.personName, restoredRecord.personName)
@@ -47,6 +55,6 @@ final class JSONTestRecordSerializationTests: XCTestCase {
         let answersFileUrl = Bundle(for: type(of: self)).url(forResource: answersFileName, withExtension: "json")!
         let answersData = try! Data(contentsOf: answersFileUrl)
 
-        return JSONTestRecordSerialization.testRecord(from: answersData)!
+        return serialization.decode(answersData)!
     }
 }

@@ -4,6 +4,8 @@ final class JSONTestRecordProxy: NSObject {
     let fileName: String
     let directory: String
 
+    let serialization = JSONTestRecordSerialization()
+
     init(fileName: String, directory: String) {
         self.fileName = fileName
         self.directory = directory
@@ -126,6 +128,6 @@ extension JSONTestRecordProxy {
             return
         }
 
-        loadedRecord = JSONTestRecordSerialization.testRecord(from: data)
+        loadedRecord = serialization.decode(data) ?? loadedRecord
     }
 }

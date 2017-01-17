@@ -16,6 +16,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         storage.trashStorage = trashStorage
+        storage.serialization = JSONTestRecordSerialization()
+        storage.indexSerialization = JSONTestRecordIndexSerialization()
 
         let viewControllersFactory = MMPIViewControllersFactory(storyboard: window!.rootViewController!.storyboard!)
 

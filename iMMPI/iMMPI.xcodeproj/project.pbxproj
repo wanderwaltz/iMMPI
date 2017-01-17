@@ -508,6 +508,18 @@
 		444F23751E2E241900BB8003 /* FormLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */; };
 		444F23771E2E28E000BB8003 /* TestAnswersInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 444F23761E2E28E000BB8003 /* TestAnswersInputViewController.xib */; };
 		444F23791E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23781E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift */; };
+		444F237C1E2E31E000BB8003 /* JSONAgeGroupSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F237B1E2E31E000BB8003 /* JSONAgeGroupSerialization.swift */; };
+		444F237F1E2E334800BB8003 /* JSONAgeGroupSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F237E1E2E334800BB8003 /* JSONAgeGroupSerializationTests.swift */; };
+		444F23841E2E345E00BB8003 /* JSONGenderSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23831E2E345E00BB8003 /* JSONGenderSerialization.swift */; };
+		444F23861E2E34A100BB8003 /* JSONGenderSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23851E2E34A100BB8003 /* JSONGenderSerializationTests.swift */; };
+		444F23881E2E358500BB8003 /* JSONPersonSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23871E2E358500BB8003 /* JSONPersonSerialization.swift */; };
+		444F238A1E2E36F300BB8003 /* JSONPersonSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23891E2E36F300BB8003 /* JSONPersonSerializationTests.swift */; };
+		444F238E1E2E3CBF00BB8003 /* JSONAnswersSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F238D1E2E3CBF00BB8003 /* JSONAnswersSerialization.swift */; };
+		444F23901E2E3DDF00BB8003 /* JSONAnswerTypeSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F238F1E2E3DDF00BB8003 /* JSONAnswerTypeSerialization.swift */; };
+		444F23921E2E3E1900BB8003 /* JSONAnswerTypeSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23911E2E3E1900BB8003 /* JSONAnswerTypeSerializationTests.swift */; };
+		444F23981E2E3FFA00BB8003 /* JSONTestRecordProxySerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23971E2E3FFA00BB8003 /* JSONTestRecordProxySerialization.swift */; };
+		444F239A1E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23991E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift */; };
+		444F239C1E2E42A900BB8003 /* JSONTestRecordSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F239B1E2E42A900BB8003 /* JSONTestRecordSerialization.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1055,7 +1067,6 @@
 		5DC4AC111690626800E835B7 /* AnalyzerPGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4AC101690626800E835B7 /* AnalyzerPGroup.m */; };
 		5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
 		5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
-		5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */; };
 		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
 		5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780418ACF81D009896FB /* button_tap2.wav */; };
 /* End PBXBuildFile section */
@@ -1576,6 +1587,18 @@
 		444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabelTableViewCell.swift; sourceTree = "<group>"; };
 		444F23761E2E28E000BB8003 /* TestAnswersInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestAnswersInputViewController.xib; sourceTree = "<group>"; };
 		444F23781E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordSerializationTests.swift; sourceTree = "<group>"; };
+		444F237B1E2E31E000BB8003 /* JSONAgeGroupSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAgeGroupSerialization.swift; sourceTree = "<group>"; };
+		444F237E1E2E334800BB8003 /* JSONAgeGroupSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAgeGroupSerializationTests.swift; sourceTree = "<group>"; };
+		444F23831E2E345E00BB8003 /* JSONGenderSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONGenderSerialization.swift; sourceTree = "<group>"; };
+		444F23851E2E34A100BB8003 /* JSONGenderSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONGenderSerializationTests.swift; sourceTree = "<group>"; };
+		444F23871E2E358500BB8003 /* JSONPersonSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPersonSerialization.swift; sourceTree = "<group>"; };
+		444F23891E2E36F300BB8003 /* JSONPersonSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPersonSerializationTests.swift; sourceTree = "<group>"; };
+		444F238D1E2E3CBF00BB8003 /* JSONAnswersSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAnswersSerialization.swift; sourceTree = "<group>"; };
+		444F238F1E2E3DDF00BB8003 /* JSONAnswerTypeSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAnswerTypeSerialization.swift; sourceTree = "<group>"; };
+		444F23911E2E3E1900BB8003 /* JSONAnswerTypeSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAnswerTypeSerializationTests.swift; sourceTree = "<group>"; };
+		444F23971E2E3FFA00BB8003 /* JSONTestRecordProxySerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordProxySerialization.swift; sourceTree = "<group>"; };
+		444F23991E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordIndexSerialization.swift; sourceTree = "<group>"; };
+		444F239B1E2E42A900BB8003 /* JSONTestRecordSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordSerialization.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -2140,8 +2163,6 @@
 		5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordsStorage.m; sourceTree = "<group>"; };
 		5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityFunctions.h; sourceTree = "<group>"; };
 		5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
-		5DCC9647168DC1D8004F8D4E /* JSONTestRecordSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordSerialization.h; sourceTree = "<group>"; };
-		5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordSerialization.m; sourceTree = "<group>"; };
 		5DD3780318ACF81D009896FB /* button_tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap1.wav; sourceTree = "<group>"; };
 		5DD3780418ACF81D009896FB /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap2.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2230,6 +2251,7 @@
 				448C31091E2877AD003D355D /* Test Objects */,
 				44673C3F1E2522D5001758C0 /* Analyzer */,
 				442CE1CF1E2378CA006C34A6 /* Grouping */,
+				444F237D1E2E32DD00BB8003 /* JSON Serialization */,
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
 				448C31151E289808003D355D /* Router */,
 				448C30F61E27DE01003D355D /* TableViewCellSource */,
@@ -2239,7 +2261,6 @@
 				448C30FB1E27E511003D355D /* AgeGroupTests.swift */,
 				448C31011E28735C003D355D /* AsyncProviderTests.swift */,
 				448C30FD1E27E743003D355D /* GenderTests.swift */,
-				444F23781E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 				4430C7B61E163F450024C001 /* PersonTests.swift */,
 				442CE1E41E238C75006C34A6 /* TestRecordsGroupTests.swift */,
@@ -2272,6 +2293,33 @@
 				444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */,
 			);
 			name = FormTableViewCell;
+			sourceTree = "<group>";
+		};
+		444F237A1E2E31C900BB8003 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				444F237B1E2E31E000BB8003 /* JSONAgeGroupSerialization.swift */,
+				444F238D1E2E3CBF00BB8003 /* JSONAnswersSerialization.swift */,
+				444F238F1E2E3DDF00BB8003 /* JSONAnswerTypeSerialization.swift */,
+				444F23831E2E345E00BB8003 /* JSONGenderSerialization.swift */,
+				444F23871E2E358500BB8003 /* JSONPersonSerialization.swift */,
+				444F23991E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift */,
+				444F23971E2E3FFA00BB8003 /* JSONTestRecordProxySerialization.swift */,
+				444F239B1E2E42A900BB8003 /* JSONTestRecordSerialization.swift */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		444F237D1E2E32DD00BB8003 /* JSON Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				444F237E1E2E334800BB8003 /* JSONAgeGroupSerializationTests.swift */,
+				444F23911E2E3E1900BB8003 /* JSONAnswerTypeSerializationTests.swift */,
+				444F23851E2E34A100BB8003 /* JSONGenderSerializationTests.swift */,
+				444F23891E2E36F300BB8003 /* JSONPersonSerializationTests.swift */,
+				444F23781E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift */,
+			);
+			name = "JSON Serialization";
 			sourceTree = "<group>";
 		};
 		44673C1A1E23C9BD001758C0 /* Router */ = {
@@ -3595,7 +3643,6 @@
 		5DC40477168C3228000AFBAE /* Test Record */ = {
 			isa = PBXGroup;
 			children = (
-				5DCC9646168DC1BD004F8D4E /* Test Record Serialization */,
 				442CE1AB1E235397006C34A6 /* TestRecord.swift */,
 				4430C7B81E16408A0024C001 /* Person.swift */,
 			);
@@ -3686,6 +3733,7 @@
 		5DC973BC168F20C200C496F0 /* JSON Test Records Storage */ = {
 			isa = PBXGroup;
 			children = (
+				444F237A1E2E31C900BB8003 /* Serialization */,
 				5DC973B4168F0D5F00C496F0 /* private */,
 				5DC973BF168F214A00C496F0 /* JSONTestRecordsStorage.h */,
 				5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */,
@@ -3705,15 +3753,6 @@
 				44F97A281E261943004F4E14 /* SoundPlayer.swift */,
 			);
 			name = Utils;
-			sourceTree = "<group>";
-		};
-		5DCC9646168DC1BD004F8D4E /* Test Record Serialization */ = {
-			isa = PBXGroup;
-			children = (
-				5DCC9647168DC1D8004F8D4E /* JSONTestRecordSerialization.h */,
-				5DCC9648168DC1D8004F8D4E /* JSONTestRecordSerialization.m */,
-			);
-			name = "Test Record Serialization";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4771,10 +4810,12 @@
 				448C310D1E2880DA003D355D /* Grouping+AlphabeticallyTests.swift in Sources */,
 				448C31171E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift in Sources */,
 				442CE1E51E238C75006C34A6 /* TestRecordsGroupTests.swift in Sources */,
+				444F238A1E2E36F300BB8003 /* JSONPersonSerializationTests.swift in Sources */,
 				448C31001E27E7BA003D355D /* SectionTests.swift in Sources */,
 				448C31041E2875B9003D355D /* SectionIndexTests.swift in Sources */,
 				448C31061E287719003D355D /* UsingRouting+NSObjectTests.swift in Sources */,
 				448C310B1E2877BA003D355D /* StubRouter.swift in Sources */,
+				444F23861E2E34A100BB8003 /* JSONGenderSerializationTests.swift in Sources */,
 				442CE1D11E2378D7006C34A6 /* SectionSplittingTests.swift in Sources */,
 				448C30F51E27BD63003D355D /* TableViewCellSourceTests.swift in Sources */,
 				448C31101E289328003D355D /* AnalysisViewControllerTests.swift in Sources */,
@@ -4782,10 +4823,12 @@
 				448C30F81E27DE1B003D355D /* TableViewCellSource+DefaultTests.swift in Sources */,
 				4430C7B71E163F450024C001 /* PersonTests.swift in Sources */,
 				448C30FC1E27E511003D355D /* AgeGroupTests.swift in Sources */,
+				444F23921E2E3E1900BB8003 /* JSONAnswerTypeSerializationTests.swift in Sources */,
 				44673C471E252339001758C0 /* AnalyzerTests.swift in Sources */,
 				4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */,
 				442CE1DB1E238581006C34A6 /* UtilityFunctionsTests.swift in Sources */,
 				448C31121E289454003D355D /* UITestFunctions.swift in Sources */,
+				444F237F1E2E334800BB8003 /* JSONAgeGroupSerializationTests.swift in Sources */,
 				442CE1D71E238257006C34A6 /* GroupingTests.swift in Sources */,
 				448C30FE1E27E743003D355D /* GenderTests.swift in Sources */,
 				442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */,
@@ -4811,8 +4854,9 @@
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
 				44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */,
 				4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */,
+				444F238E1E2E3CBF00BB8003 /* JSONAnswersSerialization.swift in Sources */,
+				444F239C1E2E42A900BB8003 /* JSONTestRecordSerialization.swift in Sources */,
 				44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */,
-				5DCC9649168DC1D8004F8D4E /* JSONTestRecordSerialization.m in Sources */,
 				448C311B1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift in Sources */,
 				44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */,
 				448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */,
@@ -4822,7 +4866,9 @@
 				442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */,
 				448C319C1E2B7CBC003D355D /* HtmlTags.swift in Sources */,
 				448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */,
+				444F23841E2E345E00BB8003 /* JSONGenderSerialization.swift in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
+				444F23981E2E3FFA00BB8003 /* JSONTestRecordProxySerialization.swift in Sources */,
 				442CE1BE1E2366F7006C34A6 /* TestAnswers.swift in Sources */,
 				5DC4ABF716902E9900E835B7 /* AnalyzerGroupBase.m in Sources */,
 				442CE1AC1E235397006C34A6 /* TestRecord.swift in Sources */,
@@ -4832,6 +4878,7 @@
 				442CE1B51E235A1B006C34A6 /* DateFormatter+iMMPI.swift in Sources */,
 				444F23731E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift in Sources */,
 				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
+				444F23881E2E358500BB8003 /* JSONPersonSerialization.swift in Sources */,
 				448C30F11E27B929003D355D /* TableViewCellSource+Nib.swift in Sources */,
 				442CE1AE1E23551D006C34A6 /* TestRecordProtocol.swift in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
@@ -4858,6 +4905,7 @@
 				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
 				44F97A371E26243E004F4E14 /* JSONTestRecordStorageElement.swift in Sources */,
 				444F23711E2E1C9300BB8003 /* FormTableViewCell.swift in Sources */,
+				444F237C1E2E31E000BB8003 /* JSONAgeGroupSerialization.swift in Sources */,
 				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
 				44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */,
 				4422BC161E253CE000355D71 /* TestAnswersViewController.swift in Sources */,
@@ -4865,6 +4913,7 @@
 				442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */,
 				44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */,
 				44F97A471E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift in Sources */,
+				444F239A1E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift in Sources */,
 				44F97A451E266D1F004F4E14 /* StatementTableViewCell+Source.swift in Sources */,
 				44673C191E23C1C0001758C0 /* SectionIndex.swift in Sources */,
 				5DC2650B16D8EFCF004D4BBA /* AnalyzerBase5Group.m in Sources */,
@@ -4875,6 +4924,7 @@
 				448C318C1E29F50E003D355D /* TableViewCellSource+Switch.swift in Sources */,
 				5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */,
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
+				444F23901E2E3DDF00BB8003 /* JSONAnswerTypeSerialization.swift in Sources */,
 				442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */,
 				44F97A3D1E26348A004F4E14 /* TestAnswersViewModel.swift in Sources */,
 				444F23751E2E241900BB8003 /* FormLabelTableViewCell.swift in Sources */,

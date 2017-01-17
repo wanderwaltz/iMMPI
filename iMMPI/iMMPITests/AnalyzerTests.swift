@@ -3,6 +3,7 @@ import XCTest
 
 final class AnalyzerIntegrationTests: XCTestCase {
     let numberOfTestCases = 454
+    let serialization = JSONTestRecordSerialization()
 
     var analyser: Analyzer!
 
@@ -63,7 +64,7 @@ final class AnalyzerIntegrationTests: XCTestCase {
             let answersData = try! Data(contentsOf: answersFileUrl)
             let scoresData = try! Data(contentsOf: scoresFileUrl)
 
-            let testRecord = JSONTestRecordSerialization.testRecord(from: answersData)!
+            let testRecord = serialization.decode(answersData)!
             let scores = try! JSONSerialization.jsonObject(with: scoresData, options: []) as! [Any]
 
             XCTAssertNotEqual(testRecord.person.gender, .unknown)

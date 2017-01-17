@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import "Model.h"
-
 NS_ASSUME_NONNULL_BEGIN
+
+@class JSONTestRecordSerialization;
+@class JSONTestRecordIndexSerialization;
 
 #pragma mark -
 #pragma mark Constants
@@ -23,6 +24,9 @@ extern NSString * const kJSONTestRecordStorageDirectoryTrash;
 /*! An implementation of TestRecordStorage which stores each TestRecordProtocol object in JSON format in a separate file in Documents directory.
  */
 @interface JSONTestRecordsStorage: NSObject<TestRecordStorage>
+
+@property (strong, nonatomic) JSONTestRecordSerialization *serialization;
+@property (strong, nonatomic) JSONTestRecordIndexSerialization *indexSerialization;
 
 /*! Another TestRecordStorage object which will be used to store records deleted
  from the current storage.
