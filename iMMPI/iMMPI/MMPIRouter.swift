@@ -75,6 +75,16 @@ extension MMPIRouter: Router {
     }
 
 
+    func displayDetails(for record: TestRecordProtocol, sender: UIViewController) throws {
+        if record.testAnswers.allStatementsAnswered {
+            displayAnalysis(for: record, sender: sender)
+        }
+        else {
+            try displayAnswersInput(for: record, sender: sender)
+        }
+    }
+
+
     func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController) {
         let controller = viewControllersFactory.makeAnalysisViewController()
 
@@ -180,15 +190,5 @@ extension MMPIRouter {
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.modalPresentationStyle = .formSheet
         sender.present(navigationController, animated: true, completion: nil)
-    }
-
-
-    fileprivate func displayDetails(for record: TestRecordProtocol, sender: UIViewController) throws {
-        if record.testAnswers.allStatementsAnswered {
-            displayAnalysis(for: record, sender: sender)
-        }
-        else {
-            try displayAnswersInput(for: record, sender: sender)
-        }
     }
 }

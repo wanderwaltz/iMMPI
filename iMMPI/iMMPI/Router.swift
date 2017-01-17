@@ -14,6 +14,8 @@ protocol Router: class {
 
 
     func displayDetails(for group: TestRecordsGroup, sender: UIViewController) throws
+    func displayDetails(for record: TestRecordProtocol, sender: UIViewController) throws
+
     func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws
 }
 

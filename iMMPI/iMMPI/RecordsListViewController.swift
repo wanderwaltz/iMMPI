@@ -156,7 +156,7 @@ extension RecordsListViewController {
             }
         })
 
-        try? router?.displayAnswersInput(for: record, sender: self)
+        try? router?.displayDetails(for: record, sender: self)
     }
 }
 
