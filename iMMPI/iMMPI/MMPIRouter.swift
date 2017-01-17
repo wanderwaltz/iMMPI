@@ -117,19 +117,6 @@ extension MMPIRouter: Router {
 
         sender.show(controller, sender: record)
     }
-
-
-
-    func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws {
-        let controller = try viewControllersFactory.makeAnswersInputViewController()
-
-        controller.viewModel = DefaultTestAnswersViewModel(record: record)
-        controller.inputDelegate = editingDelegate
-        controller.cellSource = StatementTableViewCell.makeSourceForInput()
-        
-        let navigationController = UINavigationController(rootViewController: controller)
-        sender.showDetailViewController(navigationController, sender: record)
-    }
 }
 
 
@@ -190,5 +177,17 @@ extension MMPIRouter {
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.modalPresentationStyle = .formSheet
         sender.present(navigationController, animated: true, completion: nil)
+    }
+
+
+    fileprivate func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) throws {
+        let controller = try viewControllersFactory.makeAnswersInputViewController()
+
+        controller.viewModel = DefaultTestAnswersViewModel(record: record)
+        controller.inputDelegate = editingDelegate
+        controller.cellSource = StatementTableViewCell.makeSourceForInput()
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        sender.showDetailViewController(navigationController, sender: record)
     }
 }
