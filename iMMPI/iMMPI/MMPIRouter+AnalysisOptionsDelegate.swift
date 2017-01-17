@@ -1,8 +1,7 @@
 import Foundation
 
 extension MMPIRouter {
-    // TODO: drop NSObject requirement when possible
-    final class AnalysisOptionsDelegate: NSObject {}
+    final class AnalysisOptionsDelegate {}
 }
 
 
