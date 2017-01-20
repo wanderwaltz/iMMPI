@@ -27,8 +27,9 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
-    func makeAnalysisOptionsViewController() -> AnalysisOptionsViewController {
-        let controller = base.makeAnalysisOptionsViewController()
+    func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController {
+        let controller = base.makeAnalysisOptionsViewController(context: context)
+
         controller.router = router
         return controller
     }

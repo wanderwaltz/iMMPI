@@ -14,9 +14,10 @@ final class AnalysisOptionsViewController: UITableViewController, UsingRouting {
         }
 
         didSet {
-            viewModel?.onDidUpdate = { [weak self] switchRows in
+            viewModel?.onDidUpdate = { [weak self] switchRows, actionRows in
                 self?.switchRows = switchRows
-                self?.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+                self?.actionRows = actionRows
+                self?.tableView.reloadSections(IndexSet(integersIn: 0..<2), with: .automatic)
             }
 
             if isViewLoaded {
@@ -40,6 +41,7 @@ final class AnalysisOptionsViewController: UITableViewController, UsingRouting {
 
     func setup() {
         preferredContentSize = CGSize(width: 320.0, height: 44.0 * 6)
+
         switchCellSource = .switch { [weak self] (cell, `switch`, data) in
             cell.selectionStyle = .none
             cell.textLabel?.text = data?.title ?? ""
@@ -59,12 +61,23 @@ final class AnalysisOptionsViewController: UITableViewController, UsingRouting {
                 )
             }
         }
+
+        actionCellSource = TableViewCellSource(
+            style: .default,
+            identifier: "com.immpi.cells.default",
+            update: { cell, menuAction in
+                cell.textLabel?.text = menuAction?.title ?? ""
+                cell.accessoryType = .disclosureIndicator
+        })
     }
 
     fileprivate typealias SwitchCellData = AnalysisOptionsViewModel.SwitchCellData
 
     fileprivate var switchCellSource: TableViewCellSource<SwitchCellData>!
+    fileprivate var actionCellSource: TableViewCellSource<MenuAction>!
+
     fileprivate var switchRows = Section<SwitchCellData>(title: "", items: [])
+    fileprivate var actionRows = Section<MenuAction>(title: "", items: [])
 }
 
 
@@ -84,27 +97,45 @@ extension AnalysisOptionsViewController {
 }
 
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension AnalysisOptionsViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return switchRows.items.count
+        case 1: return actionRows.items.count
         default: return 0
+        }
+    }
+
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.section {
+        case 1: // actions
+            actionRows.items[indexPath.row].perform(sender: self)
+
+        default:
+            break
         }
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case 0:
+        case 0: // switch cells
             let cell = switchCellSource.dequeue(from: tableView, with: switchRows.items[indexPath.row])
             (cell.accessoryView as? UISwitch)?.tag = indexPath.row
             return cell
+
+        case 1: // action cells
+            return actionCellSource.dequeue(from: tableView, with: actionRows.items[indexPath.row])
+
         default:
             assertionFailure()
             return UITableViewCell()

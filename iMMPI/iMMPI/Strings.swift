@@ -8,6 +8,7 @@ enum Strings {
 
     static let records = NSLocalizedString("Записи", comment: "Кнопка перехода ко всем записям")
     static let answers = NSLocalizedString("Ответы", comment: "Кнопка перехода на экран ответов")
+    static let print = NSLocalizedString("Печать", comment: "Кнопка перехода к опциям печати")
 
     static let delete = NSLocalizedString("Удалить", comment: "Кнопка удаления")
 

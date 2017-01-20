@@ -95,8 +95,8 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayAnalysisOptions(sender: UIViewController, origin: UIBarButtonItem) {
-        let controller = viewControllersFactory.makeAnalysisOptionsViewController()
+    func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController, origin: UIBarButtonItem) {
+        let controller = viewControllersFactory.makeAnalysisOptionsViewController(context: context)
 
         controller.delegate = analysisOptionsDelegate
 

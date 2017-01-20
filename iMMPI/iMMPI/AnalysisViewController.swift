@@ -80,7 +80,15 @@ extension AnalysisViewController {
 
 
     @objc @IBAction fileprivate func handleAnalysisOptionsButtonAction(_ sender: Any?) {
-        router?.displayAnalysisOptions(sender: self, origin: navigationItem.rightBarButtonItem!)
+        guard let analyser = analyser, let record = record else {
+            return
+        }
+
+        router?.displayAnalysisOptions(
+            context: AnalysisMenuActionContext(router: router, record: record, analyser: analyser),
+            sender: self,
+            origin: navigationItem.rightBarButtonItem!
+        )
     }
 }
 

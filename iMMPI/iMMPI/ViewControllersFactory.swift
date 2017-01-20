@@ -5,7 +5,7 @@ protocol ViewControllersFactory {
     func makeEditRecordViewController() -> EditTestRecordViewController
 
     func makeAnalysisViewController() -> AnalysisViewController
-    func makeAnalysisOptionsViewController() -> AnalysisOptionsViewController
+    func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController
 
     func makeAnswersReviewViewController() -> TestAnswersViewController
     func makeAnswersInputViewController() -> TestAnswersInputViewController

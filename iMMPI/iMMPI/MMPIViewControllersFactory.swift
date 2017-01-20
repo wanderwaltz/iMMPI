@@ -30,10 +30,18 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
 
-    func makeAnalysisOptionsViewController() -> AnalysisOptionsViewController {
+    func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController {
         let controller = AnalysisOptionsViewController(style: .plain)
 
-        controller.viewModel = AnalysisOptionsViewModel(settings: analysisSettings)
+        let actions: [MenuAction?] = [
+            .print(context)
+        ]
+
+        controller.viewModel = AnalysisOptionsViewModel(
+            settings: analysisSettings,
+            actions: actions.flatMap({$0})
+        )
+
         return controller
     }
 

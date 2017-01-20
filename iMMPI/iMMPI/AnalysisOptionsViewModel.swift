@@ -3,14 +3,17 @@ import Foundation
 final class AnalysisOptionsViewModel {
     typealias SwitchCellData = (title: String, value: Bool)
 
-    var onDidUpdate: (Section<SwitchCellData>) -> () = Constant.void()
+    var onDidUpdate: (Section<SwitchCellData>, Section<MenuAction>) -> () = Constant.void()
 
-    init(settings: AnalysisSettings) {
+    init(settings: AnalysisSettings, actions: [MenuAction]) {
         self.settings = settings
+        self.actions = Section(title: "", items: actions)
     }
 
     fileprivate let settings: AnalysisSettings
-    fileprivate var switchRows: Section<SwitchCellData>!
+    fileprivate let actions: Section<MenuAction>
+    fileprivate var switchRows = Section<SwitchCellData>(title: "", items: [])
+
 }
 
 
@@ -25,7 +28,7 @@ extension AnalysisOptionsViewModel {
         }
 
         self.switchRows = Section(title: "", items: switchRows)
-        onDidUpdate(self.switchRows)
+        onDidUpdate(self.switchRows, self.actions)
     }
 }
 
