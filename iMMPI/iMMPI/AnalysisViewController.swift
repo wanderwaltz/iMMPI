@@ -86,8 +86,7 @@ extension AnalysisViewController {
 
         router?.displayAnalysisOptions(
             context: AnalysisMenuActionContext(router: router, record: record, analyser: analyser),
-            sender: self,
-            origin: navigationItem.rightBarButtonItem!
+            sender: self
         )
     }
 }

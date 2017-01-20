@@ -11,7 +11,7 @@ protocol Router: class {
     func displayDetails(for record: TestRecordProtocol, sender: UIViewController)
 
     func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController)
-    func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController, origin: UIBarButtonItem)
+    func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController)
 
     func displayAnswersReview(for record: TestRecordProtocol, sender: UIViewController)
 }

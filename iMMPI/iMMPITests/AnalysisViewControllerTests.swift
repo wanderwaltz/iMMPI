@@ -57,17 +57,14 @@ final class AnalysisViewControllerTests: XCTestCase {
     func testThat__right_bar_button_item__displays_analysis_options() {
         var receivedContext: AnalysisMenuActionContext? = nil
         var receivedSender: UIViewController? = nil
-        var receivedOrigin: UIBarButtonItem? = nil
 
         let expectedRecord = TestRecord()
         let expectedAnalyser = Analyzer()
         let expectedSender = controller
-        let expectedOrigin = controller.navigationItem.rightBarButtonItem
 
-        router._displayAnalysisOptions = { context, sender, origin in
+        router._displayAnalysisOptions = { context, sender in
             receivedContext = context
             receivedSender = sender
-            receivedOrigin = origin
         }
 
         controller.record = expectedRecord
@@ -76,7 +73,6 @@ final class AnalysisViewControllerTests: XCTestCase {
         controller.navigationItem.rightBarButtonItem?.click()
 
         XCTAssertTrue(receivedSender === expectedSender)
-        XCTAssertTrue(receivedOrigin === expectedOrigin)
         XCTAssertTrue(receivedContext!.record === expectedRecord)
         XCTAssertTrue(receivedContext!.analyser === expectedAnalyser)
         XCTAssertTrue(receivedContext!.router === router)

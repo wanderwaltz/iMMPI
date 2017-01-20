@@ -2,7 +2,7 @@
 
 final class StubRouter {
     var _displayAnswersReview: (TestRecordProtocol, UIViewController) -> () = Constant.void()
-    var _displayAnalysisOptions: (AnalysisMenuActionContext, UIViewController, UIBarButtonItem) -> () = Constant.void()
+    var _displayAnalysisOptions: (AnalysisMenuActionContext, UIViewController) -> () = Constant.void()
 }
 
 
@@ -18,8 +18,8 @@ extension StubRouter: Router {
 
     func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController) {}
 
-    func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController, origin: UIBarButtonItem) {
-        _displayAnalysisOptions(context, sender, origin)
+    func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController) {
+        _displayAnalysisOptions(context, sender)
     }
 
     func displayAnswersReview(for record: TestRecordProtocol, sender: UIViewController) {

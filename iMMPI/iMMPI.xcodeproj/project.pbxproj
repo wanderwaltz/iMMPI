@@ -520,10 +520,12 @@
 		444F23981E2E3FFA00BB8003 /* JSONTestRecordProxySerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23971E2E3FFA00BB8003 /* JSONTestRecordProxySerialization.swift */; };
 		444F239A1E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23991E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift */; };
 		444F239C1E2E42A900BB8003 /* JSONTestRecordSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F239B1E2E42A900BB8003 /* JSONTestRecordSerialization.swift */; };
-		444F24211E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24201E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift */; };
 		444F241B1E31E1B300BB8003 /* MenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F241A1E31E1B300BB8003 /* MenuAction.swift */; };
 		444F241D1E31E62000BB8003 /* MenuAction+Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F241C1E31E62000BB8003 /* MenuAction+Print.swift */; };
 		444F241F1E31EA3900BB8003 /* AnalysisMenuActionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F241E1E31EA3900BB8003 /* AnalysisMenuActionContext.swift */; };
+		444F24211E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24201E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift */; };
+		444F24231E32037900BB8003 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24221E32037900BB8003 /* Application.swift */; };
+		444F24251E3204F700BB8003 /* PopoverPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24241E3204F700BB8003 /* PopoverPresenting.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1606,10 +1608,12 @@
 		444F23971E2E3FFA00BB8003 /* JSONTestRecordProxySerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordProxySerialization.swift; sourceTree = "<group>"; };
 		444F23991E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordIndexSerialization.swift; sourceTree = "<group>"; };
 		444F239B1E2E42A900BB8003 /* JSONTestRecordSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordSerialization.swift; sourceTree = "<group>"; };
-		444F24201E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordProxySerializationTests.swift; sourceTree = "<group>"; };
 		444F241A1E31E1B300BB8003 /* MenuAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuAction.swift; sourceTree = "<group>"; };
 		444F241C1E31E62000BB8003 /* MenuAction+Print.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuAction+Print.swift"; sourceTree = "<group>"; };
 		444F241E1E31EA3900BB8003 /* AnalysisMenuActionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisMenuActionContext.swift; sourceTree = "<group>"; };
+		444F24201E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordProxySerializationTests.swift; sourceTree = "<group>"; };
+		444F24221E32037900BB8003 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		444F24241E3204F700BB8003 /* PopoverPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresenting.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -3550,6 +3554,7 @@
 				5D5E05B9164651A800A5A704 /* Model */,
 				5D74CEF8169B085000BAA202 /* UI */,
 				44673C0C1E23ADA0001758C0 /* AppDelegate.swift */,
+				444F24221E32037900BB8003 /* Application.swift */,
 				5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */,
 				5DA5C9EB163B018D00CF1601 /* Supporting Files */,
 			);
@@ -3776,6 +3781,7 @@
 				442CE1A41E234DCE006C34A6 /* Formatters */,
 				442CE1F01E23A939006C34A6 /* AsyncProvider.swift */,
 				448C319B1E2B7CBC003D355D /* Html.swift */,
+				444F24241E3204F700BB8003 /* PopoverPresenting.swift */,
 				5DCC9643168DC13B004F8D4E /* UtilityFunctions.h */,
 				5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */,
 				442CE1D81E238379006C34A6 /* UtilityFunctions.swift */,
@@ -4897,6 +4903,7 @@
 				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */,
 				448C319C1E2B7CBC003D355D /* Html.swift in Sources */,
+				444F24231E32037900BB8003 /* Application.swift in Sources */,
 				448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */,
 				444F23841E2E345E00BB8003 /* JSONGenderSerialization.swift in Sources */,
 				5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */,
@@ -4916,6 +4923,7 @@
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
 				442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */,
 				4422BC141E25350B00355D71 /* TestAnswersInputViewController.swift in Sources */,
+				444F24251E3204F700BB8003 /* PopoverPresenting.swift in Sources */,
 				442CE1C01E236915006C34A6 /* TestAnswersProtocol.swift in Sources */,
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
 				444F241D1E31E62000BB8003 /* MenuAction+Print.swift in Sources */,
