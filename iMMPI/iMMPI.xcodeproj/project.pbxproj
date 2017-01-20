@@ -528,6 +528,8 @@
 		444F24251E3204F700BB8003 /* PopoverPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24241E3204F700BB8003 /* PopoverPresenting.swift */; };
 		444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */; };
 		444F24371E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */; };
+		444F24391E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24381E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift */; };
+		444F243B1E321F3100BB8003 /* AnswerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F243A1E321F3100BB8003 /* AnswerType.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1618,6 +1620,8 @@
 		444F24241E3204F700BB8003 /* PopoverPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresenting.swift; sourceTree = "<group>"; };
 		444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisReportsListViewController.swift; sourceTree = "<group>"; };
 		444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+ReportPrintingDelegate.swift"; sourceTree = "<group>"; };
+		444F24381E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HtmlReportGenerator+Answers.swift"; sourceTree = "<group>"; };
+		444F243A1E321F3100BB8003 /* AnswerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerType.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -3427,6 +3431,7 @@
 				44DE9B011E2BE99800CFE13E /* html.report.css */,
 				44DE9AFF1E2BE43000CFE13E /* HtmlReportGenerator.swift */,
 				44DE9B031E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift */,
+				444F24381E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift */,
 			);
 			name = Html;
 			sourceTree = "<group>";
@@ -3442,6 +3447,7 @@
 				448C31941E2B63F6003D355D /* Analysis */,
 				442CE1CC1E23714A006C34A6 /* Table View Models */,
 				442CE1B61E235D12006C34A6 /* AgeGroup.swift */,
+				444F243A1E321F3100BB8003 /* AnswerType.swift */,
 				442CE1B81E235D3D006C34A6 /* Gender.swift */,
 			);
 			name = Model;
@@ -4960,6 +4966,7 @@
 				442CE1F51E23A957006C34A6 /* RecordsListViewModel.swift in Sources */,
 				44F97A441E266D13004F4E14 /* TableViewCellSource.swift in Sources */,
 				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
+				444F243B1E321F3100BB8003 /* AnswerType.swift in Sources */,
 				44673C1C1E23C9CA001758C0 /* Router.swift in Sources */,
 				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
 				44F97A371E26243E004F4E14 /* JSONTestRecordStorageElement.swift in Sources */,
@@ -4971,6 +4978,7 @@
 				444F24371E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift in Sources */,
 				448C30A71E276A2C003D355D /* AnalyserTableViewCell.swift in Sources */,
 				442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */,
+				444F24391E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift in Sources */,
 				44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */,
 				44F97A471E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift in Sources */,
 				444F239A1E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift in Sources */,

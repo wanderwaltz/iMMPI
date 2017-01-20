@@ -130,7 +130,8 @@ extension MMPIRouter: Router {
 
     func selectAnalysisReportForPrinting(context: AnalysisMenuActionContext, sender: UIViewController) {
         let reportGenerators: [HtmlReportGenerator] = [
-            .overall
+            .overall,
+            .answers
         ]
 
         guard reportGenerators.count > 0 else {
@@ -144,9 +145,7 @@ extension MMPIRouter: Router {
             controller.title = Strings.Screen.print
             controller.record = context.record
             controller.analyser = context.analyser
-            controller.reportGenerators = [
-                .overall
-            ]
+            controller.reportGenerators = reportGenerators
             
             sender.show(controller, sender: context)
         }

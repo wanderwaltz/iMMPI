@@ -73,6 +73,7 @@ enum Strings {
 
     // MARK: - reports
     enum Report {
+        static let answers = NSLocalizedString("Ответы", comment: "Название отчета по ответам")
         static let overall = NSLocalizedString("Анализ (все шкалы)", comment: "Название общего отчета по анализу")
     }
 }
