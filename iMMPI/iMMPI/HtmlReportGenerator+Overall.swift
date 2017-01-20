@@ -1,11 +1,11 @@
 import Foundation
 
 extension HtmlReportGenerator {
-    static let overall = try! HtmlReportGenerator({ record, analyser in
+    static let overall = try! HtmlReportGenerator(title: Strings.reportOverall) { record, analyser in
         analyser.computeScores(forRecord: record)
         return .ul(attributes: ["class": "analysis"],
                    content: generateList(for: record, analyser: analyser, startingFrom: 0).html)
-    })
+    }
 }
 
 

@@ -65,4 +65,9 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
             bundle: Bundle(for: TestAnswersInputViewController.self)
         )
     }
+
+
+    func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController {
+        return AnalysisReportsListViewController(style: .plain)
+    }
 }

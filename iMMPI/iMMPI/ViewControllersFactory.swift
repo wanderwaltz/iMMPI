@@ -9,4 +9,6 @@ protocol ViewControllersFactory {
 
     func makeAnswersReviewViewController() -> TestAnswersViewController
     func makeAnswersInputViewController() -> TestAnswersInputViewController
+
+    func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController
 }

@@ -45,4 +45,11 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         controller.router = router
         return controller
     }
+
+
+    func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController {
+        let controller = base.makeAnalysisReportsListViewController()
+        controller.router = router
+        return controller
+    }
 }

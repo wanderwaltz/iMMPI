@@ -18,6 +18,7 @@ final class MMPIRouter {
 
     fileprivate let editingDelegate: EditingDelegate
     fileprivate let analysisOptionsDelegate = AnalysisOptionsDelegate()
+    fileprivate let reportPrintingDelegate = ReportPrintingDelegate()
     fileprivate let soundPlayer = SoundPlayer()
 }
 
@@ -48,7 +49,7 @@ extension MMPIRouter: Router {
     func displayTrash(sender: UIViewController) {
         let controller = makeRecordsList(with: trashStorage)
 
-        controller.title = Strings.trash
+        controller.title = Strings.Screen.trash
         controller.grouping = .flat
 
         sender.show(controller, sender: nil)
@@ -56,12 +57,12 @@ extension MMPIRouter: Router {
 
 
     func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) {
-        edit(record, title: Strings.newRecord, sender: sender)
+        edit(record, title: Strings.Screen.newRecord, sender: sender)
     }
 
 
     func edit(_ record: TestRecordProtocol, sender: UIViewController) {
-        edit(record, title: Strings.editRecord, sender: sender)
+        edit(record, title: Strings.Screen.editRecord, sender: sender)
     }
 
 
@@ -101,8 +102,6 @@ extension MMPIRouter: Router {
         controller.delegate = analysisOptionsDelegate
 
         let navigationController = UINavigationController(rootViewController: controller)
-        navigationController.isNavigationBarHidden = true
-
         sender.presentPopover(navigationController, animated: true, completion: nil)
     }
 
@@ -126,6 +125,35 @@ extension MMPIRouter: Router {
 
         printController.printFormatter = formatter
         printController.present(from: sender.view.bounds, in: sender.view, animated: true, completionHandler: nil)
+    }
+
+
+    func selectAnalysisReportForPrinting(context: AnalysisMenuActionContext, sender: UIViewController) {
+        let reportGenerators: [HtmlReportGenerator] = [
+            .overall
+        ]
+
+        guard reportGenerators.count > 0 else {
+            return
+        }
+
+        if reportGenerators.count > 1 {
+            let controller = viewControllersFactory.makeAnalysisReportsListViewController()
+
+            controller.delegate = reportPrintingDelegate
+            controller.title = Strings.Screen.print
+            controller.record = context.record
+            controller.analyser = context.analyser
+            controller.reportGenerators = [
+                .overall
+            ]
+            
+            sender.show(controller, sender: context)
+        }
+        else {
+            let html = reportGenerators.first!.generate(for: context.record, with: context.analyser)
+            displayPrintOptions(for: html, sender: sender)
+        }
     }
 }
 

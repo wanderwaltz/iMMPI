@@ -1,9 +1,13 @@
 import Foundation
 
 struct HtmlReportGenerator {
-    init(dateFormatter: DateFormatter = .medium,
+    let title: String
+
+    init(title: String,
+         dateFormatter: DateFormatter = .medium,
          css: String,
          content: @escaping (TestRecordProtocol, Analyzer) -> Html) {
+        self.title = title
         self.dateFormatter = dateFormatter
         self.css = css
         self.content = content
@@ -40,7 +44,8 @@ extension HtmlReportGenerator {
         case failedReadingCSS
     }
 
-    init(resource: String = "html.report",
+    init(title: String,
+         resource: String = "html.report",
          bundle: Bundle = Bundle.main,
          _ content: @escaping (TestRecordProtocol, Analyzer) -> Html) throws {
         guard let url = bundle.url(forResource: resource, withExtension: "css") else {
@@ -53,6 +58,6 @@ extension HtmlReportGenerator {
             throw Error.failedReadingCSS
         }
 
-        self.init(css: string, content: content)
+        self.init(title: title, css: string, content: content)
     }
 }

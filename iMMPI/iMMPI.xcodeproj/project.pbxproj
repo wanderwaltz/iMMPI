@@ -526,6 +526,8 @@
 		444F24211E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24201E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift */; };
 		444F24231E32037900BB8003 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24221E32037900BB8003 /* Application.swift */; };
 		444F24251E3204F700BB8003 /* PopoverPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24241E3204F700BB8003 /* PopoverPresenting.swift */; };
+		444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */; };
+		444F24371E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1614,6 +1616,8 @@
 		444F24201E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestRecordProxySerializationTests.swift; sourceTree = "<group>"; };
 		444F24221E32037900BB8003 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		444F24241E3204F700BB8003 /* PopoverPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresenting.swift; sourceTree = "<group>"; };
+		444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisReportsListViewController.swift; sourceTree = "<group>"; };
+		444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+ReportPrintingDelegate.swift"; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -2351,6 +2355,14 @@
 			name = Actions;
 			sourceTree = "<group>";
 		};
+		444F24331E3211CD00BB8003 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */,
+			);
+			name = Reports;
+			sourceTree = "<group>";
+		};
 		44673C1A1E23C9BD001758C0 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -2359,6 +2371,7 @@
 				44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */,
 				44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */,
 				448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */,
+				444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -3628,6 +3641,7 @@
 		5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				444F24331E3211CD00BB8003 /* Reports */,
 				444F24191E31E1A300BB8003 /* Actions */,
 				448C31891E29F3C9003D355D /* AnalysisOptionsViewController.swift */,
 				448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */,
@@ -4900,6 +4914,7 @@
 				448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */,
 				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
 				448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */,
+				444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */,
 				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */,
 				448C319C1E2B7CBC003D355D /* Html.swift in Sources */,
@@ -4953,6 +4968,7 @@
 				5D855595169076A4004E3021 /* AnalyzerIGroupX.m in Sources */,
 				44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */,
 				4422BC161E253CE000355D71 /* TestAnswersViewController.swift in Sources */,
+				444F24371E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift in Sources */,
 				448C30A71E276A2C003D355D /* AnalyserTableViewCell.swift in Sources */,
 				442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */,
 				44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */,

@@ -40,6 +40,9 @@ final class AnalysisOptionsViewController: UITableViewController, UsingRouting {
 
 
     func setup() {
+        title = Strings.Screen.analysisOptions
+        setEmptyBackBarButtonTitle()
+
         preferredContentSize = CGSize(width: 320.0, height: 44.0 * 6)
 
         switchCellSource = .switch { [weak self] (cell, `switch`, data) in
