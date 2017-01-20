@@ -116,6 +116,17 @@ extension MMPIRouter: Router {
 
         sender.show(controller, sender: record)
     }
+
+
+    func displayPrintOptions(for html: Html, sender: UIViewController) {
+        let printController = UIPrintInteractionController.shared
+        let formatter = UIMarkupTextPrintFormatter(
+            markupText: html.description
+        )
+
+        printController.printFormatter = formatter
+        printController.present(from: sender.view.bounds, in: sender.view, animated: true, completionHandler: nil)
+    }
 }
 
 

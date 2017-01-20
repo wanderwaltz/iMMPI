@@ -14,6 +14,8 @@ protocol Router: class {
     func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController)
 
     func displayAnswersReview(for record: TestRecordProtocol, sender: UIViewController)
+
+    func displayPrintOptions(for html: Html, sender: UIViewController)
 }
 
 

@@ -25,4 +25,6 @@ extension StubRouter: Router {
     func displayAnswersReview(for record: TestRecordProtocol, sender: UIViewController) {
         _displayAnswersReview(record, sender)
     }
+
+    func displayPrintOptions(for html: Html, sender: UIViewController) {}
 }
