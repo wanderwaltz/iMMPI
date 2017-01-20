@@ -1,8 +1,9 @@
 import Foundation
 
 enum Strings {
-    // MARK: - Screens
+    // MARK: - screens
     enum Screen {
+        static let records = NSLocalizedString("Записи", comment: "Заголовок экрана записей")
         static let newRecord = NSLocalizedString("Новая запись", comment: "Заголовок экрана создания записи")
         static let editRecord = NSLocalizedString("Редактировать запись",
                                                   comment: "Заголовок экрана редактирования записи")
@@ -13,50 +14,65 @@ enum Strings {
     }
 
 
-    // MARK: - Buttons
-    static let records = NSLocalizedString("Записи", comment: "Кнопка перехода ко всем записям")
-    static let answers = NSLocalizedString("Ответы", comment: "Кнопка перехода на экран ответов")
-    static let print = NSLocalizedString("Печать", comment: "Кнопка перехода к опциям печати")
-    static let delete = NSLocalizedString("Удалить", comment: "Кнопка удаления")
 
-    static let filterResults = NSLocalizedString("Фильтр значений", comment: "Опция анализа")
-    static let hideNormalResults = NSLocalizedString("Скрыть норму", comment: "Опция анализа")
+    // MARK: - buttons
+    enum Button {
+        static let answers = NSLocalizedString("Ответы", comment: "Кнопка перехода на экран ответов")
+        static let print = NSLocalizedString("Печать", comment: "Кнопка перехода к опциям печати")
+        static let delete = NSLocalizedString("Удалить", comment: "Кнопка удаления")
 
-
-    // MARK: - Forms
-    static let formPersonName = NSLocalizedString("ФИО", comment: "Поле 'ФИО' формы редактирования записи")
-
-    static let formPersonNamePlaceholder =
-        NSLocalizedString("Иванов Иван Иванович",
-                          comment: "Плейсхолдер поля 'ФИО' формы редактирования записи")
-
-    static let formGender = NSLocalizedString("Пол", comment: "Поле 'Пол' формы редактирования записи")
-
-    static let formAgeGroup =
-        NSLocalizedString("Возрастная группа", comment: "Поле 'Возрастная группа' формы редактирования записи")
-
-    static let formDate =
-        NSLocalizedString("Дата тестирования", comment: "Поле 'Дата тестирования' формы редактирования записи")
+        static let filterResults = NSLocalizedString("Фильтр значений", comment: "Опция анализа")
+        static let hideNormalResults = NSLocalizedString("Скрыть норму", comment: "Опция анализа")
+    }
 
 
-    static let ageGroupAdult = NSLocalizedString("Взрослая", comment: "Название возрастной группы")
-    static let ageGroupTeen = NSLocalizedString("Подростковая", comment: "Название возрастной группы")
 
-    static let genderMale = NSLocalizedString("Мужской", comment: "Пол")
-    static let genderFemale = NSLocalizedString("Женский", comment: "Пол")
+    // MARK: - forms
+    enum Form {
+        static let personName = NSLocalizedString("ФИО", comment: "Поле 'ФИО' формы редактирования записи")
 
-    static let unknown = NSLocalizedString("Неизвестно", comment: "Незивестное значение")
+        static let personNamePlaceholder =
+            NSLocalizedString("Иванов Иван Иванович",
+                              comment: "Плейсхолдер поля 'ФИО' формы редактирования записи")
+
+        static let gender = NSLocalizedString("Пол", comment: "Поле 'Пол' формы редактирования записи")
+
+        static let ageGroup =
+            NSLocalizedString("Возрастная группа", comment: "Поле 'Возрастная группа' формы редактирования записи")
+
+        static let date =
+            NSLocalizedString("Дата тестирования", comment: "Поле 'Дата тестирования' формы редактирования записи")
+    }
 
 
-    // MARK: - Analysis
-    static let format_N_of_M = NSLocalizedString("%ld из %ld", comment: "N из M")
 
-    static let yes = NSLocalizedString("ДА", comment: "Позитивный ответ")
-    static let no = NSLocalizedString("НЕТ", comment: "Негативный ответ")
+    // MARK: - values
+    enum Value {
+        static let ageGroupAdult = NSLocalizedString("Взрослая", comment: "Название возрастной группы")
+        static let ageGroupTeen = NSLocalizedString("Подростковая", comment: "Название возрастной группы")
 
-    static let normalScorePlaceholder = "-"
+        static let genderMale = NSLocalizedString("Мужской", comment: "Пол")
+        static let genderFemale = NSLocalizedString("Женский", comment: "Пол")
+
+        static let unknown = NSLocalizedString("Неизвестно", comment: "Незивестное значение")
+    }
 
 
-    // MARK: - Reports
-    static let reportOverall = NSLocalizedString("Анализ (все шкалы)", comment: "Название общего отчета по анализу")
+
+    // MARK: - analysis
+    enum Analysis {
+        static let format_N_of_M = NSLocalizedString("%ld из %ld", comment: "N из M")
+
+        static let yes = NSLocalizedString("ДА", comment: "Позитивный ответ")
+        static let no = NSLocalizedString("НЕТ", comment: "Негативный ответ")
+
+        static let normalScorePlaceholder = "-"
+    }
+
+
+
+    // MARK: - reports
+    enum Report {
+        static let overall = NSLocalizedString("Анализ (все шкалы)", comment: "Название общего отчета по анализу")
+    }
 }

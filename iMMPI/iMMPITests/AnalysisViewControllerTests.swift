@@ -23,7 +23,7 @@ final class AnalysisViewControllerTests: XCTestCase {
 
 
     func testThat__left_bar_button_item__title_is_answers() {
-        XCTAssertEqual(controller.navigationItem.leftBarButtonItem?.title, Strings.answers)
+        XCTAssertEqual(controller.navigationItem.leftBarButtonItem?.title, Strings.Button.answers)
     }
 
 

@@ -10,8 +10,8 @@ final class GenderTests: XCTestCase {
 
 
     func testDescription() {
-        XCTAssertEqual(Gender.male.description, Strings.genderMale)
-        XCTAssertEqual(Gender.female.description, Strings.genderFemale)
-        XCTAssertEqual(Gender.unknown.description, Strings.unknown)
+        XCTAssertEqual(Gender.male.description, Strings.Value.genderMale)
+        XCTAssertEqual(Gender.female.description, Strings.Value.genderFemale)
+        XCTAssertEqual(Gender.unknown.description, Strings.Value.unknown)
     }
 }

@@ -23,7 +23,7 @@ extension TestAnswersInputViewController {
             statementIndex = index
             tableView?.reloadData()
             tableView?.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: false)
-            title = String(format: Strings.format_N_of_M, statementIndex+1, viewModel.statementsCount)
+            title = String(format: Strings.Analysis.format_N_of_M, statementIndex+1, viewModel.statementsCount)
         }
     }
 

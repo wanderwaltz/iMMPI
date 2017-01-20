@@ -27,7 +27,7 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
         setEmptyBackBarButtonTitle()
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: Strings.answers,
+            title: Strings.Button.answers,
             style: .plain,
             target: self,
             action: #selector(handleAnswersReviewButtonAction(_:))

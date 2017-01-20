@@ -14,9 +14,9 @@ extension AgeGroup {
 extension AgeGroup: CustomStringConvertible {
     public var description: String {
         switch self {
-        case .adult: return Strings.ageGroupAdult
-        case .teen: return Strings.ageGroupTeen
-        case .unknown: return Strings.unknown
+        case .adult: return Strings.Value.ageGroupAdult
+        case .teen: return Strings.Value.ageGroupTeen
+        case .unknown: return Strings.Value.unknown
         }
     }
 }

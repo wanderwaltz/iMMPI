@@ -32,11 +32,11 @@ fileprivate func update(_ cell: StatementTableViewCell, with data: StatementTabl
 
     switch data.answer {
     case .positive:
-        cell.answerLabel?.text = Strings.yes
+        cell.answerLabel?.text = Strings.Analysis.yes
         cell.segmentedControl?.selectedSegmentIndex = 1
 
     case .negative:
-        cell.answerLabel?.text = Strings.no
+        cell.answerLabel?.text = Strings.Analysis.no
         cell.segmentedControl?.selectedSegmentIndex = 0
 
     case .unknown:

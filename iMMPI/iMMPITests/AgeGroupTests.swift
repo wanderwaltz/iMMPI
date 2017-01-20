@@ -10,8 +10,8 @@ final class AgeGroupTests: XCTestCase {
 
 
     func testDescription() {
-        XCTAssertEqual(AgeGroup.adult.description, Strings.ageGroupAdult)
-        XCTAssertEqual(AgeGroup.teen.description, Strings.ageGroupTeen)
-        XCTAssertEqual(AgeGroup.unknown.description, Strings.unknown)
+        XCTAssertEqual(AgeGroup.adult.description, Strings.Value.ageGroupAdult)
+        XCTAssertEqual(AgeGroup.teen.description, Strings.Value.ageGroupTeen)
+        XCTAssertEqual(AgeGroup.unknown.description, Strings.Value.unknown)
     }
 }

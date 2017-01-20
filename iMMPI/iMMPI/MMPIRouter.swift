@@ -27,7 +27,7 @@ extension MMPIRouter: Router {
     func displayAllRecords(sender: UIViewController) {
         let controller = makeRecordsList(with: storage)
 
-        controller.title = Strings.records
+        controller.title = Strings.Screen.records
         attachAddRecordButton(to: controller)
 
         if let navigationController = sender as? UINavigationController {

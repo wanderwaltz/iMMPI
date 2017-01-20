@@ -48,13 +48,13 @@ final class EditTestRecordViewController: UITableViewController, UsingRouting {
             action: #selector(saveButtonAction(_:))
         )
 
-        nameCell.textLabel?.text = Strings.formPersonName
-        nameCell.textField.placeholder = Strings.formPersonNamePlaceholder
+        nameCell.textLabel?.text = Strings.Form.personName
+        nameCell.textField.placeholder = Strings.Form.personNamePlaceholder
         nameCell.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: [.editingChanged])
 
-        genderCell.textLabel?.text = Strings.formGender
-        ageGroupCell.textLabel?.text = Strings.formAgeGroup
-        dateCell.textLabel?.text = Strings.formDate
+        genderCell.textLabel?.text = Strings.Form.gender
+        ageGroupCell.textLabel?.text = Strings.Form.ageGroup
+        dateCell.textLabel?.text = Strings.Form.date
 
         let layout = FormTableViewCell.Layout(contentMargin: 20.0, titleMargin: 20.0, titleWidth: { [weak self] in
             guard let this = self else {

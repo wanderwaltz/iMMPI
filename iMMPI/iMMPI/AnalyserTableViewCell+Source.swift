@@ -97,7 +97,7 @@ extension AnalyserTableViewCell.Style {
             },
             scoreFormatter: { group in
                 if settings.shouldFilterResults && group.scoreIsWithinNorm() {
-                    return Strings.normalScorePlaceholder
+                    return Strings.Analysis.normalScorePlaceholder
                 }
                 else {
                     return group.readableScore()

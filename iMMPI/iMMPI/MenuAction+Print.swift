@@ -6,7 +6,7 @@ extension MenuAction {
             return nil
         }
 
-        return MenuAction(title: Strings.print, action: { sender in
+        return MenuAction(title: Strings.Button.print, action: { sender in
             router.selectAnalysisReportForPrinting(context: context, sender: sender)
         })
     }

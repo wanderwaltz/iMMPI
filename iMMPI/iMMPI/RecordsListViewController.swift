@@ -183,7 +183,7 @@ extension RecordsListViewController {
 
     override func tableView(_ tableView: UITableView,
                             titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return Strings.delete
+        return Strings.Button.delete
     }
 
 

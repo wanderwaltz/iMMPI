@@ -57,8 +57,6 @@ extension AppDelegate: UISplitViewControllerDelegate {
         switch displayMode {
         case .primaryHidden: fallthrough
         case .primaryOverlay:
-            barButtonItem.title = Strings.records
-
             if detailViewController.navigationItem.leftBarButtonItem == nil {
                 detailViewController.navigationItem.leftBarButtonItem = barButtonItem
             }

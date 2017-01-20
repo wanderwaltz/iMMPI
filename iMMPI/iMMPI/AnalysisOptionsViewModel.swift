@@ -20,11 +20,11 @@ final class AnalysisOptionsViewModel {
 extension AnalysisOptionsViewModel {
     func setNeedsUpdate() {
         var switchRows: [SwitchCellData] = [
-            (title: Strings.filterResults, value: settings.shouldFilterResults)
+            (title: Strings.Button.filterResults, value: settings.shouldFilterResults)
         ]
 
         if settings.shouldFilterResults {
-            switchRows.append((title: Strings.hideNormalResults, value: settings.shouldHideNormalResults))
+            switchRows.append((title: Strings.Button.hideNormalResults, value: settings.shouldHideNormalResults))
         }
 
         self.switchRows = Section(title: "", items: switchRows)
