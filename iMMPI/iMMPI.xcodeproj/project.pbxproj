@@ -530,6 +530,7 @@
 		444F24371E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */; };
 		444F24391E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24381E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift */; };
 		444F243B1E321F3100BB8003 /* AnswerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F243A1E321F3100BB8003 /* AnswerType.swift */; };
+		444F243F1E3228F400BB8003 /* HtmlReportGenerator+GroupDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F243E1E3228F400BB8003 /* HtmlReportGenerator+GroupDetails.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1622,6 +1623,7 @@
 		444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+ReportPrintingDelegate.swift"; sourceTree = "<group>"; };
 		444F24381E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HtmlReportGenerator+Answers.swift"; sourceTree = "<group>"; };
 		444F243A1E321F3100BB8003 /* AnswerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerType.swift; sourceTree = "<group>"; };
+		444F243E1E3228F400BB8003 /* HtmlReportGenerator+GroupDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HtmlReportGenerator+GroupDetails.swift"; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -3432,6 +3434,7 @@
 				44DE9AFF1E2BE43000CFE13E /* HtmlReportGenerator.swift */,
 				44DE9B031E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift */,
 				444F24381E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift */,
+				444F243E1E3228F400BB8003 /* HtmlReportGenerator+GroupDetails.swift */,
 			);
 			name = Html;
 			sourceTree = "<group>";
@@ -4905,6 +4908,7 @@
 				442CE1B31E2357AA006C34A6 /* EditTestRecordViewController.swift in Sources */,
 				44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */,
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
+				444F243F1E3228F400BB8003 /* HtmlReportGenerator+GroupDetails.swift in Sources */,
 				442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */,
 				5876FDC71E2BE4C600255227 /* DatePickerController.swift in Sources */,
 				44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */,

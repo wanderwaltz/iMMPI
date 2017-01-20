@@ -14,7 +14,7 @@ ul.analysis, .analysis ul {
     list-style: none;
 }
 
-.analysis .answer-positive {
+.analysis .highlighted {
     background: lavender;
 }
 
@@ -47,10 +47,21 @@ li li ul {
 }
 
 index {
+    display: inline-block;
+    width: 10%;
     position: absolute;
     left: 0;
 }
 
+text {
+    display: inline-block;
+    width: 70%;
+}
+
 score {
+    display: inline-block;
+    width: 20%;
+
     float: right;
+    text-align: right;
 }

@@ -67,6 +67,8 @@ enum Strings {
         static let no = NSLocalizedString("НЕТ", comment: "Негативный ответ")
 
         static let normalScorePlaceholder = "-"
+
+        static let reliabilityGroupName = "Достоверность (невалидность)" // do not localize
     }
 
 

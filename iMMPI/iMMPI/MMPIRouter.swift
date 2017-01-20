@@ -123,16 +123,15 @@ extension MMPIRouter: Router {
             markupText: html.description
         )
 
+        print(html.description)
+
         printController.printFormatter = formatter
         printController.present(from: sender.view.bounds, in: sender.view, animated: true, completionHandler: nil)
     }
 
 
     func selectAnalysisReportForPrinting(context: AnalysisMenuActionContext, sender: UIViewController) {
-        let reportGenerators: [HtmlReportGenerator] = [
-            .overall,
-            .answers
-        ]
+        let reportGenerators = context.htmlReportGenerators
 
         guard reportGenerators.count > 0 else {
             return
