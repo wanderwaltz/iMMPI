@@ -15,7 +15,7 @@ extension JSONTestRecordProxySerialization {
     func encode(_ proxy: JSONTestRecordProxy) -> [String:String] {
         return [
             Key.name: proxy.personName,
-            Key.fileName: proxy.personName,
+            Key.fileName: proxy.fileName,
             Key.directory: proxy.directory,
             Key.date: dateFormatter.string(from: proxy.date)
         ]
