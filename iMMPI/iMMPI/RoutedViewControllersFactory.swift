@@ -1,4 +1,5 @@
 import Foundation
+import MessageUI
 
 final class RoutedViewControllersFactory: ViewControllersFactory {
     weak var router: Router?
@@ -51,5 +52,10 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         let controller = base.makeAnalysisReportsListViewController()
         controller.router = router
         return controller
+    }
+
+
+    func makeMailComposerViewController(for message: EmailMessage) throws -> MFMailComposeViewController {
+        return try base.makeMailComposerViewController(for: message)
     }
 }

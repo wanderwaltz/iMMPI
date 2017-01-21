@@ -27,7 +27,7 @@ extension AnalysisReportsListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        guard let record = record, let analyser = analyser, let router = router else {
+        guard let record = record, let analyser = analyser else {
             return
         }
 

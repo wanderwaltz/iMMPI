@@ -1,4 +1,5 @@
 import Foundation
+import MessageUI
 
 protocol ViewControllersFactory {
     func makeRecordsListViewController() -> RecordsListViewController
@@ -11,4 +12,6 @@ protocol ViewControllersFactory {
     func makeAnswersInputViewController() -> TestAnswersInputViewController
 
     func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController
+
+    func makeMailComposerViewController(for message: EmailMessage) throws -> MFMailComposeViewController
 }

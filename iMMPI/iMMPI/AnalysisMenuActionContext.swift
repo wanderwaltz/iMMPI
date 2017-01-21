@@ -29,6 +29,11 @@ final class AnalysisMenuActionContext {
     }()
 
 
+    private(set) lazy var emailMessageGenerator: EmailMessageGenerator = {
+        return EmailMessageGenerator()
+    }()
+
+
     init(router: Router?, record: TestRecordProtocol, analyser: Analyzer) {
         self.router = router
         self.record = record

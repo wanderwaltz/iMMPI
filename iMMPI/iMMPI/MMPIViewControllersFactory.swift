@@ -1,8 +1,9 @@
 import UIKit
+import MessageUI
 
 struct MMPIViewControllersFactory: ViewControllersFactory {
     enum Error: Swift.Error {
-        case failedInstantiatingViewController
+        case cannotSendMail
     }
 
 
@@ -34,7 +35,8 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
         let controller = AnalysisOptionsViewController(style: .plain)
 
         let actions: [MenuAction?] = [
-            .print(context)
+            .print(context),
+            .email(context)
         ]
 
         controller.viewModel = AnalysisOptionsViewModel(
@@ -69,5 +71,26 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
 
     func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController {
         return AnalysisReportsListViewController(style: .plain)
+    }
+
+
+    func makeMailComposerViewController(for message: EmailMessage) throws -> MFMailComposeViewController {
+        guard case let controller = MFMailComposeViewController(), MFMailComposeViewController.canSendMail() else {
+            throw Error.cannotSendMail
+        }
+
+        controller.setSubject(message.subject)
+        controller.setMessageBody(message.text, isHTML: false)
+        controller.setToRecipients(message.recipients.map({ $0.rawValue }))
+
+        for attachment in message.attachments {
+            controller.addAttachmentData(
+                attachment.data,
+                mimeType: attachment.mimeType.rawValue,
+                fileName: attachment.fileName
+            )
+        }
+
+        return controller
     }
 }

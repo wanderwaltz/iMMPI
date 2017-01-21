@@ -28,4 +28,6 @@ extension StubRouter: Router {
 
     func displayPrintOptions(for html: Html, sender: UIViewController) {}
     func selectAnalysisReportForPrinting(context: AnalysisMenuActionContext, sender: UIViewController) {}
+
+    func displayMailComposer(for email: EmailMessage, sender: UIViewController) throws {}
 }

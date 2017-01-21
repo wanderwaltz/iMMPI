@@ -19,6 +19,7 @@ enum Strings {
     enum Button {
         static let answers = NSLocalizedString("Ответы", comment: "Кнопка перехода на экран ответов")
         static let print = NSLocalizedString("Печать", comment: "Кнопка перехода к опциям печати")
+        static let email = NSLocalizedString("E-mail", comment: "Кнопка отправки письма")
         static let delete = NSLocalizedString("Удалить", comment: "Кнопка удаления")
 
         static let filterResults = NSLocalizedString("Фильтр значений", comment: "Опция анализа")
@@ -77,5 +78,8 @@ enum Strings {
     enum Report {
         static let answers = NSLocalizedString("Ответы", comment: "Название отчета по ответам")
         static let overall = NSLocalizedString("Анализ (все шкалы)", comment: "Название общего отчета по анализу")
+        static let email = Button.email
+
+        static let emailSubjectSuffix = NSLocalizedString("- тест", comment: "Суффикс темы письма с отчетом")
     }
 }

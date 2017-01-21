@@ -1,4 +1,5 @@
 import UIKit
+import MessageUI
 
 final class MMPIRouter {
     let storage: TestRecordStorage
@@ -19,6 +20,7 @@ final class MMPIRouter {
     fileprivate let editingDelegate: EditingDelegate
     fileprivate let analysisOptionsDelegate = AnalysisOptionsDelegate()
     fileprivate let reportPrintingDelegate = ReportPrintingDelegate()
+    fileprivate let mailComposerDelegate = MailComposerDelegate()
     fileprivate let soundPlayer = SoundPlayer()
 }
 
@@ -152,6 +154,13 @@ extension MMPIRouter: Router {
             let html = reportGenerators.first!.generate(for: context.record, with: context.analyser)
             displayPrintOptions(for: html, sender: sender)
         }
+    }
+
+
+    func displayMailComposer(for email: EmailMessage, sender: UIViewController) throws {
+        let mailComposer = try viewControllersFactory.makeMailComposerViewController(for: email)
+        mailComposer.mailComposeDelegate = mailComposerDelegate
+        sender.present(mailComposer, animated: true, completion: nil)
     }
 }
 
