@@ -22,4 +22,12 @@ extension AnalysisScore {
                 }
             }))
     }
+
+
+    static func rawPercentage(positive: [StatementIdentifier],
+                              negative: [StatementIdentifier],
+                              filter includeStatement: @escaping StatementsFilter = AnalysisScore.defaultFilter)
+        -> AnalysisScore {
+            return .rawPercentage(.common((positive: positive, negative: negative)), filter: includeStatement)
+    }
 }

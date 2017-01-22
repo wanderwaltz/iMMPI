@@ -43,6 +43,12 @@ extension AnalysisScore {
             return score
             }}))
     }
+
+
+    static func brackets(_ brackets: (Double, Double, Double, Double),
+                         basedOn rawScore: AnalysisScore) -> AnalysisScore {
+        return .brackets(.common(brackets), basedOn: rawScore)
+    }
 }
 
 

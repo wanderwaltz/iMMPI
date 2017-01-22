@@ -25,4 +25,11 @@ extension AnalysisScore {
             return Double(positiveMatches + negativeMatches)
             }}))
     }
+
+
+    static func raw(positive: [StatementIdentifier],
+                    negative: [StatementIdentifier],
+                    filter includeStatement: @escaping StatementsFilter = AnalysisScore.defaultFilter) -> AnalysisScore {
+        return .raw(.common((positive: positive, negative: negative)), filter: includeStatement)
+    }
 }

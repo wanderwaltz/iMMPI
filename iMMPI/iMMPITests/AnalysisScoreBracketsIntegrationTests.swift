@@ -7,14 +7,13 @@ final class AnalysisScoreBracketsIntegrationTests: XCTestCase {
     override func setUp() {
         super.setUp()
         score = .brackets(
-            .common((26, 33, 49, 55)),
+            (26, 33, 49, 55),
 
             basedOn:
             .rawPercentage(
-                .common((
-                    positive: [95, 143, 144, 204, 223, 232, 264, 287, 369, 373, 400, 415, 434, 461, 498, 537, 556],
-                    negative: [21, 30, 45, 102, 105, 195, 208, 217, 225, 231, 255, 322, 370, 374, 465, 499]
-                )))
+                positive: [95, 143, 144, 204, 223, 232, 264, 287, 369, 373, 400, 415, 434, 461, 498, 537, 556],
+                negative: [21, 30, 45, 102, 105, 195, 208, 217, 225, 231, 255, 322, 370, 374, 465, 499]
+            )
         )
     }
 
