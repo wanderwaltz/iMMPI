@@ -45,4 +45,7 @@ extension AnalysisScale.Identifier {
 
     /// Алкоголизм 1
     static let a1 = AnalysisScale.Identifier("a1")
+
+    /// Алкогольная дифференциация
+    static let ad = AnalysisScale.Identifier("ad")
 }
