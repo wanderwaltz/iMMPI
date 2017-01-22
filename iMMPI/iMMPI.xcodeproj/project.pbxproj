@@ -550,6 +550,7 @@
 		444F246B1E34B91700BB8003 /* AnalysisScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F246A1E34B91700BB8003 /* AnalysisScale.swift */; };
 		444F246F1E34BAEF00BB8003 /* GenderBasedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F246E1E34BAEF00BB8003 /* GenderBasedValue.swift */; };
 		444F24711E34BDBE00BB8003 /* GenderBasedValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24701E34BDBE00BB8003 /* GenderBasedValueTests.swift */; };
+		444F24751E34C12300BB8003 /* AnalysisScoreComputation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24741E34C12300BB8003 /* AnalysisScoreComputation.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1662,6 +1663,7 @@
 		444F246A1E34B91700BB8003 /* AnalysisScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScale.swift; sourceTree = "<group>"; };
 		444F246E1E34BAEF00BB8003 /* GenderBasedValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderBasedValue.swift; sourceTree = "<group>"; };
 		444F24701E34BDBE00BB8003 /* GenderBasedValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderBasedValueTests.swift; sourceTree = "<group>"; };
+		444F24741E34C12300BB8003 /* AnalysisScoreComputation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScoreComputation.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -2461,6 +2463,7 @@
 			isa = PBXGroup;
 			children = (
 				444F246A1E34B91700BB8003 /* AnalysisScale.swift */,
+				444F24741E34C12300BB8003 /* AnalysisScoreComputation.swift */,
 				444F246E1E34BAEF00BB8003 /* GenderBasedValue.swift */,
 			);
 			name = new;
@@ -5068,6 +5071,7 @@
 				444F241D1E31E62000BB8003 /* MenuAction+Print.swift in Sources */,
 				444F244E1E33676700BB8003 /* EmailMessage.swift in Sources */,
 				444F24551E336AA800BB8003 /* EmailSubjectGenerator.swift in Sources */,
+				444F24751E34C12300BB8003 /* AnalysisScoreComputation.swift in Sources */,
 				44DE9B041E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift in Sources */,
 				44F97A2F1E261DAE004F4E14 /* SoundPlayer+TestAnswersInput.swift in Sources */,
 				442CE1C41E236EEC006C34A6 /* RecordsListViewController.swift in Sources */,

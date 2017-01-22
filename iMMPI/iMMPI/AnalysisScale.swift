@@ -3,20 +3,12 @@ import Foundation
 struct AnalysisScale {
     let identifier: Identifier
     let title: String
+    let score: AnalysisScore
 
-    init(identifier: Identifier, title: String, score: @escaping (TestRecordProtocol) -> Double) {
+    init(identifier: Identifier, title: String, score: AnalysisScore) {
         self.identifier = identifier
         self.title = title
-        self.computeScore = score
-    }
-
-    fileprivate let computeScore: (TestRecordProtocol) -> Double
-}
-
-
-extension AnalysisScale {
-    func score(for record: TestRecordProtocol) -> Double {
-        return computeScore(record)
+        self.score = score
     }
 }
 
