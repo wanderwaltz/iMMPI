@@ -42,4 +42,7 @@ extension AnalysisScale.Identifier {
 
     /// Половые отклонения
     static let sdv = AnalysisScale.Identifier("Sdv")
+
+    /// Алкоголизм 1
+    static let a1 = AnalysisScale.Identifier("a1")
 }
