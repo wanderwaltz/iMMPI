@@ -343,4 +343,21 @@ extension AnalysisScale {
                 negative: [99, 103, 175, 421, 428, 457, 467, 479, 547]
             )
         ))
+
+
+    // MARK: Соматические жалобы
+
+    /// **Соматические жалобы**
+    static let soma_complaints = AnalysisScale(
+        identifier: .soma_complaints,
+        title: NSLocalizedString("Соматические жалобы", comment: "Название шкалы"),
+        index: .common(15),
+        score: .median(
+            .specific(male: 2.37, female: 4.95),
+            dispersion: .specific(male: 2, female: 2.37),
+            basedOn: .raw(
+                positive: [10, 23, 44, 47, 114, 186],
+                negative: [7, 55, 103, 174, 175, 188, 190, 192, 230, 243, 274]
+            )
+        ))
 }

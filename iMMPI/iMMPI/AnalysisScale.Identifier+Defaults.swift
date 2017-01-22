@@ -54,4 +54,7 @@ extension AnalysisScale.Identifier {
 
     /// Предрасположенность к головным болям
     static let headaches = AnalysisScale.Identifier("headaches")
+
+    /// Соматические жалобы
+    static let soma_complaints = AnalysisScale.Identifier("soma_complaints")
 }
