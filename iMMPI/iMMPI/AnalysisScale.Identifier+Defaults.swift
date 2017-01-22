@@ -57,4 +57,7 @@ extension AnalysisScale.Identifier {
 
     /// Соматические жалобы
     static let soma_complaints = AnalysisScale.Identifier("soma_complaints")
+
+    /// Реакция соматизации
+    static let soma_reaction = AnalysisScale.Identifier("soma_reaction")
 }

@@ -360,4 +360,21 @@ extension AnalysisScale {
                 negative: [7, 55, 103, 174, 175, 188, 190, 192, 230, 243, 274]
             )
         ))
+
+
+    // MARK: Реакция соматизации
+
+    /// **Реакция соматизации**
+    static let soma_reaction = AnalysisScale(
+        identifier: .soma_reaction,
+        title: NSLocalizedString("Реакция соматизации", comment: "Название шкалы"),
+        index: .common(16),
+        score: .median(
+            .specific(male: 22.48, female: 20.31),
+            dispersion: .specific(male: 3.59, female: 3.62),
+            basedOn: .raw(
+                positive: [49, 53, 54, 57, 73, 95, 96, 125, 170, 272, 329, 407, 476, 488, 554],
+                negative: [24, 30, 36, 51, 61, 75, 76, 106, 146, 150, 153, 163, 168, 171, 224, 225, 236, 241, 285, 299, 303, 352, 361, 397, 425, 441, 442, 443, 448, 508, 524, 533]
+            )
+        ))
 }

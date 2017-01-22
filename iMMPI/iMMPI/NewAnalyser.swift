@@ -30,6 +30,7 @@ extension NewAnalyser {
                 .a2,                 //     Алкоголизм 2
                 .headaches,          //     Предрасположенность к головным болям
                 .soma_complaints,    //     Соматические жалобы
+                .soma_reaction,      //     Реакция соматизации
             ])
     }
 }
