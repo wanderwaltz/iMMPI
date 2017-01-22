@@ -28,8 +28,9 @@ extension AnalysisScore {
     /// - Returns: an `AnalysisScore` instance, which performs the computation. The returned value is a total number
     ///            of answers in the given record, which match the values provided by the `statements` parameter.
     static func raw(_ statements: RawMatchesKey,
-                    filter includeStatement: @escaping StatementsFilter = AnalysisScore.defaultFilter) -> AnalysisScore {
-        return AnalysisScore(.specific({ gender in { answers in
+                    filter includeStatement: @escaping StatementsFilter
+                        = AnalysisScore.defaultStatementsFilter) -> AnalysisScore {
+        return AnalysisScore(value: .specific({ gender in { answers in
             let selectedStatements = statements.value(for: gender)
 
             let positiveMatches = selectedStatements.positive
@@ -61,7 +62,8 @@ extension AnalysisScore {
     ///            parameters.
     static func raw(positive: [StatementIdentifier],
                     negative: [StatementIdentifier],
-                    filter includeStatement: @escaping StatementsFilter = AnalysisScore.defaultFilter) -> AnalysisScore {
+                    filter includeStatement: @escaping StatementsFilter
+                        = AnalysisScore.defaultStatementsFilter) -> AnalysisScore {
         return .raw(.common((positive: positive, negative: negative)), filter: includeStatement)
     }
 }

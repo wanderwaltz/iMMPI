@@ -13,11 +13,12 @@ extension AnalysisScore {
     /// - Returns: an `AnalysisScore` instance, which performs the computation. The returned value is a `Double`
     ///            in 0.0...100.0 range.
     static func rawPercentage(_ statements: RawMatchesKey,
-                              filter includeStatement: @escaping StatementsFilter = AnalysisScore.defaultFilter)
+                              filter includeStatement: @escaping StatementsFilter
+                                = AnalysisScore.defaultStatementsFilter)
         -> AnalysisScore {
             let rawMatches = AnalysisScore.raw(statements)
 
-            return AnalysisScore(.specific({ gender in
+            return AnalysisScore(value: .specific({ gender in
                 let selectedStatements = statements.value(for: gender)
                 let totalCount = Double(
                     selectedStatements.positive.filter(includeStatement).count +
@@ -48,7 +49,8 @@ extension AnalysisScore {
     ///            in 0.0...100.0 range.
     static func rawPercentage(positive: [StatementIdentifier],
                               negative: [StatementIdentifier],
-                              filter includeStatement: @escaping StatementsFilter = AnalysisScore.defaultFilter)
+                              filter includeStatement: @escaping StatementsFilter
+                                = AnalysisScore.defaultStatementsFilter)
         -> AnalysisScore {
             return .rawPercentage(.common((positive: positive, negative: negative)), filter: includeStatement)
     }

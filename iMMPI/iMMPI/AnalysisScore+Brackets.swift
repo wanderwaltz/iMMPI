@@ -41,42 +41,44 @@ extension AnalysisScore {
         checkPreconditions(for: brackets.value(for: .female))
         checkPreconditions(for: brackets.value(for: .unknown))
 
-        return AnalysisScore(.specific({ gender in { answers in
-            let raw = rawScore.value(for: gender, answers: answers)
-            precondition(0.0...100.0 ~= raw)
+        return AnalysisScore(
+            formatter: .bracketed,
+            filter: .bracketed,
+            value: .specific({ gender in { answers in
+                let raw = rawScore.value(for: gender, answers: answers)
+                precondition(0.0...100.0 ~= raw)
 
-            let selectedBrackets = brackets.value(for: gender)
+                let selectedBrackets = brackets.value(for: gender)
 
-            let a = selectedBrackets.A
-            let b = selectedBrackets.B
-            let c = selectedBrackets.C
-            let d = selectedBrackets.D
+                let a = selectedBrackets.A
+                let b = selectedBrackets.B
+                let c = selectedBrackets.C
+                let d = selectedBrackets.D
 
-            var score: Double = 0.0
+                var score: Double = 0.0
 
-            if raw <= a {
-                score = round(10.0 * 1.5 * raw / a)
-            }
-            else if raw <= b {
-                score = round(10.0 * (1.5 + (raw - a) / (b - a)))
-            }
-            else if raw <= c {
-                score = round(10.0 * (2.5 + (raw - b) / (c - b)))
-            }
-            else if raw <= d {
-                score = round(10.0 * (3.5 + (raw - c) / (d - c)))
-            }
-            else {
-                score = round(10.0 * (4.5 + 0.5 * (raw - d) / (100.0 - d)))
-            }
-
-            score /= 10.0
-
-            precondition(0.0...5.0 ~= score)
-            return score
-            }}))
+                if raw <= a {
+                    score = round(10.0 * 1.5 * raw / a)
+                }
+                else if raw <= b {
+                    score = round(10.0 * (1.5 + (raw - a) / (b - a)))
+                }
+                else if raw <= c {
+                    score = round(10.0 * (2.5 + (raw - b) / (c - b)))
+                }
+                else if raw <= d {
+                    score = round(10.0 * (3.5 + (raw - c) / (d - c)))
+                }
+                else {
+                    score = round(10.0 * (4.5 + 0.5 * (raw - d) / (100.0 - d)))
+                }
+                
+                score /= 10.0
+                
+                precondition(0.0...5.0 ~= score)
+                return score
+                }}))
     }
-
 
     static func brackets(_ brackets: (Double, Double, Double, Double),
                          basedOn rawScore: AnalysisScore) -> AnalysisScore {

@@ -5,7 +5,7 @@ final class AnalysisScoreTests: XCTestCase {
     func testThat__it_uses_the_appropriate_gender_when_reading_value__case_1() {
         var receivedGender: Gender! = nil
 
-        let score = AnalysisScore(.specific({ gender in { _ in
+        let score = AnalysisScore(value: .specific({ gender in { _ in
             receivedGender = gender
             return 0.0
             }}))
@@ -26,7 +26,7 @@ final class AnalysisScoreTests: XCTestCase {
     func testThat__it_uses_the_appropriate_gender_when_reading_value__case_2() {
         var receivedGender: Gender! = nil
 
-        let score = AnalysisScore(.specific({ gender in { _ in
+        let score = AnalysisScore(value: .specific({ gender in { _ in
             receivedGender = gender
             return 0.0
             }}))
@@ -52,7 +52,7 @@ final class AnalysisScoreTests: XCTestCase {
 
 
     func testThat__it_returns_the_block_value__case_1() {
-        let score = AnalysisScore(.specific({ gender in { _ in
+        let score = AnalysisScore(value: .specific({ gender in { _ in
             switch gender {
             case .male: return 0.0
             case .female: return 1.0
@@ -69,7 +69,7 @@ final class AnalysisScoreTests: XCTestCase {
 
 
     func testThat__it_returns_the_block_value__case_2() {
-        let score = AnalysisScore(.specific({ gender in { _ in
+        let score = AnalysisScore(value: .specific({ gender in { _ in
             switch gender {
             case .male: return 0.0
             case .female: return 1.0
@@ -95,7 +95,7 @@ final class AnalysisScoreTests: XCTestCase {
     func testThat__it_forwards_answers_to_block__case_1() {
         var receivedAnswers: TestAnswersProtocol!
 
-        let score = AnalysisScore(.specific({ _ in {
+        let score = AnalysisScore(value: .specific({ _ in {
             receivedAnswers = $0
             return 0.0
             }}))
@@ -119,7 +119,7 @@ final class AnalysisScoreTests: XCTestCase {
     func testThat__it_forwards_answers_to_block__case_2() {
         var receivedAnswers: TestAnswersProtocol!
 
-        let score = AnalysisScore(.specific({ _ in {
+        let score = AnalysisScore(value: .specific({ _ in {
             receivedAnswers = $0
             return 0.0
             }}))

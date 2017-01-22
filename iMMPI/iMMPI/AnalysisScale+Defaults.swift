@@ -29,8 +29,6 @@ extension AnalysisScale {
         identifier: .sr,
         title: NSLocalizedString("Общественная диссимуляция", comment: "Название шкалы"),
         index: .common(1),
-        formatter: .bracketed,
-        filter: .bracketed,
         score: .brackets(
             (26, 33, 49, 55),
             basedOn:
@@ -59,8 +57,6 @@ extension AnalysisScale {
         identifier: .ds_r,
         title: NSLocalizedString("Медицинская симуляция", comment: "Название шкалы"),
         index: .common(2),
-        formatter: .integer,
-        filter: .median,
         score: .median(
             .specific(male: 18.13, female: 11.33),
             dispersion: .specific(male: 4.18, female: 4.38),
@@ -90,8 +86,6 @@ extension AnalysisScale {
         identifier: .ta,
         title: NSLocalizedString("Комплекс Панурга", comment: "Название шкалы"),
         index: .common(3),
-        formatter: .bracketed,
-        filter: .bracketed,
         score: .brackets(
             (50, 55, 68, 72),
             basedOn:
@@ -119,8 +113,6 @@ extension AnalysisScale {
         identifier: .ds_r,
         title: NSLocalizedString("Тенденция перечить (отрицание симптомов)", comment: "Название шкалы"),
         index: .common(4),
-        formatter: .integer,
-        filter: .median,
         score: .median(
             .specific(male: 12.52, female: 12.15),
             dispersion: .specific(male: 4.18, female: 3.52),

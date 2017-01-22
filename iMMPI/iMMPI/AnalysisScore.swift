@@ -1,11 +1,18 @@
 import Foundation
 
 struct AnalysisScore {
-    init(_ perform: GenderBasedValue<(TestAnswersProtocol) -> Double>) {
-        self._perform = perform
+    let suggestedFormatter: AnalysisScoreFormatter
+    let suggestedFilter: AnalysisScoreFilter
+
+    init(formatter: AnalysisScoreFormatter = .ignore,
+         filter: AnalysisScoreFilter = .never,
+         value: GenderBasedValue<(TestAnswersProtocol) -> Double>) {
+        self.suggestedFormatter = formatter
+        self.suggestedFilter = filter
+        self._value = value
     }
 
-    fileprivate let _perform: GenderBasedValue<(TestAnswersProtocol) -> Double>
+    fileprivate let _value: GenderBasedValue<(TestAnswersProtocol) -> Double>
 }
 
 
@@ -15,14 +22,14 @@ extension AnalysisScore {
     }
 
     func value(for gender: Gender, answers: TestAnswersProtocol) -> Double {
-        return _perform.value(for: gender)(answers)
+        return _value.value(for: gender)(answers)
     }
 }
 
 
 extension AnalysisScore {
     static func constant(_ value: Double) -> AnalysisScore {
-        return AnalysisScore(.common(Constant.double(value)))
+        return AnalysisScore(value: .common(Constant.double(value)))
     }
 }
 
@@ -35,7 +42,7 @@ extension AnalysisScore {
     )
 
 
-    static func defaultFilter(_ identifier: StatementIdentifier) -> Bool {
+    static func defaultStatementsFilter(_ identifier: StatementIdentifier) -> Bool {
         return false == ignoredStatements.contains(identifier)
     }
 }

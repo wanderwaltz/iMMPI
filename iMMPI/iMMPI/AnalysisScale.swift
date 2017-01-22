@@ -35,6 +35,19 @@ extension AnalysisScale {
             score: .constant(.nan)
         )
     }
+
+
+    init(identifier: Identifier,
+         title: String,
+         index: GenderBasedValue<Int>,
+         score: AnalysisScore) {
+        self.identifier = identifier
+        self.title = title
+        self.index = index
+        self.formatter = score.suggestedFormatter
+        self.filter = score.suggestedFilter
+        self.score = score
+    }
 }
 
 
