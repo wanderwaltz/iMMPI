@@ -2,7 +2,7 @@ import XCTest
 @testable import iMMPI
 
 final class NewAnalyzerIntegrationTests: XCTestCase {
-    let numberOfTestCases = 10
+    let numberOfTestCases = 454
     let serialization = JSONTestRecordSerialization()
 
     var analyser: NewAnalyser!
