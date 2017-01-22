@@ -8,21 +8,21 @@ final class AnalysisScoreRawPercentageTests: XCTestCase {
         let answers = TestAnswers()
         answers.setAnswers(positive: [1, 2, 5], negative: [3, 7, 8])
 
-        XCTAssertEqual(score.value(for: .male, answers: answers), 1.0)
-        XCTAssertEqual(score.value(for: .female, answers: answers), 1.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: answers), 1.0)
+        XCTAssertEqual(score.value(for: .male, answers: answers), 100.0)
+        XCTAssertEqual(score.value(for: .female, answers: answers), 100.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: answers), 100.0)
     }
 
 
     func testThat__it_computes_number_of_matches__case_2() {
-        let score = AnalysisScore.rawPercentage(.common((positive: [1, 2, 5], negative: [3, 7, 8])))
+        let score = AnalysisScore.rawPercentage(.common((positive: [1, 2, 5], negative: [7, 8])))
 
         let answers = TestAnswers()
         answers.setAnswers(positive: [1], negative: [2, 3, 5, 7, 8])
 
-        XCTAssertEqual(score.value(for: .male, answers: answers), 4.0 / 6.0)
-        XCTAssertEqual(score.value(for: .female, answers: answers), 4.0 / 6.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: answers), 4.0 / 6.0)
+        XCTAssertEqual(score.value(for: .male, answers: answers), 60.0)
+        XCTAssertEqual(score.value(for: .female, answers: answers), 60.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: answers), 60.0)
     }
 
 
@@ -41,15 +41,15 @@ final class AnalysisScoreRawPercentageTests: XCTestCase {
     func testThat__it_computes_gender_based_number_of_matches() {
         let score = AnalysisScore.rawPercentage(.specific(
             male: (positive: [1, 2, 5], negative: [3, 7, 8]),
-            female: (positive: [], negative: [1, 2, 3])
+            female: (positive: [], negative: [1, 2, 3, 5])
             ))
 
         let answers = TestAnswers()
         answers.setAnswers(positive: [1, 2, 5], negative: [3, 7, 8])
 
-        XCTAssertEqual(score.value(for: .male, answers: answers), 1.0)
-        XCTAssertEqual(score.value(for: .female, answers: answers), 1.0 / 3.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: answers), 1.0)
+        XCTAssertEqual(score.value(for: .male, answers: answers), 100.0)
+        XCTAssertEqual(score.value(for: .female, answers: answers), 25.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: answers), 100.0)
     }
 
 
@@ -62,12 +62,12 @@ final class AnalysisScoreRawPercentageTests: XCTestCase {
         let someAnswers = TestAnswers()
         someAnswers.setAnswers(positive: [1, 2, 5], negative: [3, 7, 8])
 
-        XCTAssertEqual(score.value(for: .male, answers: emptyAnswers), 1.0)
-        XCTAssertEqual(score.value(for: .female, answers: emptyAnswers), 1.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: emptyAnswers), 1.0)
+        XCTAssertEqual(score.value(for: .male, answers: emptyAnswers), 100.0)
+        XCTAssertEqual(score.value(for: .female, answers: emptyAnswers), 100.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: emptyAnswers), 100.0)
 
-        XCTAssertEqual(score.value(for: .male, answers: someAnswers), 1.0)
-        XCTAssertEqual(score.value(for: .female, answers: someAnswers), 1.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: someAnswers), 1.0)
+        XCTAssertEqual(score.value(for: .male, answers: someAnswers), 100.0)
+        XCTAssertEqual(score.value(for: .female, answers: someAnswers), 100.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: someAnswers), 100.0)
     }
 }

@@ -18,3 +18,17 @@ extension AnalysisScore {
         return _perform.value(for: gender)(answers)
     }
 }
+
+
+extension AnalysisScore {
+    static let ignoredStatements = Set<StatementIdentifier>(
+        [14, 33, 48, 63, 66, 69, 121, 123, 133, 151,
+         168, 182, 184, 197, 200, 205, 266, 275, 293,
+         334, 349, 350, 462, 464, 474, 542, 551]
+    )
+
+
+    static func defaultFilter(_ identifier: StatementIdentifier) -> Bool {
+        return false == ignoredStatements.contains(identifier)
+    }
+}
