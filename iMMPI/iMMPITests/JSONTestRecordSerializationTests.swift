@@ -11,8 +11,8 @@ final class JSONTestRecordSerializationTests: XCTestCase {
 
 
     func testThat__json_serialization_properly_loads_records() {
-        let first = loadSample(at: 3)
-        let second = loadSample(at: 4)
+        let first = TestSamples.record(at: 3)
+        let second = TestSamples.record(at: 4)
 
         let formatter = DateFormatter()
         formatter.dateStyle = .none
@@ -32,7 +32,7 @@ final class JSONTestRecordSerializationTests: XCTestCase {
 
 
     func testThat__json_serialization_is_bidirectional() {
-        let record = loadSample(at: 3)
+        let record = TestSamples.record(at: 3)
 
         let data = serialization.encode(record)!
         let restoredRecord = serialization.decode(data)!
@@ -47,14 +47,5 @@ final class JSONTestRecordSerializationTests: XCTestCase {
         for i in 0..<566 {
             XCTAssertEqual(record.testAnswers.answer(for: i), restoredRecord.testAnswers.answer(for: i))
         }
-    }
-
-
-    private func loadSample(at index: Int) -> TestRecordProtocol {
-        let answersFileName = String(format: "Test Subject 00%.3d", index)
-        let answersFileUrl = Bundle(for: type(of: self)).url(forResource: answersFileName, withExtension: "json")!
-        let answersData = try! Data(contentsOf: answersFileUrl)
-
-        return serialization.decode(answersData)!
     }
 }
