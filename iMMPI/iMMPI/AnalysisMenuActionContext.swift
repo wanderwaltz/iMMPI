@@ -30,7 +30,13 @@ final class AnalysisMenuActionContext {
 
 
     private(set) lazy var emailMessageGenerator: EmailMessageGenerator = {
-        return EmailMessageGenerator()
+        var attachmentGenerators: [AttachmentReportGenerator] = []
+
+        attachmentGenerators.append(contentsOf: self.htmlReportGenerators.map({ htmlGenerator in
+            AttachmentReportGenerator(titleFormatter: TransliterateToLatin, htmlGenerator: htmlGenerator)
+        }))
+
+        return EmailMessageGenerator(attachments: EmailAttachmentsGenerator(attachmentGenerators))
     }()
 
 
