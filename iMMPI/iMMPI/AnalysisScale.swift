@@ -3,11 +3,20 @@ import Foundation
 struct AnalysisScale {
     let identifier: Identifier
     let title: String
+    let index: GenderBasedValue<Int>
+    let formatter: AnalysisScoreFormatter
     let score: AnalysisScore
 
-    init(identifier: Identifier, title: String, score: AnalysisScore) {
+
+    init(identifier: Identifier,
+         title: String,
+         index: GenderBasedValue<Int>,
+         formatter: AnalysisScoreFormatter,
+         score: AnalysisScore) {
         self.identifier = identifier
         self.title = title
+        self.index = index
+        self.formatter = formatter
         self.score = score
     }
 }
