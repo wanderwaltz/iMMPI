@@ -545,6 +545,8 @@
 		444F245B1E336ADE00BB8003 /* EmailRecipientsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F245A1E336ADE00BB8003 /* EmailRecipientsGenerator.swift */; };
 		444F245D1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F245C1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift */; };
 		444F245F1E34990B00BB8003 /* MenuAction+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F245E1E34990A00BB8003 /* MenuAction+UITableView.swift */; };
+		444F24621E34A49900BB8003 /* SpaceSeparatedIntsSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24611E34A49900BB8003 /* SpaceSeparatedIntsSerialization.swift */; };
+		444F24641E34A55B00BB8003 /* SpaceSeparatedIntsSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24631E34A55B00BB8003 /* SpaceSeparatedIntsSerializationTests.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1652,6 +1654,8 @@
 		444F245A1E336ADE00BB8003 /* EmailRecipientsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRecipientsGenerator.swift; sourceTree = "<group>"; };
 		444F245C1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+MailComposerDelegate.swift"; sourceTree = "<group>"; };
 		444F245E1E34990A00BB8003 /* MenuAction+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuAction+UITableView.swift"; sourceTree = "<group>"; };
+		444F24611E34A49900BB8003 /* SpaceSeparatedIntsSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceSeparatedIntsSerialization.swift; sourceTree = "<group>"; };
+		444F24631E34A55B00BB8003 /* SpaceSeparatedIntsSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceSeparatedIntsSerializationTests.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -2362,6 +2366,7 @@
 				444F23991E2E418800BB8003 /* JSONTestRecordIndexSerialization.swift */,
 				444F23971E2E3FFA00BB8003 /* JSONTestRecordProxySerialization.swift */,
 				444F239B1E2E42A900BB8003 /* JSONTestRecordSerialization.swift */,
+				444F24611E34A49900BB8003 /* SpaceSeparatedIntsSerialization.swift */,
 			);
 			name = Serialization;
 			sourceTree = "<group>";
@@ -2375,6 +2380,7 @@
 				444F23891E2E36F300BB8003 /* JSONPersonSerializationTests.swift */,
 				444F23781E2E2E1A00BB8003 /* JSONTestRecordSerializationTests.swift */,
 				444F24201E32008A00BB8003 /* JSONTestRecordProxySerializationTests.swift */,
+				444F24631E34A55B00BB8003 /* SpaceSeparatedIntsSerializationTests.swift */,
 			);
 			name = "JSON Serialization";
 			sourceTree = "<group>";
@@ -2436,6 +2442,13 @@
 				444F24561E336AB500BB8003 /* EmailTextGenerator.swift */,
 			);
 			name = Email;
+			sourceTree = "<group>";
+		};
+		444F24601E34A41900BB8003 /* Analyser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Analyser;
 			sourceTree = "<group>";
 		};
 		44673C1A1E23C9BD001758C0 /* Router */ = {
@@ -3781,6 +3794,7 @@
 		5DC40483168C446C000AFBAE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				444F24601E34A41900BB8003 /* Analyser */,
 				4430C7BA1E1670010024C001 /* PersonProtocol.swift */,
 				442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */,
 				442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */,
@@ -4963,6 +4977,7 @@
 				442CE1DB1E238581006C34A6 /* UtilityFunctionsTests.swift in Sources */,
 				448C31121E289454003D355D /* UITestFunctions.swift in Sources */,
 				444F237F1E2E334800BB8003 /* JSONAgeGroupSerializationTests.swift in Sources */,
+				444F24641E34A55B00BB8003 /* SpaceSeparatedIntsSerializationTests.swift in Sources */,
 				442CE1D71E238257006C34A6 /* GroupingTests.swift in Sources */,
 				448C30FE1E27E743003D355D /* GenderTests.swift in Sources */,
 				442CE1A81E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift in Sources */,
@@ -5053,6 +5068,7 @@
 				5D85558D16907158004E3021 /* AnalyzerIGroup99.m in Sources */,
 				442CE1F51E23A957006C34A6 /* RecordsListViewModel.swift in Sources */,
 				44F97A441E266D13004F4E14 /* TableViewCellSource.swift in Sources */,
+				444F24621E34A49900BB8003 /* SpaceSeparatedIntsSerialization.swift in Sources */,
 				444F24531E336A9300BB8003 /* EmailMessageGenerator.swift in Sources */,
 				444F24421E334DFF00BB8003 /* MimeType.swift in Sources */,
 				5D855591169074D0004E3021 /* AnalyzerIGroupM.m in Sources */,
