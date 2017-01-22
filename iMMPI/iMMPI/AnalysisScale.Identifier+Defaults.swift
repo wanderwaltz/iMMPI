@@ -9,4 +9,7 @@ extension AnalysisScale.Identifier {
 
     /// Медицинская симуляция
     static let ds_r = AnalysisScale.Identifier("Ds-r")
+
+    /// Комплекс Панурга
+    static let ta = AnalysisScale.Identifier("Ta")
 }
