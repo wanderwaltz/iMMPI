@@ -64,6 +64,19 @@ final class UtilityFunctionsTests: XCTestCase {
     }
 
 
+    func testThat__constant_html__always_returns_the_given_value() {
+        let expectedHtml = Html.document(.body(.content("html body")))
+        let html: (Any) -> Html = Constant.html(expectedHtml)
+
+        XCTAssertEqual(html(123), expectedHtml)
+        XCTAssertEqual(html("asdfg"), expectedHtml)
+        XCTAssertEqual(html(false), expectedHtml)
+        XCTAssertEqual(html(true), expectedHtml)
+        XCTAssertEqual(html(NSObject()), expectedHtml)
+        XCTAssertEqual(html(Date()), expectedHtml)
+    }
+
+
     func testThat__constant_void__does_not_have_side_effects() {
         let void: (Any) -> Void = Constant.void()
 
