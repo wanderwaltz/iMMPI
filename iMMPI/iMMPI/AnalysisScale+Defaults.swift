@@ -377,4 +377,21 @@ extension AnalysisScale {
                 negative: [24, 30, 36, 51, 61, 75, 76, 106, 146, 150, 153, 163, 168, 171, 224, 225, 236, 241, 285, 299, 303, 352, 361, 397, 425, 441, 442, 443, 448, 508, 524, 533]
             )
         ))
+
+
+    // MARK: Физические расстройства
+
+    /// **Физические расстройства**
+    static let physical_disorders = AnalysisScale(
+        identifier: .physical_disorders,
+        title: NSLocalizedString("Физические расстройства", comment: "Название шкалы"),
+        index: .common(17),
+        score: .median(
+            .specific(male: 3, female: 4),
+            dispersion: .specific(male: 1, female: 2),
+            basedOn: .raw(
+                positive: [130, 189, 193, 288],
+                negative: [2, 18, 51, 153, 154, 155, 160]
+            )
+        ))
 }

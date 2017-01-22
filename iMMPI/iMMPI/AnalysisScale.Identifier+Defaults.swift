@@ -60,4 +60,7 @@ extension AnalysisScale.Identifier {
 
     /// Реакция соматизации
     static let soma_reaction = AnalysisScale.Identifier("soma_reaction")
+
+    /// Физические расстройства
+    static let physical_disorders = AnalysisScale.Identifier("physical_disorders")
 }

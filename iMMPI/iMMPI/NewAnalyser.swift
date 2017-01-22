@@ -31,6 +31,7 @@ extension NewAnalyser {
                 .headaches,          //     Предрасположенность к головным болям
                 .soma_complaints,    //     Соматические жалобы
                 .soma_reaction,      //     Реакция соматизации
+                .physical_disorders, //     Физические расстройства
             ])
     }
 }
