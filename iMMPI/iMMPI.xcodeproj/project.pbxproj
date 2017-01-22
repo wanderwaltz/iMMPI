@@ -552,6 +552,8 @@
 		444F24711E34BDBE00BB8003 /* GenderBasedValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24701E34BDBE00BB8003 /* GenderBasedValueTests.swift */; };
 		444F24751E34C12300BB8003 /* AnalysisScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24741E34C12300BB8003 /* AnalysisScore.swift */; };
 		444F247B1E34EF4800BB8003 /* AnalysisScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F247A1E34EF4800BB8003 /* AnalysisScoreTests.swift */; };
+		444F247D1E34F25F00BB8003 /* AnalysisScore+Raw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F247C1E34F25F00BB8003 /* AnalysisScore+Raw.swift */; };
+		444F247F1E34F26900BB8003 /* AnalysisScoreRawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F247E1E34F26900BB8003 /* AnalysisScoreRawTests.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1666,6 +1668,8 @@
 		444F24701E34BDBE00BB8003 /* GenderBasedValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderBasedValueTests.swift; sourceTree = "<group>"; };
 		444F24741E34C12300BB8003 /* AnalysisScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScore.swift; sourceTree = "<group>"; };
 		444F247A1E34EF4800BB8003 /* AnalysisScoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScoreTests.swift; sourceTree = "<group>"; };
+		444F247C1E34F25F00BB8003 /* AnalysisScore+Raw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScore+Raw.swift"; sourceTree = "<group>"; };
+		444F247E1E34F26900BB8003 /* AnalysisScoreRawTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScoreRawTests.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -2466,6 +2470,7 @@
 			children = (
 				444F246A1E34B91700BB8003 /* AnalysisScale.swift */,
 				444F24741E34C12300BB8003 /* AnalysisScore.swift */,
+				444F247C1E34F25F00BB8003 /* AnalysisScore+Raw.swift */,
 				444F246E1E34BAEF00BB8003 /* GenderBasedValue.swift */,
 			);
 			name = new;
@@ -2501,6 +2506,7 @@
 				44673C401E2522DA001758C0 /* Samples */,
 				44673C461E252339001758C0 /* AnalyzerIntegrationTests.swift */,
 				444F247A1E34EF4800BB8003 /* AnalysisScoreTests.swift */,
+				444F247E1E34F26900BB8003 /* AnalysisScoreRawTests.swift */,
 				444F24701E34BDBE00BB8003 /* GenderBasedValueTests.swift */,
 			);
 			name = Analyzer;
@@ -4985,6 +4991,7 @@
 				448C31001E27E7BA003D355D /* SectionTests.swift in Sources */,
 				444F24711E34BDBE00BB8003 /* GenderBasedValueTests.swift in Sources */,
 				448C31041E2875B9003D355D /* SectionIndexTests.swift in Sources */,
+				444F247F1E34F26900BB8003 /* AnalysisScoreRawTests.swift in Sources */,
 				448C31061E287719003D355D /* UsingRouting+NSObjectTests.swift in Sources */,
 				448C310B1E2877BA003D355D /* StubRouter.swift in Sources */,
 				444F23861E2E34A100BB8003 /* JSONGenderSerializationTests.swift in Sources */,
@@ -5063,6 +5070,7 @@
 				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
 				444F245B1E336ADE00BB8003 /* EmailRecipientsGenerator.swift in Sources */,
 				444F23881E2E358500BB8003 /* JSONPersonSerialization.swift in Sources */,
+				444F247D1E34F25F00BB8003 /* AnalysisScore+Raw.swift in Sources */,
 				448C30F11E27B929003D355D /* TableViewCellSource+Nib.swift in Sources */,
 				442CE1AE1E23551D006C34A6 /* TestRecordProtocol.swift in Sources */,
 				5DC4ABFF16902FAF00E835B7 /* Analyzer.m in Sources */,
