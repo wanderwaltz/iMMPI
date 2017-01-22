@@ -15,4 +15,7 @@ extension AnalysisScale.Identifier {
 
     /// Тенденция перечить
     static let hy_s = AnalysisScale.Identifier("Hy-s")
+
+    /// Защитная реакция на тест
+    static let defensive_reaction = AnalysisScale.Identifier("defensive_reaction")
 }

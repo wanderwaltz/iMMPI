@@ -13,11 +13,12 @@ struct NewAnalyser {
 extension NewAnalyser {
     init() {
         self.init(scales: [
-            .group_reliability, // А. НАДЕЖНОСТЬ
-            .sr,                //   Общественная диссимуляция
-            .ds_r,              //   Медицинская симуляция
-            .ta,                //   Комплекс Панурга
-            .hy_s,              //   Тенденция перечить
+            .group_reliability,  // А. НАДЕЖНОСТЬ
+            .sr,                 //   Общественная диссимуляция
+            .ds_r,               //   Медицинская симуляция
+            .ta,                 //   Комплекс Панурга
+            .hy_s,               //   Тенденция перечить
+            .defensive_reaction, //   Защитная реакция на тест
             ])
     }
 }

@@ -110,7 +110,7 @@ extension AnalysisScale {
     /// Собчик Л. Н. Стандартизированный многофакторный метод исследования личности
     /// СМИЛ. – СПб.: Речь, 2000. – 219 с.
     static let hy_s = AnalysisScale(
-        identifier: .ds_r,
+        identifier: .hy_s,
         title: NSLocalizedString("Тенденция перечить (отрицание симптомов)", comment: "Название шкалы"),
         index: .common(4),
         score: .median(
@@ -121,4 +121,22 @@ extension AnalysisScale {
                 negative: [6, 12, 26, 30, 71, 89, 93, 109, 124, 129, 136, 141, 147, 162, 170, 172, 180, 201, 213, 234, 265, 267, 279, 289, 292]
             )
         ))
+
+
+    // MARK: Защитная реакция на тест
+
+    /// **Защитная реакция на тест**
+    static let defensive_reaction = AnalysisScale(
+        identifier: .defensive_reaction,
+        title: NSLocalizedString("Защитная реакция на тест", comment: "Название шкалы"),
+        index: .common(5),
+        score: .median(
+            .specific(male: 12.35, female: 12.33),
+            dispersion: .specific(male: 3.06, female: 2.74),
+            basedOn: .raw(
+                positive: [79, 111, 160, 228, 248, 264, 296, 461, 468],
+                negative: [15, 30, 71, 109, 124, 135, 142, 148, 170, 324, 383, 406, 408, 409, 416, 439, 444]
+            )
+        ))
+
 }
