@@ -41,7 +41,7 @@ NSString *TransliterateToLatin(NSString *string)
         CFStringTransform(mutableRef, NULL, kCFStringTransformToLatin, false);
         CFStringTransform(mutableRef, NULL, kCFStringTransformStripCombiningMarks,  false);
         
-        return [mutable copy];
+        return [mutable copy] ?: @"";
     }
-    else return nil;
+    else return @"";
 }

@@ -21,6 +21,6 @@ id _Nullable null2Nil(id _Nullable object);
 UIViewController * _Nullable SelfOrFirstChild(UIViewController * _Nullable controller);
 
 
-NSString * _Nullable TransliterateToLatin(NSString * _Nullable string);
+NSString *TransliterateToLatin(NSString *string);
 
 NS_ASSUME_NONNULL_END
