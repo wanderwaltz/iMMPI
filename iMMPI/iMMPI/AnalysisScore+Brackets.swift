@@ -1,7 +1,40 @@
 import Foundation
 
 extension AnalysisScore {
-    static func brackets(_ brackets: GenderBasedValue<(Double, Double, Double, Double)>,
+    /// Computes the score based on the given bracket values.
+    ///
+    /// > Число полученных по каждому показателю очков переводится в проценты. Пятибальная
+    /// > оценочная шкала исходит из срединного разброса значений представленной выборки данных
+    /// > тестирования, причем гистограмма распределения образует колокообразную кривую Гаусса. Отчет
+    /// > ведется от медианной точки, делящей всю совокупность значений пополам: следующие 2 точки по
+    /// > обе стороны от медианной точки делят поровну каждую половину, и еще две точки представляют
+    /// > такое же деление четвертей, в результате получается медианная формула
+    /// > MF: A < B < C < D,
+    /// > по которой строится оценочная шкала:
+    /// >   - 0.0..<1.5 балла - 1/8 всех значений (меньше А);
+    /// >   - 1.5..<2.5 балла - 1/8 значений (лежащие между А и В);
+    /// >   - 2.5..<3.5 балла - 1/2 значений (лежащие между В и С);
+    /// >   - 3.5..<4.5 балла - 1/8 значений (лежащие между С и D);
+    /// >   - 4.5..<5.0 баллов - 1/8 значений (превышающие D).
+    /// >
+    /// > MF получены на основе статистической обработки данных из архива, насчитывающего более
+    /// > 2000 анкет в отдельных случаях для мужчин и женщин получены отдельные MF, равно как по
+    /// > отдельным показателям получены разные - "мужские" и "женские" - тесты.
+    /// >
+    /// > Собчик Л. Н. Стандартизированный многофакторный метод исследования личности
+    /// > СМИЛ. – СПб.: Речь, 2000. – 219 с.
+    ///
+    /// - Parameters:
+    ///    - brackets: the bracket values `0 < A < B < C < D < 100`, which are used for the computation,
+    ///    - rawScore: the base score value, which is used for computing the resulting score. It is expected
+    ///                that the base score is in `0.0...100.0` range.
+    ///
+    /// - Returns: the resulting score in `0.0...5.0` range.
+    ///
+    /// - Precondition: 
+    ///    - `0 < A < B < C < D < 100`,
+    ///    - `rawScore.value(for: ...)` is in `0...100` range.
+    static func brackets(_ brackets: GenderBasedValue<(A: Double, B: Double, C: Double, D: Double)>,
                          basedOn rawScore: AnalysisScore) -> AnalysisScore {
 
         checkPreconditions(for: brackets.value(for: .male))
@@ -14,10 +47,10 @@ extension AnalysisScore {
 
             let selectedBrackets = brackets.value(for: gender)
 
-            let a = selectedBrackets.0
-            let b = selectedBrackets.1
-            let c = selectedBrackets.2
-            let d = selectedBrackets.3
+            let a = selectedBrackets.A
+            let b = selectedBrackets.B
+            let c = selectedBrackets.C
+            let d = selectedBrackets.D
 
             var score: Double = 0.0
 
