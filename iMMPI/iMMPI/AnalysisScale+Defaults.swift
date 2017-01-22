@@ -428,4 +428,21 @@ extension AnalysisScale {
                 negative: [4, 8, 9, 36, 46, 58, 68, 69, 70, 101, 103, 122, 125, 144, 154, 155, 160, 163, 174, 175, 183, 187, 188, 190, 196, 198, 213, 242, 254, 279, 281, 289, 295, 322, 329]
             )
         ))
+
+
+    // MARK: Органическое поражение хвостатого ядра
+
+    /// **Органическое поражение хвостатого ядра**
+    static let nucleus_injury = AnalysisScale(
+        identifier: .nucleus_injury,
+        title: NSLocalizedString("Органическое поражение хвостатого ядра", comment: "Название шкалы"),
+        index: .common(20),
+        score: .median(
+            .specific(male: 11, female: 14.81),
+            dispersion: .specific(male: 4.56, female: 4.57),
+            basedOn: .raw(
+                positive: [28, 39, 76, 94, 142, 147, 159, 180, 182, 189, 236, 239, 273, 313, 338, 343, 361, 389, 499, 512, 544, 549, 551, 560],
+                negative: [8, 46, 57, 69, 163, 188, 242, 407, 412, 450, 513, 523]
+            )
+        ))
 }

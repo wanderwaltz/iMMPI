@@ -69,4 +69,7 @@ extension AnalysisScale.Identifier {
 
     /// Эпилепсия
     static let epilepsy = AnalysisScale.Identifier("epilepsy")
+
+    /// Органическое поражение хвостатого ядра
+    static let nucleus_injury = AnalysisScale.Identifier("nucleus_injury")
 }

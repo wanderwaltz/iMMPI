@@ -34,6 +34,7 @@ extension NewAnalyser {
                 .physical_disorders, //     Физические расстройства
                 .mental_block,       //     Психическая заторможенность
                 .epilepsy,           //     Эпилепсия
+                .nucleus_injury,     //     Органическое поражение хвостатого ядра
             ])
     }
 }
