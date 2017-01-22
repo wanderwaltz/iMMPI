@@ -547,6 +547,7 @@
 		444F245F1E34990B00BB8003 /* MenuAction+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F245E1E34990A00BB8003 /* MenuAction+UITableView.swift */; };
 		444F24621E34A49900BB8003 /* SpaceSeparatedIntsSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24611E34A49900BB8003 /* SpaceSeparatedIntsSerialization.swift */; };
 		444F24641E34A55B00BB8003 /* SpaceSeparatedIntsSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24631E34A55B00BB8003 /* SpaceSeparatedIntsSerializationTests.swift */; };
+		444F246B1E34B91700BB8003 /* AnalysisScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F246A1E34B91700BB8003 /* AnalysisScale.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
@@ -1656,6 +1657,7 @@
 		444F245E1E34990A00BB8003 /* MenuAction+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuAction+UITableView.swift"; sourceTree = "<group>"; };
 		444F24611E34A49900BB8003 /* SpaceSeparatedIntsSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceSeparatedIntsSerialization.swift; sourceTree = "<group>"; };
 		444F24631E34A55B00BB8003 /* SpaceSeparatedIntsSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceSeparatedIntsSerializationTests.swift; sourceTree = "<group>"; };
+		444F246A1E34B91700BB8003 /* AnalysisScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScale.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordStorageProtocol.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
@@ -2449,6 +2451,14 @@
 			children = (
 			);
 			name = Analyser;
+			sourceTree = "<group>";
+		};
+		444F24671E34B7D400BB8003 /* new */ = {
+			isa = PBXGroup;
+			children = (
+				444F246A1E34B91700BB8003 /* AnalysisScale.swift */,
+			);
+			name = new;
 			sourceTree = "<group>";
 		};
 		44673C1A1E23C9BD001758C0 /* Router */ = {
@@ -3496,6 +3506,7 @@
 		448C31941E2B63F6003D355D /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
+				444F24671E34B7D400BB8003 /* new */,
 				448C31931E2B63EE003D355D /* Reports */,
 				5DC4ABF416902E8200E835B7 /* private */,
 				5DC4ABFD16902FAF00E835B7 /* Analyzer.h */,
@@ -5001,6 +5012,7 @@
 				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
 				444F243F1E3228F400BB8003 /* HtmlReportGenerator+GroupDetails.swift in Sources */,
 				442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */,
+				444F246B1E34B91700BB8003 /* AnalysisScale.swift in Sources */,
 				5876FDC71E2BE4C600255227 /* DatePickerController.swift in Sources */,
 				44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */,
 				444F245F1E34990B00BB8003 /* MenuAction+UITableView.swift in Sources */,
