@@ -20,6 +20,7 @@ extension NewAnalyser {
             .hy_s,               //   Тенденция перечить
             .defensive_reaction, //   Защитная реакция на тест
             .self_bashing,       //   Стремление наговорить на себя
+            .group_health,       // Б. Здоровье
             ])
     }
 }

@@ -156,4 +156,12 @@ extension AnalysisScale {
             )
         ))
 
+
+    // MARK: - Б. ЗДОРОВЬЕ
+
+    /// **Б. ЗДОРОВЬЕ**
+    static let group_health = AnalysisScale.dummy(
+        identifier: .group_health,
+        title: NSLocalizedString("Б. ЗДОРОВЬЕ", comment: "Название группы шкал")
+    )
 }

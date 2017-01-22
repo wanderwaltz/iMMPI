@@ -1,6 +1,8 @@
 import Foundation
 
 extension AnalysisScale.Identifier {
+    // MARK: - А. НАДЕЖНОСТЬ
+
     /// А. НАДЕЖНОСТЬ
     static let group_reliability = AnalysisScale.Identifier("А. НАДЕЖНОСТЬ", nesting: 0)
 
@@ -21,4 +23,10 @@ extension AnalysisScale.Identifier {
 
     /// Стремление наговорить на себя
     static let self_bashing = AnalysisScale.Identifier("self_bashing")
+
+
+    // MARK: - Б. ЗДОРОВЬЕ
+
+    /// Б. ЗДОРОВЬЕ
+    static let group_health = AnalysisScale.Identifier("Б. ЗДОРОВЬЕ", nesting: 0)
 }
