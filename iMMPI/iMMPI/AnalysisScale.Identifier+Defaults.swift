@@ -33,4 +33,10 @@ extension AnalysisScale.Identifier {
 
     /// Старость (зрелость)
     static let maturity = AnalysisScale.Identifier("maturity")
+
+    /// Потребность в лечении (пренебрежение здоровьем)
+    static let nt = AnalysisScale.Identifier("Nt")
+
+    /// Половая активность
+    static let sv = AnalysisScale.Identifier("Sv")
 }
