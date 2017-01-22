@@ -12,4 +12,7 @@ extension AnalysisScale.Identifier {
 
     /// Комплекс Панурга
     static let ta = AnalysisScale.Identifier("Ta")
+
+    /// Тенденция перечить
+    static let hy_s = AnalysisScale.Identifier("Hy-s")
 }
