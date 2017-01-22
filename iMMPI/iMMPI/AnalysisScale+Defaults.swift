@@ -394,4 +394,21 @@ extension AnalysisScale {
                 negative: [2, 18, 51, 153, 154, 155, 160]
             )
         ))
+
+
+    // MARK: Психическая заторможенность
+
+    /// **Психическая заторможенность**
+    static let mental_block = AnalysisScale(
+        identifier: .mental_block,
+        title: NSLocalizedString("Психическая заторможенность", comment: "Название шкалы"),
+        index: .common(18),
+        score: .median(
+            .specific(male: 3.16, female: 4.92),
+            dispersion: .specific(male: 1.93, female: 2.38),
+            basedOn: .raw(
+                positive: [32, 41, 86, 104, 159, 182, 259, 290],
+                negative: [8, 9, 46, 88, 122, 178, 207]
+            )
+        ))
 }

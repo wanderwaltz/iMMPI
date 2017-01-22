@@ -32,6 +32,7 @@ extension NewAnalyser {
                 .soma_complaints,    //     Соматические жалобы
                 .soma_reaction,      //     Реакция соматизации
                 .physical_disorders, //     Физические расстройства
+                .mental_block,       //     Психическая заторможенность
             ])
     }
 }

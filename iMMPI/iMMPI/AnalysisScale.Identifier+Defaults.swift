@@ -63,4 +63,7 @@ extension AnalysisScale.Identifier {
 
     /// Физические расстройства
     static let physical_disorders = AnalysisScale.Identifier("physical_disorders")
+
+    /// Психическая заторможенность
+    static let mental_block = AnalysisScale.Identifier("mental_block")
 }
