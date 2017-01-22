@@ -19,6 +19,7 @@ extension NewAnalyser {
             .ta,                 //   Комплекс Панурга
             .hy_s,               //   Тенденция перечить
             .defensive_reaction, //   Защитная реакция на тест
+            .self_bashing,       //   Стремление наговорить на себя
             ])
     }
 }

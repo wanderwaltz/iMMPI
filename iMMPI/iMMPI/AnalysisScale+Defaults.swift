@@ -139,4 +139,21 @@ extension AnalysisScale {
             )
         ))
 
+
+    // MARK: Стремление наговорить на себя
+
+    /// **Стремление наговорить на себя**
+    static let self_bashing = AnalysisScale(
+        identifier: .self_bashing,
+        title: NSLocalizedString("Стремление наговорить на себя", comment: "Название шкалы"),
+        index: .common(6),
+        score: .median(
+            .specific(male: 20.12, female: 26.94),
+            dispersion: .specific(male: 6.92, female: 6.7),
+            basedOn: .raw(
+                positive: [28, 39, 40, 45, 80, 86, 93, 101, 110, 120, 141, 142, 172, 186, 191, 238, 252, 278, 292, 304, 316, 321, 336, 345, 351, 352, 355, 357, 359, 361, 374, 382, 416, 418, 442, 458, 487, 493, 499, 500, 506, 531],
+                negative: [7, 41, 79, 131, 155, 160, 163, 231, 243, 270, 353, 407, 548]
+            )
+        ))
+
 }

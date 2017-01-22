@@ -18,4 +18,7 @@ extension AnalysisScale.Identifier {
 
     /// Защитная реакция на тест
     static let defensive_reaction = AnalysisScale.Identifier("defensive_reaction")
+
+    /// Стремление наговорить на себя
+    static let self_bashing = AnalysisScale.Identifier("self_bashing")
 }
