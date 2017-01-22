@@ -149,3 +149,15 @@ enum Html: CustomStringConvertible {
         return indentedLines.joined(separator: "\n")
     }
 }
+
+
+extension Html: Hashable {
+    var hashValue: Int {
+        return description.hashValue
+    }
+
+
+    static func == (left: Html, right: Html) -> Bool {
+        return left.description == right.description
+    }
+}
