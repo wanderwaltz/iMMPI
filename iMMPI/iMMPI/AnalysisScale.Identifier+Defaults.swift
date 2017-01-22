@@ -51,4 +51,7 @@ extension AnalysisScale.Identifier {
 
     /// Алкоголизм 2
     static let a2 = AnalysisScale.Identifier("a2")
+
+    /// Предрасположенность к головным болям
+    static let headaches = AnalysisScale.Identifier("headaches")
 }
