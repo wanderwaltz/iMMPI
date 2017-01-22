@@ -1,7 +1,6 @@
 import XCTest
 @testable import iMMPI
 
-
 final class AnalysisScoreRawTests: XCTestCase {
     func testThat__it_computes_number_of_matches__case_1() {
         let score = AnalysisScore.raw(.common((positive: [1, 2, 5], negative: [3, 7, 8])))
@@ -53,4 +52,3 @@ final class AnalysisScoreRawTests: XCTestCase {
         XCTAssertEqual(score.value(for: .unknown, answers: answers), 6.0)
     }
 }
-
