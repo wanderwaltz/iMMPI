@@ -33,6 +33,17 @@ extension TestAnswers: TestAnswersProtocol {
             }
         }
     }
+
+
+    func setAnswers(positive: [StatementIdentifier], negative: [StatementIdentifier]) {
+        for identifier in positive {
+            setAnswer(.positive, for: identifier)
+        }
+
+        for identifier in negative {
+            setAnswer(.negative, for: identifier)
+        }
+    }
 }
 
 
