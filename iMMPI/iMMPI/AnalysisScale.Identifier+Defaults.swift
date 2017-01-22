@@ -25,8 +25,12 @@ extension AnalysisScale.Identifier {
     static let self_bashing = AnalysisScale.Identifier("self_bashing")
 
 
+
     // MARK: - Б. ЗДОРОВЬЕ
 
     /// Б. ЗДОРОВЬЕ
     static let group_health = AnalysisScale.Identifier("Б. ЗДОРОВЬЕ", nesting: 0)
+
+    /// Старость (зрелость)
+    static let maturity = AnalysisScale.Identifier("maturity")
 }
