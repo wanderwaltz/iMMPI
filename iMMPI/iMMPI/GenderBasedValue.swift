@@ -47,6 +47,17 @@ extension GenderBasedValue {
         return GenderBasedValue(male: male, female: female)
     }
 
+
+    /// - Returns: a `GenderBasedValue` providing distinct values for different genders.
+    ///
+    /// - Parameters:
+    ///    - block:  a closure, which returns a value of type `T` based on the provided `Gender`.
+    ///    - gender: a `Gender` instance corresponding to the desired value.
+    static func specific(_ block: (_ gender: Gender) -> T) -> GenderBasedValue {
+        return GenderBasedValue(male: block(.male), female: block(.female))
+    }
+
+
     /// - Returns: a `GenderBasedValue` providing the same value for different genders.
     ///
     /// - Parameter value: a value of type `T` corresponding to both genders.
