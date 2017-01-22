@@ -10,4 +10,13 @@ enum TestSamples {
         let answersData = try! Data(contentsOf: answersFileUrl)
         return recordSerialization.decode(answersData)!
     }
+
+
+    static func rawAnalysis(at index: Int) -> [Any] {
+        let answersFileName = String(format: "Test Subject 00%.3d", index)
+        let scoresFileName = "\(answersFileName) - scores"
+        let scoresFileUrl = bundle.url(forResource: scoresFileName, withExtension: "json")!
+        let scoresData = try! Data(contentsOf: scoresFileUrl)
+        return try! JSONSerialization.jsonObject(with: scoresData, options: []) as! [Any]
+    }
 }
