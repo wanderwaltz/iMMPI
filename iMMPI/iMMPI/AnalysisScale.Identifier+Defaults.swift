@@ -39,4 +39,7 @@ extension AnalysisScale.Identifier {
 
     /// Половая активность
     static let sv = AnalysisScale.Identifier("Sv")
+
+    /// Половые отклонения
+    static let sdv = AnalysisScale.Identifier("Sdv")
 }
