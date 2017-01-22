@@ -10,3 +10,7 @@ import Foundation
     /// Text of the statement.
     var text: String { get }
 }
+
+
+/// Identifier of a statement in the questionnaire
+typealias StatementIdentifier = Int
