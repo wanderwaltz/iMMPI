@@ -2,7 +2,7 @@ import Foundation
 
 extension AnalysisScale.Identifier {
     /// А. НАДЕЖНОСТЬ
-    static let group_reliability = AnalysisScale.Identifier("А. НАДЕЖНОСТЬ")
+    static let group_reliability = AnalysisScale.Identifier("А. НАДЕЖНОСТЬ", nesting: 0)
 
     /// Общественная диссимуляция, социальное присутствие
     static let sr = AnalysisScale.Identifier("Sr")

@@ -7,7 +7,6 @@ struct AnalysisScale {
     let formatter: AnalysisScoreFormatter
     let score: AnalysisScore
 
-
     init(identifier: Identifier,
          title: String,
          index: GenderBasedValue<Int>,
@@ -38,9 +37,11 @@ extension AnalysisScale {
 extension AnalysisScale {
     struct Identifier {
         let rawValue: String
+        let nesting: Int
 
-        init(_ rawValue: String) {
+        init(_ rawValue: String, nesting: Int = 1) {
             self.rawValue = rawValue
+            self.nesting = nesting
         }
     }
 
