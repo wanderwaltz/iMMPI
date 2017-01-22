@@ -27,6 +27,11 @@ enum Constant {
     static func bool<A>(_ value: Bool) -> (A) -> Bool {
         return { _ in value }
     }
+
+
+    static func double<A>(_ value: Double) -> (A) -> Double {
+        return { _ in value }
+    }
     
 
     static func string<A>(_ value: String) -> (A) -> String {

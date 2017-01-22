@@ -21,6 +21,13 @@ extension AnalysisScore {
 
 
 extension AnalysisScore {
+    static func constant(_ value: Double) -> AnalysisScore {
+        return AnalysisScore(.common(Constant.double(value)))
+    }
+}
+
+
+extension AnalysisScore {
     static let ignoredStatements = Set<StatementIdentifier>(
         [14, 33, 48, 63, 66, 69, 121, 123, 133, 151,
          168, 182, 184, 197, 200, 205, 266, 275, 293,

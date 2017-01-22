@@ -1,6 +1,15 @@
 import Foundation
 
 extension AnalysisScale {
+    // MARK: - А. НАДЕЖНОСТЬ
+
+    /// А. НАДЕЖНОСТЬ
+    static let group_reliability = AnalysisScale.dummy(
+        identifier: .group_reliability,
+        title: NSLocalizedString("А. НАДЕЖНОСТЬ", comment: "Название группы шкал")
+    )
+
+
     // MARK: Общественная диссимуляция
 
     /// Общественная диссимуляция

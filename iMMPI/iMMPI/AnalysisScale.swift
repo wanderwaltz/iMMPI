@@ -23,6 +23,19 @@ struct AnalysisScale {
 
 
 extension AnalysisScale {
+    static func dummy(identifier: Identifier, title: String) -> AnalysisScale {
+        return AnalysisScale(
+            identifier: identifier,
+            title: title,
+            index: .common(0),
+            formatter: .ignore,
+            score: .constant(.nan)
+        )
+    }
+}
+
+
+extension AnalysisScale {
     struct Identifier {
         let rawValue: String
 
