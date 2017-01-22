@@ -6,4 +6,7 @@ extension AnalysisScale.Identifier {
 
     /// Общественная диссимуляция, социальное присутствие
     static let sr = AnalysisScale.Identifier("Sr")
+
+    /// Медицинская симуляция
+    static let ds_r = AnalysisScale.Identifier("Ds-r")
 }

@@ -14,7 +14,8 @@ extension NewAnalyser {
     init() {
         self.init(scales: [
             .group_reliability, // А. НАДЕЖНОСТЬ
-            .sr                 // 1. Общественная диссимуляция
+            .sr,                // Общественная диссимуляция
+            .ds_r               // Медицинская симуляция
             ])
     }
 }
