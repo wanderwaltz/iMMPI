@@ -1,5 +1,7 @@
 import UIKit
 
+// TODO: make internal data representation type-safe
+
 protocol AnalysisOptionsViewControllerDelegate: class {
     func analysisOptionsViewControllerSettingsChanged(_ controller: AnalysisOptionsViewController)
 }
@@ -143,5 +145,19 @@ extension AnalysisOptionsViewController {
             assertionFailure()
             return UITableViewCell()
         }
+    }
+
+
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath)
+        -> [UITableViewRowAction]? {
+            switch indexPath.section {
+            case 1: // action cells
+                return actionRows.items[indexPath.row].relatedActions.map({ menuAction in
+                    UITableViewRowAction(menuAction, sender: self)
+                })
+
+            default:
+                return nil
+            }
     }
 }

@@ -11,15 +11,22 @@ enum Strings {
         static let trash = NSLocalizedString("Корзина", comment: "Заголовок экрана корзины")
         static let analysisOptions = NSLocalizedString("Настройки", comment: "Заголовок экрана настроек анализа")
         static let print = NSLocalizedString("Печать", comment: "Заголовок экрана печати")
+
+        static let emailSettings = Button.emailSettings
+        static let emailSettingsDescription = NSLocalizedString("Введите адрес, который будет использоваться по умолчанию для отправки отчетов по e-mail.", comment: "Описание на экране настроек e-mail")
     }
 
 
 
     // MARK: - buttons
     enum Button {
+        static let cancel = NSLocalizedString("Отмена", comment: "Кнопка отмены")
+        static let ok = NSLocalizedString("ОК", comment: "Кнопка подтверждения")
+
         static let answers = NSLocalizedString("Ответы", comment: "Кнопка перехода на экран ответов")
         static let print = NSLocalizedString("Печать", comment: "Кнопка перехода к опциям печати")
         static let email = NSLocalizedString("E-mail", comment: "Кнопка отправки письма")
+        static let emailSettings = NSLocalizedString("Адрес по умолчанию", comment: "Кнопка настроек e-mail")
         static let delete = NSLocalizedString("Удалить", comment: "Кнопка удаления")
 
         static let filterResults = NSLocalizedString("Фильтр значений", comment: "Опция анализа")
@@ -43,6 +50,8 @@ enum Strings {
 
         static let date =
             NSLocalizedString("Дата тестирования", comment: "Поле 'Дата тестирования' формы редактирования записи")
+
+        static let emailPlaceholder = NSLocalizedString("email@example.com", comment: "Плейсхолдер для e-mail адреса")
     }
 
 
