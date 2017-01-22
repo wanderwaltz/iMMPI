@@ -411,4 +411,21 @@ extension AnalysisScale {
                 negative: [8, 9, 46, 88, 122, 178, 207]
             )
         ))
+
+
+    // MARK: Эпилепсия
+
+    /// **Эпилепсия**
+    static let epilepsy = AnalysisScale(
+        identifier: .epilepsy,
+        title: NSLocalizedString("Эпилепсия", comment: "Название шкалы"),
+        index: .common(19),
+        score: .median(
+            .specific(male: 19.9, female: 23.57),
+            dispersion: .specific(male: 3.84, female: 4.13),
+            basedOn: .raw(
+                positive: [22, 31, 32, 44, 47, 59, 62, 76, 83, 114, 146, 150, 156, 186, 189, 238, 266, 312, 335, 340, 342],
+                negative: [4, 8, 9, 36, 46, 58, 68, 69, 70, 101, 103, 122, 125, 144, 154, 155, 160, 163, 174, 175, 183, 187, 188, 190, 196, 198, 213, 242, 254, 279, 281, 289, 295, 322, 329]
+            )
+        ))
 }

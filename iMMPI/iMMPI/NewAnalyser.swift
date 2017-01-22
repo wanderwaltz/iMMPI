@@ -33,6 +33,7 @@ extension NewAnalyser {
                 .soma_reaction,      //     Реакция соматизации
                 .physical_disorders, //     Физические расстройства
                 .mental_block,       //     Психическая заторможенность
+                .epilepsy,           //     Эпилепсия
             ])
     }
 }

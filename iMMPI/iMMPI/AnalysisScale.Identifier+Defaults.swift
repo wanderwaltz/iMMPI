@@ -66,4 +66,7 @@ extension AnalysisScale.Identifier {
 
     /// Психическая заторможенность
     static let mental_block = AnalysisScale.Identifier("mental_block")
+
+    /// Эпилепсия
+    static let epilepsy = AnalysisScale.Identifier("epilepsy")
 }
