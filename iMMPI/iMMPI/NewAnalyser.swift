@@ -126,6 +126,7 @@ extension NewAnalyser {
                 .working_capacity,          //    Работоспособность (отношение к работе)
                 .student_potential,         //    Школьный потенциал
                 .teacher_potential,         //    Преподавательский потенциал
+                .lawyer_personality,        //    Адвокатский тип личности
             ])
     }
 }

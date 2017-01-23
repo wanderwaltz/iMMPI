@@ -357,4 +357,7 @@ extension AnalysisScale.Identifier {
 
     /// Преподавательский потенциал
     static let teacher_potential = AnalysisScale.Identifier("teacher_potential")
+
+    /// Адвокатский тип личности
+    static let lawyer_personality = AnalysisScale.Identifier("lawyer_personality")
 }
