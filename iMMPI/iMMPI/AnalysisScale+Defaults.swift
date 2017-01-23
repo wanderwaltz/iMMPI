@@ -743,6 +743,23 @@ extension AnalysisScale {
                 negative: [39, 46, 58, 64, 80, 88, 95, 98, 131, 145, 154, 191, 207, 233, 241, 242, 263, 270, 271, 272, 285]
             )
         ))
+
+
+    // MARK: Субъективная депрессия
+
+    /// **Субъективная депрессия**
+    static let d_subjective = AnalysisScale(
+        identifier: .d_subjective,
+        title: NSLocalizedString("Субъективная депрессия", comment: "Название шкалы"),
+        index: .common(33),
+        score: .median(
+            .specific(male: 9.57, female: 13.59),
+            dispersion: .specific(male: 3.15, female: 3.49),
+            basedOn: .raw(
+                positive: [32, 41, 43, 52, 67, 86, 104, 138, 142, 158, 159, 182, 189, 236, 259],
+                negative: [2, 8, 46, 56, 88, 107, 122, 131, 152, 160, 191, 207, 208, 242, 272, 285, 296]
+            )
+        ))
 }
 
 
