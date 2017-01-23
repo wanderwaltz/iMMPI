@@ -76,6 +76,10 @@ extension NewAnalyser {
                     .mf_rigidness,          //         Ригидность
                     .mf_stability,          //         Стабильность профиля (Уравновешенность)
                 .pa,                        //     Паранойя (Ригидность)
+                    .pa_pure,               //         Чистая паранойя
+                    .pa_stalking,           //         Идеи преследования
+                    .pa_poisoning,          //         Идеи отравления
+                    .pa_evident,            //         Явная паранойя
             ])
     }
 }

@@ -1082,6 +1082,74 @@ extension AnalysisScale {
                 negative: [93, 107, 109, 111, 117, 124, 268, 281, 294, 313, 316, 319, 327, 347, 348]
             )
         ))
+
+
+    // MARK: Чистая паранойя
+
+    /// Чистая паранойя
+    static let pa_pure = AnalysisScale(
+        identifier: .pa_pure,
+        title: NSLocalizedString("Чистая паранойя", comment: "Название шкалы"),
+        index: .common(64),
+        score: .median(
+            .specific(male: 4.61, female: 4.9),
+            dispersion: .common(1.64),
+            basedOn: .raw(
+                positive: [27, 123, 151, 275, 293, 338, 365],
+                negative: [117, 268, 313, 316, 319, 327, 347, 348]
+            )
+        ))
+
+
+    // MARK: Идеи преследования
+
+    /// Идеи преследования
+    static let pa_stalking = AnalysisScale(
+        identifier: .pa_stalking,
+        title: NSLocalizedString("Идеи преследования", comment: "Название шкалы"),
+        index: .common(65),
+        score: .median(
+            .specific(male: 2.74, female: 3.31),
+            dispersion: .specific(male: 2.25, female: 2.03),
+            basedOn: .raw(
+                positive: [16, 24, 35, 110, 121, 123, 127, 151, 157, 202, 275, 284, 291, 293, 338, 364],
+                negative: [347]
+            )
+        ))
+
+
+    // MARK: Идеи отравления
+
+    /// Идеи отравления
+    static let pa_poisoning = AnalysisScale(
+        identifier: .pa_poisoning,
+        title: NSLocalizedString("Идеи отравления", comment: "Название шкалы"),
+        index: .common(66),
+        score: .median(
+            .specific(male: 1.96, female: 3.59),
+            dispersion: .specific(male: 1.46, female: 1.8),
+            basedOn: .raw(
+                positive: [24, 111, 158, 299, 305, 317, 341, 365],
+                negative: [268]
+            )
+        ))
+
+
+    // MARK: Явная паранойя
+
+    /// Явная паранойя
+    static let pa_evident = AnalysisScale(
+        identifier: .pa_evident,
+        title: NSLocalizedString("Явная паранойя", comment: "Название шкалы"),
+        index: .common(67),
+        score: .median(
+            .specific(male: 3.5, female: 5.24),
+            dispersion: .specific(male: 2.7, female: 2.73),
+            basedOn: .raw(
+                positive: [16, 24, 27, 35, 110, 121, 123, 151, 158, 202, 275, 284, 291, 293, 305, 317, 326, 338, 341, 364],
+                negative: [281, 294, 347]
+            )
+        ))
 }
 
 

@@ -199,4 +199,16 @@ extension AnalysisScale.Identifier {
 
     /// Паранойя (Ригидность)
     static let pa = AnalysisScale.Identifier("Pa")
+
+    /// Чистая паранойя
+    static let pa_pure = AnalysisScale.Identifier("Pa_pure", nesting: 2)
+
+    /// Идеи преследования
+    static let pa_stalking = AnalysisScale.Identifier("Pa_stalking", nesting: 2)
+
+    /// Идеи отравления
+    static let pa_poisoning = AnalysisScale.Identifier("Pa_poisoning", nesting: 2)
+
+    /// Явная паранойя
+    static let pa_evident = AnalysisScale.Identifier("Pa_evident", nesting: 2)
 }
