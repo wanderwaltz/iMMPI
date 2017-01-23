@@ -196,4 +196,7 @@ extension AnalysisScale.Identifier {
 
     /// Стабильность профиля (Уравновешенность)
     static let mf_stability = AnalysisScale.Identifier("Mf_stability", nesting: 2)
+
+    /// Паранойя (Ригидность)
+    static let pa = AnalysisScale.Identifier("Pa")
 }

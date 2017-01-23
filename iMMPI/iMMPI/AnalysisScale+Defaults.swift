@@ -1065,6 +1065,23 @@ extension AnalysisScale {
                 )
             )
         ))
+
+
+    // MARK: Паранойя (Ригидность)
+
+    /// Паранойя (Ригидность)
+    static let pa = AnalysisScale(
+        identifier: .pa,
+        title: NSLocalizedString("Паранойя (Ригидность)", comment: "Название шкалы"),
+        index: .common(63),
+        score: .median(
+            7.9,
+            dispersion: 3.4,
+            basedOn: .raw(
+                positive: [15, 16, 22, 24, 27, 35, 110, 121, 123, 127, 151, 157, 158, 202, 275, 284, 291, 293, 299, 305, 317, 338, 341, 364, 365],
+                negative: [93, 107, 109, 111, 117, 124, 268, 281, 294, 313, 316, 319, 327, 347, 348]
+            )
+        ))
 }
 
 
