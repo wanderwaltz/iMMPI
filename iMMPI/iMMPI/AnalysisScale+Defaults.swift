@@ -1609,6 +1609,16 @@ extension AnalysisScale {
                 negative: [62, 111, 120, 249, 278, 294, 370, 440, 460, 513]
             )
         ))
+
+
+
+    // MARK: - Г. ИНТЕЛЛЕКТ
+
+    /// Г. ИНТЕЛЛЕКТ
+    static let group_intelligence = AnalysisScale.dummy(
+        identifier: .group_intelligence,
+        title: NSLocalizedString("Г. ИНТЕЛЛЕКТ", comment: "Название группы шкал")
+    )
 }
 
 

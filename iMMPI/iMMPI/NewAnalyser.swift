@@ -107,6 +107,7 @@ extension NewAnalyser {
                 .ie,                        //     Оценка улучшения
                 .cp,                        //     Предсказание изменений
                 .re,                        //     Рецидивизм
+            .group_intelligence,            // Г. ИНТЕЛЛЕКТ
             ])
     }
 }

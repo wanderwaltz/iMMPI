@@ -292,4 +292,11 @@ extension AnalysisScale.Identifier {
 
     /// Рецидивизм
     static let re = AnalysisScale.Identifier("Re")
+
+
+
+    // MARK: - Г. ИНТЕЛЛЕКТ
+
+    /// Г. ИНТЕЛЛЕКТ
+    static let group_intelligence = AnalysisScale.Identifier("Г. ИНТЕЛЛЕКТ", nesting: 0)
 }
