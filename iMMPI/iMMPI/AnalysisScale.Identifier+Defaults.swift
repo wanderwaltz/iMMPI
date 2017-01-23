@@ -244,4 +244,7 @@ extension AnalysisScale.Identifier {
 
     /// Прогноз шизофрении
     static let sc_prognosis = AnalysisScale.Identifier("Sc_prognosis", nesting: 2)
+
+    /// Параноидная шизофрения
+    static let sc_paranoid = AnalysisScale.Identifier("Sc_paranoid", nesting: 2)
 }

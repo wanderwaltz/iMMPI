@@ -91,6 +91,7 @@ extension NewAnalyser {
                 .sc,                        //     Шизофрения (индивидуалистичность)
                     .sc_originality,        //         Оригинальность
                     .sc_prognosis,          //         Прогноз шизофрении
+                    .sc_paranoid,           //         Параноидная шизофрения
             ])
     }
 }
