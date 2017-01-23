@@ -172,4 +172,7 @@ extension AnalysisScale.Identifier {
 
     /// Психомоторная акселерация
     static let pd_accel = AnalysisScale.Identifier("Pd_accel", nesting: 2)
+
+    /// Осознанная выраженная враждебность
+    static let pd_intended_hostility = AnalysisScale.Identifier("Pd_intended_hostility", nesting: 2)
 }

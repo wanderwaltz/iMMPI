@@ -902,6 +902,23 @@ extension AnalysisScale {
                 negative: [119, 134, 228, 268]
             )
         ))
+
+
+    // MARK: Осознанная выраженная враждебность
+
+    /// Осознанная выраженная враждебность
+    static let pd_intended_hostility = AnalysisScale(
+        identifier: .pd_intended_hostility,
+        title: NSLocalizedString("Осознанная выраженная враждебность", comment: "Название шкалы"),
+        index: .common(52),
+        score: .median(
+            .specific(male: 16.4, female: 17.42),
+            dispersion: .specific(male: 6.12, female: 5.59),
+            basedOn: .raw(
+                positive: [16, 28, 35, 39, 75, 80, 93, 97, 109, 110, 117, 118, 121, 123, 127, 136, 139, 145, 197, 226, 233, 234, 235, 265, 269, 271, 280, 316, 336, 355, 381, 393, 417, 426, 437, 438, 447, 452, 469, 471, 504, 507],
+                negative: [82, 96, 347, 399, 468]
+            )
+        ))
 }
 
 
