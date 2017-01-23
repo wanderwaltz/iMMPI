@@ -1251,7 +1251,25 @@ extension AnalysisScale {
                 negative: [7, 18, 107, 163, 190, 230, 242, 264, 287, 407, 523, 528]
             )
         ))
+
+
+    // MARK: Вытеснение тревоги
+
+    /// Вытеснение тревоги
+    static let pf_anxiety_repression = AnalysisScale(
+        identifier: .pf_anxiety_repression,
+        title: NSLocalizedString("Вытеснение тревоги", comment: "Название шкалы"),
+        index: .common(74),
+        score: .median(
+            .specific(male: 3.09, female: 3.04),
+            dispersion: .specific(male: 1.62, female: 1.67),
+            basedOn: .raw(
+                positive: [],
+                negative: [141, 172, 180, 201, 267, 292]
+            )
+        ))
 }
+
 
 
 

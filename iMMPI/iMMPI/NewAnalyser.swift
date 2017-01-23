@@ -86,6 +86,7 @@ extension NewAnalyser {
                 .pf,                        //     Психастения (Тревожность)
                     .pf_anxiety_reaction,   //         Реакция тревоги
                     .pf_anxiety,            //         Тревога
+                    .pf_anxiety_repression, //         Вытеснение тревоги
             ])
     }
 }

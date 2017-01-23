@@ -225,8 +225,11 @@ extension AnalysisScale.Identifier {
     static let pf = AnalysisScale.Identifier("Pf")
 
     /// Реакция тревоги
-    static let pf_anxiety_reaction = AnalysisScale.Identifier("Pf_anxiety_reaction")
+    static let pf_anxiety_reaction = AnalysisScale.Identifier("Pf_anxiety_reaction", nesting: 2)
 
     /// Тревога
-    static let pf_anxiety = AnalysisScale.Identifier("Pf_anxiety")
+    static let pf_anxiety = AnalysisScale.Identifier("Pf_anxiety", nesting: 2)
+
+    /// Вытеснение тревоги
+    static let pf_anxiety_repression = AnalysisScale.Identifier("Pf_anxiety_repression", nesting: 2)
 }
