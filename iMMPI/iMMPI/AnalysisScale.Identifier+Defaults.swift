@@ -232,4 +232,7 @@ extension AnalysisScale.Identifier {
 
     /// Вытеснение тревоги
     static let pf_anxiety_repression = AnalysisScale.Identifier("Pf_anxiety_repression", nesting: 2)
+
+    /// Осознанная тревога
+    static let pf_realized_anxiety = AnalysisScale.Identifier("Pf_realized_anxiety", nesting: 2)
 }

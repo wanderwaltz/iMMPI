@@ -1236,6 +1236,7 @@ extension AnalysisScale {
             )
         ))
 
+
     // MARK: Тревога
 
     /// Тревога
@@ -1268,8 +1269,24 @@ extension AnalysisScale {
                 negative: [141, 172, 180, 201, 267, 292]
             )
         ))
-}
 
+
+    // MARK: Осознанная тревога
+
+    /// Осознанная тревога
+    static let pf_realized_anxiety = AnalysisScale(
+        identifier: .pf_realized_anxiety,
+        title: NSLocalizedString("Осознанная тревога", comment: "Название шкалы"),
+        index: .common(75),
+        score: .median(
+            .specific(male: 6, female: 9.96),
+            dispersion: .specific(male: 3.98, female: 4.68),
+            basedOn: .raw(
+                positive: [5, 10, 13, 14, 23, 31, 32, 43, 72, 179, 186, 191, 217, 238, 301, 321, 335, 337, 351, 360, 365, 395, 431, 439, 480, 494, 499, 506, 543, 555, 559],
+                negative: []
+            )
+        ))
+}
 
 
 

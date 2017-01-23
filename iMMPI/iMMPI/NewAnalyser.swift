@@ -87,6 +87,7 @@ extension NewAnalyser {
                     .pf_anxiety_reaction,   //         Реакция тревоги
                     .pf_anxiety,            //         Тревога
                     .pf_anxiety_repression, //         Вытеснение тревоги
+                    .pf_realized_anxiety,   //         Осознанная тревога
             ])
     }
 }
