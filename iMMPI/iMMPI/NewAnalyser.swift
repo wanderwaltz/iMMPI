@@ -93,6 +93,7 @@ extension NewAnalyser {
                     .sc_prognosis,          //         Прогноз шизофрении
                     .sc_paranoid,           //         Параноидная шизофрения
                     .sc_pure,               //         Чистая шизофрения
+                    .sc_sensoric,           //         Причудливость сенсорного восприятия
             ])
     }
 }

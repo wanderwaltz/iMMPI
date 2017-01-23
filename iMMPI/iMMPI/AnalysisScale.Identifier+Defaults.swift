@@ -250,4 +250,7 @@ extension AnalysisScale.Identifier {
 
     /// Чистая шизофрения
     static let sc_pure = AnalysisScale.Identifier("Sc_pure", nesting: 2)
+
+    /// Причудливость сенсорного восприятия
+    static let sc_sensoric = AnalysisScale.Identifier("Sc_sensoric", nesting: 2)
 }

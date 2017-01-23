@@ -1371,6 +1371,23 @@ extension AnalysisScale {
                 negative: [17, 65, 177, 187, 196, 220, 276, 306, 323, 330]
             )
         ))
+
+
+    // MARK: Причудливость сенсорного восприятия
+
+    /// Причудливость сенсорного восприятия
+    static let sc_sensoric = AnalysisScale(
+        identifier: .sc_sensoric,
+        title: NSLocalizedString("Причудливость сенсорного восприятия", comment: "Название шкалы"),
+        index: .common(81),
+        score: .median(
+            .specific(male: 2.26, female: 3.66),
+            dispersion: .specific(male: 2.23, female: 2.58),
+            basedOn: .raw(
+                positive: [22, 33, 47, 156, 194, 210, 251, 273, 291, 332, 334, 341, 345, 350],
+                negative: [103, 119, 187, 192, 281, 330]
+            )
+        ))
 }
 
 
