@@ -193,4 +193,7 @@ extension AnalysisScale.Identifier {
 
     /// Ригидность
     static let mf_rigidness = AnalysisScale.Identifier("Mf_rigidness", nesting: 2)
+
+    /// Стабильность профиля (Уравновешенность)
+    static let mf_stability = AnalysisScale.Identifier("Mf_stability", nesting: 2)
 }

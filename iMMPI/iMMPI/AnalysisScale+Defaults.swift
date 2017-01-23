@@ -1040,6 +1040,31 @@ extension AnalysisScale {
                 )
             )
         ))
+
+
+    // MARK: Стабильность профиля (Уравновешенность)
+
+    /// Стабильность профиля (Уравновешенность)
+    static let mf_stability = AnalysisScale(
+        identifier: .mf_stability,
+        title: NSLocalizedString("Стабильность профиля (Уравновешенность)", comment: "Название шкалы"),
+        index: .specific(male: 62, female: 59),
+        score: .median(
+            .specific(male: 18.14, female: 13.63),
+            dispersion: .specific(male: 4.18, female: 2.66),
+            basedOn: .raw(
+                .specific(
+                    male: (
+                        positive: [99, 170, 428],
+                        negative: [40, 86, 97, 100, 102, 119, 138, 143, 149, 232, 238, 263, 268, 278, 282, 298, 299, 307, 317, 348, 358, 359, 361, 426, 472, 475, 490, 558]
+                    ),
+                    female: (
+                        positive: [7, 171, 321, 324, 522],
+                        negative: [15, 36, 59, 69, 77, 112, 131, 241, 243, 253, 283, 357, 373, 402, 429, 478, 481, 502, 503, 516, 537, 551]
+                    )
+                )
+            )
+        ))
 }
 
 

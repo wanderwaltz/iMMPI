@@ -74,6 +74,7 @@ extension NewAnalyser {
                     .mf_femininity,         //         Женственность
                     .mf_feminine_values,    //         Женственность интересов
                     .mf_rigidness,          //         Ригидность
+                    .mf_stability,          //         Стабильность профиля (Уравновешенность)
             ])
     }
 }
