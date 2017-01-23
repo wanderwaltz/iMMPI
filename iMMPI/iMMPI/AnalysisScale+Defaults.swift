@@ -817,6 +817,23 @@ extension AnalysisScale {
                 negative: [96, 111]
             )
         ))
+
+
+    // MARK: Чистая психопатия
+
+    /// Чистая психопатия
+    static let pd_pure = AnalysisScale(
+        identifier: .pd_pure,
+        title: NSLocalizedString("Чистая психопатия", comment: "Название шкалы"),
+        index: .common(47),
+        score: .median(
+            .specific(male: 6.19, female: 6.77),
+            dispersion: .specific(male: 1.98, female: 1.89),
+            basedOn: .raw(
+                positive: [42, 61, 84, 118, 215, 216, 224, 239, 244, 245],
+                negative: [82, 96, 134, 173, 183, 235, 237, 287]
+            )
+        ))
 }
 
 

@@ -156,5 +156,8 @@ extension AnalysisScale.Identifier {
     static let pd = AnalysisScale.Identifier("Pd")
 
     /// Импульсивность
-    static let pd_impulsiveness = AnalysisScale.Identifier("Pd_impulsiveness")
+    static let pd_impulsiveness = AnalysisScale.Identifier("Pd_impulsiveness", nesting: 2)
+
+    /// Чистая психопатия
+    static let pd_pure = AnalysisScale.Identifier("Pd_pure", nesting: 2)
 }

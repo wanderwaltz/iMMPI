@@ -62,6 +62,7 @@ extension NewAnalyser {
                     .hy_sensitivity,   //         Эмоциональная чувствительность
                 .pd,                   //     Психопатия (Импульсивность)
                     .pd_impulsiveness, //         Импульсивность
+                    .pd_pure,          //         Чистая психопатия
             ])
     }
 }
