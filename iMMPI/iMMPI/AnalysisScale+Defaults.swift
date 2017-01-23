@@ -1670,6 +1670,23 @@ extension AnalysisScale {
             upperBracketMode: .saturate,
             basedOn: trunc(100.0 * .rawPercentage_i97 / .taer)
         ))
+
+
+    // MARK: Интеллектуальная активность
+
+    /// Интеллектуальная активность
+    static let i98 = AnalysisScale(
+        identifier: .i98,
+        title: NSLocalizedString("Интеллектуальная активность", comment: "Название шкалы"),
+        index: .common(98),
+        score: .brackets(
+            .specific(
+                male: (23, 26, 34, 37),
+                female: (23, 26, 34, 37)
+            ),
+            upperBracketMode: .saturate,
+            basedOn: trunc(100.0 * .rawPercentage_i98 / .taer)
+        ))
 }
 
 
