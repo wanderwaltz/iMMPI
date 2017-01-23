@@ -271,4 +271,7 @@ extension AnalysisScale.Identifier {
 
     /// Интраверсия
     static let si = AnalysisScale.Identifier("Si")
+
+    /// 1-й фактор А
+    static let fa1 = AnalysisScale.Identifier("FA1")
 }

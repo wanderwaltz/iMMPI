@@ -100,6 +100,7 @@ extension NewAnalyser {
                     .ma_evident,            //         Явная гипомания
                     .ma_hidden,             //         Скрытая гипомания
                 .si,                        //     Интраверсия
+                .fa1,                       //     1-й фактор А
             ])
     }
 }
