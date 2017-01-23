@@ -382,4 +382,7 @@ extension AnalysisScale.Identifier {
 
     /// Мнительность (предубежденность)
     static let prejudice = AnalysisScale.Identifier("prejudice")
+
+    /// Самоконтроль
+    static let self_control = AnalysisScale.Identifier("self_control")
 }

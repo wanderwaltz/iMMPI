@@ -2008,6 +2008,23 @@ extension AnalysisScale {
                 negative: [78, 176, 221]
             )
         ))
+
+
+    // MARK: Самоконтроль
+
+    /// Самоконтроль
+    static let self_control = AnalysisScale(
+        identifier: .self_control,
+        title: NSLocalizedString("Самоконтроль)", comment: "Название шкалы"),
+        index: .common(118),
+        score: .median(
+            .specific(male: 24.95, female: 26.19),
+            dispersion: .specific(male: 3.89, female: 3.89),
+            basedOn: .raw(
+                positive: [6, 20, 30, 56, 67, 105, 116, 134, 145, 162, 169, 181, 225, 236, 238, 285, 296, 319, 337, 382, 411, 418, 436, 446, 447, 460, 529, 555],
+                negative: [58, 80, 92, 96, 111, 167, 174, 220, 242, 249, 250, 291, 313, 360, 378, 439, 444, 483, 488, 489, 527, 548]
+            )
+        ))
 }
 
 

@@ -133,6 +133,7 @@ extension NewAnalyser {
                 .will,                      //    Воля
                 .pedantry,                  //    Педантизм
                 .prejudice,                 //    Мнительность (предубежденность)
+                .self_control,              //    Самоконтроль
             ])
     }
 }
