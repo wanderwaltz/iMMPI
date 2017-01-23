@@ -1636,6 +1636,23 @@ extension AnalysisScale {
             upperBracketMode: .saturate,
             basedOn: trunc(100.0 * .rawPercentage_i95 / .taer)
         ))
+
+
+    // MARK: Эрудиционный склад
+
+    /// Эрудиционный склад
+    static let i96 = AnalysisScale(
+        identifier: .i96,
+        title: NSLocalizedString("Эрудиционный склад", comment: "Название шкалы"),
+        index: .common(96),
+        score: .brackets(
+            .specific(
+                male: (21, 23, 28, 30),
+                female: (20, 22, 26, 28)
+            ),
+            upperBracketMode: .saturate,
+            basedOn: trunc(100.0 * .rawPercentage_i96 / .taer)
+        ))
 }
 
 

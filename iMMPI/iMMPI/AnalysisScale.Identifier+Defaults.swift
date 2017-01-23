@@ -302,4 +302,13 @@ extension AnalysisScale.Identifier {
 
     /// Творческий склад
     static let i95 = AnalysisScale.Identifier("I95")
+
+    /// Эрудиционный склад
+    static let i96 = AnalysisScale.Identifier("I96")
+
+    /// Рутинность
+    static let i97 = AnalysisScale.Identifier("I97")
+
+    /// Интеллектуальная активность
+    static let i98 = AnalysisScale.Identifier("I98")
 }
