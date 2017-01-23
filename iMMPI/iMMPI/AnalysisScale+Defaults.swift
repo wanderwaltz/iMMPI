@@ -1953,6 +1953,25 @@ extension AnalysisScale {
                 negative: [32, 61, 82, 86, 94, 186, 223, 224, 240, 249, 250, 267, 268, 304, 343, 356, 395, 419, 486, 558, 562]
             )
         ))
+
+
+    // MARK: Воля
+
+    /// Воля
+    static let will = AnalysisScale(
+        identifier: .will,
+        title: NSLocalizedString("Воля", comment: "Название шкалы"),
+        index: .common(115),
+        score: .brackets(
+            .specific(
+                male: (45, 55, 80, 90),
+                female: (40, 50, 75, 85)
+            ),
+            basedOn: .rawPercentage(
+                positive: [8, 196, 322],
+                negative: [32, 40, 41, 76, 104, 202, 259, 301, 335, 339, 356]
+            )
+        ))
 }
 
 

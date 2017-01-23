@@ -130,6 +130,7 @@ extension NewAnalyser {
             .group_personality,             // Е. ХАРАКТЕР
                 .norm,                      //    Норма
                 .dominance,                 //    Твердость (доминирование)
+                .will,                      //    Воля
             ])
     }
 }

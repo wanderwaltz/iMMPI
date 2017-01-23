@@ -373,4 +373,7 @@ extension AnalysisScale.Identifier {
 
     /// Твердость (доминирование)
     static let dominance = AnalysisScale.Identifier("dominance")
+
+    /// Воля
+    static let will = AnalysisScale.Identifier("will")
 }
