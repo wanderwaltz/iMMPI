@@ -1541,6 +1541,23 @@ extension AnalysisScale {
                 negative: [2, 3, 9, 46, 51, 68, 103, 107, 175, 178, 190, 208, 242]
             )
         ))
+
+
+    // MARK: Психоневроз
+
+    /// Психоневроз
+    static let pne = AnalysisScale(
+        identifier: .pne,
+        title: NSLocalizedString("Психоневроз", comment: "Название шкалы"),
+        index: .common(91),
+        score: .median(
+            .specific(male: 11.22, female: 15.06),
+            dispersion: .specific(male: 4.56, female: 4.88),
+            basedOn: .raw(
+                positive: [102, 105, 120, 129, 133, 147, 148, 161, 172, 296, 344, 348, 359, 374, 382, 389, 390, 396, 398, 408, 416, 468, 499],
+                negative: [63, 68, 119, 130, 160, 163, 214, 264, 274, 367]
+            )
+        ))
 }
 
 

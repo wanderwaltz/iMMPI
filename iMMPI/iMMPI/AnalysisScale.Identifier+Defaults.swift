@@ -280,4 +280,7 @@ extension AnalysisScale.Identifier {
 
     /// Невротизм
     static let ne = AnalysisScale.Identifier("Ne")
+
+    /// Психоневроз
+    static let pne = AnalysisScale.Identifier("Pne")
 }
