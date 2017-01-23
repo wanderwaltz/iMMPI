@@ -125,6 +125,7 @@ extension NewAnalyser {
                 .educability,               //    Способность к обучению
                 .working_capacity,          //    Работоспособность (отношение к работе)
                 .student_potential,         //    Школьный потенциал
+                .teacher_potential,         //    Преподавательский потенциал
             ])
     }
 }

@@ -354,4 +354,7 @@ extension AnalysisScale.Identifier {
 
     /// Школьный потенциал
     static let student_potential = AnalysisScale.Identifier("student_potential")
+
+    /// Преподавательский потенциал
+    static let teacher_potential = AnalysisScale.Identifier("teacher_potential")
 }
