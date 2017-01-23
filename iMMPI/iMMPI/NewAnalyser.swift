@@ -99,6 +99,7 @@ extension NewAnalyser {
                     .ma_pure,               //         Чистая гипомания
                     .ma_evident,            //         Явная гипомания
                     .ma_hidden,             //         Скрытая гипомания
+                .si,                        //     Интраверсия
             ])
     }
 }

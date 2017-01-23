@@ -268,4 +268,7 @@ extension AnalysisScale.Identifier {
 
     /// Скрытая гипомания
     static let ma_hidden = AnalysisScale.Identifier("Ma_hidden", nesting: 2)
+
+    /// Интраверсия
+    static let si = AnalysisScale.Identifier("Si")
 }
