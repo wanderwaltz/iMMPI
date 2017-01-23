@@ -56,6 +56,7 @@ extension NewAnalyser {
                     .d_mild,           //         Мягкая депрессия
                 .hy,                   //     Истерия
                     .hy_immaturity,    //         Эмоциональная незрелость
+                    .hy_pure,          //         Чистая истерия
             ])
     }
 }

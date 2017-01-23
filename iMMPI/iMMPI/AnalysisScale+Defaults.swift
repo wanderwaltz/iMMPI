@@ -715,6 +715,23 @@ extension AnalysisScale {
                 negative: [2, 3, 8, 9, 26, 36, 79, 103, 107, 112, 137, 153, 155, 160, 163, 178, 190, 242, 378, 387, 402, 407, 449]
             )
         ))
+
+
+    // MARK: Чистая истерия
+
+    /// Чистая истерия
+    static let hy_pure = AnalysisScale(
+        identifier: .hy_pure,
+        title: NSLocalizedString("Чистая истерия", comment: "Название шкалы"),
+        index: .common(41),
+        score: .median(
+            .specific(male: 8.34, female: 8.3),
+            dispersion: .specific(male: 2.6, female: 2.12),
+            basedOn: .raw(
+                positive: [44, 246, 253],
+                negative: [6, 12, 26, 71, 123, 129, 136, 147, 162, 172, 174, 213, 234, 265, 279, 292]
+            )
+        ))
 }
 
 
