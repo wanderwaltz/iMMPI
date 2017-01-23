@@ -138,17 +138,17 @@ extension AnalysisScale.Identifier {
     static let hy = AnalysisScale.Identifier("Hy")
 
     /// Эмоциональная незрелость
-    static let hy_immaturity = AnalysisScale.Identifier("Hy_immaturity")
+    static let hy_immaturity = AnalysisScale.Identifier("Hy_immaturity", nesting: 2)
 
     /// Чистая истерия
-    static let hy_pure = AnalysisScale.Identifier("Hy_pure")
+    static let hy_pure = AnalysisScale.Identifier("Hy_pure", nesting: 2)
 
     /// Явная истерия
-    static let hy_evident = AnalysisScale.Identifier("Hy_evident")
+    static let hy_evident = AnalysisScale.Identifier("Hy_evident", nesting: 2)
 
     /// Скрытая истерия
-    static let hy_hidden = AnalysisScale.Identifier("Hy_hidden")
+    static let hy_hidden = AnalysisScale.Identifier("Hy_hidden", nesting: 2)
 
     /// Эмоциональная чувствительность
-    static let hy_sensitivity = AnalysisScale.Identifier("Hy_sensitivity")
+    static let hy_sensitivity = AnalysisScale.Identifier("Hy_sensitivity", nesting: 2)
 }
