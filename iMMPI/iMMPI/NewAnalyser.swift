@@ -134,6 +134,7 @@ extension NewAnalyser {
                 .pedantry,                  //    Педантизм
                 .prejudice,                 //    Мнительность (предубежденность)
                 .self_control,              //    Самоконтроль
+                .shyness,                   //    Застенчивость
             ])
     }
 }

@@ -385,4 +385,7 @@ extension AnalysisScale.Identifier {
 
     /// Самоконтроль
     static let self_control = AnalysisScale.Identifier("self_control")
+
+    /// Застенчивость
+    static let shyness = AnalysisScale.Identifier("shyness")
 }

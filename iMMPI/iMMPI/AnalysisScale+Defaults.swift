@@ -2025,6 +2025,23 @@ extension AnalysisScale {
                 negative: [58, 80, 92, 96, 111, 167, 174, 220, 242, 249, 250, 291, 313, 360, 378, 439, 444, 483, 488, 489, 527, 548]
             )
         ))
+
+
+    // MARK: Застенчивость
+
+    /// Застенчивость
+    static let shyness = AnalysisScale(
+        identifier: .shyness,
+        title: NSLocalizedString("Застенчивость)", comment: "Название шкалы"),
+        index: .common(119),
+        score: .median(
+            .specific(male: 2.02, female: 2.04),
+            dispersion: .specific(male: 1.58, female: 1.66),
+            basedOn: .raw(
+                positive: [172, 180, 201, 267, 292],
+                negative: []
+            )
+        ))
 }
 
 
