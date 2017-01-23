@@ -811,6 +811,23 @@ extension AnalysisScale {
                 negative: [2, 8, 9, 18, 36, 46, 51, 57, 88, 95, 107, 122, 131, 152, 153, 154, 178, 207, 242, 270, 271, 272, 285]
             )
         ))
+
+
+    // MARK: Депрессивная реакция
+
+    /// **Депрессивная реакция**
+    static let d_reaction = AnalysisScale(
+        identifier: .d_reaction,
+        title: NSLocalizedString("Депрессивная реакция", comment: "Название шкалы"),
+        index: .common(37),
+        score: .median(
+            .specific(male: 26.22, female: 24.04),
+            dispersion: .specific(male: 3.44, female: 3.09),
+            basedOn: .raw(
+                positive: [51, 55, 95, 128, 130, 162, 232, 236, 255, 294, 376, 380, 399, 414, 509, 519, 521, 563, 565],
+                negative: [6, 52, 56, 58, 62, 156, 224, 226, 251, 264, 277, 296, 359, 364, 379, 383, 396, 419, 445, 458, 472, 492, 498]
+            )
+        ))
 }
 
 

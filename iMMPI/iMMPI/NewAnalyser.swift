@@ -52,6 +52,7 @@ extension NewAnalyser {
                     .d_block,          //         Психомоторная заторможенность
                     .d_gloom,          //         Мрачность
                     .d_evident,        //         Явная депрессия
+                    .d_reaction,       //         Депрессивная реакция
             ])
     }
 }
