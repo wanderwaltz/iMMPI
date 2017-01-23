@@ -286,4 +286,7 @@ extension AnalysisScale.Identifier {
 
     /// Оценка улучшения
     static let ie = AnalysisScale.Identifier("Ie")
+
+    /// Предсказание изменений
+    static let cp = AnalysisScale.Identifier("Cp")
 }

@@ -1575,8 +1575,24 @@ extension AnalysisScale {
                 negative: [3, 8, 9, 57, 107, 152, 198, 242, 287, 371, 379, 407, 449, 520, 547]
             )
         ))
-}
 
+
+    // MARK: Предсказание изменений
+
+    /// Предсказание изменений
+    static let cp = AnalysisScale(
+        identifier: .cp,
+        title: NSLocalizedString("Предсказание изменений", comment: "Название шкалы"),
+        index: .common(93),
+        score: .median(
+            .specific(male: 4.4, female: 7.52),
+            dispersion: .specific(male: 2.57, female: 3.01),
+            basedOn: .raw(
+                positive: [10, 32, 43, 47, 72, 76, 108, 125, 238, 266, 273, 303, 337, 388, 526],
+                negative: [2, 12, 51, 55, 155, 175, 243, 521, 533]
+            )
+        ))
+}
 
 
 
