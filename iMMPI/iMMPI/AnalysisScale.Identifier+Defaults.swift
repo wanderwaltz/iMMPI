@@ -100,4 +100,7 @@ extension AnalysisScale.Identifier {
 
     /// Сосредоточенность на здоровье
     static let hs_health = AnalysisScale.Identifier("Hs_health", nesting: 2)
+
+    /// Чистая ипохондрия
+    static let hs_pure = AnalysisScale.Identifier("Hs_pure", nesting: 2)
 }

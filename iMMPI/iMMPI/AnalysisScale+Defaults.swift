@@ -639,6 +639,23 @@ extension AnalysisScale {
                 negative: [2, 3, 9, 51, 55, 68, 103, 153, 163, 175, 190, 192, 230, 330]
             )
         ))
+
+
+    // MARK: Чистая ипохондрия
+
+    /// **Чистая ипохондрия**
+    static let hs_pure = AnalysisScale(
+        identifier: .hs_pure,
+        title: NSLocalizedString("Чистая ипохондрия", comment: "Название шкалы"),
+        index: .common(28),
+        score: .median(
+            .specific(male: 0.89, female: 1.64),
+            dispersion: .specific(male: 1.1, female: 1.31),
+            basedOn: .raw(
+                positive: [29, 62, 72, 108, 125, 161],
+                negative: [63, 68, 130]
+            )
+        ))
 }
 
 
