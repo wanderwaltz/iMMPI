@@ -1823,6 +1823,23 @@ extension AnalysisScale {
         identifier: .group_work,
         title: NSLocalizedString("Д. ТРУДОВЫЕ КАЧЕСТВА", comment: "Название группы шкал")
     )
+
+
+    // MARK: Способность к обучению
+
+    /// Способность к обучению
+    static let educability = AnalysisScale(
+        identifier: .educability,
+        title: NSLocalizedString("Способность к обучению", comment: "Название шкалы"),
+        index: .common(108),
+        score: .median(
+            .specific(male: 13.1, female: 11.9),
+            dispersion: .specific(male: 2.91, female: 2.78),
+            basedOn: .raw(
+                positive: [3, 295, 415, 546],
+                negative: [28, 33, 104, 118, 142, 146, 224, 244, 251, 260, 303, 381, 386, 419]
+            )
+        ))
 }
 
 

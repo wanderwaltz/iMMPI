@@ -345,4 +345,7 @@ extension AnalysisScale.Identifier {
 
     /// Д. ТРУДОВЫЕ КАЧЕСТВА
     static let group_work = AnalysisScale.Identifier("Д. ТРУДОВЫЕ КАЧЕСТВА", nesting: 0)
+
+    /// Способность к обучению
+    static let educability = AnalysisScale.Identifier("educability")
 }
