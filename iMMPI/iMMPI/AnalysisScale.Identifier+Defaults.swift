@@ -79,4 +79,7 @@ extension AnalysisScale.Identifier {
 
     /// В. ПСИХИКА
     static let group_psyche = AnalysisScale.Identifier("В. ПСИХИКА", nesting: 0)
+
+    /// Ложь (неискренность)
+    static let l = AnalysisScale.Identifier("L")
 }

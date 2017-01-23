@@ -36,6 +36,7 @@ extension NewAnalyser {
                 .epilepsy,           //     Эпилепсия
                 .nucleus_injury,     //     Органическое поражение хвостатого ядра
             .group_psyche,           // В. ПСИХИКА
+                .l,                  //     Ложь (неискренность)
             ])
     }
 }
