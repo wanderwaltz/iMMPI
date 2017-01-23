@@ -1524,6 +1524,23 @@ extension AnalysisScale {
                 negative: [1, 6, 9, 12, 39, 51, 81, 112, 126, 131, 140, 145, 154, 156, 191, 208, 219, 221, 271, 272, 281, 282, 327, 406, 415, 429, 440, 445, 447, 449, 450, 451, 462, 468, 472, 502, 516, 529, 550, 556]
             )
         ))
+
+
+    // MARK: Невротизм
+
+    /// Невротизм
+    static let ne = AnalysisScale(
+        identifier: .ne,
+        title: NSLocalizedString("Невротизм", comment: "Название шкалы"),
+        index: .common(90),
+        score: .median(
+            .specific(male: 4.79, female: 7.96),
+            dispersion: .specific(male: 3.14, female: 3.78),
+            basedOn: .raw(
+                positive: [5, 29, 41, 43, 44, 47, 72, 76, 108, 114, 159, 186, 189, 191, 236, 238, 263],
+                negative: [2, 3, 9, 46, 51, 68, 103, 107, 175, 178, 190, 208, 242]
+            )
+        ))
 }
 
 

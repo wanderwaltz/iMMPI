@@ -277,4 +277,7 @@ extension AnalysisScale.Identifier {
 
     /// 2-й фактор R
     static let fr2 = AnalysisScale.Identifier("FR2")
+
+    /// Невротизм
+    static let ne = AnalysisScale.Identifier("Ne")
 }
