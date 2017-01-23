@@ -834,6 +834,23 @@ extension AnalysisScale {
                 negative: [82, 96, 134, 173, 183, 235, 237, 287]
             )
         ))
+
+
+    // MARK: Явные психопатические отклонения
+
+    /// Явные психопатические отклонения
+    static let pd_evident = AnalysisScale(
+        identifier: .pd_evident,
+        title: NSLocalizedString("Явные психопатические отклонения", comment: "Название шкалы"),
+        index: .common(48),
+        score: .median(
+            .specific(male: 7.02, female: 8.55),
+            dispersion: .specific(male: 3.6, female: 3.29),
+            basedOn: .raw(
+                positive: [16, 24, 32, 33, 35, 38, 42, 61, 67, 84, 94, 106, 110, 118, 215, 216, 224, 244, 245, 284],
+                negative: [8, 20, 37, 91, 107, 137, 287, 294]
+            )
+        ))
 }
 
 
