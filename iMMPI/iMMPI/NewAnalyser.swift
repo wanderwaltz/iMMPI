@@ -135,6 +135,7 @@ extension NewAnalyser {
                 .prejudice,                 //    Мнительность (предубежденность)
                 .self_control,              //    Самоконтроль
                 .shyness,                   //    Застенчивость
+                .confidence,                //    Уверенность (сила Эго)
             ])
     }
 }

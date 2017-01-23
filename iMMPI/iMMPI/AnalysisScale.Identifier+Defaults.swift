@@ -388,4 +388,7 @@ extension AnalysisScale.Identifier {
 
     /// Застенчивость
     static let shyness = AnalysisScale.Identifier("shyness")
+
+    /// Уверенность (сила Эго)
+    static let confidence = AnalysisScale.Identifier("confidence")
 }

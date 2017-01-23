@@ -2042,6 +2042,23 @@ extension AnalysisScale {
                 negative: []
             )
         ))
+
+
+    // MARK: Уверенность (сила Эго)
+
+    /// Уверенность (сила Эго)
+    static let confidence = AnalysisScale(
+        identifier: .confidence,
+        title: NSLocalizedString("Уверенность (сила Эго))", comment: "Название шкалы"),
+        index: .common(120),
+        score: .median(
+            .specific(male: 47.7, female: 41.8),
+            dispersion: .specific(male: 5.6, female: 6.2),
+            basedOn: .raw(
+                positive: [2, 36, 51, 95, 109, 153, 174, 181, 187, 192, 208, 221, 231, 234, 253, 270, 355, 367, 380, 410, 421, 430, 458, 513, 515],
+                negative: [14, 22, 32, 33, 34, 43, 48, 58, 62, 82, 94, 100, 132, 140, 189, 209, 217, 236, 241, 244, 251, 261, 341, 344, 349, 359, 378, 384, 389, 420, 483, 488, 489, 494, 510, 525, 541, 544, 548, 554, 559, 561, 555]
+            )
+        ))
 }
 
 
