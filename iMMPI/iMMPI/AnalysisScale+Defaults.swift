@@ -673,6 +673,23 @@ extension AnalysisScale {
                 negative: [12, 187, 192, 228, 229, 242, 287, 353, 371, 401, 440, 482, 520, 528, 533]
             )
         ))
+
+
+    // MARK: Невротическое ослабление сверхконтроля
+
+    /// **Невротическое ослабление сверхконтроля**
+    static let hs_neurotic_weak = AnalysisScale(
+        identifier: .hs_neurotic_weak,
+        title: NSLocalizedString("Невротическое ослабление сверхконтроля", comment: "Название шкалы"),
+        index: .common(30),
+        score: .median(
+            .specific(male: 14.1, female: 17.03),
+            dispersion: .specific(male: 4.93, female: 4.53),
+            basedOn: .raw(
+                positive: [39, 41, 45, 71, 80, 93, 109, 127, 145, 162, 238, 298, 316, 319, 336, 381, 383, 386, 397, 433, 439, 505, 525, 551, 566],
+                negative: [8, 101, 167, 173, 369, 399, 478, 527]
+            )
+        ))
 }
 
 
