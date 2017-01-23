@@ -82,4 +82,7 @@ extension AnalysisScale.Identifier {
 
     /// Ложь (неискренность)
     static let l = AnalysisScale.Identifier("L")
+
+    /// Достоверность (невалидность)
+    static let f = AnalysisScale.Identifier("F")
 }
