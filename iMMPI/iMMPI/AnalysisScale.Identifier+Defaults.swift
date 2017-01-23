@@ -154,4 +154,7 @@ extension AnalysisScale.Identifier {
 
     /// Психопатия (Импульсивность)
     static let pd = AnalysisScale.Identifier("Pd")
+
+    /// Импульсивность
+    static let pd_impulsiveness = AnalysisScale.Identifier("Pd_impulsiveness")
 }

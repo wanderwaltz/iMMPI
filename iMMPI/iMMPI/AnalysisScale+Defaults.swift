@@ -800,6 +800,23 @@ extension AnalysisScale {
                 negative: [26, 8, 20, 37, 82, 91, 96, 107, 134, 137, 141, 155, 170, 171, 173, 180, 183, 201, 231, 235, 237, 248, 267, 287, 289, 294, 296]
             )
         ))
+
+
+    // MARK: Импульсивность
+
+    /// Импульсивность
+    static let pd_impulsiveness = AnalysisScale(
+        identifier: .pd_impulsiveness,
+        title: NSLocalizedString("Импульсивность", comment: "Название шкалы"),
+        index: .common(46),
+        score: .median(
+            .specific(male: 7.12, female: 8.94),
+            dispersion: .specific(male: 3.45, female: 3.16),
+            basedOn: .raw(
+                positive: [15, 30, 32, 33, 39, 45, 62, 97, 99, 139, 145, 157, 244, 349, 368, 381, 481, 529, 545],
+                negative: [96, 111]
+            )
+        ))
 }
 
 
