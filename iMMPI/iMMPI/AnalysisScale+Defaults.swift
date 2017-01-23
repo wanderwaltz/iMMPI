@@ -1687,6 +1687,20 @@ extension AnalysisScale {
             upperBracketMode: .saturate,
             basedOn: trunc(100.0 * .rawPercentage_i98 / .taer)
         ))
+
+
+    // MARK: Интеллектуальный показатель
+
+    /// Интеллектуальный показатель
+    static let i99 = AnalysisScale(
+        identifier: .i99,
+        title: NSLocalizedString("Интеллектуальный показатель", comment: "Название шкалы"),
+        index: .common(99),
+        score: .brackets(
+            (41, 44, 51, 53),
+            upperBracketMode: .saturate,
+            basedOn: trunc(100.0 * (.rawPercentage_i95 + .rawPercentage_i96) / .taer)
+        ))
 }
 
 

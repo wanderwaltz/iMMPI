@@ -311,4 +311,7 @@ extension AnalysisScale.Identifier {
 
     /// Интеллектуальная активность
     static let i98 = AnalysisScale.Identifier("I98")
+
+    /// Интеллектуальный показатель
+    static let i99 = AnalysisScale.Identifier("I99")
 }
