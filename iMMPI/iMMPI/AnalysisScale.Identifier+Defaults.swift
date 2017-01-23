@@ -91,4 +91,7 @@ extension AnalysisScale.Identifier {
 
     /// Ипохондрия (Сверхконтроль)
     static let hs = AnalysisScale.Identifier("Hs")
+
+    /// Сверхконтроль Я (зажатость)
+    static let hs_self = AnalysisScale.Identifier("Hs_self", nesting: 2)
 }

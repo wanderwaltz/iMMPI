@@ -588,6 +588,23 @@ extension AnalysisScale {
                 negative: [2, 3, 7, 9, 18, 51, 55, 63, 68, 103, 130, 153, 155, 163, 175, 188, 190, 192, 230, 243, 274, 281]
             )
         ))
+
+
+    // MARK: Сверхконтроль Я (зажатость)
+
+    /// **Сверхконтроль Я (зажатость)**
+    static let hs_self = AnalysisScale(
+        identifier: .hs_self,
+        title: NSLocalizedString("Сверхконтроль Я (зажатость)", comment: "Название шкалы"),
+        index: .common(25),
+        score: .median(
+            .specific(male: 12.02, female: 11.89),
+            dispersion: .specific(male: 2.02, female: 2.99),
+            basedOn: .raw(
+                positive: [115, 239, 503],
+                negative: [59, 99, 118, 126, 149, 165, 181, 204, 208, 231, 254, 383, 400, 406, 441, 450, 451, 481, 491, 529]
+            )
+        ))
 }
 
 
