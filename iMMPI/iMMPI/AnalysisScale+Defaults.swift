@@ -760,6 +760,23 @@ extension AnalysisScale {
                 negative: [2, 8, 46, 56, 88, 107, 122, 131, 152, 160, 191, 207, 208, 242, 272, 285, 296]
             )
         ))
+
+
+    // MARK: Психомоторная заторможенность
+
+    /// **Психомоторная заторможенность**
+    static let d_block = AnalysisScale(
+        identifier: .d_block,
+        title: NSLocalizedString("Психомоторная заторможенность", comment: "Название шкалы"),
+        index: .common(34),
+        score: .median(
+            .specific(male: 5.7, female: 6.52),
+            dispersion: .specific(male: 1.84, female: 2.2),
+            basedOn: .raw(
+                positive: [32, 41, 86, 104, 159, 182, 259, 290],
+                negative: [8, 9, 46, 88, 122, 178, 207]
+            )
+        ))
 }
 
 

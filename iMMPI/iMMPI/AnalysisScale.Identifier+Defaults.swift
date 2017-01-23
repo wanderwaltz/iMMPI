@@ -118,4 +118,7 @@ extension AnalysisScale.Identifier {
 
     /// Субъективная депрессия
     static let d_subjective = AnalysisScale.Identifier("D_subjective", nesting: 2)
+
+    /// Психомоторная заторможенность
+    static let d_block = AnalysisScale.Identifier("D_block", nesting: 2)
 }
