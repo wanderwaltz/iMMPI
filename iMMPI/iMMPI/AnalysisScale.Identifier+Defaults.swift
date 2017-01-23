@@ -235,4 +235,7 @@ extension AnalysisScale.Identifier {
 
     /// Осознанная тревога
     static let pf_realized_anxiety = AnalysisScale.Identifier("Pf_realized_anxiety", nesting: 2)
+
+    /// Шизофрения (индивидуалистичность)
+    static let sc = AnalysisScale.Identifier("Sc")
 }
