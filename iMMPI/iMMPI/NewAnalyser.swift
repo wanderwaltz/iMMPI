@@ -80,6 +80,7 @@ extension NewAnalyser {
                     .pa_stalking,           //         Идеи преследования
                     .pa_poisoning,          //         Идеи отравления
                     .pa_evident,            //         Явная паранойя
+                    .pa_hidden,             //         Скрытая паранойя
             ])
     }
 }

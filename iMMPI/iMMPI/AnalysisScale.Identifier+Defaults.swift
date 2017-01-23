@@ -211,4 +211,7 @@ extension AnalysisScale.Identifier {
 
     /// Явная паранойя
     static let pa_evident = AnalysisScale.Identifier("Pa_evident", nesting: 2)
+
+    /// Скрытая паранойя
+    static let pa_hidden = AnalysisScale.Identifier("Pa_hidden", nesting: 2)
 }

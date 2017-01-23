@@ -1150,6 +1150,23 @@ extension AnalysisScale {
                 negative: [281, 294, 347]
             )
         ))
+
+
+    // MARK: Скрытая паранойя
+
+    /// Скрытая паранойя
+    static let pa_hidden = AnalysisScale(
+        identifier: .pa_hidden,
+        title: NSLocalizedString("Скрытая паранойя", comment: "Название шкалы"),
+        index: .common(68),
+        score: .median(
+            .specific(male: 7.36, female: 7.62),
+            dispersion: .specific(male: 2.24, female: 2.01),
+            basedOn: .raw(
+                positive: [15, 127, 157, 299, 365],
+                negative: [93, 107, 109, 111, 117, 124, 268, 313, 316, 319, 327, 348]
+            )
+        ))
 }
 
 
