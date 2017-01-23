@@ -67,8 +67,6 @@ extension AnalysisScore {
                     return -1.0
                 }
 
-                precondition(0.0...100.0 ~= raw)
-
                 let selectedBrackets = brackets.value(for: gender)
 
                 let a = selectedBrackets.A
@@ -92,7 +90,10 @@ extension AnalysisScore {
                 }
                 else {
                     switch upperBracketMode {
-                    case .linear: score = round(10.0 * (4.5 + 0.5 * (raw - d) / (100.0 - d)))
+                    case .linear:
+                        precondition(d < 100.0)
+                        score = round(10.0 * (4.5 + 0.5 * (raw - d) / (100.0 - d)))
+
                     case .saturate: score = 50.0
                     }
                 }
@@ -117,5 +118,4 @@ fileprivate func checkPreconditions(for brackets: (Double, Double, Double, Doubl
     precondition(brackets.0 < brackets.1)
     precondition(brackets.1 < brackets.2)
     precondition(brackets.2 < brackets.3)
-    precondition(brackets.3 < 100.0)
 }

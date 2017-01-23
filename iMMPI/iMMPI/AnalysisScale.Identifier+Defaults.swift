@@ -323,4 +323,7 @@ extension AnalysisScale.Identifier {
 
     /// Религиозный потенциал
     static let i102 = AnalysisScale.Identifier("I102")
+
+    /// Интеллектуальная продуктивность
+    static let i103 = AnalysisScale.Identifier("I103")
 }

@@ -1734,6 +1734,20 @@ extension AnalysisScale {
         index: .common(102),
         score: .potential(.religious)
     )
+
+
+    // MARK: Интеллектуальная продуктивность
+
+    /// Интеллектуальная продуктивность
+    static let i103 = AnalysisScale(
+        identifier: .i103,
+        title: NSLocalizedString("Интеллектуальная продуктивность", comment: "Название шкалы"),
+        index: .common(103),
+        score: .brackets(
+            (117, 127, 154, 163),
+            upperBracketMode: .saturate,
+            basedOn: trunc(10.0 * .raw_i99 * .rawPercentage_i98 / .taer)
+        ))
 }
 
 
