@@ -1653,6 +1653,23 @@ extension AnalysisScale {
             upperBracketMode: .saturate,
             basedOn: trunc(100.0 * .rawPercentage_i96 / .taer)
         ))
+
+
+    // MARK: Рутинность
+
+    /// Рутинность
+    static let i97 = AnalysisScale(
+        identifier: .i97,
+        title: NSLocalizedString("Рутинность", comment: "Название шкалы"),
+        index: .common(97),
+        score: .brackets(
+            .specific(
+                male: (18, 20, 25, 27),
+                female: (20, 22, 26, 28)
+            ),
+            upperBracketMode: .saturate,
+            basedOn: trunc(100.0 * .rawPercentage_i97 / .taer)
+        ))
 }
 
 
