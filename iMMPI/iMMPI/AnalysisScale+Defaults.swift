@@ -794,6 +794,23 @@ extension AnalysisScale {
                 negative: [88, 107]
             )
         ))
+
+
+    // MARK: Явная депрессия
+
+    /// **Явная депрессия**
+    static let d_evident = AnalysisScale(
+        identifier: .d_evident,
+        title: NSLocalizedString("Явная депрессия", comment: "Название шкалы"),
+        index: .common(36),
+        score: .median(
+            .specific(male: 9.85, female: 14.48),
+            dispersion: .specific(male: 3.66, female: 4.36),
+            basedOn: .raw(
+                positive: [23, 32, 41, 43, 52, 67, 86, 104, 138, 142, 158, 159, 182, 189, 236, 259, 290],
+                negative: [2, 8, 9, 18, 36, 46, 51, 57, 88, 95, 107, 122, 131, 152, 153, 154, 178, 207, 242, 270, 271, 272, 285]
+            )
+        ))
 }
 
 

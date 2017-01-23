@@ -124,4 +124,7 @@ extension AnalysisScale.Identifier {
 
     /// Мрачность
     static let d_gloom = AnalysisScale.Identifier("D_gloom", nesting: 2)
+
+    /// Явная депрессия
+    static let d_evident = AnalysisScale.Identifier("D_evident", nesting: 2)
 }

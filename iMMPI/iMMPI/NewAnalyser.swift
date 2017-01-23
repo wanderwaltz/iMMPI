@@ -51,6 +51,7 @@ extension NewAnalyser {
                     .d_subjective,     //         Субъективная депрессия
                     .d_block,          //         Психомоторная заторможенность
                     .d_gloom,          //         Мрачность
+                    .d_evident,        //         Явная депрессия
             ])
     }
 }
