@@ -253,4 +253,7 @@ extension AnalysisScale.Identifier {
 
     /// Причудливость сенсорного восприятия
     static let sc_sensoric = AnalysisScale.Identifier("Sc_sensoric", nesting: 2)
+
+    /// Эмоциональное отчуждение
+    static let sc_emotional = AnalysisScale.Identifier("Sc_emotional", nesting: 2)
 }

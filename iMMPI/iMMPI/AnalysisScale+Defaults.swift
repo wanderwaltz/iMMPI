@@ -1388,6 +1388,23 @@ extension AnalysisScale {
                 negative: [103, 119, 187, 192, 281, 330]
             )
         ))
+
+
+    // MARK: Эмоциональное отчуждение
+
+    /// Эмоциональное отчуждение
+    static let sc_emotional = AnalysisScale(
+        identifier: .sc_emotional,
+        title: NSLocalizedString("Эмоциональное отчуждение", comment: "Название шкалы"),
+        index: .common(82),
+        score: .median(
+            .specific(male: 2.36, female: 2.71),
+            dispersion: .specific(male: 1.09, female: 1.38),
+            basedOn: .raw(
+                positive: [76, 104, 202, 301, 339, 360, 363],
+                negative: [81, 96, 322, 355]
+            )
+        ))
 }
 
 
