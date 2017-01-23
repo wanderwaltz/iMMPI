@@ -241,4 +241,7 @@ extension AnalysisScale.Identifier {
 
     /// Оригинальность
     static let sc_originality = AnalysisScale.Identifier("Sc_originality", nesting: 2)
+
+    /// Прогноз шизофрении
+    static let sc_prognosis = AnalysisScale.Identifier("Sc_prognosis", nesting: 2)
 }

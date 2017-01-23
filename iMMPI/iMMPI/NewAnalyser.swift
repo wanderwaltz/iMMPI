@@ -90,6 +90,7 @@ extension NewAnalyser {
                     .pf_realized_anxiety,   //         Осознанная тревога
                 .sc,                        //     Шизофрения (индивидуалистичность)
                     .sc_originality,        //         Оригинальность
+                    .sc_prognosis,          //         Прогноз шизофрении
             ])
     }
 }
