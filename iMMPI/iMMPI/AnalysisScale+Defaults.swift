@@ -1748,6 +1748,20 @@ extension AnalysisScale {
             upperBracketMode: .saturate,
             basedOn: trunc(10.0 * .raw_i99 * .rawPercentage_i98 / .taer)
         ))
+
+
+    // MARK: Творческая продуктивность
+
+    /// Творческая продуктивность
+    static let i104 = AnalysisScale(
+        identifier: .i104,
+        title: NSLocalizedString("Творческая продуктивность", comment: "Название шкалы"),
+        index: .common(104),
+        score: .brackets(
+            (52, 58, 77, 84),
+            upperBracketMode: .saturate,
+            basedOn: trunc(10.0 * trunc(100.0 * .rawPercentage_i95 / .taer) * .rawPercentage_i98  / .taer)
+        ))
 }
 
 
