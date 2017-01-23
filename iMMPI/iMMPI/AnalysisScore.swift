@@ -34,6 +34,28 @@ extension AnalysisScore {
 }
 
 
+func + (left: AnalysisScore, right: AnalysisScore) -> AnalysisScore {
+    return AnalysisScore(
+        formatter: right.suggestedFormatter,
+        filter: right.suggestedFilter,
+        value: .specific({ gender in { answers in
+            left.value(for: gender, answers: answers) + right.value(for: gender, answers: answers)
+            }})
+    )
+}
+
+
+func * (scalar: Double, score: AnalysisScore) -> AnalysisScore {
+    return AnalysisScore(
+        formatter: score.suggestedFormatter,
+        filter: score.suggestedFilter,
+        value: .specific({ gender in { answers in
+            scalar * score.value(for: gender, answers: answers)
+            }})
+    )
+}
+
+
 extension AnalysisScore {
     static let ignoredStatements = Set<StatementIdentifier>(
         [14, 33, 48, 63, 66, 69, 121, 123, 133, 151,
