@@ -175,4 +175,7 @@ extension AnalysisScale.Identifier {
 
     /// Осознанная выраженная враждебность
     static let pd_intended_hostility = AnalysisScale.Identifier("Pd_intended_hostility", nesting: 2)
+
+    /// Контроль над враждебностью
+    static let pd_hostility_control = AnalysisScale.Identifier("Pd_hostility_control", nesting: 2)
 }

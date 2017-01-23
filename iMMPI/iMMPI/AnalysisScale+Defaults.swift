@@ -919,6 +919,23 @@ extension AnalysisScale {
                 negative: [82, 96, 347, 399, 468]
             )
         ))
+
+
+    // MARK: Контроль над враждебностью
+
+    /// Контроль над враждебностью
+    static let pd_hostility_control = AnalysisScale(
+        identifier: .pd_hostility_control,
+        title: NSLocalizedString("Контроль над враждебностью", comment: "Название шкалы"),
+        index: .common(53),
+        score: .median(
+            .specific(male: 7.95, female: 9.67),
+            dispersion: .specific(male: 2.86, female: 2.67),
+            basedOn: .raw(
+                positive: [24, 35, 43, 49, 106, 145, 149, 209, 250, 292, 293, 301, 304, 315, 338, 348, 354, 366, 378, 457, 494, 511, 543, 561],
+                negative: [8, 57, 164, 175, 251, 283, 353, 403, 460, 496]
+            )
+        ))
 }
 
 
