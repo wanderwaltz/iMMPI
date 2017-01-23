@@ -220,4 +220,7 @@ extension AnalysisScale.Identifier {
 
     /// Комплекс осуждения (комплекс вины)
     static let pa_guilt = AnalysisScale.Identifier("Pa_guilt", nesting: 2)
+
+    /// Психастения (Тревожность)
+    static let pf = AnalysisScale.Identifier("Pf")
 }
