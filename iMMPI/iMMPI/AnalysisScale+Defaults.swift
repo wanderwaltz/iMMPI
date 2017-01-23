@@ -1167,6 +1167,23 @@ extension AnalysisScale {
                 negative: [93, 107, 109, 111, 117, 124, 268, 313, 316, 319, 327, 348]
             )
         ))
+
+
+    // MARK: Фактор паранойи
+
+    /// Фактор паранойи
+    static let pa_factor = AnalysisScale(
+        identifier: .pa_factor,
+        title: NSLocalizedString("Фактор паранойи", comment: "Название шкалы"),
+        index: .common(69),
+        score: .median(
+            .specific(male: 2.14, female: 2.71),
+            dispersion: .specific(male: 1.89, female: 1.71),
+            basedOn: .raw(
+                positive: [16, 24, 35, 110, 121, 123, 157, 202, 245, 275, 284, 291, 293, 364],
+                negative: []
+            )
+        ))
 }
 
 

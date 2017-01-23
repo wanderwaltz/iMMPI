@@ -81,6 +81,7 @@ extension NewAnalyser {
                     .pa_poisoning,          //         Идеи отравления
                     .pa_evident,            //         Явная паранойя
                     .pa_hidden,             //         Скрытая паранойя
+                    .pa_factor,             //         Фактор паранойи
             ])
     }
 }
