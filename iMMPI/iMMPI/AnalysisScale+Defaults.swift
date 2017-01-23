@@ -996,6 +996,25 @@ extension AnalysisScale {
                 negative: [1, 99, 118, 144, 145, 219, 223, 254, 563]
             )
         ))
+
+
+    // MARK: Женственность интересов
+
+    /// Женственность интересов
+    static let mf_feminine_values = AnalysisScale(
+        identifier: .mf_feminine_values,
+        title: NSLocalizedString("Женственность интересов", comment: "Название шкалы"),
+        index: .common(57),
+        score: .brackets(
+            .specific(
+                male: (20, 26, 46, 55),
+                female: (41, 47, 66, 74)
+            ),
+            basedOn: .rawPercentage(
+                positive: [4, 25, 70, 77, 78, 87, 92, 126, 132, 140, 149, 203, 204, 261, 295, 69, 74, 187],
+                negative: [1, 19, 28, 79, 81, 112, 115, 116, 133, 144, 176, 198, 214, 219, 221, 223, 249, 260, 264, 280, 283, 300]
+            )
+        ))
 }
 
 

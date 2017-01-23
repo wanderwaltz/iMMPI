@@ -72,6 +72,7 @@ extension NewAnalyser {
                     .pd_aggro_suppression,  //         Подавление агрессии
                 .mf,                        //     Половое развитие
                     .mf_femininity,         //         Женственность
+                    .mf_feminine_values,    //         Женственность интересов
             ])
     }
 }
