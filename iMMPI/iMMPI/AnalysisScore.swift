@@ -45,12 +45,39 @@ func + (left: AnalysisScore, right: AnalysisScore) -> AnalysisScore {
 }
 
 
+func / (left: AnalysisScore, right: AnalysisScore) -> AnalysisScore {
+    return AnalysisScore(
+        formatter: right.suggestedFormatter,
+        filter: right.suggestedFilter,
+        value: .specific({ gender in { answers in
+            guard case let rv = right.value(for: gender, answers: answers), rv != 0.0 else {
+                return .nan
+            }
+
+            return left.value(for: gender, answers: answers) / rv
+            }})
+    )
+}
+
+
+
 func * (scalar: Double, score: AnalysisScore) -> AnalysisScore {
     return AnalysisScore(
         formatter: score.suggestedFormatter,
         filter: score.suggestedFilter,
         value: .specific({ gender in { answers in
             scalar * score.value(for: gender, answers: answers)
+            }})
+    )
+}
+
+
+func trunc(_ score: AnalysisScore) -> AnalysisScore {
+    return AnalysisScore(
+        formatter: score.suggestedFormatter,
+        filter: score.suggestedFilter,
+        value: .specific({ gender in { answers in
+            trunc(score.value(for: gender, answers: answers))
             }})
     )
 }
