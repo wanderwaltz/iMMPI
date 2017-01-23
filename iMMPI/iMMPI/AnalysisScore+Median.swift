@@ -15,4 +15,11 @@ extension AnalysisScore {
                 return round(50.0 + 10.0 * (raw - m) / d)
                 }}))
     }
+
+
+    static func median(_ median: Double,
+                       dispersion: Double,
+                       basedOn rawScore: AnalysisScore) -> AnalysisScore {
+        return .median(.common(median), dispersion: .common(dispersion), basedOn: rawScore)
+    }
 }
