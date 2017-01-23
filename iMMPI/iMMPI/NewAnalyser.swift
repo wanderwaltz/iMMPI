@@ -82,6 +82,7 @@ extension NewAnalyser {
                     .pa_evident,            //         Явная паранойя
                     .pa_hidden,             //         Скрытая паранойя
                     .pa_factor,             //         Фактор паранойи
+                    .pa_guilt,              //         Комплекс осуждения (комплекс вины)
             ])
     }
 }

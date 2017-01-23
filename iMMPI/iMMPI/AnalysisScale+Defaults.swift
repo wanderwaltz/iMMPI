@@ -1184,6 +1184,23 @@ extension AnalysisScale {
                 negative: []
             )
         ))
+
+
+    // MARK: Комплекс осуждения (комплекс вины)
+
+    /// Комплекс осуждения (комплекс вины)
+    static let pa_guilt = AnalysisScale(
+        identifier: .pa_guilt,
+        title: NSLocalizedString("Комплекс осуждения (комплекс вины)", comment: "Название шкалы"),
+        index: .common(70),
+        score: .median(
+            .specific(male: 27, female: 28.66),
+            dispersion: .specific(male: 3.42, female: 3.81),
+            basedOn: .raw(
+                positive: [4, 18, 77, 78, 91, 97, 126, 132, 148, 149, 176, 180, 203, 204, 237, 239, 277, 295, 299, 306],
+                negative: [19, 20, 26, 28, 41, 79, 84, 94, 99, 118, 133, 144, 157, 216, 224, 227, 232, 260, 264, 279, 283, 297, 300, 303, 310, 316, 338, 343, 356, 358]
+            )
+        ))
 }
 
 

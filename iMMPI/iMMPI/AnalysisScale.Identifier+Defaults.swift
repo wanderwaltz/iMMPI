@@ -217,4 +217,7 @@ extension AnalysisScale.Identifier {
 
     /// Фактор паранойи
     static let pa_factor = AnalysisScale.Identifier("Pa_factor", nesting: 2)
+
+    /// Комплекс осуждения (комплекс вины)
+    static let pa_guilt = AnalysisScale.Identifier("Pa_guilt", nesting: 2)
 }
