@@ -885,6 +885,23 @@ extension AnalysisScale {
                 negative: [48, 180, 515]
             )
         ))
+
+
+    // MARK: Психомоторная акселерация
+
+    /// Психомоторная акселерация
+    static let pd_accel = AnalysisScale(
+        identifier: .pd_accel,
+        title: NSLocalizedString("Психомоторная акселерация", comment: "Название шкалы"),
+        index: .common(51),
+        score: .median(
+            .specific(male: 3.69, female: 3.92),
+            dispersion: .specific(male: 1.49, female: 1.62),
+            basedOn: .raw(
+                positive: [13, 97, 100, 111, 181, 238, 266],
+                negative: [119, 134, 228, 268]
+            )
+        ))
 }
 
 
