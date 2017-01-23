@@ -1972,6 +1972,25 @@ extension AnalysisScale {
                 negative: [32, 40, 41, 76, 104, 202, 259, 301, 335, 339, 356]
             )
         ))
+
+
+    // MARK: Педантизм
+
+    /// Педантизм
+    static let pedantry = AnalysisScale(
+        identifier: .pedantry,
+        title: NSLocalizedString("Педантизм", comment: "Название шкалы"),
+        index: .common(116),
+        score: .brackets(
+            .specific(
+                male: (38, 42, 60, 63),
+                female: (38, 42, 60, 63)
+            ),
+            basedOn: .rawPercentage(
+                positive: [4, 37, 83, 113, 133, 141, 149, 169, 171, 173, 198, 206, 226, 232, 249, 262, 264, 302, 361, 373, 417, 428, 432, 490, 493, 556, 557],
+                negative: [6, 39, 40, 49, 56, 60, 61, 86, 94, 99, 102, 135, 142, 145, 204, 222, 228, 240, 255, 276, 277, 419, 437, 456, 487, 511, 560]
+            )
+        ))
 }
 
 

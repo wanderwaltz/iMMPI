@@ -131,6 +131,7 @@ extension NewAnalyser {
                 .norm,                      //    Норма
                 .dominance,                 //    Твердость (доминирование)
                 .will,                      //    Воля
+                .pedantry,                  //    Педантизм
             ])
     }
 }

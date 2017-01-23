@@ -376,4 +376,7 @@ extension AnalysisScale.Identifier {
 
     /// Воля
     static let will = AnalysisScale.Identifier("will")
+
+    /// Педантизм
+    static let pedantry = AnalysisScale.Identifier("pedantry")
 }
