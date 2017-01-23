@@ -130,4 +130,7 @@ extension AnalysisScale.Identifier {
 
     /// Депрессивная реакция
     static let d_reaction = AnalysisScale.Identifier("D_reaction", nesting: 2)
+
+    /// Мягкая депрессия
+    static let d_mild = AnalysisScale.Identifier("D_mild", nesting: 2)
 }

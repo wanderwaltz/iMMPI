@@ -53,6 +53,7 @@ extension NewAnalyser {
                     .d_gloom,          //         Мрачность
                     .d_evident,        //         Явная депрессия
                     .d_reaction,       //         Депрессивная реакция
+                    .d_mild,           //         Мягкая депрессия
             ])
     }
 }
