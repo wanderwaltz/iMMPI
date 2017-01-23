@@ -60,6 +60,17 @@ func / (left: AnalysisScore, right: AnalysisScore) -> AnalysisScore {
 }
 
 
+func * (left: AnalysisScore, right: AnalysisScore) -> AnalysisScore {
+    return AnalysisScore(
+        formatter: right.suggestedFormatter,
+        filter: right.suggestedFilter,
+        value: .specific({ gender in { answers in
+            return left.value(for: gender, answers: answers) * right.value(for: gender, answers: answers)
+            }})
+    )
+}
+
+
 
 func * (scalar: Double, score: AnalysisScore) -> AnalysisScore {
     return AnalysisScore(
