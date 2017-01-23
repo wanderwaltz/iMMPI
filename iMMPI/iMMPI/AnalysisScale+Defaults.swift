@@ -2059,6 +2059,25 @@ extension AnalysisScale {
                 negative: [14, 22, 32, 33, 34, 43, 48, 58, 62, 82, 94, 100, 132, 140, 189, 209, 217, 236, 241, 244, 251, 261, 341, 344, 349, 359, 378, 384, 389, 420, 483, 488, 489, 494, 510, 525, 541, 544, 548, 554, 559, 561, 555]
             )
         ))
+
+
+    // MARK: Самообладание
+
+    /// Самообладание
+    static let composure = AnalysisScale(
+        identifier: .composure,
+        title: NSLocalizedString("Самообладание", comment: "Название шкалы"),
+        index: .common(121),
+        score: .brackets(
+            .specific(
+                male: (65, 75, 100, 100),
+                female: (55, 65, 100, 100)
+            ),
+            basedOn: .rawPercentage(
+                positive: [],
+                negative: [22, 97, 156, 194, 238, 266, 291, 303, 352, 354, 360]
+            )
+        ))
 }
 
 

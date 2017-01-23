@@ -136,6 +136,7 @@ extension NewAnalyser {
                 .self_control,              //    Самоконтроль
                 .shyness,                   //    Застенчивость
                 .confidence,                //    Уверенность (сила Эго)
+                .composure,                 //    Самообладание
             ])
     }
 }

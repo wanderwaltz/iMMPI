@@ -114,8 +114,8 @@ extension AnalysisScore {
 
 
 fileprivate func checkPreconditions(for brackets: (Double, Double, Double, Double)) {
-    precondition(0.0 < brackets.0)
-    precondition(brackets.0 < brackets.1)
-    precondition(brackets.1 < brackets.2)
-    precondition(brackets.2 < brackets.3)
+    precondition(0.0 <= brackets.0)
+    precondition(brackets.0 <= brackets.1)
+    precondition(brackets.1 <= brackets.2)
+    precondition(brackets.2 <= brackets.3)
 }

@@ -391,4 +391,7 @@ extension AnalysisScale.Identifier {
 
     /// Уверенность (сила Эго)
     static let confidence = AnalysisScale.Identifier("confidence")
+
+    /// Самообладание
+    static let composure = AnalysisScale.Identifier("composure")
 }
