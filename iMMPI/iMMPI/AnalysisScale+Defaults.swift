@@ -1796,6 +1796,23 @@ extension AnalysisScale {
                 negative: [13, 28, 33, 35, 62, 111, 116, 117, 146, 194, 198, 224, 250, 256, 260, 265, 267, 280, 304, 313, 338, 343, 348, 392, 442, 448, 455, 480, 485, 487, 492, 504, 511, 526, 541, 553, 555, 559]
             )
         ))
+
+
+    // MARK: Психологические интересы
+
+    /// Психологические интересы
+    static let i107 = AnalysisScale(
+        identifier: .i107,
+        title: NSLocalizedString("Психологические интересы", comment: "Название шкалы"),
+        index: .common(107),
+        score: .median(
+            .specific(male: 4.26, female: 3.84),
+            dispersion: .specific(male: 1.22, female: 1.36),
+            basedOn: .raw(
+                positive: [176, 225],
+                negative: [32, 335, 531, 558]
+            )
+        ))
 }
 
 

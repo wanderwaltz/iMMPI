@@ -335,4 +335,7 @@ extension AnalysisScale.Identifier {
 
     /// Интеллектуальный коэффициент
     static let i106 = AnalysisScale.Identifier("I106")
+
+    /// Психологические интересы
+    static let i107 = AnalysisScale.Identifier("I107")
 }
