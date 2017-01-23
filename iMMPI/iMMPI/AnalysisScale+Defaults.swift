@@ -936,6 +936,23 @@ extension AnalysisScale {
                 negative: [8, 57, 164, 175, 251, 283, 353, 403, 460, 496]
             )
         ))
+
+
+    // MARK: Подавление агрессии
+
+    /// Подавление агрессии
+    static let pd_aggro_suppression = AnalysisScale(
+        identifier: .pd_aggro_suppression,
+        title: NSLocalizedString("Подавление агрессии", comment: "Название шкалы"),
+        index: .common(54),
+        score: .median(
+            .specific(male: 1.78, female: 2.08),
+            dispersion: .specific(male: 1.11, female: 1.1),
+            basedOn: .raw(
+                positive: [],
+                negative: [6, 12, 30, 128, 129, 147, 170]
+            )
+        ))
 }
 
 

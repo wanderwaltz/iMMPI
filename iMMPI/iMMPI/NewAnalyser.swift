@@ -69,6 +69,7 @@ extension NewAnalyser {
                     .pd_accel,              //         Психомоторная акселерация
                     .pd_intended_hostility, //         Осознанная выраженная враждебность
                     .pd_hostility_control,  //         Контроль над враждебностью
+                    .pd_aggro_suppression,  //         Подавление агрессии
             ])
     }
 }
