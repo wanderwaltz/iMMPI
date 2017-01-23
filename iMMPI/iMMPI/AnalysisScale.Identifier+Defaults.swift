@@ -121,4 +121,7 @@ extension AnalysisScale.Identifier {
 
     /// Психомоторная заторможенность
     static let d_block = AnalysisScale.Identifier("D_block", nesting: 2)
+
+    /// Мрачность
+    static let d_gloom = AnalysisScale.Identifier("D_gloom", nesting: 2)
 }

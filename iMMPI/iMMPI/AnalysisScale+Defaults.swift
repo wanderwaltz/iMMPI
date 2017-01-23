@@ -777,6 +777,23 @@ extension AnalysisScale {
                 negative: [8, 9, 46, 88, 122, 178, 207]
             )
         ))
+
+
+    // MARK: Мрачность
+
+    /// **Мрачность**
+    static let d_gloom = AnalysisScale(
+        identifier: .d_gloom,
+        title: NSLocalizedString("Мрачность", comment: "Название шкалы"),
+        index: .common(35),
+        score: .median(
+            .specific(male: 2.65, female: 4.42),
+            dispersion: .specific(male: 1.63, female: 1.82),
+            basedOn: .raw(
+                positive: [41, 67, 104, 138, 142, 158, 182, 236],
+                negative: [88, 107]
+            )
+        ))
 }
 
 
