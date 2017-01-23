@@ -400,4 +400,7 @@ extension AnalysisScale.Identifier {
 
     /// Наивность
     static let naivety = AnalysisScale.Identifier("naivety")
+
+    /// Аморальность
+    static let immorality = AnalysisScale.Identifier("immorality")
 }

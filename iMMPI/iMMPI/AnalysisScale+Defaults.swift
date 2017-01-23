@@ -2112,6 +2112,23 @@ extension AnalysisScale {
                 negative: [15, 93, 109, 117, 124, 313, 316, 319, 348]
             )
         ))
+
+
+    // MARK: Аморальность
+
+    /// Аморальность
+    static let immorality = AnalysisScale(
+        identifier: .immorality,
+        title: NSLocalizedString("Аморальность", comment: "Название шкалы"),
+        index: .common(124),
+        score: .median(
+            .specific(male: 2.54, female: 2.72),
+            dispersion: .specific(male: 1.39, female: 1.36),
+            basedOn: .raw(
+                positive: [143, 250, 271, 277, 298],
+                negative: [289]
+            )
+        ))
 }
 
 

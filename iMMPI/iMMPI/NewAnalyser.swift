@@ -139,6 +139,7 @@ extension NewAnalyser {
                 .composure,                 //    Самообладание
                 .aliveness,                 //    Живость (играние роли)
                 .naivety,                   //    Наивность
+                .immorality,                //    Аморальность
             ])
     }
 }
