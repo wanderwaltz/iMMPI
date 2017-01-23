@@ -370,4 +370,7 @@ extension AnalysisScale.Identifier {
 
     /// Норма
     static let norm = AnalysisScale.Identifier("norm")
+
+    /// Твердость (доминирование)
+    static let dominance = AnalysisScale.Identifier("dominance")
 }

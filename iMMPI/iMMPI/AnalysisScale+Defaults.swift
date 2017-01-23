@@ -1936,6 +1936,23 @@ extension AnalysisScale {
                 negative: [23, 55, 131, 167, 170, 173, 188, 194, 209, 235, 237, 262, 264, 270, 353, 367, 369, 371, 376, 379, 380, 387, 391, 399, 401, 403, 405]
             )
         ))
+
+
+    // MARK: Твердость (доминирование)
+
+    /// Твердость (доминирование)
+    static let dominance = AnalysisScale(
+        identifier: .dominance,
+        title: NSLocalizedString("Твердость (доминирование)", comment: "Название шкалы"),
+        index: .common(114),
+        score: .median(
+            .specific(male: 16.25, female: 15.22),
+            dispersion: .specific(male: 2.94, female: 3.04),
+            basedOn: .raw(
+                positive: [64, 229, 255, 270, 368, 432, 523],
+                negative: [32, 61, 82, 86, 94, 186, 223, 224, 240, 249, 250, 267, 268, 304, 343, 356, 395, 419, 486, 558, 562]
+            )
+        ))
 }
 
 

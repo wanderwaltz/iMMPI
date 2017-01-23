@@ -129,6 +129,7 @@ extension NewAnalyser {
                 .lawyer_personality,        //    Адвокатский тип личности
             .group_personality,             // Е. ХАРАКТЕР
                 .norm,                      //    Норма
+                .dominance,                 //    Твердость (доминирование)
             ])
     }
 }
