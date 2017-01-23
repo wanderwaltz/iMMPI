@@ -1,6 +1,16 @@
 import Foundation
 
 extension AnalysisScore {
+    /// A policy of computing the score of `brackets` type in case raw percentage exceeds the `D` bracket.
+    enum UpperBracketMode {
+        /// Linearly map the percentage to the `4.5...5.0` range.
+        case linear
+
+        /// Use the `5.0` value as the result.
+        case saturate
+    }
+
+
     /// Computes the score based on the given bracket values.
     ///
     /// > Число полученных по каждому показателю очков переводится в проценты. Пятибальная
@@ -26,6 +36,9 @@ extension AnalysisScore {
     ///
     /// - Parameters:
     ///    - brackets: the bracket values `0 < A < B < C < D < 100`, which are used for the computation,
+    ///    - upperBracketMode: a policy of computing the score when raw percentage exceeds the `D` bracket.
+    ///                        May either linearly map the percentage to the `4.5...5.0` range, or just set
+    ///                        the result to 5.0 value,
     ///    - rawScore: the base score value, which is used for computing the resulting score. It is expected
     ///                that the base score is in `0.0...100.0` range.
     ///
@@ -35,6 +48,7 @@ extension AnalysisScore {
     ///    - `0 < A < B < C < D < 100`,
     ///    - `rawScore.value(for: ...)` is in `0...100` range.
     static func brackets(_ brackets: GenderBasedValue<(A: Double, B: Double, C: Double, D: Double)>,
+                         upperBracketMode: UpperBracketMode = .linear,
                          basedOn rawScore: AnalysisScore) -> AnalysisScore {
 
         checkPreconditions(for: brackets.value(for: .male))
@@ -46,6 +60,13 @@ extension AnalysisScore {
             filter: .bracketed,
             value: .specific({ gender in { answers in
                 let raw = rawScore.value(for: gender, answers: answers)
+
+                // FIXME: returning -1.0 for legacy reasons; update tests to allow more sane value
+                // .nan here originates from the possible division by zero in intellectual scales,
+                if raw.isNaN {
+                    return -1.0
+                }
+
                 precondition(0.0...100.0 ~= raw)
 
                 let selectedBrackets = brackets.value(for: gender)
@@ -70,7 +91,10 @@ extension AnalysisScore {
                     score = round(10.0 * (3.5 + (raw - c) / (d - c)))
                 }
                 else {
-                    score = round(10.0 * (4.5 + 0.5 * (raw - d) / (100.0 - d)))
+                    switch upperBracketMode {
+                    case .linear: score = round(10.0 * (4.5 + 0.5 * (raw - d) / (100.0 - d)))
+                    case .saturate: score = 50.0
+                    }
                 }
                 
                 score /= 10.0
@@ -81,8 +105,9 @@ extension AnalysisScore {
     }
 
     static func brackets(_ brackets: (Double, Double, Double, Double),
+                         upperBracketMode: UpperBracketMode = .linear,
                          basedOn rawScore: AnalysisScore) -> AnalysisScore {
-        return .brackets(.common(brackets), basedOn: rawScore)
+        return .brackets(.common(brackets), upperBracketMode: upperBracketMode, basedOn: rawScore)
     }
 }
 
