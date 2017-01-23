@@ -136,4 +136,7 @@ extension AnalysisScale.Identifier {
 
     /// Истерия
     static let hy = AnalysisScale.Identifier("Hy")
+
+    /// Эмоциональная незрелость
+    static let hy_immaturity = AnalysisScale.Identifier("Hy_immaturity")
 }

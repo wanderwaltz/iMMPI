@@ -55,6 +55,7 @@ extension NewAnalyser {
                     .d_reaction,       //         Депрессивная реакция
                     .d_mild,           //         Мягкая депрессия
                 .hy,                   //     Истерия
+                    .hy_immaturity,    //         Эмоциональная незрелость
             ])
     }
 }
