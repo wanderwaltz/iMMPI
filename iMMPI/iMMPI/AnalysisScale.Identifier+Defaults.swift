@@ -72,4 +72,11 @@ extension AnalysisScale.Identifier {
 
     /// Органическое поражение хвостатого ядра
     static let nucleus_injury = AnalysisScale.Identifier("nucleus_injury")
+
+
+
+    // MARK: - В. ПСИХИКА
+
+    /// В. ПСИХИКА
+    static let group_psyche = AnalysisScale.Identifier("В. ПСИХИКА", nesting: 0)
 }

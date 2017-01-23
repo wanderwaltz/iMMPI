@@ -35,6 +35,7 @@ extension NewAnalyser {
                 .mental_block,       //     Психическая заторможенность
                 .epilepsy,           //     Эпилепсия
                 .nucleus_injury,     //     Органическое поражение хвостатого ядра
+            .group_psyche,           // В. ПСИХИКА
             ])
     }
 }

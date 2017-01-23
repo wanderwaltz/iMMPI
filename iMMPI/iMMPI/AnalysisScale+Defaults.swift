@@ -445,4 +445,14 @@ extension AnalysisScale {
                 negative: [8, 46, 57, 69, 163, 188, 242, 407, 412, 450, 513, 523]
             )
         ))
+
+
+
+    // MARK: - В. ПСИХИКА
+
+    /// **В. ПСИХИКА**
+    static let group_psyche = AnalysisScale.dummy(
+        identifier: .group_psyche,
+        title: NSLocalizedString("В. ПСИХИКА", comment: "Название группы шкал")
+    )
 }
