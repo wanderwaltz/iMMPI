@@ -247,4 +247,7 @@ extension AnalysisScale.Identifier {
 
     /// Параноидная шизофрения
     static let sc_paranoid = AnalysisScale.Identifier("Sc_paranoid", nesting: 2)
+
+    /// Чистая шизофрения
+    static let sc_pure = AnalysisScale.Identifier("Sc_pure", nesting: 2)
 }

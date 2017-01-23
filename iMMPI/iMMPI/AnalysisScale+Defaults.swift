@@ -1354,6 +1354,23 @@ extension AnalysisScale {
                 negative: [20, 133, 177, 198, 220, 254, 309, 347, 369, 446, 462, 464, 496]
             )
         ))
+
+
+    // MARK: Чистая шизофрения
+
+    /// Чистая шизофрения
+    static let sc_pure = AnalysisScale(
+        identifier: .sc_pure,
+        title: NSLocalizedString("Чистая шизофрения", comment: "Название шкалы"),
+        index: .common(80),
+        score: .median(
+            .specific(male: 5.17, female: 6.61),
+            dispersion: .specific(male: 2.95, female: 3.05),
+            basedOn: .raw(
+                positive: [40, 168, 210, 241, 282, 297, 303, 307, 312, 320, 324, 325, 334, 339, 345, 350, 354, 355, 363, 335],
+                negative: [17, 65, 177, 187, 196, 220, 276, 306, 323, 330]
+            )
+        ))
 }
 
 
