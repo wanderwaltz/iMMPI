@@ -85,6 +85,7 @@ extension NewAnalyser {
                     .pa_guilt,              //         Комплекс осуждения (комплекс вины)
                 .pf,                        //     Психастения (Тревожность)
                     .pf_anxiety_reaction,   //         Реакция тревоги
+                    .pf_anxiety,            //         Тревога
             ])
     }
 }

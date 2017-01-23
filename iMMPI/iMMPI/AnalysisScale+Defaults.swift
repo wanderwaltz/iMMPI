@@ -1235,6 +1235,22 @@ extension AnalysisScale {
                 negative: [2, 3, 4, 75, 77, 87, 89, 99, 152, 167, 168, 203, 215, 251, 275, 320, 334, 407, 412, 456, 475, 482, 546, 547, 557]
             )
         ))
+
+    // MARK: Тревога
+
+    /// Тревога
+    static let pf_anxiety = AnalysisScale(
+        identifier: .pf_anxiety,
+        title: NSLocalizedString("Тревога", comment: "Название шкалы"),
+        index: .common(73),
+        score: .median(
+            .specific(male: 12.89, female: 20.81),
+            dispersion: .specific(male: 6.38, female: 6.46),
+            basedOn: .raw(
+                positive: [13, 14, 23, 31, 32, 43, 67, 86, 125, 142, 158, 186, 191, 217, 238, 241, 263, 301, 317, 321, 322, 335, 337, 340, 352, 361, 371, 397, 418, 424, 431, 439, 442, 499, 506, 530, 549, 555],
+                negative: [7, 18, 107, 163, 190, 230, 242, 264, 287, 407, 523, 528]
+            )
+        ))
 }
 
 
