@@ -88,4 +88,7 @@ extension AnalysisScale.Identifier {
 
     /// Коррекция
     static let k = AnalysisScale.Identifier("K")
+
+    /// Ипохондрия (Сверхконтроль)
+    static let hs = AnalysisScale.Identifier("Hs")
 }
