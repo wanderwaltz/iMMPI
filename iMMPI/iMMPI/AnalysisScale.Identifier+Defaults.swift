@@ -289,4 +289,7 @@ extension AnalysisScale.Identifier {
 
     /// Предсказание изменений
     static let cp = AnalysisScale.Identifier("Cp")
+
+    /// Рецидивизм
+    static let re = AnalysisScale.Identifier("Re")
 }

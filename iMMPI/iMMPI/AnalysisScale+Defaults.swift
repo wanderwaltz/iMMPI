@@ -1592,6 +1592,23 @@ extension AnalysisScale {
                 negative: [2, 12, 51, 55, 155, 175, 243, 521, 533]
             )
         ))
+
+
+    // MARK: Рецидивизм
+
+    /// Рецидивизм
+    static let re = AnalysisScale(
+        identifier: .re,
+        title: NSLocalizedString("Рецидивизм", comment: "Название шкалы"),
+        index: .common(94),
+        score: .median(
+            .specific(male: 9.22, female: 9.27),
+            dispersion: .specific(male: 2.7, female: 2.73),
+            basedOn: .raw(
+                positive: [41, 64, 80, 81, 102, 109, 118, 127, 215, 219, 233, 240, 437, 459],
+                negative: [62, 111, 120, 249, 278, 294, 370, 440, 460, 513]
+            )
+        ))
 }
 
 
