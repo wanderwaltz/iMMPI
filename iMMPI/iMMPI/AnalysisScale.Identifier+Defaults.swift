@@ -142,4 +142,7 @@ extension AnalysisScale.Identifier {
 
     /// Чистая истерия
     static let hy_pure = AnalysisScale.Identifier("Hy_pure")
+
+    /// Явная истерия
+    static let hy_evident = AnalysisScale.Identifier("Hy_evident")
 }
