@@ -766,6 +766,23 @@ extension AnalysisScale {
                 negative: [6, 12, 26, 30, 71, 89, 93, 109, 124, 129, 136, 141, 147, 160, 162, 170, 172, 180, 190, 201, 213, 234, 265, 267, 279, 289, 292]
             )
         ))
+
+
+    // MARK: Эмоциональная чувствительность
+
+    /// Эмоциональная чувствительность
+    static let hy_sensitivity = AnalysisScale(
+        identifier: .hy_sensitivity,
+        title: NSLocalizedString("Эмоциональная чувствительность", comment: "Название шкалы"),
+        index: .common(44),
+        score: .median(
+            .specific(male: 5.3, female: 7.65),
+            dispersion: .specific(male: 2.44, female: 2.74),
+            basedOn: .raw(
+                positive: [134, 217, 226, 239, 278, 282, 299],
+                negative: [79, 99, 176, 198, 214, 254, 262, 264]
+            )
+        ))
 }
 
 

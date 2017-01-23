@@ -148,4 +148,7 @@ extension AnalysisScale.Identifier {
 
     /// Скрытая истерия
     static let hy_hidden = AnalysisScale.Identifier("Hy_hidden")
+
+    /// Эмоциональная чувствительность
+    static let hy_sensitivity = AnalysisScale.Identifier("Hy_sensitivity")
 }
