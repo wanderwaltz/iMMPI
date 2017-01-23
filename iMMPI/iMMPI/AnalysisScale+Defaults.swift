@@ -783,6 +783,23 @@ extension AnalysisScale {
                 negative: [79, 99, 176, 198, 214, 254, 262, 264]
             )
         ))
+
+
+    // MARK: Психопатия (Импульсивность)
+
+    /// Психопатия (Импульсивность)
+    static let pd = AnalysisScale(
+        identifier: .pd,
+        title: NSLocalizedString("Психопатия (Импульсивность)", comment: "Название шкалы"),
+        index: .common(45),
+        score: .median(
+            .specific(male: 18.68, female: 18.68),
+            dispersion: .specific(male: 4.11, female: 4.11),
+            basedOn: 0.4 * .raw_k + .raw(
+                positive: [16, 21, 24, 32, 33, 35, 38, 42, 61, 67, 84, 94, 102, 106, 110, 118, 127, 215, 216, 224, 239, 244, 245, 284],
+                negative: [26, 8, 20, 37, 82, 91, 96, 107, 134, 137, 141, 155, 170, 171, 173, 180, 183, 201, 231, 235, 237, 248, 267, 287, 289, 294, 296]
+            )
+        ))
 }
 
 

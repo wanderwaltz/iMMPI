@@ -60,6 +60,7 @@ extension NewAnalyser {
                     .hy_evident,       //         Явная истерия
                     .hy_hidden,        //         Скрытая истерия
                     .hy_sensitivity,   //         Эмоциональная чувствительность
+                .pd,                   //     Психопатия (Импульсивность)
             ])
     }
 }

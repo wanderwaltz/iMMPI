@@ -151,4 +151,7 @@ extension AnalysisScale.Identifier {
 
     /// Эмоциональная чувствительность
     static let hy_sensitivity = AnalysisScale.Identifier("Hy_sensitivity", nesting: 2)
+
+    /// Психопатия (Импульсивность)
+    static let pd = AnalysisScale.Identifier("Pd")
 }
