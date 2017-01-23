@@ -163,4 +163,7 @@ extension AnalysisScale.Identifier {
 
     /// Явные психопатические отклонения
     static let pd_evident = AnalysisScale.Identifier("Pd_evident", nesting: 2)
+
+    /// Скрытые психопатические отклонения
+    static let pd_hidden = AnalysisScale.Identifier("Pd_hidden", nesting: 2)
 }

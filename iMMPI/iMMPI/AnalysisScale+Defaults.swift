@@ -851,6 +851,23 @@ extension AnalysisScale {
                 negative: [8, 20, 37, 91, 107, 137, 287, 294]
             )
         ))
+
+
+    // MARK: Скрытые психопатические отклонения
+
+    /// Скрытые психопатические отклонения
+    static let pd_hidden = AnalysisScale(
+        identifier: .pd_hidden,
+        title: NSLocalizedString("Скрытые психопатические отклонения", comment: "Название шкалы"),
+        index: .common(49),
+        score: .median(
+            .specific(male: 9.48, female: 10.12),
+            dispersion: .specific(male: 2.36, female: 2.34),
+            basedOn: .raw(
+                positive: [21, 102, 127, 239],
+                negative: [82, 96, 134, 141, 155, 170, 171, 173, 180, 183, 201, 231, 235, 237, 248, 267, 289, 296]
+            )
+        ))
 }
 
 

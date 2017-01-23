@@ -64,6 +64,7 @@ extension NewAnalyser {
                     .pd_impulsiveness, //         Импульсивность
                     .pd_pure,          //         Чистая психопатия
                     .pd_evident,       //         Явные психопатические отклонения
+                    .pd_hidden,        //         Скрытые психопатические отклонения
             ])
     }
 }
