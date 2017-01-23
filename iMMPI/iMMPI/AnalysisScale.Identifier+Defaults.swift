@@ -259,4 +259,13 @@ extension AnalysisScale.Identifier {
 
     /// Гипомания (оптимистичность)
     static let ma = AnalysisScale.Identifier("Ma")
+
+    /// Чистая гипомания
+    static let ma_pure = AnalysisScale.Identifier("Ma_pure", nesting: 2)
+
+    /// Явная гипомания
+    static let ma_evident = AnalysisScale.Identifier("Ma_evident", nesting: 2)
+
+    /// Скрытая гипомания
+    static let ma_hidden = AnalysisScale.Identifier("Ma_hidden", nesting: 2)
 }

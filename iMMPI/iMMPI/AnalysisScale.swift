@@ -50,7 +50,7 @@ extension AnalysisScale {
     }
 }
 
-
+// TODO: instead of explicit nesting, use /-separated identifiers
 extension AnalysisScale {
     struct Identifier {
         let rawValue: String

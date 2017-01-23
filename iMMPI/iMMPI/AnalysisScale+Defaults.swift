@@ -1422,6 +1422,58 @@ extension AnalysisScale {
                 negative: [101, 105, 111, 119, 120, 148, 166, 171, 180, 267, 289]
             )
         ))
+
+
+    // MARK: Чистая гипомания
+
+    /// Чистая гипомания
+    static let ma_pure = AnalysisScale(
+        identifier: .ma_pure,
+        title: NSLocalizedString("Чистая гипомания", comment: "Название шкалы"),
+        index: .common(84),
+        score: .median(
+            .specific(male: 12.12, female: 11.97),
+            dispersion: .specific(male: 2.97, female: 2.88),
+            basedOn: .raw(
+                positive: [11, 59, 64, 73, 100, 109, 134, 143, 167, 181, 222, 226, 228, 232, 233, 240, 250, 263, 271, 277, 279, 298],
+                negative: [101, 105, 148, 166]
+            )
+        ))
+
+
+    // MARK: Явная гипомания
+
+    /// Явная гипомания
+    static let ma_evident = AnalysisScale(
+        identifier: .ma_evident,
+        title: NSLocalizedString("Явная гипомания", comment: "Название шкалы"),
+        index: .common(85),
+        score: .median(
+            .specific(male: 5.7, female: 7.08),
+            dispersion: .specific(male: 3.02, female: 2.91),
+            basedOn: .raw(
+                positive: [13, 22, 59, 73, 97, 100, 156, 157, 167, 194, 212, 226, 238, 250, 251, 263, 266, 277, 279, 298],
+                negative: [111, 119, 120]
+            )
+        ))
+
+
+    // MARK: Скрытая гипомания
+
+    /// Скрытая гипомания
+    static let ma_hidden = AnalysisScale(
+        identifier: .ma_hidden,
+        title: NSLocalizedString("Скрытая гипомания", comment: "Название шкалы"),
+        index: .common(86),
+        score: .median(
+            .specific(male: 11.48, female: 10.88),
+            dispersion: .specific(male: 2.47, female: 2.72),
+            basedOn: .raw(
+                positive: [11, 21, 64, 109, 127, 134, 143, 181, 222, 228, 232, 233, 240, 268, 271],
+                negative: [101, 105, 148, 166, 171, 180, 267, 289]
+            )
+        ))
+
 }
 
 
