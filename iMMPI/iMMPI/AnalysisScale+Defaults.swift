@@ -1507,6 +1507,23 @@ extension AnalysisScale {
                 negative: [379]
             )
         ))
+
+
+    // MARK: 2-й фактор R
+
+    /// 2-й фактор R
+    static let fr2 = AnalysisScale(
+        identifier: .fr2,
+        title: NSLocalizedString("2-й фактор R", comment: "Название шкалы"),
+        index: .common(89),
+        score: .median(
+            .specific(male: 16.8, female: 17.05),
+            dispersion: .specific(male: 4.04, female: 3.55),
+            basedOn: .raw(
+                positive: [],
+                negative: [1, 6, 9, 12, 39, 51, 81, 112, 126, 131, 140, 145, 154, 156, 191, 208, 219, 221, 271, 272, 281, 282, 327, 406, 415, 429, 440, 445, 447, 449, 450, 451, 462, 468, 472, 502, 516, 529, 550, 556]
+            )
+        ))
 }
 
 

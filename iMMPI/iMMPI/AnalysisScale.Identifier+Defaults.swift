@@ -274,4 +274,7 @@ extension AnalysisScale.Identifier {
 
     /// 1-й фактор А
     static let fa1 = AnalysisScale.Identifier("FA1")
+
+    /// 2-й фактор R
+    static let fr2 = AnalysisScale.Identifier("FR2")
 }
