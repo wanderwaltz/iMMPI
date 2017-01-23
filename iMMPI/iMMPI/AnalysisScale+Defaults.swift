@@ -726,6 +726,23 @@ extension AnalysisScale {
                 negative: [2, 8, 9, 18, 30, 36, 39, 45, 46, 51, 57, 58, 64, 80, 88, 89, 95, 98, 107, 122, 131, 152, 153, 154, 155, 160, 178, 191, 207, 208, 238, 241, 242, 248, 263, 270, 271, 272, 285, 296]
             )
         ))
+
+
+    // MARK: Чистая депрессия
+
+    /// **Чистая депрессия**
+    static let d_pure = AnalysisScale(
+        identifier: .d_pure,
+        title: NSLocalizedString("Чистая депрессия", comment: "Название шкалы"),
+        index: .common(32),
+        score: .median(
+            .specific(male: 11.45, female: 12.13),
+            dispersion: .specific(male: 2.49, female: 2.36),
+            basedOn: .raw(
+                positive: [5, 130, 193],
+                negative: [39, 46, 58, 64, 80, 88, 95, 98, 131, 145, 154, 191, 207, 233, 241, 242, 263, 270, 271, 272, 285]
+            )
+        ))
 }
 
 

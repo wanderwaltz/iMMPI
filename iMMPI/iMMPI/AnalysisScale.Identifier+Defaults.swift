@@ -112,4 +112,7 @@ extension AnalysisScale.Identifier {
 
     /// Депрессия (Пессимистичность)
     static let d = AnalysisScale.Identifier("D")
+
+    /// Чистая депрессия
+    static let d_pure = AnalysisScale.Identifier("D_pure", nesting: 2)
 }
