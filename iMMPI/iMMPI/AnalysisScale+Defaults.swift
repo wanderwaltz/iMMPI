@@ -1762,6 +1762,23 @@ extension AnalysisScale {
             upperBracketMode: .saturate,
             basedOn: trunc(10.0 * trunc(100.0 * .rawPercentage_i95 / .taer) * .rawPercentage_i98  / .taer)
         ))
+
+
+    // MARK: Интеллектуальная эффективность
+
+    /// Интеллектуальная эффективность
+    static let i105 = AnalysisScale(
+        identifier: .i105,
+        title: NSLocalizedString("Интеллектуальная эффективность", comment: "Название шкалы"),
+        index: .common(105),
+        score: .median(
+            .specific(male: 28.67, female: 27.14),
+            dispersion: .specific(male: 3.75, female: 3.14),
+            basedOn: .raw(
+                positive: [36, 37, 60, 63, 78, 122, 221, 225, 277, 462, 464, 521, 524, 546, 552],
+                negative: [13, 28, 33, 35, 62, 116, 146, 194, 198, 224, 256, 260, 267, 280, 304, 338, 392, 448, 455, 487, 492, 526, 541, 559]
+            )
+        ))
 }
 
 

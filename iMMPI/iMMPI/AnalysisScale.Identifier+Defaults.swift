@@ -329,4 +329,7 @@ extension AnalysisScale.Identifier {
 
     /// Творческая продуктивность
     static let i104 = AnalysisScale.Identifier("I104")
+
+    /// Интеллектуальная эффективность
+    static let i105 = AnalysisScale.Identifier("I105")
 }
