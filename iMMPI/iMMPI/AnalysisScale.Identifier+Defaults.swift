@@ -190,4 +190,7 @@ extension AnalysisScale.Identifier {
 
     /// Женственность интересов
     static let mf_feminine_values = AnalysisScale.Identifier("Mf_feminine_values", nesting: 2)
+
+    /// Ригидность
+    static let mf_rigidness = AnalysisScale.Identifier("Mf_rigidness", nesting: 2)
 }

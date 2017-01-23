@@ -73,6 +73,7 @@ extension NewAnalyser {
                 .mf,                        //     Половое развитие
                     .mf_femininity,         //         Женственность
                     .mf_feminine_values,    //         Женственность интересов
+                    .mf_rigidness,          //         Ригидность
             ])
     }
 }

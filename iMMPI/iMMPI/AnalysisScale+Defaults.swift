@@ -1015,6 +1015,31 @@ extension AnalysisScale {
                 negative: [1, 19, 28, 79, 81, 112, 115, 116, 133, 144, 176, 198, 214, 219, 221, 223, 249, 260, 264, 280, 283, 300]
             )
         ))
+
+
+    // MARK: Ригидность
+
+    /// Ригидность
+    static let mf_rigidness = AnalysisScale(
+        identifier: .mf_rigidness,
+        title: NSLocalizedString("Ригидность", comment: "Название шкалы"),
+        index: .specific(male: 61, female: 58),
+        score: .median(
+            .specific(male: 5.32, female: 5.26),
+            dispersion: .specific(male: 1.33, female: 1.52),
+            basedOn: .raw(
+                .specific(
+                    male: (
+                        positive: [37, 86, 111, 141, 304, 342, 357],
+                        negative: [215, 216, 298]
+                    ),
+                    female: (
+                        positive: [86, 96, 304, 321, 344, 349],
+                        negative: [21, 157, 181, 216]
+                    )
+                )
+            )
+        ))
 }
 
 
