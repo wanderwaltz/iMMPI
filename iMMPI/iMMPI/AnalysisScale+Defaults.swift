@@ -1813,6 +1813,16 @@ extension AnalysisScale {
                 negative: [32, 335, 531, 558]
             )
         ))
+
+
+
+    // MARK: - Д. ТРУДОВЫЕ КАЧЕСТВА
+
+    /// Д. ТРУДОВЫЕ КАЧЕСТВА
+    static let group_work = AnalysisScale.dummy(
+        identifier: .group_work,
+        title: NSLocalizedString("Д. ТРУДОВЫЕ КАЧЕСТВА", comment: "Название группы шкал")
+    )
 }
 
 

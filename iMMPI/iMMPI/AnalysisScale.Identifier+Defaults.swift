@@ -338,4 +338,11 @@ extension AnalysisScale.Identifier {
 
     /// Психологические интересы
     static let i107 = AnalysisScale.Identifier("I107")
+
+
+
+    // MARK: - Д. ТРУДОВЫЕ КАЧЕСТВА
+
+    /// Д. ТРУДОВЫЕ КАЧЕСТВА
+    static let group_work = AnalysisScale.Identifier("Д. ТРУДОВЫЕ КАЧЕСТВА", nesting: 0)
 }
