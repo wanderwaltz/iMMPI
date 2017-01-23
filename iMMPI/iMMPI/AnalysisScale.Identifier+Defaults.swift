@@ -332,4 +332,7 @@ extension AnalysisScale.Identifier {
 
     /// Интеллектуальная эффективность
     static let i105 = AnalysisScale.Identifier("I105")
+
+    /// Интеллектуальный коэффициент
+    static let i106 = AnalysisScale.Identifier("I106")
 }
