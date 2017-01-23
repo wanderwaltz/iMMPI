@@ -1066,6 +1066,7 @@
 		448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */; };
 		448C31961E2B6479003D355D /* AnalysisReportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */; };
 		448C319C1E2B7CBC003D355D /* Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C319B1E2B7CBC003D355D /* Html.swift */; };
+		44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */; };
 		44C302111E3522C30073F391 /* NewAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302101E3522C30073F391 /* NewAnalyser.swift */; };
 		44C302131E35234B0073F391 /* NewAnalyserIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302121E35234B0073F391 /* NewAnalyserIntegrationTests.swift */; };
 		44C302151E352EB60073F391 /* NewAnalyserScoreFormattersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302141E352EB60073F391 /* NewAnalyserScoreFormattersTests.swift */; };
@@ -2194,6 +2195,7 @@
 		448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisOptionsViewModel.swift; sourceTree = "<group>"; };
 		448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisReportGenerator.swift; sourceTree = "<group>"; };
 		448C319B1E2B7CBC003D355D /* Html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Html.swift; sourceTree = "<group>"; };
+		44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScore+Potential.swift"; sourceTree = "<group>"; };
 		44C302101E3522C30073F391 /* NewAnalyser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAnalyser.swift; sourceTree = "<group>"; };
 		44C302121E35234B0073F391 /* NewAnalyserIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAnalyserIntegrationTests.swift; sourceTree = "<group>"; };
 		44C302141E352EB60073F391 /* NewAnalyserScoreFormattersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAnalyserScoreFormattersTests.swift; sourceTree = "<group>"; };
@@ -2506,6 +2508,7 @@
 				444F24741E34C12300BB8003 /* AnalysisScore.swift */,
 				444F24841E34F86800BB8003 /* AnalysisScore+Brackets.swift */,
 				444F24921E351DBC00BB8003 /* AnalysisScore+Median.swift */,
+				44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */,
 				444F247C1E34F25F00BB8003 /* AnalysisScore+Raw.swift */,
 				444F24801E34F59300BB8003 /* AnalysisScore+RawPercentage.swift */,
 				44C302161E3531790073F391 /* AnalysisScoreFilter.swift */,
@@ -5148,6 +5151,7 @@
 				5DC4AC091690448A00E835B7 /* AnalyzerFGroup.m in Sources */,
 				444F241D1E31E62000BB8003 /* MenuAction+Print.swift in Sources */,
 				444F244E1E33676700BB8003 /* EmailMessage.swift in Sources */,
+				44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */,
 				444F24551E336AA800BB8003 /* EmailSubjectGenerator.swift in Sources */,
 				444F24751E34C12300BB8003 /* AnalysisScore.swift in Sources */,
 				44DE9B041E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift in Sources */,

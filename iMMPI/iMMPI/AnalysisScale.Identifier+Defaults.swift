@@ -314,4 +314,13 @@ extension AnalysisScale.Identifier {
 
     /// Интеллектуальный показатель
     static let i99 = AnalysisScale.Identifier("I99")
+
+    /// Научный потенциал
+    static let i100 = AnalysisScale.Identifier("I100")
+
+    /// Артистический потенциал
+    static let i101 = AnalysisScale.Identifier("I101")
+
+    /// Религиозный потенциал
+    static let i102 = AnalysisScale.Identifier("I102")
 }
