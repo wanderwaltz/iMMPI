@@ -28,19 +28,20 @@ extension AnalysisScore {
     /// - Returns: an `AnalysisScore` instance, which performs the computation. The returned value is a total number
     ///            of answers in the given record, which match the values provided by the `statements` parameter.
     static func raw(_ statements: RawMatchesKey,
-                    filter includeStatement: @escaping StatementsFilter
+                    filter includeStatement: StatementsFilter
                         = AnalysisScore.defaultStatementsFilter) -> AnalysisScore {
+
+        let filteredStatements: RawMatchesKey = apply(includeStatement, to: statements)
+
         return AnalysisScore(value: .specific({ gender in { answers in
-            let selectedStatements = statements.value(for: gender)
+            let selectedStatements = filteredStatements.value(for: gender)
 
             let positiveMatches = selectedStatements.positive
-                .filter(includeStatement)
                 .reduce(0, { matches, identifier in
                     return answers.answer(for: identifier) == .positive ? matches + 1 : matches
                 })
 
             let negativeMatches = selectedStatements.negative
-                .filter(includeStatement)
                 .reduce(0, { matches, identifier in
                     return answers.answer(for: identifier) == .negative ? matches + 1 : matches
                 })
@@ -65,5 +66,17 @@ extension AnalysisScore {
                     filter includeStatement: @escaping StatementsFilter
                         = AnalysisScore.defaultStatementsFilter) -> AnalysisScore {
         return .raw(.common((positive: positive, negative: negative)), filter: includeStatement)
+    }
+
+
+    static func apply(_ filter: StatementsFilter, to key: _RawMatchesKey) -> _RawMatchesKey {
+        return (positive: key.positive.filter(filter), negative: key.negative.filter(filter))
+    }
+
+    static func apply(_ filter: StatementsFilter, to key: RawMatchesKey) -> RawMatchesKey {
+        return .specific(
+            male: apply(filter, to: key.value(for: .male)),
+            female: apply(filter, to: key.value(for: .female))
+        )
     }
 }
