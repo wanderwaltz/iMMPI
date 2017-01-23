@@ -379,4 +379,7 @@ extension AnalysisScale.Identifier {
 
     /// Педантизм
     static let pedantry = AnalysisScale.Identifier("pedantry")
+
+    /// Мнительность (предубежденность)
+    static let prejudice = AnalysisScale.Identifier("prejudice")
 }

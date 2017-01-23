@@ -1991,6 +1991,23 @@ extension AnalysisScale {
                 negative: [6, 39, 40, 49, 56, 60, 61, 86, 94, 99, 102, 135, 142, 145, 204, 222, 228, 240, 255, 276, 277, 419, 437, 456, 487, 511, 560]
             )
         ))
+
+
+    // MARK: Мнительность (предубежденность)
+
+    /// Мнительность (предубежденность)
+    static let prejudice = AnalysisScale(
+        identifier: .prejudice,
+        title: NSLocalizedString("Мнительность (предубежденность)", comment: "Название шкалы"),
+        index: .common(117),
+        score: .median(
+            .specific(male: 10.46, female: 11.4),
+            dispersion: .specific(male: 4.39, female: 4.27),
+            basedOn: .raw(
+                positive: [47, 84, 93, 106, 117, 124, 136, 139, 157, 171, 186, 250, 280, 304, 307, 313, 319, 323, 338, 349, 373, 395, 406, 411, 435, 437, 469, 485, 543],
+                negative: [78, 176, 221]
+            )
+        ))
 }
 
 

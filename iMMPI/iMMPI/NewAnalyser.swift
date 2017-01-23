@@ -132,6 +132,7 @@ extension NewAnalyser {
                 .dominance,                 //    Твердость (доминирование)
                 .will,                      //    Воля
                 .pedantry,                  //    Педантизм
+                .prejudice,                 //    Мнительность (предубежденность)
             ])
     }
 }
