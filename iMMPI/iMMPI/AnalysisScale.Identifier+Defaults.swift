@@ -109,4 +109,7 @@ extension AnalysisScale.Identifier {
 
     /// Невротическое ослабление сверхконтроля
     static let hs_neurotic_weak = AnalysisScale.Identifier("Hs_neurotic_weak", nesting: 2)
+
+    /// Депрессия (Пессимистичность)
+    static let d = AnalysisScale.Identifier("D")
 }
