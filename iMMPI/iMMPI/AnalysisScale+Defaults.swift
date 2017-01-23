@@ -868,6 +868,23 @@ extension AnalysisScale {
                 negative: [82, 96, 134, 141, 155, 170, 171, 173, 180, 183, 201, 231, 235, 237, 248, 267, 289, 296]
             )
         ))
+
+
+    // MARK: Выраженная враждебность
+
+    /// Выраженная враждебность
+    static let pd_hostility = AnalysisScale(
+        identifier: .pd_hostility,
+        title: NSLocalizedString("Выраженная враждебность", comment: "Название шкалы"),
+        index: .common(50),
+        score: .median(
+            .specific(male: 4.32, female: 4.98),
+            dispersion: .specific(male: 1.68, female: 1.6),
+            basedOn: .raw(
+                positive: [27, 43, 59, 89, 108, 167, 189, 208, 350, 507, 520],
+                negative: [48, 180, 515]
+            )
+        ))
 }
 
 
