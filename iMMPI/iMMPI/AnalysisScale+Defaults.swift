@@ -1303,6 +1303,23 @@ extension AnalysisScale {
                 negative: [8, 17, 20, 37, 65, 103, 119, 177, 178, 187, 192, 196, 220, 276, 281, 306, 309, 322, 330]
             )
         ))
+
+
+    // MARK: Оригинальность
+
+    /// Оригинальность
+    static let sc_originality = AnalysisScale(
+        identifier: .sc_originality,
+        title: NSLocalizedString("Оригинальность", comment: "Название шкалы"),
+        index: .common(77),
+        score: .median(
+            .specific(male: 12, female: 12.8),
+            dispersion: .specific(male: 2.67, female: 2.63),
+            basedOn: .raw(
+                positive: [148, 364, 408, 432],
+                negative: [67, 82, 112, 115, 129, 136, 138, 206, 219, 223, 258, 268, 322, 394, 406, 411, 498, 523, 561, 563, 564]
+            )
+        ))
 }
 
 

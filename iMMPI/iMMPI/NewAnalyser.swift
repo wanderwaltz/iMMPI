@@ -89,6 +89,7 @@ extension NewAnalyser {
                     .pf_anxiety_repression, //         Вытеснение тревоги
                     .pf_realized_anxiety,   //         Осознанная тревога
                 .sc,                        //     Шизофрения (индивидуалистичность)
+                    .sc_originality,        //         Оригинальность
             ])
     }
 }

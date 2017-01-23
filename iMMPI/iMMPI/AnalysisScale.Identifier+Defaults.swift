@@ -238,4 +238,7 @@ extension AnalysisScale.Identifier {
 
     /// Шизофрения (индивидуалистичность)
     static let sc = AnalysisScale.Identifier("Sc")
+
+    /// Оригинальность
+    static let sc_originality = AnalysisScale.Identifier("Sc_originality", nesting: 2)
 }
