@@ -367,4 +367,7 @@ extension AnalysisScale.Identifier {
 
     /// Е. ХАРАКТЕР
     static let group_personality = AnalysisScale.Identifier("Е. ХАРАКТЕР", nesting: 0)
+
+    /// Норма
+    static let norm = AnalysisScale.Identifier("norm")
 }

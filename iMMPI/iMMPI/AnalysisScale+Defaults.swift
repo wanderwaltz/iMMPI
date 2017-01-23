@@ -1920,6 +1920,22 @@ extension AnalysisScale {
         identifier: .group_personality,
         title: NSLocalizedString("Е. ХАРАКТЕР", comment: "Название группы шкал")
     )
+
+
+    // MARK: Норма
+
+    /// Норма
+    static let norm = AnalysisScale(
+        identifier: .norm,
+        title: NSLocalizedString("Норма", comment: "Название шкалы"),
+        index: .common(113),
+        score: .brackets(
+            (33, 37, 50, 57),
+            basedOn: .rawPercentage(
+                positive: [39, 52, 89, 93, 98, 115, 138, 145, 146, 147, 166, 171, 213, 234, 244, 256, 258, 278, 321, 334, 336, 337, 344, 351, 368, 370, 372, 373, 375, 377, 378, 381, 382, 383, 384, 385, 386, 388, 389, 390, 392, 393, 394, 395, 396, 398, 400, 402, 404, 549],
+                negative: [23, 55, 131, 167, 170, 173, 188, 194, 209, 235, 237, 262, 264, 270, 353, 367, 369, 371, 376, 379, 380, 387, 391, 399, 401, 403, 405]
+            )
+        ))
 }
 
 
