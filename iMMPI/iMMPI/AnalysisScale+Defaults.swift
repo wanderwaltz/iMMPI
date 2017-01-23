@@ -1840,6 +1840,23 @@ extension AnalysisScale {
                 negative: [28, 33, 104, 118, 142, 146, 224, 244, 251, 260, 303, 381, 386, 419]
             )
         ))
+
+
+    // MARK: Работоспособность (отношение к работе)
+
+    /// Работоспособность (отношение к работе)
+    static let working_capacity = AnalysisScale(
+        identifier: .working_capacity,
+        title: NSLocalizedString("Работоспособность (отношение к работе)", comment: "Название шкалы"),
+        index: .common(109),
+        score: .median(
+            .specific(male: 11.67, female: 14.66),
+            dispersion: .specific(male: 3.92, female: 4.22),
+            basedOn: .raw(
+                positive: [13, 16, 32, 35, 40, 41, 59, 84, 109, 112, 170, 244, 250, 259, 272, 301, 312, 331, 335, 343, 389, 395, 404, 406, 435, 487, 507, 526, 549],
+                negative: [3, 9, 88, 164, 207, 257, 318, 407]
+            )
+        ))
 }
 
 

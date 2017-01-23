@@ -348,4 +348,7 @@ extension AnalysisScale.Identifier {
 
     /// Способность к обучению
     static let educability = AnalysisScale.Identifier("educability")
+
+    /// Работоспособность (отношение к работе)
+    static let working_capacity = AnalysisScale.Identifier("working_capacity")
 }
