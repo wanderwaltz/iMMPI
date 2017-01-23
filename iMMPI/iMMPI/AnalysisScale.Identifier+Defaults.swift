@@ -256,4 +256,7 @@ extension AnalysisScale.Identifier {
 
     /// Эмоциональное отчуждение
     static let sc_emotional = AnalysisScale.Identifier("Sc_emotional", nesting: 2)
+
+    /// Гипомания (оптимистичность)
+    static let ma = AnalysisScale.Identifier("Ma")
 }
