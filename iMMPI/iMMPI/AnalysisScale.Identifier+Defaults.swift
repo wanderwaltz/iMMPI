@@ -299,4 +299,7 @@ extension AnalysisScale.Identifier {
 
     /// Г. ИНТЕЛЛЕКТ
     static let group_intelligence = AnalysisScale.Identifier("Г. ИНТЕЛЛЕКТ", nesting: 0)
+
+    /// Творческий склад
+    static let i95 = AnalysisScale.Identifier("I95")
 }
