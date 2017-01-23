@@ -1218,6 +1218,23 @@ extension AnalysisScale {
                 negative: [3, 8, 36, 122, 152, 164, 178, 329, 353]
             )
         ))
+
+
+    // MARK: Реакция тревоги
+
+    /// Реакция тревоги
+    static let pf_anxiety_reaction = AnalysisScale(
+        identifier: .pf_anxiety_reaction,
+        title: NSLocalizedString("Реакция тревоги", comment: "Название шкалы"),
+        index: .common(72),
+        score: .median(
+            .specific(male: 23.55, female: 24.94),
+            dispersion: .specific(male: 2.92, female: 3.13),
+            basedOn: .raw(
+                positive: [1, 47, 71, 96, 111, 115, 129, 171, 191, 249, 263, 336, 340, 347, 351, 356, 392, 439, 460, 483, 548],
+                negative: [2, 3, 4, 75, 77, 87, 89, 99, 152, 167, 168, 203, 215, 251, 275, 320, 334, 407, 412, 456, 475, 482, 546, 547, 557]
+            )
+        ))
 }
 
 

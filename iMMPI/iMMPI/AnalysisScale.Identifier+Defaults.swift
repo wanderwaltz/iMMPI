@@ -223,4 +223,7 @@ extension AnalysisScale.Identifier {
 
     /// Психастения (Тревожность)
     static let pf = AnalysisScale.Identifier("Pf")
+
+    /// Реакция тревоги
+    static let pf_anxiety_reaction = AnalysisScale.Identifier("Pf_anxiety_reaction")
 }
