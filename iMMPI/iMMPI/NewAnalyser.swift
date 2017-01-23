@@ -127,6 +127,7 @@ extension NewAnalyser {
                 .student_potential,         //    Школьный потенциал
                 .teacher_potential,         //    Преподавательский потенциал
                 .lawyer_personality,        //    Адвокатский тип личности
+            .group_personality,             // Е. ХАРАКТЕР
             ])
     }
 }

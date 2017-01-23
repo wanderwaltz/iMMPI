@@ -1910,6 +1910,16 @@ extension AnalysisScale {
                 negative: [32, 33, 71, 81, 94, 112, 128, 124, 129, 136, 142, 217, 223, 238, 241, 244, 248, 250, 258, 271, 278, 280, 292, 319, 324, 348, 359, 378, 383, 386, 390, 395, 396, 404, 408, 409, 416, 418, 447, 461, 468, 504, 537]
             )
         ))
+
+
+
+    // MARK: - Е. ХАРАКТЕР
+
+    /// Е. ХАРАКТЕР
+    static let group_personality = AnalysisScale.dummy(
+        identifier: .group_personality,
+        title: NSLocalizedString("Е. ХАРАКТЕР", comment: "Название группы шкал")
+    )
 }
 
 

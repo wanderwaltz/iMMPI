@@ -360,4 +360,11 @@ extension AnalysisScale.Identifier {
 
     /// Адвокатский тип личности
     static let lawyer_personality = AnalysisScale.Identifier("lawyer_personality")
+
+
+
+    // MARK: - Е. ХАРАКТЕР
+
+    /// Е. ХАРАКТЕР
+    static let group_personality = AnalysisScale.Identifier("Е. ХАРАКТЕР", nesting: 0)
 }
