@@ -2129,7 +2129,24 @@ extension AnalysisScale {
                 negative: [289]
             )
         ))
+
+
+    // MARK: Честность
+
+    /// Честность
+    static let honesty = AnalysisScale(
+        identifier: .honesty,
+        title: NSLocalizedString("Честность", comment: "Название шкалы"),
+        index: .common(125),
+        score: .brackets(
+            (50, 55, 70, 80),
+            basedOn: .rawPercentage(
+                positive: [78, 122, 295],
+                negative: [33, 157, 248, 250, 260, 287, 313, 395, 437, 448, 469, 492, 498]
+            )
+        ))
 }
+
 
 
 

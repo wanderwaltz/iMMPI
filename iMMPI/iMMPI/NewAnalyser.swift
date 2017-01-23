@@ -140,6 +140,7 @@ extension NewAnalyser {
                 .aliveness,                 //    Живость (играние роли)
                 .naivety,                   //    Наивность
                 .immorality,                //    Аморальность
+                .honesty,                   //    Честность
             ])
     }
 }
