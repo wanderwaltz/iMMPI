@@ -656,7 +656,25 @@ extension AnalysisScale {
                 negative: [63, 68, 130]
             )
         ))
+
+
+    // MARK: Невротический сверхконтроль
+
+    /// **Невротический сверхконтроль**
+    static let hs_neurotic = AnalysisScale(
+        identifier: .hs_neurotic,
+        title: NSLocalizedString("Невротический сверхконтроль", comment: "Название шкалы"),
+        index: .common(29),
+        score: .median(
+            .specific(male: 5, female: 6.52),
+            dispersion: .specific(male: 2.39, female: 2.2),
+            basedOn: .raw(
+                positive: [267, 292, 361],
+                negative: [12, 187, 192, 228, 229, 242, 287, 353, 371, 401, 440, 482, 520, 528, 533]
+            )
+        ))
 }
+
 
 
 // MARK: - Utility

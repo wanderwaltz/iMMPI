@@ -103,4 +103,7 @@ extension AnalysisScale.Identifier {
 
     /// Чистая ипохондрия
     static let hs_pure = AnalysisScale.Identifier("Hs_pure", nesting: 2)
+
+    /// Невротический сверхконтроль
+    static let hs_neurotic = AnalysisScale.Identifier("Hs_neurotic", nesting: 2)
 }
