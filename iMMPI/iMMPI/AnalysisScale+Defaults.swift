@@ -2015,7 +2015,7 @@ extension AnalysisScale {
     /// Самоконтроль
     static let self_control = AnalysisScale(
         identifier: .self_control,
-        title: NSLocalizedString("Самоконтроль)", comment: "Название шкалы"),
+        title: NSLocalizedString("Самоконтроль", comment: "Название шкалы"),
         index: .common(118),
         score: .median(
             .specific(male: 24.95, female: 26.19),
@@ -2032,7 +2032,7 @@ extension AnalysisScale {
     /// Застенчивость
     static let shyness = AnalysisScale(
         identifier: .shyness,
-        title: NSLocalizedString("Застенчивость)", comment: "Название шкалы"),
+        title: NSLocalizedString("Застенчивость", comment: "Название шкалы"),
         index: .common(119),
         score: .median(
             .specific(male: 2.02, female: 2.04),
@@ -2049,7 +2049,7 @@ extension AnalysisScale {
     /// Уверенность (сила Эго)
     static let confidence = AnalysisScale(
         identifier: .confidence,
-        title: NSLocalizedString("Уверенность (сила Эго))", comment: "Название шкалы"),
+        title: NSLocalizedString("Уверенность (сила Эго)", comment: "Название шкалы"),
         index: .common(120),
         score: .median(
             .specific(male: 47.7, female: 41.8),
@@ -2076,6 +2076,23 @@ extension AnalysisScale {
             basedOn: .rawPercentage(
                 positive: [],
                 negative: [22, 97, 156, 194, 238, 266, 291, 303, 352, 354, 360]
+            )
+        ))
+
+
+    // MARK: Живость (играние роли)
+
+    /// Живость (играние роли)
+    static let aliveness = AnalysisScale(
+        identifier: .aliveness,
+        title: NSLocalizedString("Живость (играние роли)", comment: "Название шкалы"),
+        index: .common(122),
+        score: .median(
+            .specific(male: 18.97, female: 17.78),
+            dispersion: .specific(male: 3.2, female: 3.48),
+            basedOn: .raw(
+                positive: [54, 81, 91, 96, 122, 137, 207, 215, 229, 282, 372, 376, 477],
+                negative: [148, 183, 201, 222, 244, 250, 292, 307, 317, 348, 377, 382, 386, 447, 491, 495, 531, 564]
             )
         ))
 }

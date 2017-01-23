@@ -137,6 +137,7 @@ extension NewAnalyser {
                 .shyness,                   //    Застенчивость
                 .confidence,                //    Уверенность (сила Эго)
                 .composure,                 //    Самообладание
+                .aliveness,                 //    Живость (играние роли)
             ])
     }
 }

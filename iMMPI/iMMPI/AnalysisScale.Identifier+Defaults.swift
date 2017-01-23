@@ -394,4 +394,7 @@ extension AnalysisScale.Identifier {
 
     /// Самообладание
     static let composure = AnalysisScale.Identifier("composure")
+
+    /// Живость (играние роли)
+    static let aliveness = AnalysisScale.Identifier("aliveness")
 }
