@@ -94,4 +94,7 @@ extension AnalysisScale.Identifier {
 
     /// Сверхконтроль Я (зажатость)
     static let hs_self = AnalysisScale.Identifier("Hs_self", nesting: 2)
+
+    /// Предипохондрическое состояние
+    static let hs_pre = AnalysisScale.Identifier("Hs_pre", nesting: 2)
 }
