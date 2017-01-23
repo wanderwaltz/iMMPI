@@ -184,4 +184,7 @@ extension AnalysisScale.Identifier {
 
     /// Половое развитие
     static let mf = AnalysisScale.Identifier("Mf")
+
+    /// Женственность
+    static let mf_femininity = AnalysisScale.Identifier("Mf_femininity", nesting: 2)
 }

@@ -979,7 +979,25 @@ extension AnalysisScale {
                 )
             )
         ))
+
+
+    // MARK: Женственность
+
+    /// Женственность
+    static let mf_femininity = AnalysisScale(
+        identifier: .mf_femininity,
+        title: NSLocalizedString("Женственность", comment: "Название шкалы"),
+        index: .common(56),
+        score: .median(
+            .specific(male: 6.03, female: 9),
+            dispersion: .specific(male: 1.97, female: 2.24),
+            basedOn: .raw(
+                positive: [4, 92, 203, 361, 392, 545, 555],
+                negative: [1, 99, 118, 144, 145, 219, 223, 254, 563]
+            )
+        ))
 }
+
 
 
 // MARK: - Utility

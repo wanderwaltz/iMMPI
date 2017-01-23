@@ -71,6 +71,7 @@ extension NewAnalyser {
                     .pd_hostility_control,  //         Контроль над враждебностью
                     .pd_aggro_suppression,  //         Подавление агрессии
                 .mf,                        //     Половое развитие
+                    .mf_femininity,         //         Женственность
             ])
     }
 }
