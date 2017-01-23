@@ -749,6 +749,23 @@ extension AnalysisScale {
                 negative: [2, 3, 7, 8, 9, 51, 55, 103, 107, 128, 137, 153, 163, 174, 175, 188, 192, 230, 243, 274]
             )
         ))
+
+
+    // MARK: Скрытая истерия
+
+    /// Скрытая истерия
+    static let hy_hidden = AnalysisScale(
+        identifier: .hy_hidden,
+        title: NSLocalizedString("Скрытая истерия", comment: "Название шкалы"),
+        index: .common(43),
+        score: .median(
+            .specific(male: 13.35, female: 13.35),
+            dispersion: .specific(male: 4.27, female: 3.62),
+            basedOn: .raw(
+                positive: [253],
+                negative: [6, 12, 26, 30, 71, 89, 93, 109, 124, 129, 136, 141, 147, 160, 162, 170, 172, 180, 190, 201, 213, 234, 265, 267, 279, 289, 292]
+            )
+        ))
 }
 
 

@@ -58,6 +58,7 @@ extension NewAnalyser {
                     .hy_immaturity,    //         Эмоциональная незрелость
                     .hy_pure,          //         Чистая истерия
                     .hy_evident,       //         Явная истерия
+                    .hy_hidden,        //         Скрытая истерия
             ])
     }
 }
