@@ -351,4 +351,7 @@ extension AnalysisScale.Identifier {
 
     /// Работоспособность (отношение к работе)
     static let working_capacity = AnalysisScale.Identifier("working_capacity")
+
+    /// Школьный потенциал
+    static let student_potential = AnalysisScale.Identifier("student_potential")
 }

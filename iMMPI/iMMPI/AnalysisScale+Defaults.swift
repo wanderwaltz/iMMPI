@@ -1857,6 +1857,25 @@ extension AnalysisScale {
                 negative: [3, 9, 88, 164, 207, 257, 318, 407]
             )
         ))
+
+
+    // MARK: Школьный потенциал
+
+    /// Школьный потенциал
+    static let student_potential = AnalysisScale(
+        identifier: .student_potential,
+        title: NSLocalizedString("Школьный потенциал", comment: "Название шкалы"),
+        index: .common(110),
+        score: .brackets(
+            .specific(
+                male: (37, 48, 73, 79),
+                female: (37, 48, 73, 79)
+            ),
+            basedOn: .rawPercentage(
+                positive: [176, 225, 432],
+                negative: [32, 33, 67, 335, 389, 418, 431, 456, 475, 531, 557]
+            )
+        ))
 }
 
 

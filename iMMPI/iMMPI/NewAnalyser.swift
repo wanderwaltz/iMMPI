@@ -124,6 +124,7 @@ extension NewAnalyser {
             .group_work,                    // Д. ТРУДОВЫЕ КАЧЕСТВА
                 .educability,               //    Способность к обучению
                 .working_capacity,          //    Работоспособность (отношение к работе)
+                .student_potential,         //    Школьный потенциал
             ])
     }
 }
