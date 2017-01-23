@@ -97,4 +97,7 @@ extension AnalysisScale.Identifier {
 
     /// Предипохондрическое состояние
     static let hs_pre = AnalysisScale.Identifier("Hs_pre", nesting: 2)
+
+    /// Сосредоточенность на здоровье
+    static let hs_health = AnalysisScale.Identifier("Hs_health", nesting: 2)
 }

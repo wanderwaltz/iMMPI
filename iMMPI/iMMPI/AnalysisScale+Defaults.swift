@@ -622,6 +622,23 @@ extension AnalysisScale {
                 negative: [2, 3, 7, 9, 18, 46, 51, 55, 63, 68, 103, 128, 136, 152, 153, 163, 175, 188, 190, 192, 230, 242, 243, 248, 274, 281, 330, 407, 436, 449, 462]
             )
         ))
+
+
+    // MARK: Сосредоточенность на здоровье
+
+    /// **Сосредоточенность на здоровье**
+    static let hs_health = AnalysisScale(
+        identifier: .hs_health,
+        title: NSLocalizedString("Сосредоточенность на здоровье", comment: "Название шкалы"),
+        index: .common(27),
+        score: .median(
+            .specific(male: 5.39, female: 2.14),
+            dispersion: .specific(male: 3.11, female: 2.32),
+            basedOn: .raw(
+                positive: [62, 189],
+                negative: [2, 3, 9, 51, 55, 68, 103, 153, 163, 175, 190, 192, 230, 330]
+            )
+        ))
 }
 
 
