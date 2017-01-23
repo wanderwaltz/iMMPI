@@ -133,4 +133,7 @@ extension AnalysisScale.Identifier {
 
     /// Мягкая депрессия
     static let d_mild = AnalysisScale.Identifier("D_mild", nesting: 2)
+
+    /// Истерия
+    static let hy = AnalysisScale.Identifier("Hy")
 }

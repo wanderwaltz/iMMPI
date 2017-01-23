@@ -54,6 +54,7 @@ extension NewAnalyser {
                     .d_evident,        //         Явная депрессия
                     .d_reaction,       //         Депрессивная реакция
                     .d_mild,           //         Мягкая депрессия
+                .hy,                   //     Истерия
             ])
     }
 }
