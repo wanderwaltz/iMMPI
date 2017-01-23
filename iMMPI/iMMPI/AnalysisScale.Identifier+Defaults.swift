@@ -181,4 +181,7 @@ extension AnalysisScale.Identifier {
 
     /// Подавление агрессии
     static let pd_aggro_suppression = AnalysisScale.Identifier("Pd_aggro_suppression", nesting: 2)
+
+    /// Половое развитие
+    static let mf = AnalysisScale.Identifier("Mf")
 }

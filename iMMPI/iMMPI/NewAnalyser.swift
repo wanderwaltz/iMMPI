@@ -70,6 +70,7 @@ extension NewAnalyser {
                     .pd_intended_hostility, //         Осознанная выраженная враждебность
                     .pd_hostility_control,  //         Контроль над враждебностью
                     .pd_aggro_suppression,  //         Подавление агрессии
+                .mf,                        //     Половое развитие
             ])
     }
 }
