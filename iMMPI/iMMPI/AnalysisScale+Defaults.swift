@@ -1558,7 +1558,25 @@ extension AnalysisScale {
                 negative: [63, 68, 119, 130, 160, 163, 214, 264, 274, 367]
             )
         ))
+
+
+    // MARK: Оценка улучшения
+
+    /// Оценка улучшения
+    static let ie = AnalysisScale(
+        identifier: .ie,
+        title: NSLocalizedString("Оценка улучшения", comment: "Название шкалы"),
+        index: .common(92),
+        score: .median(
+            .specific(male: 16.06, female: 24.7),
+            dispersion: .specific(male: 8.06, female: 8.98),
+            basedOn: .raw(
+                positive: [13, 32, 43, 48, 61, 62, 67, 76, 84, 86, 94, 102, 104, 106, 114, 142, 180, 189, 217, 236, 244, 267, 301, 305, 317, 335, 337, 338, 343, 345, 349, 356, 361, 374, 377, 384, 395, 397, 414, 431, 448, 487, 526, 543, 544, 555, 559],
+                negative: [3, 8, 9, 57, 107, 152, 198, 242, 287, 371, 379, 407, 449, 520, 547]
+            )
+        ))
 }
+
 
 
 

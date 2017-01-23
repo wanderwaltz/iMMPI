@@ -283,4 +283,7 @@ extension AnalysisScale.Identifier {
 
     /// Психоневроз
     static let pne = AnalysisScale.Identifier("Pne")
+
+    /// Оценка улучшения
+    static let ie = AnalysisScale.Identifier("Ie")
 }
