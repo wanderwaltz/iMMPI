@@ -2095,6 +2095,23 @@ extension AnalysisScale {
                 negative: [148, 183, 201, 222, 244, 250, 292, 307, 317, 348, 377, 382, 386, 447, 491, 495, 531, 564]
             )
         ))
+
+
+    // MARK: Наивность
+
+    /// Наивность
+    static let naivety = AnalysisScale(
+        identifier: .naivety,
+        title: NSLocalizedString("Наивность", comment: "Название шкалы"),
+        index: .common(123),
+        score: .median(
+            .specific(male: 5.02, female: 4.7),
+            dispersion: .specific(male: 2.33, female: 2.12),
+            basedOn: .raw(
+                positive: [],
+                negative: [15, 93, 109, 117, 124, 313, 316, 319, 348]
+            )
+        ))
 }
 
 

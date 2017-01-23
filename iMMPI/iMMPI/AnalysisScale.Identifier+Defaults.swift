@@ -397,4 +397,7 @@ extension AnalysisScale.Identifier {
 
     /// Живость (играние роли)
     static let aliveness = AnalysisScale.Identifier("aliveness")
+
+    /// Наивность
+    static let naivety = AnalysisScale.Identifier("naivety")
 }
