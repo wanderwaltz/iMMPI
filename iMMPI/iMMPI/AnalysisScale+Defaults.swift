@@ -2205,6 +2205,23 @@ extension AnalysisScale {
                 negative: [33, 47, 93, 117, 124, 136, 139, 157, 171, 186, 250, 280, 304, 307, 313, 319, 338, 349, 373, 395, 406, 411, 435, 437, 469, 485, 543]
             )
         ))
+
+
+    // MARK: Зависимость
+
+    /// Зависимость
+    static let dependency = AnalysisScale(
+        identifier: .dependency,
+        title: NSLocalizedString("Зависимость", comment: "Название шкалы"),
+        index: .common(129),
+        score: .median(
+            .specific(male: 21.25, female: 27.1),
+            dispersion: .specific(male: 7.9, female: 8),
+            basedOn: .raw(
+                positive: [19, 21, 24, 41, 63, 67, 70, 82, 86, 98, 100, 138, 141, 158, 165, 180, 189, 201, 212, 236, 239, 259, 267, 304, 305, 321, 337, 338, 343, 357, 361, 362, 375, 382, 383, 390, 394, 397, 398, 408, 443, 487, 488, 489, 509, 531, 549, 554, 564],
+                negative: [9, 79, 107, 163, 170, 193, 264, 369]
+            )
+        ))
 }
 
 

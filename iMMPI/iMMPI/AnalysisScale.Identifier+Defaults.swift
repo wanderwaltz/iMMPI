@@ -422,4 +422,7 @@ extension AnalysisScale.Identifier {
 
     /// Терпимость (толерантность к стрессу)
     static let stress_tolerance = AnalysisScale.Identifier("stress_tolerance")
+
+    /// Зависимость
+    static let dependency = AnalysisScale.Identifier("dependency")
 }

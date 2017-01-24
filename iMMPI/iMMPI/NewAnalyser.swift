@@ -145,6 +145,7 @@ extension NewAnalyser {
                 .escapism,                  //    Эскапизм
                 .optimism,                  //    Оптимизм
                 .stress_tolerance,          //    Терпимость (толерантность к стрессу)
+                .dependency,                //    Зависимость
             ])
     }
 }
