@@ -1,18 +1,15 @@
 import Foundation
 
 extension AnalyserTableViewCell {
-    typealias Source = TableViewCellSource<Data>
-    typealias Data = (scale: AnalysisScale, record: TestRecordProtocol)
+    typealias Source = TableViewCellSource<BoundScale>
 
     static func makeSource(with style: Style = .default(with: UserDefaultsAnalysisSettings())) -> Source {
         return .nib(
-            update: { (cell: AnalyserTableViewCell, data: Data?) in
-                guard let data = data else {
+            update: { (cell: AnalyserTableViewCell, scale: BoundScale?) in
+                guard let scale = scale else {
                     return
                 }
 
-                let scale = data.scale
-                let record = data.record
                 let nesting = scale.identifier.nesting
 
                 cell.groupNameLabel?.text = scale.title
@@ -20,9 +17,9 @@ extension AnalyserTableViewCell {
                 cell.groupNameOffset = style.groupNameOffset(with: nesting)
 
                 cell.scoreLabel?.font = style.font(with: nesting)
-                cell.scoreLabel?.text = style.formatScore(for: scale, record: record)
+                cell.scoreLabel?.text = style.formatScore(for: scale)
 
-                cell.indexLabel?.text = style.formatIndex(scale.index.value(for: record))
+                cell.indexLabel?.text = style.formatIndex(scale.index)
         })
     }
 }
@@ -33,7 +30,7 @@ extension AnalyserTableViewCell {
         init(fontWithNesting: @escaping (Int) -> UIFont,
              groupNameOffsetWithNesting: @escaping (Int) -> CGFloat,
              indexFormatter: @escaping (Int) -> String,
-             scoreFormatter: @escaping (AnalysisScale, TestRecordProtocol) -> String) {
+             scoreFormatter: @escaping (BoundScale) -> String) {
             _fontWithNesting = fontWithNesting
             _groupNameOffsetWithNesting = groupNameOffsetWithNesting
             _indexFormatter = indexFormatter
@@ -52,14 +49,14 @@ extension AnalyserTableViewCell {
             return _indexFormatter(index)
         }
 
-        func formatScore(for scale: AnalysisScale, record: TestRecordProtocol) -> String {
-            return _scoreFormatter(scale, record)
+        func formatScore(for scale: BoundScale) -> String {
+            return _scoreFormatter(scale)
         }
 
         private let _fontWithNesting: (Int) -> UIFont
         private let _groupNameOffsetWithNesting: (Int) -> CGFloat
         private let _indexFormatter: (Int) -> String
-        private let _scoreFormatter: (AnalysisScale, TestRecordProtocol) -> String
+        private let _scoreFormatter: (BoundScale) -> String
     }
 }
 
@@ -98,13 +95,12 @@ extension AnalyserTableViewCell.Style {
             indexFormatter: {
                 $0 > 0 ? "\($0)." : ""
             },
-            scoreFormatter: { scale, record in
-                let score = scale.score.value(for: record)
-                if settings.shouldFilterResults && scale.filter.isWithinNorm(score) {
+            scoreFormatter: { scale in
+                if settings.shouldFilterResults && scale.score.isWithinNorm {
                     return Strings.Analysis.normalScorePlaceholder
                 }
                 else {
-                    return scale.formatter.format(score)
+                    return String(describing: scale.score)
                 }
             })
 

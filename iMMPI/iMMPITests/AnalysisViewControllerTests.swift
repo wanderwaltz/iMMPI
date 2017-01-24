@@ -59,7 +59,6 @@ final class AnalysisViewControllerTests: XCTestCase {
         var receivedSender: UIViewController? = nil
 
         let expectedRecord = TestRecord()
-        let expectedAnalyser = Analyser()
         let expectedSender = controller
 
         router._displayAnalysisOptions = { context, sender in
@@ -68,8 +67,7 @@ final class AnalysisViewControllerTests: XCTestCase {
         }
 
         controller.record = expectedRecord
-        controller.analyser = expectedAnalyser
-
+        
         controller.navigationItem.rightBarButtonItem?.click()
 
         XCTAssertTrue(receivedSender === expectedSender)
@@ -79,7 +77,6 @@ final class AnalysisViewControllerTests: XCTestCase {
 
 
     func testThat__if_it_has_an_analyser_it_reloads_data_when_receiving_analysis_settings_change_notification() {
-        controller.analyser = Analyser()
         controller.record = TestRecord()
         controller.tableView = CheckReloadTataTableView()
         NotificationCenter.default.post(name: .analysisSettingsChanged, object: nil)

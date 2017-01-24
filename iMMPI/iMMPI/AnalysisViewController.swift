@@ -5,10 +5,11 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
     var record: TestRecordProtocol? {
         didSet {
             title = record.map { "\($0.person.name), \(dateFormatter.string(from: $0.date))" } ?? ""
+            bindAnalyser()
         }
     }
 
-    var analyser: Analyser?
+    let analyser = Analyser()
 
     var settings: AnalysisSettings?
     var cellSource: AnalyserTableViewCell.Source = AnalyserTableViewCell.makeSource()
@@ -53,6 +54,7 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
 
     fileprivate let dateFormatter = DateFormatter.medium
     fileprivate var analyserGroupIndices: [Int] = []
+    fileprivate var boundScales: [BoundScale] = []
 }
 
 
@@ -60,11 +62,7 @@ extension AnalysisViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cellSource.register(in: tableView)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        initAnalyzerInBackgroundIfNeeded()
+        reloadData()
     }
 }
 
@@ -80,7 +78,7 @@ extension AnalysisViewController {
 
 
     @objc @IBAction fileprivate func handleAnalysisOptionsButtonAction(_ sender: Any?) {
-        guard let analyser = analyser, let record = record else {
+        guard let record = record else {
             return
         }
 
@@ -101,17 +99,10 @@ extension AnalysisViewController {
 
 extension AnalysisViewController {
     func reloadData() {
-        guard let analyser = analyser, let record = record else {
-            return
-        }
-
         var indices: [Int] = []
 
-        for i in 0..<analyser.scales.count {
-            let scale = analyser.scales[i]
-            let score = scale.score.value(for: record)
-
-            if false == scale.filter.isWithinNorm(score) || false == settings?.shouldHideNormalResults {
+        for (i, scale) in boundScales.enumerated() {
+            if false == scale.score.isWithinNorm || false == settings?.shouldHideNormalResults {
                 indices.append(i)
             }
         }
@@ -119,6 +110,10 @@ extension AnalysisViewController {
         let oldIndicesWereEmpty = analyserGroupIndices.isEmpty
 
         analyserGroupIndices = indices
+
+        guard self.isViewLoaded else {
+            return
+        }
 
         if oldIndicesWereEmpty {
             tableView.reloadData()
@@ -129,16 +124,16 @@ extension AnalysisViewController {
     }
 
 
-    fileprivate func initAnalyzerInBackgroundIfNeeded() {
-        guard analyser == nil else {
+    fileprivate func bindAnalyser() {
+        guard let record = record else {
             return
         }
 
         DispatchQueue.global().async {
-            let analyser = Analyser()
+            let bound = self.analyser.bind(record)
 
             DispatchQueue.main.async {
-                self.analyser = analyser
+                self.boundScales = bound
                 self.reloadData()
             }
         }
@@ -160,13 +155,6 @@ extension AnalysisViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = analyserGroupIndices[indexPath.row]
-
-        let data = record.flatMap({ record in
-            (analyser?.scales[index]).flatMap({ scale in
-                (scale, record)
-            })
-        })
-
-        return cellSource.dequeue(from: tableView, with: data)
+        return cellSource.dequeue(from: tableView, with: boundScales[index])
     }
 }
