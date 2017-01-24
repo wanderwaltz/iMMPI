@@ -24,11 +24,11 @@ GEM
     faraday-cookie_jar (0.0.6)
       faraday (>= 0.7.4)
       http-cookie (~> 1.0.0)
-    faraday_middleware (0.11.0)
+    faraday_middleware (0.11.0.1)
       faraday (>= 0.7.4, < 1.0)
     fastimage (2.0.1)
       addressable (~> 2)
-    fastlane (2.9.0)
+    fastlane (2.10.0)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -60,7 +60,7 @@ GEM
       xcpretty (>= 0.2.4, < 1.0.0)
       xcpretty-travis-formatter (>= 0.0.3)
     gh_inspector (1.0.3)
-    google-api-client (0.9.20)
+    google-api-client (0.9.23)
       addressable (~> 2.3)
       googleauth (~> 0.5)
       httpclient (~> 2.7)
@@ -151,4 +151,4 @@ DEPENDENCIES
   xcov
 
 BUNDLED WITH
-   1.12.5
+   1.14.2
