@@ -2498,6 +2498,23 @@ extension AnalysisScale {
                 negative: [11, 49, 59, 74, 84, 93, 99, 100, 132, 157, 165, 171, 172, 203, 212, 215, 224, 236, 239, 245, 277, 292, 295, 297, 299, 301, 328, 338, 366, 383, 384, 389, 396, 397, 400, 410, 415, 416, 435, 437, 438, 441, 452, 459, 469, 485, 487, 513]
             )
         ))
+
+
+    // MARK: Проблема авторитарности
+
+    /// Проблема авторитарности
+    static let authority_problem = AnalysisScale(
+        identifier: .authority_problem,
+        title: NSLocalizedString("Проблема авторитарности", comment: "Название шкалы"),
+        index: .common(145),
+        score: .median(
+            .specific(male: 3.12, female: 3.1),
+            dispersion: .specific(male: 1.52, female: 1.47),
+            basedOn: .raw(
+                positive: [38, 59, 118],
+                negative: [37, 82, 141, 175, 289, 294, 429, 520]
+            )
+        ))
 }
 
 

@@ -163,6 +163,7 @@ extension NewAnalyser {
                 .need_for_affection,        //    Нужда в привязанности
                 .rivalry,                   //    Соперничество
                 .vitriol,                   //    Язвительность
+                .authority_problem,         //    Проблема авторитарности
             ])
     }
 }

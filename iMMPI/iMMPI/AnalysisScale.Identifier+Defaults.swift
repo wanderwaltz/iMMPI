@@ -484,4 +484,7 @@ extension AnalysisScale.Identifier {
 
     /// Язвительность
     static let vitriol = AnalysisScale.Identifier("vitriol")
+
+    /// Проблема авторитарности
+    static let authority_problem = AnalysisScale.Identifier("authority_problem")
 }
