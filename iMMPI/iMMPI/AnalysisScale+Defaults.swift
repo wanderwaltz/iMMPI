@@ -2222,6 +2222,23 @@ extension AnalysisScale {
                 negative: [9, 79, 107, 163, 170, 193, 264, 369]
             )
         ))
+
+
+    // MARK: Приспособляемость
+
+    /// Приспособляемость
+    static let adaptivity = AnalysisScale(
+        identifier: .adaptivity,
+        title: NSLocalizedString("Приспособляемость", comment: "Название шкалы"),
+        index: .common(130),
+        score: .median(
+            .specific(male: 7.29, female: 11.22),
+            dispersion: .specific(male: 4.06, female: 4.75),
+            basedOn: .raw(
+                positive: [16, 21, 22, 23, 24, 32, 35, 41, 43, 67, 76, 127, 157, 159, 182, 189, 238, 266, 305],
+                negative: [2, 3, 8, 9, 51, 103, 107, 119, 153, 178, 155, 192, 281, 289, 296]
+            )
+        ))
 }
 
 

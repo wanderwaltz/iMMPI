@@ -425,4 +425,7 @@ extension AnalysisScale.Identifier {
 
     /// Зависимость
     static let dependency = AnalysisScale.Identifier("dependency")
+
+    /// Приспособляемость
+    static let adaptivity = AnalysisScale.Identifier("adaptivity")
 }
