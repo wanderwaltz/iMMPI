@@ -450,4 +450,7 @@ extension AnalysisScale.Identifier {
 
     /// Приниженность
     static let abjection = AnalysisScale.Identifier("abjection")
+
+    /// Самоотчужденность
+    static let self_alienation = AnalysisScale.Identifier("self_alienation")
 }

@@ -2333,6 +2333,22 @@ extension AnalysisScale {
                 negative: [20, 57, 133, 160, 248, 276, 453, 556]
             )
         ))
+
+
+    // MARK: Самоотчужденность
+
+    /// Самоотчужденность
+    static let self_alienation = AnalysisScale(
+        identifier: .self_alienation,
+        title: NSLocalizedString("Самоотчужденность", comment: "Название шкалы"),
+        index: .common(136),
+        score: .brackets(
+            (23, 32, 57, 68),
+            basedOn: .rawPercentage(
+                positive: [32, 33, 61, 67, 76, 84, 94, 102, 106, 127, 146, 215],
+                negative: [8, 117]
+            )
+        ))
 }
 
 

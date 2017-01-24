@@ -153,6 +153,7 @@ extension NewAnalyser {
             .group_auto_evaluation,         // З. ОТНОШЕНИЕ К СЕБЕ
                 .self_esteem,               //    Самооценка (самоудовлетворенность)
                 .abjection,                 //    Приниженность
+                .self_alienation,           //    Самоотчужденность
             ])
     }
 }
