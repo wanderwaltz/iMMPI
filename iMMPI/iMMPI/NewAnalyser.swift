@@ -172,6 +172,8 @@ extension NewAnalyser {
                 .conformism,                //    Конформизм (конверсионная реакция)
                 .authority,                 //    Авторитет
                 .female_success,            //    Успех женский
+                .leadership,                //    Лидерство
+                .social_status,             //    Социальный статус
             ])
     }
 }

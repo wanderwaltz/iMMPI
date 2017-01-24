@@ -515,4 +515,10 @@ extension AnalysisScale.Identifier {
 
     /// Успех женский
     static let female_success = AnalysisScale.Identifier("female_success")
+
+    /// Лидерство
+    static let leadership = AnalysisScale.Identifier("leadership")
+
+    /// Социальный статус
+    static let social_status = AnalysisScale.Identifier("social_status")
 }

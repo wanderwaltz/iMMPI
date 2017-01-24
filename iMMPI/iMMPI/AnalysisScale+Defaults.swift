@@ -2645,6 +2645,40 @@ extension AnalysisScale {
                 negative: [21, 32, 33, 39, 45, 67, 93, 97, 128, 148, 149, 150, 163, 170, 172, 188, 204, 208, 224, 236, 238, 240, 270, 298, 299, 305, 316, 327, 346, 408, 425, 433, 438, 534, 539]
             )
         ))
+
+
+    // MARK: Лидерство
+
+    /// Лидерство
+    static let leadership = AnalysisScale(
+        identifier: .leadership,
+        title: NSLocalizedString("Лидерство", comment: "Название шкалы"),
+        index: .common(153),
+        score: .median(
+            .specific(male: 32.1, female: 28.1),
+            dispersion: .specific(male: 6.9, female: 5.9),
+            basedOn: .raw(
+                positive: [57, 95, 204, 230, 272, 318, 371, 415, 479, 482, 495, 520, 521, 523],
+                negative: [24, 33, 67, 100, 111, 147, 160, 171, 172, 201, 212, 216, 267, 292, 294, 296, 304, 320, 321, 337, 340, 342, 344, 352, 377, 387, 408, 411, 414, 418, 425, 440, 448, 509, 530, 544]
+            )
+        ))
+
+
+    // MARK: Социальный статус
+
+    /// Социальный статус
+    static let social_status = AnalysisScale(
+        identifier: .social_status,
+        title: NSLocalizedString("Социальный статус", comment: "Название шкалы"),
+        index: .common(154),
+        score: .median(
+            .specific(male: 11.12, female: 10.24),
+            dispersion: .specific(male: 2.54, female: 2.49),
+            basedOn: .raw(
+                positive: [149, 204, 229, 441, 491, 513, 521, 552],
+                negative: [28, 89, 180, 297, 304, 348, 365, 395, 427, 448, 516]
+            )
+        ))
 }
 
 
