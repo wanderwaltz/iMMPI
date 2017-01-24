@@ -572,7 +572,6 @@
 		44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */; };
 		44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */; };
 		44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */; };
-		44673C481E252605001758C0 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
 		44673C491E252605001758C0 /* mmpi.female.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */; };
 		44673C4A1E252605001758C0 /* mmpi.female.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */; };
 		44673C4B1E252605001758C0 /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */; };
@@ -1103,7 +1102,6 @@
 		5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */; };
 		5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */; };
 		5DC3044F17ED83EB00FCE5D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */; };
-		5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
 		5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
 		5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
 		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
@@ -2220,7 +2218,6 @@
 		5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.adult.json; sourceTree = "<group>"; };
 		5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.teen.json; sourceTree = "<group>"; };
 		5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.analysis.json; sourceTree = "<group>"; };
 		5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordStorageProtocol.h; sourceTree = "<group>"; };
 		5DC973BF168F214A00C496F0 /* JSONTestRecordsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordsStorage.h; sourceTree = "<group>"; };
 		5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordsStorage.m; sourceTree = "<group>"; };
@@ -3648,7 +3645,6 @@
 		5DA5C9EB163B018D00CF1601 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */,
 				5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */,
 				5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */,
 				5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */,
@@ -4756,7 +4752,6 @@
 				44673EA71E2526DB001758C0 /* Test Subject 00144.json in Resources */,
 				4406A87B1E2527B400A813D0 /* Test Subject 00153 - scores.json in Resources */,
 				4406A7F71E2527B400A813D0 /* Test Subject 00021 - scores.json in Resources */,
-				44673C481E252605001758C0 /* mmpi.analysis.json in Resources */,
 				44673E8A1E2526DB001758C0 /* Test Subject 00115.json in Resources */,
 				44673F681E2526DC001758C0 /* Test Subject 00337.json in Resources */,
 				44673F0D1E2526DB001758C0 /* Test Subject 00246.json in Resources */,
@@ -4824,7 +4819,6 @@
 				5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */,
 				5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */,
 				448C30B31E277360003D355D /* StatementTableViewCell+Input.xib in Resources */,
-				5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */,
 				5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */,
 				5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */,
 				448C30AA1E276CB9003D355D /* AnalyserTableViewCell.xib in Resources */,
