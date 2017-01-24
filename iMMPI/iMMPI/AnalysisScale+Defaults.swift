@@ -2731,6 +2731,23 @@ extension AnalysisScale {
                 negative: [82, 141, 171, 180, 201, 267, 304, 352]
             )
         ))
+
+
+    // MARK: Социальная ответственность
+
+    /// Социальная ответственность
+    static let social_responsibility = AnalysisScale(
+        identifier: .social_responsibility,
+        title: NSLocalizedString("Социальная ответственность", comment: "Название шкалы"),
+        index: .common(158),
+        score: .median(
+            .specific(male: 13.92, female: 13.68),
+            dispersion: .specific(male: 2.76, female: 2.49),
+            basedOn: .raw(
+                positive: [58, 111, 173, 221, 294, 412, 501, 552],
+                negative: [6, 28, 30, 33, 56, 116, 118, 157, 175, 181, 223, 224, 260, 304, 419, 434, 437, 468, 469, 471, 472, 529, 553, 558]
+            )
+        ))
 }
 
 

@@ -530,4 +530,7 @@ extension AnalysisScale.Identifier {
 
     /// Социальная уверенность человека
     static let social_certainty = AnalysisScale.Identifier("social_certainty")
+
+    /// Социальная ответственность
+    static let social_responsibility = AnalysisScale.Identifier("social_responsibility")
 }
