@@ -419,4 +419,7 @@ extension AnalysisScale.Identifier {
 
     /// Оптимизм
     static let optimism = AnalysisScale.Identifier("optimism")
+
+    /// Терпимость (толерантность к стрессу)
+    static let stress_tolerance = AnalysisScale.Identifier("stress_tolerance")
 }

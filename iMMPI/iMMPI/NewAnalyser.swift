@@ -144,6 +144,7 @@ extension NewAnalyser {
             .group_attitude_to_life,        // Ж. ОТНОШЕНИЕ К ЖИЗНИ
                 .escapism,                  //    Эскапизм
                 .optimism,                  //    Оптимизм
+                .stress_tolerance,          //    Терпимость (толерантность к стрессу)
             ])
     }
 }
