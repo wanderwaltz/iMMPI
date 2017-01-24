@@ -456,4 +456,7 @@ extension AnalysisScale.Identifier {
 
     /// Ханжество
     static let bigotry = AnalysisScale.Identifier("bigotry")
+
+    /// Отношение к себе
+    static let auto_evaluation = AnalysisScale.Identifier("auto_evaluation")
 }

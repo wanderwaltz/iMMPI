@@ -155,6 +155,7 @@ extension NewAnalyser {
                 .abjection,                 //    Приниженность
                 .self_alienation,           //    Самоотчужденность
                 .bigotry,                   //    Ханжество
+                .auto_evaluation,           //    Отношение к себе
             ])
     }
 }

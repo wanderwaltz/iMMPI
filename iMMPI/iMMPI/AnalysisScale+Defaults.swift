@@ -2368,6 +2368,23 @@ extension AnalysisScale {
                 negative: [30, 45, 176, 401]
             )
         ))
+
+
+    // MARK: Отношение к себе
+
+    /// Отношение к себе
+    static let auto_evaluation = AnalysisScale(
+        identifier: .auto_evaluation,
+        title: NSLocalizedString("Отношение к себе", comment: "Название шкалы"),
+        index: .common(138),
+        score: .median(
+            .specific(male: 13.88, female: 10.8),
+            dispersion: .specific(male: 2.91, female: 3.44),
+            basedOn: .raw(
+                positive: [46, 73, 91, 122, 257, 371, 399, 407],
+                negative: [76, 86, 142, 236, 259, 299, 321, 396, 484, 509, 517, 526]
+            )
+        ))
 }
 
 
