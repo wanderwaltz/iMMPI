@@ -156,6 +156,7 @@ extension NewAnalyser {
                 .self_alienation,           //    Самоотчужденность
                 .bigotry,                   //    Ханжество
                 .auto_evaluation,           //    Отношение к себе
+            .group_others_evaluation,       // И. ОТНОШЕНИЕ К ЛЮДЯМ
             ])
     }
 }

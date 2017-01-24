@@ -459,4 +459,11 @@ extension AnalysisScale.Identifier {
 
     /// Отношение к себе
     static let auto_evaluation = AnalysisScale.Identifier("auto_evaluation")
+
+
+
+    // MARK: - И. ОТНОШЕНИЕ К ЛЮДЯМ
+
+    /// И. ОТНОШЕНИЕ К ЛЮДЯМ
+    static let group_others_evaluation = AnalysisScale.Identifier("И. ОТНОШЕНИЕ К ЛЮДЯМ", nesting: 0)
 }

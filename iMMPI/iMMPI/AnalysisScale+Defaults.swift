@@ -2385,6 +2385,16 @@ extension AnalysisScale {
                 negative: [76, 86, 142, 236, 259, 299, 321, 396, 484, 509, 517, 526]
             )
         ))
+
+
+
+    // MARK: - И. ОТНОШЕНИЕ К ЛЮДЯМ
+
+    /// И. ОТНОШЕНИЕ К ЛЮДЯМ
+    static let group_others_evaluation = AnalysisScale.dummy(
+        identifier: .group_others_evaluation,
+        title: NSLocalizedString("И. ОТНОШЕНИЕ К ЛЮДЯМ", comment: "Название группы шкал")
+    )
 }
 
 
