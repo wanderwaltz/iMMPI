@@ -466,4 +466,7 @@ extension AnalysisScale.Identifier {
 
     /// И. ОТНОШЕНИЕ К ЛЮДЯМ
     static let group_others_evaluation = AnalysisScale.Identifier("И. ОТНОШЕНИЕ К ЛЮДЯМ", nesting: 0)
+
+    /// Благосклонность
+    static let favour = AnalysisScale.Identifier("favour")
 }

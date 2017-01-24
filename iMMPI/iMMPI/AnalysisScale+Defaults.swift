@@ -2395,6 +2395,23 @@ extension AnalysisScale {
         identifier: .group_others_evaluation,
         title: NSLocalizedString("И. ОТНОШЕНИЕ К ЛЮДЯМ", comment: "Название группы шкал")
     )
+
+
+    // MARK: Благосклонность
+
+    /// Благосклонность
+    static let favour = AnalysisScale(
+        identifier: .favour,
+        title: NSLocalizedString("Благосклонность", comment: "Название шкалы"),
+        index: .common(139),
+        score: .median(
+            .specific(male: 12.7, female: 11.29),
+            dispersion: .specific(male: 3.11, female: 3.21),
+            basedOn: .raw(
+                positive: [451, 479, 502],
+                negative: [24, 52, 71, 117, 148, 226, 252, 265, 312, 319, 333, 383, 436, 438, 448, 473, 504]
+            )
+        ))
 }
 
 
