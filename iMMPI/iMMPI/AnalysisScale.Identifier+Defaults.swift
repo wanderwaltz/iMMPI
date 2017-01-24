@@ -506,4 +506,7 @@ extension AnalysisScale.Identifier {
 
     /// Коллективизм (студенческий староста)
     static let collectivism = AnalysisScale.Identifier("collectivism")
+
+    /// Конформизм (конверсионная реакция)
+    static let conformism = AnalysisScale.Identifier("conformism")
 }
