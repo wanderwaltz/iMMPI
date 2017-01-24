@@ -170,6 +170,7 @@ extension NewAnalyser {
                 .communicativeness,         //    Коммуникативность (социальное участие)
                 .collectivism,              //    Коллективизм (студенческий староста)
                 .conformism,                //    Конформизм (конверсионная реакция)
+                .authority,                 //    Авторитет
             ])
     }
 }

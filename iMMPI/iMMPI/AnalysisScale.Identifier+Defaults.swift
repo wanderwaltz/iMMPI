@@ -509,4 +509,7 @@ extension AnalysisScale.Identifier {
 
     /// Конформизм (конверсионная реакция)
     static let conformism = AnalysisScale.Identifier("conformism")
+
+    /// Авторитет
+    static let authority = AnalysisScale.Identifier("authority")
 }
