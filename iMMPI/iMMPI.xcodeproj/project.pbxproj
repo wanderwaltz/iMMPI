@@ -2395,14 +2395,6 @@
 			name = Actions;
 			sourceTree = "<group>";
 		};
-		444F24331E3211CD00BB8003 /* Reports */ = {
-			isa = PBXGroup;
-			children = (
-				444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */,
-			);
-			name = Reports;
-			sourceTree = "<group>";
-		};
 		444F24401E334DCA00BB8003 /* Attachment */ = {
 			isa = PBXGroup;
 			children = (
@@ -2440,13 +2432,6 @@
 				444F24561E336AB500BB8003 /* EmailTextGenerator.swift */,
 			);
 			name = Email;
-			sourceTree = "<group>";
-		};
-		444F24601E34A41900BB8003 /* Analyser */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Analyser;
 			sourceTree = "<group>";
 		};
 		44673C1A1E23C9BD001758C0 /* Router */ = {
@@ -3569,15 +3554,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		5D5E05BA164651AE00A5A704 /* Questionnaire */ = {
-			isa = PBXGroup;
-			children = (
-				4430C7A51E161B430024C001 /* Questionnaire.swift */,
-				4430C7A11E1619000024C001 /* Statement.swift */,
-			);
-			name = Questionnaire;
-			sourceTree = "<group>";
-		};
 		5D74CEF8169B085000BAA202 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -3706,10 +3682,10 @@
 		5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				444F24331E3211CD00BB8003 /* Reports */,
 				444F24191E31E1A300BB8003 /* Actions */,
 				448C31891E29F3C9003D355D /* AnalysisOptionsViewController.swift */,
 				448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */,
+				444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */,
 			);
 			name = "Analysis Options View Controller";
 			sourceTree = "<group>";
@@ -3735,19 +3711,9 @@
 			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
-		5DC40477168C3228000AFBAE /* Test Record */ = {
-			isa = PBXGroup;
-			children = (
-				442CE1AB1E235397006C34A6 /* TestRecord.swift */,
-				4430C7B81E16408A0024C001 /* Person.swift */,
-			);
-			name = "Test Record";
-			sourceTree = "<group>";
-		};
 		5DC40483168C446C000AFBAE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				444F24601E34A41900BB8003 /* Analyser */,
 				4430C7BA1E1670010024C001 /* PersonProtocol.swift */,
 				442CE1BF1E236915006C34A6 /* TestAnswersProtocol.swift */,
 				442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */,
@@ -3762,9 +3728,11 @@
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
 			isa = PBXGroup;
 			children = (
-				5DC40477168C3228000AFBAE /* Test Record */,
-				5D5E05BA164651AE00A5A704 /* Questionnaire */,
 				442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */,
+				442CE1AB1E235397006C34A6 /* TestRecord.swift */,
+				4430C7B81E16408A0024C001 /* Person.swift */,
+				4430C7A51E161B430024C001 /* Questionnaire.swift */,
+				4430C7A11E1619000024C001 /* Statement.swift */,
 			);
 			name = "Data Model Objects";
 			sourceTree = "<group>";
