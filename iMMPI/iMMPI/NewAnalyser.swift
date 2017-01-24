@@ -178,6 +178,7 @@ extension NewAnalyser {
                 .social_value,              //    Социальная значимость человека
                 .social_certainty,          //    Социальная уверенность человека
                 .social_responsibility,     //    Социальная ответственность
+                .social_needs,              //    Социальные потребности
             ])
     }
 }

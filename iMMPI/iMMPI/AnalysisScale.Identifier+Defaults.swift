@@ -533,4 +533,7 @@ extension AnalysisScale.Identifier {
 
     /// Социальная ответственность
     static let social_responsibility = AnalysisScale.Identifier("social_responsibility")
+
+    /// Социальные потребности
+    static let social_needs = AnalysisScale.Identifier("social_needs")
 }
