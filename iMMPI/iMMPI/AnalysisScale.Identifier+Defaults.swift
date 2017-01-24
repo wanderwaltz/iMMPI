@@ -524,4 +524,7 @@ extension AnalysisScale.Identifier {
 
     /// Социальное отчуждение
     static let social_alienation = AnalysisScale.Identifier("social_alienation")
+
+    /// Социальная значимость человека
+    static let social_value = AnalysisScale.Identifier("social_value")
 }

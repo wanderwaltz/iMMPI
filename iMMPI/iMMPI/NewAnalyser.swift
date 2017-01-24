@@ -175,6 +175,7 @@ extension NewAnalyser {
                 .leadership,                //    Лидерство
                 .social_status,             //    Социальный статус
                 .social_alienation,         //    Социальное отчуждение
+                .social_value,              //    Социальная значимость человека
             ])
     }
 }

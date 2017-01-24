@@ -2696,6 +2696,25 @@ extension AnalysisScale {
                 negative: [65, 220, 276, 306, 309, 312]
             )
         ))
+
+
+    // MARK: Социальная значимость человека
+
+    /// Социальная значимость человека
+    static let social_value = AnalysisScale(
+        identifier: .social_value,
+        title: NSLocalizedString("Социальная значимость человека", comment: "Название шкалы"),
+        index: .common(156),
+        score: .brackets(
+            .specific(
+                male: (50, 56, 73, 81),
+                female: (38, 45, 65, 72)
+            ),
+            basedOn: .rawPercentage(
+                positive: [88, 99, 101, 107, 122, 181, 225, 257, 285, 353, 521],
+                negative: [32, 86, 171, 180, 256, 297, 307, 361, 427, 558]
+            )
+        ))
 }
 
 
