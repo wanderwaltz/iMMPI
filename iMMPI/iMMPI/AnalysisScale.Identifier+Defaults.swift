@@ -447,4 +447,7 @@ extension AnalysisScale.Identifier {
 
     /// Самооценка (самоудовлетворенность)
     static let self_esteem = AnalysisScale.Identifier("self_esteem")
+
+    /// Приниженность
+    static let abjection = AnalysisScale.Identifier("abjection")
 }

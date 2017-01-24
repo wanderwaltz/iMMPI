@@ -152,6 +152,7 @@ extension NewAnalyser {
                 .low_goal_achievement,      //    Низкая способность к достижению цели
             .group_auto_evaluation,         // З. ОТНОШЕНИЕ К СЕБЕ
                 .self_esteem,               //    Самооценка (самоудовлетворенность)
+                .abjection,                 //    Приниженность
             ])
     }
 }

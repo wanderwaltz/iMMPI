@@ -2317,6 +2317,22 @@ extension AnalysisScale {
                 negative: [32, 94, 100, 138, 141, 147, 171, 172, 201, 236, 259, 317, 321, 335, 343, 389, 394, 416, 439, 443, 499, 500, 531, 564]
             )
         ))
+
+
+    // MARK: Приниженность
+
+    /// Приниженность
+    static let abjection = AnalysisScale(
+        identifier: .abjection,
+        title: NSLocalizedString("Приниженность", comment: "Название шкалы"),
+        index: .common(135),
+        score: .brackets(
+            (27, 32, 48, 53),
+            basedOn: .rawPercentage(
+                positive: [16, 53, 67, 76, 95, 106, 132, 179, 202, 206, 219, 260, 332, 390, 458, 490],
+                negative: [20, 57, 133, 160, 248, 276, 453, 556]
+            )
+        ))
 }
 
 
