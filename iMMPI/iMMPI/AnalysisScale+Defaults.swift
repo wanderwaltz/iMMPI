@@ -2300,6 +2300,23 @@ extension AnalysisScale {
         identifier: .group_auto_evaluation,
         title: NSLocalizedString("З. ОТНОШЕНИЕ К СЕБЕ", comment: "Название группы шкал")
     )
+
+
+    // MARK: Самооценка (самоудовлетворенность)
+
+    /// Самооценка (самоудовлетворенность)
+    static let self_esteem = AnalysisScale(
+        identifier: .self_esteem,
+        title: NSLocalizedString("Самооценка (самоудовлетворенность)", comment: "Название шкалы"),
+        index: .common(134),
+        score: .median(
+            .specific(male: 21.3, female: 17.2),
+            dispersion: .specific(male: 5.05, female: 5.27),
+            basedOn: .raw(
+                positive: [46, 54, 79, 107, 170, 242, 262, 353, 501, 521],
+                negative: [32, 94, 100, 138, 141, 147, 171, 172, 201, 236, 259, 317, 321, 335, 343, 389, 394, 416, 439, 443, 499, 500, 531, 564]
+            )
+        ))
 }
 
 

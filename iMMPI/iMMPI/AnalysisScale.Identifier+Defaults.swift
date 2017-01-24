@@ -444,4 +444,7 @@ extension AnalysisScale.Identifier {
 
     /// З. ОТНОШЕНИЕ К СЕБЕ
     static let group_auto_evaluation = AnalysisScale.Identifier("З. ОТНОШЕНИЕ К СЕБЕ", nesting: 0)
+
+    /// Самооценка (самоудовлетворенность)
+    static let self_esteem = AnalysisScale.Identifier("self_esteem")
 }
