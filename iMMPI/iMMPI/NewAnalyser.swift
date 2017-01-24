@@ -162,6 +162,7 @@ extension NewAnalyser {
                 .altruism,                  //    Альтруизм
                 .need_for_affection,        //    Нужда в привязанности
                 .rivalry,                   //    Соперничество
+                .vitriol,                   //    Язвительность
             ])
     }
 }

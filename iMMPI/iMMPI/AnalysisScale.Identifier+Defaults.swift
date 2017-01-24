@@ -481,4 +481,7 @@ extension AnalysisScale.Identifier {
 
     /// Соперничество
     static let rivalry = AnalysisScale.Identifier("rivalry")
+
+    /// Язвительность
+    static let vitriol = AnalysisScale.Identifier("vitriol")
 }
