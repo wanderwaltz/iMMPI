@@ -83,7 +83,7 @@ extension AnalysisViewController {
         }
 
         router?.displayAnalysisOptions(
-            context: AnalysisMenuActionContext(router: router, record: record, analyser: analyser),
+            context: AnalysisMenuActionContext(router: router, record: record, scales: boundScales),
             sender: self
         )
     }

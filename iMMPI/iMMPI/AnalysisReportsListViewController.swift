@@ -9,7 +9,7 @@ final class AnalysisReportsListViewController: UITableViewController, UsingRouti
     weak var delegate: AnalysisReportsListViewControllerDelegate?
 
     var record: TestRecordProtocol?
-    var analyser: Analyser?
+    var scales: [BoundScale] = []
     var reportGenerators: [HtmlReportGenerator] = []
 
     fileprivate let cellSource = TableViewCellSource<HtmlReportGenerator>(
@@ -27,12 +27,12 @@ extension AnalysisReportsListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        guard let record = record, let analyser = analyser else {
+        guard let record = record else {
             return
         }
 
         let generator = reportGenerators[indexPath.row]
-        let html = generator.generate(for: record, with: analyser)
+        let html = generator.generate(for: record, with: scales)
 
         delegate?.analysisReportsList(self, didSelectReport: html)
     }

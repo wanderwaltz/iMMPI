@@ -1,11 +1,11 @@
 import Foundation
 
 struct EmailSubjectGenerator {
-    init(_ generate: @escaping (TestRecordProtocol, Analyser) -> String) {
+    init(_ generate: @escaping (TestRecordProtocol, [BoundScale]) -> String) {
         _generate = generate
     }
 
-    fileprivate let _generate: (TestRecordProtocol, Analyser) -> String
+    fileprivate let _generate: (TestRecordProtocol, [BoundScale]) -> String
 }
 
 
@@ -15,8 +15,8 @@ extension EmailSubjectGenerator: AnalysisReportGenerator {
         return "com.immpi.reports.email.subject"
     }
 
-    func generate(for record: TestRecordProtocol, with analyser: Analyser) -> String {
-        return _generate(record, analyser)
+    func generate(for record: TestRecordProtocol, with scales: [BoundScale]) -> String {
+        return _generate(record, scales)
     }
 }
 

@@ -145,13 +145,13 @@ extension MMPIRouter: Router {
             controller.delegate = reportPrintingDelegate
             controller.title = Strings.Screen.print
             controller.record = context.record
-            controller.analyser = context.analyser
+            controller.scales = context.scales
             controller.reportGenerators = reportGenerators
             
             sender.show(controller, sender: context)
         }
         else {
-            let html = reportGenerators.first!.generate(for: context.record, with: context.analyser)
+            let html = reportGenerators.first!.generate(for: context.record, with: context.scales)
             displayPrintOptions(for: html, sender: sender)
         }
     }

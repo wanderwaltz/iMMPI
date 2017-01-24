@@ -3,17 +3,17 @@ import Foundation
 struct AttachmentReportGenerator {
     let title: String
 
-    init(title: String, generate: @escaping (TestRecordProtocol, Analyser) -> Attachment) {
+    init(title: String, generate: @escaping (TestRecordProtocol, [BoundScale]) -> Attachment) {
         self.title = title
         self._generate = generate
     }
 
-    fileprivate let _generate: (TestRecordProtocol, Analyser) -> Attachment
+    fileprivate let _generate: (TestRecordProtocol, [BoundScale]) -> Attachment
 }
 
 
 extension AttachmentReportGenerator: AnalysisReportGenerator {
-    func generate(for record: TestRecordProtocol, with analyser: Analyser) -> Attachment {
-        return _generate(record, analyser)
+    func generate(for record: TestRecordProtocol, with scales: [BoundScale]) -> Attachment {
+        return _generate(record, scales)
     }
 }

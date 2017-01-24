@@ -23,12 +23,12 @@ extension EmailMessageGenerator: AnalysisReportGenerator {
         return Strings.Report.email
     }
 
-    func generate(for record: TestRecordProtocol, with analyser: Analyser) -> EmailMessage {
+    func generate(for record: TestRecordProtocol, with scales: [BoundScale]) -> EmailMessage {
         return EmailMessage(
-            subject: subject.generate(for: record, with: analyser),
-            text: text.generate(for: record, with: analyser),
-            recipients: recipients.generate(for: record, with: analyser),
-            attachments: attachments.generate(for: record, with: analyser)
+            subject: subject.generate(for: record, with: scales),
+            text: text.generate(for: record, with: scales),
+            recipients: recipients.generate(for: record, with: scales),
+            attachments: attachments.generate(for: record, with: scales)
         )
     }
 }

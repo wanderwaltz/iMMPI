@@ -6,7 +6,7 @@ struct HtmlReportGenerator {
     init(title: String,
          dateFormatter: DateFormatter = .medium,
          css: String,
-         content: @escaping (TestRecordProtocol, Analyser) -> Html) {
+         content: @escaping (TestRecordProtocol, [BoundScale]) -> Html) {
         self.title = title
         self.dateFormatter = dateFormatter
         self.css = css
@@ -15,12 +15,12 @@ struct HtmlReportGenerator {
 
     fileprivate let dateFormatter: DateFormatter
     fileprivate let css: String
-    fileprivate let content: (TestRecordProtocol, Analyser) -> Html
+    fileprivate let content: (TestRecordProtocol, [BoundScale]) -> Html
 }
 
 
 extension HtmlReportGenerator: AnalysisReportGenerator {
-    func generate(for record: TestRecordProtocol, with analyser: Analyser) -> Html {
+    func generate(for record: TestRecordProtocol, with scales: [BoundScale]) -> Html {
         return Html.document(
             .head(
                 .meta(),
@@ -30,7 +30,7 @@ extension HtmlReportGenerator: AnalysisReportGenerator {
                 .body(
                     .h1(record.personName),
                     .h2(dateFormatter.string(from: record.date)),
-                    content(record, analyser)
+                    content(record, scales)
                 )
             )
         )
@@ -47,7 +47,7 @@ extension HtmlReportGenerator {
     init(title: String,
          resource: String = "html.report",
          bundle: Bundle = Bundle.main,
-         _ content: @escaping (TestRecordProtocol, Analyser) -> Html) throws {
+         _ content: @escaping (TestRecordProtocol, [BoundScale]) -> Html) throws {
         guard let url = bundle.url(forResource: resource, withExtension: "css") else {
             throw Error.fileNotFound
         }

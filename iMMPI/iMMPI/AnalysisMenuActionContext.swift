@@ -4,7 +4,7 @@ final class AnalysisMenuActionContext {
     let router: Router?
 
     let record: TestRecordProtocol
-    let analyser: Analyser
+    let scales: [BoundScale]
 
 
     private(set) lazy var questionnaire: Questionnaire? = {
@@ -34,14 +34,9 @@ final class AnalysisMenuActionContext {
     }()
 
 
-    init(router: Router?, record: TestRecordProtocol, analyser: Analyser) {
+    init(router: Router?, record: TestRecordProtocol, scales: [BoundScale]) {
         self.router = router
         self.record = record
-        self.analyser = analyser
-    }
-
-
-    deinit {
-        print(">>>")
+        self.scales = scales
     }
 }

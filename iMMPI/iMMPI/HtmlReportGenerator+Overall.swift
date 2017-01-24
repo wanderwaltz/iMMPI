@@ -1,38 +1,38 @@
 import Foundation
 
 extension HtmlReportGenerator {
-    static let overall = try? HtmlReportGenerator(title: Strings.Report.overall) { record, analyser in
+    static let overall = try? HtmlReportGenerator(title: Strings.Report.overall) { record, scales in
         return .ul(attributes: ["class": "analysis"],
-                   content: generateList(for: record, analyser: analyser, startingFrom: 0).html)
+                   content: generateList(for: record, scales: scales, startingFrom: 0).html)
     }
 }
 
 
-fileprivate func generateList(for record: TestRecordProtocol, analyser: Analyser, startingFrom index: Int) -> (html: [Html], lastIndex: Int) {
+fileprivate func generateList(for record: TestRecordProtocol, scales: [BoundScale], startingFrom index: Int) -> (html: [Html], lastIndex: Int) {
     var list: [Html] = []
 
     var i = index
 
-    let initialNesting = analyser.scales[index].identifier.nesting
+    let initialNesting = scales[index].identifier.nesting
 
-    while i < analyser.scales.count {
-        let scale = analyser.scales[i]
+    while i < scales.count {
+        let scale = scales[i]
         let nesting = scale.identifier.nesting
 
-        var scaleHtml = generateItem(for: scale, record: record)
+        var scaleHtml = generateItem(for: scale)
 
         defer {
             list.append(.li(attributes: ["class": "depth\(nesting)"], content: scaleHtml))
         }
 
-        if i + 1 < analyser.scales.count {
-            let nextNesting = analyser.scales[i+1].identifier.nesting
+        if i + 1 < scales.count {
+            let nextNesting = scales[i+1].identifier.nesting
 
             if nextNesting < initialNesting {
                 break
             }
             else if nextNesting > initialNesting {
-                let sublist = generateList(for: record, analyser: analyser, startingFrom: i+1)
+                let sublist = generateList(for: record, scales: scales, startingFrom: i+1)
                 scaleHtml.append(.ul(content: sublist.html))
                 i = sublist.lastIndex
             }
@@ -45,11 +45,10 @@ fileprivate func generateList(for record: TestRecordProtocol, analyser: Analyser
 }
 
 
-fileprivate func generateItem(for scale: AnalysisScale, record: TestRecordProtocol) -> [Html] {
-    let index = scale.index.value(for: record)
+fileprivate func generateItem(for scale: BoundScale) -> [Html] {
     return [
-        index > 0 ? .tag("index", content: .content("\(index).")) : .empty,
+        scale.index > 0 ? .tag("index", content: .content("\(scale.index).")) : .empty,
         .tag("text", content: .content(scale.title)),
-        .tag("score", content: .content(scale.formatter.format(scale.score.value(for: record))))
+        .tag("score", content: .content(scale.score))
     ]
 }
