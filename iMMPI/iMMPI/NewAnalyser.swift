@@ -154,6 +154,7 @@ extension NewAnalyser {
                 .self_esteem,               //    Самооценка (самоудовлетворенность)
                 .abjection,                 //    Приниженность
                 .self_alienation,           //    Самоотчужденность
+                .bigotry,                   //    Ханжество
             ])
     }
 }

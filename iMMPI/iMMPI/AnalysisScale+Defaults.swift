@@ -2349,6 +2349,25 @@ extension AnalysisScale {
                 negative: [8, 117]
             )
         ))
+
+
+    // MARK: Ханжество
+
+    /// Ханжество
+    static let bigotry = AnalysisScale(
+        identifier: .bigotry,
+        title: NSLocalizedString("Ханжество", comment: "Название шкалы"),
+        index: .common(137),
+        score: .brackets(
+            .specific(
+                male: (28, 34, 51, 59),
+                female: (35, 42, 58, 67)
+            ),
+            basedOn: .rawPercentage(
+                positive: [13, 26, 58, 94, 111, 112, 119, 129, 147, 158, 206, 232, 289, 317, 336, 337, 338, 356, 357, 361, 375, 378, 380, 390, 392, 395, 397, 402, 404, 413, 414, 416, 439, 443, 457, 461, 468, 470, 492, 499, 502, 506, 509, 510, 548, 564],
+                negative: [30, 45, 176, 401]
+            )
+        ))
 }
 
 

@@ -32,7 +32,7 @@ extension AnalysisScore {
                 }
 
                 return { answers in
-                    let result = trunc(rawMatches.value(for: gender, answers: answers) / totalCount * 100.0)
+                    let result = trunc(rawMatches.value(for: gender, answers: answers) * 100.0 / totalCount)
                     precondition(0.0...100.0 ~= result)
                     return result
                 }

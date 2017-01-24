@@ -453,4 +453,7 @@ extension AnalysisScale.Identifier {
 
     /// Самоотчужденность
     static let self_alienation = AnalysisScale.Identifier("self_alienation")
+
+    /// Ханжество
+    static let bigotry = AnalysisScale.Identifier("bigotry")
 }
