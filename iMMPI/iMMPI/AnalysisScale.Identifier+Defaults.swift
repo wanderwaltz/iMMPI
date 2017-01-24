@@ -413,4 +413,7 @@ extension AnalysisScale.Identifier {
 
     /// Ж. ОТНОШЕНИЕ К ЖИЗНИ
     static let group_attitude_to_life = AnalysisScale.Identifier("Ж. ОТНОШЕНИЕ К ЖИЗНИ", nesting: 0)
+
+    /// Честность
+    static let escapism = AnalysisScale.Identifier("escapism")
 }

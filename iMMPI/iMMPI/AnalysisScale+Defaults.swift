@@ -2155,8 +2155,24 @@ extension AnalysisScale {
         identifier: .group_attitude_to_life,
         title: NSLocalizedString("Ж. ОТНОШЕНИЕ К ЖИЗНИ", comment: "Название группы шкал")
     )
-}
 
+
+    // MARK: Эскапизм
+
+    /// Эскапизм
+    static let escapism = AnalysisScale(
+        identifier: .escapism,
+        title: NSLocalizedString("Эскапизм", comment: "Название шкалы"),
+        index: .common(126),
+        score: .median(
+            .specific(male: 12.82, female: 14.58),
+            dispersion: .specific(male: 4.11, female: 4.18),
+            basedOn: .raw(
+                positive: [38, 42, 45, 47, 76, 125, 135, 150, 157, 159, 168, 179, 195, 208, 224, 225, 235, 236, 239, 246, 247, 250, 252, 277, 282, 300, 398, 529, 532],
+                negative: [2, 3, 95, 98, 107, 115, 178, 268, 294, 379, 380, 395]
+            )
+        ))
+}
 
 
 
