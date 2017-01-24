@@ -2832,6 +2832,23 @@ extension AnalysisScale {
                 negative: [24, 32, 61, 86, 94, 250, 267, 304, 343, 356, 562]
             )
         ))
+
+
+    // MARK: Семейная дисгармония
+
+    /// Семейная дисгармония
+    static let family_disharmony = AnalysisScale(
+        identifier: .family_disharmony,
+        title: NSLocalizedString("Семейная дисгармония", comment: "Название шкалы"),
+        index: .common(164),
+        score: .median(
+            .specific(male: 2.25, female: 3.28),
+            dispersion: .specific(male: 1.84, female: 1.78),
+            basedOn: .raw(
+                positive: [21, 42, 212, 216, 224, 245],
+                negative: [96, 137, 235, 237, 527]
+            )
+        ))
 }
 
 

@@ -548,4 +548,7 @@ extension AnalysisScale.Identifier {
 
     /// Доминирование
     static let domination = AnalysisScale.Identifier("domination")
+
+    /// Семейная дисгармония
+    static let family_disharmony = AnalysisScale.Identifier("family_disharmony")
 }

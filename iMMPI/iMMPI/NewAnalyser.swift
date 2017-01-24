@@ -183,6 +183,7 @@ extension NewAnalyser {
                 .responsibility_traits,     //    Черты ответственности
                 .crime_1,                   //    Преступность 1
                 .domination,                //    Доминирование
+                .family_disharmony,         //    Семейная дисгармония
             ])
     }
 }
