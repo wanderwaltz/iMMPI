@@ -1,12 +1,12 @@
 import XCTest
 @testable import iMMPI
 
-final class NewAnalyserScaleIdentifiersTests: XCTestCase {
-    var analyser: NewAnalyser!
+final class AnalyserScaleIdentifiersTests: XCTestCase {
+    var analyser: Analyser!
 
     override func setUp() {
         super.setUp()
-        analyser = NewAnalyser()
+        analyser = Analyser()
     }
 
     func testThat__all_scales_have_unique_identifiers() {

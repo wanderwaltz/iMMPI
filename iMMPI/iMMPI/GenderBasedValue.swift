@@ -34,6 +34,17 @@ extension GenderBasedValue {
         case .unknown: return male
         }
     }
+
+
+    /// A shorthand method for getting gender-based value for a test record.
+    ///
+    /// - Returns: the stored value corresponding to the `record.person.gender`.
+    ///
+    /// - Parameter record: a `TestRecordProtocol` instance corresponding to the desired value.
+    ///                    `Gender.unknown` values fallback to `Gender.male`.
+    func value(for record: TestRecordProtocol) -> T {
+        return value(for: record.person.gender)
+    }
 }
 
 

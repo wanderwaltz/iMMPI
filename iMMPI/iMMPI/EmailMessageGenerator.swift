@@ -23,7 +23,7 @@ extension EmailMessageGenerator: AnalysisReportGenerator {
         return Strings.Report.email
     }
 
-    func generate(for record: TestRecordProtocol, with analyser: Analyzer) -> EmailMessage {
+    func generate(for record: TestRecordProtocol, with analyser: Analyser) -> EmailMessage {
         return EmailMessage(
             subject: subject.generate(for: record, with: analyser),
             text: text.generate(for: record, with: analyser),

@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol TestRecordProtocol;
+
 #pragma mark -
 #pragma mark TestRecordStorage protocol
 

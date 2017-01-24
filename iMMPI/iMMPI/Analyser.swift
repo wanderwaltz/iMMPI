@@ -1,7 +1,6 @@
 import Foundation
 
-// TODO: rename later
-struct NewAnalyser {
+struct Analyser {
     let scales: [AnalysisScale]
 
     init(scales: [AnalysisScale]) {
@@ -10,7 +9,7 @@ struct NewAnalyser {
 }
 
 
-extension NewAnalyser {
+extension Analyser {
     init() {
         self.init(scales: [
             .group_reliability,             // А. НАДЕЖНОСТЬ

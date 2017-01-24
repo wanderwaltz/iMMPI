@@ -8,7 +8,7 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
         }
     }
 
-    var analyser: Analyzer?
+    var analyser: Analyser?
 
     var settings: AnalysisSettings?
     var cellSource: AnalyserTableViewCell.Source = AnalyserTableViewCell.makeSource()
@@ -101,18 +101,17 @@ extension AnalysisViewController {
 
 extension AnalysisViewController {
     func reloadData() {
-        guard let analyser = analyser else {
+        guard let analyser = analyser, let record = record else {
             return
         }
 
         var indices: [Int] = []
 
-        for i in 0..<analyser.groupsCount {
-            guard let group = analyser.group(at: i) else {
-                continue
-            }
+        for i in 0..<analyser.scales.count {
+            let scale = analyser.scales[i]
+            let score = scale.score.value(for: record)
 
-            if false == group.scoreIsWithinNorm() || false == settings?.shouldHideNormalResults {
+            if false == scale.filter.isWithinNorm(score) || false == settings?.shouldHideNormalResults {
                 indices.append(i)
             }
         }
@@ -131,20 +130,12 @@ extension AnalysisViewController {
 
 
     fileprivate func initAnalyzerInBackgroundIfNeeded() {
-        guard let record = record else {
-            assertionFailure()
-            return
-        }
-
         guard analyser == nil else {
             return
         }
 
         DispatchQueue.global().async {
-            let analyser = Analyzer()
-
-            analyser.loadGroups()
-            analyser.computeScores(forRecord: record)
+            let analyser = Analyser()
 
             DispatchQueue.main.async {
                 self.analyser = analyser
@@ -168,13 +159,11 @@ extension AnalysisViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let groupIndex = analyserGroupIndices[indexPath.row]
+        let index = analyserGroupIndices[indexPath.row]
 
         let data = record.flatMap({ record in
-            analyser?.group(at: groupIndex).flatMap({ group in
-                (analyser?.depthOfGroup(at: groupIndex)).flatMap({ depth in
-                    (group, record, depth)
-                })
+            (analyser?.scales[index]).flatMap({ scale in
+                (scale, record)
             })
         })
 

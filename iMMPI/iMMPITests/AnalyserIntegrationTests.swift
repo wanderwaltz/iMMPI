@@ -5,12 +5,11 @@ final class AnalyzerIntegrationTests: XCTestCase {
     let numberOfTestCases = 454
     let serialization = JSONTestRecordSerialization()
 
-    var analyser: Analyzer!
+    var analyser: Analyser!
 
     override func setUp() {
         super.setUp()
-        analyser = Analyzer()
-        analyser.loadGroups()
+        analyser = Analyser()
     }
 
 
@@ -55,17 +54,17 @@ final class AnalyzerIntegrationTests: XCTestCase {
 
     func validateTestCases(in range: CountableRange<Int>) {
         for i in (0..<numberOfTestCases).clamped(to: range) {
-            let testRecord = TestSamples.record(at: i)
+            let record = TestSamples.record(at: i)
             let scores = TestSamples.rawAnalysis(at: i)
 
-            XCTAssertNotEqual(testRecord.person.gender, .unknown)
-            XCTAssertNotEqual(testRecord.person.ageGroup, .unknown)
+            XCTAssertNotEqual(record.person.gender, .unknown)
+            XCTAssertNotEqual(record.person.ageGroup, .unknown)
 
-            for groupIndex in 0..<analyser.groupsCount {
-                let score = analyser.group(at: groupIndex)!.computeScore(forRecord: testRecord, analyser: analyser)
-                let expectedScore = scores[Int(groupIndex)]
+            for i in 0..<analyser.scales.count {
+                let actual = analyser.scales[i].score.value(for: record)
+                let expected = scores[i]
 
-                XCTAssertMatchingScores(score, expectedScore, "Score failed for: \(testRecord.personName), groupIndex: \(groupIndex), expected: \(expectedScore), got: \(score)")
+                XCTAssertMatchingScores(actual, expected, "Score failed for: \(record.personName), scale: \(i), expected: \(expected), got: \(actual)")
             }
         }
     }

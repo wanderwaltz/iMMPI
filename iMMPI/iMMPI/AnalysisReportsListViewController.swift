@@ -9,7 +9,7 @@ final class AnalysisReportsListViewController: UITableViewController, UsingRouti
     weak var delegate: AnalysisReportsListViewControllerDelegate?
 
     var record: TestRecordProtocol?
-    var analyser: Analyzer?
+    var analyser: Analyser?
     var reportGenerators: [HtmlReportGenerator] = []
 
     fileprivate let cellSource = TableViewCellSource<HtmlReportGenerator>(

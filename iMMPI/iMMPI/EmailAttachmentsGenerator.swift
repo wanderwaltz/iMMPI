@@ -14,7 +14,7 @@ extension EmailAttachmentsGenerator: AnalysisReportGenerator {
         return "com.immpi.reports.email.attachments"
     }
 
-    func generate(for record: TestRecordProtocol, with analyser: Analyzer) -> [Attachment] {
+    func generate(for record: TestRecordProtocol, with analyser: Analyser) -> [Attachment] {
         return generators.map({ $0.generate(for: record, with: analyser) })
     }
 }

@@ -1,11 +1,11 @@
 import Foundation
 
 struct EmailSubjectGenerator {
-    init(_ generate: @escaping (TestRecordProtocol, Analyzer) -> String) {
+    init(_ generate: @escaping (TestRecordProtocol, Analyser) -> String) {
         _generate = generate
     }
 
-    fileprivate let _generate: (TestRecordProtocol, Analyzer) -> String
+    fileprivate let _generate: (TestRecordProtocol, Analyser) -> String
 }
 
 
@@ -15,7 +15,7 @@ extension EmailSubjectGenerator: AnalysisReportGenerator {
         return "com.immpi.reports.email.subject"
     }
 
-    func generate(for record: TestRecordProtocol, with analyser: Analyzer) -> String {
+    func generate(for record: TestRecordProtocol, with analyser: Analyser) -> String {
         return _generate(record, analyser)
     }
 }

@@ -1,12 +1,12 @@
 import XCTest
 @testable import iMMPI
 
-final class NewAnalyserScoreFormattersTests: XCTestCase {
-    var analyser: NewAnalyser!
+final class AnalyserScoreFormattersTests: XCTestCase {
+    var analyser: Analyser!
 
     override func setUp() {
         super.setUp()
-        analyser = NewAnalyser()
+        analyser = Analyser()
     }
 
     func testThat__all_zero_nested_scales_have_ignoring_formatter() {

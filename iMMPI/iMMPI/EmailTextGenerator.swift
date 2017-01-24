@@ -1,11 +1,11 @@
 import Foundation
 
 struct EmailTextGenerator {
-    init(_ generate: @escaping (TestRecordProtocol, Analyzer) -> String) {
+    init(_ generate: @escaping (TestRecordProtocol, Analyser) -> String) {
         _generate = generate
     }
 
-    fileprivate let _generate: (TestRecordProtocol, Analyzer) -> String
+    fileprivate let _generate: (TestRecordProtocol, Analyser) -> String
 }
 
 
@@ -15,7 +15,7 @@ extension EmailTextGenerator: AnalysisReportGenerator {
         return "com.immpi.reports.email.text"
     }
 
-    func generate(for record: TestRecordProtocol, with analyser: Analyzer) -> String {
+    func generate(for record: TestRecordProtocol, with analyser: Analyser) -> String {
         return _generate(record, analyser)
     }
 }
@@ -23,7 +23,8 @@ extension EmailTextGenerator: AnalysisReportGenerator {
 
 extension EmailTextGenerator {
     static let `default` = EmailTextGenerator({ record, analyser in
-        let group = analyser.group(withName: Strings.Analysis.reliabilityGroupName)
-        return "\(Strings.Analysis.reliabilityGroupName): \(group?.readableScore() ?? Strings.Value.unknown)"
+        // TODO: include full profile (base scales)
+        let scale = AnalysisScale.f
+        return "\(scale.title): \(scale.formatter.format(scale.score.value(for: record)))"
     })
 }

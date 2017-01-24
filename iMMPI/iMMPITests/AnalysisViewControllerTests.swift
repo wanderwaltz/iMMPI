@@ -59,7 +59,7 @@ final class AnalysisViewControllerTests: XCTestCase {
         var receivedSender: UIViewController? = nil
 
         let expectedRecord = TestRecord()
-        let expectedAnalyser = Analyzer()
+        let expectedAnalyser = Analyser()
         let expectedSender = controller
 
         router._displayAnalysisOptions = { context, sender in
@@ -74,13 +74,13 @@ final class AnalysisViewControllerTests: XCTestCase {
 
         XCTAssertTrue(receivedSender === expectedSender)
         XCTAssertTrue(receivedContext!.record === expectedRecord)
-        XCTAssertTrue(receivedContext!.analyser === expectedAnalyser)
         XCTAssertTrue(receivedContext!.router === router)
     }
 
 
     func testThat__if_it_has_an_analyser_it_reloads_data_when_receiving_analysis_settings_change_notification() {
-        controller.analyser = Analyzer()
+        controller.analyser = Analyser()
+        controller.record = TestRecord()
         controller.tableView = CheckReloadTataTableView()
         NotificationCenter.default.post(name: .analysisSettingsChanged, object: nil)
         XCTAssertEqual((controller.tableView as! CheckReloadTataTableView).reloadDataCallsCount, 1)

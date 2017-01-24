@@ -1,13 +1,13 @@
 import XCTest
 @testable import iMMPI
 
-final class NewAnalyserScaleIndicesTests: XCTestCase {
-    var analyser: NewAnalyser!
+final class AnalyserScaleIndicesTests: XCTestCase {
+    var analyser: Analyser!
     var scales: [AnalysisScale]!
 
     override func setUp() {
         super.setUp()
-        analyser = NewAnalyser()
+        analyser = Analyser()
         scales = analyser.scales.filter({ $0.identifier.nesting > 0 })
     }
 

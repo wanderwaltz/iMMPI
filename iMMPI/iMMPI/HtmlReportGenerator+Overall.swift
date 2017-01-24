@@ -2,39 +2,38 @@ import Foundation
 
 extension HtmlReportGenerator {
     static let overall = try? HtmlReportGenerator(title: Strings.Report.overall) { record, analyser in
-        analyser.computeScores(forRecord: record)
         return .ul(attributes: ["class": "analysis"],
                    content: generateList(for: record, analyser: analyser, startingFrom: 0).html)
     }
 }
 
 
-fileprivate func generateList(for record: TestRecordProtocol, analyser: Analyzer, startingFrom index: Int) -> (html: [Html], lastIndex: Int) {
+fileprivate func generateList(for record: TestRecordProtocol, analyser: Analyser, startingFrom index: Int) -> (html: [Html], lastIndex: Int) {
     var list: [Html] = []
 
     var i = index
 
-    let initialDepth = analyser.depthOfGroup(at: index)
+    let initialNesting = analyser.scales[index].identifier.nesting
 
-    while i < analyser.groupsCount {
-        let group = analyser.group(at: i)!
-        let depth = analyser.depthOfGroup(at: i)
+    while i < analyser.scales.count {
+        let scale = analyser.scales[i]
+        let nesting = scale.identifier.nesting
 
-        var groupHtml = generateItem(for: group, at: group.index(forRecord: record))
+        var scaleHtml = generateItem(for: scale, record: record)
 
         defer {
-            list.append(.li(attributes: ["class": "depth\(depth)"], content: groupHtml))
+            list.append(.li(attributes: ["class": "depth\(nesting)"], content: scaleHtml))
         }
 
-        if i + 1 < analyser.groupsCount {
-            let nextDepth = analyser.depthOfGroup(at: i + 1)
+        if i + 1 < analyser.scales.count {
+            let nextNesting = analyser.scales[i+1].identifier.nesting
 
-            if nextDepth < initialDepth {
+            if nextNesting < initialNesting {
                 break
             }
-            else if nextDepth > initialDepth {
-                let sublist = generateList(for: record, analyser: analyser, startingFrom: i + 1)
-                groupHtml.append(.ul(content: sublist.html))
+            else if nextNesting > initialNesting {
+                let sublist = generateList(for: record, analyser: analyser, startingFrom: i+1)
+                scaleHtml.append(.ul(content: sublist.html))
                 i = sublist.lastIndex
             }
         }
@@ -46,10 +45,11 @@ fileprivate func generateList(for record: TestRecordProtocol, analyser: Analyzer
 }
 
 
-fileprivate func generateItem(for group: AnalyzerGroup, at index: Int) -> [Html] {
+fileprivate func generateItem(for scale: AnalysisScale, record: TestRecordProtocol) -> [Html] {
+    let index = scale.index.value(for: record)
     return [
         index > 0 ? .tag("index", content: .content("\(index).")) : .empty,
-        .tag("text", content: .content(group.name)),
-        .tag("score", content: .content(group.readableScore()))
+        .tag("text", content: .content(scale.title)),
+        .tag("score", content: .content(scale.formatter.format(scale.score.value(for: record))))
     ]
 }
