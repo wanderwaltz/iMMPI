@@ -165,6 +165,7 @@ extension NewAnalyser {
                 .vitriol,                   //    Язвительность
                 .authority_problem,         //    Проблема авторитарности
                 .self_righteousness,        //    Фарисейство
+            .group_social_status,           // К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ
             ])
     }
 }

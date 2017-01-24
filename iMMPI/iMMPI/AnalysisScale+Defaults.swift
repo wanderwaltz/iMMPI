@@ -2532,6 +2532,16 @@ extension AnalysisScale {
                 negative: [30, 45, 176, 401]
             )
         ))
+
+
+
+    // MARK: - К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ
+
+    /// К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ
+    static let group_social_status = AnalysisScale.dummy(
+        identifier: .group_social_status,
+        title: NSLocalizedString("К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ", comment: "Название группы шкал")
+    )
 }
 
 

@@ -490,4 +490,11 @@ extension AnalysisScale.Identifier {
 
     /// Фарисейство
     static let self_righteousness = AnalysisScale.Identifier("self_righteousness")
+
+
+
+    // MARK: - К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ
+
+    /// К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ
+    static let group_social_status = AnalysisScale.Identifier("К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ", nesting: 0)
 }
