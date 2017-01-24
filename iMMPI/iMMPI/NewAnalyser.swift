@@ -174,6 +174,7 @@ extension NewAnalyser {
                 .female_success,            //    Успех женский
                 .leadership,                //    Лидерство
                 .social_status,             //    Социальный статус
+                .social_alienation,         //    Социальное отчуждение
             ])
     }
 }

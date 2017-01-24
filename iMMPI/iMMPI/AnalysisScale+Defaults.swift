@@ -2679,6 +2679,23 @@ extension AnalysisScale {
                 negative: [28, 89, 180, 297, 304, 348, 365, 395, 427, 448, 516]
             )
         ))
+
+
+    // MARK: Социальное отчуждение
+
+    /// Социальное отчуждение
+    static let social_alienation = AnalysisScale(
+        identifier: .social_alienation,
+        title: NSLocalizedString("Социальное отчуждение", comment: "Название шкалы"),
+        index: .common(155),
+        score: .median(
+            .specific(male: 4.03, female: 5.26),
+            dispersion: .specific(male: 2.53, female: 2.32),
+            basedOn: .raw(
+                positive: [16, 21, 24, 35, 52, 121, 157, 212, 241, 282, 305, 323, 324, 352, 364],
+                negative: [65, 220, 276, 306, 309, 312]
+            )
+        ))
 }
 
 
