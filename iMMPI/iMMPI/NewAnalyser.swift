@@ -164,6 +164,7 @@ extension NewAnalyser {
                 .rivalry,                   //    Соперничество
                 .vitriol,                   //    Язвительность
                 .authority_problem,         //    Проблема авторитарности
+                .self_righteousness,        //    Фарисейство
             ])
     }
 }

@@ -2515,6 +2515,23 @@ extension AnalysisScale {
                 negative: [37, 82, 141, 175, 289, 294, 429, 520]
             )
         ))
+
+
+    // MARK: Фарисейство
+
+    /// Фарисейство
+    static let self_righteousness = AnalysisScale(
+        identifier: .self_righteousness,
+        title: NSLocalizedString("Фарисейство", comment: "Название шкалы"),
+        index: .common(146),
+        score: .median(
+            .specific(male: 19.2, female: 24.37),
+            dispersion: .specific(male: 6.32, female: 6.05),
+            basedOn: .raw(
+                positive: [13, 26, 58, 94, 111, 112, 119, 129, 147, 158, 206, 232, 289, 317, 336, 337, 338, 356, 357, 361, 375, 378, 380, 390, 392, 395, 397, 402, 404, 413, 416, 439, 443, 457, 461, 468, 470, 492, 499, 502, 506, 509, 510, 548, 564],
+                negative: [30, 45, 176, 401]
+            )
+        ))
 }
 
 

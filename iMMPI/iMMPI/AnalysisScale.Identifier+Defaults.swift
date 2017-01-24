@@ -487,4 +487,7 @@ extension AnalysisScale.Identifier {
 
     /// Проблема авторитарности
     static let authority_problem = AnalysisScale.Identifier("authority_problem")
+
+    /// Фарисейство
+    static let self_righteousness = AnalysisScale.Identifier("self_righteousness")
 }
