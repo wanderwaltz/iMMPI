@@ -1031,6 +1031,8 @@
 		44673FDA1E2526DC001758C0 /* Test Subject 00451.json in Resources */ = {isa = PBXBuildFile; fileRef = 44673E131E2526DB001758C0 /* Test Subject 00451.json */; };
 		44673FDB1E2526DC001758C0 /* Test Subject 00452.json in Resources */ = {isa = PBXBuildFile; fileRef = 44673E141E2526DB001758C0 /* Test Subject 00452.json */; };
 		44673FDC1E2526DC001758C0 /* Test Subject 00453.json in Resources */ = {isa = PBXBuildFile; fileRef = 44673E151E2526DB001758C0 /* Test Subject 00453.json */; };
+		447DB7D81E37E63A00901631 /* BoundScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447DB7D71E37E63A00901631 /* BoundScale.swift */; };
+		447DB7DA1E37E64200901631 /* ComputedScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447DB7D91E37E64200901631 /* ComputedScore.swift */; };
 		448C30A71E276A2C003D355D /* AnalyserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30A61E276A2C003D355D /* AnalyserTableViewCell.swift */; };
 		448C30AA1E276CB9003D355D /* AnalyserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448C30A91E276CB9003D355D /* AnalyserTableViewCell.xib */; };
 		448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C30AE1E277193003D355D /* StatementTableViewCell.swift */; };
@@ -2144,6 +2146,8 @@
 		44673E131E2526DB001758C0 /* Test Subject 00451.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00451.json"; sourceTree = "<group>"; };
 		44673E141E2526DB001758C0 /* Test Subject 00452.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00452.json"; sourceTree = "<group>"; };
 		44673E151E2526DB001758C0 /* Test Subject 00453.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Test Subject 00453.json"; sourceTree = "<group>"; };
+		447DB7D71E37E63A00901631 /* BoundScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundScale.swift; sourceTree = "<group>"; };
+		447DB7D91E37E64200901631 /* ComputedScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputedScore.swift; sourceTree = "<group>"; };
 		448C30A61E276A2C003D355D /* AnalyserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyserTableViewCell.swift; sourceTree = "<group>"; };
 		448C30A91E276CB9003D355D /* AnalyserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalyserTableViewCell.xib; sourceTree = "<group>"; };
 		448C30AE1E277193003D355D /* StatementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
@@ -3440,6 +3444,8 @@
 				444F24801E34F59300BB8003 /* AnalysisScore+RawPercentage.swift */,
 				44C302161E3531790073F391 /* AnalysisScoreFilter.swift */,
 				444F248E1E35108F00BB8003 /* AnalysisScoreFormatter.swift */,
+				447DB7D71E37E63A00901631 /* BoundScale.swift */,
+				447DB7D91E37E64200901631 /* ComputedScore.swift */,
 				444F246E1E34BAEF00BB8003 /* GenderBasedValue.swift */,
 			);
 			name = Computations;
@@ -4934,6 +4940,7 @@
 				44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */,
 				444F245F1E34990B00BB8003 /* MenuAction+UITableView.swift in Sources */,
 				5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */,
+				447DB7DA1E37E64200901631 /* ComputedScore.swift in Sources */,
 				44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */,
 				4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */,
 				444F238E1E2E3CBF00BB8003 /* JSONAnswersSerialization.swift in Sources */,
@@ -4991,6 +4998,7 @@
 				444F24501E336A0E00BB8003 /* EmailAddress.swift in Sources */,
 				442CE1E31E238BBB006C34A6 /* TestRecordsGroup.swift in Sources */,
 				44DE9B001E2BE43000CFE13E /* HtmlReportGenerator.swift in Sources */,
+				447DB7D81E37E63A00901631 /* BoundScale.swift in Sources */,
 				442CE1DD1E23862A006C34A6 /* Section.swift in Sources */,
 				4430C7B91E16408A0024C001 /* Person.swift in Sources */,
 				444F241F1E31EA3900BB8003 /* AnalysisMenuActionContext.swift in Sources */,

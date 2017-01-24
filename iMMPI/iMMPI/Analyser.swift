@@ -10,6 +10,13 @@ struct Analyser {
 
 
 extension Analyser {
+    func bind(_ record: TestRecordProtocol) -> [BoundScale] {
+        return scales.map({ $0.bind(record) })
+    }
+}
+
+
+extension Analyser {
     init() {
         self.init(scales: [
             .group_reliability,             // А. НАДЕЖНОСТЬ
