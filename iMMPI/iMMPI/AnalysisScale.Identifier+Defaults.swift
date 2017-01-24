@@ -500,4 +500,7 @@ extension AnalysisScale.Identifier {
 
     /// Преступность (совестливость)
     static let conscience = AnalysisScale.Identifier("conscience")
+
+    /// Коммуникативность (социальное участие)
+    static let communicativeness = AnalysisScale.Identifier("communicativeness")
 }

@@ -2559,6 +2559,23 @@ extension AnalysisScale {
                 negative: [37, 141, 173, 177, 294, 427, 464]
             )
         ))
+
+
+    // MARK: Коммуникативность (социальное участие)
+
+    /// Коммуникативность (социальное участие)
+    static let communicativeness = AnalysisScale(
+        identifier: .communicativeness,
+        title: NSLocalizedString("Коммуникативность (социальное участие)", comment: "Название шкалы"),
+        index: .common(148),
+        score: .median(
+            .specific(male: 16.6, female: 15),
+            dispersion: .specific(male: 3.3, female: 3.4),
+            basedOn: .raw(
+                positive: [122, 173, 221, 229, 253, 285, 353, 391, 401, 409, 412, 415, 449, 529, 546, 547, 552],
+                negative: [171, 260, 267, 292, 304, 392, 448, 455]
+            )
+        ))
 }
 
 

@@ -167,6 +167,7 @@ extension NewAnalyser {
                 .self_righteousness,        //    Фарисейство
             .group_social_status,           // К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ
                 .conscience,                //    Преступность (совестливость)
+                .communicativeness,         //    Коммуникативность (социальное участие)
             ])
     }
 }
