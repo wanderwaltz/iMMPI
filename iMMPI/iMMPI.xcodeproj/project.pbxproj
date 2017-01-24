@@ -1088,7 +1088,6 @@
 		44F97A471E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A461E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift */; };
 		5876FDC71E2BE4C600255227 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5876FDC61E2BE4C600255227 /* DatePickerController.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
-		5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */; };
 		5D81F94A1841BD97008E3B0A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D81F9491841BD97008E3B0A /* AVFoundation.framework */; };
 		5DA5C9E5163B018D00CF1601 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
 		5DA5C9E7163B018D00CF1601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
@@ -1105,7 +1104,6 @@
 		5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */; };
 		5DC3044F17ED83EB00FCE5D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */; };
 		5DC4ABEA169029AD00E835B7 /* mmpi.analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */; };
-		5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */; };
 		5DC973C1168F214A00C496F0 /* JSONTestRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */; };
 		5DCC9645168DC13B004F8D4E /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9644168DC13B004F8D4E /* UtilityFunctions.m */; };
 		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
@@ -2204,8 +2202,6 @@
 		5876FDC61E2BE4C600255227 /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
-		5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHTMLReportGenerator.h; sourceTree = "<group>"; };
-		5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisHTMLReportGenerator.m; sourceTree = "<group>"; };
 		5D81F9491841BD97008E3B0A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5DA5C9E0163B018D00CF1601 /* iMMPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMMPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA5C9E4163B018D00CF1601 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -2225,7 +2221,6 @@
 		5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.teen.json; sourceTree = "<group>"; };
 		5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5DC4ABE9169029AD00E835B7 /* mmpi.analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.analysis.json; sourceTree = "<group>"; };
-		5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
 		5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRecordStorageProtocol.h; sourceTree = "<group>"; };
 		5DC973BF168F214A00C496F0 /* JSONTestRecordsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTestRecordsStorage.h; sourceTree = "<group>"; };
 		5DC973C0168F214A00C496F0 /* JSONTestRecordsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTestRecordsStorage.m; sourceTree = "<group>"; };
@@ -3586,15 +3581,6 @@
 			name = Questionnaire;
 			sourceTree = "<group>";
 		};
-		5D74048716FEAC1F001747A1 /* Analysis HTML Report Generator */ = {
-			isa = PBXGroup;
-			children = (
-				5D74048816FEAC3B001747A1 /* AnalysisHTMLReportGenerator.h */,
-				5D74048916FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m */,
-			);
-			name = "Analysis HTML Report Generator";
-			sourceTree = "<group>";
-		};
 		5D74CEF8169B085000BAA202 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -3690,9 +3676,7 @@
 		5DA5CA10163B050700CF1601 /* Analysis View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5D74048716FEAC1F001747A1 /* Analysis HTML Report Generator */,
 				5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */,
-				5DC4ABF916902F2C00E835B7 /* AnalysisViewController.m */,
 				44F97A3E1E263B26004F4E14 /* AnalysisViewController.swift */,
 			);
 			name = "Analysis View Controller";
@@ -4969,7 +4953,6 @@
 				444F248F1E35108F00BB8003 /* AnalysisScoreFormatter.swift in Sources */,
 				442CE1AC1E235397006C34A6 /* TestRecord.swift in Sources */,
 				448C31141E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift in Sources */,
-				5DC4ABFA16902F2C00E835B7 /* AnalysisViewController.m in Sources */,
 				44673C111E23B017001758C0 /* TestRecordStorageProtocol.swift in Sources */,
 				442CE1B51E235A1B006C34A6 /* DateFormatter+iMMPI.swift in Sources */,
 				444F24931E351DBC00BB8003 /* AnalysisScore+Median.swift in Sources */,
@@ -5034,7 +5017,6 @@
 				44F97A2B1E261B63004F4E14 /* TestAnswersInputDelegate.swift in Sources */,
 				448C318A1E29F3C9003D355D /* AnalysisOptionsViewController.swift in Sources */,
 				448C318C1E29F50E003D355D /* TableViewCellSource+Switch.swift in Sources */,
-				5D74048A16FEAC3B001747A1 /* AnalysisHTMLReportGenerator.m in Sources */,
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
 				444F23901E2E3DDF00BB8003 /* JSONAnswerTypeSerialization.swift in Sources */,
 				442CE1A61E234E05006C34A6 /* AbbreviatedNameFormatter.swift in Sources */,
