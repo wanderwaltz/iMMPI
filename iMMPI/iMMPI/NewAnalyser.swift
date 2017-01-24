@@ -147,6 +147,7 @@ extension NewAnalyser {
                 .stress_tolerance,          //    Терпимость (толерантность к стрессу)
                 .dependency,                //    Зависимость
                 .adaptivity,                //    Приспособляемость
+                .cynicism,                  //    Цинизм
             ])
     }
 }

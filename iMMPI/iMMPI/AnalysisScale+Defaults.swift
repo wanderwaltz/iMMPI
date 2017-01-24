@@ -2239,6 +2239,23 @@ extension AnalysisScale {
                 negative: [2, 3, 8, 9, 51, 103, 107, 119, 153, 178, 155, 192, 281, 289, 296]
             )
         ))
+
+
+    // MARK: Цинизм
+
+    /// Цинизм
+    static let cynicism = AnalysisScale(
+        identifier: .cynicism,
+        title: NSLocalizedString("Цинизм", comment: "Название шкалы"),
+        index: .common(131),
+        score: .median(
+            .specific(male: 3.3, female: 3.6),
+            dispersion: .specific(male: 2.5, female: 1.96),
+            basedOn: .raw(
+                positive: [89, 93, 117, 124, 265, 316, 319],
+                negative: []
+            )
+        ))
 }
 
 

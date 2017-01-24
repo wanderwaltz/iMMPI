@@ -428,4 +428,7 @@ extension AnalysisScale.Identifier {
 
     /// Приспособляемость
     static let adaptivity = AnalysisScale.Identifier("adaptivity")
+
+    /// Цинизм
+    static let cynicism = AnalysisScale.Identifier("cynicism")
 }
