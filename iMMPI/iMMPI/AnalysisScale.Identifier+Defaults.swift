@@ -416,4 +416,7 @@ extension AnalysisScale.Identifier {
 
     /// Честность
     static let escapism = AnalysisScale.Identifier("escapism")
+
+    /// Оптимизм
+    static let optimism = AnalysisScale.Identifier("optimism")
 }

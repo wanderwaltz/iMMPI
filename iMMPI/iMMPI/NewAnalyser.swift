@@ -143,6 +143,7 @@ extension NewAnalyser {
                 .honesty,                   //    Честность
             .group_attitude_to_life,        // Ж. ОТНОШЕНИЕ К ЖИЗНИ
                 .escapism,                  //    Эскапизм
+                .optimism,                  //    Оптимизм
             ])
     }
 }
