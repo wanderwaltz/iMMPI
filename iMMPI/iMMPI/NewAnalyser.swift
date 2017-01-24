@@ -176,6 +176,7 @@ extension NewAnalyser {
                 .social_status,             //    Социальный статус
                 .social_alienation,         //    Социальное отчуждение
                 .social_value,              //    Социальная значимость человека
+                .social_certainty,          //    Социальная уверенность человека
             ])
     }
 }

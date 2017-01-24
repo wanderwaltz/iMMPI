@@ -2715,6 +2715,22 @@ extension AnalysisScale {
                 negative: [32, 86, 171, 180, 256, 297, 307, 361, 427, 558]
             )
         ))
+
+
+    // MARK: Социальная уверенность человека
+
+    /// Социальная уверенность человека
+    static let social_certainty = AnalysisScale(
+        identifier: .social_certainty,
+        title: NSLocalizedString("Социальная уверенность человека", comment: "Название шкалы"),
+        index: .common(157),
+        score: .brackets(
+            (30, 40, 75, 80),
+            basedOn: .rawPercentage(
+                positive: [64, 479, 520, 521],
+                negative: [82, 141, 171, 180, 201, 267, 304, 352]
+            )
+        ))
 }
 
 
