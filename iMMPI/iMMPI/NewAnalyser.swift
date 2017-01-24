@@ -168,6 +168,7 @@ extension NewAnalyser {
             .group_social_status,           // К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ
                 .conscience,                //    Преступность (совестливость)
                 .communicativeness,         //    Коммуникативность (социальное участие)
+                .collectivism,              //    Коллективизм (студенческий староста)
             ])
     }
 }

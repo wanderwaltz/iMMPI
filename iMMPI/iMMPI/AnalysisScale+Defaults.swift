@@ -2576,6 +2576,23 @@ extension AnalysisScale {
                 negative: [171, 260, 267, 292, 304, 392, 448, 455]
             )
         ))
+
+
+    // MARK: Коллективизм (студенческий староста)
+
+    /// Коллективизм (студенческий староста)
+    static let collectivism = AnalysisScale(
+        identifier: .collectivism,
+        title: NSLocalizedString("Коллективизм (студенческий староста)", comment: "Название шкалы"),
+        index: .common(149),
+        score: .median(
+            .specific(male: 33.4, female: 31.52),
+            dispersion: .specific(male: 4.28, female: 4.15),
+            basedOn: .raw(
+                positive: [15, 26, 77, 91, 95, 98, 111, 115, 135, 170, 198, 229, 249, 254, 264, 287, 314, 348, 387, 393, 406, 425, 442, 444, 461, 468, 483, 488, 491, 498, 548, 558],
+                negative: [6, 21, 78, 81, 100, 102, 124, 126, 140, 160, 181, 208, 217, 231, 295, 308, 374, 400, 441, 446, 463, 465, 475, 477, 499, 503, 556]
+            )
+        ))
 }
 
 

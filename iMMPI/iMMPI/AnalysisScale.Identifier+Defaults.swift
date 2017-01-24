@@ -503,4 +503,7 @@ extension AnalysisScale.Identifier {
 
     /// Коммуникативность (социальное участие)
     static let communicativeness = AnalysisScale.Identifier("communicativeness")
+
+    /// Коллективизм (студенческий староста)
+    static let collectivism = AnalysisScale.Identifier("collectivism")
 }
