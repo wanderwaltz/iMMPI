@@ -2145,6 +2145,16 @@ extension AnalysisScale {
                 negative: [33, 157, 248, 250, 260, 287, 313, 395, 437, 448, 469, 492, 498]
             )
         ))
+
+
+
+    // MARK: - Ж. ОТНОШЕНИЕ К ЖИЗНИ
+
+    /// Ж. ОТНОШЕНИЕ К ЖИЗНИ
+    static let group_attitude_to_life = AnalysisScale.dummy(
+        identifier: .group_attitude_to_life,
+        title: NSLocalizedString("Ж. ОТНОШЕНИЕ К ЖИЗНИ", comment: "Название группы шкал")
+    )
 }
 
 

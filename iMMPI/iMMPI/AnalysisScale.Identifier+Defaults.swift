@@ -406,4 +406,11 @@ extension AnalysisScale.Identifier {
 
     /// Честность
     static let honesty = AnalysisScale.Identifier("honesty")
+
+
+
+    // MARK: - Ж. ОТНОШЕНИЕ К ЖИЗНИ
+
+    /// Ж. ОТНОШЕНИЕ К ЖИЗНИ
+    static let group_attitude_to_life = AnalysisScale.Identifier("Ж. ОТНОШЕНИЕ К ЖИЗНИ", nesting: 0)
 }

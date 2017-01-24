@@ -141,6 +141,7 @@ extension NewAnalyser {
                 .naivety,                   //    Наивность
                 .immorality,                //    Аморальность
                 .honesty,                   //    Честность
+            .group_attitude_to_life,        // Ж. ОТНОШЕНИЕ К ЖИЗНИ
             ])
     }
 }
