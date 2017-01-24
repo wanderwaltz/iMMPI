@@ -539,4 +539,7 @@ extension AnalysisScale.Identifier {
 
     /// Потребительская тенденция
     static let consumer_tendency = AnalysisScale.Identifier("consumer_tendency")
+
+    /// Черты ответственности
+    static let responsibility_traits = AnalysisScale.Identifier("responsibility_traits")
 }

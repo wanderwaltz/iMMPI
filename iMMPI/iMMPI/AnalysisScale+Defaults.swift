@@ -2781,6 +2781,23 @@ extension AnalysisScale {
                 negative: [7, 79, 131, 141, 155, 160, 163, 243, 270, 353, 407, 493, 548]
             )
         ))
+
+
+    // MARK: Черты ответственности
+
+    /// Черты ответственности
+    static let responsibility_traits = AnalysisScale(
+        identifier: .responsibility_traits,
+        title: NSLocalizedString("Черты ответственности", comment: "Название шкалы"),
+        index: .common(161),
+        score: .median(
+            .specific(male: 33.58, female: 35.05),
+            dispersion: .specific(male: 4.87, female: 6.28),
+            basedOn: .raw(
+                positive: [6, 12, 69, 77, 79, 91, 93, 95, 99, 100, 102, 109, 111, 136, 141, 162, 165, 166, 181, 232, 240, 244, 248, 254, 255, 264, 270, 280, 292, 298, 304, 319, 321, 329, 340, 361, 367, 373, 391, 400, 410, 415, 416, 421, 425, 427, 429, 439, 444, 447, 455, 465, 475, 477, 489, 491, 492, 499, 500, 503, 510, 523, 564],
+                negative: []
+            )
+        ))
 }
 
 
