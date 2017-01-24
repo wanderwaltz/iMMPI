@@ -542,4 +542,7 @@ extension AnalysisScale.Identifier {
 
     /// Черты ответственности
     static let responsibility_traits = AnalysisScale.Identifier("responsibility_traits")
+
+    /// Преступность 1
+    static let crime_1 = AnalysisScale.Identifier("crime_1")
 }

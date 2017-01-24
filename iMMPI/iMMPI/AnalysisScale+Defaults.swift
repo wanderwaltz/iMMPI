@@ -2798,6 +2798,23 @@ extension AnalysisScale {
                 negative: []
             )
         ))
+
+
+    // MARK: Преступность 1
+
+    /// Преступность 1
+    static let crime_1 = AnalysisScale(
+        identifier: .crime_1,
+        title: NSLocalizedString("Преступность 1", comment: "Название шкалы"),
+        index: .common(162),
+        score: .median(
+            .specific(male: 3.66, female: 4.05),
+            dispersion: .specific(male: 1.77, female: 1.58),
+            basedOn: .raw(
+                positive: [94, 118, 127, 215, 224, 240, 338, 419],
+                negative: [107, 120, 294, 513]
+            )
+        ))
 }
 
 

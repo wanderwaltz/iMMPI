@@ -181,6 +181,7 @@ extension NewAnalyser {
                 .social_needs,              //    Социальные потребности
                 .consumer_tendency,         //    Потребительская тенденция
                 .responsibility_traits,     //    Черты ответственности
+                .crime_1,                   //    Преступность 1
             ])
     }
 }
