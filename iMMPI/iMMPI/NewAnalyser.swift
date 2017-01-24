@@ -158,6 +158,7 @@ extension NewAnalyser {
                 .auto_evaluation,           //    Отношение к себе
             .group_others_evaluation,       // И. ОТНОШЕНИЕ К ЛЮДЯМ
                 .favour,                    //    Благосклонность
+                .hostility,                 //    Враждебность
             ])
     }
 }

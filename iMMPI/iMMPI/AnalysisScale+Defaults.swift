@@ -2412,6 +2412,23 @@ extension AnalysisScale {
                 negative: [24, 52, 71, 117, 148, 226, 252, 265, 312, 319, 333, 383, 436, 438, 448, 473, 504]
             )
         ))
+
+
+    // MARK: Враждебность
+
+    /// Враждебность
+    static let hostility = AnalysisScale(
+        identifier: .hostility,
+        title: NSLocalizedString("Враждебность", comment: "Название шкалы"),
+        index: .common(140),
+        score: .median(
+            .specific(male: 20.53, female: 21.91),
+            dispersion: .specific(male: 7.431, female: 6.08),
+            basedOn: .raw(
+                positive: [19, 28, 52, 59, 71, 89, 93, 110, 117, 124, 136, 148, 157, 183, 226, 244, 250, 252, 265, 271, 278, 280, 284, 292, 319, 348, 368, 383, 386, 394, 406, 410, 411, 426, 436, 438, 447, 455, 458, 469, 485, 504, 507, 520, 531, 551, 558],
+                negative: [237, 253, 399]
+            )
+        ))
 }
 
 

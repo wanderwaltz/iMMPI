@@ -469,4 +469,7 @@ extension AnalysisScale.Identifier {
 
     /// Благосклонность
     static let favour = AnalysisScale.Identifier("favour")
+
+    /// Враждебность
+    static let hostility = AnalysisScale.Identifier("hostility")
 }
