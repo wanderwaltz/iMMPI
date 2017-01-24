@@ -33,21 +33,23 @@ extension AnalysisScore {
 
         let filteredStatements: RawMatchesKey = apply(includeStatement, to: statements)
 
-        return AnalysisScore(value: .specific({ gender in { answers in
-            let selectedStatements = filteredStatements.value(for: gender)
+        return AnalysisScore(
+            formatter: .integer,
+            value: .specific({ gender in { answers in
+                let selectedStatements = filteredStatements.value(for: gender)
 
-            let positiveMatches = selectedStatements.positive
-                .reduce(0, { matches, identifier in
-                    return answers.answer(for: identifier) == .positive ? matches + 1 : matches
-                })
+                let positiveMatches = selectedStatements.positive
+                    .reduce(0, { matches, identifier in
+                        return answers.answer(for: identifier) == .positive ? matches + 1 : matches
+                    })
 
-            let negativeMatches = selectedStatements.negative
-                .reduce(0, { matches, identifier in
-                    return answers.answer(for: identifier) == .negative ? matches + 1 : matches
-                })
+                let negativeMatches = selectedStatements.negative
+                    .reduce(0, { matches, identifier in
+                        return answers.answer(for: identifier) == .negative ? matches + 1 : matches
+                    })
 
-            return Double(positiveMatches + negativeMatches)
-            }}))
+                return Double(positiveMatches + negativeMatches)
+                }}))
     }
 
 

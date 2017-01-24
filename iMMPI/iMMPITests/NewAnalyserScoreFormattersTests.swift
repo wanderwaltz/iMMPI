@@ -32,8 +32,11 @@ final class NewAnalyserScoreFormattersTests: XCTestCase {
             if scale.score.value(for: record) <= 5 {
                 XCTAssertEqualFormatters(scale.formatter, .bracketed)
             }
-            else {
+            else if scale.identifier != .hypnability {
                 XCTAssertEqualFormatters(scale.formatter, .integer)
+            }
+            else {
+                XCTAssertEqualFormatters(scale.formatter, .percentage)
             }
         }
     }

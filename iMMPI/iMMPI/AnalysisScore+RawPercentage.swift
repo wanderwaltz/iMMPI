@@ -20,23 +20,25 @@ extension AnalysisScore {
 
             let rawMatches = AnalysisScore.raw(statements)
 
-            return AnalysisScore(value: .specific({ gender in
-                let selectedStatements = filteredStatements.value(for: gender)
-                let totalCount = Double(
-                    selectedStatements.positive.count +
-                    selectedStatements.negative.count
-                )
+            return AnalysisScore(
+                formatter: .percentage,
+                value: .specific({ gender in
+                    let selectedStatements = filteredStatements.value(for: gender)
+                    let totalCount = Double(
+                        selectedStatements.positive.count +
+                            selectedStatements.negative.count
+                    )
 
-                guard totalCount > 0 else {
-                    return { _ in 100.0 }
-                }
+                    guard totalCount > 0 else {
+                        return { _ in 100.0 }
+                    }
 
-                return { answers in
-                    let result = trunc(rawMatches.value(for: gender, answers: answers) * 100.0 / totalCount)
-                    precondition(0.0...100.0 ~= result)
-                    return result
-                }
-            }))
+                    return { answers in
+                        let result = trunc(rawMatches.value(for: gender, answers: answers) * 100.0 / totalCount)
+                        precondition(0.0...100.0 ~= result)
+                        return result
+                    }
+                }))
     }
 
 

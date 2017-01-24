@@ -32,8 +32,11 @@ final class NewAnalyserScoreFiltersTests: XCTestCase {
             if scale.score.value(for: record) <= 5 {
                 XCTAssertEqualFilters(scale.filter, .bracketed)
             }
-            else {
+            else if scale.identifier != .hypnability {
                 XCTAssertEqualFilters(scale.filter, .median)
+            }
+            else {
+                XCTAssertEqualFilters(scale.filter, .never)
             }
         }
     }

@@ -184,6 +184,7 @@ extension NewAnalyser {
                 .crime_1,                   //    Преступность 1
                 .domination,                //    Доминирование
                 .family_disharmony,         //    Семейная дисгармония
+                .hypnability,               //    Гипнабельность
             ])
     }
 }

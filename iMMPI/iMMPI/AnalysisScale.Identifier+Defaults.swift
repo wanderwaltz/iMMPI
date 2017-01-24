@@ -551,4 +551,7 @@ extension AnalysisScale.Identifier {
 
     /// Семейная дисгармония
     static let family_disharmony = AnalysisScale.Identifier("family_disharmony")
+
+    /// Гипнабельность
+    static let hypnability = AnalysisScale.Identifier("hypnability")
 }
