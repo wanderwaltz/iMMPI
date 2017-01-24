@@ -149,6 +149,7 @@ extension NewAnalyser {
                 .adaptivity,                //    Приспособляемость
                 .cynicism,                  //    Цинизм
                 .bad_internal_adaptivity,   //    Плохая внутренняя приспособляемость
+                .low_goal_achievement,      //    Низкая способность к достижению цели
             ])
     }
 }

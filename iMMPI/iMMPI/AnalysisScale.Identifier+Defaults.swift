@@ -434,4 +434,7 @@ extension AnalysisScale.Identifier {
 
     /// Плохая внутренняя приспособляемость
     static let bad_internal_adaptivity = AnalysisScale.Identifier("bad_internal_adaptivity")
+
+    /// Низкая способность к достижению цели
+    static let low_goal_achievement = AnalysisScale.Identifier("low_goal_achievement")
 }

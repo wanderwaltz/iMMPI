@@ -2273,6 +2273,23 @@ extension AnalysisScale {
                 negative: [9, 20, 36, 37, 57, 107, 122, 133, 152, 257, 310, 353, 371]
             )
         ))
+
+
+    // MARK: Низкая способность к достижению цели
+
+    /// Низкая способность к достижению цели
+    static let low_goal_achievement = AnalysisScale(
+        identifier: .low_goal_achievement,
+        title: NSLocalizedString("Низкая способность к достижению цели", comment: "Название шкалы"),
+        index: .common(133),
+        score: .median(
+            .specific(male: 11.38, female: 11.81),
+            dispersion: .specific(male: 2, female: 2.34),
+            basedOn: .raw(
+                positive: [97, 129, 168, 225, 249, 266, 294, 303, 369, 371, 390, 463, 515, 528],
+                negative: [17, 41, 199, 232, 247, 344, 512]
+            )
+        ))
 }
 
 
