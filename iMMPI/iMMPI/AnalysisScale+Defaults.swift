@@ -2429,6 +2429,23 @@ extension AnalysisScale {
                 negative: [237, 253, 399]
             )
         ))
+
+
+    // MARK: Альтруизм
+
+    /// Альтруизм
+    static let altruism = AnalysisScale(
+        identifier: .altruism,
+        title: NSLocalizedString("Альтруизм", comment: "Название шкалы"),
+        index: .common(141),
+        score: .median(
+            .specific(male: 4.16, female: 4.3),
+            dispersion: .specific(male: 1.88, female: 1.5),
+            basedOn: .raw(
+                positive: [],
+                negative: [19, 26, 28, 80, 89, 112, 117, 120, 280]
+            )
+        ))
 }
 
 

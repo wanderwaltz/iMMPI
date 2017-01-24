@@ -159,6 +159,7 @@ extension NewAnalyser {
             .group_others_evaluation,       // И. ОТНОШЕНИЕ К ЛЮДЯМ
                 .favour,                    //    Благосклонность
                 .hostility,                 //    Враждебность
+                .altruism,                  //    Альтруизм
             ])
     }
 }

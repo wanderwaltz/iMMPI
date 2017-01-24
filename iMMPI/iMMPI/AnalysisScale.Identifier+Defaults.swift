@@ -472,4 +472,7 @@ extension AnalysisScale.Identifier {
 
     /// Враждебность
     static let hostility = AnalysisScale.Identifier("hostility")
+
+    /// Альтруизм
+    static let altruism = AnalysisScale.Identifier("altruism")
 }
