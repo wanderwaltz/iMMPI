@@ -497,4 +497,7 @@ extension AnalysisScale.Identifier {
 
     /// К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ
     static let group_social_status = AnalysisScale.Identifier("К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ", nesting: 0)
+
+    /// Преступность (совестливость)
+    static let conscience = AnalysisScale.Identifier("conscience")
 }

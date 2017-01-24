@@ -2542,6 +2542,23 @@ extension AnalysisScale {
         identifier: .group_social_status,
         title: NSLocalizedString("К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ", comment: "Название группы шкал")
     )
+
+
+    // MARK: Преступность (совестливость)
+
+    /// Преступность (совестливость)
+    static let conscience = AnalysisScale(
+        identifier: .conscience,
+        title: NSLocalizedString("Преступность (совестливость)", comment: "Название шкалы"),
+        index: .common(147),
+        score: .median(
+            .specific(male: 11.28, female: 10.86),
+            dispersion: .specific(male: 4.23, female: 3.81),
+            basedOn: .raw(
+                positive: [21, 26, 33, 38, 56, 116, 118, 143, 146, 223, 224, 254, 260, 298, 342, 355, 419, 421, 434, 458, 471, 477, 485, 537, 561, 565],
+                negative: [37, 141, 173, 177, 294, 427, 464]
+            )
+        ))
 }
 
 

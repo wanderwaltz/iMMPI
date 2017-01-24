@@ -166,6 +166,7 @@ extension NewAnalyser {
                 .authority_problem,         //    Проблема авторитарности
                 .self_righteousness,        //    Фарисейство
             .group_social_status,           // К. ПОЛОЖЕНИЕ СРЕДИ ЛЮДЕЙ
+                .conscience,                //    Преступность (совестливость)
             ])
     }
 }
