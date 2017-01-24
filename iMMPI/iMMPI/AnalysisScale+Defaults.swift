@@ -2290,6 +2290,16 @@ extension AnalysisScale {
                 negative: [17, 41, 199, 232, 247, 344, 512]
             )
         ))
+
+
+
+    // MARK: - З. ОТНОШЕНИЕ К СЕБЕ
+
+    /// З. ОТНОШЕНИЕ К СЕБЕ
+    static let group_auto_evaluation = AnalysisScale.dummy(
+        identifier: .group_auto_evaluation,
+        title: NSLocalizedString("З. ОТНОШЕНИЕ К СЕБЕ", comment: "Название группы шкал")
+    )
 }
 
 

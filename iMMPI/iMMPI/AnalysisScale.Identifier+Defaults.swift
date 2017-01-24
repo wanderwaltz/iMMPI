@@ -437,4 +437,11 @@ extension AnalysisScale.Identifier {
 
     /// Низкая способность к достижению цели
     static let low_goal_achievement = AnalysisScale.Identifier("low_goal_achievement")
+
+
+
+    // MARK: - З. ОТНОШЕНИЕ К СЕБЕ
+
+    /// З. ОТНОШЕНИЕ К СЕБЕ
+    static let group_auto_evaluation = AnalysisScale.Identifier("З. ОТНОШЕНИЕ К СЕБЕ", nesting: 0)
 }

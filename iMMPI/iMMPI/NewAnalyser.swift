@@ -150,6 +150,7 @@ extension NewAnalyser {
                 .cynicism,                  //    Цинизм
                 .bad_internal_adaptivity,   //    Плохая внутренняя приспособляемость
                 .low_goal_achievement,      //    Низкая способность к достижению цели
+            .group_auto_evaluation,         // З. ОТНОШЕНИЕ К СЕБЕ
             ])
     }
 }
