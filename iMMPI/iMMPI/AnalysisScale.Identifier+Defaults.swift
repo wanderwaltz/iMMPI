@@ -478,4 +478,7 @@ extension AnalysisScale.Identifier {
 
     /// Нужда в привязанности
     static let need_for_affection = AnalysisScale.Identifier("need_for_affection")
+
+    /// Соперничество
+    static let rivalry = AnalysisScale.Identifier("rivalry")
 }

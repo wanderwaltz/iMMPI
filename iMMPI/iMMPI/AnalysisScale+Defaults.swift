@@ -2463,8 +2463,25 @@ extension AnalysisScale {
                 negative: [26, 71, 89, 93, 109, 124, 136, 162, 234, 265, 289]
             )
         ))
-}
 
+
+    // MARK: Соперничество
+
+    /// Соперничество
+    static let rivalry = AnalysisScale(
+        identifier: .rivalry,
+        title: NSLocalizedString("Соперничество", comment: "Название шкалы"),
+        index: .common(143),
+        score: .median(
+            .specific(male: 13.52, female: 12.97),
+            dispersion: .common(1.91),
+            basedOn: .raw(
+                positive: [3, 18, 129, 163, 198, 261, 302, 348, 376, 399, 484, 508],
+                // FIXME: there was a typo in the legacy version: 480.531
+                negative: [8, 127, 199, 328, 346, 470, 480/*.531*/, 533, 556]
+            )
+        ))
+}
 
 
 // MARK: - Utility
