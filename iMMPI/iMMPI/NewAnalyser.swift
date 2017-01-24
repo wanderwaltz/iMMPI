@@ -148,6 +148,7 @@ extension NewAnalyser {
                 .dependency,                //    Зависимость
                 .adaptivity,                //    Приспособляемость
                 .cynicism,                  //    Цинизм
+                .bad_internal_adaptivity,   //    Плохая внутренняя приспособляемость
             ])
     }
 }

@@ -431,4 +431,7 @@ extension AnalysisScale.Identifier {
 
     /// Цинизм
     static let cynicism = AnalysisScale.Identifier("cynicism")
+
+    /// Плохая внутренняя приспособляемость
+    static let bad_internal_adaptivity = AnalysisScale.Identifier("bad_internal_adaptivity")
 }
