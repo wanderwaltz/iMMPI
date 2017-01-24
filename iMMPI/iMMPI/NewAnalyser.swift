@@ -160,6 +160,7 @@ extension NewAnalyser {
                 .favour,                    //    Благосклонность
                 .hostility,                 //    Враждебность
                 .altruism,                  //    Альтруизм
+                .need_for_affection,        //    Нужда в привязанности
             ])
     }
 }

@@ -2446,6 +2446,23 @@ extension AnalysisScale {
                 negative: [19, 26, 28, 80, 89, 112, 117, 120, 280]
             )
         ))
+
+
+    // MARK: Нужда в привязанности
+
+    /// Нужда в привязанности
+    static let need_for_affection = AnalysisScale(
+        identifier: .need_for_affection,
+        title: NSLocalizedString("Нужда в привязанности", comment: "Название шкалы"),
+        index: .common(142),
+        score: .median(
+            .specific(male: 5.42, female: 4.97),
+            dispersion: .specific(male: 2.48, female: 2.08),
+            basedOn: .raw(
+                positive: [253],
+                negative: [26, 71, 89, 93, 109, 124, 136, 162, 234, 265, 289]
+            )
+        ))
 }
 
 

@@ -475,4 +475,7 @@ extension AnalysisScale.Identifier {
 
     /// Альтруизм
     static let altruism = AnalysisScale.Identifier("altruism")
+
+    /// Нужда в привязанности
+    static let need_for_affection = AnalysisScale.Identifier("need_for_affection")
 }
