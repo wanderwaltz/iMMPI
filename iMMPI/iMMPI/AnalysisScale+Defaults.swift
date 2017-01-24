@@ -2815,6 +2815,23 @@ extension AnalysisScale {
                 negative: [107, 120, 294, 513]
             )
         ))
+
+
+    // MARK: Доминирование
+
+    /// Доминирование
+    static let domination = AnalysisScale(
+        identifier: .domination,
+        title: NSLocalizedString("Доминирование", comment: "Название шкалы"),
+        index: .common(163),
+        score: .median(
+            .specific(male: 9.62, female: 8.62),
+            dispersion: .specific(male: 2.36, female: 2.34),
+            basedOn: .raw(
+                positive: [229, 255, 368, 415, 432],
+                negative: [24, 32, 61, 86, 94, 250, 267, 304, 343, 356, 562]
+            )
+        ))
 }
 
 

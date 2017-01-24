@@ -545,4 +545,7 @@ extension AnalysisScale.Identifier {
 
     /// Преступность 1
     static let crime_1 = AnalysisScale.Identifier("crime_1")
+
+    /// Доминирование
+    static let domination = AnalysisScale.Identifier("domination")
 }
