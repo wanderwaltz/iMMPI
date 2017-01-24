@@ -171,6 +171,7 @@ extension NewAnalyser {
                 .collectivism,              //    Коллективизм (студенческий староста)
                 .conformism,                //    Конформизм (конверсионная реакция)
                 .authority,                 //    Авторитет
+                .female_success,            //    Успех женский
             ])
     }
 }
