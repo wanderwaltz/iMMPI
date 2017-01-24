@@ -536,4 +536,7 @@ extension AnalysisScale.Identifier {
 
     /// Социальные потребности
     static let social_needs = AnalysisScale.Identifier("social_needs")
+
+    /// Потребительская тенденция
+    static let consumer_tendency = AnalysisScale.Identifier("consumer_tendency")
 }
