@@ -2,10 +2,7 @@ import Foundation
 
 final class AnalysisMenuActionContext {
     let router: Router?
-
-    let record: TestRecordProtocol
-    let scales: [BoundScale]
-
+    let result: AnalysisResult
 
     private(set) lazy var questionnaire: Questionnaire? = {
         try? Questionnaire(gender: self.record.person.gender, ageGroup: self.record.person.ageGroup)
@@ -34,9 +31,15 @@ final class AnalysisMenuActionContext {
     }()
 
 
-    init(router: Router?, record: TestRecordProtocol, scales: [BoundScale]) {
+    init(router: Router?, result: AnalysisResult) {
         self.router = router
-        self.record = record
-        self.scales = scales
+        self.result = result
+    }
+}
+
+
+extension AnalysisMenuActionContext {
+    var record: TestRecordProtocol {
+        return result.record
     }
 }

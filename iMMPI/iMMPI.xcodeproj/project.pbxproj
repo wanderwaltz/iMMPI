@@ -1063,6 +1063,7 @@
 		448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */; };
 		448C31961E2B6479003D355D /* AnalysisReportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */; };
 		448C319C1E2B7CBC003D355D /* Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C319B1E2B7CBC003D355D /* Html.swift */; };
+		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */; };
 		44C302111E3522C30073F391 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302101E3522C30073F391 /* Analyser.swift */; };
 		44C302131E35234B0073F391 /* AnalyserIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */; };
@@ -2175,6 +2176,7 @@
 		448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisOptionsViewModel.swift; sourceTree = "<group>"; };
 		448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisReportGenerator.swift; sourceTree = "<group>"; };
 		448C319B1E2B7CBC003D355D /* Html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Html.swift; sourceTree = "<group>"; };
+		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScore+Potential.swift"; sourceTree = "<group>"; };
 		44C302101E3522C30073F391 /* Analyser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyserIntegrationTests.swift; sourceTree = "<group>"; };
@@ -3511,9 +3513,11 @@
 			children = (
 				447DB7D61E37DDE200901631 /* Computations */,
 				448C31931E2B63EE003D355D /* Reports */,
+				5DC0C88416E26AE6006ED854 /* Settings */,
 				444F248A1E350F7300BB8003 /* AnalysisScale.Identifier+Defaults.swift */,
 				444F248C1E350FE100BB8003 /* AnalysisScale+Defaults.swift */,
 				44C302101E3522C30073F391 /* Analyser.swift */,
+				44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */,
 			);
 			name = Analysis;
 			sourceTree = "<group>";
@@ -3543,7 +3547,6 @@
 				5D5E05BE1646521700A5A704 /* Model.h */,
 				5DC40483168C446C000AFBAE /* Protocols */,
 				5DC973BC168F20C200C496F0 /* JSON Test Records Storage */,
-				5DC0C88416E26AE6006ED854 /* Analysis Settings */,
 				5DC973AB168F082200C496F0 /* Data Model Objects */,
 				448C31941E2B63F6003D355D /* Analysis */,
 				442CE1CC1E23714A006C34A6 /* Table View Models */,
@@ -3690,14 +3693,14 @@
 			name = "Analysis Options View Controller";
 			sourceTree = "<group>";
 		};
-		5DC0C88416E26AE6006ED854 /* Analysis Settings */ = {
+		5DC0C88416E26AE6006ED854 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				448C31181E289CAF003D355D /* AnalysisSettings.swift */,
 				448C311A1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift */,
 				448C318F1E29FE5E003D355D /* ValidatingAnalysisSettings.swift */,
 			);
-			name = "Analysis Settings";
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
@@ -4956,6 +4959,7 @@
 				444F24421E334DFF00BB8003 /* MimeType.swift in Sources */,
 				444F243B1E321F3100BB8003 /* AnswerType.swift in Sources */,
 				44673C1C1E23C9CA001758C0 /* Router.swift in Sources */,
+				44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */,
 				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
 				44F97A371E26243E004F4E14 /* JSONTestRecordStorageElement.swift in Sources */,
 				444F23711E2E1C9300BB8003 /* FormTableViewCell.swift in Sources */,

@@ -4,5 +4,5 @@ protocol AnalysisReportGenerator {
     associatedtype Output
 
     var title: String { get }
-    func generate(for record: TestRecordProtocol, with scales: [BoundScale]) -> Output
+    func generate(for result: AnalysisResult) -> Output
 }

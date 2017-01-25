@@ -10,7 +10,7 @@ extension MenuAction {
         return MenuAction(
             title: Strings.Button.email,
             action: { sender in
-                let message = context.emailMessageGenerator.generate(for: context.record, with: context.scales)
+                let message = context.emailMessageGenerator.generate(for: context.result)
                 try? router.displayMailComposer(for: message, sender: sender)
             },
             related: [

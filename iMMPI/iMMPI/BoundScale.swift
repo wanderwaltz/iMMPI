@@ -5,7 +5,6 @@ struct BoundScale {
     let title: String
     let index: Int
     let score: ComputedScore
-    let record: TestRecordProtocol
 }
 
 
@@ -15,8 +14,7 @@ extension BoundScale {
             identifier: scale.identifier,
             title: scale.title,
             index: scale.index.value(for: record),
-            score: ComputedScore(scale: scale, record: record),
-            record: record
+            score: ComputedScore(scale: scale, record: record)
         )
     }
 }

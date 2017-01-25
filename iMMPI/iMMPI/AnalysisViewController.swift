@@ -5,7 +5,9 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
     var record: TestRecordProtocol? {
         didSet {
             title = record.map { "\($0.person.name), \(dateFormatter.string(from: $0.date))" } ?? ""
-            bindAnalyser()
+            if let record = record {
+                analysisResult = analyser.result(for: record)
+            }
         }
     }
 
@@ -54,7 +56,7 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
 
     fileprivate let dateFormatter = DateFormatter.medium
     fileprivate var analyserGroupIndices: [Int] = []
-    fileprivate var boundScales: [BoundScale] = []
+    fileprivate var analysisResult: AnalysisResult?
 }
 
 
@@ -78,12 +80,12 @@ extension AnalysisViewController {
 
 
     @objc @IBAction fileprivate func handleAnalysisOptionsButtonAction(_ sender: Any?) {
-        guard let record = record else {
+        guard let analysisResult = analysisResult else {
             return
         }
 
         router?.displayAnalysisOptions(
-            context: AnalysisMenuActionContext(router: router, record: record, scales: boundScales),
+            context: AnalysisMenuActionContext(router: router, result: analysisResult),
             sender: self
         )
     }
@@ -99,9 +101,13 @@ extension AnalysisViewController {
 
 extension AnalysisViewController {
     func reloadData() {
+        guard let result = analysisResult else {
+            return
+        }
+
         var indices: [Int] = []
 
-        for (i, scale) in boundScales.enumerated() {
+        for (i, scale) in result.scales.enumerated() {
             if false == scale.score.isWithinNorm || false == settings?.shouldHideNormalResults {
                 indices.append(i)
             }
@@ -122,22 +128,6 @@ extension AnalysisViewController {
             tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         }
     }
-
-
-    fileprivate func bindAnalyser() {
-        guard let record = record else {
-            return
-        }
-
-        DispatchQueue.global().async {
-            let bound = self.analyser.bind(record)
-
-            DispatchQueue.main.async {
-                self.boundScales = bound
-                self.reloadData()
-            }
-        }
-    }
 }
 
 
@@ -155,6 +145,6 @@ extension AnalysisViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = analyserGroupIndices[indexPath.row]
-        return cellSource.dequeue(from: tableView, with: boundScales[index])
+        return cellSource.dequeue(from: tableView, with: analysisResult?.scales[index])
     }
 }

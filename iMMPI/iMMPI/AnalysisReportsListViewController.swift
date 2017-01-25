@@ -8,8 +8,7 @@ protocol AnalysisReportsListViewControllerDelegate: class {
 final class AnalysisReportsListViewController: UITableViewController, UsingRouting {
     weak var delegate: AnalysisReportsListViewControllerDelegate?
 
-    var record: TestRecordProtocol?
-    var scales: [BoundScale] = []
+    var result: AnalysisResult?
     var reportGenerators: [HtmlReportGenerator] = []
 
     fileprivate let cellSource = TableViewCellSource<HtmlReportGenerator>(
@@ -27,12 +26,12 @@ extension AnalysisReportsListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        guard let record = record else {
+        guard let result = result else {
             return
         }
 
         let generator = reportGenerators[indexPath.row]
-        let html = generator.generate(for: record, with: scales)
+        let html = generator.generate(for: result)
 
         delegate?.analysisReportsList(self, didSelectReport: html)
     }

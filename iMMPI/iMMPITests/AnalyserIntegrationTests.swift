@@ -60,7 +60,7 @@ final class AnalyzerIntegrationTests: XCTestCase {
             XCTAssertNotEqual(record.person.gender, .unknown)
             XCTAssertNotEqual(record.person.ageGroup, .unknown)
 
-            let bound = analyser.bind(record)
+            let result = analyser.result(for: record)
 
             for i in 0..<analyser.scales.count {
                 let actual = analyser.scales[i].score.value(for: record)
@@ -68,7 +68,7 @@ final class AnalyzerIntegrationTests: XCTestCase {
 
                 XCTAssertMatchingScores(actual, expected, "Score failed for: \(record.personName), scale: \(i), expected: \(expected), got: \(actual)")
 
-                XCTAssertMatchingScores(bound[i].score.rawValue, expected, "Bound score failed for: \(record.personName), scale: \(i), expected: \(expected), got: \(actual)")
+                XCTAssertMatchingScores(result.scales[i].score.rawValue, expected, "Bound score failed for: \(record.personName), scale: \(i), expected: \(expected), got: \(actual)")
             }
         }
     }

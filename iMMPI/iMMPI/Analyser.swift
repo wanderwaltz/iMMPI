@@ -10,8 +10,8 @@ struct Analyser {
 
 
 extension Analyser {
-    func bind(_ record: TestRecordProtocol) -> [BoundScale] {
-        return scales.map({ $0.bind(record) })
+    func result(for record: TestRecordProtocol) -> AnalysisResult {
+        return AnalysisResult(record: record, scales: scales.map({ $0.bind(record) }))
     }
 }
 

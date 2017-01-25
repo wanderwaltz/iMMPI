@@ -4,8 +4,8 @@ extension AttachmentReportGenerator {
     init(titleFormatter: @escaping (String) -> String, htmlGenerator: HtmlReportGenerator) {
         self.init(
             title: htmlGenerator.title,
-            generate: { record, scales in
-                let html = htmlGenerator.generate(for: record, with: scales)
+            generate: { result in
+                let html = htmlGenerator.generate(for: result)
 
                 return Attachment(
                     fileName: "\(titleFormatter(htmlGenerator.title)).html",
