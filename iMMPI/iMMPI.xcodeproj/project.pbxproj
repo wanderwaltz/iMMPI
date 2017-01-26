@@ -1080,7 +1080,6 @@
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* AnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */; };
-		44F97A371E26243E004F4E14 /* JSONRecordStorageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A361E26243E004F4E14 /* JSONRecordStorageElement.swift */; };
 		44F97A391E2624D2004F4E14 /* JSONRecordProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A381E2624D2004F4E14 /* JSONRecordProxy.swift */; };
 		44F97A3D1E26348A004F4E14 /* AnswersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A3C1E26348A004F4E14 /* AnswersViewModel.swift */; };
 		44F97A3F1E263B26004F4E14 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A3E1E263B26004F4E14 /* AnalysisViewController.swift */; };
@@ -2189,7 +2188,6 @@
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+AnswersInput.swift"; sourceTree = "<group>"; };
-		44F97A361E26243E004F4E14 /* JSONRecordStorageElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRecordStorageElement.swift; sourceTree = "<group>"; };
 		44F97A381E2624D2004F4E14 /* JSONRecordProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRecordProxy.swift; sourceTree = "<group>"; };
 		44F97A3C1E26348A004F4E14 /* AnswersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersViewModel.swift; sourceTree = "<group>"; };
 		44F97A3E1E263B26004F4E14 /* AnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
@@ -3713,20 +3711,11 @@
 			name = "Data Model Objects";
 			sourceTree = "<group>";
 		};
-		5DC973B4168F0D5F00C496F0 /* private */ = {
-			isa = PBXGroup;
-			children = (
-				44F97A381E2624D2004F4E14 /* JSONRecordProxy.swift */,
-				44F97A361E26243E004F4E14 /* JSONRecordStorageElement.swift */,
-			);
-			name = private;
-			sourceTree = "<group>";
-		};
 		5DC973BC168F20C200C496F0 /* JSON Test Records Storage */ = {
 			isa = PBXGroup;
 			children = (
 				444F237A1E2E31C900BB8003 /* Serialization */,
-				5DC973B4168F0D5F00C496F0 /* private */,
+				44F97A381E2624D2004F4E14 /* JSONRecordProxy.swift */,
 				44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */,
 			);
 			name = "JSON Test Records Storage";
@@ -4929,7 +4918,6 @@
 				44673C1C1E23C9CA001758C0 /* Router.swift in Sources */,
 				44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */,
 				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
-				44F97A371E26243E004F4E14 /* JSONRecordStorageElement.swift in Sources */,
 				444F23711E2E1C9300BB8003 /* FormTableViewCell.swift in Sources */,
 				444F237C1E2E31E000BB8003 /* JSONAgeGroupSerialization.swift in Sources */,
 				44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */,

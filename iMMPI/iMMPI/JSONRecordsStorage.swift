@@ -27,7 +27,7 @@ final class JSONRecordsStorage {
     fileprivate let storedRecordsUrl: URL
     fileprivate let dateFormatter = DateFormatter.medium
 
-    fileprivate var elements = [JSONRecordStorageElement]()
+    fileprivate var elements = [Element]()
     fileprivate var loadedFileNames = Set<String>()
 }
 
@@ -39,7 +39,7 @@ extension JSONRecordsStorage: RecordStorage {
 
 
     func add(_ record: RecordProtocol) throws {
-        let element = JSONRecordStorageElement()
+        let element = Element()
         element.record = record
         elements.append(element)
         try store(element)
@@ -80,7 +80,7 @@ extension JSONRecordsStorage: RecordStorage {
                     continue
                 }
 
-                let element = JSONRecordStorageElement()
+                let element = Element()
                 element.record = JSONRecordProxy(record: record, fileName: fileName, directory: storageDirectoryName)
                 element.fileName = fileName
 
@@ -129,7 +129,7 @@ extension JSONRecordsStorage {
             }
 
             if false == loadedFileNames.contains(proxy.fileName) {
-                let element = JSONRecordStorageElement()
+                let element = Element()
                 element.record = proxy
                 element.fileName = proxy.fileName
 
@@ -151,7 +151,7 @@ extension JSONRecordsStorage {
 
 
 extension JSONRecordsStorage {
-    fileprivate func remove(_ element: JSONRecordStorageElement?) throws {
+    fileprivate func remove(_ element: Element?) throws {
         guard let element = element else {
             return
         }
@@ -182,7 +182,7 @@ extension JSONRecordsStorage {
     }
 
 
-    fileprivate func store(_ element: JSONRecordStorageElement?) throws {
+    fileprivate func store(_ element: Element?) throws {
         guard let element = element else {
             return
         }
@@ -232,10 +232,20 @@ extension JSONRecordsStorage {
     }
 
 
-    fileprivate func element(for record: RecordProtocol) -> JSONRecordStorageElement? {
+    fileprivate func element(for record: RecordProtocol) -> Element? {
         return elements.first(where: { $0.record === record })
     }
 }
+
+
+
+extension JSONRecordsStorage {
+    fileprivate final class Element: NSObject {
+        var record: RecordProtocol?
+        var fileName: String?
+    }
+}
+
 
 
 fileprivate let kJSONPathExtension = "json"
