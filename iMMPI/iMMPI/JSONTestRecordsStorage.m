@@ -25,6 +25,12 @@ NSString * const kJSONTestRecordStorageDirectoryDefault = @"JSONRecords";
 NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
 
 
+/// Returns object if object is not nil, else returns [NSNull null]
+id nil2Null(id _Nullable object);
+
+/// Returns object if object is not of NSNull class, else returns nil
+id _Nullable null2Nil(id _Nullable object);
+
 #pragma mark -
 #pragma mark JSONTestRecordStorage private
 
@@ -423,5 +429,18 @@ NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
     return found;
 }
 
-
 @end
+
+
+id nil2Null(id object)
+{
+    if (object != nil) return object;
+    else return [NSNull null];
+}
+
+
+id null2Nil(id object)
+{
+    if (![object isKindOfClass: [NSNull class]]) return object;
+    else return nil;
+}

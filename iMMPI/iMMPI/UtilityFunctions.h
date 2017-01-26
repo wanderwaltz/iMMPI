@@ -10,16 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// Returns object if object is not nil, else returns [NSNull null]
-id nil2Null(id _Nullable object);
-
-/// Returns object if object is not of NSNull class, else returns nil
-id _Nullable null2Nil(id _Nullable object);
-
-
-
 UIViewController * _Nullable SelfOrFirstChild(UIViewController * _Nullable controller);
-
 
 NSString *TransliterateToLatin(NSString *string);
 

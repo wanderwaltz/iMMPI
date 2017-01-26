@@ -9,19 +9,6 @@
 #import "UtilityFunctions.h"
 
 
-id nil2Null(id object)
-{
-    if (object != nil) return object;
-    else return [NSNull null];
-}
-
-
-id null2Nil(id object)
-{
-    if (![object isKindOfClass: [NSNull class]]) return object;
-    else return nil;
-}
-
 
 UIViewController *SelfOrFirstChild(UIViewController *controller)
 {
