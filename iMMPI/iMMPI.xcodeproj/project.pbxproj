@@ -492,7 +492,6 @@
 		4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C79D1E1617AE0024C001 /* StatementTests.swift */; };
 		4430C7A21E1619000024C001 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A11E1619000024C001 /* Statement.swift */; };
 		4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A51E161B430024C001 /* Questionnaire.swift */; };
-		4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */; };
 		4430C7AD1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7AC1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json */; };
 		4430C7AF1E1637580024C001 /* questionnaire.error.statementsNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7AE1E1637580024C001 /* questionnaire.error.statementsNotFound.json */; };
 		4430C7B11E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7B01E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json */; };
@@ -1606,7 +1605,6 @@
 		4430C79D1E1617AE0024C001 /* StatementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementTests.swift; sourceTree = "<group>"; };
 		4430C7A11E1619000024C001 /* Statement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 		4430C7A51E161B430024C001 /* Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire.swift; sourceTree = "<group>"; };
-		4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireProtocol.swift; sourceTree = "<group>"; };
 		4430C7AC1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.jsonRootNotDictionary.json; sourceTree = "<group>"; };
 		4430C7AE1E1637580024C001 /* questionnaire.error.statementsNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementsNotFound.json; sourceTree = "<group>"; };
 		4430C7B01E1637640024C001 /* questionnaire.error.statementJsonNotDictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementJsonNotDictionary.json; sourceTree = "<group>"; };
@@ -3712,7 +3710,6 @@
 			isa = PBXGroup;
 			children = (
 				442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */,
-				4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */,
 				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
 				44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */,
 			);
@@ -4912,7 +4909,6 @@
 				444F24931E351DBC00BB8003 /* AnalysisScore+Median.swift in Sources */,
 				444F23731E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift in Sources */,
 				44C302111E3522C30073F391 /* Analyser.swift in Sources */,
-				4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */,
 				444F245B1E336ADE00BB8003 /* EmailRecipientsGenerator.swift in Sources */,
 				444F23881E2E358500BB8003 /* JSONPersonSerialization.swift in Sources */,
 				444F247D1E34F25F00BB8003 /* AnalysisScore+Raw.swift in Sources */,

@@ -24,7 +24,7 @@ final class Questionnaire: NSObject {
 }
 
 
-extension Questionnaire: QuestionnaireProtocol {
+extension Questionnaire {
     var statementsCount: Int {
         return statements.count
     }
