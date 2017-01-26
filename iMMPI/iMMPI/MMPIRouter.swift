@@ -52,6 +52,10 @@ extension MMPIRouter: Router {
         let controller = makeRecordsList(with: trashStorage)
 
         controller.title = Strings.Screen.trash
+
+        // TODO: fix this; need to set the grouping for trash view controller to .flat
+        // because we cannot expand gropus in trash (the lookup is performed in main storage
+        // when expanding groups)
         controller.grouping = .flat
 
         sender.show(controller, sender: nil)
