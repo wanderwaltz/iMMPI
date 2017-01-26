@@ -17,10 +17,6 @@ struct Statement {
         self.identifier = identifier
         self.text = text
     }
-
-    init() {
-        self.init(identifier: 0, text: "")
-    }
 }
 
 

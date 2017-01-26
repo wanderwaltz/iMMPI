@@ -2,19 +2,6 @@ import XCTest
 @testable import iMMPI
 
 final class StatementTests: XCTestCase {
-    func testThat__default_statement_has_nonnull_text() {
-        let text: String? = Statement().text
-        XCTAssertNotNil(text)
-    }
-
-    func testThat__default_statement_has_empty_text() {
-        XCTAssertTrue(Statement().text.isEmpty)
-    }
-
-    func testThat__default_statement_has_zero_id() {
-        XCTAssertEqual(Statement().identifier, 0)
-    }
-
     func testThat__statements_with_equal_id_are_equal_regardless_of_text() {
         let statement1 = Statement(identifier: 123, text: "some text")
         let statement2 = Statement(identifier: 123, text: "some text")
