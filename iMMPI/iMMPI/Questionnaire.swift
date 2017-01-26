@@ -6,10 +6,8 @@ import Foundation
 /// There are separate sets of questions depending on the gender and age group
 /// of the person, and these are stored in separate files.
 struct Questionnaire {
-    typealias StatementIdentifier = Int
-
     fileprivate init(statements: [Statement]) {
-        var statementsById: [StatementIdentifier:Statement] = [:]
+        var statementsById: [Statement.Identifier:Statement] = [:]
 
         for statement in statements {
             statementsById[statement.statementID] = statement
@@ -20,7 +18,7 @@ struct Questionnaire {
     }
 
     fileprivate let statements: [Statement]
-    fileprivate let statementsById: [StatementIdentifier:Statement]
+    fileprivate let statementsById: [Statement.Identifier:Statement]
 }
 
 
@@ -37,7 +35,7 @@ extension Questionnaire {
         return statements[index]
     }
 
-    func statement(id: Int) -> Statement? {
+    func statement(id: Statement.Identifier) -> Statement? {
         return statementsById[id]
     }
 }

@@ -51,8 +51,8 @@ extension AnalysisScore {
     ///
     /// - Returns: an `AnalysisScore` instance, which performs the computation. The returned value is a `Double`
     ///            in 0.0...100.0 range.
-    static func rawPercentage(positive: [StatementIdentifier],
-                              negative: [StatementIdentifier],
+    static func rawPercentage(positive: [Statement.Identifier],
+                              negative: [Statement.Identifier],
                               filter includeStatement: @escaping StatementsFilter
                                 = AnalysisScore.defaultStatementsFilter)
         -> AnalysisScore {

@@ -1,10 +1,10 @@
 import Foundation
 
-/// Identifier of a statement in the questionnaire
-typealias StatementIdentifier = Int
-
 /// A single statement of the questionnaire.
 struct Statement {
+    /// Identifier of a statement in the questionnaire
+    typealias Identifier = Int
+
     /// Identifier of the statement.
     ///
     /// `statementID` is used when analyzing test results and querying an answer from `TestAnswers` object.

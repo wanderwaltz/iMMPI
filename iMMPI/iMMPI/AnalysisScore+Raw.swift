@@ -3,7 +3,7 @@ import Foundation
 extension AnalysisScore {
     /// A pair of `positive` and `negative` statement identifier collections, 
     /// which is used for raw score computation.
-    typealias _RawMatchesKey = (positive: [StatementIdentifier], negative: [StatementIdentifier])
+    typealias _RawMatchesKey = (positive: [Statement.Identifier], negative: [Statement.Identifier])
 
     /// Gender-based pair of `positive` and `negative` statement identifier collections,
     /// which is used for raw score computation.
@@ -13,7 +13,7 @@ extension AnalysisScore {
     ///
     /// - Parameter identifier: identifier of the statement to check for validity.
     /// - Returns: a boolean value corresponding to whether the statement is valid or not.
-    typealias StatementsFilter = (_ identifier: StatementIdentifier) -> Bool
+    typealias StatementsFilter = (_ identifier: Statement.Identifier) -> Bool
 
 
     /// Returns a score computed by counting the number of matches between the given `TestAnswers` instance
@@ -63,8 +63,8 @@ extension AnalysisScore {
     /// - Returns: an `AnalysisScore` instance, which performs the computation. The returned value is a total number
     ///            of answers in the given record, which match the values provided by the `positive` and `negative`
     ///            parameters.
-    static func raw(positive: [StatementIdentifier],
-                    negative: [StatementIdentifier],
+    static func raw(positive: [Statement.Identifier],
+                    negative: [Statement.Identifier],
                     filter includeStatement: @escaping StatementsFilter
                         = AnalysisScore.defaultStatementsFilter) -> AnalysisScore {
         return .raw(.common((positive: positive, negative: negative)), filter: includeStatement)

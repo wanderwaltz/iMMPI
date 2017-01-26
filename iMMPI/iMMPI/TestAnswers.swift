@@ -49,7 +49,7 @@ extension TestAnswers {
     /// Ordering of the enumerating answers is undefined.
     ///
     /// - Parameter block: Block to be called on each answer/statement identifier pair where answer != `.unknown`.
-    func setAnswers(positive: [StatementIdentifier], negative: [StatementIdentifier]) {
+    func setAnswers(positive: [Statement.Identifier], negative: [Statement.Identifier]) {
         for identifier in positive {
             setAnswer(.positive, for: identifier)
         }

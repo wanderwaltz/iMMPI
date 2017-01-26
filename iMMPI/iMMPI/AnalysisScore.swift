@@ -95,14 +95,14 @@ func trunc(_ score: AnalysisScore) -> AnalysisScore {
 
 
 extension AnalysisScore {
-    static let ignoredStatements = Set<StatementIdentifier>(
+    static let ignoredStatements = Set<Statement.Identifier>(
         [14, 33, 48, 63, 66, 69, 121, 123, 133, 151,
          168, 182, 184, 197, 200, 205, 266, 275, 293,
          334, 349, 350, 462, 464, 474, 542, 551]
     )
 
 
-    static func defaultStatementsFilter(_ identifier: StatementIdentifier) -> Bool {
+    static func defaultStatementsFilter(_ identifier: Statement.Identifier) -> Bool {
         return false == ignoredStatements.contains(identifier)
     }
 }
