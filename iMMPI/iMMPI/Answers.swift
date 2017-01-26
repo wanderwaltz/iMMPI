@@ -5,7 +5,7 @@ final class Answers: NSObject {
         super.init()
     }
 
-    fileprivate var answersByIdentifier: [Int:Record] = [:]
+    fileprivate var answersByIdentifier: [Statement.Identifier:Record] = [:]
 }
 
 
@@ -21,7 +21,7 @@ extension Answers {
     ///
     /// - Parameter type: answer type (agree, disagree, undefined - see source for the exact enum values),
     /// - Parameter identifier: identifier of the statement to relate the answer with.
-    func setAnswer(_ answer: AnswerType, for identifier: Int) {
+    func setAnswer(_ answer: AnswerType, for identifier: Statement.Identifier) {
         answersByIdentifier[identifier] = Record(statementIdentifier: identifier, answer: answer)
     }
 
@@ -30,12 +30,12 @@ extension Answers {
     ///
     /// - Parameter identifier: identifier of the statement related to the answer.
     /// - Returns: `AnswerType` for a recorded answer. If the statement has not yet been answered, returns `.unknown`.
-    func answer(for identifier: Int) -> AnswerType {
+    func answer(for identifier: Statement.Identifier) -> AnswerType {
         return answersByIdentifier[identifier]?.answer ?? .unknown
     }
 
 
-    func enumerateAnswers(with block: (Int, AnswerType) -> Void) {
+    func enumerateAnswers(with block: (Statement.Identifier, AnswerType) -> Void) {
         answersByIdentifier.forEach { (identifier, record) in
             if record.answer != .unknown {
                 block(identifier, record.answer)
@@ -63,11 +63,11 @@ extension Answers {
 
 extension Answers {
     fileprivate struct Record: Hashable {
-        let statementIdentifier: Int
+        let statementIdentifier: Statement.Identifier
         let answer: AnswerType
 
         fileprivate var hashValue: Int {
-            return statementIdentifier ^ answer.rawValue
+            return statementIdentifier.hashValue ^ answer.rawValue.hashValue
         }
 
 
