@@ -52,7 +52,7 @@ final class QuestionnaireTests: XCTestCase {
             }
 
             for index in 0..<questionnaire.statementsCount {
-                XCTAssertTrue(questionnaire.statement(at: index)! === questionnaire.statement(id: index+1)!)
+                XCTAssertTrue(questionnaire.statement(at: index)! == questionnaire.statement(id: index+1)!)
             }
         }
     }
