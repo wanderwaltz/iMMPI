@@ -1,11 +1,11 @@
 import Foundation
 
-/// A concrete implementation of TestRecordProtocol.
+/// A concrete implementation of RecordProtocol.
 ///
 /// Initializing this class instance with -init method will also create a `Person` object and
 /// set it as the person property value. `testAnswers` property will be initialized with empty
 /// `TestAnswers` object; date property defaults to the current date/time.
-final class TestRecord: NSObject {
+final class Record: NSObject {
     var person: Person
     var testAnswers: TestAnswers
     var date: Date
@@ -23,7 +23,7 @@ final class TestRecord: NSObject {
 }
 
 
-extension TestRecord: TestRecordProtocol {
+extension Record: RecordProtocol {
     public var personName: String {
         return person.name
     }

@@ -1,8 +1,8 @@
 import XCTest
 @testable import iMMPI
 
-final class TestRecordsGroupTests_Single: XCTestCase {
-    let record = TestRecord(
+final class RecordsGroupTests_Single: XCTestCase {
+    let record = Record(
         person: Person(
             name: "Jane Doe",
             gender: .female,
@@ -13,11 +13,11 @@ final class TestRecordsGroupTests_Single: XCTestCase {
     )
 
 
-    var group: TestRecordsGroup!
+    var group: RecordsGroup!
 
 
     override func setUp() {
-        group = TestRecordsGroup(single: record)
+        group = RecordsGroup(single: record)
     }
 
 

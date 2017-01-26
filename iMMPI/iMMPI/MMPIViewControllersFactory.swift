@@ -16,8 +16,8 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
 
-    func makeEditRecordViewController() -> EditTestRecordViewController {
-        return EditTestRecordViewController(style: .grouped)
+    func makeEditRecordViewController() -> EditRecordViewController {
+        return EditRecordViewController(style: .grouped)
     }
 
 

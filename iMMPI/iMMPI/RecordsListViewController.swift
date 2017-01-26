@@ -13,7 +13,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
 
     var searchController = UISearchController(searchResultsController: nil)
 
-    var viewModel: RecordsListViewModel<TestRecordProtocol>? {
+    var viewModel: RecordsListViewModel<RecordProtocol>? {
         willSet {
             viewModel?.onDidUpdate = Constant.void()
         }
@@ -70,21 +70,21 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
     }
 
 
-    fileprivate var records: [TestRecordProtocol] = [] {
+    fileprivate var records: [RecordProtocol] = [] {
         didSet {
             groups = grouping.group(records.filter(recordsFilter))
         }
     }
 
 
-    fileprivate var recordsFilter: (TestRecordProtocol) -> Bool = Constant.bool(true) {
+    fileprivate var recordsFilter: (RecordProtocol) -> Bool = Constant.bool(true) {
         didSet {
             groups = grouping.group(records.filter(recordsFilter))
         }
     }
 
 
-    fileprivate var groups: Grouping<TestRecordsGroup> = .empty {
+    fileprivate var groups: Grouping<RecordsGroup> = .empty {
         didSet {
             reloadData()
         }
@@ -92,7 +92,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
 
 
     fileprivate var index: SectionIndex?
-    fileprivate var cellSource: TableViewCellSource<TestRecordsGroup>!
+    fileprivate var cellSource: TableViewCellSource<RecordsGroup>!
 }
 
 
@@ -146,7 +146,7 @@ extension RecordsListViewController {
 
     @objc fileprivate func handleDidEditRecordNotification(_ notification: Notification) {
         assert(Thread.isMainThread)
-        guard let record = notification.object as? TestRecordProtocol else {
+        guard let record = notification.object as? RecordProtocol else {
             return
         }
 

@@ -3,7 +3,7 @@ import XCTest
 
 final class AnalyzerIntegrationTests: XCTestCase {
     let numberOfTestCases = 454
-    let serialization = JSONTestRecordSerialization()
+    let serialization = JSONRecordSerialization()
 
     var analyser: Analyser!
 

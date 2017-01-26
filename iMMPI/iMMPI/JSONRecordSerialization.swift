@@ -1,7 +1,7 @@
 import Foundation
 
 // TODO: drop @objc requirements when possible
-final class JSONTestRecordSerialization: NSObject {
+final class JSONRecordSerialization: NSObject {
     let version = "1.0"
 
     let person: JSONPersonSerialization
@@ -18,8 +18,8 @@ final class JSONTestRecordSerialization: NSObject {
 }
 
 
-extension JSONTestRecordSerialization {
-    func encode(_ record: TestRecordProtocol) -> Data? {
+extension JSONRecordSerialization {
+    func encode(_ record: RecordProtocol) -> Data? {
         var json = person.encode(record.person)
 
         json[Key.version] = version
@@ -30,7 +30,7 @@ extension JSONTestRecordSerialization {
     }
 
 
-    func decode(_ data: Data?) -> TestRecord? {
+    func decode(_ data: Data?) -> Record? {
         guard let data = data,
             let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String:Any],
             let version = json[Key.version] as? String, version == self.version else {
@@ -49,12 +49,12 @@ extension JSONTestRecordSerialization {
             return nil
         }
 
-        return TestRecord(person: person, testAnswers: answers, date: date)
+        return Record(person: person, testAnswers: answers, date: date)
     }
 }
 
 
-extension JSONTestRecordSerialization {
+extension JSONRecordSerialization {
     enum Key {
         static let answers = "answers"
         static let version = "version"

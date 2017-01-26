@@ -10,7 +10,7 @@ struct ComputedScore {
 extension ComputedScore: CustomStringConvertible {}
 
 extension ComputedScore {
-    init(scale: AnalysisScale, record: TestRecordProtocol) {
+    init(scale: AnalysisScale, record: RecordProtocol) {
         let rawValue = scale.score.value(for: record)
         self.init(
             rawValue: rawValue,

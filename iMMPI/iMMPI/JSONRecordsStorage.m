@@ -1,5 +1,5 @@
 //
-//  JSONTestRecordsStorage.m
+//  JSONRecordsStorage.m
 //  iMMPI
 //
 //  Created by Egor Chiglintsev on 29.12.12.
@@ -10,7 +10,7 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "JSONTestRecordsStorage.h"
+#import "JSONRecordsStorage.h"
 
 #pragma mark -
 #pragma mark Static constants
@@ -21,8 +21,8 @@ static NSString * const kIndexFileName     = @"index";
 #pragma mark -
 #pragma mark Constants
 
-NSString * const kJSONTestRecordStorageDirectoryDefault = @"JSONRecords";
-NSString * const kJSONTestRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
+NSString * const kJSONRecordStorageDirectoryDefault = @"JSONRecords";
+NSString * const kJSONRecordStorageDirectoryTrash   = @"JSONRecords-Trash";
 
 
 /// Returns object if object is not nil, else returns [NSNull null]
@@ -32,9 +32,9 @@ id nil2Null(id _Nullable object);
 id _Nullable null2Nil(id _Nullable object);
 
 #pragma mark -
-#pragma mark JSONTestRecordStorage private
+#pragma mark JSONRecordStorage private
 
-@interface JSONTestRecordsStorage()
+@interface JSONRecordsStorage()
 {
     NSMutableArray *_elements;
     NSMutableSet   *_loadedFileNames;
@@ -48,16 +48,16 @@ id _Nullable null2Nil(id _Nullable object);
 
 
 #pragma mark -
-#pragma mark JSONTestRecordsStorage implementation
+#pragma mark JSONRecordsStorage implementation
 
-@implementation JSONTestRecordsStorage
+@implementation JSONRecordsStorage
 
 #pragma mark -
 #pragma mark initialization methods
 
 - (id) init
 {
-    return [self initWithDirectoryName: kJSONTestRecordStorageDirectoryDefault];
+    return [self initWithDirectoryName: kJSONRecordStorageDirectoryDefault];
 }
 
 
@@ -92,14 +92,14 @@ id _Nullable null2Nil(id _Nullable object);
 
 
 #pragma mark -
-#pragma mark TestRecordStorage
+#pragma mark RecordStorage
 
-- (BOOL) addNewTestRecord: (id<TestRecordProtocol>) testRecord
+- (BOOL) addNewRecord: (id<RecordProtocol>) record
 {
     BOOL didAdd = NO;
     
-    JSONTestRecordStorageElement *element = [JSONTestRecordStorageElement new];
-    element.record = testRecord;
+    JSONRecordStorageElement *element = [JSONRecordStorageElement new];
+    element.record = record;
     
     [_elements addObject: element];
     didAdd = [self storeElement: element];
@@ -108,11 +108,11 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (BOOL) updateTestRecord: (id<TestRecordProtocol>) testRecord
+- (BOOL) updateRecord: (id<RecordProtocol>) record
 {
     BOOL didUpdate = NO;
     
-    JSONTestRecordStorageElement *element = [self elementForRecord: testRecord];
+    JSONRecordStorageElement *element = [self elementForRecord: record];
     
     if (element != nil)
     {
@@ -123,11 +123,11 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (BOOL) removeTestRecord: (id<TestRecordProtocol>) testRecord
+- (BOOL) removeRecord: (id<RecordProtocol>) record
 {
     BOOL didRemove = NO;
     
-    JSONTestRecordStorageElement *element = [self elementForRecord: testRecord];
+    JSONRecordStorageElement *element = [self elementForRecord: record];
     
     if (element != nil)
     {
@@ -138,7 +138,7 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (void) loadTestRecordsIndex
+- (void) loadRecordsIndex
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString      *indexPath   = [[_storedRecordsPath stringByAppendingPathComponent: kIndexFileName]
@@ -149,7 +149,7 @@ id _Nullable null2Nil(id _Nullable object);
         NSData *indexData = [NSData dataWithContentsOfFile: indexPath];
         NSArray  *proxies = [self.indexSerialization decode: indexData];
         
-        for (JSONTestRecordProxy *proxy in proxies)
+        for (JSONRecordProxy *proxy in proxies)
         {
             NSParameterAssert(proxy.fileName != nil);
             
@@ -161,7 +161,7 @@ id _Nullable null2Nil(id _Nullable object);
             
             if (![_loadedFileNames containsObject: proxy.fileName])
             {
-                JSONTestRecordStorageElement *element = [JSONTestRecordStorageElement new];
+                JSONRecordStorageElement *element = [JSONRecordStorageElement new];
                 element.record   = proxy;
                 element.fileName = proxy.fileName;
                 
@@ -173,9 +173,9 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (void) saveTestRecordsIndex
+- (void) saveRecordsIndex
 {
-    NSArray  *indexProxies = [self allTestRecords];
+    NSArray  *indexProxies = [self allRecords];
     NSData   *indexData    = [self.indexSerialization encode: indexProxies];
     
     if (indexData != nil)
@@ -188,9 +188,9 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (BOOL) loadStoredTestRecords
+- (BOOL) loadStoredRecords
 {
-    [self loadTestRecordsIndex];
+    [self loadRecordsIndex];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray       *subpaths    = [fileManager subpathsAtPath: _storedRecordsPath];
@@ -203,13 +203,13 @@ id _Nullable null2Nil(id _Nullable object);
             NSString *path = [_storedRecordsPath stringByAppendingPathComponent: fileName];
             NSData   *data = [NSData dataWithContentsOfFile: path];
             
-            id<TestRecordProtocol> record = [self.serialization decode: data];
+            id<RecordProtocol> record = [self.serialization decode: data];
             
             if (record != nil)
             {
-                JSONTestRecordStorageElement *element = [JSONTestRecordStorageElement new];
+                JSONRecordStorageElement *element = [JSONRecordStorageElement new];
                 element.record =
-                [[JSONTestRecordProxy alloc] initWithRecord: record
+                [[JSONRecordProxy alloc] initWithRecord: record
                                                    fileName: fileName
                                                   directory: _storageDirectoryName];
                 element.fileName = fileName;
@@ -220,7 +220,7 @@ id _Nullable null2Nil(id _Nullable object);
         }
     }
     
-    [self saveTestRecordsIndex];
+    [self saveRecordsIndex];
     
     NSLog(@"%ld files loaded", (long)_loadedFileNames.count);
     
@@ -228,13 +228,13 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (NSArray *) allTestRecords
+- (NSArray *) allRecords
 {
     NSMutableArray *records = [NSMutableArray arrayWithCapacity: _elements.count];
     
-    for (JSONTestRecordStorageElement *element in _elements)
+    for (JSONRecordStorageElement *element in _elements)
     {
-        FRB_AssertClass(element, JSONTestRecordStorageElement);
+        FRB_AssertClass(element, JSONRecordStorageElement);
         if (element.record != nil)
             [records addObject: element.record];
     }
@@ -243,14 +243,14 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (BOOL) containsTestRecord: (id<TestRecordProtocol>) testRecord
+- (BOOL) containsRecord: (id<RecordProtocol>) record
 {
-    FRB_AssertNotNil(testRecord);
+    FRB_AssertNotNil(record);
     
-    for (JSONTestRecordStorageElement *element in _elements)
+    for (JSONRecordStorageElement *element in _elements)
     {
-        FRB_AssertClass(element, JSONTestRecordStorageElement);
-        if (element.record == testRecord)
+        FRB_AssertClass(element, JSONRecordStorageElement);
+        if (element.record == record)
             return YES;
     }
     
@@ -287,14 +287,14 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (BOOL) removeElement: (JSONTestRecordStorageElement *) element
+- (BOOL) removeElement: (JSONRecordStorageElement *) element
 {
     BOOL     didRemove = NO;
     NSString *fileName = element.fileName;
     
     if (fileName.length > 0)
     {
-        if ([_trashStorage addNewTestRecord: element.record])
+        if ([_trashStorage addNewRecord: element.record])
         {
             didRemove = [self removeRecordFileWithName: element.fileName];   
         }
@@ -303,20 +303,20 @@ id _Nullable null2Nil(id _Nullable object);
     if (didRemove)
     {
         [_elements removeObject: element];
-        [self saveTestRecordsIndex];
+        [self saveRecordsIndex];
     }
     
     return didRemove;
 }
 
 
-- (BOOL) storeElement: (JSONTestRecordStorageElement *) element
+- (BOOL) storeElement: (JSONRecordStorageElement *) element
 {
     BOOL didStore = NO;
     
     if (element.record != nil)
     {
-        FRB_AssertConformsTo(element.record, TestRecordProtocol);
+        FRB_AssertConformsTo(element.record, RecordProtocol);
         
         NSData *jsonData = [self.serialization encode: element.record];
         
@@ -362,7 +362,7 @@ id _Nullable null2Nil(id _Nullable object);
         
         if (!deleted)
         {
-            NSLog(@"JSONTestRecordsStorage failed to remove test record file named '%@' with error: %@", fileName, error);
+            NSLog(@"JSONRecordsStorage failed to remove test record file named '%@' with error: %@", fileName, error);
         }
         else
         {
@@ -375,7 +375,7 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (NSString *) fileNameForRecord: (id<TestRecordProtocol>) record
+- (NSString *) fileNameForRecord: (id<RecordProtocol>) record
 {
     NSString *candidate = [NSString stringWithFormat: @"%@ - %@",
                            record.person.name, [_dateFormatter stringFromDate: record.date]];
@@ -410,13 +410,13 @@ id _Nullable null2Nil(id _Nullable object);
 }
 
 
-- (JSONTestRecordStorageElement *) elementForRecord: (id<TestRecordProtocol>) record
+- (JSONRecordStorageElement *) elementForRecord: (id<RecordProtocol>) record
 {
-    JSONTestRecordStorageElement *found = nil;
+    JSONRecordStorageElement *found = nil;
     
     if (record != nil)
     {
-        for (JSONTestRecordStorageElement *element in _elements)
+        for (JSONRecordStorageElement *element in _elements)
         {
             if (element.record == record)
             {

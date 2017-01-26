@@ -1,12 +1,12 @@
 import XCTest
 @testable import iMMPI
 
-final class JSONTestRecordSerializationTests: XCTestCase {
-    var serialization: JSONTestRecordSerialization!
+final class JSONRecordSerializationTests: XCTestCase {
+    var serialization: JSONRecordSerialization!
 
     override func setUp() {
         super.setUp()
-        serialization = JSONTestRecordSerialization()
+        serialization = JSONRecordSerialization()
     }
 
 

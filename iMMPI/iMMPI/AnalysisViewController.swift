@@ -2,7 +2,7 @@ import UIKit
 import MessageUI
 
 final class AnalysisViewController: UITableViewController, UsingRouting {
-    var record: TestRecordProtocol? {
+    var record: RecordProtocol? {
         didSet {
             title = record.map { "\($0.person.name), \(dateFormatter.string(from: $0.date))" } ?? ""
             if let record = record {

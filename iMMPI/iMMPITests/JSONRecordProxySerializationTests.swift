@@ -1,12 +1,12 @@
 import XCTest
 @testable import iMMPI
 
-final class JSONTestRecordProxySerializationTests: XCTestCase {
-    var serialization: JSONTestRecordProxySerialization!
+final class JSONRecordProxySerializationTests: XCTestCase {
+    var serialization: JSONRecordProxySerialization!
 
     override func setUp() {
         super.setUp()
-        serialization = JSONTestRecordProxySerialization()
+        serialization = JSONRecordProxySerialization()
     }
 
     func testThat__it_is_bidirectional() {
@@ -19,7 +19,7 @@ final class JSONTestRecordProxySerializationTests: XCTestCase {
 
         let date = calendar.date(from: dateComponents)!
 
-        let proxy = JSONTestRecordProxy(fileName: "filename", directory: "directory")
+        let proxy = JSONRecordProxy(fileName: "filename", directory: "directory")
         proxy.personName = "John Appleseed"
         proxy.date = date
 

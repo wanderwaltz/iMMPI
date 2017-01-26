@@ -39,7 +39,7 @@ final class AnalysisMenuActionContext {
 
 
 extension AnalysisMenuActionContext {
-    var record: TestRecordProtocol {
+    var record: RecordProtocol {
         return result.record
     }
 }

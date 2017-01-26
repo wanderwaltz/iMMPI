@@ -1,22 +1,22 @@
 import Foundation
 
 // TODO: drop @objc requirements when possible
-final class JSONTestRecordIndexSerialization: NSObject {
-    let proxy: JSONTestRecordProxySerialization
+final class JSONRecordIndexSerialization: NSObject {
+    let proxy: JSONRecordProxySerialization
 
-    init(proxy: JSONTestRecordProxySerialization = JSONTestRecordProxySerialization()) {
+    init(proxy: JSONRecordProxySerialization = JSONRecordProxySerialization()) {
         self.proxy = proxy
     }
 }
 
 
-extension JSONTestRecordIndexSerialization {
-    func encode(_ proxies: [JSONTestRecordProxy]) -> Data? {
+extension JSONRecordIndexSerialization {
+    func encode(_ proxies: [JSONRecordProxy]) -> Data? {
         return try? JSONSerialization.data(withJSONObject: proxies.map(proxy.encode), options: .prettyPrinted)
     }
 
 
-    func decode(_ data: Data?) -> [JSONTestRecordProxy] {
+    func decode(_ data: Data?) -> [JSONRecordProxy] {
         guard let data = data,
             let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [[String:String]] else {
                 return []

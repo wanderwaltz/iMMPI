@@ -2,7 +2,7 @@ import Foundation
 
 // TODO: test that proxy serialization does not materialize proxy
 
-struct JSONTestRecordProxySerialization {
+struct JSONRecordProxySerialization {
     let dateFormatter: DateFormatter
 
     init(dateFormatter: DateFormatter = .serialization) {
@@ -11,8 +11,8 @@ struct JSONTestRecordProxySerialization {
 }
 
 
-extension JSONTestRecordProxySerialization {
-    func encode(_ proxy: JSONTestRecordProxy) -> [String:String] {
+extension JSONRecordProxySerialization {
+    func encode(_ proxy: JSONRecordProxy) -> [String:String] {
         return [
             Key.name: proxy.personName,
             Key.fileName: proxy.fileName,
@@ -22,7 +22,7 @@ extension JSONTestRecordProxySerialization {
     }
 
 
-    func decode(_ value: Any?) -> JSONTestRecordProxy? {
+    func decode(_ value: Any?) -> JSONRecordProxy? {
         guard let json = value as? [String:String],
             let name  = json[Key.name],
             let fileName = json[Key.fileName],
@@ -31,7 +31,7 @@ extension JSONTestRecordProxySerialization {
                 return nil
         }
 
-        let proxy = JSONTestRecordProxy(fileName: fileName, directory: directory)
+        let proxy = JSONRecordProxy(fileName: fileName, directory: directory)
         proxy.personName = name
         proxy.date = date
 
@@ -40,7 +40,7 @@ extension JSONTestRecordProxySerialization {
 }
 
 
-extension JSONTestRecordProxySerialization {
+extension JSONRecordProxySerialization {
     enum Key {
         static let name = "name"
         static let fileName = "fileName"

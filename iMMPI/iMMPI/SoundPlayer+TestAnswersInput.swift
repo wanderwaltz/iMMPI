@@ -4,7 +4,7 @@ extension SoundPlayer: TestAnswersInputDelegate {
     func testAnswersViewController(_ controller: TestAnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
-                                   record: TestRecordProtocol) {
+                                   record: RecordProtocol) {
         switch answer {
         case .positive: play(.clickPositive)
         case .negative: play(.clickNegative)

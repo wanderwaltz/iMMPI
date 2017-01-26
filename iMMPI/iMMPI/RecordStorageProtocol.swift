@@ -1,14 +1,14 @@
 import Foundation
 
-extension TestRecordStorage {
+extension RecordStorage {
     var isEmpty: Bool {
         return all().isEmpty
     }
 }
 
-extension TestRecordStorage {
-    func makeViewModel(includeRecord: @escaping (TestRecordProtocol) -> Bool = Constant.bool(true))
-        -> RecordsListViewModel<TestRecordProtocol> {
+extension RecordStorage {
+    func makeViewModel(includeRecord: @escaping (RecordProtocol) -> Bool = Constant.bool(true))
+        -> RecordsListViewModel<RecordProtocol> {
             return RecordsListViewModel(
                 provider: AsyncProvider({ completion in
                     let startTimestamp = Date()

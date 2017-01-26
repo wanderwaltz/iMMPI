@@ -2,12 +2,12 @@ import UIKit
 import MessageUI
 
 final class MMPIRouter {
-    let storage: TestRecordStorage
-    let trashStorage: TestRecordStorage
+    let storage: RecordStorage
+    let trashStorage: RecordStorage
 
     let viewControllersFactory: RoutedViewControllersFactory
 
-    init(factory: ViewControllersFactory, storage: TestRecordStorage, trashStorage: TestRecordStorage) {
+    init(factory: ViewControllersFactory, storage: RecordStorage, trashStorage: RecordStorage) {
         self.viewControllersFactory = RoutedViewControllersFactory(base: factory)
         self.storage = storage
         self.trashStorage = trashStorage
@@ -58,17 +58,17 @@ extension MMPIRouter: Router {
     }
 
 
-    func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController) {
+    func addRecord(basedOn record: RecordProtocol, sender: UIViewController) {
         edit(record, title: Strings.Screen.newRecord, sender: sender)
     }
 
 
-    func edit(_ record: TestRecordProtocol, sender: UIViewController) {
+    func edit(_ record: RecordProtocol, sender: UIViewController) {
         edit(record, title: Strings.Screen.editRecord, sender: sender)
     }
 
 
-    func displayDetails(for group: TestRecordsGroup, sender: UIViewController) {
+    func displayDetails(for group: RecordsGroup, sender: UIViewController) {
         if group.group.isEmpty {
             displayDetails(for: group.record, sender: sender)
         }
@@ -78,7 +78,7 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayDetails(for record: TestRecordProtocol, sender: UIViewController) {
+    func displayDetails(for record: RecordProtocol, sender: UIViewController) {
         if record.testAnswers.allStatementsAnswered {
             displayAnalysis(for: record, sender: sender)
         }
@@ -88,7 +88,7 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController) {
+    func displayAnalysis(for record: RecordProtocol, sender: UIViewController) {
         let controller = viewControllersFactory.makeAnalysisViewController()
 
         controller.record = record
@@ -108,7 +108,7 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayAnswersReview(for record: TestRecordProtocol, sender: UIViewController) {
+    func displayAnswersReview(for record: RecordProtocol, sender: UIViewController) {
         let controller = viewControllersFactory.makeAnswersReviewViewController()
 
         controller.viewModel = DefaultTestAnswersViewModel(record: record)
@@ -176,7 +176,7 @@ extension MMPIRouter {
     }
 
 
-    fileprivate func makeRecordsList(with storage: TestRecordStorage) -> RecordsListViewController {
+    fileprivate func makeRecordsList(with storage: RecordStorage) -> RecordsListViewController {
         let controller = viewControllersFactory.makeRecordsListViewController()
         controller.viewModel = storage.makeViewModel()
 
@@ -184,7 +184,7 @@ extension MMPIRouter {
     }
 
 
-    fileprivate func expand(_ group: TestRecordsGroup, sender: UIViewController) {
+    fileprivate func expand(_ group: RecordsGroup, sender: UIViewController) {
         let controller = viewControllersFactory.makeRecordsListViewController()
 
         controller.title = group.personName
@@ -211,7 +211,7 @@ extension MMPIRouter {
     }
 
 
-    fileprivate func edit(_ record: TestRecordProtocol, title: String, sender: UIViewController) {
+    fileprivate func edit(_ record: RecordProtocol, title: String, sender: UIViewController) {
         let controller = viewControllersFactory.makeEditRecordViewController()
 
         controller.record = record
@@ -224,7 +224,7 @@ extension MMPIRouter {
     }
 
 
-    fileprivate func displayAnswersInput(for record: TestRecordProtocol, sender: UIViewController) {
+    fileprivate func displayAnswersInput(for record: RecordProtocol, sender: UIViewController) {
         let controller = viewControllersFactory.makeAnswersInputViewController()
 
         controller.viewModel = DefaultTestAnswersViewModel(record: record)

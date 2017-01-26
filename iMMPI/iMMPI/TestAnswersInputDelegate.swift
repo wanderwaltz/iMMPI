@@ -4,11 +4,11 @@ protocol TestAnswersInputDelegate: class {
     func testAnswersViewController(_ controller: TestAnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
-                                   record: TestRecordProtocol)
+                                   record: RecordProtocol)
 
     func testAnswersInputViewController(_ controller: TestAnswersViewController,
                                         didSet answers: TestAnswers,
-                                        for record: TestRecordProtocol)
+                                        for record: RecordProtocol)
 }
 
 
@@ -16,9 +16,9 @@ extension TestAnswersInputDelegate {
     func testAnswersViewController(_ controller: TestAnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
-                                   record: TestRecordProtocol) {}
+                                   record: RecordProtocol) {}
 
     func testAnswersInputViewController(_ controller: TestAnswersViewController,
                                         didSet answers: TestAnswers,
-                                        for record: TestRecordProtocol) {}
+                                        for record: RecordProtocol) {}
 }

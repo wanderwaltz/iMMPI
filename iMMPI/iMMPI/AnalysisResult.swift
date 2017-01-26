@@ -1,12 +1,12 @@
 import Foundation
 
 struct AnalysisResult {
-    let record: TestRecordProtocol
+    let record: RecordProtocol
     let scales: [BoundScale]
 }
 
 
-// TODO: conform to TestRecordProtocol when @objc requirements are dropped
+// TODO: conform to RecordProtocol when @objc requirements are dropped
 extension AnalysisResult {
     var person: Person {
         return record.person

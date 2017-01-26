@@ -16,7 +16,7 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
-    func makeEditRecordViewController() -> EditTestRecordViewController {
+    func makeEditRecordViewController() -> EditRecordViewController {
         let controller = base.makeEditRecordViewController()
         controller.router = router
         return controller

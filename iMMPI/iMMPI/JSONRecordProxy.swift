@@ -1,36 +1,36 @@
 import Foundation
 
-final class JSONTestRecordProxy: NSObject {
+final class JSONRecordProxy: NSObject {
     let fileName: String
     let directory: String
 
-    let serialization = JSONTestRecordSerialization()
+    let serialization = JSONRecordSerialization()
 
     init(fileName: String, directory: String) {
         self.fileName = fileName
         self.directory = directory
     }
 
-    fileprivate var _record: TestRecordProtocol?
+    fileprivate var _record: RecordProtocol?
     fileprivate var _personName = ""
     fileprivate var _date: Date?
 }
 
 
-extension JSONTestRecordProxy {
+extension JSONRecordProxy {
     override var description: String {
         return "\(super.description): \(personName), (\(date))"
     }
 
 
-    convenience init(record: TestRecordProtocol, fileName: String, directory: String) {
+    convenience init(record: RecordProtocol, fileName: String, directory: String) {
         self.init(fileName: fileName, directory: directory)
         self._record = record
     }
 }
 
 
-extension JSONTestRecordProxy: TestRecordProtocol {
+extension JSONRecordProxy: RecordProtocol {
     var person: Person {
         get {
             return record.person
@@ -90,8 +90,8 @@ extension JSONTestRecordProxy: TestRecordProtocol {
 }
 
 
-extension JSONTestRecordProxy {
-    fileprivate var record: TestRecordProtocol {
+extension JSONRecordProxy {
+    fileprivate var record: RecordProtocol {
         if _record == nil {
             loadRecord()
         }
@@ -101,7 +101,7 @@ extension JSONTestRecordProxy {
 
 
     fileprivate func loadRecord() {
-        var loadedRecord: TestRecordProtocol = TestRecord()
+        var loadedRecord: RecordProtocol = Record()
 
         defer {
             _record = loadedRecord

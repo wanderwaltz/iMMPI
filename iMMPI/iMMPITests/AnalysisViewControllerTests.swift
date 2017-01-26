@@ -36,10 +36,10 @@ final class AnalysisViewControllerTests: XCTestCase {
 
 
     func testThat__left_bar_button_item__displays_answers_review_using_router_if_record_is_present() {
-        var receivedRecord: TestRecordProtocol? = nil
+        var receivedRecord: RecordProtocol? = nil
         var receivedSender: UIViewController? = nil
 
-        let expectedRecord = TestRecord()
+        let expectedRecord = Record()
         let expectedSender = controller
 
         router._displayAnswersReview = { record, sender in
@@ -58,7 +58,7 @@ final class AnalysisViewControllerTests: XCTestCase {
         var receivedContext: AnalysisMenuActionContext? = nil
         var receivedSender: UIViewController? = nil
 
-        let expectedRecord = TestRecord()
+        let expectedRecord = Record()
         let expectedSender = controller
 
         router._displayAnalysisOptions = { context, sender in
@@ -77,7 +77,7 @@ final class AnalysisViewControllerTests: XCTestCase {
 
 
     func testThat__if_it_has_an_analyser_it_reloads_data_when_receiving_analysis_settings_change_notification() {
-        controller.record = TestRecord()
+        controller.record = Record()
         controller.tableView = CheckReloadDataTableView()
         NotificationCenter.default.post(name: .analysisSettingsChanged, object: nil)
         XCTAssertEqual((controller.tableView as! CheckReloadDataTableView).reloadDataCallsCount, 1)

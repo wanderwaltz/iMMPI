@@ -1,7 +1,7 @@
 import Foundation
 
 protocol TestAnswersViewModel: class {
-    var record: TestRecordProtocol { get }
+    var record: RecordProtocol { get }
     var statementsCount: Int { get }
 
     var onDidUpdate: () -> () { get set }
@@ -14,9 +14,9 @@ protocol TestAnswersViewModel: class {
 final class DefaultTestAnswersViewModel {
     var onDidUpdate: () -> () = Constant.void()
 
-    let record: TestRecordProtocol
+    let record: RecordProtocol
 
-    init(record: TestRecordProtocol) {
+    init(record: RecordProtocol) {
         self.record = record
     }
 
@@ -26,7 +26,7 @@ final class DefaultTestAnswersViewModel {
 
 extension DefaultTestAnswersViewModel {
     convenience init() {
-        self.init(record: TestRecord())
+        self.init(record: Record())
     }
 }
 

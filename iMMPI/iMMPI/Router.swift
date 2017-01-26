@@ -4,16 +4,16 @@ protocol Router: class {
     func displayAllRecords(sender: UIViewController)
     func displayTrash(sender: UIViewController)
 
-    func addRecord(basedOn record: TestRecordProtocol, sender: UIViewController)
-    func edit(_ record: TestRecordProtocol, sender: UIViewController)
+    func addRecord(basedOn record: RecordProtocol, sender: UIViewController)
+    func edit(_ record: RecordProtocol, sender: UIViewController)
 
-    func displayDetails(for group: TestRecordsGroup, sender: UIViewController)
-    func displayDetails(for record: TestRecordProtocol, sender: UIViewController)
+    func displayDetails(for group: RecordsGroup, sender: UIViewController)
+    func displayDetails(for record: RecordProtocol, sender: UIViewController)
 
-    func displayAnalysis(for record: TestRecordProtocol, sender: UIViewController)
+    func displayAnalysis(for record: RecordProtocol, sender: UIViewController)
     func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController)
 
-    func displayAnswersReview(for record: TestRecordProtocol, sender: UIViewController)
+    func displayAnswersReview(for record: RecordProtocol, sender: UIViewController)
 
     func displayPrintOptions(for html: Html, sender: UIViewController)
     func selectAnalysisReportForPrinting(context: AnalysisMenuActionContext, sender: UIViewController)

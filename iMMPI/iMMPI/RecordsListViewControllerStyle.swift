@@ -1,24 +1,24 @@
 import UIKit
 
 struct RecordsListViewControllerStyle {
-    fileprivate init(updateCell: @escaping (UITableViewCell, TestRecordsGroup) -> (),
-                     makeNewRecord: @escaping () -> TestRecordProtocol) {
+    fileprivate init(updateCell: @escaping (UITableViewCell, RecordsGroup) -> (),
+                     makeNewRecord: @escaping () -> RecordProtocol) {
         _updateCell = updateCell
         _makeNewRecord = makeNewRecord
     }
 
-    fileprivate let _updateCell: (UITableViewCell, TestRecordsGroup) -> ()
-    fileprivate let _makeNewRecord: () -> TestRecordProtocol
+    fileprivate let _updateCell: (UITableViewCell, RecordsGroup) -> ()
+    fileprivate let _makeNewRecord: () -> RecordProtocol
 }
 
 
 extension RecordsListViewControllerStyle {
-    func update(_ cell: UITableViewCell, with group: TestRecordsGroup) {
+    func update(_ cell: UITableViewCell, with group: RecordsGroup) {
         _updateCell(cell, group)
     }
 
 
-    func makeNewRecord() -> TestRecordProtocol {
+    func makeNewRecord() -> RecordProtocol {
         return _makeNewRecord()
     }
 }
@@ -32,11 +32,11 @@ extension RecordsListViewControllerStyle {
             cell.accessoryType = .detailDisclosureButton
     },
         makeNewRecord: {
-            return TestRecord()
+            return Record()
     })
 
 
-    static func nested(basedOn record: TestRecordProtocol) -> RecordsListViewControllerStyle {
+    static func nested(basedOn record: RecordProtocol) -> RecordsListViewControllerStyle {
         let nameFormatter = AbbreviatedNameFormatter()
         let dateFormatter = DateFormatter.medium
 

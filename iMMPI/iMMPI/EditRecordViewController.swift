@@ -1,17 +1,17 @@
 import UIKit
 
-protocol EditTestRecordViewControllerDelegate: class {
-    func editTestRecordViewController(_ controller: EditTestRecordViewController,
-                                      didFinishEditing record: TestRecordProtocol)
+protocol EditRecordViewControllerDelegate: class {
+    func editRecordViewController(_ controller: EditRecordViewController,
+                                      didFinishEditing record: RecordProtocol)
 
-    func editTestRecordViewControllerDidCancel(_ controller: EditTestRecordViewController)
+    func editRecordViewControllerDidCancel(_ controller: EditRecordViewController)
 }
 
 
-final class EditTestRecordViewController: UITableViewController, UsingRouting {
-    weak var delegate: EditTestRecordViewControllerDelegate?
+final class EditRecordViewController: UITableViewController, UsingRouting {
+    weak var delegate: EditRecordViewControllerDelegate?
 
-    var record: TestRecordProtocol? {
+    var record: RecordProtocol? {
         didSet {
             if let record = record {
                 selectedGender = record.person.gender
@@ -94,7 +94,7 @@ final class EditTestRecordViewController: UITableViewController, UsingRouting {
 }
 
 
-extension EditTestRecordViewController {
+extension EditRecordViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         reloadData()
@@ -108,7 +108,7 @@ extension EditTestRecordViewController {
 }
 
 
-extension EditTestRecordViewController {
+extension EditRecordViewController {
     fileprivate func reloadData() {
         ageGroupCell.detailTextLabel?.text = selectedAgeGroup.description
         genderCell.detailTextLabel?.text = selectedGender.description
@@ -146,9 +146,9 @@ extension EditTestRecordViewController {
 }
 
 
-extension EditTestRecordViewController {
+extension EditRecordViewController {
     @objc fileprivate func cancelButtonAction(_ sender: Any?) {
-        delegate?.editTestRecordViewControllerDidCancel(self)
+        delegate?.editRecordViewControllerDidCancel(self)
     }
 
 
@@ -162,7 +162,7 @@ extension EditTestRecordViewController {
         record.person.ageGroup = selectedAgeGroup
         record.date = selectedDate
 
-        delegate?.editTestRecordViewController(self, didFinishEditing: record)
+        delegate?.editRecordViewController(self, didFinishEditing: record)
     }
 
 
@@ -174,7 +174,7 @@ extension EditTestRecordViewController {
 
 
 // MARK: - DatePickerControllerDateDelegate
-extension EditTestRecordViewController: DatePickerControllerDateDelegate {
+extension EditRecordViewController: DatePickerControllerDateDelegate {
     func datePickerController(_ datePickerController: DatePickerController, didSelect date: Date) {
         selectedDate = date
         reloadData()
@@ -184,7 +184,7 @@ extension EditTestRecordViewController: DatePickerControllerDateDelegate {
 
 
 // MARK: - UITableViewDelegate
-extension EditTestRecordViewController {
+extension EditRecordViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) else {
             return
@@ -203,7 +203,7 @@ extension EditTestRecordViewController {
 
 
 // MARK: - UITableViewDataSource
-extension EditTestRecordViewController {
+extension EditRecordViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

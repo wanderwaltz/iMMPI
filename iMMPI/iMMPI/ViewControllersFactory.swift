@@ -3,7 +3,7 @@ import MessageUI
 
 protocol ViewControllersFactory {
     func makeRecordsListViewController() -> RecordsListViewController
-    func makeEditRecordViewController() -> EditTestRecordViewController
+    func makeEditRecordViewController() -> EditRecordViewController
 
     func makeAnalysisViewController() -> AnalysisViewController
     func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController

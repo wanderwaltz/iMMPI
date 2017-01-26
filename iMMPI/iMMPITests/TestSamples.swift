@@ -2,9 +2,9 @@
 
 enum TestSamples {
     static let bundle = Bundle(for: AnalyzerIntegrationTests.self)
-    static let recordSerialization = JSONTestRecordSerialization()
+    static let recordSerialization = JSONRecordSerialization()
 
-    static func record(at index: Int) -> TestRecord {
+    static func record(at index: Int) -> Record {
         let answersFileName = String(format: "Test Subject 00%.3d", index)
         let answersFileUrl = bundle.url(forResource: answersFileName, withExtension: "json")!
         let answersData = try! Data(contentsOf: answersFileUrl)

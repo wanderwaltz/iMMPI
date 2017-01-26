@@ -1,3 +1,3 @@
-#import "TestRecordStorageProtocol.h"
-#import "JSONTestRecordsStorage.h"
+#import "RecordStorageProtocol.h"
+#import "JSONRecordsStorage.h"
 

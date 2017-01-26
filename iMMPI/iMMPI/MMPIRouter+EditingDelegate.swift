@@ -4,18 +4,18 @@ extension MMPIRouter {
     final class EditingDelegate {
         weak var answersInputDelegate: TestAnswersInputDelegate?
         
-        init(storage: TestRecordStorage) {
+        init(storage: RecordStorage) {
             self.storage = storage
         }
 
-        fileprivate let storage: TestRecordStorage
+        fileprivate let storage: RecordStorage
     }
 }
 
 
-extension MMPIRouter.EditingDelegate: EditTestRecordViewControllerDelegate {
-    func editTestRecordViewController(_ controller: EditTestRecordViewController,
-                                      didFinishEditing record: TestRecordProtocol) {
+extension MMPIRouter.EditingDelegate: EditRecordViewControllerDelegate {
+    func editRecordViewController(_ controller: EditRecordViewController,
+                                      didFinishEditing record: RecordProtocol) {
         controller.dismiss(animated: true, completion: nil)
 
         if storage.contains(record) {
@@ -35,7 +35,7 @@ extension MMPIRouter.EditingDelegate: EditTestRecordViewControllerDelegate {
     }
 
 
-    func editTestRecordViewControllerDidCancel(_ controller: EditTestRecordViewController) {
+    func editRecordViewControllerDidCancel(_ controller: EditRecordViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
 }
@@ -45,7 +45,7 @@ extension MMPIRouter.EditingDelegate: TestAnswersInputDelegate {
     func testAnswersViewController(_ controller: TestAnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
-                                   record: TestRecordProtocol) {
+                                   record: RecordProtocol) {
         answersInputDelegate?.testAnswersViewController(
             controller,
             didSet: answer,
@@ -56,7 +56,7 @@ extension MMPIRouter.EditingDelegate: TestAnswersInputDelegate {
 
     func testAnswersInputViewController(_ controller: TestAnswersViewController,
                                         didSet answers: TestAnswers,
-                                        for record: TestRecordProtocol) {
+                                        for record: RecordProtocol) {
         record.testAnswers = answers
         storage.update(record)
     }

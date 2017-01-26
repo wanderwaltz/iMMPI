@@ -31,13 +31,13 @@ final class AnalysisScoreTests: XCTestCase {
             return 0.0
             }}))
 
-        let maleRecord = TestRecord()
+        let maleRecord = Record()
         maleRecord.person.gender = .male
 
-        let femaleRecord = TestRecord()
+        let femaleRecord = Record()
         femaleRecord.person.gender = .female
 
-        let unknownRecord = TestRecord()
+        let unknownRecord = Record()
         unknownRecord.person.gender = .unknown
 
         _ = score.value(for: maleRecord)
@@ -77,13 +77,13 @@ final class AnalysisScoreTests: XCTestCase {
             }
             }}))
 
-        let maleRecord = TestRecord()
+        let maleRecord = Record()
         maleRecord.person.gender = .male
 
-        let femaleRecord = TestRecord()
+        let femaleRecord = Record()
         femaleRecord.person.gender = .female
 
-        let unknownRecord = TestRecord()
+        let unknownRecord = Record()
         unknownRecord.person.gender = .unknown
 
         XCTAssertEqual(score.value(for: maleRecord), 0.0)
@@ -124,13 +124,13 @@ final class AnalysisScoreTests: XCTestCase {
             return 0.0
             }}))
 
-        let maleRecord = TestRecord()
+        let maleRecord = Record()
         maleRecord.person.gender = .male
 
-        let femaleRecord = TestRecord()
+        let femaleRecord = Record()
         femaleRecord.person.gender = .female
 
-        let unknownRecord = TestRecord()
+        let unknownRecord = Record()
         unknownRecord.person.gender = .unknown
 
         _ = score.value(for: maleRecord)
