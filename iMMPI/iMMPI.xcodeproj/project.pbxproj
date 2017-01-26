@@ -491,7 +491,6 @@
 		4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */; };
 		4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C79D1E1617AE0024C001 /* StatementTests.swift */; };
 		4430C7A21E1619000024C001 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A11E1619000024C001 /* Statement.swift */; };
-		4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A31E161A6B0024C001 /* StatementProtocol.swift */; };
 		4430C7A61E161B430024C001 /* Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A51E161B430024C001 /* Questionnaire.swift */; };
 		4430C7A81E1623290024C001 /* QuestionnaireProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */; };
 		4430C7AD1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7AC1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json */; };
@@ -1606,7 +1605,6 @@
 		4430C7991E160F6E0024C001 /* iMMPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Bridging-Header.h"; sourceTree = "<group>"; };
 		4430C79D1E1617AE0024C001 /* StatementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementTests.swift; sourceTree = "<group>"; };
 		4430C7A11E1619000024C001 /* Statement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
-		4430C7A31E161A6B0024C001 /* StatementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementProtocol.swift; sourceTree = "<group>"; };
 		4430C7A51E161B430024C001 /* Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire.swift; sourceTree = "<group>"; };
 		4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireProtocol.swift; sourceTree = "<group>"; };
 		4430C7AC1E1636030024C001 /* questionnaire.error.jsonRootNotDictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.jsonRootNotDictionary.json; sourceTree = "<group>"; };
@@ -3714,7 +3712,6 @@
 			isa = PBXGroup;
 			children = (
 				442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */,
-				4430C7A31E161A6B0024C001 /* StatementProtocol.swift */,
 				4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */,
 				5DC973BE168F20DD00C496F0 /* TestRecordStorageProtocol.h */,
 				44673C101E23B017001758C0 /* TestRecordStorageProtocol.swift */,
@@ -4895,7 +4892,6 @@
 				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
 				448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */,
 				444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */,
-				4430C7A41E161A6B0024C001 /* StatementProtocol.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+TestRecord.swift in Sources */,
 				448C319C1E2B7CBC003D355D /* Html.swift in Sources */,
 				444F24231E32037900BB8003 /* Application.swift in Sources */,

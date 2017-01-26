@@ -1,8 +1,16 @@
 import Foundation
 
-/// A concrete implementation of `StatementProtocol`.
+/// Identifier of a statement in the questionnaire
+typealias StatementIdentifier = Int
+
+/// A single statement of the questionnaire.
 final class Statement: NSObject {
+    /// Identifier of the statement.
+    ///
+    /// `statementID` is used when analyzing test results and querying an answer from `TestAnswers` object.
     let statementID: Int
+
+    /// Text of the statement.
     let text: String
 
     init(identifier: Int, text: String) {
@@ -15,9 +23,6 @@ final class Statement: NSObject {
         self.init(identifier: 0, text: "")
     }
 }
-
-
-extension Statement: StatementProtocol {}
 
 
 extension Statement {
