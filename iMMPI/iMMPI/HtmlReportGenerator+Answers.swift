@@ -8,7 +8,7 @@ extension HtmlReportGenerator {
             for i in 0..<questionnaire.statementsCount {
                 let statement = questionnaire.statement(at: i)!
 
-                let answer = result.testAnswers.answer(for: statement.statementID)
+                let answer = result.testAnswers.answer(for: statement.identifier)
 
                 elements.append(.li(attributes: answer == .positive ? ["class": "highlighted"] : [:],
                                     content: [

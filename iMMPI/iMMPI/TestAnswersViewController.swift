@@ -82,7 +82,7 @@ extension TestAnswersViewController {
             return
         }
 
-        answers.setAnswer(answer, for: statement.statementID)
+        answers.setAnswer(answer, for: statement.identifier)
         inputDelegate?.testAnswersViewController(self, didSet: answer, for: statement, record: record)
     }
 }
@@ -108,7 +108,7 @@ extension TestAnswersViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cellSource.dequeue(from: tableView, with: viewModel?.statement(at: indexPath.row)
-            .map { ($0, answers.answer(for: $0.statementID)) })
+            .map { ($0, answers.answer(for: $0.identifier)) })
     }
 }
 

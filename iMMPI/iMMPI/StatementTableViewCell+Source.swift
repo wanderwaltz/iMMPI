@@ -27,7 +27,7 @@ fileprivate func update(_ cell: StatementTableViewCell, with data: StatementTabl
         return
     }
 
-    cell.identifierLabel?.text = "\(data.statement.statementID)"
+    cell.identifierLabel?.text = "\(data.statement.identifier)"
     cell.statementTextLabel?.text = data.statement.text
 
     switch data.answer {

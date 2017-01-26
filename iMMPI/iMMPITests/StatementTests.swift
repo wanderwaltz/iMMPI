@@ -12,7 +12,7 @@ final class StatementTests: XCTestCase {
     }
 
     func testThat__default_statement_has_zero_id() {
-        XCTAssertEqual(Statement().statementID, 0)
+        XCTAssertEqual(Statement().identifier, 0)
     }
 
     func testThat__statements_with_equal_id_are_equal_regardless_of_text() {

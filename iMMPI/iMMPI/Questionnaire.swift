@@ -10,7 +10,7 @@ struct Questionnaire {
         var statementsById: [Statement.Identifier:Statement] = [:]
 
         for statement in statements {
-            statementsById[statement.statementID] = statement
+            statementsById[statement.identifier] = statement
         }
 
         self.statements = statements
@@ -111,7 +111,7 @@ extension Questionnaire {
             statements.append(Statement(identifier: id, text: text))
         }
 
-        statements.sort(by: { (a, b) in a.statementID < b.statementID })
+        statements.sort(by: { (a, b) in a.identifier < b.identifier })
         
         self.init(statements: statements)
     }

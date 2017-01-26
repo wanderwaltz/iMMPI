@@ -7,14 +7,14 @@ struct Statement {
 
     /// Identifier of the statement.
     ///
-    /// `statementID` is used when analyzing test results and querying an answer from `TestAnswers` object.
-    let statementID: Int
+    /// `identifier` is used when analyzing test results and querying an answer from `TestAnswers` object.
+    let identifier: Int
 
     /// Text of the statement.
     let text: String
 
     init(identifier: Int, text: String) {
-        self.statementID = identifier
+        self.identifier = identifier
         self.text = text
     }
 
@@ -26,12 +26,12 @@ struct Statement {
 
 extension Statement: Hashable {
     var hashValue: Int {
-        return statementID
+        return identifier
     }
 
     /// `Statement` text is assumed to be only for UI,
     /// statements with the same identifier are considered identical.
     static func == (left: Statement, right: Statement) -> Bool {
-        return left.statementID == right.statementID
+        return left.identifier == right.identifier
     }
 }

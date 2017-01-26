@@ -48,7 +48,7 @@ final class QuestionnaireTests: XCTestCase {
     func testThat__default_questionnaires_have_statement_ids_corresponding_to_indexes() {
         for questionnaire in validQuestionnaires {
             for index in 0..<questionnaire.statementsCount {
-                XCTAssertEqual(questionnaire.statement(at: index)!.statementID, Int(index)+1)
+                XCTAssertEqual(questionnaire.statement(at: index)!.identifier, Int(index)+1)
             }
 
             for index in 0..<questionnaire.statementsCount {

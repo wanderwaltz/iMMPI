@@ -48,7 +48,7 @@ extension TestAnswersInputViewController {
 
         if let statement = viewModel.statement(at: statementIndex) {
             if statementIndex < viewModel.statementsCount - 1
-                && answers.answer(for: statement.statementID) != .unknown {
+                && answers.answer(for: statement.identifier) != .unknown {
                 setStatementIndex(statementIndex + 1)
                 return true
             }
