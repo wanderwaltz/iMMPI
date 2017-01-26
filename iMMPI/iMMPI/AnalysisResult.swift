@@ -8,7 +8,7 @@ struct AnalysisResult {
 
 // TODO: conform to TestRecordProtocol when @objc requirements are dropped
 extension AnalysisResult {
-    var person: PersonProtocol {
+    var person: Person {
         return record.person
     }
 

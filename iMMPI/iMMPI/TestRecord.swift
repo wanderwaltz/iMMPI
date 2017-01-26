@@ -6,11 +6,11 @@ import Foundation
 /// set it as the person property value. `testAnswers` property will be initialized with empty
 /// `TestAnswers` object; date property defaults to the current date/time.
 final class TestRecord: NSObject {
-    var person: PersonProtocol
+    var person: Person
     var testAnswers: TestAnswers
     var date: Date
 
-    init(person: PersonProtocol, testAnswers: TestAnswers, date: Date) {
+    init(person: Person, testAnswers: TestAnswers, date: Date) {
         self.person = person
         self.testAnswers = testAnswers
         self.date = date

@@ -501,7 +501,6 @@
 		4430C7B51E16377F0024C001 /* questionnaire.error.statementTextNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */; };
 		4430C7B71E163F450024C001 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7B61E163F450024C001 /* PersonTests.swift */; };
 		4430C7B91E16408A0024C001 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7B81E16408A0024C001 /* Person.swift */; };
-		4430C7BB1E1670010024C001 /* PersonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430C7BA1E1670010024C001 /* PersonProtocol.swift */; };
 		444F23711E2E1C9300BB8003 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23701E2E1C9300BB8003 /* FormTableViewCell.swift */; };
 		444F23731E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23721E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift */; };
 		444F23751E2E241900BB8003 /* FormLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */; };
@@ -1617,7 +1616,6 @@
 		4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionnaire.error.statementTextNotFound.json; sourceTree = "<group>"; };
 		4430C7B61E163F450024C001 /* PersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		4430C7B81E16408A0024C001 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		4430C7BA1E1670010024C001 /* PersonProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProtocol.swift; sourceTree = "<group>"; };
 		444F23701E2E1C9300BB8003 /* FormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		444F23721E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabelTableViewCell.swift; sourceTree = "<group>"; };
@@ -3715,7 +3713,6 @@
 		5DC40483168C446C000AFBAE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				4430C7BA1E1670010024C001 /* PersonProtocol.swift */,
 				442CE1AD1E23551D006C34A6 /* TestRecordProtocol.swift */,
 				4430C7A31E161A6B0024C001 /* StatementProtocol.swift */,
 				4430C7A71E1623290024C001 /* QuestionnaireProtocol.swift */,
@@ -4872,7 +4869,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4430C7BB1E1670010024C001 /* PersonProtocol.swift in Sources */,
 				44F97A391E2624D2004F4E14 /* JSONTestRecordProxy.swift in Sources */,
 				44F97A3F1E263B26004F4E14 /* AnalysisViewController.swift in Sources */,
 				442CE1B31E2357AA006C34A6 /* EditTestRecordViewController.swift in Sources */,

@@ -31,7 +31,7 @@ extension JSONTestRecordProxy {
 
 
 extension JSONTestRecordProxy: TestRecordProtocol {
-    var person: PersonProtocol {
+    var person: Person {
         get {
             return record.person
         }

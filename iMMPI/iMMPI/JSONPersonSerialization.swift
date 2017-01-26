@@ -22,7 +22,7 @@ extension JSONPersonSerialization {
 
 
 extension JSONPersonSerialization {
-    func encode(_ person: PersonProtocol) -> [String:Any] {
+    func encode(_ person: Person) -> [String:Any] {
         return [
             Key.name: person.name,
             Key.gender: gender.encode(person.gender),

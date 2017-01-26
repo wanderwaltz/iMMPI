@@ -5,7 +5,7 @@ import Foundation
 /// Test session consists of a person taking test, his/her answers for the test and the date of the test session.
 @objc protocol TestRecordProtocol: NSObjectProtocol, DateConvertible, PersonNameConvertible {
     /// Person who took the test
-    var person: PersonProtocol { get set }
+    var person: Person { get set }
 
     /// Answers of the person
     var testAnswers: TestAnswers { get set }
