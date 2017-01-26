@@ -1,24 +1,24 @@
 import Foundation
 
-protocol TestAnswersInputDelegate: class {
-    func testAnswersViewController(_ controller: TestAnswersViewController,
+protocol AnswersInputDelegate: class {
+    func testAnswersViewController(_ controller: AnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
                                    record: RecordProtocol)
 
-    func testAnswersInputViewController(_ controller: TestAnswersViewController,
-                                        didSet answers: TestAnswers,
+    func testAnswersInputViewController(_ controller: AnswersViewController,
+                                        didSet answers: Answers,
                                         for record: RecordProtocol)
 }
 
 
-extension TestAnswersInputDelegate {
-    func testAnswersViewController(_ controller: TestAnswersViewController,
+extension AnswersInputDelegate {
+    func testAnswersViewController(_ controller: AnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
                                    record: RecordProtocol) {}
 
-    func testAnswersInputViewController(_ controller: TestAnswersViewController,
-                                        didSet answers: TestAnswers,
+    func testAnswersInputViewController(_ controller: AnswersViewController,
+                                        didSet answers: Answers,
                                         for record: RecordProtocol) {}
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-protocol TestAnswersViewModel: class {
+protocol AnswersViewModel: class {
     var record: RecordProtocol { get }
     var statementsCount: Int { get }
 
@@ -11,7 +11,7 @@ protocol TestAnswersViewModel: class {
 }
 
 
-final class DefaultTestAnswersViewModel {
+final class DefaultAnswersViewModel {
     var onDidUpdate: () -> () = Constant.void()
 
     let record: RecordProtocol
@@ -24,14 +24,14 @@ final class DefaultTestAnswersViewModel {
 }
 
 
-extension DefaultTestAnswersViewModel {
+extension DefaultAnswersViewModel {
     convenience init() {
         self.init(record: Record())
     }
 }
 
 
-extension DefaultTestAnswersViewModel: TestAnswersViewModel {
+extension DefaultAnswersViewModel: AnswersViewModel {
     var statementsCount: Int {
         return questionnaire?.statementsCount ?? 0
     }

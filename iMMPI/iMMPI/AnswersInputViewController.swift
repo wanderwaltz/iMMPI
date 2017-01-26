@@ -7,13 +7,13 @@ import UIKit
 /// positive/negative answers to each statement. A current statement is displayed as usual, 
 /// all other (not currently selected) statements are dimmed so the attention of the user
 /// is focused on a single selected statement.
-final class TestAnswersInputViewController: TestAnswersViewController {
+final class AnswersInputViewController: AnswersViewController {
     @objc @IBOutlet fileprivate var answersInputView: UIView?
     fileprivate var statementIndex: Int = 0
 }
 
 
-extension TestAnswersInputViewController {
+extension AnswersInputViewController {
     fileprivate func setStatementIndex(_ index: Int) {
         guard let viewModel = viewModel else {
             return
@@ -74,7 +74,7 @@ extension TestAnswersInputViewController {
 }
 
 
-extension TestAnswersInputViewController {
+extension AnswersInputViewController {
     @objc @IBAction fileprivate func prevButtonAction(_ sender: Any?) {
         setPreviousStatementIndex()
     }
@@ -96,7 +96,7 @@ extension TestAnswersInputViewController {
 }
 
 
-extension TestAnswersInputViewController {
+extension AnswersInputViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath) as! StatementTableViewCell
 

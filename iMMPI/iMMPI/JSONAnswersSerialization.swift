@@ -10,7 +10,7 @@ struct JSONAnswersSerialization {
 
 
 extension JSONAnswersSerialization {
-    func encode(_ answers: TestAnswers) -> [[String:Any]] {
+    func encode(_ answers: Answers) -> [[String:Any]] {
         var result: [[String:Any]] = []
 
         answers.enumerateAnswers { identifier, answer in
@@ -24,12 +24,12 @@ extension JSONAnswersSerialization {
     }
 
 
-    func decode(_ value: Any?) -> TestAnswers? {
+    func decode(_ value: Any?) -> Answers? {
         guard let json = value as? [[String:Any]] else {
             return nil
         }
 
-        let answers = TestAnswers()
+        let answers = Answers()
         
         for answerJson in json {
             guard let identifier = answerJson[Key.identifier] as? Int,

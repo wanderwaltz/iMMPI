@@ -5,21 +5,21 @@ import UIKit
 /// This class uses StatementTableViewCell cells to display the statements of the questionnaire. 
 /// The UITableViewDataSource methods are implemented to display the questionnaire contents in a single section list.
 ///
-/// `TestAnswersTableViewControllerBase` is automatically set as the delegate for each of the `StatementTableViewCell`
+/// `AnswersTableViewControllerBase` is automatically set as the delegate for each of the `StatementTableViewCell`
 /// used in the table view.
 ///
 /// It is expected that the table view does return a `StatementTableViewCell` object for 
 /// `StatementTableViewCell.reuseIdentifier()` string (this is set up in the storyboard).
 ///
-/// **See also:** `TestAnswersInputViewController`, `TestAnswersViewController`.
-class TestAnswersViewController: UIViewController, UsingRouting {
-    weak var inputDelegate: TestAnswersInputDelegate?
+/// **See also:** `AnswersInputViewController`, `AnswersViewController`.
+class AnswersViewController: UIViewController, UsingRouting {
+    weak var inputDelegate: AnswersInputDelegate?
 
     var cellSource = StatementTableViewCell.makeSourceForReview()
 
     @IBOutlet var tableView: UITableView?
 
-    var viewModel: TestAnswersViewModel? {
+    var viewModel: AnswersViewModel? {
         willSet {
             viewModel?.onDidUpdate = Constant.void()
         }
@@ -34,11 +34,11 @@ class TestAnswersViewController: UIViewController, UsingRouting {
         }
     }
 
-    fileprivate(set) var answers = TestAnswers()
+    fileprivate(set) var answers = Answers()
 }
 
 
-extension TestAnswersViewController {
+extension AnswersViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,7 +76,7 @@ extension TestAnswersViewController {
 }
 
 
-extension TestAnswersViewController {
+extension AnswersViewController {
     func setAnswer(_ answer: AnswerType, for statement: Statement) {
         guard let record = viewModel?.record else {
             return
@@ -88,7 +88,7 @@ extension TestAnswersViewController {
 }
 
 
-extension TestAnswersViewController {
+extension AnswersViewController {
     fileprivate func saveRecord() {
         guard let record = viewModel?.record else {
             return
@@ -100,7 +100,7 @@ extension TestAnswersViewController {
 
 
 // MARK: - UITableViewDataSource
-extension TestAnswersViewController: UITableViewDataSource {
+extension AnswersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.statementsCount ?? 0
     }
@@ -113,7 +113,7 @@ extension TestAnswersViewController: UITableViewDataSource {
 }
 
 
-extension TestAnswersViewController {
+extension AnswersViewController {
     @IBAction func handleStatementCellSegmentedControlChanged(_ sender: Any?) {
         guard let segmentedControl = sender as? UISegmentedControl, let tableView = tableView else {
             return

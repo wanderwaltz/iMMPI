@@ -7,7 +7,7 @@ struct Statement {
 
     /// Identifier of the statement.
     ///
-    /// `identifier` is used when analyzing test results and querying an answer from `TestAnswers` object.
+    /// `identifier` is used when analyzing test results and querying an answer from `Answers` object.
     let identifier: Int
 
     /// Text of the statement.

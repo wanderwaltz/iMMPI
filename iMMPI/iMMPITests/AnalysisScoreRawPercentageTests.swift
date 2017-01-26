@@ -5,7 +5,7 @@ final class AnalysisScoreRawPercentageTests: XCTestCase {
     func testThat__it_computes_number_of_matches__case_1() {
         let score = AnalysisScore.rawPercentage(.common((positive: [1, 2, 5], negative: [3, 7, 8])))
 
-        let answers = TestAnswers()
+        let answers = Answers()
         answers.setAnswers(positive: [1, 2, 5], negative: [3, 7, 8])
 
         XCTAssertEqual(score.value(for: .male, answers: answers), 100.0)
@@ -17,7 +17,7 @@ final class AnalysisScoreRawPercentageTests: XCTestCase {
     func testThat__it_computes_number_of_matches__case_2() {
         let score = AnalysisScore.rawPercentage(.common((positive: [1, 2, 5], negative: [7, 8])))
 
-        let answers = TestAnswers()
+        let answers = Answers()
         answers.setAnswers(positive: [1], negative: [2, 3, 5, 7, 8])
 
         XCTAssertEqual(score.value(for: .male, answers: answers), 60.0)
@@ -29,7 +29,7 @@ final class AnalysisScoreRawPercentageTests: XCTestCase {
     func testThat__it_computes_number_of_matches__case_3() {
         let score = AnalysisScore.rawPercentage(.common((positive: [1, 2, 5], negative: [3, 7, 8])))
 
-        let answers = TestAnswers()
+        let answers = Answers()
         answers.setAnswers(positive: [], negative: [])
 
         XCTAssertEqual(score.value(for: .male, answers: answers), 0.0)
@@ -44,7 +44,7 @@ final class AnalysisScoreRawPercentageTests: XCTestCase {
             female: (positive: [], negative: [1, 2, 3, 5])
             ))
 
-        let answers = TestAnswers()
+        let answers = Answers()
         answers.setAnswers(positive: [1, 2, 5], negative: [3, 7, 8])
 
         XCTAssertEqual(score.value(for: .male, answers: answers), 100.0)
@@ -56,10 +56,10 @@ final class AnalysisScoreRawPercentageTests: XCTestCase {
     func testThat__it_returns_100_percent_when_initialized_with_empty_arrays() {
         let score = AnalysisScore.rawPercentage(.common((positive: [], negative: [])))
 
-        let emptyAnswers = TestAnswers()
+        let emptyAnswers = Answers()
         emptyAnswers.setAnswers(positive: [], negative: [])
 
-        let someAnswers = TestAnswers()
+        let someAnswers = Answers()
         someAnswers.setAnswers(positive: [1, 2, 5], negative: [3, 7, 8])
 
         XCTAssertEqual(score.value(for: .male, answers: emptyAnswers), 100.0)

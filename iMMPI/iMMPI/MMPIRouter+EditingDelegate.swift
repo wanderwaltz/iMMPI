@@ -2,7 +2,7 @@ import Foundation
 
 extension MMPIRouter {
     final class EditingDelegate {
-        weak var answersInputDelegate: TestAnswersInputDelegate?
+        weak var answersInputDelegate: AnswersInputDelegate?
         
         init(storage: RecordStorage) {
             self.storage = storage
@@ -41,8 +41,8 @@ extension MMPIRouter.EditingDelegate: EditRecordViewControllerDelegate {
 }
 
 
-extension MMPIRouter.EditingDelegate: TestAnswersInputDelegate {
-    func testAnswersViewController(_ controller: TestAnswersViewController,
+extension MMPIRouter.EditingDelegate: AnswersInputDelegate {
+    func testAnswersViewController(_ controller: AnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
                                    record: RecordProtocol) {
@@ -54,8 +54,8 @@ extension MMPIRouter.EditingDelegate: TestAnswersInputDelegate {
         )
     }
 
-    func testAnswersInputViewController(_ controller: TestAnswersViewController,
-                                        didSet answers: TestAnswers,
+    func testAnswersInputViewController(_ controller: AnswersViewController,
+                                        didSet answers: Answers,
                                         for record: RecordProtocol) {
         record.testAnswers = answers
         storage.update(record)

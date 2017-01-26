@@ -10,7 +10,7 @@ final class AnalysisScoreTests: XCTestCase {
             return 0.0
             }}))
 
-        let answers = TestAnswers()
+        let answers = Answers()
 
         _ = score.value(for: .male, answers: answers)
         XCTAssertEqual(receivedGender, .male)
@@ -60,7 +60,7 @@ final class AnalysisScoreTests: XCTestCase {
             }
             }}))
 
-        let answers = TestAnswers()
+        let answers = Answers()
 
         XCTAssertEqual(score.value(for: .male, answers: answers), 0.0)
         XCTAssertEqual(score.value(for: .female, answers: answers), 1.0)
@@ -93,14 +93,14 @@ final class AnalysisScoreTests: XCTestCase {
 
 
     func testThat__it_forwards_answers_to_block__case_1() {
-        var receivedAnswers: TestAnswers!
+        var receivedAnswers: Answers!
 
         let score = AnalysisScore(value: .specific({ _ in {
             receivedAnswers = $0
             return 0.0
             }}))
 
-        let answers = TestAnswers()
+        let answers = Answers()
 
         _ = score.value(for: .male, answers: answers)
         XCTAssertTrue(receivedAnswers === answers)
@@ -117,7 +117,7 @@ final class AnalysisScoreTests: XCTestCase {
 
 
     func testThat__it_forwards_answers_to_block__case_2() {
-        var receivedAnswers: TestAnswers!
+        var receivedAnswers: Answers!
 
         let score = AnalysisScore(value: .specific({ _ in {
             receivedAnswers = $0

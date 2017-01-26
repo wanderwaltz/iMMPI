@@ -111,7 +111,7 @@ extension MMPIRouter: Router {
     func displayAnswersReview(for record: RecordProtocol, sender: UIViewController) {
         let controller = viewControllersFactory.makeAnswersReviewViewController()
 
-        controller.viewModel = DefaultTestAnswersViewModel(record: record)
+        controller.viewModel = DefaultAnswersViewModel(record: record)
         controller.inputDelegate = editingDelegate
         controller.cellSource = StatementTableViewCell.makeSourceForReview()
 
@@ -227,7 +227,7 @@ extension MMPIRouter {
     fileprivate func displayAnswersInput(for record: RecordProtocol, sender: UIViewController) {
         let controller = viewControllersFactory.makeAnswersInputViewController()
 
-        controller.viewModel = DefaultTestAnswersViewModel(record: record)
+        controller.viewModel = DefaultAnswersViewModel(record: record)
         controller.inputDelegate = editingDelegate
         controller.cellSource = StatementTableViewCell.makeSourceForInput()
 

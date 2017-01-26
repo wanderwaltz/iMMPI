@@ -1,6 +1,6 @@
 import Foundation
 
-final class TestAnswers: NSObject {
+final class Answers: NSObject {
     override init() {
         super.init()
     }
@@ -9,7 +9,7 @@ final class TestAnswers: NSObject {
 }
 
 
-extension TestAnswers {
+extension Answers {
     /// Determines whether this test answers object contains all answers for a certain questionnaire.
     var allStatementsAnswered: Bool {
         // TODO: think of a better way to check this
@@ -61,7 +61,7 @@ extension TestAnswers {
 }
 
 
-extension TestAnswers {
+extension Answers {
     fileprivate struct Record: Hashable {
         let statementIdentifier: Int
         let answer: AnswerType
@@ -79,14 +79,14 @@ extension TestAnswers {
 }
 
 
-extension TestAnswers {
+extension Answers {
     override var hash: Int {
         return Array(answersByIdentifier.enumerated()).map({ $1.value.hashValue }).reduce(0, ^)
     }
 
 
     override func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? TestAnswers else {
+        guard let other = object as? Answers else {
             return false
         }
 
@@ -98,9 +98,9 @@ extension TestAnswers {
 }
 
 
-extension TestAnswers {
-    func makeCopy() -> TestAnswers {
-        let result = TestAnswers()
+extension Answers {
+    func makeCopy() -> Answers {
+        let result = Answers()
 
         enumerateAnswers { (identifier, answer) in
             result.setAnswer(answer, for: identifier)

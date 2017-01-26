@@ -48,8 +48,8 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
 
-    func makeAnswersReviewViewController() -> TestAnswersViewController {
-        let controller = TestAnswersViewController()
+    func makeAnswersReviewViewController() -> AnswersViewController {
+        let controller = AnswersViewController()
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
 
         tableView.rowHeight = 64.0
@@ -61,10 +61,10 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
 
-    func makeAnswersInputViewController() -> TestAnswersInputViewController {
-        return TestAnswersInputViewController(
-            nibName: "TestAnswersInputViewController",
-            bundle: Bundle(for: TestAnswersInputViewController.self)
+    func makeAnswersInputViewController() -> AnswersInputViewController {
+        return AnswersInputViewController(
+            nibName: "AnswersInputViewController",
+            bundle: Bundle(for: AnswersInputViewController.self)
         )
     }
 

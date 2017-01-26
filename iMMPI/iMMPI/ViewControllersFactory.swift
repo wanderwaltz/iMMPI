@@ -8,8 +8,8 @@ protocol ViewControllersFactory {
     func makeAnalysisViewController() -> AnalysisViewController
     func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController
 
-    func makeAnswersReviewViewController() -> TestAnswersViewController
-    func makeAnswersInputViewController() -> TestAnswersInputViewController
+    func makeAnswersReviewViewController() -> AnswersViewController
+    func makeAnswersInputViewController() -> AnswersInputViewController
 
     func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController
 

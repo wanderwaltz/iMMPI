@@ -8,7 +8,7 @@ final class RecordsGroupTests_Single: XCTestCase {
             gender: .female,
             ageGroup: .teen
         ),
-        testAnswers: TestAnswers(),
+        testAnswers: Answers(),
         date: Date()
     )
 

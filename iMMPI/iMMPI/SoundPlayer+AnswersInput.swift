@@ -1,7 +1,7 @@
 import Foundation
 
-extension SoundPlayer: TestAnswersInputDelegate {
-    func testAnswersViewController(_ controller: TestAnswersViewController,
+extension SoundPlayer: AnswersInputDelegate {
+    func testAnswersViewController(_ controller: AnswersViewController,
                                    didSet answer: AnswerType,
                                    for statement: Statement,
                                    record: RecordProtocol) {

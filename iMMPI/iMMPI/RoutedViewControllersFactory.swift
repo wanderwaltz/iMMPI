@@ -35,13 +35,13 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
-    func makeAnswersReviewViewController() -> TestAnswersViewController {
+    func makeAnswersReviewViewController() -> AnswersViewController {
         let controller = base.makeAnswersReviewViewController()
         controller.router = router
         return controller
     }
 
-    func makeAnswersInputViewController() -> TestAnswersInputViewController {
+    func makeAnswersInputViewController() -> AnswersInputViewController {
         let controller = base.makeAnswersInputViewController()
         controller.router = router
         return controller

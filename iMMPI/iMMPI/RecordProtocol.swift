@@ -8,7 +8,7 @@ import Foundation
     var person: Person { get set }
 
     /// Answers of the person
-    var testAnswers: TestAnswers { get set }
+    var testAnswers: Answers { get set }
 
     /// Date of the test session
     var date: Date { get set }
