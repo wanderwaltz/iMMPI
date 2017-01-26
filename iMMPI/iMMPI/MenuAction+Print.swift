@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 extension MenuAction {
     static func print(_ context: AnalysisMenuActionContext) -> MenuAction? {

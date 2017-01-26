@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
+@import Foundation;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol TestRecordProtocol;

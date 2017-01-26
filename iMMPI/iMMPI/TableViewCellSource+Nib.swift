@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 extension TableViewCellSource {
     /// Initializes a `TableViewCellSource` for loading cells of a given class from the `UINib` provided.

@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 protocol PopoverPresenting {
     var defaultSourceViewForPopoverPresentation: UIView? { get }

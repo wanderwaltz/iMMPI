@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 extension TableViewCellSource {
     /// Initializes a `TableViewCellSource` for returning a reusable cell with a given style and reuse identifier.
