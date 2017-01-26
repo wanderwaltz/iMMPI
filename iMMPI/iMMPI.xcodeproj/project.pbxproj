@@ -1062,6 +1062,7 @@
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
+		44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */; };
 		44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */; };
 		44C302111E3522C30073F391 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302101E3522C30073F391 /* Analyser.swift */; };
 		44C302131E35234B0073F391 /* AnalyserIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */; };
@@ -2172,6 +2173,7 @@
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
+		44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+UtilityTests.swift"; sourceTree = "<group>"; };
 		44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScore+Potential.swift"; sourceTree = "<group>"; };
 		44C302101E3522C30073F391 /* Analyser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyserIntegrationTests.swift; sourceTree = "<group>"; };
@@ -2318,6 +2320,7 @@
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 				4430C7B61E163F450024C001 /* PersonTests.swift */,
 				442CE1E41E238C75006C34A6 /* TestRecordsGroupTests.swift */,
+				44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */,
 				448C311C1E28A144003D355D /* UserDefaultsAnalysisSettingsTests.swift */,
 				448C31051E287719003D355D /* UsingRouting+NSObjectTests.swift */,
 				442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */,
@@ -4821,6 +4824,7 @@
 				442CE1E51E238C75006C34A6 /* TestRecordsGroupTests.swift in Sources */,
 				444F238A1E2E36F300BB8003 /* JSONPersonSerializationTests.swift in Sources */,
 				448C31001E27E7BA003D355D /* SectionTests.swift in Sources */,
+				44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */,
 				444F24711E34BDBE00BB8003 /* GenderBasedValueTests.swift in Sources */,
 				448C31041E2875B9003D355D /* SectionIndexTests.swift in Sources */,
 				444F247F1E34F26900BB8003 /* AnalysisScoreRawTests.swift in Sources */,
