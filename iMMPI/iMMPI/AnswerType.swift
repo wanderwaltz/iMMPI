@@ -1,5 +1,12 @@
 import Foundation
 
+@objc enum AnswerType: Int {
+    case unknown
+    case positive
+    case negative
+}
+
+
 extension AnswerType: CustomStringConvertible {
     public var description: String {
         switch self {

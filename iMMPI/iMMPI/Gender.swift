@@ -1,5 +1,12 @@
 import Foundation
 
+@objc enum Gender: Int {
+    case unknown
+    case male
+    case female
+}
+
+
 extension Gender {
     func toggled() -> Gender {
         switch self {

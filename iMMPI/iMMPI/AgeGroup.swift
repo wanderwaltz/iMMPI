@@ -1,5 +1,12 @@
 import Foundation
 
+@objc enum AgeGroup: Int {
+    case unknown
+    case teen
+    case adult
+}
+
+
 extension AgeGroup {
     func toggled() -> AgeGroup {
         switch self {

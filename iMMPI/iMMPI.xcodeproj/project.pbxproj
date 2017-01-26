@@ -2193,7 +2193,6 @@
 		44F97A461E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalyserTableViewCell+Source.swift"; sourceTree = "<group>"; };
 		5876FDC61E2BE4C600255227 /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		5D5E05BE1646521700A5A704 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D81F9491841BD97008E3B0A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5DA5C9E0163B018D00CF1601 /* iMMPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMMPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA5C9E4163B018D00CF1601 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -3536,15 +3535,11 @@
 		5D5E05B9164651A800A5A704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5D5E05BE1646521700A5A704 /* Model.h */,
 				5DC40483168C446C000AFBAE /* Protocols */,
 				5DC973BC168F20C200C496F0 /* JSON Test Records Storage */,
 				5DC973AB168F082200C496F0 /* Data Model Objects */,
 				448C31941E2B63F6003D355D /* Analysis */,
 				442CE1CC1E23714A006C34A6 /* Table View Models */,
-				442CE1B61E235D12006C34A6 /* AgeGroup.swift */,
-				444F243A1E321F3100BB8003 /* AnswerType.swift */,
-				442CE1B81E235D3D006C34A6 /* Gender.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3719,6 +3714,9 @@
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
 			isa = PBXGroup;
 			children = (
+				442CE1B61E235D12006C34A6 /* AgeGroup.swift */,
+				444F243A1E321F3100BB8003 /* AnswerType.swift */,
+				442CE1B81E235D3D006C34A6 /* Gender.swift */,
 				442CE1BD1E2366F7006C34A6 /* TestAnswers.swift */,
 				442CE1AB1E235397006C34A6 /* TestRecord.swift */,
 				4430C7B81E16408A0024C001 /* Person.swift */,

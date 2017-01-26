@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
+#import "TestRecordStorageProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class JSONTestRecordSerialization;
