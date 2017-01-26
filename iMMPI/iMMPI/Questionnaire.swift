@@ -5,7 +5,7 @@ import Foundation
 /// Questionnaries are stored in json format in the application bundle.
 /// There are separate sets of questions depending on the gender and age group
 /// of the person, and these are stored in separate files.
-final class Questionnaire: NSObject {
+struct Questionnaire {
     typealias StatementIdentifier = Int
 
     fileprivate init(statements: [Statement]) {
@@ -64,7 +64,7 @@ extension Questionnaire {
     /// - Parameters:
     ///     - gender:   Gender value of the `Questionnaire`,
     ///     - ageGroup: Age group value of the `Questionnaire`
-    convenience init(gender: Gender, ageGroup: AgeGroup) throws {
+    init(gender: Gender, ageGroup: AgeGroup) throws {
         guard let fileName = questionnaireFileNames[gender]?[ageGroup], fileName.isEmpty == false else {
             throw Error.nilFileName
         }
@@ -73,7 +73,7 @@ extension Questionnaire {
     }
 
 
-    convenience init(resourceName: String, bundle: Bundle = .main) throws {
+    init(resourceName: String, bundle: Bundle = .main) throws {
         guard let path = bundle.path(forResource: resourceName, ofType: questionnaireFilePathExtension),
             path.isEmpty == false else {
                 throw Error.fileNotFound
@@ -83,7 +83,7 @@ extension Questionnaire {
     }
 
 
-    convenience init(url: URL) throws {
+    init(url: URL) throws {
         let data = try Data(contentsOf: url)
         let json = try JSONSerialization.jsonObject(with: data, options: [])
 
