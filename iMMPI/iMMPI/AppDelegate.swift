@@ -48,7 +48,7 @@ extension AppDelegate: UISplitViewControllerDelegate {
         assert(svc.viewControllers.count == 2,
             "Unexpected number of child view controllers in \(svc): \(svc.viewControllers.count)")
 
-        guard let detailViewController = SelfOrFirstChild(svc.viewControllers.last) else {
+        guard let detailViewController = svc.viewControllers.last?.mmpiSelfOrFirstChild else {
             return
         }
 

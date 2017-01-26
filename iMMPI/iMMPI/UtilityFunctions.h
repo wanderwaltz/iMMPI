@@ -10,8 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-UIViewController * _Nullable SelfOrFirstChild(UIViewController * _Nullable controller);
-
 NSString *TransliterateToLatin(NSString *string);
 
 NS_ASSUME_NONNULL_END

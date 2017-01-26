@@ -8,17 +8,6 @@
 
 #import "UtilityFunctions.h"
 
-
-
-UIViewController *SelfOrFirstChild(UIViewController *controller)
-{
-    if ([controller isKindOfClass: [UINavigationController class]])
-        return [(id)controller viewControllers][0];
-    else
-        return controller;
-}
-
-
 NSString *TransliterateToLatin(NSString *string)
 {
     if (string.length > 0)
