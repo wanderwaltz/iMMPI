@@ -10,7 +10,7 @@ struct JSONAnswersSerialization {
 
 
 extension JSONAnswersSerialization {
-    func encode(_ answers: TestAnswersProtocol) -> [[String:Any]] {
+    func encode(_ answers: TestAnswers) -> [[String:Any]] {
         var result: [[String:Any]] = []
 
         answers.enumerateAnswers { identifier, answer in

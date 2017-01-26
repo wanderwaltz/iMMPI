@@ -1,7 +1,7 @@
 import Foundation
 
 extension AnalysisScore {
-    /// Returns a score computed by counting the percentage of matches between the given `TestAnswersProtocol` instance
+    /// Returns a score computed by counting the percentage of matches between the given `TestAnswers` instance
     /// and predefined sets of positive and negative statements.
     ///
     /// - Parameters:

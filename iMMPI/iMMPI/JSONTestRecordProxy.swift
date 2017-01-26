@@ -42,7 +42,7 @@ extension JSONTestRecordProxy: TestRecordProtocol {
     }
 
 
-    var testAnswers: TestAnswersProtocol {
+    var testAnswers: TestAnswers {
         get {
             return record.testAnswers
         }

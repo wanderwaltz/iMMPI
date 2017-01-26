@@ -9,18 +9,27 @@ final class TestAnswers: NSObject {
 }
 
 
-extension TestAnswers: TestAnswersProtocol {
+extension TestAnswers {
+    /// Determines whether this test answers object contains all answers for a certain questionnaire.
     var allStatementsAnswered: Bool {
         // TODO: think of a better way to check this
         return answersByIdentifier.count == 566
     }
 
 
+    /// Sets an `AnswerType` for a statement with a given identifier.
+    ///
+    /// - Parameter type: answer type (agree, disagree, undefined - see source for the exact enum values),
+    /// - Parameter identifier: identifier of the statement to relate the answer with.
     func setAnswer(_ answer: AnswerType, for identifier: Int) {
         answersByIdentifier[identifier] = Record(statementIdentifier: identifier, answer: answer)
     }
 
 
+    /// Returns answer type for statement with the provided identifier.
+    ///
+    /// - Parameter identifier: identifier of the statement related to the answer.
+    /// - Returns: `AnswerType` for a recorded answer. If the statement has not yet been answered, returns `.unknown`.
     func answer(for identifier: Int) -> AnswerType {
         return answersByIdentifier[identifier]?.answer ?? .unknown
     }
@@ -35,6 +44,11 @@ extension TestAnswers: TestAnswersProtocol {
     }
 
 
+    /// Enumerates all answers with type != `.unknown`.
+    ///
+    /// Ordering of the enumerating answers is undefined.
+    ///
+    /// - Parameter block: Block to be called on each answer/statement identifier pair where answer != `.unknown`.
     func setAnswers(positive: [StatementIdentifier], negative: [StatementIdentifier]) {
         for identifier in positive {
             setAnswer(.positive, for: identifier)
@@ -80,5 +94,18 @@ extension TestAnswers {
         let otherAnswers = Array(other.answersByIdentifier.values.sorted { $0.statementIdentifier < $1.statementIdentifier })
 
         return thisAnswers == otherAnswers
+    }
+}
+
+
+extension TestAnswers {
+    func makeCopy() -> TestAnswers {
+        let result = TestAnswers()
+
+        enumerateAnswers { (identifier, answer) in
+            result.setAnswer(answer, for: identifier)
+        }
+
+        return result
     }
 }

@@ -93,7 +93,7 @@ final class AnalysisScoreTests: XCTestCase {
 
 
     func testThat__it_forwards_answers_to_block__case_1() {
-        var receivedAnswers: TestAnswersProtocol!
+        var receivedAnswers: TestAnswers!
 
         let score = AnalysisScore(value: .specific({ _ in {
             receivedAnswers = $0
@@ -117,7 +117,7 @@ final class AnalysisScoreTests: XCTestCase {
 
 
     func testThat__it_forwards_answers_to_block__case_2() {
-        var receivedAnswers: TestAnswersProtocol!
+        var receivedAnswers: TestAnswers!
 
         let score = AnalysisScore(value: .specific({ _ in {
             receivedAnswers = $0

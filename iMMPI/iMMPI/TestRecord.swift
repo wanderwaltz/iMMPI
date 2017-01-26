@@ -7,10 +7,10 @@ import Foundation
 /// `TestAnswers` object; date property defaults to the current date/time.
 final class TestRecord: NSObject {
     var person: PersonProtocol
-    var testAnswers: TestAnswersProtocol
+    var testAnswers: TestAnswers
     var date: Date
 
-    init(person: PersonProtocol, testAnswers: TestAnswersProtocol, date: Date) {
+    init(person: PersonProtocol, testAnswers: TestAnswers, date: Date) {
         self.person = person
         self.testAnswers = testAnswers
         self.date = date

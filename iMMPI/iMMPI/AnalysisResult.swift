@@ -12,7 +12,7 @@ extension AnalysisResult {
         return record.person
     }
 
-    var testAnswers: TestAnswersProtocol {
+    var testAnswers: TestAnswers {
         return record.testAnswers
     }
 

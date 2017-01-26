@@ -6,13 +6,13 @@ struct AnalysisScore {
 
     init(formatter: AnalysisScoreFormatter = .ignore,
          filter: AnalysisScoreFilter = .never,
-         value: GenderBasedValue<(TestAnswersProtocol) -> Double>) {
+         value: GenderBasedValue<(TestAnswers) -> Double>) {
         self.suggestedFormatter = formatter
         self.suggestedFilter = filter
         self._value = value
     }
 
-    fileprivate let _value: GenderBasedValue<(TestAnswersProtocol) -> Double>
+    fileprivate let _value: GenderBasedValue<(TestAnswers) -> Double>
 }
 
 
@@ -21,7 +21,7 @@ extension AnalysisScore {
         return value(for: record.person.gender, answers: record.testAnswers)
     }
 
-    func value(for gender: Gender, answers: TestAnswersProtocol) -> Double {
+    func value(for gender: Gender, answers: TestAnswers) -> Double {
         return _value.value(for: gender)(answers)
     }
 }

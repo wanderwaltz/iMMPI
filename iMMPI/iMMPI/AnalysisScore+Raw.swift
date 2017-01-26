@@ -16,7 +16,7 @@ extension AnalysisScore {
     typealias StatementsFilter = (_ identifier: StatementIdentifier) -> Bool
 
 
-    /// Returns a score computed by counting the number of matches between the given `TestAnswersProtocol` instance
+    /// Returns a score computed by counting the number of matches between the given `TestAnswers` instance
     /// and predefined sets of positive and negative statements.
     ///
     /// - Parameters:
