@@ -8,17 +8,21 @@ final class JSONRecordsStorage {
 
     init(directoryName: String = kJSONRecordStorageDirectoryDefault,
          indexSerialization: JSONRecordIndexSerialization = JSONRecordIndexSerialization(),
-         recordSerialization: JSONRecordSerialization = JSONRecordSerialization()) throws {
-        let directories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+         recordSerialization: JSONRecordSerialization = JSONRecordSerialization(),
+         fileManager: FileManager = .default) throws {
+        let directories = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
         let storedRecordsUrl = directories.last!.appendingPathComponent(directoryName)
 
-        try createDirectoryIfNeeded(at: storedRecordsUrl)
+        try createDirectoryIfNeeded(at: storedRecordsUrl, with: fileManager)
 
+        self.fileManager = fileManager
         self.indexSerialization = indexSerialization
         self.recordSerialization = recordSerialization
         self.storageDirectoryName = directoryName
         self.storedRecordsUrl = storedRecordsUrl
     }
+
+    fileprivate let fileManager: FileManager
 
     fileprivate let indexSerialization: JSONRecordIndexSerialization
     fileprivate let recordSerialization: JSONRecordSerialization
@@ -64,7 +68,6 @@ extension JSONRecordsStorage: RecordStorage {
     func load() throws {
         try loadIndex()
 
-        let fileManager = FileManager.default
         let subpaths = try fileManager.contentsOfDirectory(
             at: storedRecordsUrl,
             includingPropertiesForKeys: nil,
@@ -110,7 +113,6 @@ extension JSONRecordsStorage {
 
 
     fileprivate func loadIndex() throws {
-        let fileManager = FileManager.default
         let indexUrl = self.indexUrl
 
         guard fileManager.fileExists(atPath: indexUrl.path) else {
@@ -172,7 +174,6 @@ extension JSONRecordsStorage {
 
     fileprivate func removeRecordFile(named fileName: String) throws {
         let url = storedRecordsUrl.appendingPathComponent(fileName)
-        let fileManager = FileManager.default
 
         if fileManager.fileExists(atPath: url.path) {
             try fileManager.removeItem(at: url)
@@ -226,7 +227,6 @@ extension JSONRecordsStorage {
 
 
     fileprivate func fileNameIsAvailable(_ fileName: String) -> Bool {
-        let fileManager = FileManager.default
         let url = storedRecordsUrl.appendingPathComponent(fileName)
         return false == fileManager.fileExists(atPath: url.path)
     }
@@ -252,9 +252,7 @@ fileprivate let kJSONPathExtension = "json"
 fileprivate let kIndexFileName = "index"
 
 
-fileprivate func createDirectoryIfNeeded(at url: URL) throws {
-    let fileManager = FileManager.default
-
+fileprivate func createDirectoryIfNeeded(at url: URL, with fileManager: FileManager) throws {
     if false == fileManager.fileExists(atPath: url.path) {
         try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
     }
