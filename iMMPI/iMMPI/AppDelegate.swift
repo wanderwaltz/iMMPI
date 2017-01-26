@@ -3,8 +3,8 @@ import UIKit
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    let storage = JSONRecordsStorage(directoryName: kJSONRecordStorageDirectoryDefault)
-    let trashStorage = JSONRecordsStorage(directoryName: kJSONRecordStorageDirectoryTrash)
+    let storage = try! JSONRecordsStorage(directoryName: kJSONRecordStorageDirectoryDefault)
+    let trashStorage = try! JSONRecordsStorage(directoryName: kJSONRecordStorageDirectoryTrash)
 
     var router: Router?
 
@@ -16,8 +16,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         storage.trashStorage = trashStorage
-        storage.serialization = JSONRecordSerialization()
-        storage.indexSerialization = JSONRecordIndexSerialization()
 
         let viewControllersFactory = MMPIViewControllersFactory(storyboard: window!.rootViewController!.storyboard!)
 

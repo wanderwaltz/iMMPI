@@ -1063,6 +1063,8 @@
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
 		44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */; };
+		44B193BB1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */; };
+		44B193BD1E3A722100DD4E5E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193BC1E3A722100DD4E5E /* main.swift */; };
 		44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */; };
 		44C302111E3522C30073F391 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302101E3522C30073F391 /* Analyser.swift */; };
 		44C302131E35234B0073F391 /* AnalyserIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */; };
@@ -1092,7 +1094,6 @@
 		5DA5C9E7163B018D00CF1601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
 		5DA5C9E9163B018D00CF1601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
 		5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */; };
-		5DA5C9F1163B018D00CF1601 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5C9F0163B018D00CF1601 /* main.m */; };
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
@@ -1102,7 +1103,6 @@
 		5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */; };
 		5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */; };
 		5DC3044F17ED83EB00FCE5D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */; };
-		5DC973C1168F214A00C496F0 /* JSONRecordsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC973C0168F214A00C496F0 /* JSONRecordsStorage.m */; };
 		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
 		5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780418ACF81D009896FB /* button_tap2.wav */; };
 /* End PBXBuildFile section */
@@ -1598,12 +1598,10 @@
 		442CE1EE1E23A3A7006C34A6 /* Grouping+Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Grouping+Record.swift"; sourceTree = "<group>"; };
 		442CE1F01E23A939006C34A6 /* AsyncProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncProvider.swift; sourceTree = "<group>"; };
 		442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewModel.swift; sourceTree = "<group>"; };
-		4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRBAssertMacros.h; path = Common/Meta/FRBAssertMacros.h; sourceTree = "<group>"; };
 		4430C7861E15FB950024C001 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4430C78F1E160DDC0024C001 /* iMMPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMMPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireTests.swift; sourceTree = "<group>"; };
 		4430C7931E160DDD0024C001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4430C7991E160F6E0024C001 /* iMMPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMMPI-Bridging-Header.h"; sourceTree = "<group>"; };
 		4430C79D1E1617AE0024C001 /* StatementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementTests.swift; sourceTree = "<group>"; };
 		4430C7A11E1619000024C001 /* Statement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 		4430C7A51E161B430024C001 /* Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire.swift; sourceTree = "<group>"; };
@@ -2174,6 +2172,8 @@
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
 		44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+UtilityTests.swift"; sourceTree = "<group>"; };
+		44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRecordsStorage.swift; sourceTree = "<group>"; };
+		44B193BC1E3A722100DD4E5E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScore+Potential.swift"; sourceTree = "<group>"; };
 		44C302101E3522C30073F391 /* Analyser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyserIntegrationTests.swift; sourceTree = "<group>"; };
@@ -2205,7 +2205,6 @@
 		5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5DA5C9EC163B018D00CF1601 /* iMMPI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMMPI-Info.plist"; sourceTree = "<group>"; };
 		5DA5C9EE163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5DA5C9F0163B018D00CF1601 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DA5C9FD163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -2215,9 +2214,6 @@
 		5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.adult.json; sourceTree = "<group>"; };
 		5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mmpi.male.teen.json; sourceTree = "<group>"; };
 		5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		5DC973BE168F20DD00C496F0 /* RecordStorageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordStorageProtocol.h; sourceTree = "<group>"; };
-		5DC973BF168F214A00C496F0 /* JSONRecordsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRecordsStorage.h; sourceTree = "<group>"; };
-		5DC973C0168F214A00C496F0 /* JSONRecordsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRecordsStorage.m; sourceTree = "<group>"; };
 		5DD3780318ACF81D009896FB /* button_tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap1.wav; sourceTree = "<group>"; };
 		5DD3780418ACF81D009896FB /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap2.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2281,14 +2277,6 @@
 				448C31031E2875B9003D355D /* SectionIndexTests.swift */,
 			);
 			name = Grouping;
-			sourceTree = "<group>";
-		};
-		4430C7381E15F9FF0024C001 /* Frostbit */ = {
-			isa = PBXGroup;
-			children = (
-				4430C73C1E15F9FF0024C001 /* FRBAssertMacros.h */,
-			);
-			path = Frostbit;
 			sourceTree = "<group>";
 		};
 		4430C7851E15FA170024C001 /* Resources */ = {
@@ -3565,7 +3553,6 @@
 				5DA5C9EA163B018D00CF1601 /* iMMPI */,
 				4430C7901E160DDD0024C001 /* iMMPITests */,
 				4430C7851E15FA170024C001 /* Resources */,
-				4430C7381E15F9FF0024C001 /* Frostbit */,
 				5DA5C9E3163B018D00CF1601 /* Frameworks */,
 				5DA5C9E1163B018D00CF1601 /* Products */,
 			);
@@ -3599,12 +3586,12 @@
 		5DA5C9EA163B018D00CF1601 /* iMMPI */ = {
 			isa = PBXGroup;
 			children = (
-				4430C7991E160F6E0024C001 /* iMMPI-Bridging-Header.h */,
 				5DCC9642168DC12B004F8D4E /* Utils */,
 				5D5E05B9164651A800A5A704 /* Model */,
 				5D74CEF8169B085000BAA202 /* UI */,
 				44673C0C1E23ADA0001758C0 /* AppDelegate.swift */,
 				444F24221E32037900BB8003 /* Application.swift */,
+				44B193BC1E3A722100DD4E5E /* main.swift */,
 				5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */,
 				5DA5C9EB163B018D00CF1601 /* Supporting Files */,
 			);
@@ -3620,7 +3607,6 @@
 				5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */,
 				5DA5C9EC163B018D00CF1601 /* iMMPI-Info.plist */,
 				5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */,
-				5DA5C9F0163B018D00CF1601 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -3707,7 +3693,6 @@
 			isa = PBXGroup;
 			children = (
 				442CE1AD1E23551D006C34A6 /* RecordProtocol.swift */,
-				5DC973BE168F20DD00C496F0 /* RecordStorageProtocol.h */,
 				44673C101E23B017001758C0 /* RecordStorageProtocol.swift */,
 			);
 			name = Protocols;
@@ -3742,8 +3727,7 @@
 			children = (
 				444F237A1E2E31C900BB8003 /* Serialization */,
 				5DC973B4168F0D5F00C496F0 /* private */,
-				5DC973BF168F214A00C496F0 /* JSONRecordsStorage.h */,
-				5DC973C0168F214A00C496F0 /* JSONRecordsStorage.m */,
+				44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */,
 			);
 			name = "JSON Test Records Storage";
 			sourceTree = "<group>";
@@ -4870,7 +4854,6 @@
 				444F24471E334F0200BB8003 /* AttachmentReportGenerator.swift in Sources */,
 				444F24491E334F9000BB8003 /* AttachmentReportGenerator+Html.swift in Sources */,
 				44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */,
-				5DA5C9F1163B018D00CF1601 /* main.m in Sources */,
 				442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */,
 				444F246B1E34B91700BB8003 /* AnalysisScale.swift in Sources */,
 				5876FDC71E2BE4C600255227 /* DatePickerController.swift in Sources */,
@@ -4888,6 +4871,7 @@
 				448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */,
 				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
 				448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */,
+				44B193BB1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift in Sources */,
 				444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+Record.swift in Sources */,
 				448C319C1E2B7CBC003D355D /* Html.swift in Sources */,
@@ -4896,7 +4880,6 @@
 				448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */,
 				444F23841E2E345E00BB8003 /* JSONGenderSerialization.swift in Sources */,
 				444F24851E34F86800BB8003 /* AnalysisScore+Brackets.swift in Sources */,
-				5DC973C1168F214A00C496F0 /* JSONRecordsStorage.m in Sources */,
 				44C302171E3531790073F391 /* AnalysisScoreFilter.swift in Sources */,
 				444F23981E2E3FFA00BB8003 /* JSONRecordProxySerialization.swift in Sources */,
 				444F24591E336ABF00BB8003 /* EmailAttachmentsGenerator.swift in Sources */,
@@ -4955,6 +4938,7 @@
 				448C30A71E276A2C003D355D /* AnalyserTableViewCell.swift in Sources */,
 				442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */,
 				444F24391E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift in Sources */,
+				44B193BD1E3A722100DD4E5E /* main.swift in Sources */,
 				44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */,
 				444F245D1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift in Sources */,
 				44F97A471E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift in Sources */,
@@ -5035,7 +5019,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "iMMPI/iMMPI-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMMPI.app/iMMPI";
 			};
@@ -5065,7 +5048,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "iMMPI/iMMPI-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMMPI.app/iMMPI";
 			};
@@ -5211,7 +5193,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "iMMPI/iMMPI-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -5233,7 +5214,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "iMMPI/iMMPI-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
