@@ -10,6 +10,8 @@
 #error "This file should be compiled with ARC support"
 #endif
 
+#import "iMMPI-Swift.h"
+#import "FRBAssertMacros.h"
 #import "JSONRecordsStorage.h"
 
 #pragma mark -
