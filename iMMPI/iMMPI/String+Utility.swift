@@ -1,11 +1,10 @@
 import Foundation
 
 extension String {
-    var mmpiTransliterated: String {
-        let mutable = NSMutableString(string: self) as CFMutableString
-        CFStringTransform(mutable, nil, kCFStringTransformToLatin, false)
-        CFStringTransform(mutable, nil, kCFStringTransformStripCombiningMarks, false)
-        return mutable as String
+    var transliterated: String {
+        return applyingTransform(.toLatin, reverse: false)?
+            .applyingTransform(.stripCombiningMarks, reverse: false)?
+            .applyingTransform(.stripDiacritics, reverse: false) ?? self
     }
 
 

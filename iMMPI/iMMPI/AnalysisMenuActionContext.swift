@@ -24,7 +24,7 @@ final class AnalysisMenuActionContext {
         var attachmentGenerators: [AttachmentReportGenerator] = []
 
         attachmentGenerators.append(contentsOf: self.htmlReportGenerators.map({ htmlGenerator in
-            AttachmentReportGenerator(titleFormatter: { $0.mmpiTransliterated }, htmlGenerator: htmlGenerator)
+            AttachmentReportGenerator(titleFormatter: { $0.transliterated }, htmlGenerator: htmlGenerator)
         }))
 
         return EmailMessageGenerator(attachments: EmailAttachmentsGenerator(attachmentGenerators))
