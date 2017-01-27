@@ -7,4 +7,13 @@ extension String {
         CFStringTransform(mutable, nil, kCFStringTransformStripCombiningMarks, false)
         return mutable as String
     }
+
+
+    var uppercasedFirstCharacter: String {
+        guard false == isEmpty else {
+            return self
+        }
+
+        return substring(to: index(after: startIndex)).uppercased()
+    }
 }
