@@ -240,7 +240,7 @@ extension JSONRecordsStorage {
 
 
 extension JSONRecordsStorage {
-    fileprivate final class Element: NSObject {
+    fileprivate final class Element {
         var record: RecordProtocol?
         var fileName: String?
     }

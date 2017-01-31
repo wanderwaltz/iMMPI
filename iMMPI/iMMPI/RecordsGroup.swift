@@ -1,13 +1,12 @@
 import Foundation
 
-final class RecordsGroup: NSObject {
+final class RecordsGroup {
     let record: RecordProtocol
     let group: Grouping<RecordsGroup>
 
     init(record: RecordProtocol, group: Grouping<RecordsGroup>) {
         self.record = record
         self.group = group
-        super.init()
     }
 }
 

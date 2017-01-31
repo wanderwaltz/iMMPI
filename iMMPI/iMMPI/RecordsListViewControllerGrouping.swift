@@ -10,7 +10,7 @@ extension RecordsListViewControllerGrouping {
     func group(_ records: [RecordProtocol]) -> Grouping<RecordsGroup> {
         switch self {
         case .alphabetical:
-            return makeRecordGroups(from: records.groupByEqualName())
+            return makeRecordGroups(from: groupByEqualName(records))
 
         case .flat:
             return makeRecordGroups(from: records)

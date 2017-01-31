@@ -1,6 +1,6 @@
 import UIKit
 
-final class Grouping<Item>: NSObject {
+final class Grouping<Item> {
     let allItems: [Item]
     let sections: [Section<Item>]
     let indexPaths: [IndexPath]
@@ -23,8 +23,6 @@ final class Grouping<Item>: NSObject {
                 return IndexPath(row: itemIndex, section: sectionIndex)
             })
         }).joined())
-
-        super.init()
     }
 }
 

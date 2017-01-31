@@ -1,7 +1,6 @@
 import Foundation
 
-// TODO: drop @objc requirements when possible
-final class JSONRecordSerialization: NSObject {
+final class JSONRecordSerialization {
     let version = "1.0"
 
     let person: JSONPersonSerialization

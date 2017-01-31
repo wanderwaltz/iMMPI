@@ -1,6 +1,6 @@
 import Foundation
 
-final class ValidatingAnalysisSettings: NSObject {
+final class ValidatingAnalysisSettings {
     init(_ base: AnalysisSettings) {
         self.base = base
     }

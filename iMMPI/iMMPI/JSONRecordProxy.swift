@@ -1,6 +1,6 @@
 import Foundation
 
-final class JSONRecordProxy: NSObject {
+final class JSONRecordProxy {
     let fileName: String
     let directory: String
 
@@ -17,12 +17,14 @@ final class JSONRecordProxy: NSObject {
 }
 
 
-extension JSONRecordProxy {
-    override var description: String {
-        return "\(super.description): \(personName), (\(date))"
+extension JSONRecordProxy: CustomStringConvertible {
+    var description: String {
+        return "JSONRecordProxy: \(personName), (\(date))"
     }
+}
 
 
+extension JSONRecordProxy {
     convenience init(record: RecordProtocol, fileName: String, directory: String) {
         self.init(fileName: fileName, directory: directory)
         self._record = record

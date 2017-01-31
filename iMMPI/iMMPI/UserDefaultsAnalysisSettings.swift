@@ -1,6 +1,6 @@
 import Foundation
 
-final class UserDefaultsAnalysisSettings: NSObject {
+final class UserDefaultsAnalysisSettings {
     let defaults: UserDefaults
     let filterKey: String
     let hideNormKey: String

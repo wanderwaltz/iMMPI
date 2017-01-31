@@ -1,7 +1,6 @@
 import Foundation
 
-// TODO: drop @objc requirements when possible
-final class JSONRecordIndexSerialization: NSObject {
+final class JSONRecordIndexSerialization {
     let proxy: JSONRecordProxySerialization
 
     init(proxy: JSONRecordProxySerialization = JSONRecordProxySerialization()) {

@@ -3,7 +3,7 @@ import Foundation
 /// Encapsulates information about a single test session.
 ///
 /// Test session consists of a person taking test, his/her answers for the test and the date of the test session.
-@objc protocol RecordProtocol: NSObjectProtocol, DateConvertible, PersonNameConvertible {
+protocol RecordProtocol: class, DateConvertible, PersonNameConvertible {
     /// Person who took the test
     var person: Person { get set }
 
@@ -26,11 +26,11 @@ extension RecordProtocol {
 }
 
 
-@objc protocol DateConvertible {
+protocol DateConvertible {
     var date: Date { get }
 }
 
 
-@objc protocol PersonNameConvertible {
+protocol PersonNameConvertible {
     var personName: String { get }
 }
