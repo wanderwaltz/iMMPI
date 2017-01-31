@@ -1,6 +1,6 @@
 import Foundation
 
-@objc enum AnswerType: Int {
+enum AnswerType: Int {
     case unknown
     case positive
     case negative

@@ -1,6 +1,6 @@
 import Foundation
 
-@objc enum AgeGroup: Int {
+enum AgeGroup: Int {
     case unknown
     case teen
     case adult

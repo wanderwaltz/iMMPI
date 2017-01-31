@@ -1,6 +1,6 @@
 import Foundation
 
-@objc enum Gender: Int {
+enum Gender: Int {
     case unknown
     case male
     case female
