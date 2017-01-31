@@ -5,7 +5,7 @@ import Foundation
 /// Initializing this class instance with -init method will also create a `Person` object and
 /// set it as the person property value. `testAnswers` property will be initialized with empty
 /// `Answers` object; date property defaults to the current date/time.
-final class Record: NSObject {
+final class Record {
     var person: Person
     var testAnswers: Answers
     var date: Date
@@ -14,10 +14,9 @@ final class Record: NSObject {
         self.person = person
         self.testAnswers = testAnswers
         self.date = date
-        super.init()
     }
 
-    convenience override init() {
+    convenience init() {
         self.init(person: Person(), testAnswers: Answers(), date: Date())
     }
 }
