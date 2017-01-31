@@ -1,10 +1,6 @@
 import Foundation
 
-final class Answers: NSObject {
-    override init() {
-        super.init()
-    }
-
+final class Answers {
     fileprivate var answersByIdentifier: [Statement.Identifier:Record] = [:]
 }
 
@@ -79,21 +75,20 @@ extension Answers {
 }
 
 
-extension Answers {
-    override var hash: Int {
+extension Answers: Hashable {
+    var hashValue: Int {
         return Array(answersByIdentifier.enumerated()).map({ $1.value.hashValue }).reduce(0, ^)
     }
 
 
-    override func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? Answers else {
-            return false
-        }
+    static func == (left: Answers, right: Answers) -> Bool {
+        let leftAnswers = Array(left.answersByIdentifier.values
+            .sorted { $0.statementIdentifier < $1.statementIdentifier })
 
-        let thisAnswers = Array(answersByIdentifier.values.sorted { $0.statementIdentifier < $1.statementIdentifier })
-        let otherAnswers = Array(other.answersByIdentifier.values.sorted { $0.statementIdentifier < $1.statementIdentifier })
+        let rightAnswers = Array(right.answersByIdentifier.values
+            .sorted { $0.statementIdentifier < $1.statementIdentifier })
 
-        return thisAnswers == otherAnswers
+        return leftAnswers == rightAnswers
     }
 }
 
