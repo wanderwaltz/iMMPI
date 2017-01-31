@@ -24,16 +24,12 @@ final class PersonTests: XCTestCase {
         let person2 = Person(name: "John Doe", gender: .male, ageGroup: .adult)
 
         XCTAssertEqual(person1, person2)
-
-        XCTAssertTrue(person1.isEqual(person2))
-        XCTAssertTrue(person2.isEqual(person1))
     }
 
     func testThat__persons_with_all_matching_properties_have_equal_hashes() {
         let person1 = Person(name: "John Doe", gender: .male, ageGroup: .adult)
         let person2 = Person(name: "John Doe", gender: .male, ageGroup: .adult)
 
-        XCTAssertEqual(person1.hash, person2.hash)
         XCTAssertEqual(person1.hashValue, person2.hashValue)
     }
 
@@ -51,26 +47,9 @@ final class PersonTests: XCTestCase {
             for second in persons {
                 if first !== second {
                     XCTAssertNotEqual(first, second)
-                    XCTAssertFalse(first.isEqual(second))
                 }
             }
         }
-    }
-
-    func testThat__person_is_not_equal_to_other_things() {
-        let person = Person(name: "John Doe", gender: .male, ageGroup: .adult)
-
-        XCTAssertFalse(person.isEqual("John Doe"))
-        XCTAssertFalse(person.isEqual(Gender.male))
-        XCTAssertFalse(person.isEqual(Gender.female))
-        XCTAssertFalse(person.isEqual(Gender.unknown))
-        XCTAssertFalse(person.isEqual(AgeGroup.adult))
-        XCTAssertFalse(person.isEqual(AgeGroup.teen))
-        XCTAssertFalse(person.isEqual(AgeGroup.unknown))
-        XCTAssertFalse(person.isEqual(123))
-        XCTAssertFalse(person.isEqual(true))
-        XCTAssertFalse(person.isEqual(NSObject()))
-        XCTAssertFalse(person.isEqual(nil))
     }
 
     func testThat__person_copy_has_the_same_properties() {

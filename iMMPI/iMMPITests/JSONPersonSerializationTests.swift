@@ -19,11 +19,11 @@ final class JSONPersonSerializationTests: XCTestCase {
         let firstDeserialized = serialization.decode(firstSerialized)
         let secondDeserialized = serialization.decode(secondSerialized)
 
-        XCTAssertTrue(first.isEqual(firstDeserialized))
-        XCTAssertTrue(second.isEqual(secondDeserialized))
+        XCTAssertEqual(first, firstDeserialized)
+        XCTAssertEqual(second, secondDeserialized)
 
-        XCTAssertFalse(first.isEqual(secondDeserialized))
-        XCTAssertFalse(second.isEqual(firstDeserialized))
+        XCTAssertNotEqual(first, secondDeserialized)
+        XCTAssertNotEqual(second, firstDeserialized)
     }
 
 
