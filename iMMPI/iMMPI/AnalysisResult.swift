@@ -6,7 +6,7 @@ struct AnalysisResult {
 }
 
 
-// TODO: conform to RecordProtocol when @objc requirements are dropped
+// TODO: conform to RecordProtocol when Record is a struct.
 extension AnalysisResult {
     var person: Person {
         return record.person
