@@ -39,7 +39,7 @@ extension Person: Hashable {
 }
 
 
-extension Person {
+extension Person: Copying {
     func makeCopy() -> Person {
         return Person(
             name: name,
