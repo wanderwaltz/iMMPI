@@ -43,9 +43,9 @@ final class PersonTests: XCTestCase {
             Person(name: "Mary Poppins", gender: .female, ageGroup: .teen)
         ]
 
-        for first in persons {
-            for second in persons {
-                if first !== second {
+        for (fi, first) in persons.enumerated() {
+            for (si, second) in persons.enumerated() {
+                if fi != si {
                     XCTAssertNotEqual(first, second)
                 }
             }
@@ -59,12 +59,5 @@ final class PersonTests: XCTestCase {
         XCTAssertEqual(person.name, clone.name)
         XCTAssertEqual(person.gender, clone.gender)
         XCTAssertEqual(person.ageGroup, clone.ageGroup)
-    }
-
-    func testThat__person_copy_is_different_instance() {
-        let person = Person(name: "Mary Poppins", gender: .female, ageGroup: .teen)
-        let clone = person.makeCopy()
-
-        XCTAssertTrue(person !== clone)
     }
 }

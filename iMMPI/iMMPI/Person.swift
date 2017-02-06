@@ -3,15 +3,15 @@ import Foundation
 /// Encapsulates personal information of a person taking MMPI test.
 ///
 /// Gender and the age group are relevant for selecting a proper questionnaire for the person.
-final class Person {
+struct Person {
     /// Full name of a person.
-    var name: String
+    let name: String
 
     /// Gender of a person.
-    var gender: Gender
+    let gender: Gender
 
     /// Age group of a person
-    var ageGroup: AgeGroup
+    let ageGroup: AgeGroup
 
     init(name: String = "", gender: Gender = .male, ageGroup: AgeGroup = .adult) {
         self.name = name

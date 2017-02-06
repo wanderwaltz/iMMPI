@@ -157,9 +157,12 @@ extension EditRecordViewController {
             return
         }
 
-        record.person.name = personName.trimmingCharacters(in: .whitespacesAndNewlines)
-        record.person.gender = selectedGender
-        record.person.ageGroup = selectedAgeGroup
+        record.person = Person(
+            name: personName.trimmingCharacters(in: .whitespacesAndNewlines),
+            gender: selectedGender,
+            ageGroup: selectedAgeGroup
+        )
+
         record.date = selectedDate
 
         delegate?.editRecordViewController(self, didFinishEditing: record)
