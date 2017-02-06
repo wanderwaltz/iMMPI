@@ -13,14 +13,10 @@ final class Person {
     /// Age group of a person
     var ageGroup: AgeGroup
 
-    init(name: String, gender: Gender, ageGroup: AgeGroup) {
+    init(name: String = "", gender: Gender = .male, ageGroup: AgeGroup = .adult) {
         self.name = name
         self.gender = gender
         self.ageGroup = ageGroup
-    }
-
-    convenience init() {
-        self.init(name: "", gender: .male, ageGroup: .adult)
     }
 }
 
