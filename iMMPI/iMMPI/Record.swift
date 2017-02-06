@@ -10,14 +10,10 @@ final class Record {
     var testAnswers: Answers
     var date: Date
 
-    init(person: Person, testAnswers: Answers, date: Date) {
+    init(person: Person = Person(), testAnswers: Answers = Answers(), date: Date = Date()) {
         self.person = person
         self.testAnswers = testAnswers
         self.date = date
-    }
-
-    convenience init() {
-        self.init(person: Person(), testAnswers: Answers(), date: Date())
     }
 }
 
