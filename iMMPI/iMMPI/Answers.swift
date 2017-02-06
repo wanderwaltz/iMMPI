@@ -1,7 +1,7 @@
 import Foundation
 
 final class Answers {
-    fileprivate var answersByIdentifier: [Statement.Identifier:Record] = [:]
+    fileprivate var answersByIdentifier: [Statement.Identifier:Entry] = [:]
 }
 
 
@@ -18,7 +18,7 @@ extension Answers {
     /// - Parameter type: answer type (agree, disagree, undefined - see source for the exact enum values),
     /// - Parameter identifier: identifier of the statement to relate the answer with.
     func setAnswer(_ answer: AnswerType, for identifier: Statement.Identifier) {
-        answersByIdentifier[identifier] = Record(statementIdentifier: identifier, answer: answer)
+        answersByIdentifier[identifier] = Entry(statementIdentifier: identifier, answer: answer)
     }
 
 
@@ -32,9 +32,9 @@ extension Answers {
 
 
     func enumerateAnswers(with block: (Statement.Identifier, AnswerType) -> Void) {
-        answersByIdentifier.forEach { (identifier, record) in
-            if record.answer != .unknown {
-                block(identifier, record.answer)
+        answersByIdentifier.forEach { (identifier, entry) in
+            if entry.answer != .unknown {
+                block(identifier, entry.answer)
             }
         }
     }
@@ -58,7 +58,7 @@ extension Answers {
 
 
 extension Answers {
-    fileprivate struct Record: Hashable {
+    fileprivate struct Entry: Hashable {
         let statementIdentifier: Statement.Identifier
         let answer: AnswerType
 
@@ -67,7 +67,7 @@ extension Answers {
         }
 
 
-        fileprivate static func == (left: Record, right: Record) -> Bool {
+        fileprivate static func == (left: Entry, right: Entry) -> Bool {
             return left.statementIdentifier == right.statementIdentifier
                 && left.answer == right.answer
         }
