@@ -41,6 +41,13 @@ extension Questionnaire {
 }
 
 
+extension Questionnaire: Sequence {
+    func makeIterator() -> IndexingIterator<[Statement]> {
+        return statements.makeIterator()
+    }
+}
+
+
 extension Questionnaire {
     enum Error: Swift.Error {
         case nilFileName
