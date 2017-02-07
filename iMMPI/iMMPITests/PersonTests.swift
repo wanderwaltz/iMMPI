@@ -51,13 +51,4 @@ final class PersonTests: XCTestCase {
             }
         }
     }
-
-    func testThat__person_copy_has_the_same_properties() {
-        let person = Person(name: "Mary Poppins", gender: .female, ageGroup: .teen)
-        let clone = person.makeCopy()
-
-        XCTAssertEqual(person.name, clone.name)
-        XCTAssertEqual(person.gender, clone.gender)
-        XCTAssertEqual(person.ageGroup, clone.ageGroup)
-    }
 }

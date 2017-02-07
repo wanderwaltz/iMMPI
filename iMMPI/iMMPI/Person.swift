@@ -33,14 +33,3 @@ extension Person: Hashable {
             && left.ageGroup == right.ageGroup
     }
 }
-
-
-extension Person: Copying {
-    func makeCopy() -> Person {
-        return Person(
-            name: name,
-            gender: gender,
-            ageGroup: ageGroup
-        )
-    }
-}

@@ -18,7 +18,7 @@ protocol RecordProtocol: class, DateConvertible, PersonNameConvertible {
 extension RecordProtocol {
     func makeCopy() -> Record {
         return Record(
-            person: person.makeCopy(),
+            person: person,
             testAnswers: testAnswers.makeCopy(),
             date: date
         )
