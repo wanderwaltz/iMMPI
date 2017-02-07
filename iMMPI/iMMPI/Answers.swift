@@ -25,9 +25,14 @@ struct Answers {
 
 extension Answers {
     /// Determines whether this test answers object contains all answers for a certain questionnaire.
-    var allStatementsAnswered: Bool {
-        // TODO: think of a better way to check this
-        return answersByIdentifier.count == 566
+    func allStatementsAnswered(for questionnaire: Questionnaire) -> Bool {
+        for statement in questionnaire {
+            if answer(for: statement.identifier) == .unknown {
+                return false
+            }
+        }
+
+        return true
     }
 
 

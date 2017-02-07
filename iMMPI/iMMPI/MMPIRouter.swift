@@ -83,11 +83,15 @@ extension MMPIRouter: Router {
 
 
     func displayDetails(for record: RecordProtocol, sender: UIViewController) {
-        if record.answers.allStatementsAnswered {
+        guard let questionnaire = try? Questionnaire(record: record) else {
+            return
+        }
+
+        if record.answers.allStatementsAnswered(for: questionnaire) {
             displayAnalysis(for: record, sender: sender)
         }
         else {
-            displayAnswersInput(for: record, sender: sender)
+            displayAnswersInput(for: record, with: questionnaire, sender: sender)
         }
     }
 
@@ -113,9 +117,13 @@ extension MMPIRouter: Router {
 
 
     func displayAnswersReview(for record: RecordProtocol, sender: UIViewController) {
+        guard let questionnaire = try? Questionnaire(record: record) else {
+            return
+        }
+
         let controller = viewControllersFactory.makeAnswersReviewViewController()
 
-        controller.viewModel = DefaultAnswersViewModel(record: record)
+        controller.viewModel = DefaultAnswersViewModel(record: record, questionnaire: questionnaire)
         controller.inputDelegate = editingDelegate
         controller.cellSource = StatementTableViewCell.makeSourceForReview()
 
@@ -228,10 +236,13 @@ extension MMPIRouter {
     }
 
 
-    fileprivate func displayAnswersInput(for record: RecordProtocol, sender: UIViewController) {
+    fileprivate func displayAnswersInput(for record: RecordProtocol,
+                                         with questionnaire: Questionnaire,
+                                         sender: UIViewController) {
+
         let controller = viewControllersFactory.makeAnswersInputViewController()
 
-        controller.viewModel = DefaultAnswersViewModel(record: record)
+        controller.viewModel = DefaultAnswersViewModel(record: record, questionnaire: questionnaire)
         controller.inputDelegate = editingDelegate
         controller.cellSource = StatementTableViewCell.makeSourceForInput()
 

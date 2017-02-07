@@ -20,15 +20,12 @@ class AnswersViewController: UIViewController, UsingRouting {
     @IBOutlet var tableView: UITableView?
 
     var viewModel: AnswersViewModel? {
-        willSet {
-            viewModel?.onDidUpdate = Constant.void()
-        }
-
         didSet {
             if let viewModel = viewModel {
                 answers = viewModel.record.answers
-                viewModel.onDidUpdate = { [weak self] in
-                    self?.tableView?.reloadData()
+
+                if isViewLoaded {
+                    tableView?.reloadData()
                 }
             }
         }
@@ -58,7 +55,7 @@ extension AnswersViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel?.setNeedsUpdate()
+        tableView?.reloadData()
         becomeFirstResponder()
     }
 

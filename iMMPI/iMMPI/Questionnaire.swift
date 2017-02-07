@@ -60,6 +60,16 @@ extension Questionnaire {
     }
 
 
+    init(record: RecordProtocol) throws {
+        try self.init(person: record.person)
+    }
+
+
+    init(person: Person) throws {
+        try self.init(gender: person.gender, ageGroup: person.ageGroup)
+    }
+
+
     /// Initializes a Questionnarie object with the gender and age group values.
     ///
     /// This method does load and parse the json file corresponding the provided 
