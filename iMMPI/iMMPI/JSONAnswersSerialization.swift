@@ -29,18 +29,22 @@ extension JSONAnswersSerialization {
             return nil
         }
 
-        let answers = Answers()
+        var positive: [Statement.Identifier] = []
+        var negative: [Statement.Identifier] = []
         
         for answerJson in json {
-            guard let identifier = answerJson[Key.identifier] as? Int,
-                case let answer = answerType.decode(answerJson[Key.answer]), answer != .unknown else {
+            guard let identifier = answerJson[Key.identifier] as? Int else {
                     continue
             }
 
-            answers.setAnswer(answer, for: identifier)
+            switch answerType.decode(answerJson[Key.answer]) {
+            case .positive: positive.append(identifier)
+            case .negative: negative.append(identifier)
+            case .unknown: break
+            }
         }
 
-        return answers
+        return Answers(positive: positive, negative: negative)
     }
 }
 

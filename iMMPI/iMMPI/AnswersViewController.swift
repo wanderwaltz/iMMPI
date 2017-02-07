@@ -26,7 +26,7 @@ class AnswersViewController: UIViewController, UsingRouting {
 
         didSet {
             if let viewModel = viewModel {
-                answers = viewModel.record.testAnswers.makeCopy()
+                answers = viewModel.record.testAnswers
                 viewModel.onDidUpdate = { [weak self] in
                     self?.tableView?.reloadData()
                 }
@@ -82,7 +82,7 @@ extension AnswersViewController {
             return
         }
 
-        answers.setAnswer(answer, for: statement.identifier)
+        answers = answers.settingAnswer(answer, for: statement.identifier)
         inputDelegate?.testAnswersViewController(self, didSet: answer, for: statement, record: record)
     }
 }

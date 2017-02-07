@@ -1,7 +1,25 @@
 import Foundation
 
-final class Answers {
-    fileprivate var answersByIdentifier: [Statement.Identifier:Entry] = [:]
+struct Answers {
+    init(positive: [Statement.Identifier] = [], negative: [Statement.Identifier] = []) {
+        var answersByIdentifier: [Statement.Identifier:Entry] = [:]
+
+        for identifier in positive {
+            answersByIdentifier[identifier] = Entry(statementIdentifier: identifier, answer: .positive)
+        }
+
+        for identifier in negative {
+            answersByIdentifier[identifier] = Entry(statementIdentifier: identifier, answer: .negative)
+        }
+
+        self.init(answersByIdentifier: answersByIdentifier)
+    }
+
+    fileprivate init(answersByIdentifier: [Statement.Identifier:Entry]) {
+        self.answersByIdentifier = answersByIdentifier
+    }
+
+    fileprivate let answersByIdentifier: [Statement.Identifier:Entry]
 }
 
 
@@ -17,8 +35,11 @@ extension Answers {
     ///
     /// - Parameter type: answer type (agree, disagree, undefined - see source for the exact enum values),
     /// - Parameter identifier: identifier of the statement to relate the answer with.
-    func setAnswer(_ answer: AnswerType, for identifier: Statement.Identifier) {
+    /// - Returns: an updated `Answers` struct.
+    func settingAnswer(_ answer: AnswerType, for identifier: Statement.Identifier) -> Answers {
+        var answersByIdentifier = self.answersByIdentifier
         answersByIdentifier[identifier] = Entry(statementIdentifier: identifier, answer: answer)
+        return Answers(answersByIdentifier: answersByIdentifier)
     }
 
 
@@ -36,22 +57,6 @@ extension Answers {
             if entry.answer != .unknown {
                 block(identifier, entry.answer)
             }
-        }
-    }
-
-
-    /// Enumerates all answers with type != `.unknown`.
-    ///
-    /// Ordering of the enumerating answers is undefined.
-    ///
-    /// - Parameter block: Block to be called on each answer/statement identifier pair where answer != `.unknown`.
-    func setAnswers(positive: [Statement.Identifier], negative: [Statement.Identifier]) {
-        for identifier in positive {
-            setAnswer(.positive, for: identifier)
-        }
-
-        for identifier in negative {
-            setAnswer(.negative, for: identifier)
         }
     }
 }
@@ -89,18 +94,5 @@ extension Answers: Hashable {
             .sorted { $0.statementIdentifier < $1.statementIdentifier })
 
         return leftAnswers == rightAnswers
-    }
-}
-
-
-extension Answers {
-    func makeCopy() -> Answers {
-        let result = Answers()
-
-        enumerateAnswers { (identifier, answer) in
-            result.setAnswer(answer, for: identifier)
-        }
-
-        return result
     }
 }

@@ -93,15 +93,15 @@ final class AnalysisScoreTests: XCTestCase {
         let answers = Answers()
 
         _ = score.value(for: .male, answers: answers)
-        XCTAssertTrue(receivedAnswers === answers)
+        XCTAssertTrue(receivedAnswers == answers)
         receivedAnswers = nil
 
         _ = score.value(for: .female, answers: answers)
-        XCTAssertTrue(receivedAnswers === answers)
+        XCTAssertTrue(receivedAnswers == answers)
         receivedAnswers = nil
 
         _ = score.value(for: .unknown, answers: answers)
-        XCTAssertTrue(receivedAnswers === answers)
+        XCTAssertTrue(receivedAnswers == answers)
         receivedAnswers = nil
     }
 
@@ -119,15 +119,15 @@ final class AnalysisScoreTests: XCTestCase {
         let unknownRecord = Record(person: Person(gender: .unknown))
         
         _ = score.value(for: maleRecord)
-        XCTAssertTrue(receivedAnswers === maleRecord.testAnswers)
+        XCTAssertTrue(receivedAnswers == maleRecord.testAnswers)
         receivedAnswers = nil
 
         _ = score.value(for: femaleRecord)
-        XCTAssertTrue(receivedAnswers === femaleRecord.testAnswers)
+        XCTAssertTrue(receivedAnswers == femaleRecord.testAnswers)
         receivedAnswers = nil
 
         _ = score.value(for: unknownRecord)
-        XCTAssertTrue(receivedAnswers === unknownRecord.testAnswers)
+        XCTAssertTrue(receivedAnswers == unknownRecord.testAnswers)
         receivedAnswers = nil
     }
 }

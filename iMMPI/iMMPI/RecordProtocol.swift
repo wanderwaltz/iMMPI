@@ -19,7 +19,7 @@ extension RecordProtocol {
     func makeCopy() -> Record {
         return Record(
             person: person,
-            testAnswers: testAnswers.makeCopy(),
+            testAnswers: testAnswers,
             date: date
         )
     }
