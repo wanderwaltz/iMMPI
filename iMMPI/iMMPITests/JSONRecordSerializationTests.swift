@@ -45,7 +45,7 @@ final class JSONRecordSerializationTests: XCTestCase {
         XCTAssertEqual(record.date, restoredRecord.date)
 
         for i in 0..<566 {
-            XCTAssertEqual(record.testAnswers.answer(for: i), restoredRecord.testAnswers.answer(for: i))
+            XCTAssertEqual(record.answers.answer(for: i), restoredRecord.answers.answer(for: i))
         }
     }
 }

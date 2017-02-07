@@ -83,7 +83,7 @@ extension MMPIRouter: Router {
 
 
     func displayDetails(for record: RecordProtocol, sender: UIViewController) {
-        if record.testAnswers.allStatementsAnswered {
+        if record.answers.allStatementsAnswered {
             displayAnalysis(for: record, sender: sender)
         }
         else {

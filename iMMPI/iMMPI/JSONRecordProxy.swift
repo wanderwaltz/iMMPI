@@ -44,13 +44,13 @@ extension JSONRecordProxy: RecordProtocol {
     }
 
 
-    var testAnswers: Answers {
+    var answers: Answers {
         get {
-            return record.testAnswers
+            return record.answers
         }
 
         set {
-            record.testAnswers = newValue
+            record.answers = newValue
         }
     }
 

@@ -18,7 +18,7 @@ struct AnalysisScore {
 
 extension AnalysisScore {
     func value(for record: RecordProtocol) -> Double {
-        return value(for: record.person.gender, answers: record.testAnswers)
+        return value(for: record.person.gender, answers: record.answers)
     }
 
     func value(for gender: Gender, answers: Answers) -> Double {

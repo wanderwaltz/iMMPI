@@ -8,7 +8,7 @@ protocol RecordProtocol: class, DateConvertible, PersonNameConvertible {
     var person: Person { get set }
 
     /// Answers of the person
-    var testAnswers: Answers { get set }
+    var answers: Answers { get set }
 
     /// Date of the test session
     var date: Date { get set }
@@ -19,7 +19,7 @@ extension RecordProtocol {
     func makeCopy() -> Record {
         return Record(
             person: person,
-            testAnswers: testAnswers,
+            answers: answers,
             date: date
         )
     }

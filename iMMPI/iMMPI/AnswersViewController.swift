@@ -26,7 +26,7 @@ class AnswersViewController: UIViewController, UsingRouting {
 
         didSet {
             if let viewModel = viewModel {
-                answers = viewModel.record.testAnswers
+                answers = viewModel.record.answers
                 viewModel.onDidUpdate = { [weak self] in
                     self?.tableView?.reloadData()
                 }
@@ -83,7 +83,7 @@ extension AnswersViewController {
         }
 
         answers = answers.settingAnswer(answer, for: statement.identifier)
-        inputDelegate?.testAnswersViewController(self, didSet: answer, for: statement, record: record)
+        inputDelegate?.answersViewController(self, didSet: answer, for: statement, record: record)
     }
 }
 
@@ -94,7 +94,7 @@ extension AnswersViewController {
             return
         }
 
-        inputDelegate?.testAnswersInputViewController(self, didSet: answers, for: record)
+        inputDelegate?.answersInputViewController(self, didSet: answers, for: record)
     }
 }
 

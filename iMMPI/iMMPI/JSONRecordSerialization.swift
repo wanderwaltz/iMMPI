@@ -22,7 +22,7 @@ extension JSONRecordSerialization {
         var json = person.encode(record.person)
 
         json[Key.version] = version
-        json[Key.answers] = answers.encode(record.testAnswers)
+        json[Key.answers] = answers.encode(record.answers)
         json[Key.date] = dateFormatter.string(from: record.date)
 
         return try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
@@ -48,7 +48,7 @@ extension JSONRecordSerialization {
             return nil
         }
 
-        return Record(person: person, testAnswers: answers, date: date)
+        return Record(person: person, answers: answers, date: date)
     }
 }
 

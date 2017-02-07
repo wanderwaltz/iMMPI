@@ -12,8 +12,8 @@ extension AnalysisResult {
         return record.person
     }
 
-    var testAnswers: Answers {
-        return record.testAnswers
+    var answers: Answers {
+        return record.answers
     }
 
     var date: Date {
