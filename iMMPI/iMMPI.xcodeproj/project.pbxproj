@@ -1066,6 +1066,7 @@
 		44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */; };
 		44B193BB1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */; };
 		44B193BD1E3A722100DD4E5E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193BC1E3A722100DD4E5E /* main.swift */; };
+		44B407FE1E4A069300FD4CE8 /* AnswerTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B407FD1E4A069300FD4CE8 /* AnswerTypeTests.swift */; };
 		44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */; };
 		44C302111E3522C30073F391 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302101E3522C30073F391 /* Analyser.swift */; };
 		44C302131E35234B0073F391 /* AnalyserIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */; };
@@ -2175,6 +2176,7 @@
 		44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+UtilityTests.swift"; sourceTree = "<group>"; };
 		44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRecordsStorage.swift; sourceTree = "<group>"; };
 		44B193BC1E3A722100DD4E5E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		44B407FD1E4A069300FD4CE8 /* AnswerTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTypeTests.swift; sourceTree = "<group>"; };
 		44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScore+Potential.swift"; sourceTree = "<group>"; };
 		44C302101E3522C30073F391 /* Analyser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyserIntegrationTests.swift; sourceTree = "<group>"; };
@@ -2293,6 +2295,7 @@
 			children = (
 				448C31091E2877AD003D355D /* Test Objects */,
 				44673C3F1E2522D5001758C0 /* Analyzer */,
+				44B407FC1E4A067300FD4CE8 /* Data Model */,
 				442CE1CF1E2378CA006C34A6 /* Grouping */,
 				444F237D1E2E32DD00BB8003 /* JSON Serialization */,
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
@@ -2301,11 +2304,7 @@
 				448C310E1E289313003D355D /* View Controllers */,
 				44DE9AFB1E2B873700CFE13E /* Html */,
 				442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */,
-				448C30FB1E27E511003D355D /* AgeGroupTests.swift */,
 				448C31011E28735C003D355D /* AsyncProviderTests.swift */,
-				448C30FD1E27E743003D355D /* GenderTests.swift */,
-				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
-				4430C7B61E163F450024C001 /* PersonTests.swift */,
 				442CE1E41E238C75006C34A6 /* RecordsGroupTests.swift */,
 				44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */,
 				448C311C1E28A144003D355D /* UserDefaultsAnalysisSettingsTests.swift */,
@@ -3502,6 +3501,18 @@
 				44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */,
 			);
 			name = Analysis;
+			sourceTree = "<group>";
+		};
+		44B407FC1E4A067300FD4CE8 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				448C30FB1E27E511003D355D /* AgeGroupTests.swift */,
+				44B407FD1E4A069300FD4CE8 /* AnswerTypeTests.swift */,
+				448C30FD1E27E743003D355D /* GenderTests.swift */,
+				4430C7B61E163F450024C001 /* PersonTests.swift */,
+				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 		44DE9AFB1E2B873700CFE13E /* Html */ = {
@@ -4799,6 +4810,7 @@
 				444F238A1E2E36F300BB8003 /* JSONPersonSerializationTests.swift in Sources */,
 				448C31001E27E7BA003D355D /* SectionTests.swift in Sources */,
 				44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */,
+				44B407FE1E4A069300FD4CE8 /* AnswerTypeTests.swift in Sources */,
 				444F24711E34BDBE00BB8003 /* GenderBasedValueTests.swift in Sources */,
 				448C31041E2875B9003D355D /* SectionIndexTests.swift in Sources */,
 				444F247F1E34F26900BB8003 /* AnalysisScoreRawTests.swift in Sources */,
