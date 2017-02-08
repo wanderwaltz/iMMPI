@@ -16,7 +16,7 @@ extension TableViewCellSource {
          identifier: String,
          update: @escaping (_ cell: UITableViewCell, _ data: Data?) -> ()) {
         self.init(
-            register: Constant.void(),
+            register: Constant.value(()),
             dequeue: { tableView, data in
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
                     ?? UITableViewCell(style: style, reuseIdentifier: identifier)

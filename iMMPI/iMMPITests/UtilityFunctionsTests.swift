@@ -22,8 +22,8 @@ final class UtilityFunctionsTests: XCTestCase {
 
 
     func testThat__constant_bool__always_returns_the_given_value() {
-        let constantTrue: (Any, Any) -> Bool = Constant.bool(true)
-        let constantFalse: (Any, Any) -> Bool = Constant.bool(false)
+        let constantTrue: (Any, Any) -> Bool = Constant.value(true)
+        let constantFalse: (Any, Any) -> Bool = Constant.value(false)
 
         XCTAssertTrue(constantTrue(1, 1))
         XCTAssertTrue(constantTrue(1, false))
@@ -41,7 +41,7 @@ final class UtilityFunctionsTests: XCTestCase {
 
 
     func testThat__constant_string__always_returns_the_given_value() {
-        let qwerty: (Any) -> String = Constant.string("qwerty")
+        let qwerty: (Any) -> String = Constant.value("qwerty")
 
         XCTAssertEqual(qwerty(123), "qwerty")
         XCTAssertEqual(qwerty("asdfg"), "qwerty")
@@ -53,7 +53,7 @@ final class UtilityFunctionsTests: XCTestCase {
 
 
     func testThat__constant_array__always_returns_the_given_value() {
-        let qwerty: (Any) -> [Int] = Constant.array([1,2,3,4])
+        let qwerty: (Any) -> [Int] = Constant.value([1,2,3,4])
 
         XCTAssertEqual(qwerty(123), [1,2,3,4])
         XCTAssertEqual(qwerty("asdfg"), [1,2,3,4])
@@ -66,7 +66,7 @@ final class UtilityFunctionsTests: XCTestCase {
 
     func testThat__constant_html__always_returns_the_given_value() {
         let expectedHtml = Html.document(.body(.content("html body")))
-        let html: (Any) -> Html = Constant.html(expectedHtml)
+        let html: (Any) -> Html = Constant.value(expectedHtml)
 
         XCTAssertEqual(html(123), expectedHtml)
         XCTAssertEqual(html("asdfg"), expectedHtml)
@@ -78,7 +78,7 @@ final class UtilityFunctionsTests: XCTestCase {
 
 
     func testThat__constant_void__does_not_have_side_effects() {
-        let void: (Any) -> Void = Constant.void()
+        let void: (Any) -> Void = Constant.value()
 
         let expectedArray: NSMutableArray = [1,2,3]
         let array = expectedArray

@@ -3,7 +3,7 @@ import Foundation
 final class AnalysisOptionsViewModel {
     typealias SwitchCellData = (title: String, value: Bool)
 
-    var onDidUpdate: (Section<SwitchCellData>, Section<MenuAction>) -> () = Constant.void()
+    var onDidUpdate: (Section<SwitchCellData>, Section<MenuAction>) -> () = Constant.value(())
 
     init(settings: AnalysisSettings, actions: [MenuAction]) {
         self.settings = settings

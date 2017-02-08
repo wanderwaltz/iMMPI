@@ -12,7 +12,7 @@ final class AnalysisOptionsViewController: UITableViewController, UsingRouting {
 
     var viewModel: AnalysisOptionsViewModel? {
         willSet {
-            viewModel?.onDidUpdate = Constant.void()
+            viewModel?.onDidUpdate = Constant.value(())
         }
 
         didSet {

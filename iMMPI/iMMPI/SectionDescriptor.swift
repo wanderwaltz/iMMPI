@@ -9,8 +9,8 @@ struct SectionDescriptor<Item> {
 extension SectionDescriptor {
     static func singleSection(named title: String) -> SectionDescriptor {
         return SectionDescriptor(
-            itemsBelongToSameSection: Constant.bool(true),
-            sectionTitleForItem: Constant.string(title)
+            itemsBelongToSameSection: Constant.value(true),
+            sectionTitleForItem: Constant.value(title)
         )
     }
 }

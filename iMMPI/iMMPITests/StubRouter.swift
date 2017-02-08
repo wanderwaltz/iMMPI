@@ -2,8 +2,8 @@ import UIKit
 @testable import iMMPI
 
 final class StubRouter {
-    var _displayAnswersReview: (RecordProtocol, UIViewController) -> () = Constant.void()
-    var _displayAnalysisOptions: (AnalysisMenuActionContext, UIViewController) -> () = Constant.void()
+    var _displayAnswersReview: (RecordProtocol, UIViewController) -> () = Constant.value(())
+    var _displayAnalysisOptions: (AnalysisMenuActionContext, UIViewController) -> () = Constant.value(())
 }
 
 

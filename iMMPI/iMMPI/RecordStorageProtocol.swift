@@ -51,7 +51,7 @@ extension RecordStorage {
 }
 
 extension RecordStorage {
-    func makeViewModel(includeRecord: @escaping (RecordProtocol) -> Bool = Constant.bool(true))
+    func makeViewModel(includeRecord: @escaping (RecordProtocol) -> Bool = Constant.value(true))
         -> RecordsListViewModel<RecordProtocol> {
             return RecordsListViewModel(
                 provider: AsyncProvider({ completion in

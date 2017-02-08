@@ -29,7 +29,7 @@ extension AnalysisScore {
 
 extension AnalysisScore {
     static func constant(_ value: Double) -> AnalysisScore {
-        return AnalysisScore(value: .common(Constant.double(value)))
+        return AnalysisScore(value: .common(Constant.value(value)))
     }
 }
 

@@ -91,7 +91,7 @@ extension Grouping {
     static var empty: Grouping {
         return Grouping(
             items: [],
-            areInIncreasingOrder: Constant.bool(false),
+            areInIncreasingOrder: Constant.value(false),
             sectionDescriptor: .singleSection(named: "")
         )
     }

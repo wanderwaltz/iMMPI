@@ -19,7 +19,7 @@ extension RecordProxy {
     }
 
     convenience init(indexItem: IndexItem, record: Record) {
-        self.init(indexItem: indexItem, materialize: { _ in record })
+        self.init(indexItem: indexItem, materialize: Constant.value(record))
         self._record = record
     }
 }

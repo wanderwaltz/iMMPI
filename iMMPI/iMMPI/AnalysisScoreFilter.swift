@@ -10,7 +10,7 @@ struct AnalysisScoreFilter {
 
 
 extension AnalysisScoreFilter {
-    static let never = AnalysisScoreFilter(Constant.bool(false))
+    static let never = AnalysisScoreFilter(Constant.value(false))
     static let bracketed = AnalysisScoreFilter({ fabs($0 - 3.0) < 0.05 })
     static let median = AnalysisScoreFilter({ 40.0...60.0 ~= $0 })
 }

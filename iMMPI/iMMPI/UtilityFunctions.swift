@@ -7,34 +7,9 @@ extension UIViewController {
 }
 
 
-enum Constant {
-    static func void<A>() -> (A) -> () {
-        return { _ in () }
-    }
-
-
-    static func bool<A>(_ value: Bool) -> (A) -> Bool {
-        return { _ in value }
-    }
-
-
-    static func double<A>(_ value: Double) -> (A) -> Double {
-        return { _ in value }
-    }
-    
-
-    static func string<A>(_ value: String) -> (A) -> String {
-        return { _ in value }
-    }
-
-
-    static func html<A>(_ value: Html) -> (A) -> Html {
-        return { _ in value }
-    }
-
-
-    static func array<A, B>(_ value: [B]) -> (A) -> [B] {
-        return { _ in value }
+enum Constant<T> {
+    static func value<Arg>(_ constant: T) -> (Arg) -> T {
+        return { _ in constant }
     }
 }
 

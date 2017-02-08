@@ -15,7 +15,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
 
     var viewModel: RecordsListViewModel<RecordProtocol>? {
         willSet {
-            viewModel?.onDidUpdate = Constant.void()
+            viewModel?.onDidUpdate = Constant.value(())
         }
 
         didSet {
@@ -77,7 +77,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
     }
 
 
-    fileprivate var recordsFilter: (RecordProtocol) -> Bool = Constant.bool(true) {
+    fileprivate var recordsFilter: (RecordProtocol) -> Bool = Constant.value(true) {
         didSet {
             groups = grouping.group(records.filter(recordsFilter))
         }
@@ -266,7 +266,7 @@ extension RecordsListViewController: UISearchResultsUpdating {
             }
         }
         else {
-            recordsFilter = Constant.bool(true)
+            recordsFilter = Constant.value(true)
         }
     }
 }
@@ -274,6 +274,6 @@ extension RecordsListViewController: UISearchResultsUpdating {
 
 extension RecordsListViewController: UISearchControllerDelegate {
     func didDismissSearchController(_ searchController: UISearchController) {
-        recordsFilter = Constant.bool(true)
+        recordsFilter = Constant.value(true)
     }
 }

@@ -5,7 +5,7 @@ extension TableViewCellSource {
         identifier: String = "com.immpi.cells.switch",
         update: @escaping (_ cell: UITableViewCell, _ `switch`: UISwitch, _ data: Data?) -> ()) -> TableViewCellSource {
         return TableViewCellSource(
-            register: Constant.void(),
+            register: Constant.value(()),
             dequeue: { tableView, data in
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
                     ?? UITableViewCell(style: .default, reuseIdentifier: identifier)

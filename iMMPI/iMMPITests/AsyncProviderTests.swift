@@ -28,9 +28,9 @@ final class AsyncProviderTests: XCTestCase {
             completion(123)
         })
 
-        provider.provide(Constant.void())
-        provider.provide(Constant.void())
-        provider.provide(Constant.void())
+        provider.provide(Constant.value(()))
+        provider.provide(Constant.value(()))
+        provider.provide(Constant.value(()))
 
         XCTAssertEqual(callsCount, 3)
     }
