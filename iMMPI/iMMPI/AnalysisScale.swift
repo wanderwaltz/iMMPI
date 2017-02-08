@@ -52,13 +52,17 @@ extension AnalysisScale {
 
 // TODO: instead of explicit nesting, use /-separated identifiers
 extension AnalysisScale {
-    struct Identifier {
+    struct Identifier: StrictlyRawRepresentable {
         let rawValue: String
         let nesting: Int
 
-        init(_ rawValue: String, nesting: Int = 1) {
+        init(_ rawValue: String, nesting: Int) {
             self.rawValue = rawValue
             self.nesting = nesting
+        }
+
+        init(_ rawValue: String) {
+            self.init(rawValue, nesting: 1)
         }
     }
 
