@@ -128,6 +128,11 @@ extension RecordsListViewController {
     @IBAction func addRecordButtonAction(_ sender: Any?) {
         router?.addRecord(basedOn: style.makeNewRecord(), sender: self)
     }
+
+
+    @IBAction func compareRecordsButtonAction(_ sender: Any?) {
+        
+    }
 }
 
 

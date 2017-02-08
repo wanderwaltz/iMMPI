@@ -203,6 +203,18 @@ extension MMPIRouter {
         controller.style = .nested(basedOn: group.record)
         controller.grouping = .flat
 
+
+        let compareButton = Views.makeSolidButton(title: Strings.Button.compare)
+
+        compareButton.addTarget(
+            controller,
+            action: #selector(RecordsListViewController.compareRecordsButtonAction(_:)),
+            for: .touchUpInside
+        )
+
+        controller.tableView.tableHeaderView = compareButton
+
+
         attachAddRecordButton(to: controller)
 
         controller.viewModel = storage.makeViewModel(includeRecord: { record in

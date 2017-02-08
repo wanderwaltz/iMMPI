@@ -28,6 +28,7 @@ enum Strings {
         static let email = NSLocalizedString("E-mail", comment: "Кнопка отправки письма")
         static let emailSettings = NSLocalizedString("Адрес по умолчанию", comment: "Кнопка настроек e-mail")
         static let delete = NSLocalizedString("Удалить", comment: "Кнопка удаления")
+        static let compare = NSLocalizedString("Сравнить", comment: "Кнопка сравнения")
 
         static let filterResults = NSLocalizedString("Фильтр значений", comment: "Опция анализа")
         static let hideNormalResults = NSLocalizedString("Скрыть норму", comment: "Опция анализа")
