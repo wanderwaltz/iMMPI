@@ -1061,6 +1061,9 @@
 		448C31961E2B6479003D355D /* AnalysisReportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */; };
 		448C319C1E2B7CBC003D355D /* Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C319B1E2B7CBC003D355D /* Html.swift */; };
 		449A52321E4B549500D23C13 /* JSONIndexItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A52311E4B549500D23C13 /* JSONIndexItemTests.swift */; };
+		449A52381E4B646500D23C13 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A52371E4B646500D23C13 /* Views.swift */; };
+		449A523A1E4B652400D23C13 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A52391E4B652400D23C13 /* Colors.swift */; };
+		449A523C1E4B65E000D23C13 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A523B1E4B65E000D23C13 /* Fonts.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2184,6 +2187,9 @@
 		448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisReportGenerator.swift; sourceTree = "<group>"; };
 		448C319B1E2B7CBC003D355D /* Html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Html.swift; sourceTree = "<group>"; };
 		449A52311E4B549500D23C13 /* JSONIndexItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONIndexItemTests.swift; sourceTree = "<group>"; };
+		449A52371E4B646500D23C13 /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		449A52391E4B652400D23C13 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		449A523B1E4B65E000D23C13 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3577,7 +3583,10 @@
 		5D74CEF8169B085000BAA202 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				449A52391E4B652400D23C13 /* Colors.swift */,
+				449A523B1E4B65E000D23C13 /* Fonts.swift */,
 				442CE1A91E235156006C34A6 /* Strings.swift */,
+				449A52371E4B646500D23C13 /* Views.swift */,
 				44673C1A1E23C9BD001758C0 /* Router */,
 				5DC40473168C2D49000AFBAE /* Table View Cells */,
 				5DA5CA0C163B04D200CF1601 /* View Controllers */,
@@ -4893,6 +4902,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44F97A3F1E263B26004F4E14 /* AnalysisViewController.swift in Sources */,
+				449A523A1E4B652400D23C13 /* Colors.swift in Sources */,
 				445C64531E48E0E900E670B0 /* Copying.swift in Sources */,
 				442CE1B31E2357AA006C34A6 /* EditRecordViewController.swift in Sources */,
 				444F24471E334F0200BB8003 /* AttachmentReportGenerator.swift in Sources */,
@@ -4951,6 +4961,7 @@
 				444F24571E336AB500BB8003 /* EmailTextGenerator.swift in Sources */,
 				444F24251E3204F700BB8003 /* PopoverPresenting.swift in Sources */,
 				444F241D1E31E62000BB8003 /* MenuAction+Print.swift in Sources */,
+				449A523C1E4B65E000D23C13 /* Fonts.swift in Sources */,
 				444F244E1E33676700BB8003 /* EmailMessage.swift in Sources */,
 				44B4080E1E4AD87800FD4CE8 /* JSONIndexItem.swift in Sources */,
 				44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */,
@@ -4960,6 +4971,7 @@
 				444F248D1E350FE100BB8003 /* AnalysisScale+Defaults.swift in Sources */,
 				44F97A2F1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift in Sources */,
 				442CE1C41E236EEC006C34A6 /* RecordsListViewController.swift in Sources */,
+				449A52381E4B646500D23C13 /* Views.swift in Sources */,
 				444F24501E336A0E00BB8003 /* EmailAddress.swift in Sources */,
 				442CE1E31E238BBB006C34A6 /* RecordsGroup.swift in Sources */,
 				44DE9B001E2BE43000CFE13E /* HtmlReportGenerator.swift in Sources */,
