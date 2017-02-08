@@ -57,13 +57,11 @@ extension RecordProxy: RecordProtocol {
 
 
     var personName: String {
-        get {
-            if let record = _record {
-                return record.personName
-            }
-            else {
-                return indexItem.personName
-            }
+        if let record = _record {
+            return record.personName
+        }
+        else {
+            return indexItem.personName
         }
     }
 
