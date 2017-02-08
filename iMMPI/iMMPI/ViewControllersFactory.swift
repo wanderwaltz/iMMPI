@@ -7,6 +7,7 @@ protocol ViewControllersFactory {
 
     func makeAnalysisViewController() -> AnalysisViewController
     func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController
+    func makeAnalysisComparisonViewController() -> AnalysisComparisonViewController
 
     func makeAnswersReviewViewController() -> AnswersViewController
     func makeAnswersInputViewController() -> AnswersInputViewController

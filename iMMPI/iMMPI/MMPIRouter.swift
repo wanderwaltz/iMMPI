@@ -116,6 +116,14 @@ extension MMPIRouter: Router {
     }
 
 
+    func displayAnalysisComparison(for records: [RecordProtocol], sender: UIViewController) {
+        let controller = viewControllersFactory.makeAnalysisComparisonViewController()
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        sender.showDetailViewController(navigationController, sender: records)
+    }
+
+
     func displayAnswersReview(for record: RecordProtocol, sender: UIViewController) {
         guard let questionnaire = try? Questionnaire(record: record) else {
             return

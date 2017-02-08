@@ -48,6 +48,13 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
 
+    func makeAnalysisComparisonViewController() -> AnalysisComparisonViewController {
+        let controller = AnalysisComparisonViewController()
+
+        return controller
+    }
+
+
     func makeAnswersReviewViewController() -> AnswersViewController {
         let controller = AnswersViewController()
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)

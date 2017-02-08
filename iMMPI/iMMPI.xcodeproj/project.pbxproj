@@ -1064,6 +1064,7 @@
 		449A52381E4B646500D23C13 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A52371E4B646500D23C13 /* Views.swift */; };
 		449A523A1E4B652400D23C13 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A52391E4B652400D23C13 /* Colors.swift */; };
 		449A523C1E4B65E000D23C13 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A523B1E4B65E000D23C13 /* Fonts.swift */; };
+		449A523F1E4B686B00D23C13 /* AnalysisComparisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A523E1E4B686B00D23C13 /* AnalysisComparisonViewController.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2190,6 +2191,7 @@
 		449A52371E4B646500D23C13 /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		449A52391E4B652400D23C13 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		449A523B1E4B65E000D23C13 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		449A523E1E4B686B00D23C13 /* AnalysisComparisonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisComparisonViewController.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3541,6 +3543,14 @@
 			name = Analysis;
 			sourceTree = "<group>";
 		};
+		449A523D1E4B683100D23C13 /* Analysis Comparison View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				449A523E1E4B686B00D23C13 /* AnalysisComparisonViewController.swift */,
+			);
+			name = "Analysis Comparison View Controller";
+			sourceTree = "<group>";
+		};
 		44B407FC1E4A067300FD4CE8 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3664,6 +3674,7 @@
 			children = (
 				5DBD56891697272000728BB4 /* Test Answers */,
 				5DA5CA10163B050700CF1601 /* Analysis View Controller */,
+				449A523D1E4B683100D23C13 /* Analysis Comparison View Controller */,
 				5DBE76D7169356D40018C728 /* Records List View Controller */,
 				5876FDC61E2BE4C600255227 /* DatePickerController.swift */,
 				442CE1B21E2357AA006C34A6 /* EditRecordViewController.swift */,
@@ -4970,6 +4981,7 @@
 				44DE9B041E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift in Sources */,
 				444F248D1E350FE100BB8003 /* AnalysisScale+Defaults.swift in Sources */,
 				44F97A2F1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift in Sources */,
+				449A523F1E4B686B00D23C13 /* AnalysisComparisonViewController.swift in Sources */,
 				442CE1C41E236EEC006C34A6 /* RecordsListViewController.swift in Sources */,
 				449A52381E4B646500D23C13 /* Views.swift in Sources */,
 				444F24501E336A0E00BB8003 /* EmailAddress.swift in Sources */,

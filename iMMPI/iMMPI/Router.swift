@@ -13,6 +13,8 @@ protocol Router: class {
     func displayAnalysis(for record: RecordProtocol, sender: UIViewController)
     func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController)
 
+    func displayAnalysisComparison(for records: [RecordProtocol], sender: UIViewController)
+
     func displayAnswersReview(for record: RecordProtocol, sender: UIViewController)
 
     func displayPrintOptions(for html: Html, sender: UIViewController)

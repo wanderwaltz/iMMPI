@@ -131,7 +131,7 @@ extension RecordsListViewController {
 
 
     @IBAction func compareRecordsButtonAction(_ sender: Any?) {
-        
+        router?.displayAnalysisComparison(for: Array(groups.allItems.map({ $0.allRecords() }).joined()), sender: self)
     }
 }
 
