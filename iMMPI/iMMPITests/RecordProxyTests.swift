@@ -167,4 +167,8 @@ final class RecordProxyTests: XCTestCase {
         XCTAssertNotEqual(proxy.personName, indexItem.personName)
         XCTAssertEqual(proxy.personName, record.personName)
     }
+
+    func testThat__proxy_description_contains_person_name() {
+        XCTAssertTrue(indexItem.makeProxy().description.contains(indexItem.personName))
+    }
 }
