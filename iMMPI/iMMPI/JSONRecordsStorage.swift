@@ -84,7 +84,9 @@ extension JSONRecordsStorage: RecordStorage {
                 }
 
                 let element = Element()
-                element.record = JSONRecordProxy(record: record, fileName: fileName, directory: storageDirectoryName)
+                let indexItem = JSONIndexItem(record: record, fileName: fileName, directory: storageDirectoryName)
+
+                element.record = JSONRecordProxy(indexItem: indexItem, record: record)
                 element.fileName = fileName
 
                 loadedFileNames.insert(fileName)

@@ -21,6 +21,17 @@ struct Person {
 }
 
 
+extension Person {
+    func settingName(_ newName: String) -> Person {
+        return Person(
+            name: newName,
+            gender: gender,
+            ageGroup: ageGroup
+        )
+    }
+}
+
+
 extension Person: Hashable {
     var hashValue: Int {
         return name.hash ^ gender.hashValue ^ ageGroup.hashValue
