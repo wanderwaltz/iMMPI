@@ -1076,6 +1076,8 @@
 		44B408101E4AD8C400FD4CE8 /* RecordProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */; };
 		44B408121E4AD8DF00FD4CE8 /* RecordIndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408111E4AD8DF00FD4CE8 /* RecordIndexItem.swift */; };
 		44B408141E4AE4AE00FD4CE8 /* JSONRecordProxySerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408131E4AE4AE00FD4CE8 /* JSONRecordProxySerialization.swift */; };
+		44B408161E4AF44300FD4CE8 /* RecordProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408151E4AF44300FD4CE8 /* RecordProxyTests.swift */; };
+		44B408181E4AF47D00FD4CE8 /* StubRecordIndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408171E4AF47D00FD4CE8 /* StubRecordIndexItem.swift */; };
 		44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */; };
 		44C302111E3522C30073F391 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302101E3522C30073F391 /* Analyser.swift */; };
 		44C302131E35234B0073F391 /* AnalyserIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */; };
@@ -2194,6 +2196,8 @@
 		44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordProxy.swift; sourceTree = "<group>"; };
 		44B408111E4AD8DF00FD4CE8 /* RecordIndexItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordIndexItem.swift; sourceTree = "<group>"; };
 		44B408131E4AE4AE00FD4CE8 /* JSONRecordProxySerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRecordProxySerialization.swift; sourceTree = "<group>"; };
+		44B408151E4AF44300FD4CE8 /* RecordProxyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordProxyTests.swift; sourceTree = "<group>"; };
+		44B408171E4AF47D00FD4CE8 /* StubRecordIndexItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubRecordIndexItem.swift; sourceTree = "<group>"; };
 		44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScore+Potential.swift"; sourceTree = "<group>"; };
 		44C302101E3522C30073F391 /* Analyser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		44C302121E35234B0073F391 /* AnalyserIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyserIntegrationTests.swift; sourceTree = "<group>"; };
@@ -3472,10 +3476,11 @@
 		448C31091E2877AD003D355D /* Test Objects */ = {
 			isa = PBXGroup;
 			children = (
+				44B408051E4A08FA00FD4CE8 /* GenericTests.swift */,
+				44B407FF1E4A079F00FD4CE8 /* StringGenerator.swift */,
+				44B408171E4AF47D00FD4CE8 /* StubRecordIndexItem.swift */,
 				448C310A1E2877BA003D355D /* StubRouter.swift */,
 				448C31111E289454003D355D /* UITestFunctions.swift */,
-				44B407FF1E4A079F00FD4CE8 /* StringGenerator.swift */,
-				44B408051E4A08FA00FD4CE8 /* GenericTests.swift */,
 			);
 			name = "Test Objects";
 			sourceTree = "<group>";
@@ -3531,6 +3536,7 @@
 				44DE9AFC1E2B874B00CFE13E /* HtmlTests.swift */,
 				44B408071E4AC75700FD4CE8 /* MimeTypeTests.swift */,
 				4430C7B61E163F450024C001 /* PersonTests.swift */,
+				44B408151E4AF44300FD4CE8 /* RecordProxyTests.swift */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 			);
 			name = "Data Model";
@@ -4839,7 +4845,9 @@
 				448C30F51E27BD63003D355D /* TableViewCellSourceTests.swift in Sources */,
 				448C31101E289328003D355D /* AnalysisViewControllerTests.swift in Sources */,
 				4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */,
+				44B408181E4AF47D00FD4CE8 /* StubRecordIndexItem.swift in Sources */,
 				448C30F81E27DE1B003D355D /* TableViewCellSource+DefaultTests.swift in Sources */,
+				44B408161E4AF44300FD4CE8 /* RecordProxyTests.swift in Sources */,
 				44C302151E352EB60073F391 /* AnalyserScoreFormattersTests.swift in Sources */,
 				444F24951E351ECD00BB8003 /* AnalysisScoreMedianIntegrationTests.swift in Sources */,
 				444F24831E34F6AD00BB8003 /* AnalysisScoreRawPercentageTests.swift in Sources */,

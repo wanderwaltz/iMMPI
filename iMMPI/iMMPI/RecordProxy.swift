@@ -65,11 +65,6 @@ extension RecordProxy: RecordProtocol {
                 return indexItem.personName
             }
         }
-
-        set {
-            record.person = record.person.settingName(newValue)
-            indexItem = indexItem.settingPersonName(newValue)
-        }
     }
 
 
