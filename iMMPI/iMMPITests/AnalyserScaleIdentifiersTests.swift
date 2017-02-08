@@ -20,4 +20,12 @@ final class AnalyserScaleIdentifiersTests: XCTestCase {
 
         XCTAssertEqual(titles.count, analyser.scales.count)
     }
+
+    func testHashable() {
+        checkHashableImplementation(with: StringGenerator<AnalysisScale.Identifier>().makeIterator())
+    }
+
+    func testThat__description_matches_rawValue() {
+        checkDescriptionMatchesRawValue(with: StringGenerator<AnalysisScale.Identifier>().makeIterator())
+    }
 }
