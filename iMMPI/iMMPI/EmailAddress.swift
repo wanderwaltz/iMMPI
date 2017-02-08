@@ -1,6 +1,6 @@
 import Foundation
 
-struct EmailAddress {
+struct EmailAddress: StrictlyRawRepresentable {
     let rawValue: String
 
     init(_ rawValue: String) {
