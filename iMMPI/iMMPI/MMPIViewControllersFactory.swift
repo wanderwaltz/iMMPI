@@ -51,6 +51,8 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     func makeAnalysisComparisonViewController() -> AnalysisComparisonViewController {
         let controller = AnalysisComparisonViewController()
 
+        controller.settings = analysisSettings
+
         return controller
     }
 

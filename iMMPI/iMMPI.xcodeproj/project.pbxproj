@@ -1069,7 +1069,6 @@
 		44A9042E1E4DCD2A003CB6C6 /* ReusableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9042B1E4DCD2A003CB6C6 /* ReusableViewSource.swift */; };
 		44A9042F1E4DCD2A003CB6C6 /* ReusableViewSource+Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9042C1E4DCD2A003CB6C6 /* ReusableViewSource+Meta.swift */; };
 		44A904301E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9042D1E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift */; };
-		44A9044B1E4DCE78003CB6C6 /* StubTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */; };
 		44A904321E4DCDCC003CB6C6 /* AnalysisComparisonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904311E4DCDCC003CB6C6 /* AnalysisComparisonViewModel.swift */; };
 		44A904391E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904361E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift */; };
 		44A9043A1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */; };
@@ -1081,6 +1080,7 @@
 		44A904461E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A904431E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.xib */; };
 		44A904471E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904441E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift */; };
 		44A904491E4DCE14003CB6C6 /* AnalysisComparisonCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904481E4DCE14003CB6C6 /* AnalysisComparisonCollectionViewLayout.swift */; };
+		44A9044B1E4DCE78003CB6C6 /* StubTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2211,7 +2211,6 @@
 		44A9042B1E4DCD2A003CB6C6 /* ReusableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableViewSource.swift; sourceTree = "<group>"; };
 		44A9042C1E4DCD2A003CB6C6 /* ReusableViewSource+Meta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReusableViewSource+Meta.swift"; sourceTree = "<group>"; };
 		44A9042D1E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReusableViewSource+Nib.swift"; sourceTree = "<group>"; };
-		44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubTableViewDataSource.swift; sourceTree = "<group>"; };
 		44A904311E4DCDCC003CB6C6 /* AnalysisComparisonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisComparisonViewModel.swift; sourceTree = "<group>"; };
 		44A904361E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisDateHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisDateHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -2223,6 +2222,7 @@
 		44A904431E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisScoreCollectionViewCell.xib; sourceTree = "<group>"; };
 		44A904441E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScoreCollectionViewCell+Source.swift"; sourceTree = "<group>"; };
 		44A904481E4DCE14003CB6C6 /* AnalysisComparisonCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisComparisonCollectionViewLayout.swift; sourceTree = "<group>"; };
+		44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubTableViewDataSource.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3578,6 +3578,7 @@
 		449A523D1E4B683100D23C13 /* Analysis Comparison View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */,
 				44A904481E4DCE14003CB6C6 /* AnalysisComparisonCollectionViewLayout.swift */,
 				449A523E1E4B686B00D23C13 /* AnalysisComparisonViewController.swift */,
 				44A904311E4DCDCC003CB6C6 /* AnalysisComparisonViewModel.swift */,
@@ -3749,7 +3750,6 @@
 		5DA5CA10163B050700CF1601 /* Analysis View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */,
 				44F97A3E1E263B26004F4E14 /* AnalysisViewController.swift */,
 			);
 			name = "Analysis View Controller";

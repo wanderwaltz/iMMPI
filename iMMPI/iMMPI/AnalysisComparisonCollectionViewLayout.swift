@@ -25,13 +25,15 @@ extension AnalysisComparisonCollectionViewLayout {
             return
         }
 
-        let minimumRow = Int(max(0, cv.contentOffset.y) / rowHeight) - 1
+        let minimumRow = max(0, Int(max(0, cv.contentOffset.y) / rowHeight) - 1)
         let maximumRow = minimumRow + Int(cv.bounds.height / rowHeight) + 2
 
 
         for section in 0..<cv.numberOfSections {
+            let rowsInSection = cv.numberOfItems(inSection: section)
+
             var rowsSet = IndexSet(integersIn:
-                max(0, minimumRow)..<min(cv.numberOfItems(inSection: section), maximumRow)
+                min(minimumRow, maximumRow, rowsInSection)..<min(maximumRow, rowsInSection)
             )
 
             rowsSet.insert(0)

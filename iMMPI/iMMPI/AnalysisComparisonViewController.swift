@@ -4,8 +4,14 @@ final class AnalysisComparisonViewController: UIViewController, UsingRouting {
     var viewModel: AnalysisComparisonViewModel? {
         didSet {
             title = viewModel?.title
+
+            if isViewLoaded {
+                reloadData()
+            }
         }
     }
+
+    var settings: AnalysisSettings?
 
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -60,6 +66,8 @@ final class AnalysisComparisonViewController: UIViewController, UsingRouting {
 
     fileprivate let dateHeaderCellSource: CollectionViewCellSource<Date> =
         AnalysisDateHeaderCollectionViewCell.makeSource()
+
+    fileprivate var analyserGroupIndices: [Int] = []
 }
 
 
@@ -79,6 +87,32 @@ extension AnalysisComparisonViewController {
         collectionView.backgroundColor = .white
         collectionView.dataSource = self
 
+        reloadData()
+    }
+}
+
+
+extension AnalysisComparisonViewController {
+    fileprivate func reloadData() {
+        guard let results = viewModel?.results, results.count > 0 else {
+            analyserGroupIndices = []
+            return
+        }
+
+        var indices: [Int] = []
+
+        let scalesCount = results.first!.scales.count
+
+        for i in 0..<scalesCount {
+            let anyScoreNotWithinNorm = results.reduce(false, { $0 || false == $1.scales[i].score.isWithinNorm })
+            if anyScoreNotWithinNorm || false == settings?.shouldHideNormalResults {
+                indices.append(i)
+            }
+        }
+
+        let oldIndicesWereEmpty = analyserGroupIndices.isEmpty
+
+        analyserGroupIndices = indices
         collectionView.reloadData()
     }
 }
@@ -91,7 +125,7 @@ extension AnalysisComparisonViewController: UICollectionViewDataSource {
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1 + (viewModel?.results.first?.scales.count ?? 0)
+        return 1 + analyserGroupIndices.count
     }
 
 
@@ -116,14 +150,14 @@ extension AnalysisComparisonViewController: UICollectionViewDataSource {
             return scaleCellSource.dequeue(
                 from: collectionView,
                 for: indexPath,
-                with: viewModel?.results.first?.scales[indexPath.row-1]
+                with: viewModel?.results.first?.scales[analyserGroupIndices[indexPath.row-1]]
             )
 
         default:
             return scoreCellSource.dequeue(
                 from: collectionView,
                 for: indexPath,
-                with: viewModel?.results[indexPath.section-1].scales[indexPath.row-1]
+                with: viewModel?.results[indexPath.section-1].scales[analyserGroupIndices[indexPath.row-1]]
             )
         }
     }
@@ -155,6 +189,6 @@ extension AnalysisComparisonViewController {
 
 extension AnalysisComparisonViewController {
     @objc fileprivate func handleAnalysisSettingsDidChangeNotificaion(_ notification: Notification) {
-        collectionView.reloadData()
+        reloadData()
     }
 }
