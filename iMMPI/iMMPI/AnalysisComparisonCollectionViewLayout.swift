@@ -25,8 +25,18 @@ extension AnalysisComparisonCollectionViewLayout {
             return
         }
 
+        let minimumRow = Int(max(0, cv.contentOffset.y) / rowHeight) - 1
+        let maximumRow = minimumRow + Int(cv.bounds.height / rowHeight) + 2
+
+
         for section in 0..<cv.numberOfSections {
-            for item in 0..<cv.numberOfItems(inSection: section) {
+            var rowsSet = IndexSet(integersIn:
+                max(0, minimumRow)..<min(cv.numberOfItems(inSection: section), maximumRow)
+            )
+
+            rowsSet.insert(0)
+
+            for item in rowsSet {
                 let indexPath = IndexPath(item: item, section: section)
 
                 switch (section, item) {
@@ -44,7 +54,14 @@ extension AnalysisComparisonCollectionViewLayout {
 
 
     override var collectionViewContentSize: CGSize {
-        return cellAttributes.values.reduce(CGRect.zero, { $0.union($1.frame) }).size
+        guard let cv = collectionView else {
+            return .zero
+        }
+
+        let width = CGFloat(max(0, cv.numberOfSections - 1)) * scoreColumnWidth + scaleColumnWidth
+        let height = CGFloat(cv.numberOfItems(inSection: 0)) * rowHeight
+
+        return CGSize(width: width, height: height)
     }
 
 
