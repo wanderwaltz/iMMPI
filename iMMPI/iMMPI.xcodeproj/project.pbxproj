@@ -1070,6 +1070,17 @@
 		44A9042F1E4DCD2A003CB6C6 /* ReusableViewSource+Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9042C1E4DCD2A003CB6C6 /* ReusableViewSource+Meta.swift */; };
 		44A904301E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9042D1E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift */; };
 		44A9044B1E4DCE78003CB6C6 /* StubTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */; };
+		44A904321E4DCDCC003CB6C6 /* AnalysisComparisonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904311E4DCDCC003CB6C6 /* AnalysisComparisonViewModel.swift */; };
+		44A904391E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904361E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift */; };
+		44A9043A1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */; };
+		44A9043B1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904381E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift */; };
+		44A9043F1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9043C1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.swift */; };
+		44A904401E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A9043D1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib */; };
+		44A904411E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell+Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9043E1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell+Source.swift */; };
+		44A904451E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904421E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.swift */; };
+		44A904461E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A904431E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.xib */; };
+		44A904471E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904441E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift */; };
+		44A904491E4DCE14003CB6C6 /* AnalysisComparisonCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904481E4DCE14003CB6C6 /* AnalysisComparisonCollectionViewLayout.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2201,6 +2212,17 @@
 		44A9042C1E4DCD2A003CB6C6 /* ReusableViewSource+Meta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReusableViewSource+Meta.swift"; sourceTree = "<group>"; };
 		44A9042D1E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReusableViewSource+Nib.swift"; sourceTree = "<group>"; };
 		44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubTableViewDataSource.swift; sourceTree = "<group>"; };
+		44A904311E4DCDCC003CB6C6 /* AnalysisComparisonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisComparisonViewModel.swift; sourceTree = "<group>"; };
+		44A904361E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisDateHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisDateHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		44A904381E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisDateHeaderCollectionViewCell+Source.swift"; sourceTree = "<group>"; };
+		44A9043C1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScaleCollectionViewCell.swift; sourceTree = "<group>"; };
+		44A9043D1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisScaleCollectionViewCell.xib; sourceTree = "<group>"; };
+		44A9043E1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell+Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScaleCollectionViewCell+Source.swift"; sourceTree = "<group>"; };
+		44A904421E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		44A904431E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisScoreCollectionViewCell.xib; sourceTree = "<group>"; };
+		44A904441E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScoreCollectionViewCell+Source.swift"; sourceTree = "<group>"; };
+		44A904481E4DCE14003CB6C6 /* AnalysisComparisonCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisComparisonCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3556,9 +3578,41 @@
 		449A523D1E4B683100D23C13 /* Analysis Comparison View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				44A904481E4DCE14003CB6C6 /* AnalysisComparisonCollectionViewLayout.swift */,
 				449A523E1E4B686B00D23C13 /* AnalysisComparisonViewController.swift */,
+				44A904311E4DCDCC003CB6C6 /* AnalysisComparisonViewModel.swift */,
 			);
 			name = "Analysis Comparison View Controller";
+			sourceTree = "<group>";
+		};
+		44A904331E4DCDD2003CB6C6 /* Analyser Scale Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				44A9043C1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.swift */,
+				44A9043E1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell+Source.swift */,
+				44A9043D1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib */,
+			);
+			name = "Analyser Scale Collection View Cell";
+			sourceTree = "<group>";
+		};
+		44A904341E4DCDE1003CB6C6 /* Analyser Score Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				44A904421E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.swift */,
+				44A904441E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift */,
+				44A904431E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.xib */,
+			);
+			name = "Analyser Score Collection View Cell";
+			sourceTree = "<group>";
+		};
+		44A904351E4DCDE8003CB6C6 /* Analyser Date Header Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				44A904361E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift */,
+				44A904381E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift */,
+				44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */,
+			);
+			name = "Analyser Date Header Collection View Cell";
 			sourceTree = "<group>";
 		};
 		44B407FC1E4A067300FD4CE8 /* Data Model */ = {
@@ -3751,6 +3805,9 @@
 			isa = PBXGroup;
 			children = (
 				44A904291E4DCC9C003CB6C6 /* AnalyserCellProtocol.swift */,
+				44A904351E4DCDE8003CB6C6 /* Analyser Date Header Collection View Cell */,
+				44A904331E4DCDD2003CB6C6 /* Analyser Scale Collection View Cell */,
+				44A904341E4DCDE1003CB6C6 /* Analyser Score Collection View Cell */,
 				448C30A81E276CA7003D355D /* Analyser Table View Cell */,
 				448C30B41E277C43003D355D /* Statement Table View Cell */,
 				448C30EF1E27B8FD003D355D /* Reusable View Source */,
@@ -4831,12 +4888,15 @@
 				5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */,
 				5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */,
 				448C30AA1E276CB9003D355D /* AnalyserTableViewCell.xib in Resources */,
+				44A904461E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.xib in Resources */,
 				44DE9B021E2BE99800CFE13E /* html.report.css in Resources */,
 				5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */,
 				5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */,
 				444F23771E2E28E000BB8003 /* AnswersInputViewController.xib in Resources */,
+				44A9043A1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib in Resources */,
 				4430C7871E15FB950024C001 /* Media.xcassets in Resources */,
 				5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */,
+				44A904401E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4936,6 +4996,7 @@
 				442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */,
 				444F246B1E34B91700BB8003 /* AnalysisScale.swift in Sources */,
 				5876FDC71E2BE4C600255227 /* DatePickerController.swift in Sources */,
+				44A9043B1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift in Sources */,
 				44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */,
 				444F245F1E34990B00BB8003 /* MenuAction+UITableView.swift in Sources */,
 				447DB7DA1E37E64200901631 /* ComputedScore.swift in Sources */,
@@ -4949,6 +5010,7 @@
 				44A904281E4DCC32003CB6C6 /* UIView+Borders.swift in Sources */,
 				444F241B1E31E1B300BB8003 /* MenuAction.swift in Sources */,
 				44B408101E4AD8C400FD4CE8 /* RecordProxy.swift in Sources */,
+				44A904321E4DCDCC003CB6C6 /* AnalysisComparisonViewModel.swift in Sources */,
 				44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */,
 				448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */,
 				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
@@ -4957,6 +5019,7 @@
 				444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */,
 				44B408141E4AE4AE00FD4CE8 /* JSONRecordProxySerialization.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+Record.swift in Sources */,
+				44A904411E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell+Source.swift in Sources */,
 				448C319C1E2B7CBC003D355D /* Html.swift in Sources */,
 				444F24231E32037900BB8003 /* Application.swift in Sources */,
 				444F248B1E350F7300BB8003 /* AnalysisScale.Identifier+Defaults.swift in Sources */,
@@ -4969,6 +5032,7 @@
 				444F24591E336ABF00BB8003 /* EmailAttachmentsGenerator.swift in Sources */,
 				442CE1BE1E2366F7006C34A6 /* Answers.swift in Sources */,
 				444F248F1E35108F00BB8003 /* AnalysisScoreFormatter.swift in Sources */,
+				44A904471E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift in Sources */,
 				442CE1AC1E235397006C34A6 /* Record.swift in Sources */,
 				448C31141E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift in Sources */,
 				44673C111E23B017001758C0 /* RecordStorageProtocol.swift in Sources */,
@@ -4979,6 +5043,7 @@
 				444F245B1E336ADE00BB8003 /* EmailRecipientsGenerator.swift in Sources */,
 				44A904301E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift in Sources */,
 				44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */,
+				44A904391E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift in Sources */,
 				444F23881E2E358500BB8003 /* JSONPersonSerialization.swift in Sources */,
 				444F247D1E34F25F00BB8003 /* AnalysisScore+Raw.swift in Sources */,
 				44A9042F1E4DCD2A003CB6C6 /* ReusableViewSource+Meta.swift in Sources */,
@@ -5009,6 +5074,7 @@
 				444F241F1E31EA3900BB8003 /* AnalysisMenuActionContext.swift in Sources */,
 				448C31961E2B6479003D355D /* AnalysisReportGenerator.swift in Sources */,
 				448C30F31E27B9BA003D355D /* TableViewCellSource+Default.swift in Sources */,
+				44A904491E4DCE14003CB6C6 /* AnalysisComparisonCollectionViewLayout.swift in Sources */,
 				444F24441E334EB700BB8003 /* Attachment.swift in Sources */,
 				442CE1F51E23A957006C34A6 /* RecordsListViewModel.swift in Sources */,
 				444F24531E336A9300BB8003 /* EmailMessageGenerator.swift in Sources */,
@@ -5031,6 +5097,8 @@
 				444F245D1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift in Sources */,
 				44F97A471E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift in Sources */,
 				44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */,
+				44A9043F1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.swift in Sources */,
+				44A904451E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.swift in Sources */,
 				444F239A1E2E418800BB8003 /* JSONRecordIndexSerialization.swift in Sources */,
 				444F246F1E34BAEF00BB8003 /* GenderBasedValue.swift in Sources */,
 				44F97A451E266D1F004F4E14 /* StatementTableViewCell+Source.swift in Sources */,

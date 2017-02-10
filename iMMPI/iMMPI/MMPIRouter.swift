@@ -118,6 +118,8 @@ extension MMPIRouter: Router {
 
     func displayAnalysisComparison(for records: [RecordProtocol], sender: UIViewController) {
         let controller = viewControllersFactory.makeAnalysisComparisonViewController()
+        
+        controller.viewModel = AnalysisComparisonViewModel(records: records)
 
         let navigationController = UINavigationController(rootViewController: controller)
         sender.showDetailViewController(navigationController, sender: records)
