@@ -1066,6 +1066,7 @@
 		449A523C1E4B65E000D23C13 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A523B1E4B65E000D23C13 /* Fonts.swift */; };
 		449A523F1E4B686B00D23C13 /* AnalysisComparisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A523E1E4B686B00D23C13 /* AnalysisComparisonViewController.swift */; };
 		44A904281E4DCC32003CB6C6 /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904271E4DCC32003CB6C6 /* UIView+Borders.swift */; };
+		44A9042A1E4DCC9C003CB6C6 /* AnalyserCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904291E4DCC9C003CB6C6 /* AnalyserCellProtocol.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2194,6 +2195,7 @@
 		449A523B1E4B65E000D23C13 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		449A523E1E4B686B00D23C13 /* AnalysisComparisonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisComparisonViewController.swift; sourceTree = "<group>"; };
 		44A904271E4DCC32003CB6C6 /* UIView+Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
+		44A904291E4DCC9C003CB6C6 /* AnalyserCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyserCellProtocol.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3742,6 +3744,7 @@
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				44A904291E4DCC9C003CB6C6 /* AnalyserCellProtocol.swift */,
 				448C30A81E276CA7003D355D /* AnalyserTableViewCell */,
 				448C30B41E277C43003D355D /* StatementTableViewCell */,
 				448C30EF1E27B8FD003D355D /* TableViewCellSource */,
@@ -5013,6 +5016,7 @@
 				444F24371E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift in Sources */,
 				448C30A71E276A2C003D355D /* AnalyserTableViewCell.swift in Sources */,
 				442CE1ED1E23A265006C34A6 /* Grouping+Alphabetically.swift in Sources */,
+				44A9042A1E4DCC9C003CB6C6 /* AnalyserCellProtocol.swift in Sources */,
 				444F24391E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift in Sources */,
 				44B193BD1E3A722100DD4E5E /* main.swift in Sources */,
 				44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */,
