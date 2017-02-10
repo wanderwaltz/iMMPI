@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TfK-b1-m2L" id="ZCw-aJ-a3W">
-                <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evh-gA-n5m">
@@ -60,11 +59,12 @@
                 <constraint firstItem="Vc7-Aa-fFE" firstAttribute="top" secondItem="TfK-b1-m2L" secondAttribute="top" constant="11" id="pdb-Bw-Qqh"/>
             </constraints>
             <connections>
-                <outlet property="groupNameLabel" destination="evh-gA-n5m" id="7so-5m-Nre"/>
-                <outlet property="groupNameLabelLeft" destination="WhT-HQ-TcW" id="8xi-Or-KSO"/>
                 <outlet property="indexLabel" destination="Vc7-Aa-fFE" id="WHT-lI-JC0"/>
                 <outlet property="scoreLabel" destination="ace-4I-Nne" id="0lm-oY-uLB"/>
+                <outlet property="titleLabel" destination="evh-gA-n5m" id="Xb4-EV-jFj"/>
+                <outlet property="titleLabelLeft" destination="WhT-HQ-TcW" id="whk-1x-80C"/>
             </connections>
+            <point key="canvasLocation" x="34" y="146"/>
         </tableViewCell>
     </objects>
 </document>

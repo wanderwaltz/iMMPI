@@ -1,23 +1,23 @@
 import UIKit
 
-final class AnalyserTableViewCell: UITableViewCell {
-    @objc @IBOutlet fileprivate(set) var groupNameLabel: UILabel?
+final class AnalyserTableViewCell: UITableViewCell, AnalyserCellProtocol {
+    @objc @IBOutlet fileprivate(set) var titleLabel: UILabel?
     @objc @IBOutlet fileprivate(set) var scoreLabel: UILabel?
     @objc @IBOutlet fileprivate(set) var indexLabel: UILabel?
 
-    var groupNameOffset: CGFloat = 0 {
+    var titleOffset: CGFloat = 0 {
         didSet {
             setNeedsUpdateConstraints()
         }
     }
 
-    @objc @IBOutlet fileprivate var groupNameLabelLeft: NSLayoutConstraint?
+    @objc @IBOutlet fileprivate var titleLabelLeft: NSLayoutConstraint?
 }
 
 
 extension AnalyserTableViewCell {
     override func updateConstraints() {
-        groupNameLabelLeft?.constant = groupNameOffset + 20.0
+        titleLabelLeft?.constant = titleOffset + 20.0
         super.updateConstraints()
     }
 }
