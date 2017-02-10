@@ -21,6 +21,8 @@ class AnswersViewController: UIViewController, UsingRouting {
 
     var viewModel: AnswersViewModel? {
         didSet {
+            title = (viewModel?.record).map { "\($0.person.name), \(dateFormatter.string(from: $0.date))" } ?? ""
+
             if let viewModel = viewModel {
                 answers = viewModel.record.answers
 
@@ -32,6 +34,7 @@ class AnswersViewController: UIViewController, UsingRouting {
     }
 
     fileprivate(set) var answers = Answers()
+    fileprivate let dateFormatter = DateFormatter.medium
 }
 
 

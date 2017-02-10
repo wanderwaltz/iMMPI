@@ -7,6 +7,46 @@ final class AnalysisComparisonViewController: UIViewController, UsingRouting {
         }
     }
 
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    fileprivate func setup() {
+        setEmptyBackBarButtonTitle()
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: Strings.Button.answers,
+            style: .plain,
+            target: self,
+            action: #selector(handleAnswersReviewButtonAction(_:))
+        )
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(handleAnalysisOptionsButtonAction(_:))
+        )
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAnalysisSettingsDidChangeNotificaion(_:)),
+            name: .analysisSettingsChanged,
+            object: nil
+        )
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+
     fileprivate let collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: AnalysisComparisonCollectionViewLayout()
@@ -86,5 +126,35 @@ extension AnalysisComparisonViewController: UICollectionViewDataSource {
                 with: viewModel?.results[indexPath.section-1].scales[indexPath.row-1]
             )
         }
+    }
+}
+
+
+extension AnalysisComparisonViewController {
+    @objc @IBAction fileprivate func handleAnswersReviewButtonAction(_ sender: Any?) {
+        guard let record = viewModel?.results.first?.record else {
+            return
+        }
+
+        router?.displayAnswersReview(for: record, sender: self)
+    }
+
+
+    @objc @IBAction fileprivate func handleAnalysisOptionsButtonAction(_ sender: Any?) {
+        guard let result = viewModel?.results.first else {
+            return
+        }
+
+        router?.displayAnalysisOptions(
+            context: AnalysisMenuActionContext(router: router, result: result),
+            sender: self
+        )
+    }
+}
+
+
+extension AnalysisComparisonViewController {
+    @objc fileprivate func handleAnalysisSettingsDidChangeNotificaion(_ notification: Notification) {
+        collectionView.reloadData()
     }
 }
