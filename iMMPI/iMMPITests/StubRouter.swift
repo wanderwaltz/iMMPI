@@ -23,7 +23,7 @@ extension StubRouter: Router {
         _displayAnalysisOptions(context, sender)
     }
 
-    func displayAnalysisComparison(for records: [RecordProtocol], sender: UIViewController) {}
+    func displayAnalysis(for records: [RecordProtocol], sender: UIViewController) {}
 
     func displayAnswersReview(for record: RecordProtocol, sender: UIViewController) {
         _displayAnswersReview(record, sender)

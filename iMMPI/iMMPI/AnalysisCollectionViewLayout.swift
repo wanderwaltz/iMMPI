@@ -1,6 +1,6 @@
 import UIKit
 
-final class AnalysisComparisonCollectionViewLayout: UICollectionViewLayout {
+final class AnalysisCollectionViewLayout: UICollectionViewLayout {
     let rowHeight: CGFloat = 44.0
     let scoreColumnWidth: CGFloat = 80.0
     fileprivate(set) var scaleColumnWidth: CGFloat = 400.0
@@ -9,7 +9,7 @@ final class AnalysisComparisonCollectionViewLayout: UICollectionViewLayout {
 }
 
 
-extension AnalysisComparisonCollectionViewLayout {
+extension AnalysisCollectionViewLayout {
     override func prepare() {
         super.prepare()
         updateScaleColumnWidth()
@@ -25,15 +25,13 @@ extension AnalysisComparisonCollectionViewLayout {
             return
         }
 
-        let minimumRow = max(0, Int(max(0, cv.contentOffset.y) / rowHeight) - 1)
+        let minimumRow = Int(max(0, cv.contentOffset.y) / rowHeight) - 1
         let maximumRow = minimumRow + Int(cv.bounds.height / rowHeight) + 2
 
 
         for section in 0..<cv.numberOfSections {
-            let rowsInSection = cv.numberOfItems(inSection: section)
-
             var rowsSet = IndexSet(integersIn:
-                min(minimumRow, maximumRow, rowsInSection)..<min(maximumRow, rowsInSection)
+                max(0, minimumRow)..<min(cv.numberOfItems(inSection: section), maximumRow)
             )
 
             rowsSet.insert(0)
@@ -78,7 +76,7 @@ extension AnalysisComparisonCollectionViewLayout {
 }
 
 
-extension AnalysisComparisonCollectionViewLayout {
+extension AnalysisCollectionViewLayout {
     fileprivate func updateScaleColumnWidth() {
         let minimumWidth: CGFloat = 400.0
 

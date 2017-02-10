@@ -64,14 +64,6 @@ final class TableViewCellSourceNibTests: XCTestCase {
     }
 
 
-    func testThat__it_uses_cell_class_for_loading_nib_by_default() {
-        let source = TableViewCellSource<Int>.nib(update: { (cell: AnalyserTableViewCell, _) in })
-
-        source.register(in: tableView)
-        XCTAssertTrue(source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: nil) is AnalyserTableViewCell)
-    }
-
-
     func testThat__it_calls_update_closure_on_a_cell() {
         let source = TableViewCellSource<Int>
             .nib(self.nib, update: { (cell: StatementTableViewCell, data: Int?) in

@@ -1,23 +1,21 @@
 import UIKit
-import MessageUI
 
-final class AnalysisViewController: UITableViewController, UsingRouting {
-    var record: RecordProtocol? {
+final class AnalysisViewController: UIViewController, UsingRouting {
+    var viewModel: AnalysisViewModel? {
         didSet {
-            title = record.map { "\($0.person.name), \(dateFormatter.string(from: $0.date))" } ?? ""
-            if let record = record {
-                analysisResult = analyser.result(for: record)
+            title = viewModel?.title
+
+            if isViewLoaded {
+                reloadData()
             }
         }
     }
 
-    let analyser = Analyser()
-
     var settings: AnalysisSettings?
-    var cellSource: AnalyserTableViewCell.Source = AnalyserTableViewCell.makeSource()
 
-    override init(style: UITableViewStyle) {
-        super.init(style: style)
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
 
@@ -54,24 +52,119 @@ final class AnalysisViewController: UITableViewController, UsingRouting {
         NotificationCenter.default.removeObserver(self)
     }
 
-    fileprivate let dateFormatter = DateFormatter.medium
+
+    fileprivate let collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: AnalysisCollectionViewLayout()
+    )
+
+    fileprivate let scaleCellSource: CollectionViewCellSource<BoundScale> =
+        AnalysisScaleCollectionViewCell.makeSource()
+
+    fileprivate let scoreCellSource: CollectionViewCellSource<BoundScale> =
+        AnalysisScoreCollectionViewCell.makeSource()
+
+    fileprivate let dateHeaderCellSource: CollectionViewCellSource<Date> =
+        AnalysisDateHeaderCollectionViewCell.makeSource()
+
     fileprivate var analyserGroupIndices: [Int] = []
-    fileprivate var analysisResult: AnalysisResult?
 }
 
 
 extension AnalysisViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        cellSource.register(in: tableView)
+        view.backgroundColor = .white
+        view.addSubview(collectionView)
+
+        scaleCellSource.register(in: collectionView)
+        scoreCellSource.register(in: collectionView)
+        dateHeaderCellSource.register(in: collectionView)
+
+        collectionView.isDirectionalLockEnabled = true
+        collectionView.frame = view.bounds
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.backgroundColor = .white
+        collectionView.dataSource = self
+
         reloadData()
     }
 }
 
 
 extension AnalysisViewController {
+    fileprivate func reloadData() {
+        guard let results = viewModel?.results, results.count > 0 else {
+            analyserGroupIndices = []
+            return
+        }
+
+        var indices: [Int] = []
+
+        let scalesCount = results.first!.scales.count
+
+        for i in 0..<scalesCount {
+            let anyScoreNotWithinNorm = results.reduce(false, { $0 || false == $1.scales[i].score.isWithinNorm })
+            if anyScoreNotWithinNorm || false == settings?.shouldHideNormalResults {
+                indices.append(i)
+            }
+        }
+
+        analyserGroupIndices = indices
+        collectionView.reloadData()
+    }
+}
+
+
+extension AnalysisViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1 + (viewModel?.results.count ?? 0)
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1 + analyserGroupIndices.count
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch (indexPath.section, indexPath.row) {
+        case (0, 0):
+            return dateHeaderCellSource.dequeue(
+                from: collectionView,
+                for: indexPath,
+                with: nil
+            )
+
+        case (_, 0):
+            return dateHeaderCellSource.dequeue(
+                from: collectionView,
+                for: indexPath,
+                with: viewModel?.results[indexPath.section-1].date
+            )
+
+        case (0, _):
+            return scaleCellSource.dequeue(
+                from: collectionView,
+                for: indexPath,
+                with: viewModel?.results.first?.scales[analyserGroupIndices[indexPath.row-1]]
+            )
+
+        default:
+            return scoreCellSource.dequeue(
+                from: collectionView,
+                for: indexPath,
+                with: viewModel?.results[indexPath.section-1].scales[analyserGroupIndices[indexPath.row-1]]
+            )
+        }
+    }
+}
+
+
+extension AnalysisViewController {
     @objc @IBAction fileprivate func handleAnswersReviewButtonAction(_ sender: Any?) {
-        guard let record = record else {
+        guard let record = viewModel?.results.first?.record else {
             return
         }
 
@@ -80,12 +173,12 @@ extension AnalysisViewController {
 
 
     @objc @IBAction fileprivate func handleAnalysisOptionsButtonAction(_ sender: Any?) {
-        guard let analysisResult = analysisResult else {
+        guard let result = viewModel?.results.first else {
             return
         }
 
         router?.displayAnalysisOptions(
-            context: AnalysisMenuActionContext(router: router, result: analysisResult),
+            context: AnalysisMenuActionContext(router: router, result: result),
             sender: self
         )
     }
@@ -95,56 +188,5 @@ extension AnalysisViewController {
 extension AnalysisViewController {
     @objc fileprivate func handleAnalysisSettingsDidChangeNotificaion(_ notification: Notification) {
         reloadData()
-    }
-}
-
-
-extension AnalysisViewController {
-    func reloadData() {
-        guard let result = analysisResult else {
-            return
-        }
-
-        var indices: [Int] = []
-
-        for (i, scale) in result.scales.enumerated() {
-            if false == scale.score.isWithinNorm || false == settings?.shouldHideNormalResults {
-                indices.append(i)
-            }
-        }
-
-        let oldIndicesWereEmpty = analyserGroupIndices.isEmpty
-
-        analyserGroupIndices = indices
-
-        guard self.isViewLoaded else {
-            return
-        }
-
-        if oldIndicesWereEmpty {
-            tableView.reloadData()
-        }
-        else {
-            tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
-        }
-    }
-}
-
-
-// MARK: - UITableViewDataSource
-extension AnalysisViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return analyserGroupIndices.count
-    }
-
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let index = analyserGroupIndices[indexPath.row]
-        return cellSource.dequeue(from: tableView, for: indexPath, with: analysisResult?.scales[index])
     }
 }

@@ -47,7 +47,7 @@ final class TableViewCellSourceDefaultTests: XCTestCase {
     final class TestTableView: UITableView {
         let reusedCell = UITableViewCell()
 
-        override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
+        override func dequeueReusableCell(withIdentifier identifier: String) -> UITableViewCell {
             return reusedCell
         }
     }

@@ -10,10 +10,8 @@ protocol Router: class {
     func displayDetails(for group: RecordsGroup, sender: UIViewController)
     func displayDetails(for record: RecordProtocol, sender: UIViewController)
 
-    func displayAnalysis(for record: RecordProtocol, sender: UIViewController)
+    func displayAnalysis(for records: [RecordProtocol], sender: UIViewController)
     func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController)
-
-    func displayAnalysisComparison(for records: [RecordProtocol], sender: UIViewController)
 
     func displayAnswersReview(for record: RecordProtocol, sender: UIViewController)
 

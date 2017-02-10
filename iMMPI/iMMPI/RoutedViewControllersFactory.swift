@@ -35,13 +35,6 @@ final class RoutedViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
-    func makeAnalysisComparisonViewController() -> AnalysisComparisonViewController {
-        let controller = base.makeAnalysisComparisonViewController()
-
-        controller.router = router
-        return controller
-    }
-
     func makeAnswersReviewViewController() -> AnswersViewController {
         let controller = base.makeAnswersReviewViewController()
         controller.router = router

@@ -1,6 +1,6 @@
 import Foundation
 
-final class AnalysisComparisonViewModel {
+final class AnalysisViewModel {
     var title: String {
         return person.name
     }

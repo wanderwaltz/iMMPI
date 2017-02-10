@@ -22,10 +22,9 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
 
 
     func makeAnalysisViewController() -> AnalysisViewController {
-        let controller = AnalysisViewController(style: .plain)
+        let controller = AnalysisViewController()
 
         controller.settings = analysisSettings
-        controller.cellSource = AnalyserTableViewCell.makeSource(with: .default(with: analysisSettings))
 
         return controller
     }
@@ -43,15 +42,6 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
             settings: analysisSettings,
             actions: actions.flatMap({$0})
         )
-
-        return controller
-    }
-
-
-    func makeAnalysisComparisonViewController() -> AnalysisComparisonViewController {
-        let controller = AnalysisComparisonViewController()
-
-        controller.settings = analysisSettings
 
         return controller
     }

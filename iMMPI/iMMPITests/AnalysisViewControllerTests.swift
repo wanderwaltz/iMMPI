@@ -7,7 +7,7 @@ final class AnalysisViewControllerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        controller = AnalysisViewController(style: .plain)
+        controller = AnalysisViewController()
         router = StubRouter()
         controller.router = router
     }
@@ -47,7 +47,7 @@ final class AnalysisViewControllerTests: XCTestCase {
             receivedSender = sender
         }
 
-        controller.record = expectedRecord
+        controller.viewModel = AnalysisViewModel(records: [expectedRecord])
         controller.navigationItem.leftBarButtonItem?.click()
         XCTAssertTrue(receivedRecord === expectedRecord)
         XCTAssertTrue(receivedSender === expectedSender)
@@ -66,29 +66,12 @@ final class AnalysisViewControllerTests: XCTestCase {
             receivedSender = sender
         }
 
-        controller.record = expectedRecord
+        controller.viewModel = AnalysisViewModel(records: [expectedRecord])
         
         controller.navigationItem.rightBarButtonItem?.click()
 
         XCTAssertTrue(receivedSender === expectedSender)
         XCTAssertTrue(receivedContext!.record === expectedRecord)
         XCTAssertTrue(receivedContext!.router === router)
-    }
-
-
-    func testThat__if_it_has_an_analyser_it_reloads_data_when_receiving_analysis_settings_change_notification() {
-        controller.record = Record()
-        controller.tableView = CheckReloadDataTableView()
-        NotificationCenter.default.post(name: .analysisSettingsChanged, object: nil)
-        XCTAssertEqual((controller.tableView as! CheckReloadDataTableView).reloadDataCallsCount, 1)
-    }
-
-
-    class CheckReloadDataTableView: UITableView {
-        var reloadDataCallsCount = 0
-
-        override func reloadData() {
-            reloadDataCallsCount += 1
-        }
     }
 }

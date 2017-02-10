@@ -88,7 +88,7 @@ extension MMPIRouter: Router {
         }
 
         if record.answers.allStatementsAnswered(for: questionnaire) {
-            displayAnalysis(for: record, sender: sender)
+            displayAnalysis(for: [record], sender: sender)
         }
         else {
             displayAnswersInput(for: record, with: questionnaire, sender: sender)
@@ -96,13 +96,13 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayAnalysis(for record: RecordProtocol, sender: UIViewController) {
+    func displayAnalysis(for records: [RecordProtocol], sender: UIViewController) {
         let controller = viewControllersFactory.makeAnalysisViewController()
 
-        controller.record = record
-    
+        controller.viewModel = AnalysisViewModel(records: records)
+
         let navigationController = UINavigationController(rootViewController: controller)
-        sender.showDetailViewController(navigationController, sender: record)
+        sender.showDetailViewController(navigationController, sender: records)
     }
 
 
@@ -113,16 +113,6 @@ extension MMPIRouter: Router {
 
         let navigationController = UINavigationController(rootViewController: controller)
         sender.presentPopover(navigationController, animated: true, completion: nil)
-    }
-
-
-    func displayAnalysisComparison(for records: [RecordProtocol], sender: UIViewController) {
-        let controller = viewControllersFactory.makeAnalysisComparisonViewController()
-        
-        controller.viewModel = AnalysisComparisonViewModel(records: records)
-
-        let navigationController = UINavigationController(rootViewController: controller)
-        sender.showDetailViewController(navigationController, sender: records)
     }
 
 
