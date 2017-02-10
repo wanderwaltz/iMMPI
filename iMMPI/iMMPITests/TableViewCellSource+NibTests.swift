@@ -4,12 +4,20 @@ import UIKit
 
 final class TableViewCellSourceNibTests: XCTestCase {
     var tableView: TestTableView!
+    var dataSource: StubTableViewDataSource!
+
     let nib = UINib(nibName: "StatementTableViewCell+Input", bundle: Bundle(for: StatementTableViewCell.self))
 
     override func setUp() {
         super.setUp()
+        dataSource = StubTableViewDataSource()
+        dataSource._numberOfSections = Constant.value(1)
+        dataSource._numberOfRows = Constant.value(1)
+
         tableView = TestTableView(frame: .zero)
+        tableView.dataSource = dataSource
     }
+
 
     final class TestTableView: UITableView {
         var lastRegisteredNib: UINib?
@@ -52,7 +60,7 @@ final class TableViewCellSourceNibTests: XCTestCase {
             .nib(self.nib, update: { (cell: StatementTableViewCell, _) in })
 
         source.register(in: tableView)
-        XCTAssertTrue(source.dequeue(from: tableView, with: nil) is StatementTableViewCell)
+        XCTAssertTrue(source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: nil) is StatementTableViewCell)
     }
 
 
@@ -60,7 +68,7 @@ final class TableViewCellSourceNibTests: XCTestCase {
         let source = TableViewCellSource<Int>.nib(update: { (cell: AnalyserTableViewCell, _) in })
 
         source.register(in: tableView)
-        XCTAssertTrue(source.dequeue(from: tableView, with: nil) is AnalyserTableViewCell)
+        XCTAssertTrue(source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: nil) is AnalyserTableViewCell)
     }
 
 
@@ -72,13 +80,13 @@ final class TableViewCellSourceNibTests: XCTestCase {
 
         source.register(in: tableView)
 
-        XCTAssertEqual((source.dequeue(from: tableView, with: nil) as! StatementTableViewCell)
+        XCTAssertEqual((source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: nil) as! StatementTableViewCell)
             .identifierLabel?.text, "(null)")
 
-        XCTAssertEqual((source.dequeue(from: tableView, with: 123) as! StatementTableViewCell)
+        XCTAssertEqual((source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: 123) as! StatementTableViewCell)
             .identifierLabel?.text, "123")
 
-        XCTAssertEqual((source.dequeue(from: tableView, with: -5) as! StatementTableViewCell)
+        XCTAssertEqual((source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: -5) as! StatementTableViewCell)
             .identifierLabel?.text, "-5")
     }
 }

@@ -51,6 +51,6 @@ extension AnalysisReportsListViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cellSource.dequeue(from: tableView, with: reportGenerators[indexPath.row])
+        return cellSource.dequeue(from: tableView, for: indexPath, with: reportGenerators[indexPath.row])
     }
 }

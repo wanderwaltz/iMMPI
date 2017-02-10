@@ -145,6 +145,6 @@ extension AnalysisViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = analyserGroupIndices[indexPath.row]
-        return cellSource.dequeue(from: tableView, with: analysisResult?.scales[index])
+        return cellSource.dequeue(from: tableView, for: indexPath, with: analysisResult?.scales[index])
     }
 }

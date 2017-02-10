@@ -90,6 +90,8 @@ extension AnalysisOptionsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.setNeedsUpdate()
+        switchCellSource.register(in: tableView)
+        actionCellSource.register(in: tableView)
     }
 }
 
@@ -134,12 +136,12 @@ extension AnalysisOptionsViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0: // switch cells
-            let cell = switchCellSource.dequeue(from: tableView, with: switchRows.items[indexPath.row])
+            let cell = switchCellSource.dequeue(from: tableView, for: indexPath, with: switchRows.items[indexPath.row])
             (cell.accessoryView as? UISwitch)?.tag = indexPath.row
             return cell
 
         case 1: // action cells
-            return actionCellSource.dequeue(from: tableView, with: actionRows.items[indexPath.row])
+            return actionCellSource.dequeue(from: tableView, for: indexPath, with: actionRows.items[indexPath.row])
 
         default:
             assertionFailure()

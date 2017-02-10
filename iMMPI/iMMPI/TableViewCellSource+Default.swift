@@ -1,10 +1,10 @@
 import UIKit
 
-extension TableViewCellSource {
-    /// Initializes a `TableViewCellSource` for returning a reusable cell with a given style and reuse identifier.
+extension ReusableViewSource where Container: UITableView, View: UITableViewCell {
+
+    /// Initializes a `ReusableViewSource` for returning a reusable cell with a given style and reuse identifier.
     ///
-    /// Cells are dequeued from the table view or created on the fly if dequeueing is not possible. Registration
-    /// of this cell source in the table view prior its usage is not required.
+    /// Cells are dequeued from the table view or created on the fly if dequeueing is not possible.
     ///
     /// - Parameters:
     ///    - style: style of cells to create,
@@ -14,12 +14,12 @@ extension TableViewCellSource {
     ///    - data: data to update thecell with.
     init(style: UITableViewCellStyle,
          identifier: String,
-         update: @escaping (_ cell: UITableViewCell, _ data: Data?) -> ()) {
+         update: @escaping (_ cell: View, _ data: Data?) -> ()) {
         self.init(
             register: Constant.value(()),
-            dequeue: { tableView, data in
-                let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
-                    ?? UITableViewCell(style: style, reuseIdentifier: identifier)
+            dequeue: { container, indexPath, data in
+                let cell = container.dequeueReusableCell(withIdentifier: identifier) as? View
+                    ?? View(style: style, reuseIdentifier: identifier)
                 update(cell, data)
                 return cell
         })

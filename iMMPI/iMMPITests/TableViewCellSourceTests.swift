@@ -3,10 +3,16 @@ import XCTest
 
 final class TableViewCellSourceTests: XCTestCase {
     var tableView: UITableView!
+    var dataSource: StubTableViewDataSource!
 
     override func setUp() {
         super.setUp()
+        dataSource = StubTableViewDataSource()
+        dataSource._numberOfSections = Constant.value(1)
+        dataSource._numberOfRows = Constant.value(1)
+
         tableView = UITableView(frame: .zero)
+        tableView.dataSource = dataSource
     }
 
 
@@ -42,7 +48,7 @@ final class TableViewCellSourceTests: XCTestCase {
                 return UITableViewCell()
         })
 
-        _ = source.dequeue(from: tableView, with: 123)
+        _ = source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: 123)
         XCTAssertTrue(called)
     }
 
@@ -52,12 +58,12 @@ final class TableViewCellSourceTests: XCTestCase {
 
         let source = TableViewCellSource<Int>(
             register: { _ in },
-            dequeue: { tableView, _ in
+            dequeue: { tableView, _, _ in
                 receivedTableView = tableView
                 return UITableViewCell()
         })
 
-        _ = source.dequeue(from: tableView, with: 123)
+        _ = source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: 123)
         XCTAssertTrue(receivedTableView === tableView)
     }
 
@@ -68,12 +74,12 @@ final class TableViewCellSourceTests: XCTestCase {
 
         let source = TableViewCellSource<NSObject>(
             register: { _ in },
-            dequeue: { _, data in
+            dequeue: { _, _, data in
                 receivedData = data
                 return UITableViewCell()
         })
 
-        _ = source.dequeue(from: tableView, with: expectedData)
+        _ = source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: expectedData)
         XCTAssertTrue(receivedData === expectedData)
     }
 
@@ -92,8 +98,8 @@ final class TableViewCellSourceTests: XCTestCase {
                 return expectedCells[counter]
         })
 
-        XCTAssertTrue(source.dequeue(from: tableView, with: 123) === expectedCells[0])
-        XCTAssertTrue(source.dequeue(from: tableView, with: 45) === expectedCells[1])
-        XCTAssertTrue(source.dequeue(from: tableView, with: 0) === expectedCells[2])
+        XCTAssertTrue(source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: 123) === expectedCells[0])
+        XCTAssertTrue(source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: 45) === expectedCells[1])
+        XCTAssertTrue(source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: 0) === expectedCells[2])
     }
 }

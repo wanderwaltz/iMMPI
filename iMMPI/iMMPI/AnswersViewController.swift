@@ -104,7 +104,7 @@ extension AnswersViewController: UITableViewDataSource {
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cellSource.dequeue(from: tableView, with: viewModel?.statement(at: indexPath.row)
+        return cellSource.dequeue(from: tableView, for: indexPath, with: viewModel?.statement(at: indexPath.row)
             .map { ($0, answers.answer(for: $0.identifier)) })
     }
 }

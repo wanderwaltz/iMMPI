@@ -101,6 +101,7 @@ extension RecordsListViewController {
         super.viewDidLoad()
         viewModel?.setNeedsUpdate()
         tableView.tableHeaderView = searchController.searchBar
+        cellSource.register(in: tableView)
     }
 
 
@@ -232,7 +233,7 @@ extension RecordsListViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cellSource.dequeue(from: tableView, with: groups.item(at: indexPath))
+        return cellSource.dequeue(from: tableView, for: indexPath, with: groups.item(at: indexPath))
     }
 
 
