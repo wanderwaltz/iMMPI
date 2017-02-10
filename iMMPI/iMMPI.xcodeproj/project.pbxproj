@@ -2365,14 +2365,14 @@
 			name = Questionnaire;
 			sourceTree = "<group>";
 		};
-		444F236F1E2E1C7F00BB8003 /* FormTableViewCell */ = {
+		444F236F1E2E1C7F00BB8003 /* Form Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
 				444F23701E2E1C9300BB8003 /* FormTableViewCell.swift */,
 				444F23721E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift */,
 				444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */,
 			);
-			name = FormTableViewCell;
+			name = "Form Table View Cell";
 			sourceTree = "<group>";
 		};
 		444F237A1E2E31C900BB8003 /* Serialization */ = {
@@ -3452,17 +3452,17 @@
 			name = Computations;
 			sourceTree = "<group>";
 		};
-		448C30A81E276CA7003D355D /* AnalyserTableViewCell */ = {
+		448C30A81E276CA7003D355D /* Analyser Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
 				448C30A61E276A2C003D355D /* AnalyserTableViewCell.swift */,
 				44F97A461E266D5D004F4E14 /* AnalyserTableViewCell+Source.swift */,
 				448C30A91E276CB9003D355D /* AnalyserTableViewCell.xib */,
 			);
-			name = AnalyserTableViewCell;
+			name = "Analyser Table View Cell";
 			sourceTree = "<group>";
 		};
-		448C30B41E277C43003D355D /* StatementTableViewCell */ = {
+		448C30B41E277C43003D355D /* Statement Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
 				448C30AE1E277193003D355D /* StatementTableViewCell.swift */,
@@ -3470,10 +3470,10 @@
 				448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */,
 				448C30B01E277353003D355D /* StatementTableViewCell+Review.xib */,
 			);
-			name = StatementTableViewCell;
+			name = "Statement Table View Cell";
 			sourceTree = "<group>";
 		};
-		448C30EF1E27B8FD003D355D /* TableViewCellSource */ = {
+		448C30EF1E27B8FD003D355D /* Table View Cell Source */ = {
 			isa = PBXGroup;
 			children = (
 				44F97A401E26652F004F4E14 /* TableViewCellSource.swift */,
@@ -3481,7 +3481,7 @@
 				448C30F01E27B929003D355D /* TableViewCellSource+Nib.swift */,
 				448C318B1E29F50E003D355D /* TableViewCellSource+Switch.swift */,
 			);
-			name = TableViewCellSource;
+			name = "Table View Cell Source";
 			sourceTree = "<group>";
 		};
 		448C30F61E27DE01003D355D /* TableViewCellSource */ = {
@@ -3745,10 +3745,10 @@
 			isa = PBXGroup;
 			children = (
 				44A904291E4DCC9C003CB6C6 /* AnalyserCellProtocol.swift */,
-				448C30A81E276CA7003D355D /* AnalyserTableViewCell */,
-				448C30B41E277C43003D355D /* StatementTableViewCell */,
-				448C30EF1E27B8FD003D355D /* TableViewCellSource */,
-				444F236F1E2E1C7F00BB8003 /* FormTableViewCell */,
+				448C30A81E276CA7003D355D /* Analyser Table View Cell */,
+				448C30B41E277C43003D355D /* Statement Table View Cell */,
+				448C30EF1E27B8FD003D355D /* Table View Cell Source */,
+				444F236F1E2E1C7F00BB8003 /* Form Table View Cell */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
