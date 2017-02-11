@@ -39,10 +39,8 @@ extension AnalysisCollectionViewLayout {
             for item in rowsSet {
                 let indexPath = IndexPath(item: item, section: section)
 
-                switch (section, item) {
-                case (_, 0): cellAttributes[indexPath] = dateHeaderLayoutAttributes(for: cv, at: indexPath)
-                case (0, _): cellAttributes[indexPath] = scaleCellLayoutAttributes(for: cv, at: indexPath)
-                default: cellAttributes[indexPath] = scoreCellLayoutAttributes(for: cv, at: indexPath)
+                if let attributes = makeLayoutAttributes(forCellAt: indexPath) {
+                    cellAttributes[indexPath] = attributes
                 }
             }
         }
@@ -71,7 +69,16 @@ extension AnalysisCollectionViewLayout {
 
 
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return cellAttributes[indexPath]
+        if let attributes = cellAttributes[indexPath] {
+            return attributes
+        }
+        else if let attributes = makeLayoutAttributes(forCellAt: indexPath) {
+            cellAttributes[indexPath] = attributes
+            return attributes
+        }
+        else {
+            return nil
+        }
     }
 }
 
@@ -106,8 +113,22 @@ extension AnalysisCollectionViewLayout {
         return CGFloat(row) * rowHeight
     }
 
+
     fileprivate func y(forPinnedRowIn collectionView: UICollectionView) -> CGFloat {
         return max(0, collectionView.contentOffset.y + collectionView.contentInset.top)
+    }
+
+
+    fileprivate func makeLayoutAttributes(forCellAt indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        guard let cv = collectionView else {
+            return nil
+        }
+
+        switch (indexPath.section, indexPath.row) {
+        case (_, 0): return dateHeaderLayoutAttributes(for: cv, at: indexPath)
+        case (0, _): return scaleCellLayoutAttributes(for: cv, at: indexPath)
+        default: return scoreCellLayoutAttributes(for: cv, at: indexPath)
+        }
     }
 
 
