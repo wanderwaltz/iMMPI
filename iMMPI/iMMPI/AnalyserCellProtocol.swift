@@ -99,11 +99,11 @@ extension AnalyserCellStyle {
                 $0 > 0 ? "\($0)." : ""
         },
             scoreFormatter: { scale in
-                if settings.shouldFilterResults && scale.score.isWithinNorm {
-                    return Strings.Analysis.normalScorePlaceholder
+                if settings.shouldFilterResults {
+                    return ComputedScoreFormatter.filtered.format(scale.score)
                 }
                 else {
-                    return String(describing: scale.score)
+                    return ComputedScoreFormatter.default.format(scale.score)
                 }
         })
 
