@@ -1079,6 +1079,8 @@
 		44A904471E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904441E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift */; };
 		44A904491E4DCE14003CB6C6 /* AnalysisCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904481E4DCE14003CB6C6 /* AnalysisCollectionViewLayout.swift */; };
 		44A9044B1E4DCE78003CB6C6 /* StubTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */; };
+		44A9044E1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9044D1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift */; };
+		44A904501E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9044F1E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2217,6 +2219,8 @@
 		44A904441E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScoreCollectionViewCell+Source.swift"; sourceTree = "<group>"; };
 		44A904481E4DCE14003CB6C6 /* AnalysisCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubTableViewDataSource.swift; sourceTree = "<group>"; };
+		44A9044D1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputedScoreFormatter.swift; sourceTree = "<group>"; };
+		44A9044F1E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ComputedScoreFormatter+Defalults.swift"; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3538,6 +3542,7 @@
 				444F24451E334EF400BB8003 /* Attachment */,
 				444F24511E336A8700BB8003 /* Email */,
 				44DE9AFE1E2BE42400CFE13E /* Html */,
+				44A9044C1E4EDD89003CB6C6 /* Score Formatters */,
 				448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */,
 			);
 			name = Reports;
@@ -3596,6 +3601,15 @@
 				44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */,
 			);
 			name = "Analyser Date Header Collection View Cell";
+			sourceTree = "<group>";
+		};
+		44A9044C1E4EDD89003CB6C6 /* Score Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				44A9044D1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift */,
+				44A9044F1E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift */,
+			);
+			name = "Score Formatters";
 			sourceTree = "<group>";
 		};
 		44B407FC1E4A067300FD4CE8 /* Data Model */ = {
@@ -4962,6 +4976,7 @@
 				444F24471E334F0200BB8003 /* AttachmentReportGenerator.swift in Sources */,
 				44B408021E4A07D400FD4CE8 /* StrictlyRawRepresentable.swift in Sources */,
 				444F24491E334F9000BB8003 /* AttachmentReportGenerator+Html.swift in Sources */,
+				44A904501E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift in Sources */,
 				44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */,
 				442CE1B71E235D12006C34A6 /* AgeGroup.swift in Sources */,
 				444F246B1E34B91700BB8003 /* AnalysisScale.swift in Sources */,
@@ -5016,6 +5031,7 @@
 				44A904391E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift in Sources */,
 				444F23881E2E358500BB8003 /* JSONPersonSerialization.swift in Sources */,
 				444F247D1E34F25F00BB8003 /* AnalysisScore+Raw.swift in Sources */,
+				44A9044E1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift in Sources */,
 				44A9042F1E4DCD2A003CB6C6 /* ReusableViewSource+Meta.swift in Sources */,
 				442CE1AE1E23551D006C34A6 /* RecordProtocol.swift in Sources */,
 				442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */,
