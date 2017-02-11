@@ -3,12 +3,20 @@ import Foundation
 extension HtmlReportGenerator {
     static let overall = try? HtmlReportGenerator(title: Strings.Report.overall) { result in
         return .ul(attributes: ["class": "analysis"],
-                   content: generateList(for: result, startingFrom: 0).html)
+                   content: generateList(for: result, scoreFormatter: .default, startingFrom: 0).html)
+    }
+
+
+    static let brief = try? HtmlReportGenerator(title: Strings.Report.brief) { result in
+        return .ul(attributes: ["class": "analysis"],
+                   content: generateList(for: result, scoreFormatter: .filtered, startingFrom: 0).html)
     }
 }
 
 
-fileprivate func generateList(for result: AnalysisResult, startingFrom index: Int) -> (html: [Html], lastIndex: Int) {
+fileprivate func generateList(for result: AnalysisResult,
+                              scoreFormatter: ComputedScoreFormatter,
+                              startingFrom index: Int) -> (html: [Html], lastIndex: Int) {
     var list: [Html] = []
 
     var i = index
@@ -19,7 +27,7 @@ fileprivate func generateList(for result: AnalysisResult, startingFrom index: In
         let scale = result.scales[i]
         let nesting = scale.identifier.nesting
 
-        var scaleHtml = generateItem(for: scale)
+        var scaleHtml = generateItem(for: scale, scoreFormatter: scoreFormatter)
 
         defer {
             list.append(.li(attributes: ["class": "depth\(nesting)"], content: scaleHtml))
@@ -32,7 +40,7 @@ fileprivate func generateList(for result: AnalysisResult, startingFrom index: In
                 break
             }
             else if nextNesting > initialNesting {
-                let sublist = generateList(for: result, startingFrom: i+1)
+                let sublist = generateList(for: result, scoreFormatter: scoreFormatter, startingFrom: i+1)
                 scaleHtml.append(.ul(content: sublist.html))
                 i = sublist.lastIndex
             }
@@ -45,10 +53,10 @@ fileprivate func generateList(for result: AnalysisResult, startingFrom index: In
 }
 
 
-fileprivate func generateItem(for scale: BoundScale) -> [Html] {
+fileprivate func generateItem(for scale: BoundScale, scoreFormatter: ComputedScoreFormatter) -> [Html] {
     return [
         scale.index > 0 ? .tag("index", content: .content("\(scale.index).")) : .empty,
         .tag("text", content: .content(scale.title)),
-        .tag("score", content: .content(scale.score))
+        .tag("score", content: .content(scoreFormatter.format(scale.score)))
     ]
 }

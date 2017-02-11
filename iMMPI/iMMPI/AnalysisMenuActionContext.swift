@@ -14,6 +14,7 @@ final class AnalysisMenuActionContext {
 
         return [
             .overall,
+            .brief,
             answers,
         ]
         .flatMap({ $0 })

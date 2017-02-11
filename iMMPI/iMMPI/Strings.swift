@@ -86,6 +86,7 @@ enum Strings {
     enum Report {
         static let answers = NSLocalizedString("Ответы", comment: "Название отчета по ответам")
         static let overall = NSLocalizedString("Анализ (все шкалы)", comment: "Название общего отчета по анализу")
+        static let brief = NSLocalizedString("Анализ (краткий)", comment: "Название общего отчета по анализу")
         static let email = Button.email
 
         static let emailSubjectSuffix = NSLocalizedString("- тест", comment: "Суффикс темы письма с отчетом")
