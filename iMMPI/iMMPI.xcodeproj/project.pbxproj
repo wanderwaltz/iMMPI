@@ -2313,7 +2313,7 @@
 				442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */,
 				442CE1B41E235A1B006C34A6 /* DateFormatter+iMMPI.swift */,
 			);
-			name = Formatters;
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		442CE1CC1E23714A006C34A6 /* Table View Models */ = {
@@ -2447,7 +2447,7 @@
 				444F24411E334DFF00BB8003 /* MimeType.swift */,
 				444F24431E334EB700BB8003 /* Attachment.swift */,
 			);
-			name = Attachment;
+			path = Attachment;
 			sourceTree = "<group>";
 		};
 		444F24451E334EF400BB8003 /* Attachment */ = {
@@ -2465,7 +2465,7 @@
 				444F244F1E336A0E00BB8003 /* EmailAddress.swift */,
 				444F244D1E33676700BB8003 /* EmailMessage.swift */,
 			);
-			name = Email;
+			path = Email;
 			sourceTree = "<group>";
 		};
 		444F24511E336A8700BB8003 /* Email */ = {
@@ -3855,7 +3855,7 @@
 				442CE1D81E238379006C34A6 /* UtilityFunctions.swift */,
 				44F97A281E261943004F4E14 /* SoundPlayer.swift */,
 			);
-			name = Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
