@@ -21,6 +21,6 @@ extension JSONRecordIndexSerialization {
                 return []
         }
 
-        return json.flatMap(proxy.decode)
+        return json.compactMap(proxy.decode)
     }
 }

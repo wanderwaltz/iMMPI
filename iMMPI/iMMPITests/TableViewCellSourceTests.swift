@@ -20,7 +20,7 @@ final class TableViewCellSourceTests: XCTestCase {
         var called = false
 
         let source = TableViewCellSource<Int>(register: { _ in called = true },
-                                              dequeue: { _ in UITableViewCell() })
+                                              dequeue: { _, _, _ in UITableViewCell() })
 
         source.register(in: tableView)
         XCTAssertTrue(called)
@@ -31,7 +31,7 @@ final class TableViewCellSourceTests: XCTestCase {
         var receivedTableView: UITableView? = nil
 
         let source = TableViewCellSource<Int>(register: { receivedTableView = $0 },
-                                              dequeue: { _ in UITableViewCell() })
+                                              dequeue: { _, _, _ in UITableViewCell() })
 
         source.register(in: tableView)
         XCTAssertTrue(receivedTableView === tableView)
@@ -43,7 +43,7 @@ final class TableViewCellSourceTests: XCTestCase {
 
         let source = TableViewCellSource<Int>(
             register: { _ in },
-            dequeue: { _ in
+            dequeue: { _, _, _ in
                 called = true
                 return UITableViewCell()
         })
@@ -90,7 +90,7 @@ final class TableViewCellSourceTests: XCTestCase {
 
         let source = TableViewCellSource<Int>(
             register: { _ in },
-            dequeue: { _ in
+            dequeue: { _, _, _ in
                 defer {
                     counter += 1
                 }

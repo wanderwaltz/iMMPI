@@ -8,8 +8,12 @@ extension UIViewController {
 
 
 enum Constant<T> {
-    static func value<Arg>(_ constant: T) -> (Arg) -> T {
+    static func value<A1>(_ constant: T) -> (A1) -> T {
         return { _ in constant }
+    }
+
+    static func value<A1, A2>(_ constant: T) -> (A1, A2) -> T {
+        return { _, _ in constant }
     }
 }
 

@@ -39,7 +39,7 @@ class DatePickerController : UIViewController {
         preferredContentSize = datePicker.bounds.size
     }
 
-    func datePickerValueChanged(_ datePicker: Any) {
+    @objc func datePickerValueChanged(_ datePicker: Any) {
         dateDelegate?.datePickerController(self, didSelect: date)
     }
 }

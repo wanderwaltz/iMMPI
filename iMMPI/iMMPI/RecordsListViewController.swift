@@ -254,7 +254,7 @@ extension RecordsListViewController: UISearchResultsUpdating {
             return
         }
 
-        if text.characters.count > 2 {
+        if text.count > 2 {
             let components = text.lowercased()
                 .trimmingCharacters(in: .whitespacesAndNewlines)
                 .components(separatedBy: .whitespacesAndNewlines)

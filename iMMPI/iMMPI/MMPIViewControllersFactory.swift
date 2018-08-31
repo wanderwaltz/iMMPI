@@ -40,7 +40,7 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
 
         controller.viewModel = AnalysisOptionsViewModel(
             settings: analysisSettings,
-            actions: actions.flatMap({$0})
+            actions: actions.compactMap({$0})
         )
 
         return controller

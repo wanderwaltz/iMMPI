@@ -53,13 +53,13 @@ extension RecordsGroup {
 
 
 func makeRecordGroups(from records: [RecordProtocol]) -> Grouping<RecordsGroup> {
-    let groups = records.flatMap({ RecordsGroup(single: $0) })
+    let groups = records.compactMap({ RecordsGroup(single: $0) })
     return Grouping(items: groups, areInIncreasingOrder: { $0.record.date > $1.record.date })
 }
 
 
 func makeRecordGroups(from grouping: Grouping<RecordProtocol>) -> Grouping<RecordsGroup> {
-    return grouping.sections.flatMap({ section in
+    return grouping.sections.compactMap({ section in
         RecordsGroup(
             Grouping(
                 items: section.items,

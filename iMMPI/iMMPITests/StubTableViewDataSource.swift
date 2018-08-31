@@ -4,7 +4,7 @@ import UIKit
 final class StubTableViewDataSource: NSObject {
     var _numberOfSections: (UITableView) -> Int = Constant.value(0)
     var _numberOfRows: (UITableView, Int) -> Int = Constant.value(0)
-    var _cellForRow: (UITableView, IndexPath) -> UITableViewCell = { _ in UITableViewCell() }
+    var _cellForRow: (UITableView, IndexPath) -> UITableViewCell = { _, _ in UITableViewCell() }
 }
 
 

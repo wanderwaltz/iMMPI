@@ -38,7 +38,7 @@ final class JSONRecordsStorage {
 
 extension JSONRecordsStorage: RecordStorage {
     var all: [RecordProtocol] {
-        return elements.flatMap({ $0.record })
+        return elements.compactMap({ $0.record })
     }
 
 
@@ -103,7 +103,7 @@ extension JSONRecordsStorage: RecordStorage {
 
 extension JSONRecordsStorage {
     var proxies: [JSONRecordProxy] {
-        return elements.flatMap({ $0.record as? JSONRecordProxy })
+        return elements.compactMap({ $0.record as? JSONRecordProxy })
     }
 
 
