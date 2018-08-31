@@ -2347,7 +2347,7 @@
 				5DD3780318ACF81D009896FB /* button_tap1.wav */,
 				5DD3780418ACF81D009896FB /* button_tap2.wav */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4430C7901E160DDD0024C001 /* iMMPITests */ = {
