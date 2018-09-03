@@ -2336,7 +2336,7 @@
 				448C30FF1E27E7BA003D355D /* SectionTests.swift */,
 				448C31031E2875B9003D355D /* SectionIndexTests.swift */,
 			);
-			name = Grouping;
+			path = Grouping;
 			sourceTree = "<group>";
 		};
 		4430C7851E15FA170024C001 /* Resources */ = {
@@ -2382,7 +2382,7 @@
 				4430C7B41E16377F0024C001 /* questionnaire.error.statementTextNotFound.json */,
 				4430C7911E160DDD0024C001 /* QuestionnaireTests.swift */,
 			);
-			name = Questionnaire;
+			path = Questionnaire;
 			sourceTree = "<group>";
 		};
 		444F236F1E2E1C7F00BB8003 /* Form Table View Cell */ = {
@@ -2424,7 +2424,7 @@
 				44B4081D1E4B3EAC00FD4CE8 /* JSONRecordIndexSerializationTests.swift */,
 				449A52311E4B549500D23C13 /* JSONIndexItemTests.swift */,
 			);
-			name = "JSON Serialization";
+			path = "JSON Serialization";
 			sourceTree = "<group>";
 		};
 		444F24191E31E1A300BB8003 /* Actions */ = {
@@ -2518,7 +2518,7 @@
 				444F24821E34F6AD00BB8003 /* AnalysisScoreRawPercentageTests.swift */,
 				444F24701E34BDBE00BB8003 /* GenderBasedValueTests.swift */,
 			);
-			name = Analyzer;
+			path = Analyzer;
 			sourceTree = "<group>";
 		};
 		44673C401E2522DA001758C0 /* Samples */ = {
@@ -2528,7 +2528,7 @@
 				44673C4F1E2526DA001758C0 /* Test Subjects */,
 				444F24881E34FC8700BB8003 /* TestSamples.swift */,
 			);
-			name = Samples;
+			path = Samples;
 			sourceTree = "<group>";
 		};
 		44673C4D1E2526DA001758C0 /* Test Subject Scores */ = {
@@ -3502,7 +3502,7 @@
 				448C30F71E27DE1B003D355D /* TableViewCellSource+DefaultTests.swift */,
 				448C30F91E27E0DF003D355D /* TableViewCellSource+NibTests.swift */,
 			);
-			name = TableViewCellSource;
+			path = TableViewCellSource;
 			sourceTree = "<group>";
 		};
 		448C31091E2877AD003D355D /* Test Objects */ = {
@@ -3515,7 +3515,7 @@
 				44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */,
 				448C31111E289454003D355D /* UITestFunctions.swift */,
 			);
-			name = "Test Objects";
+			path = "Test Objects";
 			sourceTree = "<group>";
 		};
 		448C310E1E289313003D355D /* View Controllers */ = {
@@ -3523,7 +3523,7 @@
 			children = (
 				448C310F1E289328003D355D /* AnalysisViewControllerTests.swift */,
 			);
-			name = "View Controllers";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		448C31151E289808003D355D /* Router */ = {
@@ -3531,7 +3531,7 @@
 			children = (
 				448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */,
 			);
-			name = Router;
+			path = Router;
 			sourceTree = "<group>";
 		};
 		448C31931E2B63EE003D355D /* Reports */ = {
@@ -3623,7 +3623,7 @@
 				44B408151E4AF44300FD4CE8 /* RecordProxyTests.swift */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 			);
-			name = "Data Model";
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		44DE9AFE1E2BE42400CFE13E /* Html */ = {
