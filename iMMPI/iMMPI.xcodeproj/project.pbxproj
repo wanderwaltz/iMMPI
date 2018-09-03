@@ -1124,7 +1124,6 @@
 		5DA5C9E5163B018D00CF1601 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
 		5DA5C9E7163B018D00CF1601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
 		5DA5C9E9163B018D00CF1601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
-		5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */; };
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
 		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
 		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
@@ -2266,7 +2265,6 @@
 		5DA5C9E6163B018D00CF1601 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5DA5C9EC163B018D00CF1601 /* iMMPI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMMPI-Info.plist"; sourceTree = "<group>"; };
-		5DA5C9EE163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DA5C9FD163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -3725,9 +3723,8 @@
 				5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */,
 				5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */,
 				5DA5C9EC163B018D00CF1601 /* iMMPI-Info.plist */,
-				5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5DA5CA0C163B04D200CF1601 /* View Controllers */ = {
@@ -4868,7 +4865,6 @@
 			files = (
 				5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */,
 				448C30B11E277353003D355D /* StatementTableViewCell+Review.xib in Resources */,
-				5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */,
 				5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */,
 				448C30B31E277360003D355D /* StatementTableViewCell+Input.xib in Resources */,
 				5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */,
@@ -5117,14 +5113,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5DA5C9EE163B018D00CF1601 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -5337,7 +5325,7 @@
 					/usr/include/libxml2,
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
+				INFOPLIST_FILE = "iMMPI/Supporting Files/iMMPI-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
@@ -5358,7 +5346,7 @@
 					/usr/include/libxml2,
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
+				INFOPLIST_FILE = "iMMPI/Supporting Files/iMMPI-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
