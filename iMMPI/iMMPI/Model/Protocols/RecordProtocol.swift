@@ -24,8 +24,3 @@ extension RecordProtocol {
         )
     }
 }
-
-
-protocol PersonNameConvertible {
-    var personName: String { get }
-}
