@@ -2326,7 +2326,7 @@
 				442CE1D41E237AB5006C34A6 /* SectionDescriptor.swift */,
 				44673C181E23C1C0001758C0 /* SectionIndex.swift */,
 			);
-			name = "Table View Models";
+			path = "Table View Models";
 			sourceTree = "<group>";
 		};
 		442CE1CF1E2378CA006C34A6 /* Grouping */ = {
@@ -2410,7 +2410,7 @@
 				444F23971E2E3FFA00BB8003 /* JSONIndexItemSerialization.swift */,
 				444F239B1E2E42A900BB8003 /* JSONRecordSerialization.swift */,
 			);
-			name = Serialization;
+			path = Serialization;
 			sourceTree = "<group>";
 		};
 		444F237D1E2E32DD00BB8003 /* JSON Serialization */ = {
@@ -2456,7 +2456,7 @@
 				444F24461E334F0200BB8003 /* AttachmentReportGenerator.swift */,
 				444F24481E334F9000BB8003 /* AttachmentReportGenerator+Html.swift */,
 			);
-			name = Attachment;
+			path = Attachment;
 			sourceTree = "<group>";
 		};
 		444F244C1E33675D00BB8003 /* Email */ = {
@@ -2477,7 +2477,7 @@
 				444F24541E336AA800BB8003 /* EmailSubjectGenerator.swift */,
 				444F24561E336AB500BB8003 /* EmailTextGenerator.swift */,
 			);
-			name = Email;
+			path = Email;
 			sourceTree = "<group>";
 		};
 		44673C1A1E23C9BD001758C0 /* Router */ = {
@@ -3471,7 +3471,7 @@
 				447DB7D91E37E64200901631 /* ComputedScore.swift */,
 				444F246E1E34BAEF00BB8003 /* GenderBasedValue.swift */,
 			);
-			name = Computations;
+			path = Computations;
 			sourceTree = "<group>";
 		};
 		448C30B41E277C43003D355D /* Statement Table View Cell */ = {
@@ -3545,7 +3545,7 @@
 				44A9044C1E4EDD89003CB6C6 /* Score Formatters */,
 				448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */,
 			);
-			name = Reports;
+			path = Reports;
 			sourceTree = "<group>";
 		};
 		448C31941E2B63F6003D355D /* Analysis */ = {
@@ -3559,7 +3559,7 @@
 				44C302101E3522C30073F391 /* Analyser.swift */,
 				44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */,
 			);
-			name = Analysis;
+			path = Analysis;
 			sourceTree = "<group>";
 		};
 		449A523D1E4B683100D23C13 /* Analysis View Controller */ = {
@@ -3609,7 +3609,7 @@
 				44A9044D1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift */,
 				44A9044F1E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift */,
 			);
-			name = "Score Formatters";
+			path = "Score Formatters";
 			sourceTree = "<group>";
 		};
 		44B407FC1E4A067300FD4CE8 /* Data Model */ = {
@@ -3636,7 +3636,7 @@
 				44DE9B031E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift */,
 				444F24381E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift */,
 			);
-			name = Html;
+			path = Html;
 			sourceTree = "<group>";
 		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
@@ -3648,7 +3648,7 @@
 				448C31941E2B63F6003D355D /* Analysis */,
 				442CE1CC1E23714A006C34A6 /* Table View Models */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5D74CEF8169B085000BAA202 /* UI */ = {
@@ -3785,7 +3785,7 @@
 				448C311A1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift */,
 				448C318F1E29FE5E003D355D /* ValidatingAnalysisSettings.swift */,
 			);
-			name = Settings;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
@@ -3809,7 +3809,7 @@
 				442CE1AD1E23551D006C34A6 /* RecordProtocol.swift */,
 				44673C101E23B017001758C0 /* RecordStorageProtocol.swift */,
 			);
-			name = Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
@@ -3825,7 +3825,7 @@
 				4430C7A51E161B430024C001 /* Questionnaire.swift */,
 				4430C7A11E1619000024C001 /* Statement.swift */,
 			);
-			name = "Data Model Objects";
+			path = "Data Model Objects";
 			sourceTree = "<group>";
 		};
 		5DC973BC168F20C200C496F0 /* JSON Test Records Storage */ = {
@@ -3835,7 +3835,7 @@
 				44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */,
 				44B4080D1E4AD87800FD4CE8 /* JSONIndexItem.swift */,
 			);
-			name = "JSON Test Records Storage";
+			path = "JSON Test Records Storage";
 			sourceTree = "<group>";
 		};
 		5DCC9642168DC12B004F8D4E /* Utils */ = {
