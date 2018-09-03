@@ -26,11 +26,6 @@ extension RecordProtocol {
 }
 
 
-protocol DateConvertible {
-    var date: Date { get }
-}
-
-
 protocol PersonNameConvertible {
     var personName: String { get }
 }
