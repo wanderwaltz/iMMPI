@@ -1,12 +1,11 @@
 import UIKit
 
-protocol DatePickerControllerDateDelegate: class {
-    func datePickerController(_ datePickerController: DatePickerController, didSelect date: Date)
+protocol DatePickerViewControllerDelegate: class {
+    func datePickerViewController(_ datePickerViewController: DatePickerViewController, didSelect date: Date)
 }
 
-class DatePickerController : UIViewController {
-
-    weak var dateDelegate: DatePickerControllerDateDelegate?
+class DatePickerViewController : UIViewController {
+    weak var delegate: DatePickerViewControllerDelegate?
 
     var date: Date {
         set {
@@ -40,6 +39,6 @@ class DatePickerController : UIViewController {
     }
 
     @objc func datePickerValueChanged(_ datePicker: Any) {
-        dateDelegate?.datePickerController(self, didSelect: date)
+        delegate?.datePickerViewController(self, didSelect: date)
     }
 }

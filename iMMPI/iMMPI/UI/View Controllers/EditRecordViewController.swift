@@ -132,14 +132,14 @@ extension EditRecordViewController {
 
 
     fileprivate func selectDate() {
-        let datePicker = DatePickerController()
+        let datePicker = DatePickerViewController()
 
         datePicker.modalPresentationStyle = .popover
         datePicker.popoverPresentationController?.sourceView = dateCell
         datePicker.popoverPresentationController?.sourceRect = dateCell.bounds
 
         datePicker.date = record?.date ?? Date()
-        datePicker.dateDelegate = self
+        datePicker.delegate = self
 
         present(datePicker, animated: true, completion: nil)
     }
@@ -177,8 +177,8 @@ extension EditRecordViewController {
 
 
 // MARK: - DatePickerControllerDateDelegate
-extension EditRecordViewController: DatePickerControllerDateDelegate {
-    func datePickerController(_ datePickerController: DatePickerController, didSelect date: Date) {
+extension EditRecordViewController: DatePickerViewControllerDelegate {
+    func datePickerViewController(_ datePickerViewController: DatePickerViewController, didSelect date: Date) {
         selectedDate = date
         reloadData()
     }
