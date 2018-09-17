@@ -2377,9 +2377,7 @@
 				442CE1CF1E2378CA006C34A6 /* Grouping */,
 				444F237D1E2E32DD00BB8003 /* JSON Serialization */,
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
-				448C31151E289808003D355D /* Router */,
-				448C30F61E27DE01003D355D /* TableViewCellSource */,
-				448C310E1E289313003D355D /* View Controllers */,
+				44ECB101214FB31400ADA7D4 /* UI */,
 				442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */,
 				448C31011E28735C003D355D /* AsyncProviderTests.swift */,
 				442CE1E41E238C75006C34A6 /* RecordsGroupTests.swift */,
@@ -3679,6 +3677,24 @@
 				44ECB0FB214FB20700ADA7D4 /* UICollectionView+ReusableViewSourceProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		44ECB101214FB31400ADA7D4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				448C31151E289808003D355D /* Router */,
+				44ECB102214FB32B00ADA7D4 /* Table View Cells */,
+				448C310E1E289313003D355D /* View Controllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		44ECB102214FB32B00ADA7D4 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				448C30F61E27DE01003D355D /* TableViewCellSource */,
+			);
+			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
