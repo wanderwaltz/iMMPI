@@ -1116,6 +1116,7 @@
 		44ECB074213D0CCB00ADA7D4 /* DateConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB073213D0CCB00ADA7D4 /* DateConvertible.swift */; };
 		44ECB076213D0CE700ADA7D4 /* PersonNameConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB075213D0CE700ADA7D4 /* PersonNameConvertible.swift */; };
 		44ECB0ED214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0EC214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift */; };
+		44ECB0EF214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0EE214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* AnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */; };
@@ -2258,6 +2259,7 @@
 		44ECB073213D0CCB00ADA7D4 /* DateConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConvertible.swift; sourceTree = "<group>"; };
 		44ECB075213D0CE700ADA7D4 /* PersonNameConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameConvertible.swift; sourceTree = "<group>"; };
 		44ECB0EC214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerDelegate.swift; sourceTree = "<group>"; };
+		44ECB0EE214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerTests.swift; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+AnswersInput.swift"; sourceTree = "<group>"; };
@@ -3528,6 +3530,7 @@
 			isa = PBXGroup;
 			children = (
 				448C310F1E289328003D355D /* AnalysisViewControllerTests.swift */,
+				44ECB0EE214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -4967,6 +4970,7 @@
 				44B408041E4A08D100FD4CE8 /* EmailTests.swift in Sources */,
 				44C3021B1E3536D10073F391 /* AnalyserScaleIndicesTests.swift in Sources */,
 				442CE1D71E238257006C34A6 /* GroupingTests.swift in Sources */,
+				44ECB0EF214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift in Sources */,
 				44B408001E4A079F00FD4CE8 /* StringGenerator.swift in Sources */,
 				448C30FE1E27E743003D355D /* GenderTests.swift in Sources */,
 				44C3021D1E353BF70073F391 /* AnalyserScaleIdentifiersTests.swift in Sources */,
