@@ -1,9 +1,5 @@
 import UIKit
 
-protocol DatePickerViewControllerDelegate: class {
-    func datePickerViewController(_ datePickerViewController: DatePickerViewController, didSelect date: Date)
-}
-
 class DatePickerViewController : UIViewController {
     weak var delegate: DatePickerViewControllerDelegate?
 
