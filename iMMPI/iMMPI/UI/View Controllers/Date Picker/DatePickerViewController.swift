@@ -1,6 +1,7 @@
 import UIKit
 
 final class DatePickerViewController : UIViewController {
+    // MARK: properties
     weak var delegate: DatePickerViewControllerDelegate?
 
     var date: Date {
@@ -21,20 +22,52 @@ final class DatePickerViewController : UIViewController {
         }
     }
 
-    fileprivate let datePicker = UIDatePicker()
+    // MARK: initializers
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        finalizeInit()
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("not implemented")
+    }
 
-        datePicker.datePickerMode = .date
+    private func finalizeInit() {
+        setupDatePicker()
 
-        datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
-
-        view.addSubview(datePicker)
         preferredContentSize = datePicker.bounds.size
     }
 
-    @objc func datePickerValueChanged(_ datePicker: Any) {
+    private func setupDatePicker() {
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+    }
+
+    // MARK: private properties
+    private let datePicker = UIDatePicker()
+}
+
+
+// MARK: view lifecycle
+extension DatePickerViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addDatePickerSubview()
+    }
+
+    private func addDatePickerSubview() {
+        datePicker.translatesAutoresizingMaskIntoConstraints = true
+        datePicker.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        view.bounds = datePicker.bounds
+        view.addSubview(datePicker)
+    }
+}
+
+
+// MARK: private: actions
+extension DatePickerViewController {
+    @objc private func datePickerValueChanged(_ datePicker: Any) {
         delegate?.datePickerViewController(self, didSelect: date)
     }
 }
