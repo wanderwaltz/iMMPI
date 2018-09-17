@@ -1117,6 +1117,7 @@
 		44ECB076213D0CE700ADA7D4 /* PersonNameConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB075213D0CE700ADA7D4 /* PersonNameConvertible.swift */; };
 		44ECB0ED214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0EC214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift */; };
 		44ECB0EF214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0EE214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift */; };
+		44ECB0F1214FB02C00ADA7D4 /* ReusableViewSource+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0F0214FB02C00ADA7D4 /* ReusableViewSource+Class.swift */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* AnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */; };
@@ -2260,6 +2261,7 @@
 		44ECB075213D0CE700ADA7D4 /* PersonNameConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameConvertible.swift; sourceTree = "<group>"; };
 		44ECB0EC214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerDelegate.swift; sourceTree = "<group>"; };
 		44ECB0EE214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerTests.swift; sourceTree = "<group>"; };
+		44ECB0F0214FB02C00ADA7D4 /* ReusableViewSource+Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableViewSource+Class.swift"; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+AnswersInput.swift"; sourceTree = "<group>"; };
@@ -3496,6 +3498,7 @@
 			children = (
 				44A9042B1E4DCD2A003CB6C6 /* ReusableViewSource.swift */,
 				44A9042C1E4DCD2A003CB6C6 /* ReusableViewSource+Meta.swift */,
+				44ECB0F0214FB02C00ADA7D4 /* ReusableViewSource+Class.swift */,
 				44A9042D1E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift */,
 				448C30F21E27B9BA003D355D /* TableViewCellSource+Default.swift */,
 				448C318B1E29F50E003D355D /* TableViewCellSource+Switch.swift */,
@@ -5111,6 +5114,7 @@
 				442CE1CE1E23718C006C34A6 /* Grouping.swift in Sources */,
 				444F24811E34F59300BB8003 /* AnalysisScore+RawPercentage.swift in Sources */,
 				44F97A2B1E261B63004F4E14 /* AnswersInputDelegate.swift in Sources */,
+				44ECB0F1214FB02C00ADA7D4 /* ReusableViewSource+Class.swift in Sources */,
 				448C318A1E29F3C9003D355D /* AnalysisOptionsViewController.swift in Sources */,
 				448C318C1E29F50E003D355D /* TableViewCellSource+Switch.swift in Sources */,
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
