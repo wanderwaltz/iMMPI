@@ -13,15 +13,6 @@ final class DatePickerViewController : UIViewController {
         }
     }
 
-    var datePickerMode: UIDatePickerMode {
-        set {
-            datePicker.datePickerMode = newValue
-        }
-        get {
-            return datePicker.datePickerMode
-        }
-    }
-
     // MARK: initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
