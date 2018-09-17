@@ -1,23 +1,31 @@
 import UIKit
 
 final class AnalysisDateHeaderCollectionViewCell: UICollectionViewCell {
-    @objc @IBOutlet fileprivate(set) var titleLabel: UILabel?
+    let titleLabel = UILabel()
 
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        finalizeInit()
     }
-
 
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
+        fatalError("not implemented")
     }
 
-
-    fileprivate func setup() {
+    private func finalizeInit() {
         contentView.addBottomBorder()
         contentView.addRightBorder()
+        setupTitleLabel()
+    }
+
+    private func setupTitleLabel() {
+        titleLabel.translatesAutoresizingMaskIntoConstraints = true
+        titleLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        titleLabel.frame = contentView.bounds
+        titleLabel.textAlignment = .center
+        titleLabel.font = Fonts.analysisDateHeaderTitle
+        titleLabel.textColor = Colors.darkText
+
+        contentView.addSubview(titleLabel)
     }
 }

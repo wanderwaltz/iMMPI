@@ -1069,7 +1069,6 @@
 		44A904301E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9042D1E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift */; };
 		44A904321E4DCDCC003CB6C6 /* AnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904311E4DCDCC003CB6C6 /* AnalysisViewModel.swift */; };
 		44A904391E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904361E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift */; };
-		44A9043A1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */; };
 		44A9043B1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904381E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift */; };
 		44A9043F1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9043C1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.swift */; };
 		44A904401E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A9043D1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib */; };
@@ -2213,7 +2212,6 @@
 		44A9042D1E4DCD2A003CB6C6 /* ReusableViewSource+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReusableViewSource+Nib.swift"; sourceTree = "<group>"; };
 		44A904311E4DCDCC003CB6C6 /* AnalysisViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewModel.swift; sourceTree = "<group>"; };
 		44A904361E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisDateHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
-		44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisDateHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		44A904381E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisDateHeaderCollectionViewCell+Source.swift"; sourceTree = "<group>"; };
 		44A9043C1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScaleCollectionViewCell.swift; sourceTree = "<group>"; };
 		44A9043D1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisScaleCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -3608,7 +3606,6 @@
 			children = (
 				44A904361E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift */,
 				44A904381E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift */,
-				44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */,
 			);
 			path = "Analyser Date Header Collection View Cell";
 			sourceTree = "<group>";
@@ -4897,7 +4894,6 @@
 				5DC2650616D8E5A8004D4BBA /* mmpi.male.adult.json in Resources */,
 				5DC2650716D8E5A8004D4BBA /* mmpi.male.teen.json in Resources */,
 				444F23771E2E28E000BB8003 /* AnswersInputViewController.xib in Resources */,
-				44A9043A1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib in Resources */,
 				4430C7871E15FB950024C001 /* Media.xcassets in Resources */,
 				5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */,
 				44A904401E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib in Resources */,
