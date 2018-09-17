@@ -1,6 +1,6 @@
 import UIKit
 
-class DatePickerViewController : UIViewController {
+final class DatePickerViewController : UIViewController {
     weak var delegate: DatePickerViewControllerDelegate?
 
     var date: Date {
