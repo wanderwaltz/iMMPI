@@ -2375,7 +2375,7 @@
 			children = (
 				448C31091E2877AD003D355D /* Test Objects */,
 				44673C3F1E2522D5001758C0 /* Analyzer */,
-				44B407FC1E4A067300FD4CE8 /* Data Model */,
+				44B407FC1E4A067300FD4CE8 /* Model */,
 				442CE1CF1E2378CA006C34A6 /* Grouping */,
 				444F237D1E2E32DD00BB8003 /* JSON Serialization */,
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
@@ -2462,8 +2462,8 @@
 		444F24401E334DCA00BB8003 /* Attachment */ = {
 			isa = PBXGroup;
 			children = (
-				444F24411E334DFF00BB8003 /* MimeType.swift */,
 				444F24431E334EB700BB8003 /* Attachment.swift */,
+				444F24411E334DFF00BB8003 /* MimeType.swift */,
 			);
 			path = Attachment;
 			sourceTree = "<group>";
@@ -2480,6 +2480,7 @@
 		444F244C1E33675D00BB8003 /* Email */ = {
 			isa = PBXGroup;
 			children = (
+				444F24401E334DCA00BB8003 /* Attachment */,
 				444F244F1E336A0E00BB8003 /* EmailAddress.swift */,
 				444F244D1E33676700BB8003 /* EmailMessage.swift */,
 			);
@@ -3501,6 +3502,28 @@
 			path = "Edit Record View Controller";
 			sourceTree = "<group>";
 		};
+		448BC60B2151030E001B8F55 /* Data Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				448C30FB1E27E511003D355D /* AgeGroupTests.swift */,
+				44B407FD1E4A069300FD4CE8 /* AnswerTypeTests.swift */,
+				448C30FD1E27E743003D355D /* GenderTests.swift */,
+				4430C7B61E163F450024C001 /* PersonTests.swift */,
+				44B408151E4AF44300FD4CE8 /* RecordProxyTests.swift */,
+				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
+			);
+			path = "Data Model Objects";
+			sourceTree = "<group>";
+		};
+		448BC60C2151033E001B8F55 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				44B408031E4A08D100FD4CE8 /* EmailTests.swift */,
+				44B408071E4AC75700FD4CE8 /* MimeTypeTests.swift */,
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
 		448C30B41E277C43003D355D /* Statement Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -3642,20 +3665,14 @@
 			path = "Score Formatters";
 			sourceTree = "<group>";
 		};
-		44B407FC1E4A067300FD4CE8 /* Data Model */ = {
+		44B407FC1E4A067300FD4CE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				448C30FB1E27E511003D355D /* AgeGroupTests.swift */,
-				44B407FD1E4A069300FD4CE8 /* AnswerTypeTests.swift */,
-				44B408031E4A08D100FD4CE8 /* EmailTests.swift */,
-				448C30FD1E27E743003D355D /* GenderTests.swift */,
+				448BC60B2151030E001B8F55 /* Data Model Objects */,
+				448BC60C2151033E001B8F55 /* Email */,
 				44DE9AFC1E2B874B00CFE13E /* HtmlTests.swift */,
-				44B408071E4AC75700FD4CE8 /* MimeTypeTests.swift */,
-				4430C7B61E163F450024C001 /* PersonTests.swift */,
-				44B408151E4AF44300FD4CE8 /* RecordProxyTests.swift */,
-				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 			);
-			path = "Data Model";
+			path = Model;
 			sourceTree = "<group>";
 		};
 		44DE9AFE1E2BE42400CFE13E /* Html */ = {
@@ -3713,10 +3730,12 @@
 			isa = PBXGroup;
 			children = (
 				5DC40483168C446C000AFBAE /* Protocols */,
-				5DC973BC168F20C200C496F0 /* JSON Test Records Storage */,
-				5DC973AB168F082200C496F0 /* Data Model Objects */,
 				448C31941E2B63F6003D355D /* Analysis */,
+				5DC973AB168F082200C496F0 /* Data Model Objects */,
+				444F244C1E33675D00BB8003 /* Email */,
+				5DC973BC168F20C200C496F0 /* JSON Test Records Storage */,
 				442CE1CC1E23714A006C34A6 /* Table View Models */,
+				448C319B1E2B7CBC003D355D /* Html.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3911,12 +3930,9 @@
 		5DCC9642168DC12B004F8D4E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				444F24401E334DCA00BB8003 /* Attachment */,
-				444F244C1E33675D00BB8003 /* Email */,
 				442CE1A41E234DCE006C34A6 /* Formatters */,
 				442CE1F01E23A939006C34A6 /* AsyncProvider.swift */,
 				445C64521E48E0E900E670B0 /* Copying.swift */,
-				448C319B1E2B7CBC003D355D /* Html.swift */,
 				444F24241E3204F700BB8003 /* PopoverPresenting.swift */,
 				44B408011E4A07D400FD4CE8 /* StrictlyRawRepresentable.swift */,
 				44B193B61E3A66F800DD4E5E /* String+Utility.swift */,
