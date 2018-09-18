@@ -3793,10 +3793,10 @@
 		5DA5CA0C163B04D200CF1601 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				44ECB0EB214FA62800ADA7D4 /* Date Picker */,
-				5DBD56891697272000728BB4 /* Test Answers */,
 				449A523D1E4B683100D23C13 /* Analysis View Controller */,
+				44ECB0EB214FA62800ADA7D4 /* Date Picker */,
 				5DBE76D7169356D40018C728 /* Records List View Controller */,
+				5DBD56891697272000728BB4 /* Test Answers */,
 				442CE1B21E2357AA006C34A6 /* EditRecordViewController.swift */,
 			);
 			path = "View Controllers";
