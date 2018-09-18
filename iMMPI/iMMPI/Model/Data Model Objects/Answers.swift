@@ -71,25 +71,16 @@ extension Answers {
     fileprivate struct Entry: Hashable {
         let statementIdentifier: Statement.Identifier
         let answer: AnswerType
-
-        fileprivate var hashValue: Int {
-            return statementIdentifier.hashValue ^ answer.rawValue.hashValue
-        }
-
-
-        fileprivate static func == (left: Entry, right: Entry) -> Bool {
-            return left.statementIdentifier == right.statementIdentifier
-                && left.answer == right.answer
-        }
     }
 }
 
 
 extension Answers: Hashable {
-    var hashValue: Int {
-        return Array(answersByIdentifier.enumerated()).map({ $1.value.hashValue }).reduce(0, ^)
+    func hash(into hasher: inout Hasher) {
+        answersByIdentifier.enumerated().forEach {
+            hasher.combine($0.element.value)
+        }
     }
-
 
     static func == (left: Answers, right: Answers) -> Bool {
         let leftAnswers = Array(left.answersByIdentifier.values

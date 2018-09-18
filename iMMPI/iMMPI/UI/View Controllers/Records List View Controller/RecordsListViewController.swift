@@ -30,7 +30,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
     }
 
 
-    override init(style: UITableViewStyle) {
+    override init(style: UITableView.Style) {
         super.init(style: style)
         setup()
     }
@@ -194,13 +194,13 @@ extension RecordsListViewController {
 
 
     override func tableView(_ tableView: UITableView,
-                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
 
 
     override func tableView(_ tableView: UITableView,
-                            commit editingStyle: UITableViewCellEditingStyle,
+                            commit editingStyle: UITableViewCell.EditingStyle,
                             forRowAt indexPath: IndexPath) {
         guard let item = groups.item(at: indexPath) else {
             return

@@ -12,7 +12,7 @@ extension ReusableViewSource where Container: UITableView, View: UITableViewCell
     ///    - update: closure for updating the created cells with the provided data.
     ///    - cell: cell to update with the provided data.
     ///    - data: data to update thecell with.
-    init(style: UITableViewCellStyle,
+    init(style: UITableViewCell.CellStyle,
          identifier: String,
          update: @escaping (_ cell: View, _ data: Data?) -> ()) {
         self.init(

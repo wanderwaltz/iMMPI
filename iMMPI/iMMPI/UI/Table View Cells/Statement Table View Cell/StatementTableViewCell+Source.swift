@@ -41,6 +41,6 @@ fileprivate func update(_ cell: StatementTableViewCell, with data: StatementTabl
 
     case .unknown:
         cell.answerLabel?.text = ""
-        cell.segmentedControl?.selectedSegmentIndex = UISegmentedControlNoSegment
+        cell.segmentedControl?.selectedSegmentIndex = UISegmentedControl.noSegment
     }
 }

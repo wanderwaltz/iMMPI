@@ -23,7 +23,7 @@ final class EditRecordViewController: UITableViewController, UsingRouting {
     }
 
 
-    override init(style: UITableViewStyle) {
+    override init(style: UITableView.Style) {
         super.init(style: style)
         setup()
     }

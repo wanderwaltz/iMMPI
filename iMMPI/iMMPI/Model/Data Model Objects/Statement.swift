@@ -21,8 +21,8 @@ struct Statement {
 
 
 extension Statement: Hashable {
-    var hashValue: Int {
-        return identifier
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
     }
 
     /// `Statement` text is assumed to be only for UI,

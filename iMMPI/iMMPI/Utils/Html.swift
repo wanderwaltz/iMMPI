@@ -152,10 +152,9 @@ enum Html: CustomStringConvertible {
 
 
 extension Html: Hashable {
-    var hashValue: Int {
-        return description.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
     }
-
 
     static func == (left: Html, right: Html) -> Bool {
         return left.description == right.description

@@ -77,10 +77,9 @@ extension AnalysisScale.Identifier: CustomStringConvertible {
 
 
 extension AnalysisScale.Identifier: Hashable {
-    var hashValue: Int {
-        return rawValue.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(rawValue)
     }
-
 
     static func == (left: AnalysisScale.Identifier, right: AnalysisScale.Identifier) -> Bool {
         return left.rawValue == right.rawValue
