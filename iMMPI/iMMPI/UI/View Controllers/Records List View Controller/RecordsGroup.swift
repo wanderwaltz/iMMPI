@@ -16,6 +16,9 @@ extension RecordsGroup: PersonNameConvertible {
         return record.personName
     }
 
+    var containsSingleRecord: Bool {
+        return group.isEmpty
+    }
 
     func allRecords() -> [RecordProtocol] {
         var records = [record]

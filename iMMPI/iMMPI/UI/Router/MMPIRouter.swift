@@ -73,7 +73,7 @@ extension MMPIRouter: Router {
 
 
     func displayDetails(for group: RecordsGroup, sender: UIViewController) {
-        if group.group.isEmpty {
+        if group.containsSingleRecord {
             displayDetails(for: group.record, sender: sender)
         }
         else {
