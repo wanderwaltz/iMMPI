@@ -62,6 +62,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
         )
 
         searchController.searchResultsUpdater = self
+        searchController.delegate = self
     }
 
 
@@ -281,5 +282,6 @@ extension RecordsListViewController: UISearchResultsUpdating {
 extension RecordsListViewController: UISearchControllerDelegate {
     func didDismissSearchController(_ searchController: UISearchController) {
         recordsFilter = Constant.value(true)
+        becomeFirstResponder()
     }
 }
