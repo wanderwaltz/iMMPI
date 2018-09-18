@@ -1123,6 +1123,7 @@
 		44ECB0FC214FB20700ADA7D4 /* UICollectionView+ReusableViewSourceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0FB214FB20700ADA7D4 /* UICollectionView+ReusableViewSourceProtocols.swift */; };
 		44ECB0FE214FB21B00ADA7D4 /* TableViewCellSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0FD214FB21B00ADA7D4 /* TableViewCellSource.swift */; };
 		44ECB100214FB22F00ADA7D4 /* CollectionViewCellSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0FF214FB22F00ADA7D4 /* CollectionViewCellSource.swift */; };
+		44ECB104214FB35D00ADA7D4 /* AnalysisDateHeaderCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB103214FB35D00ADA7D4 /* AnalysisDateHeaderCollectionViewCellTests.swift */; };
 		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
 		44F97A2B1E261B63004F4E14 /* AnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */; };
 		44F97A2F1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */; };
@@ -2272,6 +2273,7 @@
 		44ECB0FB214FB20700ADA7D4 /* UICollectionView+ReusableViewSourceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReusableViewSourceProtocols.swift"; sourceTree = "<group>"; };
 		44ECB0FD214FB21B00ADA7D4 /* TableViewCellSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellSource.swift; sourceTree = "<group>"; };
 		44ECB0FF214FB22F00ADA7D4 /* CollectionViewCellSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellSource.swift; sourceTree = "<group>"; };
+		44ECB103214FB35D00ADA7D4 /* AnalysisDateHeaderCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisDateHeaderCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersInputDelegate.swift; sourceTree = "<group>"; };
 		44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+AnswersInput.swift"; sourceTree = "<group>"; };
@@ -3693,6 +3695,7 @@
 			isa = PBXGroup;
 			children = (
 				448C30F61E27DE01003D355D /* TableViewCellSource */,
+				44ECB103214FB35D00ADA7D4 /* AnalysisDateHeaderCollectionViewCellTests.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -5005,6 +5008,7 @@
 				4430C79E1E1617AE0024C001 /* StatementTests.swift in Sources */,
 				444F24871E34FB2E00BB8003 /* AnalysisScoreBracketsIntegrationTests.swift in Sources */,
 				442CE1DB1E238581006C34A6 /* UtilityFunctionsTests.swift in Sources */,
+				44ECB104214FB35D00ADA7D4 /* AnalysisDateHeaderCollectionViewCellTests.swift in Sources */,
 				448C31121E289454003D355D /* UITestFunctions.swift in Sources */,
 				444F237F1E2E334800BB8003 /* JSONAgeGroupSerializationTests.swift in Sources */,
 				44C302191E3533A40073F391 /* AnalyserScoreFiltersTests.swift in Sources */,

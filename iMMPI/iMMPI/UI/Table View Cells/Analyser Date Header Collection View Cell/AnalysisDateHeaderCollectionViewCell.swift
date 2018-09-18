@@ -25,6 +25,7 @@ final class AnalysisDateHeaderCollectionViewCell: UICollectionViewCell {
         titleLabel.textAlignment = .center
         titleLabel.font = Fonts.analysisDateHeaderTitle
         titleLabel.textColor = Colors.darkText
+        titleLabel.text = ""
 
         contentView.addSubview(titleLabel)
     }
