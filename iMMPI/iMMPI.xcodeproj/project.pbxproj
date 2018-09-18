@@ -2504,7 +2504,6 @@
 		44673C1A1E23C9BD001758C0 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				44673C321E24CF91001758C0 /* View Controllers Factory */,
 				44673C1B1E23C9CA001758C0 /* Router.swift */,
 				44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */,
 				44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */,
@@ -3760,6 +3759,7 @@
 				44673C1A1E23C9BD001758C0 /* Router */,
 				5DC40473168C2D49000AFBAE /* Table View Cells */,
 				5DA5CA0C163B04D200CF1601 /* View Controllers */,
+				44673C321E24CF91001758C0 /* View Controllers Factory */,
 			);
 			path = UI;
 			sourceTree = "<group>";
