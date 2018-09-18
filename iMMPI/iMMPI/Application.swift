@@ -8,17 +8,18 @@ final class Application: UIApplication {
     override func sendEvent(_ event: UIEvent) {
         lastTouchedView = nil
 
-        switch event.type {
-        case .touches:
-            guard let touches = event.allTouches, let touch = touches.first, touches.count == 1 else {
-                return
-            }
-
-            lastTouchedView = touch.view
-
-        default: break
+        if event.type == .touches {
+            recordLastTouchedView(for: event)
         }
 
         super.sendEvent(event)
+    }
+
+    private func recordLastTouchedView(for event: UIEvent) {
+        guard let touches = event.allTouches, let touch = touches.first, touches.count == 1 else {
+            return
+        }
+
+        lastTouchedView = touch.view
     }
 }
