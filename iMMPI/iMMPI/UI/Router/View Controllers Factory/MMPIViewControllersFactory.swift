@@ -6,20 +6,15 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
         case cannotSendMail
     }
 
-
-    let storyboard: UIStoryboard
     let analysisSettings: AnalysisSettings = ValidatingAnalysisSettings(UserDefaultsAnalysisSettings())
-
 
     func makeRecordsListViewController() -> RecordsListViewController {
         return RecordsListViewController(style: .plain)
     }
 
-
     func makeEditRecordViewController() -> EditRecordViewController {
         return EditRecordViewController(style: .grouped)
     }
-
 
     func makeAnalysisViewController() -> AnalysisViewController {
         let controller = AnalysisViewController()
@@ -28,7 +23,6 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
 
         return controller
     }
-
 
     func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController {
         let controller = AnalysisOptionsViewController(style: .plain)
@@ -46,7 +40,6 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
-
     func makeAnswersReviewViewController() -> AnswersViewController {
         let controller = AnswersViewController()
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
@@ -59,7 +52,6 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
         return controller
     }
 
-
     func makeAnswersInputViewController() -> AnswersInputViewController {
         return AnswersInputViewController(
             nibName: "AnswersInputViewController",
@@ -67,11 +59,9 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
         )
     }
 
-
     func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController {
         return AnalysisReportsListViewController(style: .plain)
     }
-
 
     func makeMailComposerViewController(for message: EmailMessage) throws -> MFMailComposeViewController {
         guard case let controller = MFMailComposeViewController(), MFMailComposeViewController.canSendMail() else {

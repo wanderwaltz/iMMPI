@@ -17,7 +17,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
         storage.trashStorage = trashStorage
 
-        let viewControllersFactory = MMPIViewControllersFactory(storyboard: window!.rootViewController!.storyboard!)
+        let viewControllersFactory = MMPIViewControllersFactory()
 
         router = MMPIRouter(
             factory: viewControllersFactory,

@@ -8,10 +8,7 @@ import UIKit
 /// `AnswersTableViewControllerBase` is automatically set as the delegate for each of the `StatementTableViewCell`
 /// used in the table view.
 ///
-/// It is expected that the table view does return a `StatementTableViewCell` object for 
-/// `StatementTableViewCell.reuseIdentifier()` string (this is set up in the storyboard).
-///
-/// **See also:** `AnswersInputViewController`, `AnswersViewController`.
+/// **See also:** `AnswersInputViewController`.
 class AnswersViewController: UIViewController, UsingRouting {
     weak var inputDelegate: AnswersInputDelegate?
 
