@@ -3,6 +3,8 @@ import Foundation
 enum Strings {
     // MARK: - screens
     enum Screen {
+        static let rightPanePlaceholder = NSLocalizedString("Выберите запись", comment: "Плейсхолдер правой панели")
+
         static let records = NSLocalizedString("Записи", comment: "Заголовок экрана записей")
         static let newRecord = NSLocalizedString("Новая запись", comment: "Заголовок экрана создания записи")
         static let editRecord = NSLocalizedString("Редактировать запись",

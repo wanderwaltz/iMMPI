@@ -25,18 +25,26 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             trashStorage: trashStorage
         )
 
-        if let splitViewController = window?.rootViewController as? UISplitViewController {
-            splitViewController.delegate = self
-            splitViewController.minimumPrimaryColumnWidth = 300
-
-            self.splitViewController(splitViewController, willChangeTo: splitViewController.displayMode)
-
-            if let first = splitViewController.viewControllers.first {
-                router?.displayAllRecords(sender: first)
-            }
-        }
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = makeRootViewController()
+        window?.makeKeyAndVisible()
 
         return true
+    }
+
+    private func makeRootViewController() -> RootViewController {
+        let rootVC = RootViewController()
+
+        rootVC.delegate = self
+        rootVC.minimumPrimaryColumnWidth = 300
+
+        self.splitViewController(rootVC, willChangeTo: rootVC.displayMode)
+
+        if let first = rootVC.viewControllers.first {
+            router?.displayAllRecords(sender: first)
+        }
+
+        return rootVC
     }
 }
 
