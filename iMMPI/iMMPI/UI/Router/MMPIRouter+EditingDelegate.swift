@@ -15,9 +15,12 @@ extension MMPIRouter {
 
 extension MMPIRouter.EditingDelegate: EditRecordViewControllerDelegate {
     func editRecordViewController(_ controller: EditRecordViewController,
-                                      didFinishEditing record: RecordProtocol) {
+                                  didFinishEditing record: RecordProtocol,
+                                  previousIdentifier: RecordIdentifier) {
         controller.dismiss(animated: true, completion: nil)
 
+        // remove record with previous identifier when saving record in case identifier has changed after editing
+        try? storage.removeRecord(with: previousIdentifier)
         try? storage.store(record)
 
         NotificationCenter.default.post(

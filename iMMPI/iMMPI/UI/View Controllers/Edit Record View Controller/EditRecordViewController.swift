@@ -149,6 +149,8 @@ extension EditRecordViewController {
             return
         }
 
+        let previousRecordIdentifier = record.identifier
+
         record.person = Person(
             name: personName.trimmingCharacters(in: .whitespacesAndNewlines),
             gender: selectedGender,
@@ -157,7 +159,11 @@ extension EditRecordViewController {
 
         record.date = selectedDate
 
-        delegate?.editRecordViewController(self, didFinishEditing: record)
+        delegate?.editRecordViewController(
+            self,
+            didFinishEditing: record,
+            previousIdentifier: previousRecordIdentifier
+        )
     }
 
 
