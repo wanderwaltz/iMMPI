@@ -39,6 +39,7 @@ extension JSONRecordsStorage: RecordStorage {
         element.record = record
         elements[identifier] = element
         try store(element)
+        try saveIndex()
     }
 
     func removeRecord(with identifier: RecordIdentifier) throws {
