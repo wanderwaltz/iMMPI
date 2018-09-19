@@ -28,8 +28,8 @@ protocol RecordStorage: class {
     ///
     /// If the record does not yet exist in storage, this method should do nothing.
     ///
-    /// - Parameter record: a `RecordProtocol` object to be removed from the persistent storage.
-    func remove(_ record: RecordProtocol) throws
+    /// - Parameter identifier: identifier of the record to remove.
+    func removeRecord(with identifier: RecordIdentifier) throws
 
 
     /// Check whether the provided RecordProtocol object does exist in the storage.
@@ -70,8 +70,9 @@ extension RecordStorage {
                         }
                     }
                 }),
-                delete: { item in
-                    try? self.remove(item)
-            })
+                delete: { record in
+                    try? self.removeRecord(with: record.identifier)
+                }
+            )
     }
 }

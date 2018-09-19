@@ -1,0 +1,22 @@
+{
+    "name" : "John Appleseed",
+    "gender" : "male",
+    "date" : "18-09-2018",
+    "answers" : [
+        {
+            "id" : 1,
+            "answer" : "NO"
+        },
+        {
+            "id" : 2,
+            "answer" : "NO"
+        },
+        {
+            "id" : 3,
+            "answer" : "NO"
+        }
+    ],
+    "version" : "1.0",
+    "ageGroup" : "adult",
+    "allStatementsAnswered" : false
+}

@@ -43,17 +43,17 @@ extension JSONRecordsStorage: RecordStorage {
 
 
     func update(_ record: RecordProtocol) throws {
-        try store(element(for: record))
+        try store(element(for: record.identifier))
     }
 
 
-    func remove(_ record: RecordProtocol) throws {
-        try remove(element(for: record))
+    func removeRecord(with identifier: RecordIdentifier) throws {
+        try remove(element(for: identifier))
     }
 
 
     func contains(_ record: RecordProtocol) -> Bool {
-        return element(for: record) != nil
+        return element(for: record.identifier) != nil
     }
 
 
@@ -230,8 +230,8 @@ extension JSONRecordsStorage {
     }
 
 
-    private func element(for record: RecordProtocol) -> Element? {
-        return elements.first(where: { $0.record === record })
+    private func element(for identifier: RecordIdentifier) -> Element? {
+        return elements.first(where: { $0.record?.identifier == identifier })
     }
 }
 
