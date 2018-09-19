@@ -30,6 +30,14 @@ final class RecordProxyTests: XCTestCase {
         XCTAssertEqual(indexItem.makeProxy().date, indexItem.date)
     }
 
+    func testThat__reading__identifier__does_not_materialize_proxy() {
+        let proxy = indexItem.makeProxy()
+
+        XCTAssertFalse(proxy.isMaterialized)
+        _ = proxy.identifier
+        XCTAssertFalse(proxy.isMaterialized)
+    }
+
     func testThat__reading__indexItem__does_not_materialize_proxy() {
         let proxy = indexItem.makeProxy()
 

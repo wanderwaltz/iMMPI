@@ -16,6 +16,15 @@ protocol RecordProtocol: class, DateConvertible, PersonNameConvertible {
 
 
 extension RecordProtocol {
+    var identifier: RecordIdentifier {
+        return RecordIdentifier(
+            personIdentifier: PersonIdentifier(
+                name: personName
+            ),
+            date: date
+        )
+    }
+
     func makeCopy() -> Record {
         return Record(
             person: person,
