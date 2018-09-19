@@ -11,7 +11,7 @@ final class RecordsGroup {
 }
 
 
-extension RecordsGroup: PersonNameConvertible {
+extension RecordsGroup {
     var personName: String {
         return record.personName
     }

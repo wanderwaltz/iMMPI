@@ -1,6 +1,7 @@
 import Foundation
 
-protocol RecordIndexItem: PersonNameConvertible {
+protocol RecordIndexItem {
+    var personName: String { get }
     var date: Date { get }
 
     func settingPersonName(_ name: String) -> Self
