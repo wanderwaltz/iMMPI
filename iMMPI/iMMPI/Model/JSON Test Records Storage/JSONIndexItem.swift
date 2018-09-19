@@ -4,7 +4,7 @@ typealias JSONRecordProxy = RecordProxy<JSONIndexItem>
 
 protocol JSONIndexItemProtocol: RecordIndexItem {
     var fileName: String { get }
-    var directory: String { get }
+    var directory: JSONRecordsStorageDirectory { get }
 }
 
 
@@ -13,9 +13,9 @@ struct JSONIndexItem {
     let date: Date
 
     let fileName: String
-    let directory: String
+    let directory: JSONRecordsStorageDirectory
 
-    init(personName: String, date: Date, fileName: String, directory: String) {
+    init(personName: String, date: Date, fileName: String, directory: JSONRecordsStorageDirectory) {
         self.personName = personName
         self.date = date
         self.fileName = fileName
@@ -46,7 +46,7 @@ extension JSONIndexItem: JSONIndexItemProtocol {
 
 
 extension JSONIndexItem {
-    init(record: RecordProtocol, fileName: String, directory: String) {
+    init(record: RecordProtocol, fileName: String, directory: JSONRecordsStorageDirectory) {
         self.init(personName: record.personName, date: record.date, fileName: fileName, directory: directory)
     }
 }
@@ -56,13 +56,7 @@ extension JSONIndexItem {
     static let serialization = JSONRecordSerialization()
 
     static func materializeRecord(_ indexItem: JSONIndexItem) -> Record {
-        guard let documentsUrl = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first else {
-            assertionFailure("Failed locating documents directory")
-            return Record()
-        }
-
-        let recordsDirectory = documentsUrl.appendingPathComponent(indexItem.directory)
-        let recordPath = recordsDirectory.appendingPathComponent(indexItem.fileName)
+        let recordPath = indexItem.directory.url.appendingPathComponent(indexItem.fileName)
 
         let data: Data
 
@@ -84,8 +78,7 @@ extension RecordProxy where IndexItem: JSONIndexItemProtocol {
         return indexItem.fileName
     }
 
-
-    var directory: String {
+    var directory: JSONRecordsStorageDirectory {
         return indexItem.directory
     }
 }

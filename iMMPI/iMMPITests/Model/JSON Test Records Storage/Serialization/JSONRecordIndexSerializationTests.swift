@@ -23,7 +23,7 @@ final class JSONRecordIndexSerializationTests: XCTestCase {
             personName: "John Appleseed",
             date: date1,
             fileName: "filename1",
-            directory: "directory1"
+            directory: .init(name: "directory1")
         )
 
         dateComponents.year = 2012
@@ -36,7 +36,7 @@ final class JSONRecordIndexSerializationTests: XCTestCase {
             personName: "Daniel Melon",
             date: date2,
             fileName: "filename2",
-            directory: "directory2"
+            directory: .init(name: "directory2")
         )
 
         let proxy1 = JSONRecordProxy(indexItem: indexItem1, materialize: JSONIndexItem.materializeRecord)

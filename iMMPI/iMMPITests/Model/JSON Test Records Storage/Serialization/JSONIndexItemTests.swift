@@ -7,7 +7,7 @@ final class JSONIndexItemTests: XCTestCase {
             personName: "John Appleseed",
             date: Date(timeIntervalSince1970: 10),
             fileName: "fileName",
-            directory: "directory"
+            directory: .init(name: "directory")
         )
 
         XCTAssertEqual(indexItem.settingPersonName("Daniel Melon").personName, "Daniel Melon")
@@ -19,7 +19,7 @@ final class JSONIndexItemTests: XCTestCase {
             personName: "John Appleseed",
             date: Date(timeIntervalSince1970: 10),
             fileName: "fileName",
-            directory: "directory"
+            directory: .init(name: "directory")
         )
 
         XCTAssertEqual(indexItem.settingPersonName("Daniel Melon").date, indexItem.date)
@@ -33,7 +33,7 @@ final class JSONIndexItemTests: XCTestCase {
             personName: "John Appleseed",
             date: Date(timeIntervalSince1970: 10),
             fileName: "fileName",
-            directory: "directory"
+            directory: .init(name: "directory")
         )
 
         let newDate = Date(timeIntervalSince1970: 123)
@@ -47,7 +47,7 @@ final class JSONIndexItemTests: XCTestCase {
             personName: "John Appleseed",
             date: Date(timeIntervalSince1970: 10),
             fileName: "fileName",
-            directory: "directory"
+            directory: .init(name: "directory")
         )
 
         let newDate = Date(timeIntervalSince1970: 123)
@@ -67,7 +67,7 @@ final class JSONIndexItemTests: XCTestCase {
         let indexItem = JSONIndexItem(
             record: record,
             fileName: "fileName",
-            directory: "directory"
+            directory: .init(name: "directory")
         )
 
         XCTAssertEqual(indexItem.personName, record.personName)

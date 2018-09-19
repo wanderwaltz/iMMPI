@@ -3,8 +3,8 @@ import UIKit
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    let storage = try! JSONRecordsStorage(directoryName: kJSONRecordStorageDirectoryDefault)
-    let trashStorage = try! JSONRecordsStorage(directoryName: kJSONRecordStorageDirectoryTrash)
+    let storage = try! JSONRecordsStorage(directory: .default)
+    let trashStorage = try! JSONRecordsStorage(directory: .trash)
 
     var router: Router?
 

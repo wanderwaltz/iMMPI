@@ -1083,6 +1083,8 @@
 		44AED8A621520F5E00C68F11 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8A521520F5E00C68F11 /* Assertions.swift */; };
 		44AED8A82152113900C68F11 /* PersonIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8A72152113900C68F11 /* PersonIdentifier.swift */; };
 		44AED8AA2152127B00C68F11 /* RecordIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8A92152127B00C68F11 /* RecordIdentifier.swift */; };
+		44AED8AC215214C900C68F11 /* JSONRecordsStorageDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8AB215214C900C68F11 /* JSONRecordsStorageDirectory.swift */; };
+		44AED8AF215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8AE215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2237,6 +2239,8 @@
 		44AED8A521520F5E00C68F11 /* Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		44AED8A72152113900C68F11 /* PersonIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonIdentifier.swift; sourceTree = "<group>"; };
 		44AED8A92152127B00C68F11 /* RecordIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordIdentifier.swift; sourceTree = "<group>"; };
+		44AED8AB215214C900C68F11 /* JSONRecordsStorageDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRecordsStorageDirectory.swift; sourceTree = "<group>"; };
+		44AED8AE215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRecordsStorageDirectoryTests.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -2383,9 +2387,8 @@
 			children = (
 				448C31091E2877AD003D355D /* Test Objects */,
 				44673C3F1E2522D5001758C0 /* Analyzer */,
-				44B407FC1E4A067300FD4CE8 /* Model */,
 				442CE1CF1E2378CA006C34A6 /* Grouping */,
-				444F237D1E2E32DD00BB8003 /* JSON Serialization */,
+				44B407FC1E4A067300FD4CE8 /* Model */,
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
 				44ECB101214FB31400ADA7D4 /* UI */,
 				442CE1A71E234E6E006C34A6 /* AbbreviatedNameFormatterTests.swift */,
@@ -2439,7 +2442,7 @@
 			path = Serialization;
 			sourceTree = "<group>";
 		};
-		444F237D1E2E32DD00BB8003 /* JSON Serialization */ = {
+		444F237D1E2E32DD00BB8003 /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
 				444F237E1E2E334800BB8003 /* JSONAgeGroupSerializationTests.swift */,
@@ -2452,7 +2455,7 @@
 				44B4081D1E4B3EAC00FD4CE8 /* JSONRecordIndexSerializationTests.swift */,
 				449A52311E4B549500D23C13 /* JSONIndexItemTests.swift */,
 			);
-			path = "JSON Serialization";
+			path = Serialization;
 			sourceTree = "<group>";
 		};
 		444F24191E31E1A300BB8003 /* Actions */ = {
@@ -3720,11 +3723,21 @@
 			path = Answers;
 			sourceTree = "<group>";
 		};
+		44AED8AD215215AE00C68F11 /* JSON Test Records Storage */ = {
+			isa = PBXGroup;
+			children = (
+				444F237D1E2E32DD00BB8003 /* Serialization */,
+				44AED8AE215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift */,
+			);
+			path = "JSON Test Records Storage";
+			sourceTree = "<group>";
+		};
 		44B407FC1E4A067300FD4CE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				448BC60B2151030E001B8F55 /* Data Model Objects */,
 				448BC60C2151033E001B8F55 /* Email */,
+				44AED8AD215215AE00C68F11 /* JSON Test Records Storage */,
 				44DE9AFC1E2B874B00CFE13E /* HtmlTests.swift */,
 			);
 			path = Model;
@@ -3974,6 +3987,7 @@
 			children = (
 				444F237A1E2E31C900BB8003 /* Serialization */,
 				44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */,
+				44AED8AB215214C900C68F11 /* JSONRecordsStorageDirectory.swift */,
 				44B4080D1E4AD87800FD4CE8 /* JSONIndexItem.swift */,
 			);
 			path = "JSON Test Records Storage";
@@ -5052,6 +5066,7 @@
 				448C31171E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift in Sources */,
 				444F247B1E34EF4800BB8003 /* AnalysisScoreTests.swift in Sources */,
 				449A52321E4B549500D23C13 /* JSONIndexItemTests.swift in Sources */,
+				44AED8AF215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift in Sources */,
 				442CE1E51E238C75006C34A6 /* RecordsGroupTests.swift in Sources */,
 				444F238A1E2E36F300BB8003 /* JSONPersonSerializationTests.swift in Sources */,
 				44A9044B1E4DCE78003CB6C6 /* StubTableViewDataSource.swift in Sources */,
@@ -5244,6 +5259,7 @@
 				444F24811E34F59300BB8003 /* AnalysisScore+RawPercentage.swift in Sources */,
 				44F97A2B1E261B63004F4E14 /* AnswersInputDelegate.swift in Sources */,
 				44ECB0F1214FB02C00ADA7D4 /* ReusableViewSource+Class.swift in Sources */,
+				44AED8AC215214C900C68F11 /* JSONRecordsStorageDirectory.swift in Sources */,
 				448C318A1E29F3C9003D355D /* AnalysisOptionsViewController.swift in Sources */,
 				448C318C1E29F50E003D355D /* TableViewCellSource+Switch.swift in Sources */,
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,

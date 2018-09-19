@@ -23,7 +23,7 @@ final class JSONRecordProxySerializationTests: XCTestCase {
             personName: "John Appleseed",
             date: date,
             fileName: "filename",
-            directory: "directory"
+            directory: .init(name: "directory")
         )
 
         let proxy = JSONRecordProxy(indexItem: indexItem, materialize: JSONIndexItem.materializeRecord)

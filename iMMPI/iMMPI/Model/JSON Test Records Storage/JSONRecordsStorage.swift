@@ -1,25 +1,18 @@
 import Foundation
 
-let kJSONRecordStorageDirectoryDefault = "JSONRecords"
-let kJSONRecordStorageDirectoryTrash = "JSONRecords-Trash"
-
 final class JSONRecordsStorage {
     var trashStorage: JSONRecordsStorage?
 
-    init(directoryName: String = kJSONRecordStorageDirectoryDefault,
+    init(directory: JSONRecordsStorageDirectory,
          indexSerialization: JSONRecordIndexSerialization = JSONRecordIndexSerialization(),
          recordSerialization: JSONRecordSerialization = JSONRecordSerialization(),
          fileManager: FileManager = .default) throws {
-        let directories = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
-        let storedRecordsUrl = directories.last!.appendingPathComponent(directoryName)
-
-        try createDirectoryIfNeeded(at: storedRecordsUrl, with: fileManager)
+        try createDirectoryIfNeeded(at: directory.url, with: fileManager)
 
         self.fileManager = fileManager
         self.indexSerialization = indexSerialization
         self.recordSerialization = recordSerialization
-        self.storageDirectoryName = directoryName
-        self.storedRecordsUrl = storedRecordsUrl
+        self.directory = directory
     }
 
     private let fileManager: FileManager
@@ -27,8 +20,7 @@ final class JSONRecordsStorage {
     private let indexSerialization: JSONRecordIndexSerialization
     private let recordSerialization: JSONRecordSerialization
 
-    private let storageDirectoryName: String
-    private let storedRecordsUrl: URL
+    private let directory: JSONRecordsStorageDirectory
     private let dateFormatter = DateFormatter.medium
 
     private var elements = [Element]()
@@ -84,7 +76,7 @@ extension JSONRecordsStorage: RecordStorage {
                 }
 
                 let element = Element()
-                let indexItem = JSONIndexItem(record: record, fileName: fileName, directory: storageDirectoryName)
+                let indexItem = JSONIndexItem(record: record, fileName: fileName, directory: directory)
 
                 element.record = JSONRecordProxy(indexItem: indexItem, record: record)
                 element.fileName = fileName
@@ -155,6 +147,10 @@ extension JSONRecordsStorage {
 
 
 extension JSONRecordsStorage {
+    private var storedRecordsUrl: URL {
+        return directory.url
+    }
+
     private func remove(_ element: Element?) throws {
         guard let element = element else {
             return

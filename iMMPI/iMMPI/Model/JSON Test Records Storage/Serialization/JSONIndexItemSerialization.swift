@@ -14,7 +14,7 @@ extension JSONIndexItemSerialization {
         return [
             Key.name: item.personName,
             Key.fileName: item.fileName,
-            Key.directory: item.directory,
+            Key.directory: item.directory.name,
             Key.date: dateFormatter.string(from: item.date)
         ]
     }
@@ -29,7 +29,14 @@ extension JSONIndexItemSerialization {
                 return nil
         }
 
-        return JSONIndexItem(personName: name, date: date, fileName: fileName, directory: directory)
+        return JSONIndexItem(
+            personName: name,
+            date: date,
+            fileName: fileName,
+            directory: JSONRecordsStorageDirectory(
+                name: directory
+            )
+        )
     }
 }
 

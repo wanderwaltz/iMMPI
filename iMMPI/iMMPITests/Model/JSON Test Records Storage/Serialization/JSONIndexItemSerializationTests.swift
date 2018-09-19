@@ -23,7 +23,7 @@ final class JSONIndexItemSerializationTests: XCTestCase {
             personName: "John Appleseed",
             date: date,
             fileName: "filename",
-            directory: "directory"
+            directory: .init(name: "directory")
         )
 
         let encoded = serialization.encode(indexItem)
