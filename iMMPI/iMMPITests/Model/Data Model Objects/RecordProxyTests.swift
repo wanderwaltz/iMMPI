@@ -112,10 +112,11 @@ final class RecordProxyTests: XCTestCase {
 
     func testThat__writing__person__updates_record_person() {
         let proxy = indexItem.makeProxy()
+        let newPerson = Person(name: "Leslie Knope", gender: .female, ageGroup: .adult)
 
-        XCTAssertNotEqual(proxy.person, Person())
-        proxy.person = Person()
-        XCTAssertEqual(proxy.person, Person())
+        XCTAssertNotEqual(proxy.person.name, newPerson.name)
+        proxy.person = newPerson
+        XCTAssertEqual(proxy.person.name, newPerson.name)
     }
 
     func testThat__writing__person__updates_index_person_name() {
@@ -145,7 +146,7 @@ final class RecordProxyTests: XCTestCase {
         let record = Record()
         let proxy = Proxy(indexItem: indexItem, record: record)
 
-        XCTAssertEqual(proxy.person, record.person)
+        XCTAssertMemberwiseEqual(proxy.person, record.person)
         XCTAssertEqual(proxy.date, record.date)
         XCTAssertEqual(proxy.answers, record.answers)
     }

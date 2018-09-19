@@ -1080,6 +1080,7 @@
 		44A9044B1E4DCE78003CB6C6 /* StubTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */; };
 		44A9044E1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9044D1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift */; };
 		44A904501E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9044F1E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift */; };
+		44AED8A621520F5E00C68F11 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8A521520F5E00C68F11 /* Assertions.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2231,6 +2232,7 @@
 		44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubTableViewDataSource.swift; sourceTree = "<group>"; };
 		44A9044D1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputedScoreFormatter.swift; sourceTree = "<group>"; };
 		44A9044F1E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ComputedScoreFormatter+Defalults.swift"; sourceTree = "<group>"; };
+		44AED8A521520F5E00C68F11 /* Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3572,6 +3574,7 @@
 		448C31091E2877AD003D355D /* Test Objects */ = {
 			isa = PBXGroup;
 			children = (
+				44AED8A521520F5E00C68F11 /* Assertions.swift */,
 				44B408051E4A08FA00FD4CE8 /* GenericTests.swift */,
 				44B407FF1E4A079F00FD4CE8 /* StringGenerator.swift */,
 				44B408171E4AF47D00FD4CE8 /* StubRecordIndexItem.swift */,
@@ -5085,6 +5088,7 @@
 				442CE1D71E238257006C34A6 /* GroupingTests.swift in Sources */,
 				44ECB0EF214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift in Sources */,
 				44B408001E4A079F00FD4CE8 /* StringGenerator.swift in Sources */,
+				44AED8A621520F5E00C68F11 /* Assertions.swift in Sources */,
 				448C30FE1E27E743003D355D /* GenderTests.swift in Sources */,
 				44C3021D1E353BF70073F391 /* AnalyserScaleIdentifiersTests.swift in Sources */,
 				44B408081E4AC75700FD4CE8 /* MimeTypeTests.swift in Sources */,
