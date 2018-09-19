@@ -18,12 +18,7 @@ extension MMPIRouter.EditingDelegate: EditRecordViewControllerDelegate {
                                       didFinishEditing record: RecordProtocol) {
         controller.dismiss(animated: true, completion: nil)
 
-        if storage.contains(record) {
-            try? storage.update(record)
-        }
-        else {
-            try? storage.add(record)
-        }
+        try? storage.store(record)
 
         NotificationCenter.default.post(
             Notification(
@@ -58,7 +53,7 @@ extension MMPIRouter.EditingDelegate: AnswersInputDelegate {
                                         didSet answers: Answers,
                                         for record: RecordProtocol) {
         record.answers = answers
-        try? storage.update(record)
+        try? storage.store(record)
     }
 }
 

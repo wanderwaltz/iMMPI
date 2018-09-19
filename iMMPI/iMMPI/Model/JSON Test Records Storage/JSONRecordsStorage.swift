@@ -23,39 +23,27 @@ final class JSONRecordsStorage {
     private let directory: JSONRecordsStorageDirectory
     private let dateFormatter = DateFormatter.medium
 
-    private var elements = [Element]()
+    private var elements = [RecordIdentifier: Element]()
     private var loadedFileNames = Set<String>()
 }
 
 
 extension JSONRecordsStorage: RecordStorage {
     var all: [RecordProtocol] {
-        return elements.compactMap({ $0.record })
+        return elements.compactMap({ $0.value.record })
     }
 
-
-    func add(_ record: RecordProtocol) throws {
-        let element = Element()
+    func store(_ record: RecordProtocol) throws {
+        let identifier = record.identifier
+        let element = self.element(for: identifier) ?? Element()
         element.record = record
-        elements.append(element)
+        elements[identifier] = element
         try store(element)
     }
-
-
-    func update(_ record: RecordProtocol) throws {
-        try store(element(for: record.identifier))
-    }
-
 
     func removeRecord(with identifier: RecordIdentifier) throws {
         try remove(element(for: identifier))
     }
-
-
-    func contains(_ record: RecordProtocol) -> Bool {
-        return element(for: record.identifier) != nil
-    }
-
 
     func load() throws {
         try loadIndex()
@@ -77,12 +65,13 @@ extension JSONRecordsStorage: RecordStorage {
 
                 let element = Element()
                 let indexItem = JSONIndexItem(record: record, fileName: fileName, directory: directory)
+                let proxy = JSONRecordProxy(indexItem: indexItem, record: record)
 
-                element.record = JSONRecordProxy(indexItem: indexItem, record: record)
+                element.record = proxy
                 element.fileName = fileName
 
                 loadedFileNames.insert(fileName)
-                elements.append(element)
+                elements[record.identifier] = element
             }
         }
 
@@ -95,7 +84,7 @@ extension JSONRecordsStorage: RecordStorage {
 
 extension JSONRecordsStorage {
     var proxies: [JSONRecordProxy] {
-        return elements.compactMap({ $0.record as? JSONRecordProxy })
+        return elements.compactMap({ $0.value.record as? JSONRecordProxy })
     }
 
 
@@ -130,7 +119,7 @@ extension JSONRecordsStorage {
                 element.fileName = proxy.fileName
 
                 loadedFileNames.insert(proxy.fileName)
-                elements.append(element)
+                elements[proxy.identifier] = element
             }
         }
     }
@@ -161,11 +150,11 @@ extension JSONRecordsStorage {
         }
 
         if let record = element.record {
-            try trashStorage?.add(record)
+            try trashStorage?.store(record)
         }
 
         try removeRecordFile(named: fileName)
-        elements = elements.filter({ $0 !== element })
+        elements = elements.filter({ $0.value !== element })
         try saveIndex()
     }
 
@@ -231,7 +220,7 @@ extension JSONRecordsStorage {
 
 
     private func element(for identifier: RecordIdentifier) -> Element? {
-        return elements.first(where: { $0.record?.identifier == identifier })
+        return elements[identifier]
     }
 }
 

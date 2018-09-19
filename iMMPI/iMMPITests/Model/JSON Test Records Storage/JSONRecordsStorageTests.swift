@@ -58,6 +58,55 @@ final class JSONRecordsStorageTests: XCTestCase {
         let ids = Set(storage.all.map({ $0.identifier }))
         XCTAssertEqual(ids.count, storage.all.count)
     }
+
+    func testThat__storing_record_with_existing_id_does_not_add_a_new_record() {
+        let record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!.makeCopy()
+        record.answers = record.answers.settingAnswer(.positive, for: 5)
+
+        let countBeforeStoringRecord = storage.all.count
+        try! storage.store(record)
+        let countAfterStoringRecord = storage.all.count
+
+        XCTAssertEqual(countBeforeStoringRecord, countAfterStoringRecord)
+    }
+
+    func testThat__storing_record_with_existing_id_updates_record_in_storage() {
+        let record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!.makeCopy()
+
+        XCTAssertEqual(record.answers.answer(for: 5), .unknown)
+
+        record.answers = record.answers.settingAnswer(.positive, for: 5)
+
+        try! storage.store(record)
+
+        let newRecord = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!
+
+        XCTAssertEqual(newRecord.answers.answer(for: 5), .positive)
+    }
+
+    func testThat__storing_record_with_existing_id_actually_saves_record_to_file_system() {
+        let record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!.makeCopy()
+        record.answers = record.answers.settingAnswer(.positive, for: 5)
+        try! storage.store(record)
+
+        let newStorage = try! JSONRecordsStorage(directory: .test)
+        try! newStorage.load()
+
+        let newRecord = newStorage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!
+
+        XCTAssertEqual(newRecord.answers.answer(for: 5), .positive)
+    }
+
+    func testThat__storing_record_with_different_id_saves_a_new_record() {
+        let record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!.makeCopy()
+        record.date = DateFormatter.serialization.date(from: "20-09-2018")!
+
+        let countBeforeStoringRecord = storage.all.count
+        try! storage.store(record)
+        let countAfterStoringRecord = storage.all.count
+
+        XCTAssertEqual(countAfterStoringRecord, countBeforeStoringRecord + 1)
+    }
 }
 
 
