@@ -3,7 +3,7 @@ import Foundation
 /// Encapsulates information about a single test session.
 ///
 /// Test session consists of a person taking test, his/her answers for the test and the date of the test session.
-protocol RecordProtocol: DateConvertible, PersonNameConvertible {
+protocol RecordProtocol: PersonNameConvertible {
     /// Person who took the test
     var person: Person { get set }
 
