@@ -3696,8 +3696,9 @@
 			isa = PBXGroup;
 			children = (
 				442CE1AB1E235397006C34A6 /* Record.swift */,
-				44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */,
 				44AED8A92152127B00C68F11 /* RecordIdentifier.swift */,
+				44B408111E4AD8DF00FD4CE8 /* RecordIndexItem.swift */,
+				44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -3961,7 +3962,6 @@
 		5DC40483168C446C000AFBAE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				44B408111E4AD8DF00FD4CE8 /* RecordIndexItem.swift */,
 				442CE1AD1E23551D006C34A6 /* RecordProtocol.swift */,
 				44673C101E23B017001758C0 /* RecordStorageProtocol.swift */,
 			);

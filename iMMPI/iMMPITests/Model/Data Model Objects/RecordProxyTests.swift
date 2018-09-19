@@ -4,7 +4,7 @@ import XCTest
 final class RecordProxyTests: XCTestCase {
     typealias Proxy = RecordProxy
 
-    var indexItem: StubRecordIndexItem!
+    var indexItem: RecordIndexItem!
 
     override func setUp() {
         super.setUp()
@@ -15,7 +15,10 @@ final class RecordProxyTests: XCTestCase {
         dateComponents.month = 11
         dateComponents.day = 25
 
-        indexItem = StubRecordIndexItem(personName: "John Appleseed", date: calendar.date(from: dateComponents)!)
+        indexItem = RecordIndexItem(
+            personName: "John Appleseed",
+            date: calendar.date(from: dateComponents)!
+        )
     }
 
     func testThat__proxy_initialized_with_index_item__is_not_initially_materialized() {

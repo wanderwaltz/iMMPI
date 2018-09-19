@@ -1,11 +1,5 @@
 import Foundation
 
-protocol JSONIndexItemProtocol: RecordIndexItem {
-    var fileName: String { get }
-    var directory: JSONRecordsStorageDirectory { get }
-}
-
-
 struct JSONIndexItem {
     let personName: String
     let date: Date
@@ -22,22 +16,11 @@ struct JSONIndexItem {
 }
 
 
-extension JSONIndexItem: JSONIndexItemProtocol {
-    func settingPersonName(_ newName: String) -> JSONIndexItem {
-        return JSONIndexItem(
-            personName: newName,
-            date: date,
-            fileName: fileName,
-            directory: directory
-        )
-    }
-
-    func settingDate(_ newDate: Date) -> JSONIndexItem {
-        return JSONIndexItem(
+extension JSONIndexItem {
+    var indexItem: RecordIndexItem {
+        return RecordIndexItem(
             personName: personName,
-            date: newDate,
-            fileName: fileName,
-            directory: directory
+            date: date
         )
     }
 }

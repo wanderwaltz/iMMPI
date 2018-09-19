@@ -158,7 +158,7 @@ extension RecordProxyImpl: RecordProtocol {
 
         set {
             mutatingRecord(with: { $0.person = newValue })
-            indexItem = indexItem.settingPersonName(newValue.name)
+            indexItem.personName = newValue.name
         }
     }
 
@@ -196,7 +196,7 @@ extension RecordProxyImpl: RecordProtocol {
 
         set {
             mutatingRecord(with: { $0.date = newValue })
-            indexItem = indexItem.settingDate(newValue)
+            indexItem.date = newValue
         }
     }
 }

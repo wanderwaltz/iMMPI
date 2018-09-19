@@ -1,44 +1,19 @@
 import Foundation
 @testable import iMMPI
 
-struct StubRecordIndexItem: RecordIndexItem {
-    let personName: String
-    let date: Date
-
-    func settingPersonName(_ newName: String) -> StubRecordIndexItem {
-        return StubRecordIndexItem(
-            personName: newName,
-            date: date
-        )
-    }
-
-
-    func settingDate(_ newDate: Date) -> StubRecordIndexItem {
-        return StubRecordIndexItem(
-            personName: personName,
-            date: newDate
-        )
-    }
-}
-
-
-extension StubRecordIndexItem {
+extension RecordIndexItem {
     func makeProxy() -> RecordProxy {
-        return RecordProxy(indexItem: self, materialize: StubRecordIndexItem.materializeRecord(self))
-    }
-
-    static func materializeRecord(_ indexItem: StubRecordIndexItem) -> () -> Record {
-        return {
+        return RecordProxy(indexItem: self, materialize: {
             var record = Record()
 
-            record.date = indexItem.date
+            record.date = self.date
             record.person = Person(
-                name: indexItem.personName,
+                name: self.personName,
                 gender: .male,
                 ageGroup: .adult
             )
 
             return record
-        }
+        })
     }
 }

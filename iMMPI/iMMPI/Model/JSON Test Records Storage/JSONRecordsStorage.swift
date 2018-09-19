@@ -65,7 +65,7 @@ extension JSONRecordsStorage: RecordStorage {
 
                 let element = Element()
                 let indexItem = JSONIndexItem(record: record, fileName: fileName, directory: directory)
-                let proxy = RecordProxy(indexItem: indexItem, record: record)
+                let proxy = RecordProxy(indexItem: indexItem.indexItem, record: record)
 
                 element.record = proxy
                 element.fileName = fileName
@@ -111,7 +111,7 @@ extension JSONRecordsStorage {
             if false == loadedFileNames.contains(item.fileName) {
                 let element = Element()
                 let proxy = RecordProxy(
-                    indexItem: item,
+                    indexItem: item.indexItem,
                     materialize: JSONIndexItem.materializeRecord(item)
                 )
 
