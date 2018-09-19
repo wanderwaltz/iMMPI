@@ -1,7 +1,7 @@
 import XCTest
 @testable import iMMPI
 
-final class LazyLoadedRecordTests: XCTestCase {
+final class RecordLazyLoadingTests: XCTestCase {
     var indexItem: RecordIndexItem!
 
     override func setUp() {
