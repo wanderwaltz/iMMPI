@@ -38,14 +38,6 @@ final class RecordProxyTests: XCTestCase {
         XCTAssertFalse(proxy.isMaterialized)
     }
 
-    func testThat__reading__indexItem__does_not_materialize_proxy() {
-        let proxy = indexItem.makeProxy()
-
-        XCTAssertFalse(proxy.isMaterialized)
-        _ = proxy.indexItem
-        XCTAssertFalse(proxy.isMaterialized)
-    }
-
     func testThat__reading__person_name__does_not_materialize_proxy() {
         let proxy = indexItem.makeProxy()
 
@@ -94,14 +86,6 @@ final class RecordProxyTests: XCTestCase {
         XCTAssertEqual(proxy.date, Date.distantPast)
     }
 
-    func testThat__writing__date__does_update_index_date() {
-        var proxy = indexItem.makeProxy()
-
-        XCTAssertNotEqual(proxy.indexItem.date, Date.distantPast)
-        proxy.date = Date.distantPast
-        XCTAssertEqual(proxy.indexItem.date, Date.distantPast)
-    }
-
     func testThat__writing__date__keeps_person_name() {
         var proxy = indexItem.makeProxy()
 
@@ -125,14 +109,6 @@ final class RecordProxyTests: XCTestCase {
         XCTAssertNotEqual(proxy.person.name, newPerson.name)
         proxy.person = newPerson
         XCTAssertEqual(proxy.person.name, newPerson.name)
-    }
-
-    func testThat__writing__person__updates_index_person_name() {
-        var proxy = indexItem.makeProxy()
-
-        XCTAssertNotEqual(proxy.indexItem.personName, Person().name)
-        proxy.person = Person()
-        XCTAssertEqual(proxy.indexItem.personName, Person().name)
     }
 
     func testThat__writing__answers__does_materialize_proxy() {

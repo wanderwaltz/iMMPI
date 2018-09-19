@@ -17,10 +17,6 @@ extension RecordProxy {
         return impl.isMaterialized
     }
 
-    var indexItem: IndexItem {
-        return impl.indexItem
-    }
-
     init(indexItem: IndexItem, materialize: @escaping (IndexItem) -> Record) {
         self.init(
             RecordProxyImpl(

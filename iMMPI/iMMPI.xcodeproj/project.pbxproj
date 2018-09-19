@@ -1103,10 +1103,8 @@
 		44B4080E1E4AD87800FD4CE8 /* JSONIndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4080D1E4AD87800FD4CE8 /* JSONIndexItem.swift */; };
 		44B408101E4AD8C400FD4CE8 /* RecordProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */; };
 		44B408121E4AD8DF00FD4CE8 /* RecordIndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408111E4AD8DF00FD4CE8 /* RecordIndexItem.swift */; };
-		44B408141E4AE4AE00FD4CE8 /* JSONRecordProxySerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408131E4AE4AE00FD4CE8 /* JSONRecordProxySerialization.swift */; };
 		44B408161E4AF44300FD4CE8 /* RecordProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408151E4AF44300FD4CE8 /* RecordProxyTests.swift */; };
 		44B408181E4AF47D00FD4CE8 /* StubRecordIndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408171E4AF47D00FD4CE8 /* StubRecordIndexItem.swift */; };
-		44B4081C1E4B3DCE00FD4CE8 /* JSONRecordProxySerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4081B1E4B3DCE00FD4CE8 /* JSONRecordProxySerializationTests.swift */; };
 		44B4081E1E4B3EAC00FD4CE8 /* JSONRecordIndexSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4081D1E4B3EAC00FD4CE8 /* JSONRecordIndexSerializationTests.swift */; };
 		44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */; };
 		44C302111E3522C30073F391 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C302101E3522C30073F391 /* Analyser.swift */; };
@@ -2262,10 +2260,8 @@
 		44B4080D1E4AD87800FD4CE8 /* JSONIndexItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONIndexItem.swift; sourceTree = "<group>"; };
 		44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordProxy.swift; sourceTree = "<group>"; };
 		44B408111E4AD8DF00FD4CE8 /* RecordIndexItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordIndexItem.swift; sourceTree = "<group>"; };
-		44B408131E4AE4AE00FD4CE8 /* JSONRecordProxySerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRecordProxySerialization.swift; sourceTree = "<group>"; };
 		44B408151E4AF44300FD4CE8 /* RecordProxyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordProxyTests.swift; sourceTree = "<group>"; };
 		44B408171E4AF47D00FD4CE8 /* StubRecordIndexItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubRecordIndexItem.swift; sourceTree = "<group>"; };
-		44B4081B1E4B3DCE00FD4CE8 /* JSONRecordProxySerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRecordProxySerializationTests.swift; sourceTree = "<group>"; };
 		44B4081D1E4B3EAC00FD4CE8 /* JSONRecordIndexSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRecordIndexSerializationTests.swift; sourceTree = "<group>"; };
 		44C17C381E365240005A7C40 /* AnalysisScore+Potential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScore+Potential.swift"; sourceTree = "<group>"; };
 		44C302101E3522C30073F391 /* Analyser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
@@ -2441,7 +2437,6 @@
 				444F23831E2E345E00BB8003 /* JSONGenderSerialization.swift */,
 				444F23871E2E358500BB8003 /* JSONPersonSerialization.swift */,
 				444F23991E2E418800BB8003 /* JSONRecordIndexSerialization.swift */,
-				44B408131E4AE4AE00FD4CE8 /* JSONRecordProxySerialization.swift */,
 				444F23971E2E3FFA00BB8003 /* JSONIndexItemSerialization.swift */,
 				444F239B1E2E42A900BB8003 /* JSONRecordSerialization.swift */,
 			);
@@ -2457,7 +2452,6 @@
 				444F23891E2E36F300BB8003 /* JSONPersonSerializationTests.swift */,
 				444F23781E2E2E1A00BB8003 /* JSONRecordSerializationTests.swift */,
 				444F24201E32008A00BB8003 /* JSONIndexItemSerializationTests.swift */,
-				44B4081B1E4B3DCE00FD4CE8 /* JSONRecordProxySerializationTests.swift */,
 				44B4081D1E4B3EAC00FD4CE8 /* JSONRecordIndexSerializationTests.swift */,
 				449A52311E4B549500D23C13 /* JSONIndexItemTests.swift */,
 			);
@@ -5082,7 +5076,6 @@
 				444F238A1E2E36F300BB8003 /* JSONPersonSerializationTests.swift in Sources */,
 				44A9044B1E4DCE78003CB6C6 /* StubTableViewDataSource.swift in Sources */,
 				44B408061E4A08FA00FD4CE8 /* GenericTests.swift in Sources */,
-				44B4081C1E4B3DCE00FD4CE8 /* JSONRecordProxySerializationTests.swift in Sources */,
 				448C31001E27E7BA003D355D /* SectionTests.swift in Sources */,
 				44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */,
 				44B407FE1E4A069300FD4CE8 /* AnswerTypeTests.swift in Sources */,
@@ -5175,7 +5168,6 @@
 				44B193BB1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift in Sources */,
 				444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */,
 				448BC6122151075F001B8F55 /* RootViewController.swift in Sources */,
-				44B408141E4AE4AE00FD4CE8 /* JSONRecordProxySerialization.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+Record.swift in Sources */,
 				44A904411E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell+Source.swift in Sources */,
 				448C319C1E2B7CBC003D355D /* Html.swift in Sources */,

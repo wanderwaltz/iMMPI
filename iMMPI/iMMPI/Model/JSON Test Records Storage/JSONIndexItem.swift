@@ -71,14 +71,3 @@ extension JSONIndexItem {
         return serialization.decode(data) ?? Record()
     }
 }
-
-
-extension RecordProxy where IndexItem: JSONIndexItemProtocol {
-    var fileName: String {
-        return indexItem.fileName
-    }
-
-    var directory: JSONRecordsStorageDirectory {
-        return indexItem.directory
-    }
-}

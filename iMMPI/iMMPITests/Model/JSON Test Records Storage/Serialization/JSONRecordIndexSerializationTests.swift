@@ -39,20 +39,17 @@ final class JSONRecordIndexSerializationTests: XCTestCase {
             directory: .init(name: "directory2")
         )
 
-        let proxy1 = JSONRecordProxy(indexItem: indexItem1, materialize: JSONIndexItem.materializeRecord)
-        let proxy2 = JSONRecordProxy(indexItem: indexItem2, materialize: JSONIndexItem.materializeRecord)
+        let encoded = serialization.encode([indexItem1, indexItem2])
+        let decodedItems = serialization.decode(encoded)
 
-        let encoded = serialization.encode([proxy1, proxy2])
-        let decodedProxies = serialization.decode(encoded)
+        XCTAssertEqual(indexItem1.date, decodedItems[0].date)
+        XCTAssertEqual(indexItem1.personName, decodedItems[0].personName)
+        XCTAssertEqual(indexItem1.fileName, decodedItems[0].fileName)
+        XCTAssertEqual(indexItem1.directory, decodedItems[0].directory)
 
-        XCTAssertEqual(proxy1.date, decodedProxies[0].date)
-        XCTAssertEqual(proxy1.personName, decodedProxies[0].personName)
-        XCTAssertEqual(proxy1.fileName, decodedProxies[0].fileName)
-        XCTAssertEqual(proxy1.directory, decodedProxies[0].directory)
-
-        XCTAssertEqual(proxy2.date, decodedProxies[1].date)
-        XCTAssertEqual(proxy2.personName, decodedProxies[1].personName)
-        XCTAssertEqual(proxy2.fileName, decodedProxies[1].fileName)
-        XCTAssertEqual(proxy2.directory, decodedProxies[1].directory)
+        XCTAssertEqual(indexItem2.date, decodedItems[1].date)
+        XCTAssertEqual(indexItem2.personName, decodedItems[1].personName)
+        XCTAssertEqual(indexItem2.fileName, decodedItems[1].fileName)
+        XCTAssertEqual(indexItem2.directory, decodedItems[1].directory)
     }
 }

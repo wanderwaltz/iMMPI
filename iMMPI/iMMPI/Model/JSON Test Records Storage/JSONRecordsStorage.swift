@@ -103,22 +103,27 @@ extension JSONRecordsStorage {
         }
 
         let indexData = try Data(contentsOf: indexUrl)
-        let proxies = indexSerialization.decode(indexData)
+        let indexItems = indexSerialization.decode(indexData)
 
-        for proxy in proxies {
-            let proxiedFileUrl = storedRecordsUrl.appendingPathComponent(proxy.fileName)
+        for item in indexItems {
+            let proxiedFileUrl = storedRecordsUrl.appendingPathComponent(item.fileName)
 
             guard fileManager.fileExists(atPath: proxiedFileUrl.path)
-                && false == loadedFileNames.contains(proxy.fileName) else {
+                && false == loadedFileNames.contains(item.fileName) else {
                     continue
             }
 
-            if false == loadedFileNames.contains(proxy.fileName) {
+            if false == loadedFileNames.contains(item.fileName) {
                 let element = Element()
-                element.record = proxy
-                element.fileName = proxy.fileName
+                let proxy = RecordProxy(
+                    indexItem: item,
+                    materialize: JSONIndexItem.materializeRecord
+                )
 
-                loadedFileNames.insert(proxy.fileName)
+                element.record = proxy
+                element.fileName = item.fileName
+
+                loadedFileNames.insert(item.fileName)
                 elements[proxy.identifier] = element
             }
         }
@@ -126,7 +131,22 @@ extension JSONRecordsStorage {
 
 
     private func saveIndex() throws {
-        guard let indexData = indexSerialization.encode(proxies) else {
+        let items = elements.values.compactMap({ element -> JSONIndexItem? in
+            guard let record = element.record else {
+                return nil
+            }
+
+            let fileName = self.fileName(for: record)
+
+            return JSONIndexItem(
+                personName: record.personName,
+                date: record.date,
+                fileName: fileName,
+                directory: directory
+            )
+        })
+
+        guard let indexData = indexSerialization.encode(items) else {
             return
         }
 

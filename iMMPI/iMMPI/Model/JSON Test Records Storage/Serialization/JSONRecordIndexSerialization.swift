@@ -1,26 +1,26 @@
 import Foundation
 
 final class JSONRecordIndexSerialization {
-    let proxy: JSONRecordProxySerialization
+    let item: JSONIndexItemSerialization
 
-    init(proxy: JSONRecordProxySerialization = JSONRecordProxySerialization()) {
-        self.proxy = proxy
+    init(item: JSONIndexItemSerialization = JSONIndexItemSerialization()) {
+        self.item = item
     }
 }
 
 
 extension JSONRecordIndexSerialization {
-    func encode(_ proxies: [JSONRecordProxy]) -> Data? {
-        return try? JSONSerialization.data(withJSONObject: proxies.map(proxy.encode), options: .prettyPrinted)
+    func encode(_ items: [JSONIndexItem]) -> Data? {
+        return try? JSONSerialization.data(withJSONObject: items.map(item.encode), options: .prettyPrinted)
     }
 
 
-    func decode(_ data: Data?) -> [JSONRecordProxy] {
+    func decode(_ data: Data?) -> [JSONIndexItem] {
         guard let data = data,
             let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [[String:String]] else {
                 return []
         }
 
-        return json.compactMap(proxy.decode)
+        return json.compactMap(item.decode)
     }
 }
