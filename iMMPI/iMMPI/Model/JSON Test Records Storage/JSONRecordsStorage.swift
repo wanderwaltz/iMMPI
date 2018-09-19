@@ -51,9 +51,15 @@ extension JSONRecordsStorage: RecordStorage {
 
         let subpaths = try fileManager.contentsOfDirectory(
             at: storedRecordsUrl,
-            includingPropertiesForKeys: nil,
+            includingPropertiesForKeys: [.addedToDirectoryDateKey],
             options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]
         )
+        .sorted(by: { url1, url2 in
+            let date1 = ((try? url1.resourceValues(forKeys: [.addedToDirectoryDateKey]))?.addedToDirectoryDate) ?? .distantPast
+            let date2 = ((try? url2.resourceValues(forKeys: [.addedToDirectoryDateKey]))?.addedToDirectoryDate) ?? .distantPast
+
+            return date1 < date2
+        })
 
         for url in subpaths {
             let fileName = url.lastPathComponent
@@ -99,12 +105,22 @@ extension JSONRecordsStorage {
         let indexData = try Data(contentsOf: indexUrl)
         let indexItems = indexSerialization.decode(indexData)
 
-        for item in indexItems {
-            let proxiedFileUrl = storedRecordsUrl.appendingPathComponent(item.fileName)
+        let indexItemsSortedByDate = indexItems.map({ item -> (item: JSONIndexItem, url: URL) in
+            let url = storedRecordsUrl.appendingPathComponent(item.fileName)
+            return (item: item, url: url)
+        })
+        .filter({ fileManager.fileExists(atPath: $0.url.path) })
+        .sorted(by: { item1, item2 in
+            let date1 = ((try? item1.url.resourceValues(forKeys: [.addedToDirectoryDateKey]))?.addedToDirectoryDate) ?? .distantPast
+            let date2 = ((try? item2.url.resourceValues(forKeys: [.addedToDirectoryDateKey]))?.addedToDirectoryDate) ?? .distantPast
 
-            guard fileManager.fileExists(atPath: proxiedFileUrl.path)
-                && false == loadedFileNames.contains(item.fileName) else {
-                    continue
+            return date1 < date2
+        })
+        .map({ $0.item })
+
+        for item in indexItemsSortedByDate {
+            guard false == loadedFileNames.contains(item.fileName) else {
+                continue
             }
 
             if false == loadedFileNames.contains(item.fileName) {

@@ -1088,6 +1088,11 @@
 		44AED8B621521A0900C68F11 /* JSONRecordsStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8B521521A0900C68F11 /* JSONRecordsStorageTests.swift */; };
 		44AED8B8215226F400C68F11 /* EditRecordViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8B7215226F400C68F11 /* EditRecordViewControllerDelegate.swift */; };
 		44AED8BA2152777700C68F11 /* RecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8B92152777700C68F11 /* RecordTests.swift */; };
+		44AED8BD215281AF00C68F11 /* JA1.json in Resources */ = {isa = PBXBuildFile; fileRef = 44AED8BC215281AF00C68F11 /* JA1.json */; };
+		44AED8BF215281C000C68F11 /* JA2.json in Resources */ = {isa = PBXBuildFile; fileRef = 44AED8BE215281C000C68F11 /* JA2.json */; };
+		44AED8C1215282DA00C68F11 /* JSONRecordStorage+RecordsIdentityResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8C0215282DA00C68F11 /* JSONRecordStorage+RecordsIdentityResolutionTests.swift */; };
+		44AED8C32152899B00C68F11 /* JA12-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 44AED8C22152899B00C68F11 /* JA12-index.json */; };
+		44AED8C5215289A700C68F11 /* JA21-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 44AED8C4215289A700C68F11 /* JA21-index.json */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2242,6 +2247,11 @@
 		44AED8B521521A0900C68F11 /* JSONRecordsStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRecordsStorageTests.swift; sourceTree = "<group>"; };
 		44AED8B7215226F400C68F11 /* EditRecordViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordViewControllerDelegate.swift; sourceTree = "<group>"; };
 		44AED8B92152777700C68F11 /* RecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTests.swift; sourceTree = "<group>"; };
+		44AED8BC215281AF00C68F11 /* JA1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JA1.json; sourceTree = "<group>"; };
+		44AED8BE215281C000C68F11 /* JA2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JA2.json; sourceTree = "<group>"; };
+		44AED8C0215282DA00C68F11 /* JSONRecordStorage+RecordsIdentityResolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONRecordStorage+RecordsIdentityResolutionTests.swift"; sourceTree = "<group>"; };
+		44AED8C22152899B00C68F11 /* JA12-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "JA12-index.json"; sourceTree = "<group>"; };
+		44AED8C4215289A700C68F11 /* JA21-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "JA21-index.json"; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3723,12 +3733,25 @@
 		44AED8AD215215AE00C68F11 /* JSON Test Records Storage */ = {
 			isa = PBXGroup;
 			children = (
-				44AED8B3215219EE00C68F11 /* Test Storage */,
+				44AED8BB2152817600C68F11 /* Sample Records */,
 				444F237D1E2E32DD00BB8003 /* Serialization */,
 				44AED8AE215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift */,
 				44AED8B521521A0900C68F11 /* JSONRecordsStorageTests.swift */,
+				44AED8C0215282DA00C68F11 /* JSONRecordStorage+RecordsIdentityResolutionTests.swift */,
 			);
 			path = "JSON Test Records Storage";
+			sourceTree = "<group>";
+		};
+		44AED8BB2152817600C68F11 /* Sample Records */ = {
+			isa = PBXGroup;
+			children = (
+				44AED8B3215219EE00C68F11 /* Test Storage */,
+				44AED8BC215281AF00C68F11 /* JA1.json */,
+				44AED8BE215281C000C68F11 /* JA2.json */,
+				44AED8C22152899B00C68F11 /* JA12-index.json */,
+				44AED8C4215289A700C68F11 /* JA21-index.json */,
+			);
+			path = "Sample Records";
 			sourceTree = "<group>";
 		};
 		44B407FC1E4A067300FD4CE8 /* Model */ = {
@@ -4404,6 +4427,7 @@
 				4406A8A81E2527B400A813D0 /* Test Subject 00198 - scores.json in Resources */,
 				4406A9631E2527B400A813D0 /* Test Subject 00385 - scores.json in Resources */,
 				44673F391E2526DC001758C0 /* Test Subject 00290.json in Resources */,
+				44AED8BD215281AF00C68F11 /* JA1.json in Resources */,
 				4406A89E1E2527B400A813D0 /* Test Subject 00188 - scores.json in Resources */,
 				44673FD41E2526DC001758C0 /* Test Subject 00445.json in Resources */,
 				4406A8CB1E2527B400A813D0 /* Test Subject 00233 - scores.json in Resources */,
@@ -4610,6 +4634,7 @@
 				44673E951E2526DB001758C0 /* Test Subject 00126.json in Resources */,
 				4406A7F91E2527B400A813D0 /* Test Subject 00023 - scores.json in Resources */,
 				44673EF41E2526DB001758C0 /* Test Subject 00221.json in Resources */,
+				44AED8C32152899B00C68F11 /* JA12-index.json in Resources */,
 				4406A8621E2527B400A813D0 /* Test Subject 00128 - scores.json in Resources */,
 				44673FB11E2526DC001758C0 /* Test Subject 00410.json in Resources */,
 				44673FB51E2526DC001758C0 /* Test Subject 00414.json in Resources */,
@@ -4629,6 +4654,7 @@
 				4406A83F1E2527B400A813D0 /* Test Subject 00093 - scores.json in Resources */,
 				44673FB31E2526DC001758C0 /* Test Subject 00412.json in Resources */,
 				44673F051E2526DB001758C0 /* Test Subject 00238.json in Resources */,
+				44AED8BF215281C000C68F11 /* JA2.json in Resources */,
 				4406A8921E2527B400A813D0 /* Test Subject 00176 - scores.json in Resources */,
 				4406A8BE1E2527B400A813D0 /* Test Subject 00220 - scores.json in Resources */,
 				4406A80D1E2527B400A813D0 /* Test Subject 00043 - scores.json in Resources */,
@@ -4998,6 +5024,7 @@
 				4406A9A71E2527B400A813D0 /* Test Subject 00453 - scores.json in Resources */,
 				44673E431E2526DB001758C0 /* Test Subject 00044.json in Resources */,
 				44673F311E2526DC001758C0 /* Test Subject 00282.json in Resources */,
+				44AED8C5215289A700C68F11 /* JA21-index.json in Resources */,
 				4406A86C1E2527B400A813D0 /* Test Subject 00138 - scores.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5080,6 +5107,7 @@
 				44C302151E352EB60073F391 /* AnalyserScoreFormattersTests.swift in Sources */,
 				444F24951E351ECD00BB8003 /* AnalysisScoreMedianIntegrationTests.swift in Sources */,
 				444F24831E34F6AD00BB8003 /* AnalysisScoreRawPercentageTests.swift in Sources */,
+				44AED8C1215282DA00C68F11 /* JSONRecordStorage+RecordsIdentityResolutionTests.swift in Sources */,
 				4430C7B71E163F450024C001 /* PersonTests.swift in Sources */,
 				448C30FC1E27E511003D355D /* AgeGroupTests.swift in Sources */,
 				444F23921E2E3E1900BB8003 /* JSONAnswerTypeSerializationTests.swift in Sources */,

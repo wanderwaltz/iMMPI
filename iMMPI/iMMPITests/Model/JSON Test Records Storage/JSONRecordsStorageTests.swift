@@ -130,7 +130,7 @@ extension JSONRecordsStorageTests {
 
 
 extension RecordIdentifier {
-    static let johnAppleseed_19_09 = RecordIdentifier(
+    fileprivate static let johnAppleseed_19_09 = RecordIdentifier(
         personIdentifier: PersonIdentifier(
             name: "John Appleseed"
         ),
@@ -142,5 +142,5 @@ extension RecordIdentifier {
 
 
 extension JSONRecordsStorageDirectory {
-    static let test = JSONRecordsStorageDirectory(name: "Test Storage")
+    fileprivate static let test = JSONRecordsStorageDirectory(name: "Test Storage")
 }
