@@ -1087,6 +1087,7 @@
 		44AED8AF215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8AE215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift */; };
 		44AED8B4215219EE00C68F11 /* Test Storage in Resources */ = {isa = PBXBuildFile; fileRef = 44AED8B3215219EE00C68F11 /* Test Storage */; };
 		44AED8B621521A0900C68F11 /* JSONRecordsStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8B521521A0900C68F11 /* JSONRecordsStorageTests.swift */; };
+		44AED8B8215226F400C68F11 /* EditRecordViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8B7215226F400C68F11 /* EditRecordViewControllerDelegate.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2245,6 +2246,7 @@
 		44AED8AE215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRecordsStorageDirectoryTests.swift; sourceTree = "<group>"; };
 		44AED8B3215219EE00C68F11 /* Test Storage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Test Storage"; sourceTree = "<group>"; };
 		44AED8B521521A0900C68F11 /* JSONRecordsStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRecordsStorageTests.swift; sourceTree = "<group>"; };
+		44AED8B7215226F400C68F11 /* EditRecordViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordViewControllerDelegate.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3512,6 +3514,7 @@
 			children = (
 				44ECB0EB214FA62800ADA7D4 /* Date Picker View Controller */,
 				442CE1B21E2357AA006C34A6 /* EditRecordViewController.swift */,
+				44AED8B7215226F400C68F11 /* EditRecordViewControllerDelegate.swift */,
 			);
 			path = "Edit Record View Controller";
 			sourceTree = "<group>";
@@ -5213,6 +5216,7 @@
 				449A523C1E4B65E000D23C13 /* Fonts.swift in Sources */,
 				444F244E1E33676700BB8003 /* EmailMessage.swift in Sources */,
 				44B4080E1E4AD87800FD4CE8 /* JSONIndexItem.swift in Sources */,
+				44AED8B8215226F400C68F11 /* EditRecordViewControllerDelegate.swift in Sources */,
 				44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */,
 				44AED8AA2152127B00C68F11 /* RecordIdentifier.swift in Sources */,
 				444F24551E336AA800BB8003 /* EmailSubjectGenerator.swift in Sources */,

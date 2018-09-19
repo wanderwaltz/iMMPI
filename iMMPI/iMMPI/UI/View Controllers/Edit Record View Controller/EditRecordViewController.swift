@@ -1,13 +1,5 @@
 import UIKit
 
-protocol EditRecordViewControllerDelegate: class {
-    func editRecordViewController(_ controller: EditRecordViewController,
-                                      didFinishEditing record: RecordProtocol)
-
-    func editRecordViewControllerDidCancel(_ controller: EditRecordViewController)
-}
-
-
 final class EditRecordViewController: UITableViewController, UsingRouting {
     weak var delegate: EditRecordViewControllerDelegate?
 
