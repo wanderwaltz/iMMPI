@@ -153,7 +153,12 @@ extension RecordsListViewController {
 
     @objc fileprivate func handleDidEditRecordNotification(_ notification: Notification) {
         assert(Thread.isMainThread)
-        guard let record = notification.object as? RecordProtocol else {
+        // `notificationObject as? NSObject` binding is a workaround for a bug with structs being
+        // passed where Objective-C `id` type is expected. Here record struct comes wrapped in
+        // a private `_SwiftValue` type, which fails to cast to `RecordProtocol`. Casting it
+        // into `NSObject` first fixes the problem for some reason.
+        guard let notificationObject = notification.object as? NSObject,
+              let record = notificationObject as? RecordProtocol else {
             return
         }
 
@@ -163,7 +168,7 @@ extension RecordsListViewController {
             }
         })
 
-        router?.displayDetails(for: record, sender: self)
+        router?.displayDetails(for: [record.identifier], sender: self)
     }
 }
 
@@ -171,11 +176,13 @@ extension RecordsListViewController {
 // MARK: - UITableViewDelegate
 extension RecordsListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = groups.item(at: indexPath) else {
+        guard let group = groups.item(at: indexPath) else {
             return
         }
 
-        router?.displayDetails(for: item, sender: self)
+        let recordIdentifiers = group.allRecords().map({ $0.identifier })
+
+        router?.displayDetails(for: recordIdentifiers, sender: self)
     }
 
 

@@ -145,23 +145,23 @@ extension EditRecordViewController {
 
 
     @objc fileprivate func saveButtonAction(_ sender: Any?) {
-        guard let record = record else {
+        guard var newRecord = record else {
             return
         }
 
-        let previousRecordIdentifier = record.identifier
+        let previousRecordIdentifier = newRecord.identifier
 
-        record.person = Person(
+        newRecord.person = Person(
             name: personName.trimmingCharacters(in: .whitespacesAndNewlines),
             gender: selectedGender,
             ageGroup: selectedAgeGroup
         )
 
-        record.date = selectedDate
+        newRecord.date = selectedDate
 
         delegate?.editRecordViewController(
             self,
-            didFinishEditing: record,
+            didFinishEditing: newRecord,
             previousIdentifier: previousRecordIdentifier
         )
     }

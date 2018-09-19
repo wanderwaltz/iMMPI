@@ -28,7 +28,7 @@ extension StubRecordIndexItem {
     }
 
     static func materializeRecord(_ indexItem: StubRecordIndexItem) -> Record {
-        let record = Record()
+        var record = Record()
         
         record.date = indexItem.date
         record.person = Person(

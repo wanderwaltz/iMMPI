@@ -45,11 +45,12 @@ extension RecordsListViewControllerStyle {
                 cell.textLabel?.text = nameFormatter.string(for: item.record.personName)
                 cell.detailTextLabel?.text = dateFormatter.string(from: item.record.date)
                 cell.accessoryType = .detailDisclosureButton
-        },
+            },
             makeNewRecord: {
-                let clone = record.makeCopy()
+                var clone = record
                 clone.date = Date()
                 return clone
-        })
+            }
+        )
     }
 }

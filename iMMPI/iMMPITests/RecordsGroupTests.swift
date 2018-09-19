@@ -19,7 +19,7 @@ final class RecordsGroupTests_Single: XCTestCase {
     }
 
     func testThat__group_record_is_the_provided_record() {
-        XCTAssertTrue(group.record === record)
+        XCTAssertTrue(group.record.identifier == record.identifier)
     }
 
     func testThat__group_has_empty_grouping() {

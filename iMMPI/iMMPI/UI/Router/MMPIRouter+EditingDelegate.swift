@@ -51,12 +51,13 @@ extension MMPIRouter.EditingDelegate: AnswersInputDelegate {
             record: record
         )
     }
-    
+
     func answersInputViewController(_ controller: AnswersViewController,
                                     didSet answers: Answers,
                                     for record: RecordProtocol) {
-        record.answers = answers
-        try? storage.store(record)
+        var newRecord = record
+        newRecord.answers = answers
+        try? storage.store(newRecord)
     }
 }
 

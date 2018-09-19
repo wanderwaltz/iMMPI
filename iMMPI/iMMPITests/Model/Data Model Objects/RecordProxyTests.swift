@@ -79,7 +79,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__date__does_materialize_proxy() {
-        let proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeProxy()
 
         XCTAssertFalse(proxy.isMaterialized)
         proxy.date = Date.distantPast
@@ -87,7 +87,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__date__does_update_record_date() {
-        let proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeProxy()
 
         XCTAssertNotEqual(proxy.date, Date.distantPast)
         proxy.date = Date.distantPast
@@ -95,7 +95,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__date__does_update_index_date() {
-        let proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeProxy()
 
         XCTAssertNotEqual(proxy.indexItem.date, Date.distantPast)
         proxy.date = Date.distantPast
@@ -103,7 +103,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__date__keeps_person_name() {
-        let proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeProxy()
 
         let personName = proxy.personName
         proxy.date = Date.distantPast
@@ -111,7 +111,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__person__does_materialize_proxy() {
-        let proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeProxy()
 
         XCTAssertFalse(proxy.isMaterialized)
         proxy.person = Person()
@@ -119,7 +119,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__person__updates_record_person() {
-        let proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeProxy()
         let newPerson = Person(name: "Leslie Knope", gender: .female, ageGroup: .adult)
 
         XCTAssertNotEqual(proxy.person.name, newPerson.name)
@@ -128,7 +128,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__person__updates_index_person_name() {
-        let proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeProxy()
 
         XCTAssertNotEqual(proxy.indexItem.personName, Person().name)
         proxy.person = Person()
@@ -136,7 +136,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__answers__does_materialize_proxy() {
-        let proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeProxy()
 
         XCTAssertFalse(proxy.isMaterialized)
         proxy.answers = Answers()

@@ -49,7 +49,7 @@ final class AnalysisViewControllerTests: XCTestCase {
 
         controller.viewModel = AnalysisViewModel(records: [expectedRecord])
         controller.navigationItem.leftBarButtonItem?.click()
-        XCTAssertTrue(receivedRecord === expectedRecord)
+        XCTAssertTrue(receivedRecord?.identifier == expectedRecord.identifier)
         XCTAssertTrue(receivedSender === expectedSender)
     }
 
@@ -71,7 +71,7 @@ final class AnalysisViewControllerTests: XCTestCase {
         controller.navigationItem.rightBarButtonItem?.click()
 
         XCTAssertTrue(receivedSender === expectedSender)
-        XCTAssertTrue(receivedContext!.record === expectedRecord)
+        XCTAssertTrue(receivedContext!.record.identifier == expectedRecord.identifier)
         XCTAssertTrue(receivedContext!.router === router)
     }
 }

@@ -7,8 +7,7 @@ protocol Router: class {
     func addRecord(basedOn record: RecordProtocol, sender: UIViewController)
     func edit(_ record: RecordProtocol, sender: UIViewController)
 
-    func displayDetails(for group: RecordsGroup, sender: UIViewController)
-    func displayDetails(for record: RecordProtocol, sender: UIViewController)
+    func displayDetails(for records: [RecordIdentifier], sender: UIViewController)
 
     func displayAnalysis(for records: [RecordProtocol], sender: UIViewController)
     func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController)

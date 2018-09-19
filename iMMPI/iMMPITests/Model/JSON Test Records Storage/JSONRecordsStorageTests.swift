@@ -60,7 +60,7 @@ final class JSONRecordsStorageTests: XCTestCase {
     }
 
     func testThat__storing_record_with_existing_id_does_not_add_a_new_record() {
-        let record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!.makeCopy()
+        var record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!
         record.answers = record.answers.settingAnswer(.positive, for: 5)
 
         let countBeforeStoringRecord = storage.all.count
@@ -71,7 +71,7 @@ final class JSONRecordsStorageTests: XCTestCase {
     }
 
     func testThat__storing_record_with_existing_id_updates_record_in_storage() {
-        let record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!.makeCopy()
+        var record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!
 
         XCTAssertEqual(record.answers.answer(for: 5), .unknown)
 
@@ -85,7 +85,7 @@ final class JSONRecordsStorageTests: XCTestCase {
     }
 
     func testThat__storing_record_with_existing_id_actually_saves_record_to_file_system() {
-        let record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!.makeCopy()
+        var record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!
         record.answers = record.answers.settingAnswer(.positive, for: 5)
         try! storage.store(record)
 
@@ -98,7 +98,7 @@ final class JSONRecordsStorageTests: XCTestCase {
     }
 
     func testThat__storing_record_with_different_id_saves_a_new_record() {
-        let record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!.makeCopy()
+        var record = storage.all.first(where: { $0.identifier == .johnAppleseed_19_09 })!
         record.date = DateFormatter.serialization.date(from: "20-09-2018")!
 
         let countBeforeStoringRecord = storage.all.count

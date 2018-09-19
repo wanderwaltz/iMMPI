@@ -72,26 +72,16 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayDetails(for group: RecordsGroup, sender: UIViewController) {
-        if group.containsSingleRecord {
-            displayDetails(for: group.record, sender: sender)
-        }
-        else {
-            expand(group, sender: sender)
-        }
-    }
-
-
-    func displayDetails(for record: RecordProtocol, sender: UIViewController) {
-        guard let questionnaire = try? Questionnaire(record: record) else {
+    func displayDetails(for records: [RecordIdentifier], sender: UIViewController) {
+        guard false == records.isEmpty else {
             return
         }
 
-        if record.answers.allStatementsAnswered(for: questionnaire) {
-            displayAnalysis(for: [record], sender: sender)
+        if records.count == 1 {
+            displayDetailsForSingleRecord(records.first!, sender: sender)
         }
         else {
-            displayAnswersInput(for: record, with: questionnaire, sender: sender)
+            displayDetailsForMultipleRecords(records, sender: sender)
         }
     }
 
@@ -196,11 +186,38 @@ extension MMPIRouter {
     }
 
 
-    fileprivate func expand(_ group: RecordsGroup, sender: UIViewController) {
+    private func displayDetailsForSingleRecord(_ identifier: RecordIdentifier, sender: UIViewController) {
+        guard let record = storage.all.first(where: { $0.identifier == identifier }) else {
+            return
+        }
+
+        guard let questionnaire = try? Questionnaire(record: record) else {
+            return
+        }
+
+        if record.answers.allStatementsAnswered(for: questionnaire) {
+            displayAnalysis(for: [record], sender: sender)
+        }
+        else {
+            displayAnswersInput(for: record, with: questionnaire, sender: sender)
+        }
+    }
+
+
+    fileprivate func displayDetailsForMultipleRecords(_ identifiers: [RecordIdentifier], sender: UIViewController) {
+        let records = identifiers.compactMap({ identifier in
+            storage.all.first(where: { $0.identifier == identifier })
+        })
+        .sorted(by: { $0.date > $1.date })
+
+        guard let firstRecord = records.first, records.count > 1 else {
+            return
+        }
+
         let controller = viewControllersFactory.makeRecordsListViewController()
 
-        controller.title = group.personName
-        controller.style = .nested(basedOn: group.record)
+        controller.title = firstRecord.personName
+        controller.style = .nested(basedOn: firstRecord)
         controller.grouping = .flat
 
 
@@ -218,20 +235,10 @@ extension MMPIRouter {
         attachAddRecordButton(to: controller)
 
         controller.viewModel = storage.makeViewModel(includeRecord: { record in
-            if record.personName.isEqual(group.personName) {
-                return true
-            }
-
-            for subgroup in group.group.allItems {
-                if record.personName.isEqual(subgroup.personName) {
-                    return true
-                }
-            }
-
-            return false
+            record.personName.isEqual(firstRecord.personName)
         })
 
-        sender.show(controller, sender: group)
+        sender.show(controller, sender: sender)
     }
 
 
