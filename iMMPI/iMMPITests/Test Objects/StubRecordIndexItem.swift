@@ -23,20 +23,22 @@ struct StubRecordIndexItem: RecordIndexItem {
 
 
 extension StubRecordIndexItem {
-    func makeProxy() -> RecordProxy<StubRecordIndexItem> {
-        return RecordProxy(indexItem: self, materialize: StubRecordIndexItem.materializeRecord)
+    func makeProxy() -> RecordProxy {
+        return RecordProxy(indexItem: self, materialize: StubRecordIndexItem.materializeRecord(self))
     }
 
-    static func materializeRecord(_ indexItem: StubRecordIndexItem) -> Record {
-        var record = Record()
-        
-        record.date = indexItem.date
-        record.person = Person(
-            name: indexItem.personName,
-            gender: .male,
-            ageGroup: .adult
-        )
+    static func materializeRecord(_ indexItem: StubRecordIndexItem) -> () -> Record {
+        return {
+            var record = Record()
 
-        return record
+            record.date = indexItem.date
+            record.person = Person(
+                name: indexItem.personName,
+                gender: .male,
+                ageGroup: .adult
+            )
+
+            return record
+        }
     }
 }

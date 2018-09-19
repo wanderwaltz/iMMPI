@@ -1,7 +1,5 @@
 import Foundation
 
-typealias JSONRecordProxy = RecordProxy<JSONIndexItem>
-
 protocol JSONIndexItemProtocol: RecordIndexItem {
     var fileName: String { get }
     var directory: JSONRecordsStorageDirectory { get }
@@ -55,19 +53,21 @@ extension JSONIndexItem {
 extension JSONIndexItem {
     static let serialization = JSONRecordSerialization()
 
-    static func materializeRecord(_ indexItem: JSONIndexItem) -> Record {
-        let recordPath = indexItem.directory.url.appendingPathComponent(indexItem.fileName)
+    static func materializeRecord(_ indexItem: JSONIndexItem) -> () -> Record {
+        return {
+            let recordPath = indexItem.directory.url.appendingPathComponent(indexItem.fileName)
 
-        let data: Data
+            let data: Data
 
-        do {
-            try data = Data(contentsOf: recordPath)
+            do {
+                try data = Data(contentsOf: recordPath)
+            }
+            catch let error {
+                assertionFailure("Error reading data: \(error)")
+                return Record()
+            }
+
+            return serialization.decode(data) ?? Record()
         }
-        catch let error {
-            assertionFailure("Error reading data: \(error)")
-            return Record()
-        }
-
-        return serialization.decode(data) ?? Record()
     }
 }

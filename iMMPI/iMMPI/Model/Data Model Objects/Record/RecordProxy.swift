@@ -3,12 +3,12 @@ import Foundation
 // MARK: - RecordProxy
 
 /// Proxy RecordProtocol implementation with copy on write semantics.
-struct RecordProxy<IndexItem: RecordIndexItem> {
-    private init(_ impl: RecordProxyImpl<IndexItem>) {
+struct RecordProxy {
+    private init(_ impl: RecordProxyImpl) {
         self.impl = impl
     }
 
-    private var impl: RecordProxyImpl<IndexItem>
+    private var impl: RecordProxyImpl
 }
 
 
@@ -17,7 +17,7 @@ extension RecordProxy {
         return impl.isMaterialized
     }
 
-    init(indexItem: IndexItem, materialize: @escaping (IndexItem) -> Record) {
+    init(indexItem: RecordIndexItem, materialize: @escaping () -> Record) {
         self.init(
             RecordProxyImpl(
                 indexItem: indexItem,
@@ -26,7 +26,7 @@ extension RecordProxy {
         )
     }
 
-    init(indexItem: IndexItem, record: Record) {
+    init(indexItem: RecordIndexItem, record: Record) {
         self.init(
             RecordProxyImpl(
                 indexItem: indexItem,
@@ -85,7 +85,7 @@ extension RecordProxy: RecordProtocol {
 
 
 extension RecordProxy {
-    private mutating func mutateImpl(with block: (inout RecordProxyImpl<IndexItem>) -> Void) {
+    private mutating func mutateImpl(with block: (inout RecordProxyImpl) -> Void) {
         if isKnownUniquelyReferenced(&impl) == false {
             impl = RecordProxyImpl(impl)
         }
@@ -96,12 +96,12 @@ extension RecordProxy {
 
 
 // MARK: - RecordProxyImpl
-private final class RecordProxyImpl<IndexItem: RecordIndexItem> {
-    private(set) fileprivate var indexItem: IndexItem
-    private let materialize: (IndexItem) -> Record
+private final class RecordProxyImpl {
+    private(set) fileprivate var indexItem: RecordIndexItem
+    private let materialize: () -> Record
     private var _record: Record?
 
-    init(indexItem: IndexItem, materialize: @escaping (IndexItem) -> Record) {
+    init(indexItem: RecordIndexItem, materialize: @escaping () -> Record) {
         self.indexItem = indexItem
         self.materialize = materialize
     }
@@ -117,7 +117,7 @@ extension RecordProxyImpl {
         self._record = other._record
     }
 
-    convenience init(indexItem: IndexItem, record: Record) {
+    convenience init(indexItem: RecordIndexItem, record: Record) {
         self.init(indexItem: indexItem, materialize: Constant.value(record))
         self._record = record
     }
@@ -132,7 +132,7 @@ extension RecordProxyImpl {
     private func materializeRecord() {
         if _record == nil {
             NSLog("Proxy loading record for \(personName)")
-            _record = materialize(indexItem)
+            _record = materialize()
         }
     }
 

@@ -65,7 +65,7 @@ extension JSONRecordsStorage: RecordStorage {
 
                 let element = Element()
                 let indexItem = JSONIndexItem(record: record, fileName: fileName, directory: directory)
-                let proxy = JSONRecordProxy(indexItem: indexItem, record: record)
+                let proxy = RecordProxy(indexItem: indexItem, record: record)
 
                 element.record = proxy
                 element.fileName = fileName
@@ -83,11 +83,6 @@ extension JSONRecordsStorage: RecordStorage {
 
 
 extension JSONRecordsStorage {
-    var proxies: [JSONRecordProxy] {
-        return elements.compactMap({ $0.value.record as? JSONRecordProxy })
-    }
-
-
     var indexUrl: URL {
         return storedRecordsUrl
             .appendingPathComponent(kIndexFileName)
@@ -117,7 +112,7 @@ extension JSONRecordsStorage {
                 let element = Element()
                 let proxy = RecordProxy(
                     indexItem: item,
-                    materialize: JSONIndexItem.materializeRecord
+                    materialize: JSONIndexItem.materializeRecord(item)
                 )
 
                 element.record = proxy

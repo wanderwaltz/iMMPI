@@ -2,7 +2,7 @@ import XCTest
 @testable import iMMPI
 
 final class RecordProxyTests: XCTestCase {
-    typealias Proxy = RecordProxy<StubRecordIndexItem>
+    typealias Proxy = RecordProxy
 
     var indexItem: StubRecordIndexItem!
 
@@ -137,7 +137,7 @@ final class RecordProxyTests: XCTestCase {
 
     func testThat__materialized_proxy__ignores_index_item_date() {
         let record = Record()
-        let proxy = Proxy(indexItem: indexItem, materialize: { _ in record })
+        let proxy = Proxy(indexItem: indexItem, materialize: Constant.value(record))
 
         _ = proxy.answers
         XCTAssertNotEqual(proxy.date, indexItem.date)
@@ -146,7 +146,7 @@ final class RecordProxyTests: XCTestCase {
 
     func testThat__materialized_proxy__ignores_index_item_person_name() {
         let record = Record()
-        let proxy = Proxy(indexItem: indexItem, materialize: { _ in record })
+        let proxy = Proxy(indexItem: indexItem, materialize: Constant.value(record))
 
         _ = proxy.answers
         XCTAssertNotEqual(proxy.personName, indexItem.personName)
