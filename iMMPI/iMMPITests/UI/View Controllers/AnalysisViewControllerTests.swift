@@ -36,7 +36,7 @@ final class AnalysisViewControllerTests: XCTestCase {
 
 
     func testThat__left_bar_button_item__displays_answers_review_using_router_if_record_is_present() {
-        var receivedRecord: RecordProtocol? = nil
+        var receivedRecord: Record? = nil
         var receivedSender: UIViewController? = nil
 
         let expectedRecord = Record()

@@ -3,13 +3,13 @@ import UIKit
 final class EditRecordViewController: UITableViewController, UsingRouting {
     weak var delegate: EditRecordViewControllerDelegate?
 
-    var record: RecordProtocol? {
+    var record: Record? {
         didSet {
             if let record = record {
                 selectedGender = record.person.gender
                 selectedAgeGroup = record.person.ageGroup
                 selectedDate = record.date
-                personName = record.personName
+                personName = record.person.name
             }
         }
     }

@@ -40,9 +40,9 @@ extension GenderBasedValue {
     ///
     /// - Returns: the stored value corresponding to the `record.person.gender`.
     ///
-    /// - Parameter record: a `RecordProtocol` instance corresponding to the desired value.
+    /// - Parameter record: a `Record` instance corresponding to the desired value.
     ///                    `Gender.unknown` values fallback to `Gender.male`.
-    func value(for record: RecordProtocol) -> T {
+    func value(for record: Record) -> T {
         return value(for: record.person.gender)
     }
 }

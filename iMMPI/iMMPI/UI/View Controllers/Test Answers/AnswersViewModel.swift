@@ -1,7 +1,7 @@
 import Foundation
 
 protocol AnswersViewModel: class {
-    var record: RecordProtocol { get }
+    var record: Record { get }
     var statementsCount: Int { get }
 
     func statement(at index: Int) -> Statement?
@@ -9,10 +9,10 @@ protocol AnswersViewModel: class {
 
 
 final class DefaultAnswersViewModel {
-    let record: RecordProtocol
+    let record: Record
     let questionnaire: Questionnaire
 
-    init(record: RecordProtocol, questionnaire: Questionnaire) {
+    init(record: Record, questionnaire: Questionnaire) {
         self.record = record
         self.questionnaire = questionnaire
     }

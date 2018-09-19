@@ -29,11 +29,11 @@ final class JSONRecordsStorage {
 
 
 extension JSONRecordsStorage: RecordStorage {
-    var all: [RecordProtocol] {
+    var all: [Record] {
         return elements.compactMap({ $0.value.record })
     }
 
-    func store(_ record: RecordProtocol) throws {
+    func store(_ record: Record) throws {
         let identifier = record.identifier
         let element = self.element(for: identifier) ?? Element()
         element.record = record
@@ -64,10 +64,8 @@ extension JSONRecordsStorage: RecordStorage {
                 }
 
                 let element = Element()
-                let indexItem = JSONIndexItem(record: record, fileName: fileName, directory: directory)
-                let proxy = RecordProxy(indexItem: indexItem.indexItem, record: record)
 
-                element.record = proxy
+                element.record = record
                 element.fileName = fileName
 
                 loadedFileNames.insert(fileName)
@@ -110,7 +108,7 @@ extension JSONRecordsStorage {
 
             if false == loadedFileNames.contains(item.fileName) {
                 let element = Element()
-                let proxy = RecordProxy(
+                let proxy = Record(
                     indexItem: item.indexItem,
                     materialize: JSONIndexItem.materializeRecord(item)
                 )
@@ -132,10 +130,11 @@ extension JSONRecordsStorage {
             }
 
             let fileName = self.fileName(for: record)
+            let indexItem = record.indexItem
 
             return JSONIndexItem(
-                personName: record.personName,
-                date: record.date,
+                personName: indexItem.personName,
+                date: indexItem.date,
                 fileName: fileName,
                 directory: directory
             )
@@ -211,9 +210,10 @@ extension JSONRecordsStorage {
     }
 
 
-    private func fileName(for record: RecordProtocol) -> String {
+    private func fileName(for record: Record) -> String {
         let illegalFileNameCharacters = CharacterSet(charactersIn: "/\\?%*|\"<>$&@")
-        let candidate = "\(record.personName) - \(dateFormatter.string(from: record.date))"
+        let indexItem = record.indexItem
+        let candidate = "\(indexItem.personName) - \(dateFormatter.string(from: indexItem.date))"
             .components(separatedBy: illegalFileNameCharacters).joined()
 
         var fileName = candidate.appending(".\(kJSONPathExtension)")
@@ -243,7 +243,7 @@ extension JSONRecordsStorage {
 
 extension JSONRecordsStorage {
     private final class Element {
-        var record: RecordProtocol?
+        var record: Record?
         var fileName: String?
     }
 }

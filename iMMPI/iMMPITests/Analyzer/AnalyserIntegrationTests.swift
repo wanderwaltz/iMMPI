@@ -66,9 +66,9 @@ final class AnalyzerIntegrationTests: XCTestCase {
                 let actual = analyser.scales[i].score.value(for: record)
                 let expected = scores[i]
 
-                XCTAssertMatchingScores(actual, expected, "Score failed for: \(record.personName), scale: \(i), expected: \(expected), got: \(actual)")
+                XCTAssertMatchingScores(actual, expected, "Score failed for: \(record.person.name), scale: \(i), expected: \(expected), got: \(actual)")
 
-                XCTAssertMatchingScores(result.scales[i].score.rawValue, expected, "Bound score failed for: \(record.personName), scale: \(i), expected: \(expected), got: \(actual)")
+                XCTAssertMatchingScores(result.scales[i].score.rawValue, expected, "Bound score failed for: \(record.person.name), scale: \(i), expected: \(expected), got: \(actual)")
             }
         }
     }

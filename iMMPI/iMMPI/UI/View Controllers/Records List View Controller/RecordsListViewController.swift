@@ -13,7 +13,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
 
     var searchController = UISearchController(searchResultsController: nil)
 
-    var viewModel: RecordsListViewModel<RecordProtocol>? {
+    var viewModel: RecordsListViewModel<Record>? {
         willSet {
             viewModel?.onDidUpdate = Constant.value(())
         }
@@ -71,14 +71,14 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
     }
 
 
-    fileprivate var records: [RecordProtocol] = [] {
+    fileprivate var records: [Record] = [] {
         didSet {
             groups = grouping.group(records.filter(recordsFilter))
         }
     }
 
 
-    fileprivate var recordsFilter: (RecordProtocol) -> Bool = Constant.value(true) {
+    fileprivate var recordsFilter: (Record) -> Bool = Constant.value(true) {
         didSet {
             groups = grouping.group(records.filter(recordsFilter))
         }
@@ -153,17 +153,12 @@ extension RecordsListViewController {
 
     @objc fileprivate func handleDidEditRecordNotification(_ notification: Notification) {
         assert(Thread.isMainThread)
-        // `notificationObject as? NSObject` binding is a workaround for a bug with structs being
-        // passed where Objective-C `id` type is expected. Here record struct comes wrapped in
-        // a private `_SwiftValue` type, which fails to cast to `RecordProtocol`. Casting it
-        // into `NSObject` first fixes the problem for some reason.
-        guard let notificationObject = notification.object as? NSObject,
-              let record = notificationObject as? RecordProtocol else {
+        guard let record = notification.object as? Record else {
             return
         }
 
         viewModel?.setNeedsUpdate(completion: { _ in
-            if let indexPath = self.groups.indexPathOfItem(matching: { $0.personName == record.personName }) {
+            if let indexPath = self.groups.indexPathOfItem(matching: { $0.personName == record.indexItem.personName }) {
                 self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
             }
         })
@@ -268,7 +263,7 @@ extension RecordsListViewController: UISearchResultsUpdating {
                 .components(separatedBy: .whitespacesAndNewlines)
 
             recordsFilter = { record in
-                let personName = record.personName.lowercased()
+                let personName = record.indexItem.personName.lowercased()
 
                 for searchTerm in components {
                     if false == searchTerm.isEmpty && false == personName.contains(searchTerm) {

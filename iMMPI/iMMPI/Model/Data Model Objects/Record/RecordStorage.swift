@@ -1,14 +1,14 @@
 import Foundation
 
-/// Encapsulates a persistent storage for objects conforming to RecordProtocol.
+/// Encapsulates a persistent storage for objects conforming to Record.
 protocol RecordStorage: class {
     /// Return all test records currently loaded.
-    var all: [RecordProtocol] { get }
+    var all: [Record] { get }
 
     /// Store a record.
     ///
-    /// - Param record: a `RecordProtocol` object to be stored in the persistent storage.
-    func store(_ record: RecordProtocol) throws
+    /// - Param record: a `Record` object to be stored in the persistent storage.
+    func store(_ record: Record) throws
 
     /// Remove the existing record from the storage.
     ///
@@ -17,7 +17,7 @@ protocol RecordStorage: class {
     /// - Parameter identifier: identifier of the record to remove.
     func removeRecord(with identifier: RecordIdentifier) throws
 
-    /// Load all `RecordProtocol` objects stored in the persistent storage.
+    /// Load all `Record` objects stored in the persistent storage.
     func load() throws
 }
 
@@ -29,8 +29,8 @@ extension RecordStorage {
 }
 
 extension RecordStorage {
-    func makeViewModel(includeRecord: @escaping (RecordProtocol) -> Bool = Constant.value(true))
-        -> RecordsListViewModel<RecordProtocol> {
+    func makeViewModel(includeRecord: @escaping (Record) -> Bool = Constant.value(true))
+        -> RecordsListViewModel<Record> {
             return RecordsListViewModel(
                 provider: AsyncProvider({ completion in
                     let startTimestamp = Date()

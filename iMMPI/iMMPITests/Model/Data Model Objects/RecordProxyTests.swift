@@ -1,9 +1,7 @@
 import XCTest
 @testable import iMMPI
 
-final class RecordProxyTests: XCTestCase {
-    typealias Proxy = RecordProxy
-
+final class LazyLoadedRecordTests: XCTestCase {
     var indexItem: RecordIndexItem!
 
     override func setUp() {
@@ -22,19 +20,19 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__proxy_initialized_with_index_item__is_not_initially_materialized() {
-        XCTAssertFalse(indexItem.makeProxy().isMaterialized)
+        XCTAssertFalse(indexItem.makeLazy().isMaterialized)
     }
 
     func testThat__proxy_initialized_with_index_item__has_corresponding_person_name() {
-        XCTAssertEqual(indexItem.makeProxy().personName, indexItem.personName)
+        XCTAssertEqual(indexItem.makeLazy().indexItem.personName, indexItem.personName)
     }
 
     func testThat__proxy_initialized_with_index_item__has_corresponding_date() {
-        XCTAssertEqual(indexItem.makeProxy().date, indexItem.date)
+        XCTAssertEqual(indexItem.makeLazy().date, indexItem.date)
     }
 
     func testThat__reading__identifier__does_not_materialize_proxy() {
-        let proxy = indexItem.makeProxy()
+        let proxy = indexItem.makeLazy()
 
         XCTAssertFalse(proxy.isMaterialized)
         _ = proxy.identifier
@@ -42,15 +40,15 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__reading__person_name__does_not_materialize_proxy() {
-        let proxy = indexItem.makeProxy()
+        let proxy = indexItem.makeLazy()
 
         XCTAssertFalse(proxy.isMaterialized)
-        _ = proxy.personName
+        _ = proxy.indexItem.personName
         XCTAssertFalse(proxy.isMaterialized)
     }
 
     func testThat__reading__date__does_not_materialize_proxy() {
-        let proxy = indexItem.makeProxy()
+        let proxy = indexItem.makeLazy()
 
         XCTAssertFalse(proxy.isMaterialized)
         _ = proxy.date
@@ -58,7 +56,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__reading__person__does_materialize_proxy() {
-        let proxy = indexItem.makeProxy()
+        let proxy = indexItem.makeLazy()
 
         XCTAssertFalse(proxy.isMaterialized)
         _ = proxy.person
@@ -66,7 +64,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__reading__answers__does_materialize_proxy() {
-        let proxy = indexItem.makeProxy()
+        let proxy = indexItem.makeLazy()
 
         XCTAssertFalse(proxy.isMaterialized)
         _ = proxy.answers
@@ -74,7 +72,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__date__does_materialize_proxy() {
-        var proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeLazy()
 
         XCTAssertFalse(proxy.isMaterialized)
         proxy.date = Date.distantPast
@@ -82,7 +80,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__date__does_update_record_date() {
-        var proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeLazy()
 
         XCTAssertNotEqual(proxy.date, Date.distantPast)
         proxy.date = Date.distantPast
@@ -90,15 +88,15 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__date__keeps_person_name() {
-        var proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeLazy()
 
-        let personName = proxy.personName
+        let personName = proxy.indexItem.personName
         proxy.date = Date.distantPast
-        XCTAssertEqual(personName, proxy.personName)
+        XCTAssertEqual(personName, proxy.indexItem.personName)
     }
 
     func testThat__writing__person__does_materialize_proxy() {
-        var proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeLazy()
 
         XCTAssertFalse(proxy.isMaterialized)
         proxy.person = Person()
@@ -106,7 +104,7 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__person__updates_record_person() {
-        var proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeLazy()
         let newPerson = Person(name: "Leslie Knope", gender: .female, ageGroup: .adult)
 
         XCTAssertNotEqual(proxy.person.name, newPerson.name)
@@ -115,48 +113,23 @@ final class RecordProxyTests: XCTestCase {
     }
 
     func testThat__writing__answers__does_materialize_proxy() {
-        var proxy = indexItem.makeProxy()
+        var proxy = indexItem.makeLazy()
 
         XCTAssertFalse(proxy.isMaterialized)
         proxy.answers = Answers()
         XCTAssertTrue(proxy.isMaterialized)
     }
 
-    func testThat__proxy_initialized_with_record__is_materialized() {
-        let record = Record()
-        let proxy = Proxy(indexItem: indexItem, record: record)
-
-        XCTAssertTrue(proxy.isMaterialized)
-    }
-
-    func testThat__proxy_initialized_with_record__is_materialized_with_the_same_record() {
-        let record = Record()
-        let proxy = Proxy(indexItem: indexItem, record: record)
-
-        XCTAssertMemberwiseEqual(proxy.person, record.person)
-        XCTAssertEqual(proxy.date, record.date)
-        XCTAssertEqual(proxy.answers, record.answers)
-    }
-
     func testThat__materialized_proxy__ignores_index_item_date() {
         let record = Record()
-        let proxy = Proxy(indexItem: indexItem, materialize: Constant.value(record))
+        let proxy = Record(indexItem: indexItem, materialize: Constant.value(record))
 
         _ = proxy.answers
         XCTAssertNotEqual(proxy.date, indexItem.date)
         XCTAssertEqual(proxy.date, record.date)
     }
 
-    func testThat__materialized_proxy__ignores_index_item_person_name() {
-        let record = Record()
-        let proxy = Proxy(indexItem: indexItem, materialize: Constant.value(record))
-
-        _ = proxy.answers
-        XCTAssertNotEqual(proxy.personName, indexItem.personName)
-        XCTAssertEqual(proxy.personName, record.personName)
-    }
-
     func testThat__proxy_description_contains_person_name() {
-        XCTAssertTrue(indexItem.makeProxy().description.contains(indexItem.personName))
+        XCTAssertTrue(indexItem.makeLazy().description.contains(indexItem.personName))
     }
 }

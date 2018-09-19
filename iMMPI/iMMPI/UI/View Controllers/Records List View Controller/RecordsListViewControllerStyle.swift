@@ -2,13 +2,13 @@ import UIKit
 
 struct RecordsListViewControllerStyle {
     fileprivate init(updateCell: @escaping (UITableViewCell, RecordsGroup) -> (),
-                     makeNewRecord: @escaping () -> RecordProtocol) {
+                     makeNewRecord: @escaping () -> Record) {
         _updateCell = updateCell
         _makeNewRecord = makeNewRecord
     }
 
     fileprivate let _updateCell: (UITableViewCell, RecordsGroup) -> ()
-    fileprivate let _makeNewRecord: () -> RecordProtocol
+    fileprivate let _makeNewRecord: () -> Record
 }
 
 
@@ -18,7 +18,7 @@ extension RecordsListViewControllerStyle {
     }
 
 
-    func makeNewRecord() -> RecordProtocol {
+    func makeNewRecord() -> Record {
         return _makeNewRecord()
     }
 }
@@ -27,23 +27,24 @@ extension RecordsListViewControllerStyle {
 extension RecordsListViewControllerStyle {
     static let root = RecordsListViewControllerStyle(
         updateCell: { cell, item in
-            cell.textLabel?.text = item.record.personName
+            cell.textLabel?.text = item.record.indexItem.personName
             cell.detailTextLabel?.text = item.group.isEmpty ? "" : "\(item.group.allItems.count)"
             cell.accessoryType = .detailDisclosureButton
-    },
+        },
         makeNewRecord: {
             return Record()
-    })
+        }
+    )
 
 
-    static func nested(basedOn record: RecordProtocol) -> RecordsListViewControllerStyle {
+    static func nested(basedOn record: Record) -> RecordsListViewControllerStyle {
         let nameFormatter = AbbreviatedNameFormatter()
         let dateFormatter = DateFormatter.medium
 
         return RecordsListViewControllerStyle(
             updateCell: { cell, item in
-                cell.textLabel?.text = nameFormatter.string(for: item.record.personName)
-                cell.detailTextLabel?.text = dateFormatter.string(from: item.record.date)
+                cell.textLabel?.text = nameFormatter.string(for: item.record.indexItem.personName)
+                cell.detailTextLabel?.text = dateFormatter.string(from: item.record.indexItem.date)
                 cell.accessoryType = .detailDisclosureButton
             },
             makeNewRecord: {

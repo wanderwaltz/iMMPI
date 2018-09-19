@@ -1,10 +1,10 @@
 import Foundation
 
 final class RecordsGroup {
-    let record: RecordProtocol
+    let record: Record
     let group: Grouping<RecordsGroup>
 
-    init(record: RecordProtocol, group: Grouping<RecordsGroup>) {
+    init(record: Record, group: Grouping<RecordsGroup>) {
         self.record = record
         self.group = group
     }
@@ -13,14 +13,14 @@ final class RecordsGroup {
 
 extension RecordsGroup {
     var personName: String {
-        return record.personName
+        return record.indexItem.personName
     }
 
     var containsSingleRecord: Bool {
         return group.isEmpty
     }
 
-    func allRecords() -> [RecordProtocol] {
+    func allRecords() -> [Record] {
         var records = [record]
 
         for subgroup in group.allItems {
@@ -33,14 +33,14 @@ extension RecordsGroup {
 
 
 extension RecordsGroup {
-    convenience init(single record: RecordProtocol) {
+    convenience init(single record: Record) {
         self.init(record: record, group: .empty)
     }
 }
 
 
 extension RecordsGroup {
-    convenience init?(_ group: Grouping<RecordProtocol>) {
+    convenience init?(_ group: Grouping<Record>) {
         if group.allItems.count == 1 {
             self.init(single: group.allItems.first!)
             return
@@ -55,13 +55,13 @@ extension RecordsGroup {
 }
 
 
-func makeRecordGroups(from records: [RecordProtocol]) -> Grouping<RecordsGroup> {
+func makeRecordGroups(from records: [Record]) -> Grouping<RecordsGroup> {
     let groups = records.compactMap({ RecordsGroup(single: $0) })
     return Grouping(items: groups, areInIncreasingOrder: { $0.record.date > $1.record.date })
 }
 
 
-func makeRecordGroups(from grouping: Grouping<RecordProtocol>) -> Grouping<RecordsGroup> {
+func makeRecordGroups(from grouping: Grouping<Record>) -> Grouping<RecordsGroup> {
     return grouping.sections.compactMap({ section in
         RecordsGroup(
             Grouping(

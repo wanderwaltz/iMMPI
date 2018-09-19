@@ -31,6 +31,6 @@ final class RecordsGroupTests_Single: XCTestCase {
     }
 
     func testThat__it_returns_its_person_name() {
-        XCTAssertEqual(group.personName, group.record.personName)
+        XCTAssertEqual(group.personName, group.record.indexItem.personName)
     }
 }

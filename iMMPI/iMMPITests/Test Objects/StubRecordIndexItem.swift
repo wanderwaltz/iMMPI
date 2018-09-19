@@ -2,8 +2,8 @@ import Foundation
 @testable import iMMPI
 
 extension RecordIndexItem {
-    func makeProxy() -> RecordProxy {
-        return RecordProxy(indexItem: self, materialize: {
+    func makeLazy() -> Record {
+        return Record(indexItem: self, materialize: {
             var record = Record()
 
             record.date = self.date

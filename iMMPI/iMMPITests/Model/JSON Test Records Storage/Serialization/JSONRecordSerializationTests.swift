@@ -19,12 +19,12 @@ final class JSONRecordSerializationTests: XCTestCase {
         formatter.timeStyle = .none
         formatter.dateFormat = "dd-MM-yyyy"
 
-        XCTAssertEqual(first.personName, "Test Subject 003")
+        XCTAssertEqual(first.indexItem.personName, "Test Subject 003")
         XCTAssertEqual(first.person.gender, .female)
         XCTAssertEqual(first.person.ageGroup, .teen)
         XCTAssertEqual(first.date, formatter.date(from: "05-02-2014"))
 
-        XCTAssertEqual(second.personName, "Test Subject 004")
+        XCTAssertEqual(second.indexItem.personName, "Test Subject 004")
         XCTAssertEqual(second.person.gender, .male)
         XCTAssertEqual(second.person.ageGroup, .adult)
         XCTAssertEqual(second.date, formatter.date(from: "25-12-2013"))
@@ -38,7 +38,7 @@ final class JSONRecordSerializationTests: XCTestCase {
         let restoredRecord = serialization.decode(data)!
 
 
-        XCTAssertEqual(record.personName, restoredRecord.personName)
+        XCTAssertEqual(record.indexItem.personName, restoredRecord.indexItem.personName)
         XCTAssertEqual(record.person.name, restoredRecord.person.name)
         XCTAssertEqual(record.person.gender, restoredRecord.person.gender)
         XCTAssertEqual(record.person.ageGroup, restoredRecord.person.ageGroup)

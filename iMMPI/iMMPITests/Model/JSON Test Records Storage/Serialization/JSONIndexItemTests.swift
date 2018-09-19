@@ -14,7 +14,7 @@ final class JSONIndexItemTests: XCTestCase {
             directory: .init(name: "directory")
         )
 
-        XCTAssertEqual(indexItem.personName, record.personName)
+        XCTAssertEqual(indexItem.personName, record.indexItem.personName)
         XCTAssertEqual(indexItem.date, record.date)
     }
 }

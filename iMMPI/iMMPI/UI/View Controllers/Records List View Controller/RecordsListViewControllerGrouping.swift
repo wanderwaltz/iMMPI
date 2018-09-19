@@ -7,7 +7,7 @@ enum RecordsListViewControllerGrouping {
 
 
 extension RecordsListViewControllerGrouping {
-    func group(_ records: [RecordProtocol]) -> Grouping<RecordsGroup> {
+    func group(_ records: [Record]) -> Grouping<RecordsGroup> {
         switch self {
         case .alphabetical:
             return makeRecordGroups(from: groupByEqualName(records))

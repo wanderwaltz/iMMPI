@@ -1,12 +1,12 @@
 import Foundation
 
-func groupByEqualName(_ items: [RecordProtocol]) -> Grouping<RecordProtocol> {
+func groupByEqualName(_ items: [Record]) -> Grouping<Record> {
     return Grouping(
         items: items,
-        areInIncreasingOrder: { $0.personName < $1.personName },
+        areInIncreasingOrder: { $0.indexItem.personName < $1.indexItem.personName },
         sectionDescriptor: SectionDescriptor(
-            itemsBelongToSameSection: { $0.personName == $1.personName },
-            sectionTitleForItem: { $0.personName }
+            itemsBelongToSameSection: { $0.indexItem.personName == $1.indexItem.personName },
+            sectionTitleForItem: { $0.indexItem.personName }
         )
     )
 }

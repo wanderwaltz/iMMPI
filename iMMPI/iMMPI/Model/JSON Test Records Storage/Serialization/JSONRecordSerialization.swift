@@ -18,7 +18,7 @@ final class JSONRecordSerialization {
 
 
 extension JSONRecordSerialization {
-    func encode(_ record: RecordProtocol) -> Data? {
+    func encode(_ record: Record) -> Data? {
         var json = person.encode(record.person)
 
         json[Key.version] = version

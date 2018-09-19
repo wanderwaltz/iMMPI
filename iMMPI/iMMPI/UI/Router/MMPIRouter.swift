@@ -62,12 +62,12 @@ extension MMPIRouter: Router {
     }
 
 
-    func addRecord(basedOn record: RecordProtocol, sender: UIViewController) {
+    func addRecord(basedOn record: Record, sender: UIViewController) {
         edit(record, title: Strings.Screen.newRecord, sender: sender)
     }
 
 
-    func edit(_ record: RecordProtocol, sender: UIViewController) {
+    func edit(_ record: Record, sender: UIViewController) {
         edit(record, title: Strings.Screen.editRecord, sender: sender)
     }
 
@@ -86,7 +86,7 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayAnalysis(for records: [RecordProtocol], sender: UIViewController) {
+    func displayAnalysis(for records: [Record], sender: UIViewController) {
         let controller = viewControllersFactory.makeAnalysisViewController()
 
         controller.viewModel = AnalysisViewModel(records: records)
@@ -106,7 +106,7 @@ extension MMPIRouter: Router {
     }
 
 
-    func displayAnswersReview(for record: RecordProtocol, sender: UIViewController) {
+    func displayAnswersReview(for record: Record, sender: UIViewController) {
         guard let questionnaire = try? Questionnaire(record: record) else {
             return
         }
@@ -216,7 +216,7 @@ extension MMPIRouter {
 
         let controller = viewControllersFactory.makeRecordsListViewController()
 
-        controller.title = firstRecord.personName
+        controller.title = firstRecord.indexItem.personName
         controller.style = .nested(basedOn: firstRecord)
         controller.grouping = .flat
 
@@ -235,14 +235,14 @@ extension MMPIRouter {
         attachAddRecordButton(to: controller)
 
         controller.viewModel = storage.makeViewModel(includeRecord: { record in
-            record.personName.isEqual(firstRecord.personName)
+            record.indexItem.personName.isEqual(firstRecord.indexItem.personName)
         })
 
         sender.show(controller, sender: sender)
     }
 
 
-    fileprivate func edit(_ record: RecordProtocol, title: String, sender: UIViewController) {
+    fileprivate func edit(_ record: Record, title: String, sender: UIViewController) {
         let controller = viewControllersFactory.makeEditRecordViewController()
 
         controller.record = record
@@ -255,7 +255,7 @@ extension MMPIRouter {
     }
 
 
-    fileprivate func displayAnswersInput(for record: RecordProtocol,
+    fileprivate func displayAnswersInput(for record: Record,
                                          with questionnaire: Questionnaire,
                                          sender: UIViewController) {
 

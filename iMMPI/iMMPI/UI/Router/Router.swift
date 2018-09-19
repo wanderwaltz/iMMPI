@@ -4,15 +4,15 @@ protocol Router: class {
     func displayAllRecords(sender: UIViewController)
     func displayTrash(sender: UIViewController)
 
-    func addRecord(basedOn record: RecordProtocol, sender: UIViewController)
-    func edit(_ record: RecordProtocol, sender: UIViewController)
+    func addRecord(basedOn record: Record, sender: UIViewController)
+    func edit(_ record: Record, sender: UIViewController)
 
     func displayDetails(for records: [RecordIdentifier], sender: UIViewController)
 
-    func displayAnalysis(for records: [RecordProtocol], sender: UIViewController)
+    func displayAnalysis(for records: [Record], sender: UIViewController)
     func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController)
 
-    func displayAnswersReview(for record: RecordProtocol, sender: UIViewController)
+    func displayAnswersReview(for record: Record, sender: UIViewController)
 
     func displayPrintOptions(for html: Html, sender: UIViewController)
     func selectAnalysisReportForPrinting(context: AnalysisMenuActionContext, sender: UIViewController)

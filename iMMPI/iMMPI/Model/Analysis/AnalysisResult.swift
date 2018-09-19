@@ -1,12 +1,11 @@
 import Foundation
 
 struct AnalysisResult {
-    let record: RecordProtocol
+    let record: Record
     let scales: [BoundScale]
 }
 
 
-// TODO: conform to RecordProtocol when Record is a struct.
 extension AnalysisResult {
     var person: Person {
         return record.person
@@ -22,9 +21,8 @@ extension AnalysisResult {
 }
 
 
-// TODO: extract record proxy protocol and use it here
 extension AnalysisResult {
     var personName: String {
-        return record.personName
+        return record.indexItem.personName
     }
 }

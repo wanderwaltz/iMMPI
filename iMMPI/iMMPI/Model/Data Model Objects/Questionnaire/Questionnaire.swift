@@ -60,7 +60,7 @@ extension Questionnaire {
     }
 
 
-    init(record: RecordProtocol) throws {
+    init(record: Record) throws {
         try self.init(person: record.person)
     }
 

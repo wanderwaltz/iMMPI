@@ -1,6 +1,6 @@
 import UIKit
 
-/// A base class for presenting and editing RecordProtocol record answers in a UITableView-driven UI.
+/// A base class for presenting and editing Record record answers in a UITableView-driven UI.
 ///
 /// This class uses StatementTableViewCell cells to display the statements of the questionnaire. 
 /// The UITableViewDataSource methods are implemented to display the questionnaire contents in a single section list.

@@ -9,7 +9,7 @@ struct BoundScale {
 
 
 extension BoundScale {
-    init(scale: AnalysisScale, record: RecordProtocol) {
+    init(scale: AnalysisScale, record: Record) {
         self.init(
             identifier: scale.identifier,
             title: scale.title,
@@ -21,7 +21,7 @@ extension BoundScale {
 
 
 extension AnalysisScale {
-    func bind(_ record: RecordProtocol) -> BoundScale {
+    func bind(_ record: Record) -> BoundScale {
         return BoundScale(scale: self, record: record)
     }
 }

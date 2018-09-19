@@ -27,8 +27,13 @@ extension JSONIndexItem {
 
 
 extension JSONIndexItem {
-    init(record: RecordProtocol, fileName: String, directory: JSONRecordsStorageDirectory) {
-        self.init(personName: record.personName, date: record.date, fileName: fileName, directory: directory)
+    init(record: Record, fileName: String, directory: JSONRecordsStorageDirectory) {
+        self.init(
+            personName: record.indexItem.personName,
+            date: record.date,
+            fileName: fileName,
+            directory: directory
+        )
     }
 }
 
