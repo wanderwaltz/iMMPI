@@ -22,17 +22,17 @@ final class JSONRecordsStorage {
         self.storedRecordsUrl = storedRecordsUrl
     }
 
-    fileprivate let fileManager: FileManager
+    private let fileManager: FileManager
 
-    fileprivate let indexSerialization: JSONRecordIndexSerialization
-    fileprivate let recordSerialization: JSONRecordSerialization
+    private let indexSerialization: JSONRecordIndexSerialization
+    private let recordSerialization: JSONRecordSerialization
 
-    fileprivate let storageDirectoryName: String
-    fileprivate let storedRecordsUrl: URL
-    fileprivate let dateFormatter = DateFormatter.medium
+    private let storageDirectoryName: String
+    private let storedRecordsUrl: URL
+    private let dateFormatter = DateFormatter.medium
 
-    fileprivate var elements = [Element]()
-    fileprivate var loadedFileNames = Set<String>()
+    private var elements = [Element]()
+    private var loadedFileNames = Set<String>()
 }
 
 
@@ -114,7 +114,7 @@ extension JSONRecordsStorage {
     }
 
 
-    fileprivate func loadIndex() throws {
+    private func loadIndex() throws {
         let indexUrl = self.indexUrl
 
         guard fileManager.fileExists(atPath: indexUrl.path) else {
@@ -144,7 +144,7 @@ extension JSONRecordsStorage {
     }
 
 
-    fileprivate func saveIndex() throws {
+    private func saveIndex() throws {
         guard let indexData = indexSerialization.encode(proxies) else {
             return
         }
@@ -155,7 +155,7 @@ extension JSONRecordsStorage {
 
 
 extension JSONRecordsStorage {
-    fileprivate func remove(_ element: Element?) throws {
+    private func remove(_ element: Element?) throws {
         guard let element = element else {
             return
         }
@@ -174,7 +174,7 @@ extension JSONRecordsStorage {
     }
 
 
-    fileprivate func removeRecordFile(named fileName: String) throws {
+    private func removeRecordFile(named fileName: String) throws {
         let url = storedRecordsUrl.appendingPathComponent(fileName)
 
         if fileManager.fileExists(atPath: url.path) {
@@ -185,7 +185,7 @@ extension JSONRecordsStorage {
     }
 
 
-    fileprivate func store(_ element: Element?) throws {
+    private func store(_ element: Element?) throws {
         guard let element = element else {
             return
         }
@@ -211,7 +211,7 @@ extension JSONRecordsStorage {
     }
 
 
-    fileprivate func fileName(for record: RecordProtocol) -> String {
+    private func fileName(for record: RecordProtocol) -> String {
         let illegalFileNameCharacters = CharacterSet(charactersIn: "/\\?%*|\"<>$&@")
         let candidate = "\(record.personName) - \(dateFormatter.string(from: record.date))"
             .components(separatedBy: illegalFileNameCharacters).joined()
@@ -228,13 +228,13 @@ extension JSONRecordsStorage {
     }
 
 
-    fileprivate func fileNameIsAvailable(_ fileName: String) -> Bool {
+    private func fileNameIsAvailable(_ fileName: String) -> Bool {
         let url = storedRecordsUrl.appendingPathComponent(fileName)
         return false == fileManager.fileExists(atPath: url.path)
     }
 
 
-    fileprivate func element(for record: RecordProtocol) -> Element? {
+    private func element(for record: RecordProtocol) -> Element? {
         return elements.first(where: { $0.record === record })
     }
 }
@@ -242,7 +242,7 @@ extension JSONRecordsStorage {
 
 
 extension JSONRecordsStorage {
-    fileprivate final class Element {
+    private final class Element {
         var record: RecordProtocol?
         var fileName: String?
     }
@@ -250,11 +250,11 @@ extension JSONRecordsStorage {
 
 
 
-fileprivate let kJSONPathExtension = "json"
-fileprivate let kIndexFileName = "index"
+private let kJSONPathExtension = "json"
+private let kIndexFileName = "index"
 
 
-fileprivate func createDirectoryIfNeeded(at url: URL, with fileManager: FileManager) throws {
+private func createDirectoryIfNeeded(at url: URL, with fileManager: FileManager) throws {
     if false == fileManager.fileExists(atPath: url.path) {
         try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
     }
