@@ -18,4 +18,18 @@ final class PersonTests: XCTestCase {
     func testThat__default_person_is_adult() {
         XCTAssertEqual(Person().ageGroup, .adult)
     }
+
+    func testThat__same_persons_have_same_identifiers() {
+        let john1 = Person(name: "John Appleseed", gender: .male, ageGroup: .adult)
+        let john2 = Person(name: "John Appleseed", gender: .male, ageGroup: .adult)
+
+        XCTAssertEqual(john1.identifier, john2.identifier)
+    }
+
+    func testThat__different_persons_have_different_identifiers() {
+        let john = Person(name: "John Appleseed", gender: .male, ageGroup: .adult)
+        let leslie = Person(name: "Leslie Knope", gender: .female, ageGroup: .adult)
+
+        XCTAssertNotEqual(john.identifier, leslie.identifier)
+    }
 }

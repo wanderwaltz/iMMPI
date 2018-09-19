@@ -19,3 +19,10 @@ struct Person {
         self.ageGroup = ageGroup
     }
 }
+
+
+extension Person {
+    var identifier: PersonIdentifier {
+        return PersonIdentifier(name: name)
+    }
+}
