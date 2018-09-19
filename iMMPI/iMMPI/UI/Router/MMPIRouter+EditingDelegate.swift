@@ -41,9 +41,9 @@ extension MMPIRouter.EditingDelegate: EditRecordViewControllerDelegate {
 
 extension MMPIRouter.EditingDelegate: AnswersInputDelegate {
     func answersViewController(_ controller: AnswersViewController,
-                                   didSet answer: AnswerType,
-                                   for statement: Statement,
-                                   record: RecordProtocol) {
+                               didSet answer: AnswerType,
+                               for statement: Statement,
+                               record: RecordProtocol) {
         answersInputDelegate?.answersViewController(
             controller,
             didSet: answer,
@@ -51,10 +51,10 @@ extension MMPIRouter.EditingDelegate: AnswersInputDelegate {
             record: record
         )
     }
-
+    
     func answersInputViewController(_ controller: AnswersViewController,
-                                        didSet answers: Answers,
-                                        for record: RecordProtocol) {
+                                    didSet answers: Answers,
+                                    for record: RecordProtocol) {
         record.answers = answers
         try? storage.store(record)
     }
