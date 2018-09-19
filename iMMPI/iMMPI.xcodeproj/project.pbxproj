@@ -3674,6 +3674,43 @@
 			path = "Score Formatters";
 			sourceTree = "<group>";
 		};
+		44AED89D21520D7000C68F11 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				442CE1B61E235D12006C34A6 /* AgeGroup.swift */,
+				442CE1B81E235D3D006C34A6 /* Gender.swift */,
+				4430C7B81E16408A0024C001 /* Person.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		44AED8A021520E4500C68F11 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				442CE1AB1E235397006C34A6 /* Record.swift */,
+				44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		44AED8A121520E5900C68F11 /* Questionnaire */ = {
+			isa = PBXGroup;
+			children = (
+				4430C7A51E161B430024C001 /* Questionnaire.swift */,
+				4430C7A11E1619000024C001 /* Statement.swift */,
+			);
+			path = Questionnaire;
+			sourceTree = "<group>";
+		};
+		44AED8A221520E6B00C68F11 /* Answers */ = {
+			isa = PBXGroup;
+			children = (
+				442CE1BD1E2366F7006C34A6 /* Answers.swift */,
+				444F243A1E321F3100BB8003 /* AnswerType.swift */,
+			);
+			path = Answers;
+			sourceTree = "<group>";
+		};
 		44B407FC1E4A067300FD4CE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3915,15 +3952,10 @@
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
 			isa = PBXGroup;
 			children = (
-				442CE1B61E235D12006C34A6 /* AgeGroup.swift */,
-				442CE1BD1E2366F7006C34A6 /* Answers.swift */,
-				444F243A1E321F3100BB8003 /* AnswerType.swift */,
-				442CE1B81E235D3D006C34A6 /* Gender.swift */,
-				442CE1AB1E235397006C34A6 /* Record.swift */,
-				44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */,
-				4430C7B81E16408A0024C001 /* Person.swift */,
-				4430C7A51E161B430024C001 /* Questionnaire.swift */,
-				4430C7A11E1619000024C001 /* Statement.swift */,
+				44AED8A221520E6B00C68F11 /* Answers */,
+				44AED89D21520D7000C68F11 /* Person */,
+				44AED8A021520E4500C68F11 /* Record */,
+				44AED8A121520E5900C68F11 /* Questionnaire */,
 			);
 			path = "Data Model Objects";
 			sourceTree = "<group>";
