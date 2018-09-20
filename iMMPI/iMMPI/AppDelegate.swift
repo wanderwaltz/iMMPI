@@ -46,7 +46,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
-        guard NSClassFromString("XCTestCase") == nil else {
+        guard false == application.isRunningUnitTests else {
             return true
         }
 
@@ -119,11 +119,11 @@ extension AppDelegate {
 // MARK: state restoration
 extension AppDelegate {
     func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
-        return true
+        return false == application.isRunningUnitTests
     }
 
     func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
-        return true
+        return false == application.isRunningUnitTests
     }
 
     func application(_ application: UIApplication,

@@ -23,3 +23,10 @@ final class Application: UIApplication {
         lastTouchedView = touch.view
     }
 }
+
+
+extension UIApplication {
+    var isRunningUnitTests: Bool {
+        return NSClassFromString("XCTestCase") != nil
+    }
+}
