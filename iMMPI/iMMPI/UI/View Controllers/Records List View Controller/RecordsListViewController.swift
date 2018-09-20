@@ -94,6 +94,8 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
 
     fileprivate var index: SectionIndex?
     fileprivate var cellSource: TableViewCellSource<RecordsGroup>!
+
+    fileprivate var highlightedRecordIdentifier: RecordIdentifier?
 }
 
 
@@ -150,6 +152,15 @@ extension RecordsListViewController {
         }
 
         tableView.reloadData()
+
+        if let indexPath = groups.indexPathOfItem(matching: { $0.record.identifier == highlightedRecordIdentifier }) {
+            let scrollPosition: UITableView.ScrollPosition =
+                tableView.indexPathsForVisibleRows?.contains(indexPath) == true
+                    ? .none
+                    : .middle
+
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: scrollPosition)
+        }
     }
 
 
@@ -178,6 +189,7 @@ extension RecordsListViewController {
         }
 
         let recordIdentifiers = group.allRecords().map({ $0.identifier })
+        highlightedRecordIdentifier = recordIdentifiers.first
 
         router?.displayDetails(for: recordIdentifiers, sender: self)
     }
@@ -288,4 +300,25 @@ extension RecordsListViewController: UISearchControllerDelegate {
         recordsFilter = Constant.value(true)
         becomeFirstResponder()
     }
+}
+
+
+// MARK: state restoration
+extension RecordsListViewController {
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        coder.encode(highlightedRecordIdentifier?.rawValue, forKey: Key.highlightedRecordIdentifier)
+    }
+
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        highlightedRecordIdentifier =
+            (coder.decodeObject(forKey: Key.highlightedRecordIdentifier) as? String)
+                .flatMap(RecordIdentifier.init)
+    }
+}
+
+
+private enum Key {
+    static let highlightedRecordIdentifier = "highlighted-record-identifier"
 }
