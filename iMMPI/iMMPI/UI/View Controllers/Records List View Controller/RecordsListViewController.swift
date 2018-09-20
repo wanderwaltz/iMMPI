@@ -11,7 +11,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
         }
     }
 
-    var searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
 
     var viewModel: RecordsListViewModel<Record>? {
         willSet {
