@@ -16,9 +16,13 @@ class AnswersViewController: UIViewController, UsingRouting {
 
     @IBOutlet var tableView: UITableView?
 
+    var defaultTitle: String {
+        return (viewModel?.record).map { "\($0.person.name), \(dateFormatter.string(from: $0.date))" } ?? ""
+    }
+
     var viewModel: AnswersViewModel? {
         didSet {
-            title = (viewModel?.record).map { "\($0.person.name), \(dateFormatter.string(from: $0.date))" } ?? ""
+            title = defaultTitle
 
             if let viewModel = viewModel {
                 answers = viewModel.record.answers

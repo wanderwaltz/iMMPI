@@ -23,7 +23,12 @@ extension AnswersInputViewController {
             statementIndex = index
             tableView?.reloadData()
             tableView?.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: false)
-            title = String(format: Strings.Analysis.format_N_of_M, statementIndex+1, viewModel.statementsCount)
+            title = String(
+                format: Strings.Analysis.format_N_of_M,
+                defaultTitle,
+                statementIndex+1,
+                viewModel.statementsCount
+            )
         }
     }
 
@@ -108,4 +113,27 @@ extension AnswersInputViewController {
 
         return cell
     }
+}
+
+
+// MARK: state restoration
+extension AnswersInputViewController {
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        coder.encode(statementIndex, forKey: Key.statementIndex)
+    }
+
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        let restoredStatementIndex = coder.decodeInteger(forKey: Key.statementIndex)
+
+        if restoredStatementIndex > 0 {
+            setStatementIndex(restoredStatementIndex)
+        }
+    }
+}
+
+
+private enum Key {
+    static let statementIndex = "statement-index"
 }

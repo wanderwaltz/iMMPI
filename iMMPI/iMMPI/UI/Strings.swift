@@ -74,7 +74,7 @@ enum Strings {
 
     // MARK: - analysis
     enum Analysis {
-        static let format_N_of_M = NSLocalizedString("%ld из %ld", comment: "N из M")
+        static let format_N_of_M = NSLocalizedString("%@ (%ld из %ld)", comment: "N из M")
 
         static let yes = NSLocalizedString("ДА", comment: "Позитивный ответ")
         static let no = NSLocalizedString("НЕТ", comment: "Негативный ответ")
