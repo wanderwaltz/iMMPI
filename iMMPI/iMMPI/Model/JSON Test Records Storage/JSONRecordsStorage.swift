@@ -240,13 +240,7 @@ extension JSONRecordsStorage {
         return fileName
     }
 
-
-    private func fileNameIsAvailable(_ fileName: String) -> Bool {
-        let url = storedRecordsUrl.appendingPathComponent(fileName)
-        return false == fileManager.fileExists(atPath: url.path)
-    }
-
-
+    
     private func element(for identifier: RecordIdentifier) -> Element? {
         return elements[identifier]
     }
