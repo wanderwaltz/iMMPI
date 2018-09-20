@@ -1102,6 +1102,7 @@
 		44AED8D52153716A00C68F11 /* ViewControllerMaker+Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8D42153716A00C68F11 /* ViewControllerMaker+Answers.swift */; };
 		44AED8D7215371C300C68F11 /* ViewControllerMaker+Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8D6215371C300C68F11 /* ViewControllerMaker+Analysis.swift */; };
 		44AED8DD21537C5200C68F11 /* PersonIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8DC21537C5200C68F11 /* PersonIdentifierTests.swift */; };
+		44AED8DF21538A4200C68F11 /* RecordIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8DE21538A4200C68F11 /* RecordIdentifierTests.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2270,6 +2271,7 @@
 		44AED8D42153716A00C68F11 /* ViewControllerMaker+Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerMaker+Answers.swift"; sourceTree = "<group>"; };
 		44AED8D6215371C300C68F11 /* ViewControllerMaker+Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerMaker+Analysis.swift"; sourceTree = "<group>"; };
 		44AED8DC21537C5200C68F11 /* PersonIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonIdentifierTests.swift; sourceTree = "<group>"; };
+		44AED8DE21538A4200C68F11 /* RecordIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordIdentifierTests.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3544,6 +3546,7 @@
 				44AED8DC21537C5200C68F11 /* PersonIdentifierTests.swift */,
 				44AED8B92152777700C68F11 /* RecordTests.swift */,
 				44B408151E4AF44300FD4CE8 /* Record+LazyLoadingTests.swift */,
+				44AED8DE21538A4200C68F11 /* RecordIdentifierTests.swift */,
 				4430C79D1E1617AE0024C001 /* StatementTests.swift */,
 			);
 			path = "Data Model Objects";
@@ -5148,6 +5151,7 @@
 				44C302131E35234B0073F391 /* AnalyserIntegrationTests.swift in Sources */,
 				444F23861E2E34A100BB8003 /* JSONGenderSerializationTests.swift in Sources */,
 				44AED8BA2152777700C68F11 /* RecordTests.swift in Sources */,
+				44AED8DF21538A4200C68F11 /* RecordIdentifierTests.swift in Sources */,
 				442CE1D11E2378D7006C34A6 /* SectionSplittingTests.swift in Sources */,
 				448C30F51E27BD63003D355D /* TableViewCellSourceTests.swift in Sources */,
 				448C31101E289328003D355D /* AnalysisViewControllerTests.swift in Sources */,
