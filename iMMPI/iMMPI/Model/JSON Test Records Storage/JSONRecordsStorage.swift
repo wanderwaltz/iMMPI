@@ -158,7 +158,7 @@ extension JSONRecordsStorage {
                 return nil
             }
 
-            let fileName = self.fileName(for: record)
+            let fileName = element.fileName ?? self.fileName(for: record)
             let indexItem = record.indexItem
 
             return JSONIndexItem(
