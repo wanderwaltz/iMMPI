@@ -21,7 +21,7 @@ final class JSONRecordsStorage {
     private let recordSerialization: JSONRecordSerialization
 
     private let directory: JSONRecordsStorageDirectory
-    private let dateFormatter = DateFormatter.medium
+    private let dateFormatter = DateFormatter.serialization
 
     private var elements = [RecordIdentifier: Element]()
     private var loadedFileNames = Set<String>()
@@ -245,13 +245,7 @@ extension JSONRecordsStorage {
         let candidate = "\(indexItem.personName) - \(dateFormatter.string(from: indexItem.date))"
             .components(separatedBy: illegalFileNameCharacters).joined()
 
-        var fileName = candidate.appending(".\(kJSONPathExtension)")
-        var attempts = 0
-
-        while false == fileNameIsAvailable(fileName) {
-            attempts += 1
-            fileName = candidate.appendingFormat(" %ld.%@", attempts, kJSONPathExtension)
-        }
+        let fileName = candidate.appending(".\(kJSONPathExtension)")
 
         return fileName
     }
