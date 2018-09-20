@@ -107,6 +107,35 @@ final class JSONRecordsStorageTests: XCTestCase {
 
         XCTAssertEqual(countAfterStoringRecord, countBeforeStoringRecord + 1)
     }
+
+    func testThat__after_loading_storage_it_creates_index() {
+        copyTestStorage()
+        storage = try! JSONRecordsStorage(directory: .test)
+
+        XCTAssertFalse(fileManager.fileExists(atPath: JSONRecordsStorageDirectory.test.indexUrl.path))
+
+        try! storage.load()
+
+        XCTAssertTrue(fileManager.fileExists(atPath: JSONRecordsStorageDirectory.test.indexUrl.path))
+    }
+
+    func testThat__index_contains_the_same_number_of_elements_as_records_in_storage() {
+        let index = loadIndex()
+        XCTAssertEqual(index.count, storage.all.count)
+    }
+
+    func testThat__index_person_names_are_equal_to_stored_records_person_names() {
+        let index = loadIndex()
+        let indexPersonNames = index.map({ $0.personName }).sorted()
+        let storagePersonNames = storage.all.map({ $0.person.name }).sorted()
+        XCTAssertEqual(indexPersonNames, storagePersonNames)
+    }
+
+    func testThat__file_names_in_index_are_unique() {
+        let index = loadIndex()
+        let uniqueFileNames = Set(index.map({ $0.fileName }))
+        XCTAssertEqual(uniqueFileNames.count, index.count)
+    }
 }
 
 
@@ -126,6 +155,12 @@ extension JSONRecordsStorageTests {
     private func deleteTestStorage() {
         try? fileManager.removeItem(at: JSONRecordsStorageDirectory.test.url)
     }
+
+    private func loadIndex() -> [JSONIndexItem] {
+        let data = try? Data(contentsOf: JSONRecordsStorageDirectory.test.indexUrl)
+        let serialization = JSONRecordIndexSerialization()
+        return serialization.decode(data)
+    }
 }
 
 
@@ -143,4 +178,8 @@ extension RecordIdentifier {
 
 extension JSONRecordsStorageDirectory {
     fileprivate static let test = JSONRecordsStorageDirectory(name: "Test Storage")
+
+    fileprivate var indexUrl: URL {
+        return url.appendingPathComponent("index.json")
+    }
 }
