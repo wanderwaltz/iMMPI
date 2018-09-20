@@ -2,14 +2,18 @@ import Foundation
 import MessageUI
 
 protocol ViewControllersFactory {
-    func makeRecordsListViewController() -> RecordsListViewController
-    func makeEditRecordViewController() -> EditRecordViewController
+    func makeAllRecordsListViewController() -> RecordsListViewController
+    func makeTrashViewController() -> RecordsListViewController
 
-    func makeAnalysisViewController() -> AnalysisViewController
+    func makeEditRecordViewController(for record: Record, title: String) -> EditRecordViewController
+
+    func makeDetailsViewController(for recordIdentifier: RecordIdentifier) -> UIViewController
+    func makeDetailsViewController(for recordIdentifiers: [RecordIdentifier]) -> RecordsListViewController
+
+    func makeAnalysisViewController(for records: [Record]) -> AnalysisViewController
     func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController
 
-    func makeAnswersReviewViewController() -> AnswersViewController
-    func makeAnswersInputViewController() -> AnswersInputViewController
+    func makeAnswersReviewViewController(for record: Record) -> AnswersViewController
 
     func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController
 

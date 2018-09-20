@@ -5,6 +5,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let storage = try! JSONRecordsStorage(directory: .default)
     let trashStorage = try! JSONRecordsStorage(directory: .trash)
+    let soundPlayer = SoundPlayer()
 
     var router: Router?
 
@@ -17,12 +18,18 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
         storage.trashStorage = trashStorage
 
-        let viewControllersFactory = MMPIViewControllersFactory()
+        let viewControllersFactory = MMPIViewControllersFactory(
+            storage: storage,
+            trashStorage: trashStorage,
+            editingDelegate: MMPIViewControllersFactory.EditingDelegate(storage: storage),
+            analysisSettings: ValidatingAnalysisSettings(UserDefaultsAnalysisSettings())
+        )
+
+        viewControllersFactory.editingDelegate.answersInputDelegate = soundPlayer
 
         router = MMPIRouter(
             factory: viewControllersFactory,
-            storage: storage,
-            trashStorage: trashStorage
+            storage: storage
         )
 
         window = UIWindow(frame: UIScreen.main.bounds)

@@ -1,6 +1,6 @@
 import Foundation
 
-extension MMPIRouter {
+extension MMPIViewControllersFactory {
     final class EditingDelegate {
         weak var answersInputDelegate: AnswersInputDelegate?
         
@@ -13,7 +13,7 @@ extension MMPIRouter {
 }
 
 
-extension MMPIRouter.EditingDelegate: EditRecordViewControllerDelegate {
+extension MMPIViewControllersFactory.EditingDelegate: EditRecordViewControllerDelegate {
     func editRecordViewController(_ controller: EditRecordViewController,
                                   didFinishEditing record: Record,
                                   previousIdentifier: RecordIdentifier) {
@@ -32,14 +32,13 @@ extension MMPIRouter.EditingDelegate: EditRecordViewControllerDelegate {
         )
     }
 
-
     func editRecordViewControllerDidCancel(_ controller: EditRecordViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
 }
 
 
-extension MMPIRouter.EditingDelegate: AnswersInputDelegate {
+extension MMPIViewControllersFactory.EditingDelegate: AnswersInputDelegate {
     func answersViewController(_ controller: AnswersViewController,
                                didSet answer: AnswerType,
                                for statement: Statement,

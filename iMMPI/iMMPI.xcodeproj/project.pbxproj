@@ -563,7 +563,7 @@
 		44673C191E23C1C0001758C0 /* SectionIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C181E23C1C0001758C0 /* SectionIndex.swift */; };
 		44673C1C1E23C9CA001758C0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C1B1E23C9CA001758C0 /* Router.swift */; };
 		44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */; };
-		44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */; };
+		44673C221E249A8E001758C0 /* MMPIViewControllersFactory+EditingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C211E249A8E001758C0 /* MMPIViewControllersFactory+EditingDelegate.swift */; };
 		44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */; };
 		44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */; };
 		44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */; };
@@ -1727,7 +1727,7 @@
 		44673C181E23C1C0001758C0 /* SectionIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionIndex.swift; sourceTree = "<group>"; };
 		44673C1B1E23C9CA001758C0 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMPIRouter.swift; sourceTree = "<group>"; };
-		44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+EditingDelegate.swift"; sourceTree = "<group>"; };
+		44673C211E249A8E001758C0 /* MMPIViewControllersFactory+EditingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIViewControllersFactory+EditingDelegate.swift"; sourceTree = "<group>"; };
 		44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerGrouping.swift; sourceTree = "<group>"; };
 		44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMPIViewControllersFactory.swift; sourceTree = "<group>"; };
@@ -2521,7 +2521,6 @@
 			children = (
 				44673C1B1E23C9CA001758C0 /* Router.swift */,
 				44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */,
-				44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */,
 				448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */,
 				444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */,
 				444F245C1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift */,
@@ -2534,6 +2533,7 @@
 			children = (
 				44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */,
 				44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */,
+				44673C211E249A8E001758C0 /* MMPIViewControllersFactory+EditingDelegate.swift */,
 				44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */,
 			);
 			path = "View Controllers Factory";
@@ -5160,7 +5160,7 @@
 				444F246B1E34B91700BB8003 /* AnalysisScale.swift in Sources */,
 				5876FDC71E2BE4C600255227 /* DatePickerViewController.swift in Sources */,
 				44A9043B1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift in Sources */,
-				44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */,
+				44673C221E249A8E001758C0 /* MMPIViewControllersFactory+EditingDelegate.swift in Sources */,
 				44ECB100214FB22F00ADA7D4 /* CollectionViewCellSource.swift in Sources */,
 				44ECB0F8214FB1CB00ADA7D4 /* CellNibRegistering.swift in Sources */,
 				444F245F1E34990B00BB8003 /* MenuAction+UITableView.swift in Sources */,
