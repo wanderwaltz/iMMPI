@@ -22,61 +22,75 @@ extension ScreenDescriptor {
 // MARK: restorable state
 extension ScreenDescriptor {
     static let allRecords = ScreenDescriptor(
-        restorationIdentifier: nil,
-        maker: .allRecords
+        restorationIdentifier:
+            ScreenDescriptorSerialization
+                .RestorationIdentifier
+                .allRecords,
+        maker:
+            .allRecords
     )
 
     static let trash = ScreenDescriptor(
-        restorationIdentifier: nil,
-        maker: .trash
+        restorationIdentifier:
+            ScreenDescriptorSerialization
+                .RestorationIdentifier
+                .trash,
+        maker:
+            .trash
     )
-
-    static func addRecord(_ record: Record) -> ScreenDescriptor {
-        return ScreenDescriptor(
-            restorationIdentifier: nil,
-            maker: .addRecord(record)
-        )
-    }
 
     static func editRecord(with identifier: RecordIdentifier) -> ScreenDescriptor {
         return ScreenDescriptor(
-            restorationIdentifier: nil,
-            maker: .editRecord(with: identifier)
-        )
-    }
-
-    static func detailsForSingleRecord(with identifier: RecordIdentifier) -> ScreenDescriptor {
-        return ScreenDescriptor(
-            restorationIdentifier: nil,
-            maker: .detailsForSingleRecord(with: identifier)
+            restorationIdentifier:
+                ScreenDescriptorSerialization
+                    .RestorationIdentifier
+                    .editRecord(with: identifier),
+            maker:
+                .editRecord(with: identifier)
         )
     }
 
     static func detailsForMultipleRecords(with identifiers: [RecordIdentifier]) -> ScreenDescriptor {
         return ScreenDescriptor(
-            restorationIdentifier: nil,
-            maker: .detailsForMultipleRecords(with: identifiers)
+            restorationIdentifier:
+                ScreenDescriptorSerialization
+                    .RestorationIdentifier
+                    .detailsForMultipleRecords(with: identifiers),
+            maker:
+                .detailsForMultipleRecords(with: identifiers)
         )
     }
 
     static func analysisForRecords(with identifiers: [RecordIdentifier]) -> ScreenDescriptor {
         return ScreenDescriptor(
-            restorationIdentifier: nil,
-            maker: .analysisForRecords(with: identifiers)
+            restorationIdentifier:
+                ScreenDescriptorSerialization
+                    .RestorationIdentifier
+                    .analysisForRecords(with: identifiers),
+            maker:
+                .analysisForRecords(with: identifiers)
         )
     }
 
     static func answersInputForRecord(with identifier: RecordIdentifier) -> ScreenDescriptor {
         return ScreenDescriptor(
-            restorationIdentifier: nil,
-            maker: .answersInputForRecord(with: identifier)
+            restorationIdentifier:
+                ScreenDescriptorSerialization
+                    .RestorationIdentifier
+                    .answersInputForRecord(with: identifier),
+            maker:
+                .answersInputForRecord(with: identifier)
         )
     }
 
     static func answersReviewForRecord(with identifier: RecordIdentifier) -> ScreenDescriptor {
         return ScreenDescriptor(
-            restorationIdentifier: nil,
-            maker: .answersReviewForRecord(with: identifier)
+            restorationIdentifier:
+                ScreenDescriptorSerialization
+                    .RestorationIdentifier
+                    .answersReviewForRecord(with: identifier),
+            maker:
+                .answersReviewForRecord(with: identifier)
         )
     }
 }
@@ -84,6 +98,25 @@ extension ScreenDescriptor {
 
 // MARK: non-restorable state
 extension ScreenDescriptor {
+    // `addRecord` is not restorable since we don't want to store the Record which not yet has been saved:
+    // it will be more difficult than just storing record id inside the restoration identifier.
+    static func addRecord(_ record: Record) -> ScreenDescriptor {
+        return ScreenDescriptor(
+            restorationIdentifier: nil,
+            maker: .addRecord(record)
+        )
+    }
+
+    // `detailsForSingleRecord` is not restorable since this 'screen' does not actually exists as a separate
+    // entity: it will be resolved into either analysis or answers input, which are restored separately.
+    // This is an implementation detail.
+    static func detailsForSingleRecord(with identifier: RecordIdentifier) -> ScreenDescriptor {
+        return ScreenDescriptor(
+            restorationIdentifier: nil,
+            maker: .detailsForSingleRecord(with: identifier)
+        )
+    }
+
     static func analysisOptions(with context: AnalysisMenuActionContext) -> ScreenDescriptor {
         return ScreenDescriptor(
             restorationIdentifier: nil,

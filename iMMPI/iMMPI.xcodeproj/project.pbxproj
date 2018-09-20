@@ -1103,6 +1103,8 @@
 		44AED8D7215371C300C68F11 /* ViewControllerMaker+Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8D6215371C300C68F11 /* ViewControllerMaker+Analysis.swift */; };
 		44AED8DD21537C5200C68F11 /* PersonIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8DC21537C5200C68F11 /* PersonIdentifierTests.swift */; };
 		44AED8DF21538A4200C68F11 /* RecordIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8DE21538A4200C68F11 /* RecordIdentifierTests.swift */; };
+		44AED8E321538C9900C68F11 /* ScreenDescriptorSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E221538C9900C68F11 /* ScreenDescriptorSerialization.swift */; };
+		44AED8E621538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E521538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2272,6 +2274,8 @@
 		44AED8D6215371C300C68F11 /* ViewControllerMaker+Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerMaker+Analysis.swift"; sourceTree = "<group>"; };
 		44AED8DC21537C5200C68F11 /* PersonIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonIdentifierTests.swift; sourceTree = "<group>"; };
 		44AED8DE21538A4200C68F11 /* RecordIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordIdentifierTests.swift; sourceTree = "<group>"; };
+		44AED8E221538C9900C68F11 /* ScreenDescriptorSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDescriptorSerialization.swift; sourceTree = "<group>"; };
+		44AED8E521538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDescriptorSerializationTests.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3770,6 +3774,7 @@
 		44AED8CA21536AD300C68F11 /* View Controllers Factory */ = {
 			isa = PBXGroup;
 			children = (
+				44AED8E421538D6E00C68F11 /* Descriptors */,
 				448C31161E28981A003D355D /* MMPIViewControllersFactory+AnalysisOptionsDelegateTests.swift */,
 			);
 			path = "View Controllers Factory";
@@ -3792,6 +3797,7 @@
 			isa = PBXGroup;
 			children = (
 				44AED8C82153630100C68F11 /* ScreenDescriptor.swift */,
+				44AED8E221538C9900C68F11 /* ScreenDescriptorSerialization.swift */,
 			);
 			path = Descriptors;
 			sourceTree = "<group>";
@@ -3805,6 +3811,14 @@
 				444F24361E3216D800BB8003 /* MMPIViewControllersFactory+ReportPrintingDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		44AED8E421538D6E00C68F11 /* Descriptors */ = {
+			isa = PBXGroup;
+			children = (
+				44AED8E521538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift */,
+			);
+			path = Descriptors;
 			sourceTree = "<group>";
 		};
 		44B407FC1E4A067300FD4CE8 /* Model */ = {
@@ -5135,6 +5149,7 @@
 				448C31171E28981A003D355D /* MMPIViewControllersFactory+AnalysisOptionsDelegateTests.swift in Sources */,
 				444F247B1E34EF4800BB8003 /* AnalysisScoreTests.swift in Sources */,
 				449A52321E4B549500D23C13 /* JSONIndexItemTests.swift in Sources */,
+				44AED8E621538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift in Sources */,
 				44AED8AF215215DF00C68F11 /* JSONRecordsStorageDirectoryTests.swift in Sources */,
 				442CE1E51E238C75006C34A6 /* RecordsGroupTests.swift in Sources */,
 				444F238A1E2E36F300BB8003 /* JSONPersonSerializationTests.swift in Sources */,
@@ -5296,6 +5311,7 @@
 				447DB7D81E37E63A00901631 /* BoundScale.swift in Sources */,
 				442CE1DD1E23862A006C34A6 /* Section.swift in Sources */,
 				4430C7B91E16408A0024C001 /* Person.swift in Sources */,
+				44AED8E321538C9900C68F11 /* ScreenDescriptorSerialization.swift in Sources */,
 				444F241F1E31EA3900BB8003 /* AnalysisMenuActionContext.swift in Sources */,
 				448C31961E2B6479003D355D /* AnalysisReportGenerator.swift in Sources */,
 				448C30F31E27B9BA003D355D /* TableViewCellSource+Default.swift in Sources */,

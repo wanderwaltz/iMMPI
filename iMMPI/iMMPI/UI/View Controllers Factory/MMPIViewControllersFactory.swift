@@ -14,6 +14,7 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
 
     func makeViewController(for descriptor: ScreenDescriptor) -> UIViewController {
         let controller = descriptor.makeViewController(with: self)
+        controller.restorationIdentifier = descriptor.restorationIdentifier
         return controller
     }
 }
