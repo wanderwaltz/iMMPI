@@ -75,8 +75,14 @@ extension JSONRecordsStorage: RecordStorage {
                 element.record = record
                 element.fileName = fileName
 
+                let oldFileName = elements[record.identifier]?.fileName
+
                 loadedFileNames.insert(fileName)
                 elements[record.identifier] = element
+
+                if let oldFileName = oldFileName {
+                    try removeRecordFile(named: oldFileName)
+                }
             }
         }
 
@@ -133,8 +139,14 @@ extension JSONRecordsStorage {
                 element.record = proxy
                 element.fileName = item.fileName
 
+                let oldFileName = elements[proxy.identifier]?.fileName
+
                 loadedFileNames.insert(item.fileName)
                 elements[proxy.identifier] = element
+
+                if let oldFileName = oldFileName {
+                    try removeRecordFile(named: oldFileName)
+                }
             }
         }
     }

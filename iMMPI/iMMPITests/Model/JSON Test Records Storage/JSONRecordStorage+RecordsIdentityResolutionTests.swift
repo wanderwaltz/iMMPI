@@ -86,6 +86,23 @@ final class JSONRecordStorageRecordIdentityResolutionTests: XCTestCase {
         try! storage.load()
         XCTAssertEqual(storage.all.first?.answers.answer(for: 1), .negative)
     }
+
+    func testThat__it_deletes_old_files_when_encountering_newer_files_with_the_same_record_id() {
+        copyRecordJsonNamed("JA1")
+        copyRecordJsonNamed("JA2")
+        let storage = try! JSONRecordsStorage(directory: .test)
+        try! storage.load()
+
+        var subpaths = try! fileManager.contentsOfDirectory(
+            at: JSONRecordsStorageDirectory.test.url,
+            includingPropertiesForKeys: nil,
+            options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]
+        )
+
+        subpaths.removeAll(where: { $0.lastPathComponent == "index.json" })
+
+        XCTAssertEqual(subpaths.count, 1)
+    }
 }
 
 
