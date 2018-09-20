@@ -10,3 +10,14 @@ struct PersonIdentifier: Hashable {
 
     private let name: String
 }
+
+
+extension PersonIdentifier: RawRepresentable {
+    var rawValue: String {
+        return name
+    }
+
+    init?(rawValue: String) {
+        self.init(name: rawValue)
+    }
+}
