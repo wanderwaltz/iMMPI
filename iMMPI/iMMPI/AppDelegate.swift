@@ -5,17 +5,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let storage = try! JSONRecordsStorage(directory: .default)
     let trashStorage = try! JSONRecordsStorage(directory: .trash)
+
     let soundPlayer = SoundPlayer()
 
-    var router: Router?
+    let viewControllersFactory: ViewControllersFactory
+    let router: Router
 
-    func application(_ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
-        guard NSClassFromString("XCTestCase") == nil else {
-            return true
-        }
-
+    override init() {
         storage.trashStorage = trashStorage
 
         let viewControllersFactory = MMPIViewControllersFactory(
@@ -35,6 +32,17 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             storage: storage
         )
 
+        self.viewControllersFactory = viewControllersFactory
+        super.init()
+    }
+
+    func application(_ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
+        guard NSClassFromString("XCTestCase") == nil else {
+            return true
+        }
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = makeRootViewController()
         window?.makeKeyAndVisible()
@@ -51,7 +59,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         self.splitViewController(rootVC, willChangeTo: rootVC.displayMode)
 
         if let first = rootVC.viewControllers.first {
-            router?.displayAllRecords(sender: first)
+            router.displayAllRecords(sender: first)
         }
 
         return rootVC
@@ -92,6 +100,6 @@ extension AppDelegate {
             return
         }
 
-        router?.displayTrash(sender: root)
+        router.displayTrash(sender: root)
     }
 }
