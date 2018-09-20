@@ -32,14 +32,15 @@ extension MMPIRouter: Router {
         controller.title = Strings.Screen.records
         attachAddRecordButton(to: controller)
 
-        if let navigationController = sender as? UINavigationController {
-            let trashButton = UIBarButtonItem(
-                barButtonSystemItem: .trash,
-                target: nil,
-                action: #selector(AppDelegate.trashButtonAction(_:))
-            )
+        let trashButton = UIBarButtonItem(
+            barButtonSystemItem: .trash,
+            target: nil,
+            action: #selector(AppDelegate.trashButtonAction(_:))
+        )
 
-            controller.navigationItem.leftBarButtonItem = trashButton
+        controller.navigationItem.leftBarButtonItem = trashButton
+
+        if let navigationController = sender as? UINavigationController {
             navigationController.viewControllers = [controller]
         }
         else {
