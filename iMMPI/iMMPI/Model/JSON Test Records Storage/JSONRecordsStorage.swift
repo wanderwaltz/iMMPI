@@ -173,25 +173,6 @@ extension JSONRecordsStorage {
         return directory.url
     }
 
-    private func remove(_ element: Element?) throws {
-        guard let element = element else {
-            return
-        }
-
-        guard let fileName = element.fileName, false == fileName.isEmpty else {
-            return
-        }
-
-        if let record = element.record {
-            try trashStorage?.store(record)
-        }
-
-        try removeRecordFile(named: fileName)
-        elements = elements.filter({ $0.value !== element })
-        try saveIndex()
-    }
-
-
     private func removeRecordFile(named fileName: String) throws {
         let url = storedRecordsUrl.appendingPathComponent(fileName)
 
@@ -202,6 +183,25 @@ extension JSONRecordsStorage {
         }
     }
 
+    private func fileName(for record: Record) -> String {
+        let illegalFileNameCharacters = CharacterSet(charactersIn: "/\\?%*|\"<>$&@")
+        let indexItem = record.indexItem
+        let candidate = "\(indexItem.personName) - \(dateFormatter.string(from: indexItem.date))"
+            .components(separatedBy: illegalFileNameCharacters).joined()
+
+        let fileName = candidate.appending(".\(kJSONPathExtension)")
+
+        return fileName
+    }
+}
+
+
+// MARK: private: working with storage elements
+extension JSONRecordsStorage {
+    private final class Element {
+        var record: Record?
+        var fileName: String?
+    }
 
     private func store(_ element: Element?) throws {
         guard let element = element else {
@@ -228,30 +228,26 @@ extension JSONRecordsStorage {
         try data.write(to: url, options: .atomic)
     }
 
+    private func remove(_ element: Element?) throws {
+        guard let element = element else {
+            return
+        }
 
-    private func fileName(for record: Record) -> String {
-        let illegalFileNameCharacters = CharacterSet(charactersIn: "/\\?%*|\"<>$&@")
-        let indexItem = record.indexItem
-        let candidate = "\(indexItem.personName) - \(dateFormatter.string(from: indexItem.date))"
-            .components(separatedBy: illegalFileNameCharacters).joined()
+        guard let fileName = element.fileName, false == fileName.isEmpty else {
+            return
+        }
 
-        let fileName = candidate.appending(".\(kJSONPathExtension)")
+        if let record = element.record {
+            try trashStorage?.store(record)
+        }
 
-        return fileName
+        try removeRecordFile(named: fileName)
+        elements = elements.filter({ $0.value !== element })
+        try saveIndex()
     }
 
-    
     private func element(for identifier: RecordIdentifier) -> Element? {
         return elements[identifier]
-    }
-}
-
-
-
-extension JSONRecordsStorage {
-    private final class Element {
-        var record: Record?
-        var fileName: String?
     }
 }
 
