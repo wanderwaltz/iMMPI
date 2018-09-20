@@ -1105,6 +1105,7 @@
 		44AED8DF21538A4200C68F11 /* RecordIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8DE21538A4200C68F11 /* RecordIdentifierTests.swift */; };
 		44AED8E321538C9900C68F11 /* ScreenDescriptorSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E221538C9900C68F11 /* ScreenDescriptorSerialization.swift */; };
 		44AED8E621538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E521538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift */; };
+		44AED8E821539DB100C68F11 /* ViewControllerMaker+Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E721539DB100C68F11 /* ViewControllerMaker+Miscellaneous.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2276,6 +2277,7 @@
 		44AED8DE21538A4200C68F11 /* RecordIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordIdentifierTests.swift; sourceTree = "<group>"; };
 		44AED8E221538C9900C68F11 /* ScreenDescriptorSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDescriptorSerialization.swift; sourceTree = "<group>"; };
 		44AED8E521538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDescriptorSerializationTests.swift; sourceTree = "<group>"; };
+		44AED8E721539DB100C68F11 /* ViewControllerMaker+Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerMaker+Miscellaneous.swift"; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3787,6 +3789,7 @@
 				44AED8CE21536DD700C68F11 /* ViewControllerMaker.swift */,
 				44AED8D6215371C300C68F11 /* ViewControllerMaker+Analysis.swift */,
 				44AED8D42153716A00C68F11 /* ViewControllerMaker+Answers.swift */,
+				44AED8E721539DB100C68F11 /* ViewControllerMaker+Miscellaneous.swift */,
 				44AED8D221536FB300C68F11 /* ViewControllerMaker+RecordEditing.swift */,
 				44AED8D021536E8D00C68F11 /* ViewControllerMaker+RecordLists.swift */,
 			);
@@ -5270,6 +5273,7 @@
 				444F24591E336ABF00BB8003 /* EmailAttachmentsGenerator.swift in Sources */,
 				442CE1BE1E2366F7006C34A6 /* Answers.swift in Sources */,
 				444F248F1E35108F00BB8003 /* AnalysisScoreFormatter.swift in Sources */,
+				44AED8E821539DB100C68F11 /* ViewControllerMaker+Miscellaneous.swift in Sources */,
 				44A904471E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift in Sources */,
 				442CE1AC1E235397006C34A6 /* Record.swift in Sources */,
 				448C31141E289738003D355D /* MMPIViewControllersFactory+AnalysisOptionsDelegate.swift in Sources */,

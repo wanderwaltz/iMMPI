@@ -37,17 +37,17 @@ extension MMPIRouter: Router {
     // MARK: record editing
     func addRecord(basedOn record: Record, sender: UIViewController) {
         let controller = viewControllersFactory.makeViewController(for: .addRecord(record))
+        let navigationController = viewControllersFactory.makeViewController(for: .formNavigationController) as! UINavigationController
 
-        let navigationController = UINavigationController(rootViewController: controller)
-        navigationController.modalPresentationStyle = .formSheet
+        navigationController.viewControllers = [controller]
         sender.present(navigationController, animated: true, completion: nil)
     }
 
     func editRecord(with identifier: RecordIdentifier, sender: UIViewController) {
         let controller = viewControllersFactory.makeViewController(for: .editRecord(with: identifier))
+        let navigationController = viewControllersFactory.makeViewController(for: .formNavigationController) as! UINavigationController
 
-        let navigationController = UINavigationController(rootViewController: controller)
-        navigationController.modalPresentationStyle = .formSheet
+        navigationController.viewControllers = [controller]
         sender.present(navigationController, animated: true, completion: nil)
     }
 
@@ -68,8 +68,9 @@ extension MMPIRouter: Router {
 
     private func displayDetailsForSingleRecord(_ identifier: RecordIdentifier, sender: UIViewController) {
         let controller = viewControllersFactory.makeViewController(for: .detailsForSingleRecord(with: identifier))
+        let navigationController = viewControllersFactory.makeViewController(for: .navigationController) as! UINavigationController
 
-        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.viewControllers = [controller]
         sender.showDetailViewController(navigationController, sender: sender)
     }
 
@@ -82,15 +83,17 @@ extension MMPIRouter: Router {
     // MARK: analysis
     func displayAnalysis(for identifiers: [RecordIdentifier], sender: UIViewController) {
         let controller = viewControllersFactory.makeViewController(for: .analysisForRecords(with: identifiers))
+        let navigationController = viewControllersFactory.makeViewController(for: .navigationController) as! UINavigationController
 
-        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.viewControllers = [controller]
         sender.showDetailViewController(navigationController, sender: sender)
     }
 
     func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController) {
         let controller = viewControllersFactory.makeViewController(for: .analysisOptions(with: context))
+        let navigationController = viewControllersFactory.makeViewController(for: .navigationController) as! UINavigationController
 
-        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.viewControllers = [controller]
         sender.presentPopover(navigationController, animated: true, completion: nil)
     }
 

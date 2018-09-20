@@ -12,9 +12,17 @@ struct MMPIViewControllersFactory: ViewControllersFactory {
     let mailComposerDelegate: MailComposerDelegate
     let reportPrintingDelegate: ReportPrintingDelegate
 
+    let screenDescriptorSerialization: ScreenDescriptorSerialization
+
     func makeViewController(for descriptor: ScreenDescriptor) -> UIViewController {
         let controller = descriptor.makeViewController(with: self)
         controller.restorationIdentifier = descriptor.restorationIdentifier
+
+        // UINavigationController won't restore its children if a custom restoration class is set.
+        if false == controller is UINavigationController {
+            controller.restorationClass = MMPIViewControllerRestoration.self
+        }
+
         return controller
     }
 }
@@ -39,5 +47,23 @@ extension MMPIViewControllersFactory: ViewControllerFactoryContext {
 
     var reportListViewControllerDelegate: AnalysisReportsListViewControllerDelegate {
         return reportPrintingDelegate
+    }
+}
+
+
+final class MMPIViewControllerRestoration: UIViewControllerRestoration {
+    static func viewController(withRestorationIdentifierPath identifierComponents: [String],
+                               coder: NSCoder) -> UIViewController? {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return nil
+        }
+
+        let factory = appDelegate.viewControllersFactory
+
+        guard let descriptor = factory.screenDescriptorSerialization.decode(identifierComponents.last) else {
+            return nil
+        }
+
+        return factory.makeViewController(for: descriptor)
     }
 }

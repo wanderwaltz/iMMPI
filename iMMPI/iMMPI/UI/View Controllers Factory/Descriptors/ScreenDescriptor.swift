@@ -50,6 +50,17 @@ extension ScreenDescriptor {
         )
     }
 
+    static func detailsForSingleRecord(with identifier: RecordIdentifier) -> ScreenDescriptor {
+        return ScreenDescriptor(
+            restorationIdentifier:
+                ScreenDescriptorSerialization
+                    .RestorationIdentifier
+                    .detailsForSingleRecord(with: identifier),
+            maker:
+                .detailsForSingleRecord(with: identifier)
+        )
+    }
+
     static func detailsForMultipleRecords(with identifiers: [RecordIdentifier]) -> ScreenDescriptor {
         return ScreenDescriptor(
             restorationIdentifier:
@@ -96,6 +107,28 @@ extension ScreenDescriptor {
 }
 
 
+// MARK: restorable miscellaneous state
+extension ScreenDescriptor {
+    static let navigationController = ScreenDescriptor(
+        restorationIdentifier:
+            ScreenDescriptorSerialization
+                .RestorationIdentifier
+                .navigationController,
+        maker:
+            .navigationController
+    )
+
+    static let formNavigationController = ScreenDescriptor(
+        restorationIdentifier:
+            ScreenDescriptorSerialization
+                .RestorationIdentifier
+                .formNavigationController,
+        maker:
+            .formNavigationController
+    )
+}
+
+
 // MARK: non-restorable state
 extension ScreenDescriptor {
     // `addRecord` is not restorable since we don't want to store the Record which not yet has been saved:
@@ -104,16 +137,6 @@ extension ScreenDescriptor {
         return ScreenDescriptor(
             restorationIdentifier: nil,
             maker: .addRecord(record)
-        )
-    }
-
-    // `detailsForSingleRecord` is not restorable since this 'screen' does not actually exists as a separate
-    // entity: it will be resolved into either analysis or answers input, which are restored separately.
-    // This is an implementation detail.
-    static func detailsForSingleRecord(with identifier: RecordIdentifier) -> ScreenDescriptor {
-        return ScreenDescriptor(
-            restorationIdentifier: nil,
-            maker: .detailsForSingleRecord(with: identifier)
         )
     }
 

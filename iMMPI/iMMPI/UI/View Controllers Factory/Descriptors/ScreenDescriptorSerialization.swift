@@ -24,8 +24,17 @@ extension ScreenDescriptorSerialization {
         case RestorationIdentifier.trash:
             return .trash
 
+        case RestorationIdentifier.navigationController:
+            return .navigationController
+
+        case RestorationIdentifier.formNavigationController:
+            return .formNavigationController
+
         case RestorationIdentifier.editRecordPrefix:
             return parseEditRecord(with: parameters)
+
+        case RestorationIdentifier.detailsForSingleRecordPrefix:
+            return parseDetailsForSingleRecord(with: parameters)
 
         case RestorationIdentifier.detailsForMultipleRecordsPrefix:
             return parseDetailsForMultipleRecords(with: parameters)
@@ -50,8 +59,15 @@ extension ScreenDescriptorSerialization {
         static let allRecords = "all-records"
         static let trash = "trash"
 
+        static let navigationController = "navigation-controller"
+        static let formNavigationController = "form-navigation-controller"
+
         static func editRecord(with identifier: RecordIdentifier) -> String {
             return singleRecordIdentifier(identifier, prefix: editRecordPrefix)
+        }
+
+        static func detailsForSingleRecord(with identifier: RecordIdentifier) -> String {
+            return singleRecordIdentifier(identifier, prefix: detailsForSingleRecordPrefix)
         }
 
         static func detailsForMultipleRecords(with identifiers: [RecordIdentifier]) -> String {
@@ -85,6 +101,7 @@ extension ScreenDescriptorSerialization {
         }
 
         fileprivate static let editRecordPrefix = "edit-record"
+        fileprivate static let detailsForSingleRecordPrefix = "record-details"
         fileprivate static let detailsForMultipleRecordsPrefix = "records"
         fileprivate static let analysisPrefix = "analysis"
         fileprivate static let answersInputPrefix = "answers-input"
@@ -124,6 +141,10 @@ extension ScreenDescriptorSerialization {
 
     private func parseEditRecord(with parameters: [String: String]) -> ScreenDescriptor? {
         return withSingleRecordIdentifier(from: parameters) { .editRecord(with: $0) }
+    }
+
+    private func parseDetailsForSingleRecord(with parameters: [String: String]) -> ScreenDescriptor? {
+        return withSingleRecordIdentifier(from: parameters) { .detailsForSingleRecord(with: $0) }
     }
 
     private func parseAnswersInputForRecord(with parameters: [String: String]) -> ScreenDescriptor? {

@@ -11,7 +11,6 @@ extension ViewControllerMaker {
             controller.settings = context.analysisSettings
 
             return controller
-
         })
     }
 

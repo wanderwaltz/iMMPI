@@ -48,9 +48,27 @@ final class ScreenDescriptorSerializationTests: XCTestCase {
         )
     }
 
+    func test__navigation_controller_serialization() {
+        XCTAssertDecodingRIDYieldsScreenDescriptorWithTheSameRID(
+            .navigationController
+        )
+    }
+
+    func test__form_navigation_controller_serialization() {
+        XCTAssertDecodingRIDYieldsScreenDescriptorWithTheSameRID(
+            .formNavigationController
+        )
+    }
+
     func test__edit_record_serialization() {
         XCTAssertDecodingRIDYieldsScreenDescriptorWithTheSameRID(
             .editRecord(with: recordIdentifier)
+        )
+    }
+
+    func test__details_for_single_record_serialization() {
+        XCTAssertDecodingRIDYieldsScreenDescriptorWithTheSameRID(
+            .detailsForSingleRecord(with: recordIdentifier)
         )
     }
 

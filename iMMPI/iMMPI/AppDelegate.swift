@@ -11,9 +11,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     let viewControllersFactory: ViewControllersFactory
     let router: Router
 
-
     override init() {
         storage.trashStorage = trashStorage
+        try? storage.load()
 
         let viewControllersFactory = MMPIViewControllersFactory(
             storage: storage,
@@ -22,7 +22,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             analysisOptionsDelegate: MMPIViewControllersFactory.AnalysisOptionsDelegate(),
             editingDelegate: MMPIViewControllersFactory.EditingDelegate(storage: storage),
             mailComposerDelegate: MMPIViewControllersFactory.MailComposerDelegate(),
-            reportPrintingDelegate: MMPIViewControllersFactory.ReportPrintingDelegate()
+            reportPrintingDelegate: MMPIViewControllersFactory.ReportPrintingDelegate(),
+            screenDescriptorSerialization: ScreenDescriptorSerialization()
         )
 
         viewControllersFactory.editingDelegate.answersInputDelegate = soundPlayer
@@ -32,7 +33,13 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             storage: storage
         )
 
-        self.viewControllersFactory = viewControllersFactory
+        let routedViewControllersFactory = RoutedViewControllersFactory(
+            base: viewControllersFactory
+        )
+
+        routedViewControllersFactory.router = router
+
+        self.viewControllersFactory = routedViewControllersFactory
         super.init()
     }
 
@@ -43,10 +50,18 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
 
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = makeRootViewController()
-        window?.makeKeyAndVisible()
+        if window == nil {
+            let rootViewController = makeRootViewController()
 
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = rootViewController
+
+            if let first = rootViewController.viewControllers.first {
+                router.displayAllRecords(sender: first)
+            }
+        }
+
+        window?.makeKeyAndVisible()
         return true
     }
 
@@ -57,10 +72,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         rootVC.minimumPrimaryColumnWidth = 300
 
         self.splitViewController(rootVC, willChangeTo: rootVC.displayMode)
-
-        if let first = rootVC.viewControllers.first {
-            router.displayAllRecords(sender: first)
-        }
 
         return rootVC
     }
@@ -101,5 +112,33 @@ extension AppDelegate {
         }
 
         router.displayTrash(sender: root)
+    }
+}
+
+
+// MARK: state restoration
+extension AppDelegate {
+    func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
+
+    func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
+
+    func application(_ application: UIApplication,
+                     viewControllerWithRestorationIdentifierPath identifierComponents: [String],
+                     coder: NSCoder) -> UIViewController? {
+        if identifierComponents.last == RootViewController.restorationIdentifier {
+            return restoreRootViewController()
+        }
+
+        return nil
+    }
+
+    private func restoreRootViewController() -> UIViewController? {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = makeRootViewController()
+        return window?.rootViewController
     }
 }
