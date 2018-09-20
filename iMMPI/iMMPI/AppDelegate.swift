@@ -21,8 +21,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewControllersFactory = MMPIViewControllersFactory(
             storage: storage,
             trashStorage: trashStorage,
+            analysisSettings: ValidatingAnalysisSettings(UserDefaultsAnalysisSettings()),
+            analysisOptionsDelegate: MMPIViewControllersFactory.AnalysisOptionsDelegate(),
             editingDelegate: MMPIViewControllersFactory.EditingDelegate(storage: storage),
-            analysisSettings: ValidatingAnalysisSettings(UserDefaultsAnalysisSettings())
+            mailComposerDelegate: MMPIViewControllersFactory.MailComposerDelegate(),
+            reportPrintingDelegate: MMPIViewControllersFactory.ReportPrintingDelegate()
         )
 
         viewControllersFactory.editingDelegate.answersInputDelegate = soundPlayer

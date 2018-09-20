@@ -168,7 +168,7 @@ extension AnalysisViewController {
             return
         }
 
-        router?.displayAnswersReview(for: record, sender: self)
+        router?.displayAnswersReview(for: record.identifier, sender: self)
     }
 
 

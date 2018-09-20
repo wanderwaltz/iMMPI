@@ -133,7 +133,9 @@ extension RecordsListViewController {
 
 
     @IBAction func compareRecordsButtonAction(_ sender: Any?) {
-        router?.displayAnalysis(for: Array(groups.allItems.map({ $0.allRecords() }).joined()), sender: self)
+        let records = groups.allItems.map({ $0.allRecords() }).joined()
+        let recordIdentifiers = records.map({ $0.identifier })
+        router?.displayAnalysis(for: recordIdentifiers, sender: self)
     }
 }
 
@@ -186,7 +188,7 @@ extension RecordsListViewController {
             return
         }
 
-        router?.edit(item.record, sender: self)
+        router?.editRecord(with: item.record.identifier, sender: self)
     }
 
 

@@ -2,61 +2,64 @@ import UIKit
 import MessageUI
 
 struct MMPIViewControllersFactory: ViewControllersFactory {
-    enum Error: Swift.Error {
-        case cannotSendMail
-    }
-
     let storage: RecordStorage
     let trashStorage: RecordStorage
 
-    let editingDelegate: EditingDelegate
     let analysisSettings: AnalysisSettings
+    let analysisOptionsDelegate: AnalysisOptionsDelegate
 
-    func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController {
-        let controller = AnalysisOptionsViewController(style: .plain)
+    let editingDelegate: EditingDelegate
 
-        let actions: [MenuAction?] = [
-            .print(context),
-            .email(context)
-        ]
+    let mailComposerDelegate: MailComposerDelegate
 
-        controller.viewModel = AnalysisOptionsViewModel(
-            settings: analysisSettings,
-            actions: actions.compactMap({$0})
-        )
+    let reportPrintingDelegate: ReportPrintingDelegate
 
-        return controller
-    }
+    func makeViewController(for descriptor: ScreenDescriptor) -> UIViewController {
+        switch descriptor {
+        case .allRecords:
+            return makeAllRecordsListViewController()
 
-    func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController {
-        return AnalysisReportsListViewController(style: .plain)
-    }
+        case .trash:
+            return makeTrashViewController()
 
-    func makeMailComposerViewController(for message: EmailMessage) throws -> MFMailComposeViewController {
-        guard case let controller = MFMailComposeViewController(), MFMailComposeViewController.canSendMail() else {
-            throw Error.cannotSendMail
+        case let .addRecord(record):
+            return makeEditRecordViewController(for: record, title: Strings.Screen.newRecord)
+
+        case let .editRecord(identifier):
+            let record = storage.findRecord(with: identifier) ?? Record()
+            return makeEditRecordViewController(for: record, title: Strings.Screen.editRecord)
+
+        case let .detailsForSingleRecord(identifier):
+            return makeDetailsViewController(for: identifier)
+
+        case let .detailsForMultipleRecords(identifiers):
+            return makeDetailsViewController(for: identifiers)
+
+        case let .analysis(identifiers):
+            return makeAnalysisViewController(for: identifiers)
+
+        case let .answersInput(identifier):
+            return makeAnswersInputViewController(for: identifier)
+
+        case let .answersReview(identifier):
+            return makeAnswersReviewViewController(for: identifier)
+
+        case let .analysisOptions(context):
+            return makeAnalysisOptionsViewController(context: context)
+
+        case let .analysisReportsList(context):
+            return makeAnalysisReportsListViewController(context: context)
+
+        case let .mailComposer(message):
+            return makeMailComposerViewController(for: message)
         }
-
-        controller.setSubject(message.subject)
-        controller.setMessageBody(message.text, isHTML: false)
-        controller.setToRecipients(message.recipients.map({ $0.rawValue }))
-
-        for attachment in message.attachments {
-            controller.addAttachmentData(
-                attachment.data,
-                mimeType: attachment.mimeType.rawValue,
-                fileName: attachment.fileName
-            )
-        }
-
-        return controller
     }
 }
 
 
 // MARK: record lists
 extension MMPIViewControllersFactory {
-    func makeAllRecordsListViewController() -> RecordsListViewController {
+    private func makeAllRecordsListViewController() -> RecordsListViewController {
         let controller = RecordsListViewController(style: .plain)
 
         controller.title = Strings.Screen.records
@@ -68,7 +71,7 @@ extension MMPIViewControllersFactory {
         return controller
     }
 
-    func makeTrashViewController() -> RecordsListViewController {
+    private func makeTrashViewController() -> RecordsListViewController {
         let controller = RecordsListViewController(style: .plain)
 
         controller.title = Strings.Screen.trash
@@ -82,7 +85,7 @@ extension MMPIViewControllersFactory {
         return controller
     }
 
-    func makeDetailsViewController(for identifier: RecordIdentifier) -> UIViewController {
+    private func makeDetailsViewController(for identifier: RecordIdentifier) -> UIViewController {
         guard let record = storage.all.first(where: { $0.identifier == identifier }) else {
             return UIViewController()
         }
@@ -92,14 +95,14 @@ extension MMPIViewControllersFactory {
         }
 
         if record.answers.allStatementsAnswered(for: questionnaire) {
-            return makeAnalysisViewController(for: [record])
+            return makeAnalysisViewController(for: [identifier])
         }
         else {
-            return makeAnswersInputViewController(for: record, questionnaire: questionnaire)
+            return makeAnswersInputViewController(for: identifier)
         }
     }
 
-    func makeDetailsViewController(for identifiers: [RecordIdentifier]) -> RecordsListViewController {
+    private func makeDetailsViewController(for identifiers: [RecordIdentifier]) -> RecordsListViewController {
         let controller = RecordsListViewController(style: .plain)
 
         let records = identifiers.compactMap({ identifier in
@@ -161,7 +164,7 @@ extension MMPIViewControllersFactory {
 
 // MARK: record details & editing
 extension MMPIViewControllersFactory {
-    func makeEditRecordViewController(for record: Record, title: String) -> EditRecordViewController {
+    private func makeEditRecordViewController(for record: Record, title: String) -> EditRecordViewController {
         let controller = EditRecordViewController(style: .grouped)
 
         controller.record = record
@@ -171,7 +174,12 @@ extension MMPIViewControllersFactory {
         return controller
     }
 
-    func makeAnswersReviewViewController(for record: Record) -> AnswersViewController {
+    private func makeAnswersReviewViewController(for identifier: RecordIdentifier) -> UIViewController {
+        guard let record = storage.findRecord(with: identifier) else {
+            assertionFailure("Could not find record with identifier: \(identifier)")
+            return UIViewController()
+        }
+
         let controller = AnswersViewController()
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
 
@@ -181,6 +189,7 @@ extension MMPIViewControllersFactory {
         controller.tableView = tableView
 
         guard let questionnaire = try? Questionnaire(record: record) else {
+            assertionFailure("Failed loading questionnaire for record with identifier: \(identifier)")
             return controller
         }
 
@@ -191,7 +200,17 @@ extension MMPIViewControllersFactory {
         return controller
     }
 
-    private func makeAnswersInputViewController(for record: Record, questionnaire: Questionnaire) -> AnswersInputViewController {
+    private func makeAnswersInputViewController(for identifier: RecordIdentifier) -> UIViewController {
+        guard let record = storage.findRecord(with: identifier) else {
+            assertionFailure("Could not find record with identifier: \(identifier)")
+            return UIViewController()
+        }
+
+        guard let questionnaire = try? Questionnaire(record: record) else {
+            assertionFailure("Failed loading questionnaire for record with identifier: \(identifier)")
+            return UIViewController()
+        }
+
         let controller = AnswersInputViewController(
             nibName: "AnswersInputViewController",
             bundle: Bundle(for: AnswersInputViewController.self)
@@ -208,10 +227,62 @@ extension MMPIViewControllersFactory {
 
 // MARK: analysis
 extension MMPIViewControllersFactory {
-    func makeAnalysisViewController(for records: [Record]) -> AnalysisViewController {
+    private func makeAnalysisViewController(for identifiers: [RecordIdentifier]) -> AnalysisViewController {
+        let records = identifiers.compactMap({ storage.findRecord(with: $0) })
+
         let controller = AnalysisViewController()
         controller.viewModel = AnalysisViewModel(records: records)
         controller.settings = analysisSettings
+
+        return controller
+    }
+
+    private func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController {
+        let controller = AnalysisOptionsViewController(style: .plain)
+        controller.delegate = analysisOptionsDelegate
+
+        let actions: [MenuAction?] = [
+            .print(context),
+            .email(context)
+        ]
+
+        controller.viewModel = AnalysisOptionsViewModel(
+            settings: analysisSettings,
+            actions: actions.compactMap({$0})
+        )
+
+        return controller
+    }
+
+    private func makeAnalysisReportsListViewController(context: AnalysisMenuActionContext) -> AnalysisReportsListViewController {
+        let controller = AnalysisReportsListViewController(style: .plain)
+
+        controller.delegate = reportPrintingDelegate
+        controller.title = Strings.Screen.print
+        controller.result = context.result
+        controller.reportGenerators = context.htmlReportGenerators
+
+        return controller
+    }
+
+    private func makeMailComposerViewController(for message: EmailMessage) -> UIViewController {
+        guard case let controller = MFMailComposeViewController(), MFMailComposeViewController.canSendMail() else {
+            assertionFailure("Cannot send mail")
+            return UIViewController()
+        }
+
+        controller.setSubject(message.subject)
+        controller.setMessageBody(message.text, isHTML: false)
+        controller.setToRecipients(message.recipients.map({ $0.rawValue }))
+        controller.mailComposeDelegate = mailComposerDelegate
+
+        for attachment in message.attachments {
+            controller.addAttachmentData(
+                attachment.data,
+                mimeType: attachment.mimeType.rawValue,
+                fileName: attachment.fileName
+            )
+        }
 
         return controller
     }

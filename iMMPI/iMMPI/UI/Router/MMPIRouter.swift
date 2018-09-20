@@ -12,17 +12,13 @@ final class MMPIRouter {
 
         viewControllersFactory.router = self
     }
-
-    fileprivate let analysisOptionsDelegate = AnalysisOptionsDelegate()
-    fileprivate let reportPrintingDelegate = ReportPrintingDelegate()
-    fileprivate let mailComposerDelegate = MailComposerDelegate()
 }
 
 
 extension MMPIRouter: Router {
     // MARK: record lists
     func displayAllRecords(sender: UIViewController) {
-        let controller = viewControllersFactory.makeAllRecordsListViewController()
+        let controller = viewControllersFactory.makeViewController(for: .allRecords)
 
         if let navigationController = sender as? UINavigationController {
             navigationController.viewControllers = [controller]
@@ -33,22 +29,22 @@ extension MMPIRouter: Router {
     }
 
     func displayTrash(sender: UIViewController) {
-        let controller = viewControllersFactory.makeTrashViewController()
+        let controller = viewControllersFactory.makeViewController(for: .trash)
         sender.show(controller, sender: nil)
     }
 
 
     // MARK: record editing
     func addRecord(basedOn record: Record, sender: UIViewController) {
-        edit(record, title: Strings.Screen.newRecord, sender: sender)
+        let controller = viewControllersFactory.makeViewController(for: .addRecord(record))
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .formSheet
+        sender.present(navigationController, animated: true, completion: nil)
     }
 
-    func edit(_ record: Record, sender: UIViewController) {
-        edit(record, title: Strings.Screen.editRecord, sender: sender)
-    }
-
-    private func edit(_ record: Record, title: String, sender: UIViewController) {
-        let controller = viewControllersFactory.makeEditRecordViewController(for: record, title: title)
+    func editRecord(with identifier: RecordIdentifier, sender: UIViewController) {
+        let controller = viewControllersFactory.makeViewController(for: .editRecord(identifier))
 
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.modalPresentationStyle = .formSheet
@@ -71,38 +67,36 @@ extension MMPIRouter: Router {
     }
 
     private func displayDetailsForSingleRecord(_ identifier: RecordIdentifier, sender: UIViewController) {
-        let controller = viewControllersFactory.makeDetailsViewController(for: identifier)
+        let controller = viewControllersFactory.makeViewController(for: .detailsForSingleRecord(identifier))
 
         let navigationController = UINavigationController(rootViewController: controller)
         sender.showDetailViewController(navigationController, sender: sender)
     }
 
     private func displayDetailsForMultipleRecords(_ identifiers: [RecordIdentifier], sender: UIViewController) {
-        let controller = viewControllersFactory.makeDetailsViewController(for: identifiers)
+        let controller = viewControllersFactory.makeViewController(for: .detailsForMultipleRecords(identifiers))
         sender.show(controller, sender: sender)
     }
 
 
     // MARK: analysis
-    func displayAnalysis(for records: [Record], sender: UIViewController) {
-        let controller = viewControllersFactory.makeAnalysisViewController(for: records)
+    func displayAnalysis(for identifiers: [RecordIdentifier], sender: UIViewController) {
+        let controller = viewControllersFactory.makeViewController(for: .analysis(identifiers))
 
         let navigationController = UINavigationController(rootViewController: controller)
-        sender.showDetailViewController(navigationController, sender: records)
+        sender.showDetailViewController(navigationController, sender: sender)
     }
 
     func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController) {
-        let controller = viewControllersFactory.makeAnalysisOptionsViewController(context: context)
-
-        controller.delegate = analysisOptionsDelegate
+        let controller = viewControllersFactory.makeViewController(for: .analysisOptions(context))
 
         let navigationController = UINavigationController(rootViewController: controller)
         sender.presentPopover(navigationController, animated: true, completion: nil)
     }
 
-    func displayAnswersReview(for record: Record, sender: UIViewController) {
-        let controller = viewControllersFactory.makeAnswersReviewViewController(for: record)
-        sender.show(controller, sender: record)
+    func displayAnswersReview(for identifier: RecordIdentifier, sender: UIViewController) {
+        let controller = viewControllersFactory.makeViewController(for: .answersReview(identifier))
+        sender.show(controller, sender: sender)
     }
 
     func displayPrintOptions(for html: Html, sender: UIViewController) {
@@ -125,13 +119,8 @@ extension MMPIRouter: Router {
         }
 
         if reportGenerators.count > 1 {
-            let controller = viewControllersFactory.makeAnalysisReportsListViewController()
+            let controller = viewControllersFactory.makeViewController(for: .analysisReportsList(context))
 
-            controller.delegate = reportPrintingDelegate
-            controller.title = Strings.Screen.print
-            controller.result = context.result
-            controller.reportGenerators = reportGenerators
-            
             sender.show(controller, sender: context)
         }
         else {
@@ -140,9 +129,8 @@ extension MMPIRouter: Router {
         }
     }
 
-    func displayMailComposer(for email: EmailMessage, sender: UIViewController) throws {
-        let mailComposer = try viewControllersFactory.makeMailComposerViewController(for: email)
-        mailComposer.mailComposeDelegate = mailComposerDelegate
+    func displayMailComposer(for email: EmailMessage, sender: UIViewController) {
+        let mailComposer = viewControllersFactory.makeViewController(for: .mailComposer(email))
         sender.present(mailComposer, animated: true, completion: nil)
     }
 }

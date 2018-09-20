@@ -29,6 +29,10 @@ extension RecordStorage {
 }
 
 extension RecordStorage {
+    func findRecord(with identifier: RecordIdentifier) -> Record? {
+        return all.first(where: { $0.identifier == identifier })
+    }
+
     func makeViewModel(includeRecord: @escaping (Record) -> Bool = Constant.value(true))
         -> RecordsListViewModel<Record> {
             return RecordsListViewModel(

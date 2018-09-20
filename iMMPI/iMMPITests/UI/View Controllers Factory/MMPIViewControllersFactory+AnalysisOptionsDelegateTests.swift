@@ -1,12 +1,12 @@
 import XCTest
 @testable import iMMPI
 
-final class MMPIRouterAnalysisOptionsDelegateTests: XCTestCase {
-    var delegate: MMPIRouter.AnalysisOptionsDelegate!
+final class MMPIViewControllersFactoryAnalysisOptionsDelegateTests: XCTestCase {
+    var delegate: MMPIViewControllersFactory.AnalysisOptionsDelegate!
 
     override func setUp() {
         super.setUp()
-        delegate = MMPIRouter.AnalysisOptionsDelegate()
+        delegate = MMPIViewControllersFactory.AnalysisOptionsDelegate()
     }
 
     func testThat__it_sends_notification_when_analysis_settings_change() {

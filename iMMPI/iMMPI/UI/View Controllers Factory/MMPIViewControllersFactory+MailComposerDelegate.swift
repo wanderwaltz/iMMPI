@@ -1,12 +1,12 @@
 import Foundation
 import MessageUI
 
-extension MMPIRouter {
+extension MMPIViewControllersFactory {
     final class MailComposerDelegate: NSObject {}
 }
 
 
-extension MMPIRouter.MailComposerDelegate: MFMailComposeViewControllerDelegate {
+extension MMPIViewControllersFactory.MailComposerDelegate: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult,
                                error: Error?) {

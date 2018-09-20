@@ -1,11 +1,11 @@
 import Foundation
 
-extension MMPIRouter {
+extension MMPIViewControllersFactory {
     final class AnalysisOptionsDelegate {}
 }
 
 
-extension MMPIRouter.AnalysisOptionsDelegate: AnalysisOptionsViewControllerDelegate {
+extension MMPIViewControllersFactory.AnalysisOptionsDelegate: AnalysisOptionsViewControllerDelegate {
     func analysisOptionsViewControllerSettingsChanged(_ controller: AnalysisOptionsViewController) {
         NotificationCenter.default.post(name: .analysisSettingsChanged, object: nil)
     }

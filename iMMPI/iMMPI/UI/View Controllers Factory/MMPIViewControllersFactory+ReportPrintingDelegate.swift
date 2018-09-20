@@ -1,11 +1,11 @@
 import Foundation
 
-extension MMPIRouter {
+extension MMPIViewControllersFactory {
     final class ReportPrintingDelegate {}
 }
 
 
-extension MMPIRouter.ReportPrintingDelegate: AnalysisReportsListViewControllerDelegate {
+extension MMPIViewControllersFactory.ReportPrintingDelegate: AnalysisReportsListViewControllerDelegate {
     func analysisReportsList(_ controller: AnalysisReportsListViewController, didSelectReport html: Html) {
         controller.router?.displayPrintOptions(for: html, sender: controller)
     }

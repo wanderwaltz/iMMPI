@@ -68,7 +68,7 @@ extension AnswersInputViewController {
         }
 
         if false == setNextStatementIndex() {
-            router?.displayAnalysis(for: [viewModel.record], sender: self)
+            router?.displayAnalysis(for: [viewModel.record.identifier], sender: self)
         }
     }
 }

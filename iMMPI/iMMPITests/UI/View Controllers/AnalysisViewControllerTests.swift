@@ -36,20 +36,20 @@ final class AnalysisViewControllerTests: XCTestCase {
 
 
     func testThat__left_bar_button_item__displays_answers_review_using_router_if_record_is_present() {
-        var receivedRecord: Record? = nil
+        var receivedIdentifier: RecordIdentifier? = nil
         var receivedSender: UIViewController? = nil
 
         let expectedRecord = Record()
         let expectedSender = controller
 
-        router._displayAnswersReview = { record, sender in
-            receivedRecord = record
+        router._displayAnswersReview = { identifier, sender in
+            receivedIdentifier = identifier
             receivedSender = sender
         }
 
         controller.viewModel = AnalysisViewModel(records: [expectedRecord])
         controller.navigationItem.leftBarButtonItem?.click()
-        XCTAssertTrue(receivedRecord?.identifier == expectedRecord.identifier)
+        XCTAssertTrue(receivedIdentifier == expectedRecord.identifier)
         XCTAssertTrue(receivedSender === expectedSender)
     }
 
