@@ -1095,6 +1095,12 @@
 		44AED8C5215289A700C68F11 /* JA21-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 44AED8C4215289A700C68F11 /* JA21-index.json */; };
 		44AED8C72153414000C68F11 /* URL+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8C62153414000C68F11 /* URL+Utility.swift */; };
 		44AED8C92153630100C68F11 /* ScreenDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8C82153630100C68F11 /* ScreenDescriptor.swift */; };
+		44AED8CD21536CDE00C68F11 /* ViewControllerFactoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8CC21536CDE00C68F11 /* ViewControllerFactoryContext.swift */; };
+		44AED8CF21536DD700C68F11 /* ViewControllerMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8CE21536DD700C68F11 /* ViewControllerMaker.swift */; };
+		44AED8D121536E8D00C68F11 /* ViewControllerMaker+RecordLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8D021536E8D00C68F11 /* ViewControllerMaker+RecordLists.swift */; };
+		44AED8D321536FB300C68F11 /* ViewControllerMaker+RecordEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8D221536FB300C68F11 /* ViewControllerMaker+RecordEditing.swift */; };
+		44AED8D52153716A00C68F11 /* ViewControllerMaker+Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8D42153716A00C68F11 /* ViewControllerMaker+Answers.swift */; };
+		44AED8D7215371C300C68F11 /* ViewControllerMaker+Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8D6215371C300C68F11 /* ViewControllerMaker+Analysis.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2256,6 +2262,12 @@
 		44AED8C4215289A700C68F11 /* JA21-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "JA21-index.json"; sourceTree = "<group>"; };
 		44AED8C62153414000C68F11 /* URL+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utility.swift"; sourceTree = "<group>"; };
 		44AED8C82153630100C68F11 /* ScreenDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDescriptor.swift; sourceTree = "<group>"; };
+		44AED8CC21536CDE00C68F11 /* ViewControllerFactoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactoryContext.swift; sourceTree = "<group>"; };
+		44AED8CE21536DD700C68F11 /* ViewControllerMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMaker.swift; sourceTree = "<group>"; };
+		44AED8D021536E8D00C68F11 /* ViewControllerMaker+RecordLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerMaker+RecordLists.swift"; sourceTree = "<group>"; };
+		44AED8D221536FB300C68F11 /* ViewControllerMaker+RecordEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerMaker+RecordEditing.swift"; sourceTree = "<group>"; };
+		44AED8D42153716A00C68F11 /* ViewControllerMaker+Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerMaker+Answers.swift"; sourceTree = "<group>"; };
+		44AED8D6215371C300C68F11 /* ViewControllerMaker+Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerMaker+Analysis.swift"; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -2530,13 +2542,11 @@
 		44673C321E24CF91001758C0 /* View Controllers Factory */ = {
 			isa = PBXGroup;
 			children = (
-				44AED8C82153630100C68F11 /* ScreenDescriptor.swift */,
+				44AED8DB2153770C00C68F11 /* Delegates */,
+				44AED8DA215376FD00C68F11 /* Descriptors */,
+				44AED8CB21536C9C00C68F11 /* Makers */,
 				44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */,
 				44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */,
-				448C31131E289738003D355D /* MMPIViewControllersFactory+AnalysisOptionsDelegate.swift */,
-				44673C211E249A8E001758C0 /* MMPIViewControllersFactory+EditingDelegate.swift */,
-				444F245C1E3372FD00BB8003 /* MMPIViewControllersFactory+MailComposerDelegate.swift */,
-				444F24361E3216D800BB8003 /* MMPIViewControllersFactory+ReportPrintingDelegate.swift */,
 				44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */,
 			);
 			path = "View Controllers Factory";
@@ -3757,6 +3767,38 @@
 				448C31161E28981A003D355D /* MMPIViewControllersFactory+AnalysisOptionsDelegateTests.swift */,
 			);
 			path = "View Controllers Factory";
+			sourceTree = "<group>";
+		};
+		44AED8CB21536C9C00C68F11 /* Makers */ = {
+			isa = PBXGroup;
+			children = (
+				44AED8CC21536CDE00C68F11 /* ViewControllerFactoryContext.swift */,
+				44AED8CE21536DD700C68F11 /* ViewControllerMaker.swift */,
+				44AED8D6215371C300C68F11 /* ViewControllerMaker+Analysis.swift */,
+				44AED8D42153716A00C68F11 /* ViewControllerMaker+Answers.swift */,
+				44AED8D221536FB300C68F11 /* ViewControllerMaker+RecordEditing.swift */,
+				44AED8D021536E8D00C68F11 /* ViewControllerMaker+RecordLists.swift */,
+			);
+			path = Makers;
+			sourceTree = "<group>";
+		};
+		44AED8DA215376FD00C68F11 /* Descriptors */ = {
+			isa = PBXGroup;
+			children = (
+				44AED8C82153630100C68F11 /* ScreenDescriptor.swift */,
+			);
+			path = Descriptors;
+			sourceTree = "<group>";
+		};
+		44AED8DB2153770C00C68F11 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				448C31131E289738003D355D /* MMPIViewControllersFactory+AnalysisOptionsDelegate.swift */,
+				44673C211E249A8E001758C0 /* MMPIViewControllersFactory+EditingDelegate.swift */,
+				444F245C1E3372FD00BB8003 /* MMPIViewControllersFactory+MailComposerDelegate.swift */,
+				444F24361E3216D800BB8003 /* MMPIViewControllersFactory+ReportPrintingDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		44B407FC1E4A067300FD4CE8 /* Model */ = {
@@ -5165,6 +5207,7 @@
 				44A9043B1E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift in Sources */,
 				44673C221E249A8E001758C0 /* MMPIViewControllersFactory+EditingDelegate.swift in Sources */,
 				44ECB100214FB22F00ADA7D4 /* CollectionViewCellSource.swift in Sources */,
+				44AED8CD21536CDE00C68F11 /* ViewControllerFactoryContext.swift in Sources */,
 				44ECB0F8214FB1CB00ADA7D4 /* CellNibRegistering.swift in Sources */,
 				444F245F1E34990B00BB8003 /* MenuAction+UITableView.swift in Sources */,
 				447DB7DA1E37E64200901631 /* ComputedScore.swift in Sources */,
@@ -5176,8 +5219,10 @@
 				444F239C1E2E42A900BB8003 /* JSONRecordSerialization.swift in Sources */,
 				44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */,
 				448C311B1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift in Sources */,
+				44AED8D7215371C300C68F11 /* ViewControllerMaker+Analysis.swift in Sources */,
 				44A904281E4DCC32003CB6C6 /* UIView+Borders.swift in Sources */,
 				444F241B1E31E1B300BB8003 /* MenuAction.swift in Sources */,
+				44AED8D121536E8D00C68F11 /* ViewControllerMaker+RecordLists.swift in Sources */,
 				44A904321E4DCDCC003CB6C6 /* AnalysisViewModel.swift in Sources */,
 				44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */,
 				448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */,
@@ -5185,6 +5230,7 @@
 				448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */,
 				44B193BB1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift in Sources */,
 				444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */,
+				44AED8D321536FB300C68F11 /* ViewControllerMaker+RecordEditing.swift in Sources */,
 				448BC6122151075F001B8F55 /* RootViewController.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+Record.swift in Sources */,
 				44A904411E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell+Source.swift in Sources */,
@@ -5215,6 +5261,7 @@
 				44A904391E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.swift in Sources */,
 				444F23881E2E358500BB8003 /* JSONPersonSerialization.swift in Sources */,
 				444F247D1E34F25F00BB8003 /* AnalysisScore+Raw.swift in Sources */,
+				44AED8CF21536DD700C68F11 /* ViewControllerMaker.swift in Sources */,
 				44A9044E1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift in Sources */,
 				442CE1B91E235D3D006C34A6 /* Gender.swift in Sources */,
 				4422BC141E25350B00355D71 /* AnswersInputViewController.swift in Sources */,
@@ -5254,6 +5301,7 @@
 				44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */,
 				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
 				444F23711E2E1C9300BB8003 /* FormTableViewCell.swift in Sources */,
+				44AED8D52153716A00C68F11 /* ViewControllerMaker+Answers.swift in Sources */,
 				444F237C1E2E31E000BB8003 /* JSONAgeGroupSerialization.swift in Sources */,
 				44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */,
 				4422BC161E253CE000355D71 /* AnswersViewController.swift in Sources */,
