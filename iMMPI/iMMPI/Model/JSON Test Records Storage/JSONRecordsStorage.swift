@@ -49,35 +49,17 @@ extension JSONRecordsStorage: RecordStorage {
     func load() throws {
         try loadIndex()
 
-        let subpaths = try fileManager.contentsOfDirectory(
-            at: storedRecordsUrl,
-            includingPropertiesForKeys: [.addedToDirectoryDateKey],
-            options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]
-        )
-        .sorted(by: { $0.mmpiAddedToDirectoryDate < $1.mmpiAddedToDirectoryDate })
-
-        for url in subpaths {
+        for url in jsonFileUrlsInStorageDirectory {
             let fileName = url.lastPathComponent
-            if url.pathExtension == kJSONPathExtension && false == loadedFileNames.contains(fileName) {
+
+            if false == loadedFileNames.contains(fileName) {
                 let data = try Data(contentsOf: url)
 
                 guard let record = recordSerialization.decode(data) else {
                     continue
                 }
 
-                let element = Element()
-
-                element.record = record
-                element.fileName = fileName
-
-                let oldFileName = elements[record.identifier]?.fileName
-
-                loadedFileNames.insert(fileName)
-                elements[record.identifier] = element
-
-                if let oldFileName = oldFileName {
-                    try removeRecordFile(named: oldFileName)
-                }
+                try insertElement(for: record, fileName: fileName)
             }
         }
 
@@ -85,16 +67,27 @@ extension JSONRecordsStorage: RecordStorage {
 
         NSLog("\(loadedFileNames.count) files loaded")
     }
+
+    private var jsonFileUrlsInStorageDirectory: [URL] {
+        let directoryContents = (try? fileManager.contentsOfDirectory(
+            at: storedRecordsUrl,
+            includingPropertiesForKeys: [.addedToDirectoryDateKey],
+            options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]
+        )) ?? []
+
+        return directoryContents
+            .filter({ $0.pathExtension == kJSONPathExtension })
+            .sorted(by: { $0.mmpiAddedToDirectoryDate < $1.mmpiAddedToDirectoryDate })
+    }
 }
 
 
 extension JSONRecordsStorage {
-    var indexUrl: URL {
+    private var indexUrl: URL {
         return storedRecordsUrl
             .appendingPathComponent(kIndexFileName)
             .appendingPathExtension(kJSONPathExtension)
     }
-
 
     private func loadIndex() throws {
         let indexUrl = self.indexUrl
@@ -106,13 +99,7 @@ extension JSONRecordsStorage {
         let indexData = try Data(contentsOf: indexUrl)
         let indexItems = indexSerialization.decode(indexData)
 
-        let indexItemsSortedByDate = indexItems.map({ item -> (item: JSONIndexItem, url: URL) in
-            let url = storedRecordsUrl.appendingPathComponent(item.fileName)
-            return (item: item, url: url)
-        })
-        .filter({ fileManager.fileExists(atPath: $0.url.path) })
-        .sorted(by: { $0.url.mmpiAddedToDirectoryDate < $1.url.mmpiAddedToDirectoryDate })
-        .map({ $0.item })
+        let indexItemsSortedByDate = self.indexItemsSortedByDate(indexItems)
 
         for item in indexItemsSortedByDate {
             guard false == loadedFileNames.contains(item.fileName) else {
@@ -120,50 +107,55 @@ extension JSONRecordsStorage {
             }
 
             if false == loadedFileNames.contains(item.fileName) {
-                let element = Element()
                 let proxy = Record(
                     indexItem: item.indexItem,
                     materialize: JSONIndexItem.materializeRecord(item)
                 )
 
-                element.record = proxy
-                element.fileName = item.fileName
-
-                let oldFileName = elements[proxy.identifier]?.fileName
-
-                loadedFileNames.insert(item.fileName)
-                elements[proxy.identifier] = element
-
-                if let oldFileName = oldFileName {
-                    try removeRecordFile(named: oldFileName)
-                }
+                try insertElement(for: proxy, fileName: item.fileName)
             }
         }
     }
 
+    private func indexItemsSortedByDate(_ indexItems: [JSONIndexItem]) -> [JSONIndexItem] {
+        return indexItems.map({ item -> (item: JSONIndexItem, url: URL) in
+            let url = storedRecordsUrl.appendingPathComponent(item.fileName)
+            return (item: item, url: url)
+        })
+        .filter({ fileManager.fileExists(atPath: $0.url.path) })
+        .sorted(by: { $0.url.mmpiAddedToDirectoryDate < $1.url.mmpiAddedToDirectoryDate })
+        .map({ $0.item })
+    }
+
 
     private func saveIndex() throws {
-        let items = elements.values.compactMap({ element -> JSONIndexItem? in
-            guard let record = element.record else {
-                return nil
-            }
-
-            let fileName = element.fileName ?? self.fileName(for: record)
-            let indexItem = record.indexItem
-
-            return JSONIndexItem(
-                personName: indexItem.personName,
-                date: indexItem.date,
-                fileName: fileName,
-                directory: directory
-            )
-        })
+        let items = makeIndexForLoadedRecords()
 
         guard let indexData = indexSerialization.encode(items) else {
             return
         }
 
         try indexData.write(to: indexUrl)
+    }
+
+    private func makeIndexForLoadedRecords() -> [JSONIndexItem] {
+        return elements.values.compactMap(makeIndexItem)
+    }
+
+    private func makeIndexItem(for element: Element) -> JSONIndexItem? {
+        guard let record = element.record else {
+            return nil
+        }
+
+        let fileName = element.fileName ?? self.fileName(for: record)
+        let indexItem = record.indexItem
+
+        return JSONIndexItem(
+            personName: indexItem.personName,
+            date: indexItem.date,
+            fileName: fileName,
+            directory: directory
+        )
     }
 }
 
@@ -244,6 +236,23 @@ extension JSONRecordsStorage {
         try removeRecordFile(named: fileName)
         elements = elements.filter({ $0.value !== element })
         try saveIndex()
+    }
+
+    private func insertElement(for record: Record, fileName: String) throws {
+        let element = Element()
+
+        element.record = record
+        element.fileName = fileName
+
+        let oldFileName = elements[record.identifier]?.fileName
+
+        loadedFileNames.insert(fileName)
+        elements[record.identifier] = element
+
+        if let oldFileName = oldFileName {
+            try removeRecordFile(named: oldFileName)
+        }
+
     }
 }
 
