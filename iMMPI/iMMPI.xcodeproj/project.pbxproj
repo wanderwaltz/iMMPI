@@ -1093,6 +1093,7 @@
 		44AED8C1215282DA00C68F11 /* JSONRecordStorage+RecordsIdentityResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8C0215282DA00C68F11 /* JSONRecordStorage+RecordsIdentityResolutionTests.swift */; };
 		44AED8C32152899B00C68F11 /* JA12-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 44AED8C22152899B00C68F11 /* JA12-index.json */; };
 		44AED8C5215289A700C68F11 /* JA21-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 44AED8C4215289A700C68F11 /* JA21-index.json */; };
+		44AED8C72153414000C68F11 /* URL+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8C62153414000C68F11 /* URL+Utility.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2252,6 +2253,7 @@
 		44AED8C0215282DA00C68F11 /* JSONRecordStorage+RecordsIdentityResolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONRecordStorage+RecordsIdentityResolutionTests.swift"; sourceTree = "<group>"; };
 		44AED8C22152899B00C68F11 /* JA12-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "JA12-index.json"; sourceTree = "<group>"; };
 		44AED8C4215289A700C68F11 /* JA21-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "JA21-index.json"; sourceTree = "<group>"; };
+		44AED8C62153414000C68F11 /* URL+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utility.swift"; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -4013,6 +4015,7 @@
 				44B193B61E3A66F800DD4E5E /* String+Utility.swift */,
 				44A904271E4DCC32003CB6C6 /* UIView+Borders.swift */,
 				44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */,
+				44AED8C62153414000C68F11 /* URL+Utility.swift */,
 				442CE1D81E238379006C34A6 /* UtilityFunctions.swift */,
 				44F97A281E261943004F4E14 /* SoundPlayer.swift */,
 			);
@@ -5267,6 +5270,7 @@
 				44AED8A82152113900C68F11 /* PersonIdentifier.swift in Sources */,
 				44673C191E23C1C0001758C0 /* SectionIndex.swift in Sources */,
 				444F244B1E3366C600BB8003 /* MenuAction+Email.swift in Sources */,
+				44AED8C72153414000C68F11 /* URL+Utility.swift in Sources */,
 				442CE1CE1E23718C006C34A6 /* Grouping.swift in Sources */,
 				444F24811E34F59300BB8003 /* AnalysisScore+RawPercentage.swift in Sources */,
 				44F97A2B1E261B63004F4E14 /* AnswersInputDelegate.swift in Sources */,

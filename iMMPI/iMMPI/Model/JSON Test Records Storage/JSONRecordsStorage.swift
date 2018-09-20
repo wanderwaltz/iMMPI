@@ -54,12 +54,7 @@ extension JSONRecordsStorage: RecordStorage {
             includingPropertiesForKeys: [.addedToDirectoryDateKey],
             options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]
         )
-        .sorted(by: { url1, url2 in
-            let date1 = ((try? url1.resourceValues(forKeys: [.addedToDirectoryDateKey]))?.addedToDirectoryDate) ?? .distantPast
-            let date2 = ((try? url2.resourceValues(forKeys: [.addedToDirectoryDateKey]))?.addedToDirectoryDate) ?? .distantPast
-
-            return date1 < date2
-        })
+        .sorted(by: { $0.mmpiAddedToDirectoryDate < $1.mmpiAddedToDirectoryDate })
 
         for url in subpaths {
             let fileName = url.lastPathComponent
@@ -116,12 +111,7 @@ extension JSONRecordsStorage {
             return (item: item, url: url)
         })
         .filter({ fileManager.fileExists(atPath: $0.url.path) })
-        .sorted(by: { item1, item2 in
-            let date1 = ((try? item1.url.resourceValues(forKeys: [.addedToDirectoryDateKey]))?.addedToDirectoryDate) ?? .distantPast
-            let date2 = ((try? item2.url.resourceValues(forKeys: [.addedToDirectoryDateKey]))?.addedToDirectoryDate) ?? .distantPast
-
-            return date1 < date2
-        })
+        .sorted(by: { $0.url.mmpiAddedToDirectoryDate < $1.url.mmpiAddedToDirectoryDate })
         .map({ $0.item })
 
         for item in indexItemsSortedByDate {
