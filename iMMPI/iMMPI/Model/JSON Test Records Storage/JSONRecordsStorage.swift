@@ -35,7 +35,7 @@ extension JSONRecordsStorage: RecordStorage {
 
     func store(_ record: Record) throws {
         let identifier = record.identifier
-        let element = self.element(for: identifier) ?? Element()
+        let element = elements[identifier] ?? Element()
         element.record = record
         elements[identifier] = element
         try store(element)
@@ -43,7 +43,7 @@ extension JSONRecordsStorage: RecordStorage {
     }
 
     func removeRecord(with identifier: RecordIdentifier) throws {
-        try remove(element(for: identifier))
+        try remove(elements[identifier])
     }
 
     func load() throws {
@@ -244,10 +244,6 @@ extension JSONRecordsStorage {
         try removeRecordFile(named: fileName)
         elements = elements.filter({ $0.value !== element })
         try saveIndex()
-    }
-
-    private func element(for identifier: RecordIdentifier) -> Element? {
-        return elements[identifier]
     }
 }
 
