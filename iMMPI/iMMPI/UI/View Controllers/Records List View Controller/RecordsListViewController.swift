@@ -155,12 +155,27 @@ extension RecordsListViewController {
         }
 
         viewModel?.setNeedsUpdate(completion: { _ in
-            if let indexPath = self.groups.indexPathOfItem(matching: { $0.personName == record.indexItem.personName }) {
+            if let indexPath = self.indexPathForMostRelevantItem(for: record) {
+                self.highlightedRecordIdentifier = self.groups.item(at: indexPath)?.record.identifier
                 self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
             }
         })
 
         router?.displayDetails(for: [record.identifier], sender: self)
+    }
+
+    private func indexPathForMostRelevantItem(for record: Record) -> IndexPath? {
+        if let strictIndexPath =
+            groups.indexPathOfItem(matching: { $0.record.identifier == record.identifier }) {
+                return strictIndexPath
+        }
+        else if let samePersonIndexPath =
+            groups.indexPathOfItem(matching: { $0.personName == record.indexItem.personName }) {
+                return samePersonIndexPath
+        }
+        else {
+            return nil
+        }
     }
 }
 

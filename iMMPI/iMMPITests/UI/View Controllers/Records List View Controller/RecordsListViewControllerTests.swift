@@ -105,4 +105,130 @@ final class RecordsListViewControllerTests: RecordsListViewControllerTestCase {
             "it selects the first row after restoring state saved by another instance of RecordsListViewController"
         )
     }
+
+    func testThat__when_received_edit_record_notification__it_shows_details_for_this_record() {
+        var receivedRecordIds: [RecordIdentifier] = []
+        var receivedSender: UIViewController?
+
+        router._displayDetails = {
+            receivedRecordIds = $0
+            receivedSender = $1
+        }
+
+        // the record does not even need to be displayed in this list view controller
+        let editedRecord = trashStorage.all.first!
+
+        NotificationCenter.default.post(name: .didEditRecord, object: editedRecord)
+
+        XCTAssertEqual(router.receivedEvents, [.displayDetails])
+        XCTAssertEqual(receivedRecordIds, [editedRecord.identifier])
+        XCTAssertEqual(receivedSender, recordsListVC)
+    }
+
+    func testThat__when_received_edit_record_notification_for_displayed_record__it_highlights_the_corresponding_cell() {
+        reloadViewControllerData()
+
+        XCTAssertTrue((recordsListVC.tableView.indexPathsForSelectedRows ?? []).isEmpty, "no cells initially selected")
+        NotificationCenter.default.post(name: .didEditRecord, object: Records.john)
+
+        expectation(
+            for: NSPredicate(block: { vc, _ in
+                (vc as? RecordsListViewController)?
+                    .tableView.indexPathsForSelectedRows == [IndexPath(row: 0, section: 0)]
+            }),
+            evaluatedWith: recordsListVC,
+            handler: nil
+        )
+
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+
+    func testThat__when_received_edit_record_notification_for_displayed_record__it_highlights_cell_on_state_restore() {
+        // BEGIN: previous test case stuff (it is a precondition for the current test case)
+        reloadViewControllerData(for: recordsListVC)
+
+        XCTAssertTrue((recordsListVC.tableView.indexPathsForSelectedRows ?? []).isEmpty, "no cells initially selected")
+        NotificationCenter.default.post(name: .didEditRecord, object: Records.john)
+
+        expectation(
+            for: NSPredicate(block: { vc, _ in
+                (vc as? RecordsListViewController)?
+                    .tableView.indexPathsForSelectedRows == [IndexPath(row: 0, section: 0)]
+            }),
+            evaluatedWith: recordsListVC,
+            handler: nil
+        )
+
+        waitForExpectations(timeout: 1.0, handler: nil)
+        // END: previous test case stuff
+
+        let coder = StubCoder()
+        recordsListVC.encodeRestorableState(with: coder)
+
+        let otherRecordsListVC = viewControllersFactory.makeViewController(for: screenDescriptor)
+            as! RecordsListViewController
+
+        reloadViewControllerData(for: otherRecordsListVC)
+
+        XCTAssertTrue(
+            (otherRecordsListVC.tableView.indexPathsForSelectedRows ?? []).isEmpty,
+            "no cells initially selected in freshly created records list VC"
+        )
+
+        otherRecordsListVC.decodeRestorableState(with: coder)
+        reloadViewControllerData(for: otherRecordsListVC)
+
+        XCTAssertEqual(
+            otherRecordsListVC.tableView.indexPathsForSelectedRows,
+            [IndexPath(row: 0, section: 0)],
+            "it selects the first row after restoring state saved by another instance of RecordsListViewController"
+        )
+    }
+
+    func testThat__when_edited_an_older_record__it_highlights_the_right_cell() {
+        recordsListVC = viewControllersFactory.makeViewController(for:
+            .detailsForMultipleRecords(with: [
+                Records.leslieOlder.identifier,
+                Records.leslieRecent.identifier
+            ])
+        ) as? RecordsListViewController
+
+        reloadViewControllerData()
+
+        XCTAssertTrue((recordsListVC.tableView.indexPathsForSelectedRows ?? []).isEmpty, "no cells initially selected")
+        NotificationCenter.default.post(name: .didEditRecord, object: Records.leslieOlder)
+
+        expectation(
+            for: NSPredicate(block: { vc, _ in
+                (vc as? RecordsListViewController)?
+                    // note the index path here: records are sorted from most recent to most old
+                    // and here we expect the older one to be selected
+                    .tableView.indexPathsForSelectedRows == [IndexPath(row: 1, section: 0)]
+            }),
+            evaluatedWith: recordsListVC,
+            handler: nil
+        )
+
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+
+    func testThat__it_does_not_highlight_any_cells_for_irrelevant_records() {
+        reloadViewControllerData(for: recordsListVC)
+
+        XCTAssertTrue((recordsListVC.tableView.indexPathsForSelectedRows ?? []).isEmpty, "no cells initially selected")
+        NotificationCenter.default.post(name: .didEditRecord, object: trashStorage.all.first!)
+
+        let noCellsAreHighlightedExpectation = expectation(
+            for: NSPredicate(block: { vc, _ in
+                ((vc as? RecordsListViewController)?
+                    .tableView.indexPathsForSelectedRows ?? []).isEmpty == false
+            }),
+            evaluatedWith: recordsListVC,
+            handler: nil
+        )
+
+        noCellsAreHighlightedExpectation.isInverted = true
+
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }
