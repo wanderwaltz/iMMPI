@@ -52,13 +52,13 @@ extension MMPIViewControllersFactory: ViewControllerFactoryContext {
 
 
 final class MMPIViewControllerRestoration: UIViewControllerRestoration {
+    static var sharedViewControllerFactory: ViewControllersFactory?
+
     static func viewController(withRestorationIdentifierPath identifierComponents: [String],
                                coder: NSCoder) -> UIViewController? {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+        guard let factory = sharedViewControllerFactory else {
             return nil
         }
-
-        let factory = appDelegate.viewControllersFactory
 
         guard let descriptor = factory.screenDescriptorSerialization.decode(identifierComponents.last) else {
             return nil

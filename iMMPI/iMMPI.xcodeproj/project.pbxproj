@@ -1109,6 +1109,7 @@
 		44AED8EA2154AEED00C68F11 /* MMPIViewControllersFactory+UINavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E92154AEED00C68F11 /* MMPIViewControllersFactory+UINavigationControllerTests.swift */; };
 		44AED8EC2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8EB2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift */; };
 		44AED8EE2154B05900C68F11 /* StubRecordStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8ED2154B05900C68F11 /* StubRecordStorage.swift */; };
+		44AED8F02154B49E00C68F11 /* MMPIViewControllerRestoration+UINavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8EF2154B49E00C68F11 /* MMPIViewControllerRestoration+UINavigationControllerTests.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2284,6 +2285,7 @@
 		44AED8E92154AEED00C68F11 /* MMPIViewControllersFactory+UINavigationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MMPIViewControllersFactory+UINavigationControllerTests.swift"; sourceTree = "<group>"; };
 		44AED8EB2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMPIViewControllersFactoryTestCase.swift; sourceTree = "<group>"; };
 		44AED8ED2154B05900C68F11 /* StubRecordStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRecordStorage.swift; sourceTree = "<group>"; };
+		44AED8EF2154B49E00C68F11 /* MMPIViewControllerRestoration+UINavigationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MMPIViewControllerRestoration+UINavigationControllerTests.swift"; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3787,6 +3789,7 @@
 				44AED8EB2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift */,
 				448C31161E28981A003D355D /* MMPIViewControllersFactory+AnalysisOptionsDelegateTests.swift */,
 				44AED8E92154AEED00C68F11 /* MMPIViewControllersFactory+UINavigationControllerTests.swift */,
+				44AED8EF2154B49E00C68F11 /* MMPIViewControllerRestoration+UINavigationControllerTests.swift */,
 			);
 			path = "View Controllers Factory";
 			sourceTree = "<group>";
@@ -5175,6 +5178,7 @@
 				448C31041E2875B9003D355D /* SectionIndexTests.swift in Sources */,
 				444F247F1E34F26900BB8003 /* AnalysisScoreRawTests.swift in Sources */,
 				448C31061E287719003D355D /* UsingRouting+NSObjectTests.swift in Sources */,
+				44AED8F02154B49E00C68F11 /* MMPIViewControllerRestoration+UINavigationControllerTests.swift in Sources */,
 				448C310B1E2877BA003D355D /* StubRouter.swift in Sources */,
 				44C302131E35234B0073F391 /* AnalyserIntegrationTests.swift in Sources */,
 				444F23861E2E34A100BB8003 /* JSONGenderSerializationTests.swift in Sources */,

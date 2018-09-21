@@ -40,6 +40,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         routedViewControllersFactory.router = router
 
         self.viewControllersFactory = routedViewControllersFactory
+        MMPIViewControllerRestoration.sharedViewControllerFactory = routedViewControllersFactory
         super.init()
     }
 

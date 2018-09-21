@@ -23,5 +23,7 @@ class MMPIViewControllersFactoryTestCase: XCTestCase {
             reportPrintingDelegate: MMPIViewControllersFactory.ReportPrintingDelegate(),
             screenDescriptorSerialization: ScreenDescriptorSerialization()
         )
+
+        MMPIViewControllerRestoration.sharedViewControllerFactory = viewControllersFactory
     }
 }
