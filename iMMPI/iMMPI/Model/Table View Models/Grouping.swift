@@ -107,13 +107,6 @@ extension Grouping {
 
 
 extension Grouping {
-    func map<T>(_ mapping: (Item) -> T) -> Grouping<T> {
-        return Grouping<T>(allItems: allItems.map(mapping), sections: sections.map({ $0.map(mapping) }))
-    }
-}
-
-
-extension Grouping {
     func makeIndex() -> SectionIndex {
         return SectionIndex(indexTitles: sections.map { $0.title.uppercasedFirstCharacter })
     }
