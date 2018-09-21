@@ -1106,6 +1106,9 @@
 		44AED8E321538C9900C68F11 /* ScreenDescriptorSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E221538C9900C68F11 /* ScreenDescriptorSerialization.swift */; };
 		44AED8E621538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E521538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift */; };
 		44AED8E821539DB100C68F11 /* ViewControllerMaker+Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E721539DB100C68F11 /* ViewControllerMaker+Miscellaneous.swift */; };
+		44AED8EA2154AEED00C68F11 /* MMPIViewControllersFactory+UINavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8E92154AEED00C68F11 /* MMPIViewControllersFactory+UINavigationControllerTests.swift */; };
+		44AED8EC2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8EB2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift */; };
+		44AED8EE2154B05900C68F11 /* StubRecordStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AED8ED2154B05900C68F11 /* StubRecordStorage.swift */; };
 		44B190D81E38F20C00DD4E5E /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */; };
 		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
 		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
@@ -2278,6 +2281,9 @@
 		44AED8E221538C9900C68F11 /* ScreenDescriptorSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDescriptorSerialization.swift; sourceTree = "<group>"; };
 		44AED8E521538D7B00C68F11 /* ScreenDescriptorSerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDescriptorSerializationTests.swift; sourceTree = "<group>"; };
 		44AED8E721539DB100C68F11 /* ViewControllerMaker+Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerMaker+Miscellaneous.swift"; sourceTree = "<group>"; };
+		44AED8E92154AEED00C68F11 /* MMPIViewControllersFactory+UINavigationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MMPIViewControllersFactory+UINavigationControllerTests.swift"; sourceTree = "<group>"; };
+		44AED8EB2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMPIViewControllersFactoryTestCase.swift; sourceTree = "<group>"; };
+		44AED8ED2154B05900C68F11 /* StubRecordStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRecordStorage.swift; sourceTree = "<group>"; };
 		44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
@@ -3618,6 +3624,7 @@
 				44B408051E4A08FA00FD4CE8 /* GenericTests.swift */,
 				44B407FF1E4A079F00FD4CE8 /* StringGenerator.swift */,
 				44B408171E4AF47D00FD4CE8 /* StubRecordIndexItem.swift */,
+				44AED8ED2154B05900C68F11 /* StubRecordStorage.swift */,
 				448C310A1E2877BA003D355D /* StubRouter.swift */,
 				44A9044A1E4DCE78003CB6C6 /* StubTableViewDataSource.swift */,
 				448C31111E289454003D355D /* UITestFunctions.swift */,
@@ -3777,7 +3784,9 @@
 			isa = PBXGroup;
 			children = (
 				44AED8E421538D6E00C68F11 /* Descriptors */,
+				44AED8EB2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift */,
 				448C31161E28981A003D355D /* MMPIViewControllersFactory+AnalysisOptionsDelegateTests.swift */,
+				44AED8E92154AEED00C68F11 /* MMPIViewControllersFactory+UINavigationControllerTests.swift */,
 			);
 			path = "View Controllers Factory";
 			sourceTree = "<group>";
@@ -5162,6 +5171,7 @@
 				44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */,
 				44B407FE1E4A069300FD4CE8 /* AnswerTypeTests.swift in Sources */,
 				444F24711E34BDBE00BB8003 /* GenderBasedValueTests.swift in Sources */,
+				44AED8EC2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift in Sources */,
 				448C31041E2875B9003D355D /* SectionIndexTests.swift in Sources */,
 				444F247F1E34F26900BB8003 /* AnalysisScoreRawTests.swift in Sources */,
 				448C31061E287719003D355D /* UsingRouting+NSObjectTests.swift in Sources */,
@@ -5172,6 +5182,7 @@
 				44AED8DF21538A4200C68F11 /* RecordIdentifierTests.swift in Sources */,
 				442CE1D11E2378D7006C34A6 /* SectionSplittingTests.swift in Sources */,
 				448C30F51E27BD63003D355D /* TableViewCellSourceTests.swift in Sources */,
+				44AED8EE2154B05900C68F11 /* StubRecordStorage.swift in Sources */,
 				448C31101E289328003D355D /* AnalysisViewControllerTests.swift in Sources */,
 				4430C7921E160DDD0024C001 /* QuestionnaireTests.swift in Sources */,
 				44B408181E4AF47D00FD4CE8 /* StubRecordIndexItem.swift in Sources */,
@@ -5181,6 +5192,7 @@
 				444F24951E351ECD00BB8003 /* AnalysisScoreMedianIntegrationTests.swift in Sources */,
 				444F24831E34F6AD00BB8003 /* AnalysisScoreRawPercentageTests.swift in Sources */,
 				44AED8C1215282DA00C68F11 /* JSONRecordStorage+RecordsIdentityResolutionTests.swift in Sources */,
+				44AED8EA2154AEED00C68F11 /* MMPIViewControllersFactory+UINavigationControllerTests.swift in Sources */,
 				4430C7B71E163F450024C001 /* PersonTests.swift in Sources */,
 				448C30FC1E27E511003D355D /* AgeGroupTests.swift in Sources */,
 				444F23921E2E3E1900BB8003 /* JSONAnswerTypeSerializationTests.swift in Sources */,
