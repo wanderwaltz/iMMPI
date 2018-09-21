@@ -106,17 +106,6 @@ extension AppDelegate: UISplitViewControllerDelegate {
 }
 
 
-extension AppDelegate {
-    @IBAction func trashButtonAction(_ sender: Any?) {
-        guard let root = (window?.rootViewController as? UISplitViewController)?.viewControllers.first else {
-            return
-        }
-
-        router.displayTrash(sender: root)
-    }
-}
-
-
 // MARK: state restoration
 extension AppDelegate {
     func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {

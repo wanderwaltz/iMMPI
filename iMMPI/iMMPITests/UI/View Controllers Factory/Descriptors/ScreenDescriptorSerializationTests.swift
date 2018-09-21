@@ -19,7 +19,7 @@ final class ScreenDescriptorSerializationTests: XCTestCase {
                 name: "John Appleseed"
             ),
             date: Date(
-                timeIntervalSince1970: 1234
+                timeIntervalSince1970: 0
             )
         ),
         RecordIdentifier(
@@ -27,7 +27,7 @@ final class ScreenDescriptorSerializationTests: XCTestCase {
                 name: "Leslie Knope"
             ),
             date: Date(
-                timeIntervalSince1970: 5678
+                timeIntervalSince1970: 3600 * 24 + 1
             )
         )
     ]

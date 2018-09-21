@@ -76,21 +76,21 @@ extension ViewControllerMaker {
 }
 
 
-private func attachAddRecordButton(to controller: UIViewController) {
+private func attachAddRecordButton(to controller: RecordsListViewController) {
     let button = UIBarButtonItem(
         barButtonSystemItem: .add,
-        target: nil,
+        target: controller,
         action: #selector(RecordsListViewController.addRecordButtonAction(_:))
     )
 
     controller.navigationItem.rightBarButtonItem = button
 }
 
-private func attachTrashButton(to controller: UIViewController) {
+private func attachTrashButton(to controller: RecordsListViewController) {
     let button = UIBarButtonItem(
         barButtonSystemItem: .trash,
-        target: nil,
-        action: #selector(AppDelegate.trashButtonAction(_:))
+        target: controller,
+        action: #selector(RecordsListViewController.trashButtonAction(_:))
     )
 
     controller.navigationItem.leftBarButtonItem = button

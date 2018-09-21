@@ -36,4 +36,62 @@ final class RecordIdentifierTests: XCTestCase {
 
         XCTAssertEqual(recordIdentifier, expectedRecordIdentifier)
     }
+
+    func test__equality_of_RecordIdentifier_instances_with_close_dates() {
+        let id1 = RecordIdentifier(
+            personIdentifier: PersonIdentifier(
+                name: "Leslie Knope"
+            ),
+            date: Date(
+                timeIntervalSince1970: 456
+            )
+        )
+
+        let id2 = RecordIdentifier(
+            personIdentifier: PersonIdentifier(
+                name: "Leslie Knope"
+            ),
+            date: Date(
+                timeIntervalSince1970: 789
+            )
+        )
+
+        XCTAssertEqual(
+            id1,
+            id2,
+            """
+            identifiers should be considered equal since their dates \
+            have the same representation in rawValue
+            """
+        )
+    }
+
+    func test__non_equality_of_RecordIdentifier_instances_with_distant_dates() {
+        let id1 = RecordIdentifier(
+            personIdentifier: PersonIdentifier(
+                name: "Leslie Knope"
+            ),
+            date: Date(
+                timeIntervalSince1970: 456
+            )
+        )
+
+        let id2 = RecordIdentifier(
+            personIdentifier: PersonIdentifier(
+                name: "Leslie Knope"
+            ),
+            date: Date(
+                timeIntervalSince1970: 456 + 3600 * 24 + 1
+            )
+        )
+
+        XCTAssertNotEqual(
+            id1,
+            id2,
+            """
+            identifiers should not be equal since their dates \
+            have different representation in rawValue
+            """
+        )
+    }
 }

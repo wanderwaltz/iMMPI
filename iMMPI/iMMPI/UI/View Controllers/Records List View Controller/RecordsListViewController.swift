@@ -106,35 +106,19 @@ extension RecordsListViewController {
         tableView.tableHeaderView = searchController.searchBar
         cellSource.register(in: tableView)
     }
-
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        becomeFirstResponder()
-    }
-
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        resignFirstResponder()
-    }
 }
 
 
 extension RecordsListViewController {
-    override var canBecomeFirstResponder: Bool {
-        return true
+    @objc func trashButtonAction(_ sender: Any?) {
+        router?.displayTrash(sender: self)
     }
-}
 
-
-extension RecordsListViewController {
-    @IBAction func addRecordButtonAction(_ sender: Any?) {
+    @objc func addRecordButtonAction(_ sender: Any?) {
         router?.addRecord(basedOn: style.makeNewRecord(), sender: self)
     }
 
-
-    @IBAction func compareRecordsButtonAction(_ sender: Any?) {
+    @objc func compareRecordsButtonAction(_ sender: Any?) {
         let records = groups.allItems.map({ $0.allRecords() }).joined()
         let recordIdentifiers = records.map({ $0.identifier })
         router?.displayAnalysis(for: recordIdentifiers, sender: self)
@@ -298,7 +282,6 @@ extension RecordsListViewController: UISearchResultsUpdating {
 extension RecordsListViewController: UISearchControllerDelegate {
     func didDismissSearchController(_ searchController: UISearchController) {
         recordsFilter = Constant.value(true)
-        becomeFirstResponder()
     }
 }
 

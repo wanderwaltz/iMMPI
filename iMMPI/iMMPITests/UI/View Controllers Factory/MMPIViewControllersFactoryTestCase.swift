@@ -2,16 +2,21 @@ import XCTest
 @testable import iMMPI
 
 class MMPIViewControllersFactoryTestCase: XCTestCase {
-    var storage: RecordStorage!
-    var trashStorage: RecordStorage!
+    var storage: StubRecordStorage!
+    var trashStorage: StubRecordStorage!
 
     var viewControllersFactory: MMPIViewControllersFactory!
 
     override func setUp() {
         super.setUp()
 
-        storage = StubRecordStorage.default
-        trashStorage = StubRecordStorage.trash
+        if storage == nil {
+            storage = StubRecordStorage.default
+        }
+
+        if trashStorage == nil {
+            trashStorage = StubRecordStorage.trash
+        }
 
         viewControllersFactory = MMPIViewControllersFactory(
             storage: storage,

@@ -1,4 +1,4 @@
-import Foundation
+import XCTest
 @testable import iMMPI
 
 final class StubRecordStorage {
@@ -12,7 +12,14 @@ final class StubRecordStorage {
 
 extension StubRecordStorage: RecordStorage {
     var all: [Record] {
-        return Array(storedRecords.values)
+        return Array(storedRecords.values).sorted(by: { r1, r2 in
+            if r1.person.name == r2.person.name {
+                return r1.date > r2.date
+            }
+            else {
+                return r1.person.name < r2.person.name
+            }
+        })
     }
 
     func store(_ record: Record) throws {
@@ -30,47 +37,69 @@ extension StubRecordStorage: RecordStorage {
 
 
 extension StubRecordStorage {
-    static let `default` = StubRecordStorage(
-        records: [
-            Record(
-                person: Person(
-                    name: "John Appleseed",
-                    gender: .male,
-                    ageGroup: .adult
+    static let `default`: StubRecordStorage = {
+        let storage = StubRecordStorage(
+            records: [
+                Record(
+                    person: Person(
+                        name: "John Appleseed",
+                        gender: .male,
+                        ageGroup: .adult
+                    ),
+                    answers: Answers(),
+                    date: Date(
+                        timeIntervalSince1970: 0
+                    )
                 ),
-                answers: Answers(),
-                date: Date(
-                    timeIntervalSince1970: 123
-                )
-            ),
 
-            Record(
-                person: Person(
-                    name: "Leslie Knope",
-                    gender: .female,
-                    ageGroup: .adult
+                Record(
+                    person: Person(
+                        name: "Leslie Knope",
+                        gender: .female,
+                        ageGroup: .adult
+                    ),
+                    answers: Answers(),
+                    date: Date(
+                        timeIntervalSince1970: 0
+                    )
                 ),
-                answers: Answers(),
-                date: Date(
-                    timeIntervalSince1970: 456
-                )
-            ),
-        ]
-    )
 
-    static let trash = StubRecordStorage(
-        records: [
-            Record(
-                person: Person(
-                    name: "Chandler Bing",
-                    gender: .male,
-                    ageGroup: .adult
+                Record(
+                    person: Person(
+                        name: "Leslie Knope",
+                        gender: .female,
+                        ageGroup: .adult
+                    ),
+                    answers: Answers(),
+                    date: Date(
+                        timeIntervalSince1970: 3600 * 24 + 1
+                    )
                 ),
-                answers: Answers(),
-                date: Date(
-                    timeIntervalSince1970: 789
-                )
-            ),
-        ]
-    )
+                ]
+        )
+
+        assert(storage.all.count == 3)
+        return storage
+    }()
+
+    static let trash: StubRecordStorage = {
+        let storage = StubRecordStorage(
+            records: [
+                Record(
+                    person: Person(
+                        name: "Chandler Bing",
+                        gender: .male,
+                        ageGroup: .adult
+                    ),
+                    answers: Answers(),
+                    date: Date(
+                        timeIntervalSince1970: 101112
+                    )
+                ),
+                ]
+        )
+
+        assert(storage.all.count == 1)
+        return storage
+    }()
 }

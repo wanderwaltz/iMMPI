@@ -1,12 +1,12 @@
 import Foundation
 
 final class RecordsListViewModel<Item> {
-    var onDidUpdate: ([Item]) -> () = Constant.value(())
+    var onDidUpdate: ([Item]) -> Void = Constant.value(())
 
-    let delete: (Item) -> ()
+    let delete: (Item) -> Void
     let shouldProvideIndex: Bool
 
-    init(provider: AsyncProvider<[Item]>, delete: @escaping (Item) -> (), shouldProvideIndex: Bool = true) {
+    init(provider: AsyncProvider<[Item]>, delete: @escaping (Item) -> Void, shouldProvideIndex: Bool = true) {
         self.provider = provider
         self.delete = delete
         self.shouldProvideIndex = shouldProvideIndex
@@ -17,7 +17,7 @@ final class RecordsListViewModel<Item> {
 
 
 extension RecordsListViewModel {
-    func setNeedsUpdate(completion: @escaping ([Item]) -> () = Constant.value(())) {
+    func setNeedsUpdate(completion: @escaping ([Item]) -> Void = Constant.value(())) {
         provider.provide({ result in
             self.onDidUpdate(result)
             completion(result)

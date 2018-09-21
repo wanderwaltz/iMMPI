@@ -22,9 +22,16 @@ extension RecordsGroup {
 
     func allRecords() -> [Record] {
         var records = [record]
+        var identifiers: Set<RecordIdentifier> = [record.identifier]
 
+        // add all nested records without repeats
         for subgroup in group.allItems {
-            records.append(contentsOf: subgroup.allRecords())
+            for record in subgroup.allRecords() {
+                if identifiers.contains(record.identifier) == false {
+                    identifiers.insert(record.identifier)
+                    records.append(record)
+                }
+            }
         }
 
         return records
