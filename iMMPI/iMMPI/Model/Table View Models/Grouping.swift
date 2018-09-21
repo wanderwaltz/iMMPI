@@ -1,11 +1,11 @@
 import UIKit
 
-final class Grouping<Item> {
+struct Grouping<Item> {
     let allItems: [Item]
     let sections: [Section<Item>]
     let indexPaths: [IndexPath]
 
-    convenience init(items: [Item],
+    init(items: [Item],
          areInIncreasingOrder: (Item, Item) -> Bool,
          sectionDescriptor: SectionDescriptor<Item>) {
 
@@ -15,7 +15,7 @@ final class Grouping<Item> {
     }
 
 
-    fileprivate init(allItems: [Item], sections: [Section<Item>]) {
+    private init(allItems: [Item], sections: [Section<Item>]) {
         self.allItems = allItems
         self.sections = sections
         self.indexPaths = Array(sections.enumerated().map({ sectionIndex, section in
@@ -96,8 +96,7 @@ extension Grouping {
         )
     }
 
-
-    convenience init(items: [Item], areInIncreasingOrder: (Item, Item) -> Bool, sectionTitle: String = "") {
+    init(items: [Item], areInIncreasingOrder: (Item, Item) -> Bool, sectionTitle: String = "") {
         self.init(
             items: items,
             areInIncreasingOrder: areInIncreasingOrder,
