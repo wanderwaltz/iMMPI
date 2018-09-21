@@ -1,13 +1,8 @@
 import Foundation
 
-final class RecordsGroup {
+struct RecordsGroup {
     let record: Record
     let group: Grouping<RecordsGroup>
-
-    init(record: Record, group: Grouping<RecordsGroup>) {
-        self.record = record
-        self.group = group
-    }
 }
 
 
@@ -40,14 +35,14 @@ extension RecordsGroup {
 
 
 extension RecordsGroup {
-    convenience init(single record: Record) {
+    init(single record: Record) {
         self.init(record: record, group: .empty)
     }
 }
 
 
 extension RecordsGroup {
-    convenience init?(_ group: Grouping<Record>) {
+    init?(_ group: Grouping<Record>) {
         if group.allItems.count == 1 {
             self.init(single: group.allItems.first!)
             return
