@@ -20,11 +20,7 @@ final class RecordsGroupTests_Single: XCTestCase {
     }
 
     func testThat__group_record_is_the_provided_record() {
-        XCTAssertTrue(group.record.identifier == record.identifier)
-    }
-
-    func testThat__group_has_empty_grouping() {
-        XCTAssertTrue(group.group.isEmpty)
+        XCTAssertTrue(group.primaryRecord.identifier == record.identifier)
     }
 
     func testThat__group_containsSingleRecord_returns_true() {
@@ -32,11 +28,11 @@ final class RecordsGroupTests_Single: XCTestCase {
     }
 
     func testThat__it_returns_its_person_name() {
-        XCTAssertEqual(group.personName, group.record.indexItem.personName)
+        XCTAssertEqual(group.personName, group.primaryRecord.indexItem.personName)
     }
 
     func testThat__its_allRecords_property_returns_an_array_with_a_single_record() {
-        XCTAssertEqual(group.allRecords().count, 1)
+        XCTAssertEqual(group.allRecords.count, 1)
     }
 }
 
@@ -56,6 +52,6 @@ final class RecordsGroupTests_FromGroupingOfRecord: XCTestCase {
     }
 
     func testThat__group_allRecords_returns_the_same_number_of_records_as_in_original_grouping() {
-        XCTAssertEqual(group.allRecords().count, grouping.allItems.count)
+        XCTAssertEqual(group.allRecords.count, grouping.allItems.count)
     }
 }

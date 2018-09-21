@@ -119,7 +119,7 @@ extension RecordsListViewController {
     }
 
     @objc func compareRecordsButtonAction(_ sender: Any?) {
-        let records = groups.allItems.map({ $0.allRecords() }).joined()
+        let records = groups.allItems.map({ $0.allRecords }).joined()
         let recordIdentifiers = records.map({ $0.identifier })
         router?.displayAnalysis(for: recordIdentifiers, sender: self)
     }
@@ -137,7 +137,11 @@ extension RecordsListViewController {
 
         tableView.reloadData()
 
-        if let indexPath = groups.indexPathOfItem(matching: { $0.record.identifier == highlightedRecordIdentifier }) {
+        let indexPathForHighlightedRecord = groups.indexPathOfItem(
+            matching: { $0.primaryRecord.identifier == highlightedRecordIdentifier }
+        )
+
+        if let indexPath = indexPathForHighlightedRecord  {
             let scrollPosition: UITableView.ScrollPosition =
                 tableView.indexPathsForVisibleRows?.contains(indexPath) == true
                     ? .none
@@ -156,7 +160,7 @@ extension RecordsListViewController {
 
         viewModel?.setNeedsUpdate(completion: { _ in
             if let indexPath = self.indexPathForMostRelevantItem(for: record) {
-                self.highlightedRecordIdentifier = self.groups.item(at: indexPath)?.record.identifier
+                self.highlightedRecordIdentifier = self.groups.item(at: indexPath)?.primaryRecord.identifier
                 self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
             }
         })
@@ -166,7 +170,7 @@ extension RecordsListViewController {
 
     private func indexPathForMostRelevantItem(for record: Record) -> IndexPath? {
         if let strictIndexPath =
-            groups.indexPathOfItem(matching: { $0.record.identifier == record.identifier }) {
+            groups.indexPathOfItem(matching: { $0.primaryRecord.identifier == record.identifier }) {
                 return strictIndexPath
         }
         else if let samePersonIndexPath =
@@ -187,7 +191,7 @@ extension RecordsListViewController {
             return
         }
 
-        let recordIdentifiers = group.allRecords().map({ $0.identifier })
+        let recordIdentifiers = group.allRecords.map({ $0.identifier })
         highlightedRecordIdentifier = recordIdentifiers.first
 
         router?.displayDetails(for: recordIdentifiers, sender: self)
@@ -199,7 +203,7 @@ extension RecordsListViewController {
             return
         }
 
-        router?.editRecord(with: item.record.identifier, sender: self)
+        router?.editRecord(with: item.primaryRecord.identifier, sender: self)
     }
 
 
@@ -222,7 +226,7 @@ extension RecordsListViewController {
             return
         }
 
-        for record in item.allRecords() {
+        for record in item.allRecords {
             viewModel?.delete(record)
         }
 

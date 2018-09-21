@@ -27,8 +27,8 @@ extension RecordsListViewControllerStyle {
 extension RecordsListViewControllerStyle {
     static let root = RecordsListViewControllerStyle(
         updateCell: { cell, item in
-            cell.textLabel?.text = item.record.indexItem.personName
-            cell.detailTextLabel?.text = item.group.isEmpty ? "" : "\(item.group.allItems.count)"
+            cell.textLabel?.text = item.primaryRecord.indexItem.personName
+            cell.detailTextLabel?.text = item.containsSingleRecord ? "" : "\(item.allRecords.count)"
             cell.accessoryType = .detailDisclosureButton
         },
         makeNewRecord: {
@@ -43,8 +43,9 @@ extension RecordsListViewControllerStyle {
 
         return RecordsListViewControllerStyle(
             updateCell: { cell, item in
-                cell.textLabel?.text = nameFormatter.string(for: item.record.indexItem.personName)
-                cell.detailTextLabel?.text = dateFormatter.string(from: item.record.indexItem.date)
+                let indexItem = item.primaryRecord.indexItem
+                cell.textLabel?.text = nameFormatter.string(for: indexItem.personName)
+                cell.detailTextLabel?.text = dateFormatter.string(from: indexItem.date)
                 cell.accessoryType = .detailDisclosureButton
             },
             makeNewRecord: {
