@@ -5565,7 +5565,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = " ";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -5629,7 +5629,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_SWIFT_FLAGS = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -5653,6 +5653,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "iMMPI/Supporting Files/iMMPI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
@@ -5674,6 +5675,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "iMMPI/Supporting Files/iMMPI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
