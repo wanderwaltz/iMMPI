@@ -61,6 +61,7 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
             object: nil
         )
 
+        searchController.dimsBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
         searchController.delegate = self
     }
@@ -105,6 +106,11 @@ extension RecordsListViewController {
         viewModel?.setNeedsUpdate()
         tableView.tableHeaderView = searchController.searchBar
         cellSource.register(in: tableView)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        searchController.isActive = false
     }
 }
 
