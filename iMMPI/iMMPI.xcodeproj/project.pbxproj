@@ -1145,6 +1145,7 @@
 		44DE9B001E2BE43000CFE13E /* HtmlReportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE9AFF1E2BE43000CFE13E /* HtmlReportGenerator.swift */; };
 		44DE9B021E2BE99800CFE13E /* html.report.css in Resources */ = {isa = PBXBuildFile; fileRef = 44DE9B011E2BE99800CFE13E /* html.report.css */; };
 		44DE9B041E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE9B031E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift */; };
+		44E30C6921561B520087AD64 /* ComputedScoreFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E30C6821561B520087AD64 /* ComputedScoreFormatterTests.swift */; };
 		44ECB0ED214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0EC214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift */; };
 		44ECB0EF214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0EE214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift */; };
 		44ECB0F1214FB02C00ADA7D4 /* ReusableViewSource+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0F0214FB02C00ADA7D4 /* ReusableViewSource+Class.swift */; };
@@ -2327,6 +2328,7 @@
 		44DE9AFF1E2BE43000CFE13E /* HtmlReportGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlReportGenerator.swift; sourceTree = "<group>"; };
 		44DE9B011E2BE99800CFE13E /* html.report.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = html.report.css; sourceTree = "<group>"; };
 		44DE9B031E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HtmlReportGenerator+Overall.swift"; sourceTree = "<group>"; };
+		44E30C6821561B520087AD64 /* ComputedScoreFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputedScoreFormatterTests.swift; sourceTree = "<group>"; };
 		44ECB0EC214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerDelegate.swift; sourceTree = "<group>"; };
 		44ECB0EE214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerTests.swift; sourceTree = "<group>"; };
 		44ECB0F0214FB02C00ADA7D4 /* ReusableViewSource+Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableViewSource+Class.swift"; sourceTree = "<group>"; };
@@ -2594,6 +2596,7 @@
 				444F24941E351ECD00BB8003 /* AnalysisScoreMedianIntegrationTests.swift */,
 				444F247E1E34F26900BB8003 /* AnalysisScoreRawTests.swift */,
 				444F24821E34F6AD00BB8003 /* AnalysisScoreRawPercentageTests.swift */,
+				44E30C6821561B520087AD64 /* ComputedScoreFormatterTests.swift */,
 				444F24701E34BDBE00BB8003 /* GenderBasedValueTests.swift */,
 			);
 			path = Analyzer;
@@ -5199,6 +5202,7 @@
 				44B408061E4A08FA00FD4CE8 /* GenericTests.swift in Sources */,
 				448C31001E27E7BA003D355D /* SectionTests.swift in Sources */,
 				44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */,
+				44E30C6921561B520087AD64 /* ComputedScoreFormatterTests.swift in Sources */,
 				44B407FE1E4A069300FD4CE8 /* AnswerTypeTests.swift in Sources */,
 				444F24711E34BDBE00BB8003 /* GenderBasedValueTests.swift in Sources */,
 				44AED8EC2154AF1D00C68F11 /* MMPIViewControllersFactoryTestCase.swift in Sources */,
