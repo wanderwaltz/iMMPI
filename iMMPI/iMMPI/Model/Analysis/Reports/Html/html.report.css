@@ -1,5 +1,6 @@
 body {
     font-family: "Times New Roman", Times, serif;
+    max-width: 700px;
 }
 
 h1 {
