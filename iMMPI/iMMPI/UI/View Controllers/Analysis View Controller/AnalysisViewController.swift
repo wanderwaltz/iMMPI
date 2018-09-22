@@ -86,8 +86,19 @@ extension AnalysisViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .white
         collectionView.dataSource = self
+        collectionView.contentInsetAdjustmentBehavior = .never
 
         reloadData()
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        collectionView.contentInset = UIEdgeInsets(
+            top: view.layoutMargins.top,
+            left: 0,
+            bottom: 0,
+            right: 0
+        )
     }
 }
 

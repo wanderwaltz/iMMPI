@@ -13,6 +13,7 @@ final class AnalysisDateHeaderCollectionViewCell: UICollectionViewCell {
     }
 
     private func finalizeInit() {
+        contentView.backgroundColor = .white
         contentView.addBottomBorder()
         contentView.addRightBorder()
         setupTitleLabel()
