@@ -1146,6 +1146,7 @@
 		44DE9B021E2BE99800CFE13E /* html.report.css in Resources */ = {isa = PBXBuildFile; fileRef = 44DE9B011E2BE99800CFE13E /* html.report.css */; };
 		44DE9B041E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE9B031E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift */; };
 		44E30C6921561B520087AD64 /* ComputedScoreFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E30C6821561B520087AD64 /* ComputedScoreFormatterTests.swift */; };
+		44E30C6B21561CE70087AD64 /* ComputedScoreFormatter+DefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E30C6A21561CE70087AD64 /* ComputedScoreFormatter+DefaultsTests.swift */; };
 		44ECB0ED214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0EC214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift */; };
 		44ECB0EF214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0EE214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift */; };
 		44ECB0F1214FB02C00ADA7D4 /* ReusableViewSource+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB0F0214FB02C00ADA7D4 /* ReusableViewSource+Class.swift */; };
@@ -2329,6 +2330,7 @@
 		44DE9B011E2BE99800CFE13E /* html.report.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = html.report.css; sourceTree = "<group>"; };
 		44DE9B031E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HtmlReportGenerator+Overall.swift"; sourceTree = "<group>"; };
 		44E30C6821561B520087AD64 /* ComputedScoreFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputedScoreFormatterTests.swift; sourceTree = "<group>"; };
+		44E30C6A21561CE70087AD64 /* ComputedScoreFormatter+DefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComputedScoreFormatter+DefaultsTests.swift"; sourceTree = "<group>"; };
 		44ECB0EC214FA6BF00ADA7D4 /* DatePickerViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerDelegate.swift; sourceTree = "<group>"; };
 		44ECB0EE214FA92C00ADA7D4 /* DatePickerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerTests.swift; sourceTree = "<group>"; };
 		44ECB0F0214FB02C00ADA7D4 /* ReusableViewSource+Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableViewSource+Class.swift"; sourceTree = "<group>"; };
@@ -2597,6 +2599,7 @@
 				444F247E1E34F26900BB8003 /* AnalysisScoreRawTests.swift */,
 				444F24821E34F6AD00BB8003 /* AnalysisScoreRawPercentageTests.swift */,
 				44E30C6821561B520087AD64 /* ComputedScoreFormatterTests.swift */,
+				44E30C6A21561CE70087AD64 /* ComputedScoreFormatter+DefaultsTests.swift */,
 				444F24701E34BDBE00BB8003 /* GenderBasedValueTests.swift */,
 			);
 			path = Analyzer;
@@ -5212,6 +5215,7 @@
 				44AED8F42154BD1D00C68F11 /* AllRecordsViewControllerTests.swift in Sources */,
 				44AED8F02154B49E00C68F11 /* MMPIViewControllerRestoration+UINavigationControllerTests.swift in Sources */,
 				448C310B1E2877BA003D355D /* StubRouter.swift in Sources */,
+				44E30C6B21561CE70087AD64 /* ComputedScoreFormatter+DefaultsTests.swift in Sources */,
 				44C302131E35234B0073F391 /* AnalyserIntegrationTests.swift in Sources */,
 				444F23861E2E34A100BB8003 /* JSONGenderSerializationTests.swift in Sources */,
 				44AED8BA2152777700C68F11 /* RecordTests.swift in Sources */,
