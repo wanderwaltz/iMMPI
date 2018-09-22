@@ -2438,7 +2438,6 @@
 			isa = PBXGroup;
 			children = (
 				448C31091E2877AD003D355D /* Test Objects */,
-				44673C3F1E2522D5001758C0 /* Analyzer */,
 				442CE1CF1E2378CA006C34A6 /* Grouping */,
 				44B407FC1E4A067300FD4CE8 /* Model */,
 				4430C7AB1E1635EF0024C001 /* Questionnaire */,
@@ -3865,6 +3864,7 @@
 		44B407FC1E4A067300FD4CE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44673C3F1E2522D5001758C0 /* Analyzer */,
 				448BC60B2151030E001B8F55 /* Data Model Objects */,
 				448BC60C2151033E001B8F55 /* Email */,
 				44AED8AD215215AE00C68F11 /* JSON Test Records Storage */,
