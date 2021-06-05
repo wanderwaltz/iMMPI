@@ -10,3 +10,4 @@ fastlane/test_output
 README.md
 report.xml
 xcuserdata
+.DS_STORE
