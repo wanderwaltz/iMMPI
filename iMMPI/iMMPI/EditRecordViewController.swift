@@ -1,6 +1,6 @@
 import UIKit
 
-protocol EditRecordViewControllerDelegate: class {
+protocol EditRecordViewControllerDelegate: AnyObject {
     func editRecordViewController(_ controller: EditRecordViewController,
                                       didFinishEditing record: RecordProtocol)
 
@@ -23,7 +23,7 @@ final class EditRecordViewController: UITableViewController, UsingRouting {
     }
 
 
-    override init(style: UITableViewStyle) {
+    override init(style: UITableView.Style) {
         super.init(style: style)
         setup()
     }

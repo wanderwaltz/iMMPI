@@ -19,8 +19,10 @@ final class TableViewCellSourceTests: XCTestCase {
     func testThat__it_calls_register_closure_when_registering() {
         var called = false
 
-        let source = TableViewCellSource<Int>(register: { _ in called = true },
-                                              dequeue: { _ in UITableViewCell() })
+        let source = TableViewCellSource<Int>(
+            register: { _ in called = true },
+            dequeue: { _, _, _ in UITableViewCell() }
+        )
 
         source.register(in: tableView)
         XCTAssertTrue(called)
@@ -30,8 +32,10 @@ final class TableViewCellSourceTests: XCTestCase {
     func testThat__it_passes_the_table_view_to_register_closure() {
         var receivedTableView: UITableView? = nil
 
-        let source = TableViewCellSource<Int>(register: { receivedTableView = $0 },
-                                              dequeue: { _ in UITableViewCell() })
+        let source = TableViewCellSource<Int>(
+            register: { receivedTableView = $0 },
+            dequeue: { _, _, _ in UITableViewCell() }
+        )
 
         source.register(in: tableView)
         XCTAssertTrue(receivedTableView === tableView)
@@ -43,7 +47,7 @@ final class TableViewCellSourceTests: XCTestCase {
 
         let source = TableViewCellSource<Int>(
             register: { _ in },
-            dequeue: { _ in
+            dequeue: { _, _, _ in
                 called = true
                 return UITableViewCell()
         })
@@ -90,7 +94,7 @@ final class TableViewCellSourceTests: XCTestCase {
 
         let source = TableViewCellSource<Int>(
             register: { _ in },
-            dequeue: { _ in
+            dequeue: { _, _, _ in
                 defer {
                     counter += 1
                 }

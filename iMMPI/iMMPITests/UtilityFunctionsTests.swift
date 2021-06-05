@@ -78,7 +78,7 @@ final class UtilityFunctionsTests: XCTestCase {
 
 
     func testThat__constant_void__does_not_have_side_effects() {
-        let void: (Any) -> Void = Constant.value()
+        let void: (Any) -> Void = Constant.value(())
 
         let expectedArray: NSMutableArray = [1,2,3]
         let array = expectedArray

@@ -80,9 +80,9 @@ func XCTAssertMatchingScores(_ actual: Double,
                              _ message: @autoclosure () -> String,
                              file: StaticString = #file, line: UInt = #line) {
     if expected is NSNull {
-        XCTAssertTrue(actual.isNaN, message, file: file, line: line)
+        XCTAssertTrue(actual.isNaN, message(), file: file, line: line)
     }
     else {
-        XCTAssertEqual(actual, expected as! Double, message, file: file, line: line)
+        XCTAssertEqual(actual, expected as! Double, message(), file: file, line: line)
     }
 }

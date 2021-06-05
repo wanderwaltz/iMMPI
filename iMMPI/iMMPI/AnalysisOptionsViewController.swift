@@ -2,7 +2,7 @@ import UIKit
 
 // TODO: make internal data representation type-safe
 
-protocol AnalysisOptionsViewControllerDelegate: class {
+protocol AnalysisOptionsViewControllerDelegate: AnyObject {
     func analysisOptionsViewControllerSettingsChanged(_ controller: AnalysisOptionsViewController)
 }
 
@@ -29,7 +29,7 @@ final class AnalysisOptionsViewController: UITableViewController, UsingRouting {
     }
 
 
-    override init(style: UITableViewStyle) {
+    override init(style: UITableView.Style) {
         super.init(style: style)
         setup()
     }

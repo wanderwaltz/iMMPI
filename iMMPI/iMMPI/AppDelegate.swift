@@ -8,9 +8,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var router: Router?
 
-    func application(_ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+    ) -> Bool {
         guard NSClassFromString("XCTestCase") == nil else {
             return true
         }
@@ -42,7 +43,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 extension AppDelegate: UISplitViewControllerDelegate {
-    func splitViewController(_ svc: UISplitViewController, willChangeTo displayMode: UISplitViewControllerDisplayMode) {
+    func splitViewController(_ svc: UISplitViewController, willChangeTo displayMode: UISplitViewController.DisplayMode) {
         assert(svc.viewControllers.count == 2,
             "Unexpected number of child view controllers in \(svc): \(svc.viewControllers.count)")
 

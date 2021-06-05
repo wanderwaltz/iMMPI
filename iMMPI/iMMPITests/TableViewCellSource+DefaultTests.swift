@@ -17,7 +17,7 @@ final class TableViewCellSourceDefaultTests: XCTestCase {
 
 
     func testThat__returned_cell_has_the_given_reuse_identifier() {
-        let source = TableViewCellSource<Int>(style: .default, identifier: "qwerty", update: { _ in })
+        let source = TableViewCellSource<Int>(style: .default, identifier: "qwerty", update: { _, _ in })
         source.register(in: tableView)
         XCTAssertEqual(source.dequeue(from: tableView, for: IndexPath(row: 0, section: 0), with: nil).reuseIdentifier, "qwerty")
     }
@@ -37,7 +37,7 @@ final class TableViewCellSourceDefaultTests: XCTestCase {
 
 
     func testThat__cells_are_actually_reused() {
-        let source = TableViewCellSource<Int>(style: .default, identifier: "qwerty", update: { _ in })
+        let source = TableViewCellSource<Int>(style: .default, identifier: "qwerty", update: { _, _ in })
         let testTableView = TestTableView()
         source.register(in: testTableView)
         XCTAssertTrue(source.dequeue(from: testTableView, for: IndexPath(row: 0, section: 0), with: 1234) === testTableView.reusedCell)

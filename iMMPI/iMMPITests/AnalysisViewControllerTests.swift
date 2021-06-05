@@ -29,7 +29,7 @@ final class AnalysisViewControllerTests: XCTestCase {
 
     func testThat__left_bar_button_item__does_nothing_without_a_record() {
         var called = false
-        router._displayAnswersReview = { _ in called = true }
+        router._displayAnswersReview = { _, _ in called = true }
         controller.navigationItem.leftBarButtonItem?.click()
         XCTAssertFalse(called)
     }
