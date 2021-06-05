@@ -9,3 +9,4 @@ fastlane/xcov_output
 fastlane/test_output
 README.md
 report.xml
+xcuserdata
