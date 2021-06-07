@@ -38,10 +38,10 @@ enum Strings {
 
     // MARK: - forms
     enum Form {
-        static let personName = NSLocalizedString("ФИО", comment: "Поле 'ФИО' формы редактирования записи")
+        static let personName = NSLocalizedString("Название", comment: "Поле 'ФИО' формы редактирования записи")
 
         static let personNamePlaceholder =
-            NSLocalizedString("Иванов Иван Иванович",
+            NSLocalizedString("Пациент № 12345",
                               comment: "Плейсхолдер поля 'ФИО' формы редактирования записи")
 
         static let gender = NSLocalizedString("Пол", comment: "Поле 'Пол' формы редактирования записи")
