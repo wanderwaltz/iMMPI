@@ -5345,7 +5345,7 @@
 				);
 				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5368,7 +5368,7 @@
 				);
 				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
