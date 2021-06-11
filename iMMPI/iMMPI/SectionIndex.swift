@@ -11,6 +11,6 @@ struct SectionIndex {
 
 extension SectionIndex {
     func section(forIndexTitle title: String) -> Int {
-        return indexTitles.index(of: title) ?? 0
+        return indexTitles.firstIndex(of: title) ?? 0
     }
 }
