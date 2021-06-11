@@ -6,7 +6,11 @@ final class AnalysisViewModel {
     }
 
     let person: Person
-    let results: [AnalysisResult]
+    var results: [AnalysisResult] { _lazyResults() }
+
+    private let analyser: Analyser
+    private let records: [RecordProtocol]
+    private var _results: [AnalysisResult] = []
 
     init(records: [RecordProtocol], analyser: Analyser = Analyser()) {
         precondition(Set(records.map({ $0.personName })).count == 1, "Expected all records to be of the same person")
@@ -17,8 +21,14 @@ final class AnalysisViewModel {
 
         self.analyser = analyser
         self.person = person
-        self.results = records.map({ analyser.result(for: $0) })
+        self.records = records
     }
 
-    fileprivate let analyser: Analyser
+    private func _lazyResults() -> [AnalysisResult] {
+        if _results.count != records.count {
+            _results = records.map({ analyser.result(for: $0) })
+        }
+
+        return _results
+    }
 }
