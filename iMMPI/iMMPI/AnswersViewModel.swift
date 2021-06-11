@@ -1,6 +1,6 @@
 import Foundation
 
-protocol AnswersViewModel: class {
+protocol AnswersViewModel: AnyObject {
     var record: RecordProtocol { get }
     var statementsCount: Int { get }
 

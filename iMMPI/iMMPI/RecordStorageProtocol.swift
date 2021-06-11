@@ -1,7 +1,7 @@
 import Foundation
 
 /// Encapsulates a persistent storage for objects conforming to RecordProtocol.
-protocol RecordStorage: class {
+protocol RecordStorage: AnyObject {
     /// Return all test records currently loaded.
     var all: [RecordProtocol] { get }
 

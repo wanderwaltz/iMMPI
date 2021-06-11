@@ -1,6 +1,6 @@
 import UIKit
 
-protocol AnalysisReportsListViewControllerDelegate: class {
+protocol AnalysisReportsListViewControllerDelegate: AnyObject {
     func analysisReportsList(_ controller: AnalysisReportsListViewController, didSelectReport html: Html)
 }
 

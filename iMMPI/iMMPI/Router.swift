@@ -1,6 +1,6 @@
 import UIKit
 
-protocol Router: class {
+protocol Router: AnyObject {
     func displayAllRecords(sender: UIViewController)
     func displayTrash(sender: UIViewController)
 
@@ -27,7 +27,7 @@ protocol Router: class {
 /// With default implementation of the protocol for `NSObject` subclasses,
 /// this protocol can be used as a mixin for easy adding of routing functionality
 /// to view controllers.
-protocol UsingRouting: class {
+protocol UsingRouting: AnyObject {
     /// `Router` contained in a `UsingRouting` instance.
     var router: Router? { get set }
 }

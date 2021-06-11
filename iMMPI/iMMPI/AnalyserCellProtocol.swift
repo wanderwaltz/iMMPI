@@ -1,6 +1,6 @@
 import UIKit
 
-protocol AnalyserCellProtocol: class {
+protocol AnalyserCellProtocol: AnyObject {
     var indexLabel: UILabel? { get }
     var titleLabel: UILabel? { get }
     var scoreLabel: UILabel? { get }
