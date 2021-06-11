@@ -12,35 +12,35 @@ extension AnalysisScore {
     ///
     /// - Returns: an `AnalysisScore` instance, which performs the computation. The returned value is a `Double`
     ///            in 0.0...100.0 range.
-    static func rawPercentage(_ statements: RawMatchesKey,
-                              filter includeStatement: StatementsFilter
-                                = AnalysisScore.defaultStatementsFilter)
-        -> AnalysisScore {
-            let filteredStatements = apply(includeStatement, to: statements)
+    static func rawPercentage(
+        _ statements: RawMatchesKey,
+        filter includeStatement: StatementsFilter =
+            AnalysisScore.defaultStatementsFilter
+    ) -> AnalysisScore {
+        let filteredStatements = apply(includeStatement, to: statements)
 
-            let rawMatches = AnalysisScore.raw(statements)
+        let rawMatches = AnalysisScore.raw(statements)
 
-            return AnalysisScore(
-                formatter: .percentage,
-                value: .specific({ gender in
-                    let selectedStatements = filteredStatements.value(for: gender)
-                    let totalCount = Double(
-                        selectedStatements.positive.count +
-                            selectedStatements.negative.count
-                    )
+        return AnalysisScore(
+            formatter: .percentage,
+            value: .specific({ gender in
+                let selectedStatements = filteredStatements.value(for: gender)
+                let totalCount = Double(
+                    selectedStatements.positive.count +
+                        selectedStatements.negative.count
+                )
 
-                    guard totalCount > 0 else {
-                        return { _ in 100.0 }
-                    }
+                guard totalCount > 0 else {
+                    return { _ in 100.0 }
+                }
 
-                    return { answers in
-                        let result = trunc(rawMatches.value(for: gender, answers: answers) * 100.0 / totalCount)
-                        precondition(0.0...100.0 ~= result)
-                        return result
-                    }
-                }))
+                return { answers in
+                    let result = trunc(rawMatches.value(for: gender, answers: answers) * 100.0 / totalCount)
+                    precondition(0.0...100.0 ~= result)
+                    return result
+                }
+            }))
     }
-
 
     /// A syntactic sugar overload for raw percentage computation, which is independent on the `Gender`.
     ///
@@ -51,11 +51,15 @@ extension AnalysisScore {
     ///
     /// - Returns: an `AnalysisScore` instance, which performs the computation. The returned value is a `Double`
     ///            in 0.0...100.0 range.
-    static func rawPercentage(positive: [Statement.Identifier],
-                              negative: [Statement.Identifier],
-                              filter includeStatement: @escaping StatementsFilter
-                                = AnalysisScore.defaultStatementsFilter)
-        -> AnalysisScore {
-            return .rawPercentage(.common((positive: positive, negative: negative)), filter: includeStatement)
+    static func rawPercentage(
+        positive: [Statement.Identifier],
+        negative: [Statement.Identifier],
+        filter includeStatement: @escaping StatementsFilter =
+            AnalysisScore.defaultStatementsFilter
+    ) -> AnalysisScore {
+        return .rawPercentage(
+            .common((positive: positive, negative: negative)),
+            filter: includeStatement
+        )
     }
 }

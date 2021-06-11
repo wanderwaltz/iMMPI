@@ -47,10 +47,11 @@ extension AnalysisScore {
     /// - Precondition: 
     ///    - `0 < A < B < C < D < 100`,
     ///    - `rawScore.value(for: ...)` is in `0...100` range.
-    static func brackets(_ brackets: GenderBasedValue<(A: Double, B: Double, C: Double, D: Double)>,
-                         upperBracketMode: UpperBracketMode = .linear,
-                         basedOn rawScore: AnalysisScore) -> AnalysisScore {
-
+    static func brackets(
+        _ brackets: GenderBasedValue<(A: Double, B: Double, C: Double, D: Double)>,
+        upperBracketMode: UpperBracketMode = .linear,
+        basedOn rawScore: AnalysisScore
+    ) -> AnalysisScore {
         checkPreconditions(for: brackets.value(for: .male))
         checkPreconditions(for: brackets.value(for: .female))
         checkPreconditions(for: brackets.value(for: .unknown))
@@ -102,7 +103,9 @@ extension AnalysisScore {
                 
                 precondition(0.0...5.0 ~= score)
                 return score
-                }}))
+                }
+            })
+        )
     }
 
     static func brackets(_ brackets: (Double, Double, Double, Double),

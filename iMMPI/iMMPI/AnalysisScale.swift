@@ -7,20 +7,6 @@ struct AnalysisScale {
     let formatter: AnalysisScoreFormatter
     let filter: AnalysisScoreFilter
     let score: AnalysisScore
-
-    init(identifier: Identifier,
-         title: String,
-         index: GenderBasedValue<Int>,
-         formatter: AnalysisScoreFormatter,
-         filter: AnalysisScoreFilter,
-         score: AnalysisScore) {
-        self.identifier = identifier
-        self.title = title
-        self.index = index
-        self.formatter = formatter
-        self.filter = filter
-        self.score = score
-    }
 }
 
 

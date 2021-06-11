@@ -21,7 +21,6 @@ struct GenderBasedValue<T> {
     fileprivate let female: T
 }
 
-
 extension GenderBasedValue {
     /// - Returns: the stored value corresponding to the `gender` provided.
     ///
@@ -35,7 +34,6 @@ extension GenderBasedValue {
         }
     }
 
-
     /// A shorthand method for getting gender-based value for a test record.
     ///
     /// - Returns: the stored value corresponding to the `record.person.gender`.
@@ -47,7 +45,6 @@ extension GenderBasedValue {
     }
 }
 
-
 extension GenderBasedValue {
     /// - Returns: a `GenderBasedValue` providing distinct values for different genders.
     ///
@@ -58,7 +55,6 @@ extension GenderBasedValue {
         return GenderBasedValue(male: male, female: female)
     }
 
-
     /// - Returns: a `GenderBasedValue` providing distinct values for different genders.
     ///
     /// - Parameters:
@@ -67,7 +63,6 @@ extension GenderBasedValue {
     static func specific(_ block: (_ gender: Gender) -> T) -> GenderBasedValue {
         return GenderBasedValue(male: block(.male), female: block(.female))
     }
-
 
     /// - Returns: a `GenderBasedValue` providing the same value for different genders.
     ///

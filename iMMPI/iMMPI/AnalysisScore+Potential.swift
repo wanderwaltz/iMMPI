@@ -7,7 +7,6 @@ extension AnalysisScore {
         case religious
     }
 
-
     /// Вычисение баллов по шкалам 100-102 сложное, и я не до конца понимаю, как оно
     /// работает; формулы переносятся as-is с комментариями, написанными ранее.
     static func potential(_ type: IntellectualPotentialType) -> AnalysisScore {
@@ -127,6 +126,8 @@ extension AnalysisScore {
                 ]
 
                 return finalScores[type]!
-                }}))
+                }
+            })
+        )
     }
 }

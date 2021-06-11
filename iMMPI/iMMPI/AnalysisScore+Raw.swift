@@ -27,10 +27,11 @@ extension AnalysisScore {
     ///
     /// - Returns: an `AnalysisScore` instance, which performs the computation. The returned value is a total number
     ///            of answers in the given record, which match the values provided by the `statements` parameter.
-    static func raw(_ statements: RawMatchesKey,
-                    filter includeStatement: StatementsFilter
-                        = AnalysisScore.defaultStatementsFilter) -> AnalysisScore {
-
+    static func raw(
+        _ statements: RawMatchesKey,
+        filter includeStatement: StatementsFilter =
+            AnalysisScore.defaultStatementsFilter
+    ) -> AnalysisScore {
         let filteredStatements: RawMatchesKey = apply(includeStatement, to: statements)
 
         return AnalysisScore(
@@ -49,9 +50,10 @@ extension AnalysisScore {
                     })
 
                 return Double(positiveMatches + negativeMatches)
-                }}))
+                }
+            })
+        )
     }
-
 
     /// A syntactic sugar overload for raw matches computation, which is independent on the `Gender`.
     ///
@@ -63,13 +65,17 @@ extension AnalysisScore {
     /// - Returns: an `AnalysisScore` instance, which performs the computation. The returned value is a total number
     ///            of answers in the given record, which match the values provided by the `positive` and `negative`
     ///            parameters.
-    static func raw(positive: [Statement.Identifier],
-                    negative: [Statement.Identifier],
-                    filter includeStatement: @escaping StatementsFilter
-                        = AnalysisScore.defaultStatementsFilter) -> AnalysisScore {
-        return .raw(.common((positive: positive, negative: negative)), filter: includeStatement)
+    static func raw(
+        positive: [Statement.Identifier],
+        negative: [Statement.Identifier],
+        filter includeStatement: @escaping StatementsFilter =
+            AnalysisScore.defaultStatementsFilter
+    ) -> AnalysisScore {
+        return .raw(
+            .common((positive: positive, negative: negative)),
+            filter: includeStatement
+        )
     }
-
 
     static func apply(_ filter: StatementsFilter, to key: _RawMatchesKey) -> _RawMatchesKey {
         return (positive: key.positive.filter(filter), negative: key.negative.filter(filter))

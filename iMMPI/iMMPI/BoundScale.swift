@@ -7,7 +7,6 @@ struct BoundScale {
     let score: ComputedScore
 }
 
-
 extension BoundScale {
     init(scale: AnalysisScale, record: RecordProtocol) {
         self.init(
@@ -18,7 +17,6 @@ extension BoundScale {
         )
     }
 }
-
 
 extension AnalysisScale {
     func bind(_ record: RecordProtocol) -> BoundScale {

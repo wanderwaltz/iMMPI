@@ -8,7 +8,6 @@ struct AnalysisScoreFormatter {
     }
 }
 
-
 extension AnalysisScoreFormatter {
     static let ignore = AnalysisScoreFormatter(Constant.value(""))
     static let bracketed = AnalysisScoreFormatter({ String(format: "%.1lf", $0) })

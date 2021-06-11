@@ -6,7 +6,6 @@ struct ComputedScore {
     let isWithinNorm: Bool
 }
 
-
 extension ComputedScore: CustomStringConvertible {}
 
 extension ComputedScore {

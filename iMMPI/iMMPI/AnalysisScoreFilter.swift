@@ -8,7 +8,6 @@ struct AnalysisScoreFilter {
     }
 }
 
-
 extension AnalysisScoreFilter {
     static let never = AnalysisScoreFilter(Constant.value(false))
     static let bracketed = AnalysisScoreFilter({ fabs($0 - 3.0) < 0.05 })
