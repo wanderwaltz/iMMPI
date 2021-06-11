@@ -17,7 +17,7 @@ final class AnalysisMenuActionContext {
             .brief,
             answers,
         ]
-        .flatMap({ $0 })
+        .compactMap({ $0 })
     }()
 
 

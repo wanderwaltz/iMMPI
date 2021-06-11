@@ -15,7 +15,7 @@ final class QuestionnaireTests: XCTestCase {
             XCTAssertTrue(questionnaire?.statementsCount ?? 0 > 0)
         }
 
-        return result.flatMap { $0 }
+        return result.compactMap { $0 }
     }()
 
     func testThat__invalid_questionnaires_throw_when_initializing() {
