@@ -16,8 +16,11 @@ final class AbbreviatedNameFormatter: Formatter {
 
             if false == component.isEmpty {
                 abbreviated.append(
-                    String(format: "%@.",
-                           component.substring(to: component.index(after: component.startIndex)).uppercased()))
+                    String(
+                        format: "%@.",
+                        component[component.startIndex...component.startIndex].uppercased()
+                    )
+                )
             }
         }
 
