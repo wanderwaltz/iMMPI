@@ -20,7 +20,12 @@ final class FormTextFieldTableViewCell: FormTableViewCell {
         textField.frame = rightContentView.bounds
         textField.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         textField.font = .systemFont(ofSize: 18.0)
-        textField.textColor = .black
+
+        if #available(iOS 13.0, *) {
+            textField?.textColor = .label
+        } else {
+            textField?.textColor = .darkText
+        }
 
         rightContentView.addSubview(textField)
     }

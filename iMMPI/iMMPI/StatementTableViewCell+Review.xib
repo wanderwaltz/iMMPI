@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,28 +13,28 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IsD-MA-sh7" id="Hhp-nf-JcU">
-                <rect key="frame" x="0.0" y="0.0" width="768" height="63.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="566" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP5-1l-ggf">
-                        <rect key="frame" x="14" y="22" width="39" height="21"/>
+                        <rect key="frame" x="14" y="21.5" width="39" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="39" id="G41-Vf-Ybc"/>
                             <constraint firstAttribute="height" constant="21" id="TXC-qw-jRK"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="521" translatesAutoresizingMaskIntoConstraints="NO" id="JjJ-3c-Wzf">
-                        <rect key="frame" x="73" y="5.5" width="521" height="54"/>
+                        <rect key="frame" x="73" y="5" width="521" height="54"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="54" id="2kC-lg-ka5"/>
                         </constraints>
                         <string key="text">Текст вопроса, возможно длинный и располагающийся в две строчки; этого должно быть достаточно - в целом, все вопросы СМИЛ изложены достаточно сжато</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
                     </label>
                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="5Vn-Bf-SkL">
                         <rect key="frame" x="615" y="10" width="133" height="45"/>
@@ -69,6 +67,7 @@
                 <outlet property="segmentedControl" destination="5Vn-Bf-SkL" id="Ges-OQ-Vtn"/>
                 <outlet property="statementTextLabel" destination="JjJ-3c-Wzf" id="uoz-bx-eCU"/>
             </connections>
+            <point key="canvasLocation" x="-35" y="154"/>
         </tableViewCell>
     </objects>
 </document>

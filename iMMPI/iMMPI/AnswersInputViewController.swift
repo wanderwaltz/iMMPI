@@ -100,11 +100,11 @@ extension AnswersInputViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath) as! StatementTableViewCell
 
-        let alpha: CGFloat = (statementIndex == indexPath.row) ? 1.0 : 0.125
+        let isHighlighted = statementIndex == indexPath.row
 
-        cell.identifierLabel?.alpha = alpha
-        cell.statementTextLabel?.alpha = alpha
-        cell.answerLabel?.alpha = alpha
+        cell.identifierLabel?.isHighlighted = isHighlighted
+        cell.statementTextLabel?.isHighlighted = isHighlighted
+        cell.answerLabel?.isHighlighted = isHighlighted
 
         return cell
     }

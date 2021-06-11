@@ -5,7 +5,12 @@ final class FormLabelTableViewCell: FormTableViewCell {
         super.layoutSubviews()
 
         detailTextLabel?.font = .systemFont(ofSize: 18.0)
-        detailTextLabel?.textColor = .black
+        
+        if #available(iOS 13.0, *) {
+            detailTextLabel?.textColor = .label
+        } else {
+            detailTextLabel?.textColor = .darkText
+        }
 
         detailTextLabel?.frame = rightContentView.frame
     }
