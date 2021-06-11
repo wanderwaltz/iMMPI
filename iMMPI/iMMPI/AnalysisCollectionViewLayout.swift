@@ -15,8 +15,7 @@ extension AnalysisCollectionViewLayout {
         updateScaleColumnWidth()
 
         var cellAttributes: [IndexPath:UICollectionViewLayoutAttributes] = [:]
-        var supplementaryAttributes: [IndexPath:UICollectionViewLayoutAttributes] = [:]
-
+        
         defer {
             self.cellAttributes = cellAttributes
         }
