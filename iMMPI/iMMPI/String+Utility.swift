@@ -13,6 +13,6 @@ extension String {
             return self
         }
 
-        return substring(to: index(after: startIndex)).uppercased()
+        return self[startIndex...startIndex].uppercased()
     }
 }
