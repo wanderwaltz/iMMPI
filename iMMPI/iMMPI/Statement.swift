@@ -21,10 +21,10 @@ struct Statement {
 
 
 extension Statement: Hashable {
-    var hashValue: Int {
-        return identifier
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
     }
-
+    
     /// `Statement` text is assumed to be only for UI,
     /// statements with the same identifier are considered identical.
     static func == (left: Statement, right: Statement) -> Bool {

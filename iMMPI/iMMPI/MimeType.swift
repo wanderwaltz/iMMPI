@@ -1,6 +1,6 @@
 import Foundation
 
-struct MimeType: StrictlyRawRepresentable {
+struct MimeType: StrictlyRawRepresentable, Hashable {
     let rawValue: String
 
     init(_ rawValue: String) {
@@ -12,18 +12,6 @@ struct MimeType: StrictlyRawRepresentable {
 extension MimeType: CustomStringConvertible {
     var description: String {
         return rawValue
-    }
-}
-
-
-extension MimeType: Hashable {
-    var hashValue: Int {
-        return rawValue.hashValue
-    }
-
-
-    static func == (left: MimeType, right: MimeType) -> Bool {
-        return left.rawValue == right.rawValue
     }
 }
 

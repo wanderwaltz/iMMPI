@@ -3,7 +3,7 @@ import Foundation
 /// Encapsulates personal information of a person taking MMPI test.
 ///
 /// Gender and the age group are relevant for selecting a proper questionnaire for the person.
-struct Person {
+struct Person: Hashable {
     /// Full name of a person.
     let name: String
 
@@ -17,19 +17,5 @@ struct Person {
         self.name = name
         self.gender = gender
         self.ageGroup = ageGroup
-    }
-}
-
-
-extension Person: Hashable {
-    var hashValue: Int {
-        return name.hash ^ gender.hashValue ^ ageGroup.hashValue
-    }
-
-
-    static func == (left: Person, right: Person) -> Bool {
-        return left.name == right.name
-            && left.gender == right.gender
-            && left.ageGroup == right.ageGroup
     }
 }
