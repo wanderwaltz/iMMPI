@@ -1,5 +1,6 @@
 import UIKit
 import MessageUI
+import EmailComposing
 
 final class MMPIRouter {
     let storage: RecordStorage

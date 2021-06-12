@@ -1,4 +1,5 @@
 import Foundation
+import EmailComposing
 
 struct EmailMessageGenerator {
     init(subject: EmailSubjectGenerator = .default,

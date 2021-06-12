@@ -1,5 +1,6 @@
 import UIKit
 import MessageUI
+import EmailComposing
 
 struct MMPIViewControllersFactory: ViewControllersFactory {
     enum Error: Swift.Error {

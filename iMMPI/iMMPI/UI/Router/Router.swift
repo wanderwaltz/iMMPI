@@ -1,4 +1,5 @@
 import UIKit
+import EmailComposing
 
 protocol Router: AnyObject {
     func displayAllRecords(sender: UIViewController)

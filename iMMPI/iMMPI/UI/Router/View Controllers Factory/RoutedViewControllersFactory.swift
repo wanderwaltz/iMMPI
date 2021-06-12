@@ -1,5 +1,6 @@
 import Foundation
 import MessageUI
+import EmailComposing
 
 final class RoutedViewControllersFactory: ViewControllersFactory {
     weak var router: Router?

@@ -1,5 +1,6 @@
 import Foundation
 import MessageUI
+import EmailComposing
 
 protocol ViewControllersFactory {
     func makeRecordsListViewController() -> RecordsListViewController

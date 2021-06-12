@@ -531,8 +531,6 @@
 		444F24471E334F0200BB8003 /* AttachmentReportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24461E334F0200BB8003 /* AttachmentReportGenerator.swift */; };
 		444F24491E334F9000BB8003 /* AttachmentReportGenerator+Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24481E334F9000BB8003 /* AttachmentReportGenerator+Html.swift */; };
 		444F244B1E3366C600BB8003 /* MenuAction+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F244A1E3366C600BB8003 /* MenuAction+Email.swift */; };
-		444F244E1E33676700BB8003 /* EmailMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F244D1E33676700BB8003 /* EmailMessage.swift */; };
-		444F24501E336A0E00BB8003 /* EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F244F1E336A0E00BB8003 /* EmailAddress.swift */; };
 		444F24531E336A9300BB8003 /* EmailMessageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24521E336A9300BB8003 /* EmailMessageGenerator.swift */; };
 		444F24551E336AA800BB8003 /* EmailSubjectGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24541E336AA800BB8003 /* EmailSubjectGenerator.swift */; };
 		444F24571E336AB500BB8003 /* EmailTextGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24561E336AB500BB8003 /* EmailTextGenerator.swift */; };
@@ -1088,7 +1086,6 @@
 		44B193BB1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */; };
 		44B193BD1E3A722100DD4E5E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193BC1E3A722100DD4E5E /* main.swift */; };
 		44B407FE1E4A069300FD4CE8 /* AnswerTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B407FD1E4A069300FD4CE8 /* AnswerTypeTests.swift */; };
-		44B408041E4A08D100FD4CE8 /* EmailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408031E4A08D100FD4CE8 /* EmailTests.swift */; };
 		44B4080E1E4AD87800FD4CE8 /* JSONIndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4080D1E4AD87800FD4CE8 /* JSONIndexItem.swift */; };
 		44B408101E4AD8C400FD4CE8 /* RecordProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */; };
 		44B408121E4AD8DF00FD4CE8 /* RecordIndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B408111E4AD8DF00FD4CE8 /* RecordIndexItem.swift */; };
@@ -1667,8 +1664,6 @@
 		444F24461E334F0200BB8003 /* AttachmentReportGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentReportGenerator.swift; sourceTree = "<group>"; };
 		444F24481E334F9000BB8003 /* AttachmentReportGenerator+Html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttachmentReportGenerator+Html.swift"; sourceTree = "<group>"; };
 		444F244A1E3366C600BB8003 /* MenuAction+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuAction+Email.swift"; sourceTree = "<group>"; };
-		444F244D1E33676700BB8003 /* EmailMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailMessage.swift; sourceTree = "<group>"; };
-		444F244F1E336A0E00BB8003 /* EmailAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailAddress.swift; sourceTree = "<group>"; };
 		444F24521E336A9300BB8003 /* EmailMessageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailMessageGenerator.swift; sourceTree = "<group>"; };
 		444F24541E336AA800BB8003 /* EmailSubjectGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSubjectGenerator.swift; sourceTree = "<group>"; };
 		444F24561E336AB500BB8003 /* EmailTextGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTextGenerator.swift; sourceTree = "<group>"; };
@@ -2220,7 +2215,6 @@
 		44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRecordsStorage.swift; sourceTree = "<group>"; };
 		44B193BC1E3A722100DD4E5E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		44B407FD1E4A069300FD4CE8 /* AnswerTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTypeTests.swift; sourceTree = "<group>"; };
-		44B408031E4A08D100FD4CE8 /* EmailTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTests.swift; sourceTree = "<group>"; };
 		44B4080D1E4AD87800FD4CE8 /* JSONIndexItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONIndexItem.swift; sourceTree = "<group>"; };
 		44B4080F1E4AD8C400FD4CE8 /* RecordProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordProxy.swift; sourceTree = "<group>"; };
 		44B408111E4AD8DF00FD4CE8 /* RecordIndexItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordIndexItem.swift; sourceTree = "<group>"; };
@@ -2428,13 +2422,6 @@
 			path = Actions;
 			sourceTree = "<group>";
 		};
-		444F24401E334DCA00BB8003 /* Attachment */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Attachment;
-			sourceTree = "<group>";
-		};
 		444F24451E334EF400BB8003 /* Attachment */ = {
 			isa = PBXGroup;
 			children = (
@@ -2447,8 +2434,6 @@
 		444F244C1E33675D00BB8003 /* Email */ = {
 			isa = PBXGroup;
 			children = (
-				444F244F1E336A0E00BB8003 /* EmailAddress.swift */,
-				444F244D1E33676700BB8003 /* EmailMessage.swift */,
 			);
 			path = Email;
 			sourceTree = "<group>";
@@ -3600,7 +3585,6 @@
 			children = (
 				448C30FB1E27E511003D355D /* AgeGroupTests.swift */,
 				44B407FD1E4A069300FD4CE8 /* AnswerTypeTests.swift */,
-				44B408031E4A08D100FD4CE8 /* EmailTests.swift */,
 				448C30FD1E27E743003D355D /* GenderTests.swift */,
 				44DE9AFC1E2B874B00CFE13E /* HtmlTests.swift */,
 				4430C7B61E163F450024C001 /* PersonTests.swift */,
@@ -3823,7 +3807,6 @@
 		5DCC9642168DC12B004F8D4E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				444F24401E334DCA00BB8003 /* Attachment */,
 				444F244C1E33675D00BB8003 /* Email */,
 				442CE1A41E234DCE006C34A6 /* Formatters */,
 				442CE1F01E23A939006C34A6 /* AsyncProvider.swift */,
@@ -4937,7 +4920,6 @@
 				448C31121E289454003D355D /* UITestFunctions.swift in Sources */,
 				444F237F1E2E334800BB8003 /* JSONAgeGroupSerializationTests.swift in Sources */,
 				44C302191E3533A40073F391 /* AnalyserScoreFiltersTests.swift in Sources */,
-				44B408041E4A08D100FD4CE8 /* EmailTests.swift in Sources */,
 				44C3021B1E3536D10073F391 /* AnalyserScaleIndicesTests.swift in Sources */,
 				442CE1D71E238257006C34A6 /* GroupingTests.swift in Sources */,
 				448C30FE1E27E743003D355D /* GenderTests.swift in Sources */,
@@ -5023,7 +5005,6 @@
 				444F24251E3204F700BB8003 /* PopoverPresenting.swift in Sources */,
 				444F241D1E31E62000BB8003 /* MenuAction+Print.swift in Sources */,
 				449A523C1E4B65E000D23C13 /* Fonts.swift in Sources */,
-				444F244E1E33676700BB8003 /* EmailMessage.swift in Sources */,
 				44B4080E1E4AD87800FD4CE8 /* JSONIndexItem.swift in Sources */,
 				44C17C391E365240005A7C40 /* AnalysisScore+Potential.swift in Sources */,
 				444F24551E336AA800BB8003 /* EmailSubjectGenerator.swift in Sources */,
@@ -5034,7 +5015,6 @@
 				449A523F1E4B686B00D23C13 /* AnalysisViewController.swift in Sources */,
 				442CE1C41E236EEC006C34A6 /* RecordsListViewController.swift in Sources */,
 				449A52381E4B646500D23C13 /* Views.swift in Sources */,
-				444F24501E336A0E00BB8003 /* EmailAddress.swift in Sources */,
 				442CE1E31E238BBB006C34A6 /* RecordsGroup.swift in Sources */,
 				44DE9B001E2BE43000CFE13E /* HtmlReportGenerator.swift in Sources */,
 				447DB7D81E37E63A00901631 /* BoundScale.swift in Sources */,

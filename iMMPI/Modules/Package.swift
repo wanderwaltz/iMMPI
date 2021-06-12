@@ -39,7 +39,8 @@ let package = Package(
             name: "EmailComposingTests",
             dependencies: [
                 "EmailComposing",
-                "UnitTestingSupport"
+                "UnitTestingSupport",
+                "Utils",
             ]
         )
     ]

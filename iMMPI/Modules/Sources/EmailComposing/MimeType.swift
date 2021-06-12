@@ -9,11 +9,9 @@ public struct MimeType: StrictlyRawRepresentable, Hashable {
     }
 }
 
-
 extension MimeType: CustomStringConvertible {
     public var description: String { rawValue }
 }
-
 
 extension MimeType {
     public static let json = MimeType("text/html; charset=utf-8")

@@ -1,4 +1,5 @@
 import UIKit
+import EmailComposing
 @testable import iMMPI
 
 final class StubRouter {
