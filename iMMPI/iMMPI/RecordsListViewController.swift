@@ -29,20 +29,32 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
         }
     }
 
+    private var records: [RecordProtocol] = [] {
+        didSet { groups = grouping.group(records.filter(recordsFilter)) }
+    }
+
+    private var recordsFilter: (RecordProtocol) -> Bool = Constant.value(true) {
+        didSet { groups = grouping.group(records.filter(recordsFilter)) }
+    }
+
+    private var groups: Grouping<RecordsGroup> = .empty {
+        didSet { reloadData() }
+    }
+
+    private var index: SectionIndex?
+    private var cellSource: TableViewCellSource<RecordsGroup>!
 
     override init(style: UITableView.Style) {
         super.init(style: style)
         setup()
     }
 
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
 
-
-    fileprivate func setup() {
+    private func setup() {
         cellSource = TableViewCellSource(
             style: .value1,
             identifier: "com.immpi.cells.recordsGroup",
@@ -64,37 +76,10 @@ final class RecordsListViewController: UITableViewController, UsingRouting {
         searchController.searchResultsUpdater = self
     }
 
-
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
-
-    fileprivate var records: [RecordProtocol] = [] {
-        didSet {
-            groups = grouping.group(records.filter(recordsFilter))
-        }
-    }
-
-
-    fileprivate var recordsFilter: (RecordProtocol) -> Bool = Constant.value(true) {
-        didSet {
-            groups = grouping.group(records.filter(recordsFilter))
-        }
-    }
-
-
-    fileprivate var groups: Grouping<RecordsGroup> = .empty {
-        didSet {
-            reloadData()
-        }
-    }
-
-
-    fileprivate var index: SectionIndex?
-    fileprivate var cellSource: TableViewCellSource<RecordsGroup>!
 }
-
 
 extension RecordsListViewController {
     override func viewDidLoad() {
@@ -104,12 +89,10 @@ extension RecordsListViewController {
         cellSource.register(in: tableView)
     }
 
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         becomeFirstResponder()
     }
-
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -117,28 +100,27 @@ extension RecordsListViewController {
     }
 }
 
-
 extension RecordsListViewController {
     override var canBecomeFirstResponder: Bool {
         return true
     }
 }
 
-
 extension RecordsListViewController {
     @IBAction func addRecordButtonAction(_ sender: Any?) {
         router?.addRecord(basedOn: style.makeNewRecord(), sender: self)
     }
 
-
     @IBAction func compareRecordsButtonAction(_ sender: Any?) {
-        router?.displayAnalysis(for: Array(groups.allItems.map({ $0.allRecords() }).joined()), sender: self)
+        router?.displayAnalysis(
+            for: Array(groups.allItems.map({ $0.allRecords() }).joined()),
+            sender: self
+        )
     }
 }
 
-
 extension RecordsListViewController {
-    fileprivate func reloadData() {
+    private func reloadData() {
         if (viewModel?.shouldProvideIndex ?? false) && groups.sections.count > 1 {
             index = groups.makeIndex()
         }
@@ -149,8 +131,7 @@ extension RecordsListViewController {
         tableView.reloadData()
     }
 
-
-    @objc fileprivate func handleDidEditRecordNotification(_ notification: Notification) {
+    @objc private func handleDidEditRecordNotification(_ notification: Notification) {
         assert(Thread.isMainThread)
         guard let record = notification.object as? RecordProtocol else {
             return
@@ -166,8 +147,7 @@ extension RecordsListViewController {
     }
 }
 
-
-// MARK: - UITableViewDelegate
+// MARK: UITableViewDelegate
 extension RecordsListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let item = groups.item(at: indexPath) else {
@@ -177,8 +157,10 @@ extension RecordsListViewController {
         router?.displayDetails(for: item, sender: self)
     }
 
-
-    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+    override func tableView(
+        _ tableView: UITableView,
+        accessoryButtonTappedForRowWith indexPath: IndexPath
+    ) {
         guard let item = groups.item(at: indexPath) else {
             return
         }
@@ -186,22 +168,25 @@ extension RecordsListViewController {
         router?.edit(item.record, sender: self)
     }
 
-
-    override func tableView(_ tableView: UITableView,
-                            titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+    override func tableView(
+        _ tableView: UITableView,
+        titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath
+    ) -> String? {
         return Strings.Button.delete
     }
 
-
-    override func tableView(_ tableView: UITableView,
-                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    override func tableView(
+        _ tableView: UITableView,
+        editingStyleForRowAt indexPath: IndexPath
+    ) -> UITableViewCell.EditingStyle {
         return .delete
     }
 
-
-    override func tableView(_ tableView: UITableView,
-                            commit editingStyle: UITableViewCell.EditingStyle,
-                            forRowAt indexPath: IndexPath) {
+    override func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
+    ) {
         guard let item = groups.item(at: indexPath) else {
             return
         }
@@ -214,39 +199,36 @@ extension RecordsListViewController {
     }
 }
 
-
-// MARK: - UITableViewDataSource
+// MARK: UITableViewDataSource
 extension RecordsListViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return groups.numberOfSections
     }
 
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.numberOfItems(inSection: section)
     }
-
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return groups.title(forSection: section)
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cellSource.dequeue(from: tableView, for: indexPath, with: groups.item(at: indexPath))
     }
-
 
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return index?.indexTitles
     }
 
-
-    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+    override func tableView(
+        _ tableView: UITableView,
+        sectionForSectionIndexTitle title: String,
+        at index: Int
+    ) -> Int {
         return self.index?.section(forIndexTitle: title) ?? 0
     }
 }
-
 
 extension RecordsListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
@@ -255,7 +237,8 @@ extension RecordsListViewController: UISearchResultsUpdating {
         }
 
         if text.count > 2 {
-            let components = text.lowercased()
+            let components = text
+                .lowercased()
                 .trimmingCharacters(in: .whitespacesAndNewlines)
                 .components(separatedBy: .whitespacesAndNewlines)
 
@@ -276,7 +259,6 @@ extension RecordsListViewController: UISearchResultsUpdating {
         }
     }
 }
-
 
 extension RecordsListViewController: UISearchControllerDelegate {
     func didDismissSearchController(_ searchController: UISearchController) {
