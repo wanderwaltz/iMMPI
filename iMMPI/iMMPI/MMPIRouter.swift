@@ -177,10 +177,10 @@ extension MMPIRouter: Router {
 
 
 extension MMPIRouter {
-    fileprivate func attachAddRecordButton(to controller: UIViewController) {
+    fileprivate func attachAddRecordButton(to controller: RecordsListViewController) {
         let button = UIBarButtonItem(
             barButtonSystemItem: .add,
-            target: nil,
+            target: controller,
             action: #selector(RecordsListViewController.addRecordButtonAction(_:))
         )
         
