@@ -1126,8 +1126,6 @@
 		5DA5C9E9163B018D00CF1601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
 		5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */; };
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
-		5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076D91648123A00897C17 /* AddressBookUI.framework */; };
-		5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC076DC1648124100897C17 /* AddressBook.framework */; };
 		5DC0C88916E27C0F006ED854 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC0C88816E27C0F006ED854 /* MessageUI.framework */; };
 		5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */; };
 		5DC2650516D8E5A8004D4BBA /* mmpi.female.teen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650116D8E5A8004D4BBA /* mmpi.female.teen.json */; };
@@ -2295,8 +2293,6 @@
 				5D81F94A1841BD97008E3B0A /* AVFoundation.framework in Frameworks */,
 				5DC3044F17ED83EB00FCE5D5 /* AudioToolbox.framework in Frameworks */,
 				5DC0C88916E27C0F006ED854 /* MessageUI.framework in Frameworks */,
-				5DC076DD1648124100897C17 /* AddressBook.framework in Frameworks */,
-				5DC076DA1648123A00897C17 /* AddressBookUI.framework in Frameworks */,
 				5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */,
 				5DA5C9E5163B018D00CF1601 /* UIKit.framework in Frameworks */,
 				5DA5C9E7163B018D00CF1601 /* Foundation.framework in Frameworks */,
