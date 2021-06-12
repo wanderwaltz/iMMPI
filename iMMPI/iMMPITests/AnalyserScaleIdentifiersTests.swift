@@ -1,4 +1,5 @@
 import XCTest
+import UnitTestingSupport
 @testable import iMMPI
 
 final class AnalyserScaleIdentifiersTests: XCTestCase {

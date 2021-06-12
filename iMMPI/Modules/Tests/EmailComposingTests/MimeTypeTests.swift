@@ -1,5 +1,6 @@
 import XCTest
-@testable import iMMPI
+import UnitTestingSupport
+import EmailComposing
 
 final class MimeTypeTests: XCTestCase {
     func testHashable() {

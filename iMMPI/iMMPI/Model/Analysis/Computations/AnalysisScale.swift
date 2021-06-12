@@ -1,4 +1,5 @@
 import Foundation
+import Utils
 
 struct AnalysisScale {
     let identifier: Identifier

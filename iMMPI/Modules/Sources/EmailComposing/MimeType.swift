@@ -1,22 +1,21 @@
 import Foundation
+import Utils
 
-struct MimeType: StrictlyRawRepresentable, Hashable {
-    let rawValue: String
+public struct MimeType: StrictlyRawRepresentable, Hashable {
+    public let rawValue: String
 
-    init(_ rawValue: String) {
+    public init(_ rawValue: String) {
         self.rawValue = rawValue
     }
 }
 
 
 extension MimeType: CustomStringConvertible {
-    var description: String {
-        return rawValue
-    }
+    public var description: String { rawValue }
 }
 
 
 extension MimeType {
-    static let json = MimeType("text/html; charset=utf-8")
-    static let html = MimeType("application/json; charset=utf-8")
+    public static let json = MimeType("text/html; charset=utf-8")
+    public static let html = MimeType("application/json; charset=utf-8")
 }

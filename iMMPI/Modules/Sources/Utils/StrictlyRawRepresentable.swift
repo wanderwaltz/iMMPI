@@ -1,6 +1,6 @@
 import Foundation
 
-protocol StrictlyRawRepresentable {
+public protocol StrictlyRawRepresentable {
     associatedtype RawValue
 
     var rawValue: RawValue { get }

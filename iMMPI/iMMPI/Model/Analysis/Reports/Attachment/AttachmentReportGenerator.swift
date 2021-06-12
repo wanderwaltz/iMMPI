@@ -1,4 +1,5 @@
 import Foundation
+import EmailComposing
 
 struct AttachmentReportGenerator {
     let title: String

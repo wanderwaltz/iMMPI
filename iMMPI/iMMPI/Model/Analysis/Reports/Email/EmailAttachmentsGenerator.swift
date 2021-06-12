@@ -1,4 +1,5 @@
 import Foundation
+import EmailComposing
 
 struct EmailAttachmentsGenerator {
     init(_ generators: [AttachmentReportGenerator]) {

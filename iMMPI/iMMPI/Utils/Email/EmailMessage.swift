@@ -1,4 +1,5 @@
 import Foundation
+import EmailComposing
 
 struct EmailMessage {
     let subject: String

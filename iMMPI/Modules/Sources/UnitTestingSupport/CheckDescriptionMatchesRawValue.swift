@@ -1,8 +1,13 @@
-//
-//  File.swift
-//  
-//
-//  Created by Egor Chiglintsev on 12.06.2021.
-//
+import XCTest
+import Utils
 
-import Foundation
+public func checkDescriptionMatchesRawValue<T: StrictlyRawRepresentable>(
+    with iterator: AnyIterator<T>,
+    file: StaticString = #file,
+    line: UInt = #line
+) where T.RawValue == String {
+    for value in iterator {
+        XCTAssertEqual(value.rawValue, String(describing: value))
+    }
+}
+
