@@ -1124,7 +1124,6 @@
 		5DA5C9E5163B018D00CF1601 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
 		5DA5C9E7163B018D00CF1601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E6163B018D00CF1601 /* Foundation.framework */; };
 		5DA5C9E9163B018D00CF1601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */; };
-		5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */; };
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
 		5DC0C88916E27C0F006ED854 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC0C88816E27C0F006ED854 /* MessageUI.framework */; };
 		5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2650016D8E5A8004D4BBA /* mmpi.female.adult.json */; };
@@ -2264,7 +2263,6 @@
 		5DA5C9E6163B018D00CF1601 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DA5C9E8163B018D00CF1601 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5DA5C9EC163B018D00CF1601 /* iMMPI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMMPI-Info.plist"; sourceTree = "<group>"; };
-		5DA5C9EE163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DA5C9FD163B018D00CF1601 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5DC076D91648123A00897C17 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -2309,7 +2307,7 @@
 				442CE1A51E234E05006C34A6 /* AbbreviatedNameFormatter.swift */,
 				442CE1B41E235A1B006C34A6 /* DateFormatter+iMMPI.swift */,
 			);
-			name = Formatters;
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		442CE1CC1E23714A006C34A6 /* Table View Models */ = {
@@ -2322,7 +2320,7 @@
 				442CE1D41E237AB5006C34A6 /* SectionDescriptor.swift */,
 				44673C181E23C1C0001758C0 /* SectionIndex.swift */,
 			);
-			name = "Table View Models";
+			path = "Table View Models";
 			sourceTree = "<group>";
 		};
 		442CE1CF1E2378CA006C34A6 /* Grouping */ = {
@@ -2390,7 +2388,7 @@
 				444F23721E2E1EE000BB8003 /* FormTextFieldTableViewCell.swift */,
 				444F23741E2E241900BB8003 /* FormLabelTableViewCell.swift */,
 			);
-			name = "Form Table View Cell";
+			path = "Form Table View Cell";
 			sourceTree = "<group>";
 		};
 		444F237A1E2E31C900BB8003 /* Serialization */ = {
@@ -2406,7 +2404,7 @@
 				444F23971E2E3FFA00BB8003 /* JSONIndexItemSerialization.swift */,
 				444F239B1E2E42A900BB8003 /* JSONRecordSerialization.swift */,
 			);
-			name = Serialization;
+			path = Serialization;
 			sourceTree = "<group>";
 		};
 		444F237D1E2E32DD00BB8003 /* JSON Serialization */ = {
@@ -2434,7 +2432,7 @@
 				444F244A1E3366C600BB8003 /* MenuAction+Email.swift */,
 				444F245E1E34990A00BB8003 /* MenuAction+UITableView.swift */,
 			);
-			name = Actions;
+			path = Actions;
 			sourceTree = "<group>";
 		};
 		444F24401E334DCA00BB8003 /* Attachment */ = {
@@ -2443,7 +2441,7 @@
 				444F24411E334DFF00BB8003 /* MimeType.swift */,
 				444F24431E334EB700BB8003 /* Attachment.swift */,
 			);
-			name = Attachment;
+			path = Attachment;
 			sourceTree = "<group>";
 		};
 		444F24451E334EF400BB8003 /* Attachment */ = {
@@ -2452,7 +2450,7 @@
 				444F24461E334F0200BB8003 /* AttachmentReportGenerator.swift */,
 				444F24481E334F9000BB8003 /* AttachmentReportGenerator+Html.swift */,
 			);
-			name = Attachment;
+			path = Attachment;
 			sourceTree = "<group>";
 		};
 		444F244C1E33675D00BB8003 /* Email */ = {
@@ -2461,7 +2459,7 @@
 				444F244F1E336A0E00BB8003 /* EmailAddress.swift */,
 				444F244D1E33676700BB8003 /* EmailMessage.swift */,
 			);
-			name = Email;
+			path = Email;
 			sourceTree = "<group>";
 		};
 		444F24511E336A8700BB8003 /* Email */ = {
@@ -2473,7 +2471,7 @@
 				444F24541E336AA800BB8003 /* EmailSubjectGenerator.swift */,
 				444F24561E336AB500BB8003 /* EmailTextGenerator.swift */,
 			);
-			name = Email;
+			path = Email;
 			sourceTree = "<group>";
 		};
 		44673C1A1E23C9BD001758C0 /* Router */ = {
@@ -2487,7 +2485,7 @@
 				444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */,
 				444F245C1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift */,
 			);
-			name = Router;
+			path = Router;
 			sourceTree = "<group>";
 		};
 		44673C321E24CF91001758C0 /* View Controllers Factory */ = {
@@ -2497,7 +2495,7 @@
 				44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */,
 				44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */,
 			);
-			name = "View Controllers Factory";
+			path = "View Controllers Factory";
 			sourceTree = "<group>";
 		};
 		44673C3F1E2522D5001758C0 /* Analyzer */ = {
@@ -3467,7 +3465,7 @@
 				447DB7D91E37E64200901631 /* ComputedScore.swift */,
 				444F246E1E34BAEF00BB8003 /* GenderBasedValue.swift */,
 			);
-			name = Computations;
+			path = Computations;
 			sourceTree = "<group>";
 		};
 		448C30B41E277C43003D355D /* Statement Table View Cell */ = {
@@ -3478,7 +3476,7 @@
 				448C30B21E277360003D355D /* StatementTableViewCell+Input.xib */,
 				448C30B01E277353003D355D /* StatementTableViewCell+Review.xib */,
 			);
-			name = "Statement Table View Cell";
+			path = "Statement Table View Cell";
 			sourceTree = "<group>";
 		};
 		448C30EF1E27B8FD003D355D /* Reusable View Source */ = {
@@ -3490,7 +3488,7 @@
 				448C30F21E27B9BA003D355D /* TableViewCellSource+Default.swift */,
 				448C318B1E29F50E003D355D /* TableViewCellSource+Switch.swift */,
 			);
-			name = "Reusable View Source";
+			path = "Reusable View Source";
 			sourceTree = "<group>";
 		};
 		448C30F61E27DE01003D355D /* TableViewCellSource */ = {
@@ -3541,7 +3539,7 @@
 				44A9044C1E4EDD89003CB6C6 /* Score Formatters */,
 				448C31951E2B6479003D355D /* AnalysisReportGenerator.swift */,
 			);
-			name = Reports;
+			path = Reports;
 			sourceTree = "<group>";
 		};
 		448C31941E2B63F6003D355D /* Analysis */ = {
@@ -3555,7 +3553,7 @@
 				44C302101E3522C30073F391 /* Analyser.swift */,
 				44B190D71E38F20C00DD4E5E /* AnalysisResult.swift */,
 			);
-			name = Analysis;
+			path = Analysis;
 			sourceTree = "<group>";
 		};
 		449A523D1E4B683100D23C13 /* Analysis View Controller */ = {
@@ -3566,7 +3564,7 @@
 				449A523E1E4B686B00D23C13 /* AnalysisViewController.swift */,
 				44A904311E4DCDCC003CB6C6 /* AnalysisViewModel.swift */,
 			);
-			name = "Analysis View Controller";
+			path = "Analysis View Controller";
 			sourceTree = "<group>";
 		};
 		44A904331E4DCDD2003CB6C6 /* Analyser Scale Collection View Cell */ = {
@@ -3576,7 +3574,7 @@
 				44A9043E1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell+Source.swift */,
 				44A9043D1E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell.xib */,
 			);
-			name = "Analyser Scale Collection View Cell";
+			path = "Analyser Scale Collection View Cell";
 			sourceTree = "<group>";
 		};
 		44A904341E4DCDE1003CB6C6 /* Analyser Score Collection View Cell */ = {
@@ -3586,7 +3584,7 @@
 				44A904441E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell+Source.swift */,
 				44A904431E4DCE0E003CB6C6 /* AnalysisScoreCollectionViewCell.xib */,
 			);
-			name = "Analyser Score Collection View Cell";
+			path = "Analyser Score Collection View Cell";
 			sourceTree = "<group>";
 		};
 		44A904351E4DCDE8003CB6C6 /* Analyser Date Header Collection View Cell */ = {
@@ -3596,7 +3594,7 @@
 				44A904381E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell+Source.swift */,
 				44A904371E4DCDFF003CB6C6 /* AnalysisDateHeaderCollectionViewCell.xib */,
 			);
-			name = "Analyser Date Header Collection View Cell";
+			path = "Analyser Date Header Collection View Cell";
 			sourceTree = "<group>";
 		};
 		44A9044C1E4EDD89003CB6C6 /* Score Formatters */ = {
@@ -3605,7 +3603,7 @@
 				44A9044D1E4EDDA9003CB6C6 /* ComputedScoreFormatter.swift */,
 				44A9044F1E4EDDDD003CB6C6 /* ComputedScoreFormatter+Defalults.swift */,
 			);
-			name = "Score Formatters";
+			path = "Score Formatters";
 			sourceTree = "<group>";
 		};
 		44B407FC1E4A067300FD4CE8 /* Data Model */ = {
@@ -3632,7 +3630,7 @@
 				44DE9B031E2BED1400CFE13E /* HtmlReportGenerator+Overall.swift */,
 				444F24381E321A3F00BB8003 /* HtmlReportGenerator+Answers.swift */,
 			);
-			name = Html;
+			path = Html;
 			sourceTree = "<group>";
 		};
 		5D5E05B9164651A800A5A704 /* Model */ = {
@@ -3644,7 +3642,7 @@
 				448C31941E2B63F6003D355D /* Analysis */,
 				442CE1CC1E23714A006C34A6 /* Table View Models */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5D74CEF8169B085000BAA202 /* UI */ = {
@@ -3658,7 +3656,7 @@
 				5DC40473168C2D49000AFBAE /* Table View Cells */,
 				5DA5CA0C163B04D200CF1601 /* View Controllers */,
 			);
-			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		5DA5C9D5163B018D00CF1601 = {
@@ -3721,9 +3719,8 @@
 				5DC2650216D8E5A8004D4BBA /* mmpi.male.adult.json */,
 				5DC2650316D8E5A8004D4BBA /* mmpi.male.teen.json */,
 				5DA5C9EC163B018D00CF1601 /* iMMPI-Info.plist */,
-				5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5DA5CA0C163B04D200CF1601 /* View Controllers */ = {
@@ -3735,7 +3732,7 @@
 				5876FDC61E2BE4C600255227 /* DatePickerController.swift */,
 				442CE1B21E2357AA006C34A6 /* EditRecordViewController.swift */,
 			);
-			name = "View Controllers";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		5DBD56891697272000728BB4 /* Test Answers */ = {
@@ -3748,7 +3745,7 @@
 				444F23761E2E28E000BB8003 /* AnswersInputViewController.xib */,
 				44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */,
 			);
-			name = "Test Answers";
+			path = "Test Answers";
 			sourceTree = "<group>";
 		};
 		5DBE76D7169356D40018C728 /* Records List View Controller */ = {
@@ -3760,7 +3757,7 @@
 				442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */,
 				442CE1E21E238BBB006C34A6 /* RecordsGroup.swift */,
 			);
-			name = "Records List View Controller";
+			path = "Records List View Controller";
 			sourceTree = "<group>";
 		};
 		5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */ = {
@@ -3771,7 +3768,7 @@
 				448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */,
 				444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */,
 			);
-			name = "Analysis Options View Controller";
+			path = "Analysis Options View Controller";
 			sourceTree = "<group>";
 		};
 		5DC0C88416E26AE6006ED854 /* Settings */ = {
@@ -3781,7 +3778,7 @@
 				448C311A1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift */,
 				448C318F1E29FE5E003D355D /* ValidatingAnalysisSettings.swift */,
 			);
-			name = Settings;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
@@ -3795,7 +3792,7 @@
 				448C30EF1E27B8FD003D355D /* Reusable View Source */,
 				444F236F1E2E1C7F00BB8003 /* Form Table View Cell */,
 			);
-			name = "Table View Cells";
+			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
 		5DC40483168C446C000AFBAE /* Protocols */ = {
@@ -3805,7 +3802,7 @@
 				442CE1AD1E23551D006C34A6 /* RecordProtocol.swift */,
 				44673C101E23B017001758C0 /* RecordStorageProtocol.swift */,
 			);
-			name = Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		5DC973AB168F082200C496F0 /* Data Model Objects */ = {
@@ -3821,7 +3818,7 @@
 				4430C7A51E161B430024C001 /* Questionnaire.swift */,
 				4430C7A11E1619000024C001 /* Statement.swift */,
 			);
-			name = "Data Model Objects";
+			path = "Data Model Objects";
 			sourceTree = "<group>";
 		};
 		5DC973BC168F20C200C496F0 /* JSON Test Records Storage */ = {
@@ -3831,7 +3828,7 @@
 				44B193BA1E3A6F8C00DD4E5E /* JSONRecordsStorage.swift */,
 				44B4080D1E4AD87800FD4CE8 /* JSONIndexItem.swift */,
 			);
-			name = "JSON Test Records Storage";
+			path = "JSON Test Records Storage";
 			sourceTree = "<group>";
 		};
 		5DCC9642168DC12B004F8D4E /* Utils */ = {
@@ -3851,7 +3848,7 @@
 				442CE1D81E238379006C34A6 /* UtilityFunctions.swift */,
 				44F97A281E261943004F4E14 /* SoundPlayer.swift */,
 			);
-			name = Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4865,7 +4862,6 @@
 			files = (
 				5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */,
 				448C30B11E277353003D355D /* StatementTableViewCell+Review.xib in Resources */,
-				5DA5C9EF163B018D00CF1601 /* InfoPlist.strings in Resources */,
 				5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */,
 				448C30B31E277360003D355D /* StatementTableViewCell+Input.xib in Resources */,
 				5DC2650416D8E5A8004D4BBA /* mmpi.female.adult.json in Resources */,
@@ -5114,14 +5110,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5DA5C9ED163B018D00CF1601 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5DA5C9EE163B018D00CF1601 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -5339,8 +5327,11 @@
 					/usr/include/libxml2,
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "iMMPI/Supporting Files/iMMPI-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
@@ -5362,8 +5353,11 @@
 					/usr/include/libxml2,
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "iMMPI/iMMPI-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "iMMPI/Supporting Files/iMMPI-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPI;
