@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 extension AnalysisScore {
     /// A pair of `positive` and `negative` statement identifier collections, 

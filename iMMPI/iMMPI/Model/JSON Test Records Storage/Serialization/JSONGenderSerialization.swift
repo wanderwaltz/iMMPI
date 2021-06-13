@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 struct JSONGenderSerialization {
     func encode(_ gender: Gender) -> String {

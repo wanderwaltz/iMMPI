@@ -1,5 +1,6 @@
 import Foundation
 import EmailComposing
+import Localization
 
 struct EmailMessageGenerator {
     init(subject: EmailSubjectGenerator = .default,

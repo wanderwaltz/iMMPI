@@ -1,5 +1,6 @@
 import UIKit
 import MessageUI
+import Localization
 
 extension MenuAction {
     static func email(_ context: AnalysisMenuActionContext) -> MenuAction? {

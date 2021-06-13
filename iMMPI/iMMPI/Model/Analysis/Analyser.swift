@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 struct Analyser {
     let scales: [AnalysisScale]

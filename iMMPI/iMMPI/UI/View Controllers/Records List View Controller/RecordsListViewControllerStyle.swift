@@ -1,4 +1,5 @@
 import UIKit
+import DataModel
 
 struct RecordsListViewControllerStyle {
     fileprivate init(updateCell: @escaping (UITableViewCell, RecordsGroup) -> (),

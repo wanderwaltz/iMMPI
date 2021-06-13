@@ -1,4 +1,5 @@
 import XCTest
+import DataModel
 @testable import iMMPI
 
 final class AnalysisScoreRawPercentageTests: XCTestCase {

@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 typealias JSONRecordProxy = RecordProxy<JSONIndexItem>
 

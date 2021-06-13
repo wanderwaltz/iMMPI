@@ -1,4 +1,6 @@
 import UIKit
+import DataModel
+import Localization
 
 protocol EditRecordViewControllerDelegate: AnyObject {
     func editRecordViewController(_ controller: EditRecordViewController,

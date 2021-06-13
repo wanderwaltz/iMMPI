@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 final class JSONRecordSerialization {
     let version = "1.0"

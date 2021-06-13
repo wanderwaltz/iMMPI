@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 extension AnalysisScore {
     /// Returns a score computed by counting the percentage of matches between the given `Answers` instance

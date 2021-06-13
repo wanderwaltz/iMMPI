@@ -1,4 +1,6 @@
 import XCTest
+import Localization
+import DataModel
 @testable import iMMPI
 
 final class AnalysisViewControllerTests: XCTestCase {

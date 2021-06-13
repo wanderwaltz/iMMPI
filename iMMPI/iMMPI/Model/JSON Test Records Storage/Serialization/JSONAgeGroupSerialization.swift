@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 struct JSONAgeGroupSerialization {
     func encode(_ ageGroup: AgeGroup) -> String {

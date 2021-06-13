@@ -1,4 +1,5 @@
 import Foundation
+import Localization
 
 extension ComputedScoreFormatter {
     static let `default` = ComputedScoreFormatter({ String(describing: $0) })

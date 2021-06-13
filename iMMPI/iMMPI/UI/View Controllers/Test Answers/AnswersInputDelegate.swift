@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 protocol AnswersInputDelegate: AnyObject {
     func answersViewController(_ controller: AnswersViewController,

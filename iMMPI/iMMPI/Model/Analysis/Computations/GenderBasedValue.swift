@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 /// A wrapper simplifying processing of gender-based properties, i.e. properties,
 /// which value may be different depending on the person's gender.

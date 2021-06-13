@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 func groupByEqualName(_ items: [RecordProtocol]) -> Grouping<RecordProtocol> {
     return Grouping(

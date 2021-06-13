@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 struct BoundScale {
     let identifier: AnalysisScale.Identifier

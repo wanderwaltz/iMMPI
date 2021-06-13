@@ -1,4 +1,5 @@
 import Foundation
+import Localization
 
 struct EmailSubjectGenerator {
     init(_ generate: @escaping (AnalysisResult) -> String) {

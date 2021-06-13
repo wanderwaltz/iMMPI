@@ -1,4 +1,5 @@
 import UIKit
+import Localization
 
 extension MenuAction {
     static func print(_ context: AnalysisMenuActionContext) -> MenuAction? {

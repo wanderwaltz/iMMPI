@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 protocol AnswersViewModel: AnyObject {
     var record: RecordProtocol { get }

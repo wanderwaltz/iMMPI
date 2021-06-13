@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 final class RecordsGroup {
     let record: RecordProtocol

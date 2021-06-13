@@ -8,26 +8,13 @@ let package = Package(
             name: "Modules",
             targets: [
                 "EmailComposing",
+                "DataModel",
             ]
         ),
-
-        .library(
-            name: "UnitTestingSupport",
-            targets: [
-                "UnitTestingSupport",
-            ]
-        )
     ],
     dependencies: [],
     targets: [
         .target(name: "Utils"),
-
-        .target(
-            name: "UnitTestingSupport",
-            dependencies: [
-                "Utils",
-            ]
-        ),
 
         .target(
             name: "EmailComposing",
@@ -38,9 +25,31 @@ let package = Package(
         .testTarget(
             name: "EmailComposingTests",
             dependencies: [
-                "EmailComposing",
-                "UnitTestingSupport",
                 "Utils",
+                "EmailComposing"
+            ]
+        ),
+
+        .target(
+            name: "Localization"
+        ),
+
+        .target(
+            name: "DataModel",
+            dependencies: [
+                "Localization",
+            ],
+            resources: [
+                .process("Resources"),
+            ]
+        ),
+        .testTarget(
+            name: "DataModelTests",
+            dependencies: [
+                "DataModel"
+            ],
+            resources: [
+                .process("Resources"),
             ]
         )
     ]

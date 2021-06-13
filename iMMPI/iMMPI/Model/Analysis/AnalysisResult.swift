@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 struct AnalysisResult {
     let record: RecordProtocol

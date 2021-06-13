@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 extension MMPIRouter {
     final class EditingDelegate {

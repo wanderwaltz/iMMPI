@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 struct JSONRecordProxySerialization {
     let indexItemSerialization: JSONIndexItemSerialization

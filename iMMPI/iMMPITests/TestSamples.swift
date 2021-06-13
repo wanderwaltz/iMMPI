@@ -1,4 +1,5 @@
 import UIKit
+import DataModel
 @testable import iMMPI
 
 enum TestSamples {

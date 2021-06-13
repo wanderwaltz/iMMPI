@@ -1,5 +1,4 @@
 import XCTest
-import UnitTestingSupport
 @testable import iMMPI
 
 final class AnalyserScaleIdentifiersTests: XCTestCase {
@@ -20,13 +19,5 @@ final class AnalyserScaleIdentifiersTests: XCTestCase {
         let titles = Set(analyser.scales.map({ $0.title }))
 
         XCTAssertEqual(titles.count, analyser.scales.count)
-    }
-
-    func testHashable() {
-        checkHashableImplementation(with: StringGenerator<AnalysisScale.Identifier>().makeIterator())
-    }
-
-    func testThat__description_matches_rawValue() {
-        checkDescriptionMatchesRawValue(with: StringGenerator<AnalysisScale.Identifier>().makeIterator())
     }
 }

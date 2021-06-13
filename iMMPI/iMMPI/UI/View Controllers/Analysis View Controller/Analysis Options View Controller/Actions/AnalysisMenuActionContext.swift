@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 final class AnalysisMenuActionContext {
     let router: Router?

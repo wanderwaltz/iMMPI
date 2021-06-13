@@ -1,4 +1,5 @@
 import Foundation
+import Localization
 
 final class AnalysisOptionsViewModel {
     typealias SwitchCellData = (title: String, value: Bool)

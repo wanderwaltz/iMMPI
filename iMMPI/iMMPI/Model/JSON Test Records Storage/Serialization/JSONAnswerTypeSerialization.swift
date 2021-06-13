@@ -1,4 +1,5 @@
 import Foundation
+import DataModel
 
 struct JSONAnswerTypeSerialization {
     func encode(_ answerType: AnswerType) -> String {
