@@ -537,7 +537,6 @@
 		444F248F1E35108F00BB8003 /* AnalysisScoreFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F248E1E35108F00BB8003 /* AnalysisScoreFormatter.swift */; };
 		444F24931E351DBC00BB8003 /* AnalysisScore+Median.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24921E351DBC00BB8003 /* AnalysisScore+Median.swift */; };
 		444F24951E351ECD00BB8003 /* AnalysisScoreMedianIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24941E351ECD00BB8003 /* AnalysisScoreMedianIntegrationTests.swift */; };
-		445C64531E48E0E900E670B0 /* Copying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445C64521E48E0E900E670B0 /* Copying.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
 		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
 		44673C191E23C1C0001758C0 /* SectionIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C181E23C1C0001758C0 /* SectionIndex.swift */; };
@@ -1635,7 +1634,6 @@
 		444F248E1E35108F00BB8003 /* AnalysisScoreFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScoreFormatter.swift; sourceTree = "<group>"; };
 		444F24921E351DBC00BB8003 /* AnalysisScore+Median.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalysisScore+Median.swift"; sourceTree = "<group>"; };
 		444F24941E351ECD00BB8003 /* AnalysisScoreMedianIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisScoreMedianIntegrationTests.swift; sourceTree = "<group>"; };
-		445C64521E48E0E900E670B0 /* Copying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copying.swift; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
 		44673C181E23C1C0001758C0 /* SectionIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionIndex.swift; sourceTree = "<group>"; };
@@ -3688,7 +3686,6 @@
 				444F244C1E33675D00BB8003 /* Email */,
 				442CE1A41E234DCE006C34A6 /* Formatters */,
 				442CE1F01E23A939006C34A6 /* AsyncProvider.swift */,
-				445C64521E48E0E900E670B0 /* Copying.swift */,
 				444F24241E3204F700BB8003 /* PopoverPresenting.swift */,
 				44B193B61E3A66F800DD4E5E /* String+Utility.swift */,
 				44A904271E4DCC32003CB6C6 /* UIView+Borders.swift */,
@@ -4791,7 +4788,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				449A523A1E4B652400D23C13 /* Colors.swift in Sources */,
-				445C64531E48E0E900E670B0 /* Copying.swift in Sources */,
 				442CE1B31E2357AA006C34A6 /* EditRecordViewController.swift in Sources */,
 				444F24471E334F0200BB8003 /* AttachmentReportGenerator.swift in Sources */,
 				444F24491E334F9000BB8003 /* AttachmentReportGenerator+Html.swift in Sources */,
