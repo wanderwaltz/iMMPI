@@ -1,4 +1,5 @@
 import Foundation
+import Analysis
 
 struct ComputedScoreFormatter {
     let format: (ComputedScore) -> String

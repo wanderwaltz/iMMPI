@@ -1,6 +1,7 @@
 import UIKit
 import DataModel
 import Localization
+import Utils
 
 final class RecordsListViewController: UITableViewController, UsingRouting {
     var style: RecordsListViewControllerStyle = .root

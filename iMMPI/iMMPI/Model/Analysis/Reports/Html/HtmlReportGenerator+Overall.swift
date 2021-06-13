@@ -1,6 +1,7 @@
 import Foundation
 import Localization
 import HTMLComposing
+import Analysis
 
 extension HtmlReportGenerator {
     static let overall = try? HtmlReportGenerator(title: Strings.Report.overall) { result in

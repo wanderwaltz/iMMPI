@@ -1,6 +1,7 @@
 import XCTest
 import UIKit
 import HTMLComposing
+import Utils
 @testable import iMMPI
 
 final class UtilityFunctionsTests: XCTestCase {

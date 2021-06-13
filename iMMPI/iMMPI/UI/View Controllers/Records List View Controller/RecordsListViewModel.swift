@@ -1,4 +1,5 @@
 import Foundation
+import Utils
 
 final class RecordsListViewModel<Item> {
     var onDidUpdate: ([Item]) -> () = Constant.value(())

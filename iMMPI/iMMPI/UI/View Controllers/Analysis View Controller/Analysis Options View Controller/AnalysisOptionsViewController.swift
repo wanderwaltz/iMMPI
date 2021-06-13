@@ -1,5 +1,7 @@
 import UIKit
 import Localization
+import Analysis
+import Utils
 
 // TODO: make internal data representation type-safe
 

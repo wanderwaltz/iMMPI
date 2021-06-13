@@ -1,4 +1,5 @@
 import XCTest
+import Utils
 @testable import iMMPI
 
 final class TableViewCellSourceTests: XCTestCase {

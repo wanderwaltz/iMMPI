@@ -1,10 +1,10 @@
 import Foundation
 import Utils
 
-public struct MimeType: StrictlyRawRepresentable, Hashable {
+public struct MimeType: Hashable {
     public let rawValue: String
 
-    public init(_ rawValue: String) {
+    init(_ rawValue: String) {
         self.rawValue = rawValue
     }
 }

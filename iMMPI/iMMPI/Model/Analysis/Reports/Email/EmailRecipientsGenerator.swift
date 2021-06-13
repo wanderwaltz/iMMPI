@@ -1,5 +1,6 @@
 import Foundation
 import EmailComposing
+import Analysis
 
 struct EmailRecipientsGenerator {
     init(_ generate: @escaping (AnalysisResult) -> [EmailAddress]) {

@@ -1,0 +1,31 @@
+import Foundation
+import DataModel
+
+public struct JSONGenderSerialization {
+    public init() {}
+
+    public func encode(_ gender: Gender) -> String {
+        switch gender {
+        case .male: return Value.male
+        case .female: return Value.female
+        case .unknown: return Value.unknown
+        }
+    }
+
+    public func decode(_ value: Any?) -> Gender {
+        switch value as? String {
+        case .some(Value.male): return .male
+        case .some(Value.female): return .female
+        default: return .unknown
+        }
+    }
+}
+
+extension JSONGenderSerialization {
+    enum Value {
+        static let male = "male"
+        static let female = "female"
+        static let unknown = "unknown"
+    }
+}
+

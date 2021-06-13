@@ -1,4 +1,5 @@
 import Foundation
+import Utils
 
 struct SectionDescriptor<Item> {
     let itemsBelongToSameSection: (Item, Item) -> Bool

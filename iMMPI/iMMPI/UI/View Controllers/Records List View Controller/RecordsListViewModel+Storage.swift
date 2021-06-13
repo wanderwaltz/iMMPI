@@ -1,5 +1,6 @@
 import Foundation
 import DataModel
+import Utils
 
 extension RecordStorage {
     func makeViewModel(includeRecord: @escaping (RecordProtocol) -> Bool = Constant.value(true))

@@ -1,4 +1,5 @@
 import UIKit
+import Analysis
 
 extension AnalysisScaleCollectionViewCell {
     typealias Source = CollectionViewCellSource<BoundScale>

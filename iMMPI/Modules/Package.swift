@@ -11,6 +11,8 @@ let package = Package(
                 "EmailComposing",
                 "HTMLComposing",
                 "DataModel",
+                "Serialization",
+                "Analysis",
             ]
         ),
     ],
@@ -64,6 +66,48 @@ let package = Package(
             ],
             resources: [
                 .process("Resources"),
+            ]
+        ),
+
+        .target(
+            name: "Serialization",
+            dependencies: [
+                "Formatters",
+                "DataModel"
+            ]
+        ),
+
+        .target(
+            name: "AnalysisTestSamples",
+            dependencies: [
+                "Serialization"
+            ],
+            resources: [
+                .process("Resources"),
+            ]
+        ),
+
+        .testTarget(
+            name: "SerializationTests",
+            dependencies: [
+                "Serialization",
+                "AnalysisTestSamples",
+            ]
+        ),
+
+        .target(
+            name: "Analysis",
+            dependencies: [
+                "Utils",
+                "DataModel",
+            ]
+        ),
+        .testTarget(
+            name: "AnalysisTests",
+            dependencies: [
+                "Analysis",
+                "AnalysisTestSamples",
+                "Serialization",
             ]
         )
     ]

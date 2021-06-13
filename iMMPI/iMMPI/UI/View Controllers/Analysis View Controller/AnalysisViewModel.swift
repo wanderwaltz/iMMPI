@@ -1,5 +1,6 @@
 import Foundation
 import DataModel
+import Analysis
 
 final class AnalysisViewModel {
     var title: String {

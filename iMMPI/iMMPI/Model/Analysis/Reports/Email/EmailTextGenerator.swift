@@ -1,4 +1,5 @@
 import Foundation
+import Analysis
 
 struct EmailTextGenerator {
     init(_ generate: @escaping (AnalysisResult) -> String) {

@@ -1,4 +1,5 @@
 import Foundation
+import Analysis
 
 protocol AnalysisReportGenerator {
     associatedtype Output

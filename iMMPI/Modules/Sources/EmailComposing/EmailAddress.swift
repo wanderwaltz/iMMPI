@@ -1,7 +1,7 @@
 import Foundation
 import Utils
 
-public struct EmailAddress: StrictlyRawRepresentable, Hashable {
+public struct EmailAddress: Hashable {
     public let rawValue: String
 
     public init(_ rawValue: String) {

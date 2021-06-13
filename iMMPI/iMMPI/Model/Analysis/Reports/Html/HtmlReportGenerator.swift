@@ -1,5 +1,6 @@
 import Foundation
 import HTMLComposing
+import Analysis
 
 struct HtmlReportGenerator {
     let title: String

@@ -1,5 +1,6 @@
 import XCTest
 import UIKit
+import Utils
 @testable import iMMPI
 
 final class TableViewCellSourceNibTests: XCTestCase {

@@ -1,5 +1,6 @@
 import UIKit
 import Localization
+import Analysis
 
 final class AnalysisViewController: UIViewController, UsingRouting {
     var viewModel: AnalysisViewModel? {

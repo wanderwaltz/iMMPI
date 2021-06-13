@@ -1,4 +1,5 @@
 import UIKit
+import Serialization
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
