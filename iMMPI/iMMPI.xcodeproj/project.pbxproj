@@ -68,12 +68,8 @@
 		448C31121E289454003D355D /* UITestFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31111E289454003D355D /* UITestFunctions.swift */; };
 		448C31141E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */; };
 		448C31171E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */; };
-		448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31181E289CAF003D355D /* AnalysisSettings.swift */; };
-		448C311B1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C311A1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift */; };
-		448C311D1E28A144003D355D /* UserDefaultsAnalysisSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C311C1E28A144003D355D /* UserDefaultsAnalysisSettingsTests.swift */; };
 		448C318A1E29F3C9003D355D /* AnalysisOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31891E29F3C9003D355D /* AnalysisOptionsViewController.swift */; };
 		448C318C1E29F50E003D355D /* TableViewCellSource+Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C318B1E29F50E003D355D /* TableViewCellSource+Switch.swift */; };
-		448C31901E29FE5E003D355D /* ValidatingAnalysisSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C318F1E29FE5E003D355D /* ValidatingAnalysisSettings.swift */; };
 		448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */; };
 		449A52381E4B646500D23C13 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A52371E4B646500D23C13 /* Views.swift */; };
 		449A523A1E4B652400D23C13 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A52391E4B652400D23C13 /* Colors.swift */; };
@@ -192,12 +188,8 @@
 		448C31111E289454003D355D /* UITestFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestFunctions.swift; sourceTree = "<group>"; };
 		448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+AnalysisOptionsDelegate.swift"; sourceTree = "<group>"; };
 		448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+AnalysisOptionsDelegateTests.swift"; sourceTree = "<group>"; };
-		448C31181E289CAF003D355D /* AnalysisSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisSettings.swift; sourceTree = "<group>"; };
-		448C311A1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsAnalysisSettings.swift; sourceTree = "<group>"; };
-		448C311C1E28A144003D355D /* UserDefaultsAnalysisSettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsAnalysisSettingsTests.swift; sourceTree = "<group>"; };
 		448C31891E29F3C9003D355D /* AnalysisOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisOptionsViewController.swift; sourceTree = "<group>"; };
 		448C318B1E29F50E003D355D /* TableViewCellSource+Switch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCellSource+Switch.swift"; sourceTree = "<group>"; };
-		448C318F1E29FE5E003D355D /* ValidatingAnalysisSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatingAnalysisSettings.swift; sourceTree = "<group>"; };
 		448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisOptionsViewModel.swift; sourceTree = "<group>"; };
 		449A52371E4B646500D23C13 /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		449A52391E4B652400D23C13 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -317,7 +309,6 @@
 				448C31011E28735C003D355D /* AsyncProviderTests.swift */,
 				442CE1E41E238C75006C34A6 /* RecordsGroupTests.swift */,
 				44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */,
-				448C311C1E28A144003D355D /* UserDefaultsAnalysisSettingsTests.swift */,
 				448C31051E287719003D355D /* UsingRouting+NSObjectTests.swift */,
 				442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */,
 				4430C7931E160DDD0024C001 /* Info.plist */,
@@ -430,14 +421,6 @@
 			name = Router;
 			sourceTree = "<group>";
 		};
-		448C31941E2B63F6003D355D /* Analysis */ = {
-			isa = PBXGroup;
-			children = (
-				5DC0C88416E26AE6006ED854 /* Settings */,
-			);
-			path = Analysis;
-			sourceTree = "<group>";
-		};
 		449A523D1E4B683100D23C13 /* Analysis View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,7 +465,6 @@
 		5D5E05B9164651A800A5A704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				448C31941E2B63F6003D355D /* Analysis */,
 				442CE1CC1E23714A006C34A6 /* Table View Models */,
 			);
 			path = Model;
@@ -609,16 +591,6 @@
 				444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */,
 			);
 			path = "Analysis Options View Controller";
-			sourceTree = "<group>";
-		};
-		5DC0C88416E26AE6006ED854 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				448C31181E289CAF003D355D /* AnalysisSettings.swift */,
-				448C311A1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift */,
-				448C318F1E29FE5E003D355D /* ValidatingAnalysisSettings.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		5DC40473168C2D49000AFBAE /* Table View Cells */ = {
@@ -800,7 +772,6 @@
 				442CE1DB1E238581006C34A6 /* UtilityFunctionsTests.swift in Sources */,
 				448C31121E289454003D355D /* UITestFunctions.swift in Sources */,
 				442CE1D71E238257006C34A6 /* GroupingTests.swift in Sources */,
-				448C311D1E28A144003D355D /* UserDefaultsAnalysisSettingsTests.swift in Sources */,
 				448C31021E28735C003D355D /* AsyncProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,7 +790,6 @@
 				44A9042E1E4DCD2A003CB6C6 /* ReusableViewSource.swift in Sources */,
 				44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */,
 				44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */,
-				448C311B1E289D3A003D355D /* UserDefaultsAnalysisSettings.swift in Sources */,
 				442DBB022674EB8B005B87B3 /* RecordsListViewModel+Storage.swift in Sources */,
 				44A904281E4DCC32003CB6C6 /* UIView+Borders.swift in Sources */,
 				444F241B1E31E1B300BB8003 /* MenuAction.swift in Sources */,
@@ -827,7 +797,6 @@
 				44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */,
 				448C30AF1E277193003D355D /* StatementTableViewCell.swift in Sources */,
 				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
-				448C31191E289CAF003D355D /* AnalysisSettings.swift in Sources */,
 				444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */,
 				442CE1EF1E23A3A7006C34A6 /* Grouping+Record.swift in Sources */,
 				44A904411E4DCE07003CB6C6 /* AnalysisScaleCollectionViewCell+Source.swift in Sources */,
@@ -878,7 +847,6 @@
 				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
 				44F97A3D1E26348A004F4E14 /* AnswersViewModel.swift in Sources */,
 				444F23751E2E241900BB8003 /* FormLabelTableViewCell.swift in Sources */,
-				448C31901E29FE5E003D355D /* ValidatingAnalysisSettings.swift in Sources */,
 				44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */,
 				442CE1D51E237AB5006C34A6 /* SectionDescriptor.swift in Sources */,
 			);

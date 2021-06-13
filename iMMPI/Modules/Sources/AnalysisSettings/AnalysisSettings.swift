@@ -1,6 +1,6 @@
 import Foundation
 
-@objc protocol AnalysisSettings {
+@objc public protocol AnalysisSettings {
     /// Decides whether the analysis scores which are in the 'normal' 
     /// interval should be replaced by dashes '-' so that the 'out-of-norm' values are more visible.
     var shouldFilterResults: Bool { get set }

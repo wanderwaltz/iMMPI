@@ -1,5 +1,5 @@
 import XCTest
-@testable import iMMPI
+@testable import AnalysisSettings
 
 final class AnalysisSettingsTests: XCTestCase {
     var defaults: TestDefaults!

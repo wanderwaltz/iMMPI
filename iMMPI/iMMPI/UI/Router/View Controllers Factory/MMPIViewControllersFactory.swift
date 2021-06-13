@@ -1,6 +1,7 @@
 import UIKit
 import MessageUI
 import EmailComposing
+import AnalysisSettings
 
 struct MMPIViewControllersFactory: ViewControllersFactory {
     enum Error: Swift.Error {

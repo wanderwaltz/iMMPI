@@ -14,6 +14,7 @@ let package = Package(
                 "Serialization",
                 "Analysis",
                 "AnalysisReports",
+                "AnalysisSettings",
             ]
         ),
     ],
@@ -123,6 +124,16 @@ let package = Package(
             resources: [
                 .copy("Resources/html.report.css"),
             ]
-        )
+        ),
+
+        .target(
+            name: "AnalysisSettings"
+        ),
+        .testTarget(
+            name: "AnalysisSettingsTests",
+            dependencies: [
+                "AnalysisSettings"
+            ]
+        ),
     ]
 )
