@@ -1,5 +1,5 @@
 import XCTest
-@testable import iMMPI
+import UITableViewModels
 
 final class GroupingAlphabeticallyTests: XCTestCase {
     func test__grouping_alphabetically() {

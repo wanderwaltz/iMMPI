@@ -1,7 +1,8 @@
 import Foundation
 import DataModel
+import UITableViewModels
 
-func groupByEqualName(_ items: [RecordProtocol]) -> Grouping<RecordProtocol> {
+public func groupByEqualName(_ items: [RecordProtocol]) -> Grouping<RecordProtocol> {
     return Grouping(
         items: items,
         areInIncreasingOrder: { $0.personName < $1.personName },

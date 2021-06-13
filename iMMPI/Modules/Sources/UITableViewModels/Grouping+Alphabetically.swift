@@ -1,7 +1,9 @@
 import Foundation
 
 extension Array {
-    func groupAlphabetically(by title: @escaping (Element) -> String) -> Grouping<Element> {
+    public func groupAlphabetically(
+        by title: @escaping (Element) -> String
+    ) -> Grouping<Element> {
         return Grouping(
             items: self,
             areInIncreasingOrder: { title($0).lowercased() < title($1).lowercased() },

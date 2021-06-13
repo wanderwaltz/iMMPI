@@ -12,17 +12,6 @@ final class UtilityFunctionsTests: XCTestCase {
         XCTAssertEqual(controller.navigationItem.backBarButtonItem?.title, " ")
     }
 
-
-    func test_uppercasedFirstCharacter() {
-        XCTAssertEqual("".uppercasedFirstCharacter, "")
-        XCTAssertEqual("apple".uppercasedFirstCharacter, "A")
-        XCTAssertEqual("Apple".uppercasedFirstCharacter, "A")
-        XCTAssertEqual("two words".uppercasedFirstCharacter, "T")
-        XCTAssertEqual("123".uppercasedFirstCharacter, "1")
-        XCTAssertEqual("qwerty asdfg eiy".uppercasedFirstCharacter, "Q")
-    }
-
-
     func testThat__constant_bool__always_returns_the_given_value() {
         let constantTrue: (Any, Any) -> Bool = Constant.value(true)
         let constantFalse: (Any, Any) -> Bool = Constant.value(false)

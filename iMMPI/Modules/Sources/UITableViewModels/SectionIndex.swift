@@ -1,7 +1,7 @@
 import Foundation
 
-struct SectionIndex {
-    let indexTitles: [String]
+public struct SectionIndex {
+    public let indexTitles: [String]
 
     init(indexTitles: [String]) {
         self.indexTitles = indexTitles
@@ -10,7 +10,7 @@ struct SectionIndex {
 
 
 extension SectionIndex {
-    func section(forIndexTitle title: String) -> Int {
+    public func section(forIndexTitle title: String) -> Int {
         return indexTitles.firstIndex(of: title) ?? 0
     }
 }

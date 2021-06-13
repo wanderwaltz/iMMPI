@@ -2,6 +2,7 @@ import UIKit
 import Localization
 import Analysis
 import Utils
+import UITableViewModels
 
 // TODO: make internal data representation type-safe
 

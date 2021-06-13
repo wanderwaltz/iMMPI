@@ -1,5 +1,5 @@
 import XCTest
-@testable import iMMPI
+import UITableViewModels
 
 final class SectionTests: XCTestCase {
     func testThat__section_retains_its_title() {

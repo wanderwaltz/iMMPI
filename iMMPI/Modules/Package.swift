@@ -15,6 +15,8 @@ let package = Package(
                 "Analysis",
                 "AnalysisReports",
                 "AnalysisSettings",
+                "UITableViewModels",
+                "MMPIUI",
             ]
         ),
     ],
@@ -135,5 +137,26 @@ let package = Package(
                 "AnalysisSettings"
             ]
         ),
+
+        .target(
+            name: "UITableViewModels",
+            dependencies: [
+                "Utils"
+            ]
+        ),
+        .testTarget(
+            name: "UITableViewModelsTests",
+            dependencies: [
+                "UITableViewModels",
+            ]
+        ),
+
+        .target(
+            name: "MMPIUI",
+            dependencies: [
+                "DataModel",
+                "UITableViewModels",
+            ]
+        )
     ]
 )

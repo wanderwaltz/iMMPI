@@ -1,5 +1,5 @@
 import XCTest
-@testable import iMMPI
+@testable import UITableViewModels
 
 final class GroupingTests: XCTestCase {
     let descriptor = SectionDescriptor<String>(

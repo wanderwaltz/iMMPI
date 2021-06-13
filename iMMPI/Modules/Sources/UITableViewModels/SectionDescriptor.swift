@@ -1,14 +1,22 @@
 import Foundation
 import Utils
 
-struct SectionDescriptor<Item> {
-    let itemsBelongToSameSection: (Item, Item) -> Bool
-    let sectionTitleForItem: (Item) -> String
+public struct SectionDescriptor<Item> {
+    public let itemsBelongToSameSection: (Item, Item) -> Bool
+    public let sectionTitleForItem: (Item) -> String
+
+    public init(
+        itemsBelongToSameSection: @escaping (Item, Item) -> Bool,
+        sectionTitleForItem: @escaping (Item) -> String
+    ) {
+        self.itemsBelongToSameSection = itemsBelongToSameSection
+        self.sectionTitleForItem = sectionTitleForItem
+    }
 }
 
 
 extension SectionDescriptor {
-    static func singleSection(named title: String) -> SectionDescriptor {
+    public static func singleSection(named title: String) -> SectionDescriptor {
         return SectionDescriptor(
             itemsBelongToSameSection: Constant.value(true),
             sectionTitleForItem: Constant.value(title)
@@ -18,7 +26,9 @@ extension SectionDescriptor {
 
 
 extension Array {
-    func split(with descriptor: SectionDescriptor<Element>) -> [Section<Element>] {
+    public func split(
+        with descriptor: SectionDescriptor<Element>
+    ) -> [Section<Element>] {
         guard false == self.isEmpty else {
             return []
         }

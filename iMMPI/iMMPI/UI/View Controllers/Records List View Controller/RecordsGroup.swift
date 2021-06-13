@@ -1,5 +1,6 @@
 import Foundation
 import DataModel
+import UITableViewModels
 
 final class RecordsGroup {
     let record: RecordProtocol
