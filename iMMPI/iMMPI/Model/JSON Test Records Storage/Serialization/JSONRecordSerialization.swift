@@ -1,5 +1,6 @@
 import Foundation
 import DataModel
+import Formatters
 
 final class JSONRecordSerialization {
     let version = "1.0"

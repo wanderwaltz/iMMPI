@@ -1,5 +1,5 @@
 import XCTest
-@testable import iMMPI
+import Formatters
 
 final class AbbreviatedNameFormatterTests: XCTestCase {
     var formatter: AbbreviatedNameFormatter!
@@ -9,11 +9,9 @@ final class AbbreviatedNameFormatterTests: XCTestCase {
         formatter = AbbreviatedNameFormatter()
     }
 
-
     func testThat__it_returns_nil__for_nil_input() {
         XCTAssertNil(formatter.string(for: nil))
     }
-
 
     func testThat__it_returns_nil__for_non_string_input() {
         XCTAssertNil(formatter.string(for: NSObject()))
@@ -22,7 +20,6 @@ final class AbbreviatedNameFormatterTests: XCTestCase {
         XCTAssertNil(formatter.string(for: true))
         XCTAssertNil(formatter.string(for: [String]()))
     }
-
 
     func testThat__it_abbreviates_all_components_besides_the_first() {
         XCTAssertEqual(formatter.string(for: "Достоевский Федор Михайлович"), "Достоевский Ф. М.")

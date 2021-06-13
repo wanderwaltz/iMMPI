@@ -1,4 +1,5 @@
 import UIKit
+import Formatters
 
 extension AnalysisDateHeaderCollectionViewCell {
     typealias Source = CollectionViewCellSource<Date>

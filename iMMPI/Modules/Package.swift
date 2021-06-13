@@ -7,6 +7,7 @@ let package = Package(
         .library(
             name: "Modules",
             targets: [
+                "Formatters",
                 "EmailComposing",
                 "HTMLComposing",
                 "DataModel",
@@ -16,6 +17,14 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(name: "Utils"),
+
+        .target(name: "Formatters"),
+        .testTarget(
+            name: "FormattersTests",
+            dependencies: [
+                "Formatters"
+            ]
+        ),
 
         .target(
             name: "EmailComposing",

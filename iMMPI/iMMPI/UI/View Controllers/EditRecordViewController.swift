@@ -1,6 +1,7 @@
 import UIKit
 import DataModel
 import Localization
+import Formatters
 
 protocol EditRecordViewControllerDelegate: AnyObject {
     func editRecordViewController(_ controller: EditRecordViewController,

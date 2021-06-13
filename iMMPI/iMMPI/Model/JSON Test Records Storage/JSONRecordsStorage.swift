@@ -1,5 +1,6 @@
 import Foundation
 import DataModel
+import Formatters
 
 let kJSONRecordStorageDirectoryDefault = "JSONRecords"
 let kJSONRecordStorageDirectoryTrash = "JSONRecords-Trash"

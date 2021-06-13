@@ -1,7 +1,7 @@
 import Foundation
 
-final class AbbreviatedNameFormatter: Formatter {
-    override func string(for obj: Any?) -> String? {
+public final class AbbreviatedNameFormatter: Formatter {
+    override public func string(for obj: Any?) -> String? {
         guard let name = obj as? String else {
             return nil
         }
@@ -26,4 +26,8 @@ final class AbbreviatedNameFormatter: Formatter {
 
         return abbreviated.joined(separator: " ")
     }
+}
+
+func nilToEmptyString(_ value: Any?) -> String {
+    return value.map { String(describing: $0) } ?? ""
 }

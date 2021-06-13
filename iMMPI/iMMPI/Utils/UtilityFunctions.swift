@@ -16,8 +16,3 @@ enum Constant<T> {
         return { _, _ in constant }
     }
 }
-
-
-func nilToEmptyString(_ value: Any?) -> String {
-    return value.map { String(describing: $0) } ?? ""
-}

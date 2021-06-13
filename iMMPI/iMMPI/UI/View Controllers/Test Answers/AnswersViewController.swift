@@ -1,5 +1,6 @@
 import UIKit
 import DataModel
+import Formatters
 
 /// A base class for presenting and editing RecordProtocol record answers in a UITableView-driven UI.
 ///
