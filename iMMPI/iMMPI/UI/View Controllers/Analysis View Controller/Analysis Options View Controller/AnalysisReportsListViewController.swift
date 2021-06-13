@@ -2,6 +2,7 @@ import UIKit
 import HTMLComposing
 import Analysis
 import AnalysisReports
+import UIReusableViews
 
 protocol AnalysisReportsListViewControllerDelegate: AnyObject {
     func analysisReportsList(_ controller: AnalysisReportsListViewController, didSelectReport html: Html)

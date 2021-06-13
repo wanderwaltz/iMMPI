@@ -1,13 +1,12 @@
 import UIKit
 import Utils
-@testable import iMMPI
+import UIReusableViews
 
 final class StubTableViewDataSource: NSObject {
     var _numberOfSections: (UITableView) -> Int = Constant.value(0)
     var _numberOfRows: (UITableView, Int) -> Int = Constant.value(0)
     var _cellForRow: (UITableView, IndexPath) -> UITableViewCell = { _, _ in UITableViewCell() }
 }
-
 
 extension StubTableViewDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

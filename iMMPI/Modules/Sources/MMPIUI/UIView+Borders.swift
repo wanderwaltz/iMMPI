@@ -1,9 +1,11 @@
 import UIKit
 
 extension UIView {
-    func addRightBorder(color: UIColor = Colors.separator,
-                        topMargin: CGFloat = 0.0,
-                        bottomMargin: CGFloat = 0.0) {
+    public func addRightBorder(
+        color: UIColor = Colors.separator,
+        topMargin: CGFloat = 0.0,
+        bottomMargin: CGFloat = 0.0
+    ) {
         let border = UIView(frame: .zero)
 
         border.isUserInteractionEnabled = false
@@ -64,10 +66,11 @@ extension UIView {
         )
     }
 
-
-    func addBottomBorder(color: UIColor = Colors.separator,
-                         leftMargin: CGFloat = 0.0,
-                         rightMargin: CGFloat = 0.0) {
+    public func addBottomBorder(
+        color: UIColor = Colors.separator,
+        leftMargin: CGFloat = 0.0,
+        rightMargin: CGFloat = 0.0
+    ) {
         let border = UIView(frame: .zero)
 
         border.isUserInteractionEnabled = false

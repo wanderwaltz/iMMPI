@@ -2,7 +2,6 @@ import UIKit
 import Utils
 
 extension ReusableViewSource where Container: UITableView, View: UITableViewCell {
-
     /// Initializes a `ReusableViewSource` for returning a reusable cell with a given style and reuse identifier.
     ///
     /// Cells are dequeued from the table view or created on the fly if dequeueing is not possible.
@@ -13,9 +12,11 @@ extension ReusableViewSource where Container: UITableView, View: UITableViewCell
     ///    - update: closure for updating the created cells with the provided data.
     ///    - cell: cell to update with the provided data.
     ///    - data: data to update thecell with.
-    init(style: UITableViewCell.CellStyle,
-         identifier: String,
-         update: @escaping (_ cell: View, _ data: Data?) -> ()) {
+    public init(
+        style: UITableViewCell.CellStyle,
+        identifier: String,
+        update: @escaping (_ cell: View, _ data: Data?) -> ()
+    ) {
         self.init(
             register: Constant.value(()),
             dequeue: { container, indexPath, data in
@@ -23,6 +24,7 @@ extension ReusableViewSource where Container: UITableView, View: UITableViewCell
                     ?? View(style: style, reuseIdentifier: identifier)
                 update(cell, data)
                 return cell
-        })
+            }
+        )
     }
 }

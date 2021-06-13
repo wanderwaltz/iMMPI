@@ -1,6 +1,7 @@
 import UIKit
 import DataModel
 import Localization
+import UIReusableViews
 
 extension StatementTableViewCell {
     typealias Source = TableViewCellSource<Data>

@@ -1,6 +1,6 @@
 import XCTest
 import Utils
-@testable import iMMPI
+@testable import UIReusableViews
 
 final class TableViewCellSourceDefaultTests: XCTestCase {
     var tableView: UITableView!

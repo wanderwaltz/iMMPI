@@ -1,13 +1,13 @@
 import XCTest
 import UIKit
 import Utils
-@testable import iMMPI
+@testable import UIReusableViews
 
 final class TableViewCellSourceNibTests: XCTestCase {
     var tableView: TestTableView!
     var dataSource: StubTableViewDataSource!
 
-    let nib = UINib(nibName: "StatementTableViewCell+Input", bundle: Bundle(for: StatementTableViewCell.self))
+    let nib = UINib(nibName: "StatementTableViewCell+Input", bundle: .module)
 
     override func setUp() {
         super.setUp()

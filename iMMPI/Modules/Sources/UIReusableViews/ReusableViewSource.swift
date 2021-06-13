@@ -1,7 +1,7 @@
 import UIKit
 
 /// A class for producing nonoptional `View` instances updated with a certain type of `Data`.
-struct ReusableViewSource<Container, View: UIView, Data> {
+public struct ReusableViewSource<Container, View: UIView, Data> {
     /// Initializes a `ReusableViewSource`.
     ///
     /// - Parameters:
@@ -12,8 +12,10 @@ struct ReusableViewSource<Container, View: UIView, Data> {
     ///    - dc:           container to dequeue a view from.
     ///    - ip:           `IndexPath` to dequeue the reusable view for.
     ///    - data:         data to update view with.
-    init(register: @escaping (_ rc: Container) -> (),
-         dequeue: @escaping (_ dc: Container, _ ip: IndexPath, _ data: Data?) -> View) {
+    init(
+        register: @escaping (_ rc: Container) -> (),
+        dequeue: @escaping (_ dc: Container, _ ip: IndexPath, _ data: Data?) -> View
+    ) {
         _register = register
         _dequeue = dequeue
     }
@@ -29,7 +31,7 @@ extension ReusableViewSource {
     /// Uses the `register` closure with which the view source has been initialized.
     ///
     /// - Parameter container: container to register the view source in.
-    func register(in container: Container) {
+    public func register(in container: Container) {
         _register(container)
     }
 
@@ -46,7 +48,11 @@ extension ReusableViewSource {
     ///            depends completely on the closure provided. `ReusableViewSource`
     ///            does not know by itself whether the view are actually being reused,
     ///            or created each time `dequeue` is called.
-    func dequeue(from container: Container, for indexPath: IndexPath, with data: Data?) -> View {
+    public func dequeue(
+        from container: Container,
+        for indexPath: IndexPath,
+        with data: Data?
+    ) -> View {
         return _dequeue(container, indexPath, data)
     }
 }

@@ -16,6 +16,7 @@ let package = Package(
                 "AnalysisReports",
                 "AnalysisSettings",
                 "UITableViewModels",
+                "UIReusableViews",
                 "MMPIUI",
             ]
         ),
@@ -157,6 +158,20 @@ let package = Package(
                 "DataModel",
                 "UITableViewModels",
             ]
-        )
+        ),
+
+        .target(
+            name: "UIReusableViews"
+        ),
+        .testTarget(
+            name: "UIReusableViewsTests",
+            dependencies: [
+                "UIReusableViews",
+                "Utils",
+            ],
+            resources: [
+                .process("Resources"),
+            ]
+        ),
     ]
 )

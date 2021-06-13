@@ -1,6 +1,7 @@
 import UIKit
 import Analysis
 import AnalysisSettings
+import UIReusableViews
 
 extension AnalysisScoreCollectionViewCell {
     typealias Source = CollectionViewCellSource<BoundScale>

@@ -1,5 +1,6 @@
 import UIKit
 import Formatters
+import UIReusableViews
 
 extension AnalysisDateHeaderCollectionViewCell {
     typealias Source = CollectionViewCellSource<Date>

@@ -4,6 +4,7 @@ import EmailComposing
 import HTMLComposing
 import DataModel
 import Localization
+import MMPIUI
 
 final class MMPIRouter {
     let storage: RecordStorage

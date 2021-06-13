@@ -3,6 +3,7 @@ import Localization
 import Analysis
 import Utils
 import UITableViewModels
+import UIReusableViews
 
 // TODO: make internal data representation type-safe
 

@@ -1,9 +1,9 @@
 import UIKit
 
-typealias TableViewCellSource<Data> = ReusableViewSource<UITableView, UITableViewCell, Data>
-typealias CollectionViewCellSource<Data> = ReusableViewSource<UICollectionView, UICollectionViewCell, Data>
+public typealias TableViewCellSource<Data> = ReusableViewSource<UITableView, UITableViewCell, Data>
+public typealias CollectionViewCellSource<Data> = ReusableViewSource<UICollectionView, UICollectionViewCell, Data>
 
-protocol ReusableCellDequeueing {
+public protocol ReusableCellDequeueing {
     associatedtype ReuseIdentifier
     associatedtype Cell: UIView
 
@@ -11,7 +11,7 @@ protocol ReusableCellDequeueing {
 }
 
 
-protocol CellClassRegistering {
+public protocol CellClassRegistering {
     associatedtype ReuseIdentifier
     associatedtype Cell: UIView
 
@@ -19,7 +19,7 @@ protocol CellClassRegistering {
 }
 
 
-protocol CellNibRegistering {
+public protocol CellNibRegistering {
     associatedtype ReuseIdentifier
     associatedtype Cell: UIView
 
@@ -29,24 +29,24 @@ protocol CellNibRegistering {
 
 
 extension UITableView: ReusableCellDequeueing, CellClassRegistering, CellNibRegistering {
-    typealias ReuseIdentifier = String
-    typealias Cell = UITableViewCell
+    public typealias ReuseIdentifier = String
+    public typealias Cell = UITableViewCell
 }
 
 
 extension UICollectionView: ReusableCellDequeueing, CellClassRegistering, CellNibRegistering {
-    typealias ReuseIdentifier = String
-    typealias Cell = UICollectionViewCell
+    public typealias ReuseIdentifier = String
+    public typealias Cell = UICollectionViewCell
 
-    @nonobjc func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
+    @nonobjc public func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
         return dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
     }
 
-    @nonobjc func register(_ cellClass: AnyClass?, forCellReuseIdentifier reuseIdentifier: String) {
+    @nonobjc public func register(_ cellClass: AnyClass?, forCellReuseIdentifier reuseIdentifier: String) {
         register(cellClass, forCellWithReuseIdentifier: reuseIdentifier)
     }
 
-    @nonobjc func register(_ nib: UINib?, forCellReuseIdentifier reuseIdentifier: String) {
+    @nonobjc public func register(_ nib: UINib?, forCellReuseIdentifier reuseIdentifier: String) {
             register(nib, forCellWithReuseIdentifier: reuseIdentifier)
     }
 }

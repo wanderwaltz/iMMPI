@@ -20,17 +20,24 @@ extension ReusableViewSource where
     ///    - update: closure for updating the cell with the provided data.
     ///    - cell: cell to update with the provided data.
     ///    - data: data to update thecell with.
-    static func nib<Cell: UIView>(
-        _ nib: @escaping @autoclosure () -> UINib = UINib(nibName: String(describing: Cell.self),
-                                                          bundle: Bundle(for: Cell.self)),
+    public static func nib<Cell: UIView>(
+        _ nib: @escaping @autoclosure () -> UINib = UINib(
+            nibName: String(describing: Cell.self),
+            bundle: Bundle(for: Cell.self)
+        ),
         identifier: String = String(describing: Cell.self),
-        update: @escaping (_ cell: Cell, _ data: Data?) -> ()) -> ReusableViewSource<Container, View, Data> {
+        update: @escaping (
+            _ cell: Cell,
+            _ data: Data?
+        ) -> ()
+    ) -> ReusableViewSource<Container, View, Data> {
         return ReusableViewSource(
             register: { $0.register(nib(), forCellReuseIdentifier: identifier) },
             dequeue: { container, indexPath, data in
                 let cell = container.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! Cell
                 update(cell, data)
                 return cell as! View
-        })
+            }
+        )
     }
 }

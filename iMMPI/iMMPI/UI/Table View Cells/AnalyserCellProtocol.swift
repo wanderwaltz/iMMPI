@@ -2,6 +2,7 @@ import UIKit
 import Analysis
 import AnalysisReports
 import AnalysisSettings
+import MMPIUI
 
 protocol AnalyserCellProtocol: AnyObject {
     var indexLabel: UILabel? { get }
