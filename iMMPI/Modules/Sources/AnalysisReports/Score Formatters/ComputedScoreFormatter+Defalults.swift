@@ -2,9 +2,9 @@ import Foundation
 import Localization
 
 extension ComputedScoreFormatter {
-    static let `default` = ComputedScoreFormatter({ String(describing: $0) })
+    public static let `default` = ComputedScoreFormatter({ String(describing: $0) })
 
-    static let filtered = ComputedScoreFormatter({ score in
+    public static let filtered = ComputedScoreFormatter({ score in
         if score.isWithinNorm {
             return Strings.Analysis.normalScorePlaceholder
         }

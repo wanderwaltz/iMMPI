@@ -1,7 +1,7 @@
 import Foundation
 import Analysis
 
-protocol AnalysisReportGenerator {
+public protocol AnalysisReportGenerator {
     associatedtype Output
 
     var title: String { get }

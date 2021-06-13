@@ -4,22 +4,40 @@ import HTMLComposing
 import Analysis
 
 extension HtmlReportGenerator {
-    static let overall = try? HtmlReportGenerator(title: Strings.Report.overall) { result in
-        return .ul(attributes: ["class": "analysis"],
-                   content: generateList(for: result, scoreFormatter: .default, startingFrom: 0).html)
+    public static let overall = try? HtmlReportGenerator(
+        title: Strings.Report.overall
+    ) { result in
+        return .ul(
+            attributes: ["class": "analysis"],
+            content: generateList(
+                for: result,
+                scoreFormatter: .default,
+                startingFrom: 0
+            )
+            .html
+        )
     }
 
-
-    static let brief = try? HtmlReportGenerator(title: Strings.Report.brief) { result in
-        return .ul(attributes: ["class": "analysis"],
-                   content: generateList(for: result, scoreFormatter: .filtered, startingFrom: 0).html)
+    public static let brief = try? HtmlReportGenerator(
+        title: Strings.Report.brief
+    ) { result in
+        return .ul(
+            attributes: ["class": "analysis"],
+            content: generateList(
+                for: result,
+                scoreFormatter: .filtered,
+                startingFrom: 0
+            )
+            .html
+        )
     }
 }
 
-
-fileprivate func generateList(for result: AnalysisResult,
-                              scoreFormatter: ComputedScoreFormatter,
-                              startingFrom index: Int) -> (html: [Html], lastIndex: Int) {
+private func generateList(
+    for result: AnalysisResult,
+    scoreFormatter: ComputedScoreFormatter,
+    startingFrom index: Int
+) -> (html: [Html], lastIndex: Int) {
     var list: [Html] = []
 
     var i = index
@@ -55,8 +73,10 @@ fileprivate func generateList(for result: AnalysisResult,
     return (list, i)
 }
 
-
-fileprivate func generateItem(for scale: BoundScale, scoreFormatter: ComputedScoreFormatter) -> [Html] {
+private func generateItem(
+    for scale: BoundScale,
+    scoreFormatter: ComputedScoreFormatter
+) -> [Html] {
     return [
         scale.index > 0 ? .tag("index", content: .content("\(scale.index).")) : .empty,
         .tag("text", content: .content(scale.title)),

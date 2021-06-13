@@ -13,6 +13,7 @@ let package = Package(
                 "DataModel",
                 "Serialization",
                 "Analysis",
+                "AnalysisReports",
             ]
         ),
     ],
@@ -108,6 +109,19 @@ let package = Package(
                 "Analysis",
                 "AnalysisTestSamples",
                 "Serialization",
+            ]
+        ),
+
+        .target(
+            name: "AnalysisReports",
+            dependencies: [
+                "Analysis",
+                "EmailComposing",
+                "HTMLComposing",
+                "Localization",
+            ],
+            resources: [
+                .copy("Resources/html.report.css"),
             ]
         )
     ]

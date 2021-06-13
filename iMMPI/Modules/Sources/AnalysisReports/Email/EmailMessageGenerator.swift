@@ -3,11 +3,22 @@ import EmailComposing
 import Localization
 import Analysis
 
-struct EmailMessageGenerator {
-    init(subject: EmailSubjectGenerator = .default,
-         text: EmailTextGenerator = .default,
-         recipients: EmailRecipientsGenerator = .stored(),
-         attachments: EmailAttachmentsGenerator = .empty) {
+public struct EmailMessageGenerator {
+    public init(attachments: EmailAttachmentsGenerator) {
+        self.init(
+            subject: .default,
+            text: .default,
+            recipients: .stored(),
+            attachments: attachments
+        )
+    }
+
+    init(
+        subject: EmailSubjectGenerator,
+        text: EmailTextGenerator,
+        recipients: EmailRecipientsGenerator,
+        attachments: EmailAttachmentsGenerator
+    ) {
         self.subject = subject
         self.text = text
         self.recipients = recipients
@@ -22,11 +33,11 @@ struct EmailMessageGenerator {
 
 
 extension EmailMessageGenerator: AnalysisReportGenerator {
-    var title: String {
+    public var title: String {
         return Strings.Report.email
     }
 
-    func generate(for result: AnalysisResult) -> EmailMessage {
+    public func generate(for result: AnalysisResult) -> EmailMessage {
         return EmailMessage(
             subject: subject.generate(for: result),
             text: text.generate(for: result),

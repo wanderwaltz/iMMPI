@@ -1,5 +1,6 @@
 import UIKit
 import Analysis
+import AnalysisReports
 
 protocol AnalyserCellProtocol: AnyObject {
     var indexLabel: UILabel? { get }

@@ -2,8 +2,8 @@ import Foundation
 import EmailComposing
 import Analysis
 
-struct EmailAttachmentsGenerator {
-    init(_ generators: [AttachmentReportGenerator]) {
+public struct EmailAttachmentsGenerator {
+    public init(_ generators: [AttachmentReportGenerator]) {
         self.generators = generators
     }
 
@@ -12,11 +12,11 @@ struct EmailAttachmentsGenerator {
 
 
 extension EmailAttachmentsGenerator: AnalysisReportGenerator {
-    var title: String {
+    public var title: String {
         return "com.immpi.reports.email.attachments"
     }
 
-    func generate(for result: AnalysisResult) -> [Attachment] {
+    public func generate(for result: AnalysisResult) -> [Attachment] {
         return generators.map({ $0.generate(for: result) })
     }
 }

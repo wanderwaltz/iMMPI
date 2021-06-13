@@ -2,13 +2,15 @@ import Foundation
 import HTMLComposing
 import Analysis
 
-struct HtmlReportGenerator {
-    let title: String
+public struct HtmlReportGenerator {
+    public let title: String
 
-    init(title: String,
-         dateFormatter: DateFormatter = .medium,
-         css: String,
-         content: @escaping (AnalysisResult) -> Html) {
+    init(
+        title: String,
+        dateFormatter: DateFormatter = .medium,
+        css: String,
+        content: @escaping (AnalysisResult) -> Html
+    ) {
         self.title = title
         self.dateFormatter = dateFormatter
         self.css = css
@@ -22,7 +24,7 @@ struct HtmlReportGenerator {
 
 
 extension HtmlReportGenerator: AnalysisReportGenerator {
-    func generate(for result: AnalysisResult) -> Html {
+    public func generate(for result: AnalysisResult) -> Html {
         return Html.document(
             .head(
                 .meta(),
@@ -46,10 +48,12 @@ extension HtmlReportGenerator {
         case failedReadingCSS
     }
 
-    init(title: String,
-         resource: String = "html.report",
-         bundle: Bundle = Bundle.main,
-         _ content: @escaping (AnalysisResult) -> Html) throws {
+    init(
+        title: String,
+        resource: String = "html.report",
+        bundle: Bundle = Bundle.module,
+        _ content: @escaping (AnalysisResult) -> Html
+    ) throws {
         guard let url = bundle.url(forResource: resource, withExtension: "css") else {
             throw Error.fileNotFound
         }

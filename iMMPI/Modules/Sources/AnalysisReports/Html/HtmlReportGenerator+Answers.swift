@@ -4,7 +4,7 @@ import Localization
 import HTMLComposing
 
 extension HtmlReportGenerator {
-    static func answers(questionnaire: Questionnaire) -> HtmlReportGenerator? {
+    public static func answers(questionnaire: Questionnaire) -> HtmlReportGenerator? {
         return try? HtmlReportGenerator(title: Strings.Report.answers) { result in
             var elements: [Html] = []
 

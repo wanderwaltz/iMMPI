@@ -1,6 +1,7 @@
 import UIKit
 import MessageUI
 import Localization
+import AnalysisReports
 
 extension MenuAction {
     static func email(_ context: AnalysisMenuActionContext) -> MenuAction? {
@@ -20,8 +21,10 @@ extension MenuAction {
     }
 
 
-    static func emailSettings(defaults: UserDefaults = EmailRecipientsGenerator.defaultStorage,
-                              key: String = EmailRecipientsGenerator.defaultKey) -> MenuAction {
+    static func emailSettings(
+        defaults: UserDefaults = EmailRecipientsGenerator.defaultStorage,
+        key: String = EmailRecipientsGenerator.defaultKey
+    ) -> MenuAction {
         return MenuAction(title: Strings.Button.emailSettings, action: { sender in
             let alertController = UIAlertController(
                 title: Strings.Screen.emailSettings,

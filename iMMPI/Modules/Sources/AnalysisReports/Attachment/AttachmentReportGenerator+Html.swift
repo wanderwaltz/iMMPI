@@ -3,7 +3,10 @@ import EmailComposing
 import HTMLComposing
 
 extension AttachmentReportGenerator {
-    init(titleFormatter: @escaping (String) -> String, htmlGenerator: HtmlReportGenerator) {
+    public init(
+        titleFormatter: @escaping (String) -> String,
+        htmlGenerator: HtmlReportGenerator
+    ) {
         self.init(
             title: htmlGenerator.title,
             generate: { result in
@@ -14,6 +17,7 @@ extension AttachmentReportGenerator {
                     mimeType: .html,
                     data: html.description.data(using: .utf8)!
                 )
-        })
+            }
+        )
     }
 }
