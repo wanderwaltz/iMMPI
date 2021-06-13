@@ -1,4 +1,5 @@
 import UIKit
+import HTMLComposing
 
 protocol AnalysisReportsListViewControllerDelegate: AnyObject {
     func analysisReportsList(_ controller: AnalysisReportsListViewController, didSelectReport html: Html)

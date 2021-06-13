@@ -1,5 +1,6 @@
 import Foundation
 import EmailComposing
+import HTMLComposing
 
 extension AttachmentReportGenerator {
     init(titleFormatter: @escaping (String) -> String, htmlGenerator: HtmlReportGenerator) {

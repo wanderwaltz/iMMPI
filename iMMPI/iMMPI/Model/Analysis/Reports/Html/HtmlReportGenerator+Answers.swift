@@ -1,6 +1,7 @@
 import Foundation
 import DataModel
 import Localization
+import HTMLComposing
 
 extension HtmlReportGenerator {
     static func answers(questionnaire: Questionnaire) -> HtmlReportGenerator? {

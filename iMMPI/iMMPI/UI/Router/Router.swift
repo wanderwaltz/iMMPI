@@ -1,6 +1,7 @@
 import UIKit
 import EmailComposing
 import DataModel
+import HTMLComposing
 
 protocol Router: AnyObject {
     func displayAllRecords(sender: UIViewController)

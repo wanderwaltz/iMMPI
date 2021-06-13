@@ -8,6 +8,7 @@ let package = Package(
             name: "Modules",
             targets: [
                 "EmailComposing",
+                "HTMLComposing",
                 "DataModel",
             ]
         ),
@@ -28,6 +29,10 @@ let package = Package(
                 "Utils",
                 "EmailComposing"
             ]
+        ),
+
+        .target(
+            name: "HTMLComposing"
         ),
 
         .target(

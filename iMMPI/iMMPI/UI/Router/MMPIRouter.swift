@@ -1,6 +1,7 @@
 import UIKit
 import MessageUI
 import EmailComposing
+import HTMLComposing
 import DataModel
 import Localization
 
