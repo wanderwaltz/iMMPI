@@ -27,7 +27,7 @@ public final class SoundPlayer: NSObject {
 
 extension SoundPlayer {
     public func play(_ sound: Sound) {
-        guard let url = Bundle.main.url(forResource: sound.resourceName, withExtension: sound.resourceExtension) else {
+        guard let url = Bundle.module.url(forResource: sound.resourceName, withExtension: sound.resourceExtension) else {
             return
         }
 
