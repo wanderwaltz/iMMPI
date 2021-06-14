@@ -7,23 +7,8 @@ let package = Package(
         .library(
             name: "Modules",
             targets: [
-                "Formatters",
-                "EmailComposing",
-                "HTMLComposing",
-                "DataModel",
                 "Serialization",
-                "Analysis",
-                "AnalysisReports",
-                "AnalysisSettings",
-                "UITableViewModels",
-                "UIReusableViews",
-                "MMPIUI",
-                "MMPIUITableViewCells",
                 "MMPIRouting",
-                "MMPIRecordEditorUI",
-                "MMPIRecordsListUI",
-                "MMPITestAnswersUI",
-                "MMPIAnalysisUI",
                 "MMPIViewControllersFactoryProduction",
                 "MMPIRoutingProduction",
             ]
