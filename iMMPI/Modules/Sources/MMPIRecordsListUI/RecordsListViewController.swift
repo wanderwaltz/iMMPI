@@ -105,6 +105,35 @@ extension RecordsListViewController {
         super.viewWillDisappear(animated)
         resignFirstResponder()
     }
+
+    public override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        updateInsets()
+    }
+
+    private func updateInsets() {
+        guard hasActiveSearchControllerInHierarchy() else {
+            tableView.contentInset = .zero
+            return
+        }
+
+        tableView.contentInset = .init(
+            top: tableView.tableHeaderView?.bounds.height ?? 0,
+            left: 0,
+            bottom: 0,
+            right: 0
+        )
+    }
+
+    private func hasActiveSearchControllerInHierarchy() -> Bool {
+        guard let navigationController = navigationController else {
+            return searchController.isActive
+        }
+
+        return navigationController.viewControllers.first(where: {
+            ($0 as? RecordsListViewController)?.searchController.isActive == true
+        }) != nil
+    }
 }
 
 extension RecordsListViewController {
