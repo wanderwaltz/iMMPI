@@ -80,7 +80,7 @@ public final class AnalysisViewController: UIViewController, UsingRouting {
 extension AnalysisViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
 
         scaleCellSource.register(in: collectionView)
@@ -90,7 +90,7 @@ extension AnalysisViewController {
         collectionView.isDirectionalLockEnabled = true
         collectionView.frame = view.bounds
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
 
         reloadData()

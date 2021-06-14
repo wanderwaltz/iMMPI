@@ -3,6 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "Modules",
+    platforms: [.iOS(.v13)],
     products: [
         .library(
             name: "Modules",
