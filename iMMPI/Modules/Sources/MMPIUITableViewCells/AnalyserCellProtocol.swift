@@ -4,7 +4,7 @@ import AnalysisReports
 import AnalysisSettings
 import MMPIUI
 
-protocol AnalyserCellProtocol: AnyObject {
+public protocol AnalyserCellProtocol: AnyObject {
     var indexLabel: UILabel? { get }
     var titleLabel: UILabel? { get }
     var scoreLabel: UILabel? { get }
@@ -13,11 +13,13 @@ protocol AnalyserCellProtocol: AnyObject {
 }
 
 
-struct AnalyserCellStyle {
-    init(fontWithNesting: @escaping (Int) -> UIFont,
-         titleOffsetWithNesting: @escaping (Int) -> CGFloat,
-         indexFormatter: @escaping (Int) -> String,
-         scoreFormatter: @escaping (BoundScale) -> String) {
+public struct AnalyserCellStyle {
+    init(
+        fontWithNesting: @escaping (Int) -> UIFont,
+        titleOffsetWithNesting: @escaping (Int) -> CGFloat,
+        indexFormatter: @escaping (Int) -> String,
+        scoreFormatter: @escaping (BoundScale) -> String
+    ) {
         _fontWithNesting = fontWithNesting
         _titleOffsetWithNesting = titleOffsetWithNesting
         _indexFormatter = indexFormatter
@@ -48,7 +50,7 @@ struct AnalyserCellStyle {
 
 
 extension AnalyserCellStyle {
-    func apply(to cell: AnalyserCellProtocol, with scale: BoundScale?) {
+    public func apply(to cell: AnalyserCellProtocol, with scale: BoundScale?) {
         guard let scale = scale else {
             return
         }
@@ -69,7 +71,9 @@ extension AnalyserCellStyle {
 
 
 extension AnalyserCellStyle {
-    static func `default`(with settings: AnalysisSettings) -> AnalyserCellStyle {
+    public static func `default`(
+        with settings: AnalysisSettings
+    ) -> AnalyserCellStyle {
         let effectiveNesting: (Int) -> Int = { nesting in
             // If we hide the scores which are within the norm, there may be a situation
             // when the scale's parent scale is hidden, while the scale itself is not.

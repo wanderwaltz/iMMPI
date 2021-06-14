@@ -1,20 +1,18 @@
 import UIKit
 
-class FormTableViewCell: UITableViewCell {
-    var layout: Layout = .default {
-        didSet {
-            setNeedsLayout()
-        }
+public class FormTableViewCell: UITableViewCell {
+    public var layout: Layout = .default {
+        didSet { setNeedsLayout() }
     }
 
     private(set) var rightContentView: UIView!
 
-    init(reuseIdentifier: String) {
+    public init(reuseIdentifier: String) {
         super.init(style: .value2, reuseIdentifier: reuseIdentifier)
         setup()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -33,7 +31,7 @@ class FormTableViewCell: UITableViewCell {
 
 
 extension FormTableViewCell {
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         let bounds = contentView.bounds
 
@@ -57,14 +55,28 @@ extension FormTableViewCell {
 
 
 extension FormTableViewCell {
-    struct Layout {
-        let contentMargin: CGFloat
-        let titleMargin: CGFloat
-        let titleWidth: () -> CGFloat
+    public struct Layout {
+        public let contentMargin: CGFloat
+        public let titleMargin: CGFloat
+        public let titleWidth: () -> CGFloat
+
+        public init(
+            contentMargin: CGFloat,
+            titleMargin: CGFloat,
+            titleWidth: @escaping () -> CGFloat
+        ) {
+            self.contentMargin = contentMargin
+            self.titleMargin = titleMargin
+            self.titleWidth = titleWidth
+        }
     }
 }
 
 
 extension FormTableViewCell.Layout {
-    static let `default` = FormTableViewCell.Layout(contentMargin: 20.0, titleMargin: 20.0, titleWidth: { 0.0 })
+    public static let `default` = FormTableViewCell.Layout(
+        contentMargin: 20.0,
+        titleMargin: 20.0,
+        titleWidth: { 0.0 }
+    )
 }

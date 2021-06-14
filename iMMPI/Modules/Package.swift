@@ -18,6 +18,7 @@ let package = Package(
                 "UITableViewModels",
                 "UIReusableViews",
                 "MMPIUI",
+                "MMPIUITableViewCells",
             ]
         ),
     ],
@@ -153,14 +154,6 @@ let package = Package(
         ),
 
         .target(
-            name: "MMPIUI",
-            dependencies: [
-                "DataModel",
-                "UITableViewModels",
-            ]
-        ),
-
-        .target(
             name: "UIReusableViews"
         ),
         .testTarget(
@@ -171,6 +164,27 @@ let package = Package(
             ],
             resources: [
                 .process("Resources"),
+            ]
+        ),
+
+        .target(
+            name: "MMPIUI",
+            dependencies: [
+                "DataModel",
+                "UITableViewModels",
+            ]
+        ),
+
+        .target(
+            name: "MMPIUITableViewCells",
+            dependencies: [
+                "DataModel",
+                "Analysis",
+                "AnalysisReports",
+                "AnalysisSettings",
+                "MMPIUI",
+                "Formatters",
+                "UIReusableViews",
             ]
         ),
     ]

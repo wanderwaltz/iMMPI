@@ -3,10 +3,12 @@ import Formatters
 import UIReusableViews
 
 extension AnalysisDateHeaderCollectionViewCell {
-    typealias Source = CollectionViewCellSource<Date>
+    public typealias Source = CollectionViewCellSource<Date>
 
-    static func makeSource(dateFormatter: DateFormatter = .short) -> Source {
-        return .nib(update: { (cell: AnalysisDateHeaderCollectionViewCell, date: Date?) in
+    public static func makeSource(dateFormatter: DateFormatter = .short) -> Source {
+        return .nib(
+            bundle: .module,
+            update: { (cell: AnalysisDateHeaderCollectionViewCell, date: Date?) in
             if let date = date {
                 cell.titleLabel?.text = dateFormatter.string(from: date)
             }

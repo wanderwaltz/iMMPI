@@ -1,24 +1,22 @@
 import UIKit
 
-final class AnalysisScoreCollectionViewCell: UICollectionViewCell, AnalyserCellProtocol {
-    @objc @IBOutlet fileprivate(set) var scoreLabel: UILabel?
+public final class AnalysisScoreCollectionViewCell: UICollectionViewCell, AnalyserCellProtocol {
+    @objc @IBOutlet public private(set) var scoreLabel: UILabel?
 
-    var indexLabel: UILabel? {
+    public var indexLabel: UILabel? {
         return nil
     }
 
-    var titleLabel: UILabel? {
+    public var titleLabel: UILabel? {
         return nil
     }
 
-    var titleOffset: CGFloat = 0
-
+    public var titleOffset: CGFloat = 0
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
-
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

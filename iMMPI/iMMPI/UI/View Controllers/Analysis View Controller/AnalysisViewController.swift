@@ -3,6 +3,7 @@ import Localization
 import Analysis
 import AnalysisSettings
 import UIReusableViews
+import MMPIUITableViewCells
 
 final class AnalysisViewController: UIViewController, UsingRouting {
     var viewModel: AnalysisViewModel? {

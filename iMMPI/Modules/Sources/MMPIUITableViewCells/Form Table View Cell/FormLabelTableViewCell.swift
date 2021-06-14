@@ -1,7 +1,7 @@
 import UIKit
 
-final class FormLabelTableViewCell: FormTableViewCell {
-    override func layoutSubviews() {
+public final class FormLabelTableViewCell: FormTableViewCell {
+    public override func layoutSubviews() {
         super.layoutSubviews()
 
         detailTextLabel?.font = .systemFont(ofSize: 18.0)

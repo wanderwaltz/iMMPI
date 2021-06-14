@@ -1,6 +1,7 @@
 import UIKit
 import DataModel
 import Localization
+import MMPIUITableViewCells
 
 /// This class presents interface suitable to entering answers for the MMPI test 
 /// in order starting with first and finishing with last question.
@@ -100,14 +101,12 @@ extension AnswersInputViewController {
 
 extension AnswersInputViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = super.tableView(tableView, cellForRowAt: indexPath) as! StatementTableViewCell
+        let cell = super.tableView(
+            tableView,
+            cellForRowAt: indexPath
+        ) as! StatementTableViewCell
 
-        let isHighlighted = statementIndex == indexPath.row
-
-        cell.identifierLabel?.isHighlighted = isHighlighted
-        cell.statementTextLabel?.isHighlighted = isHighlighted
-        cell.answerLabel?.isHighlighted = isHighlighted
-
+        cell.isCurrent = statementIndex == indexPath.row
         return cell
     }
 }

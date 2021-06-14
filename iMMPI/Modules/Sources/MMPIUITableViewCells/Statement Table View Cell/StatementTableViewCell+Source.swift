@@ -4,28 +4,32 @@ import Localization
 import UIReusableViews
 
 extension StatementTableViewCell {
-    typealias Source = TableViewCellSource<Data>
-    typealias Data = (statement: Statement, answer: AnswerType)
+    public typealias Source = TableViewCellSource<Data>
+    public typealias Data = (statement: Statement, answer: AnswerType)
 
-
-    static func makeSourceForInput() -> Source {
-        return .nib(UINib(nibName: "StatementTableViewCell+Input", bundle: .main),
+    public static func makeSourceForInput() -> Source {
+        return .nib(
+            name: "StatementTableViewCell+Input",
+            bundle: .module,
             identifier: "StatementTableViewCell",
             update: update
         )
     }
 
-
-    static func makeSourceForReview() -> Source {
-        return .nib(UINib(nibName: "StatementTableViewCell+Review", bundle: .main),
-        identifier: "StatementTableViewCell",
-        update: update
+    public static func makeSourceForReview() -> Source {
+        return .nib(
+            name: "StatementTableViewCell+Review",
+            bundle: .module,
+            identifier: "StatementTableViewCell",
+            update: update
         )
     }
 }
 
-
-fileprivate func update(_ cell: StatementTableViewCell, with data: StatementTableViewCell.Data?) {
+private func update(
+    _ cell: StatementTableViewCell,
+    with data: StatementTableViewCell.Data?
+) {
     guard let data = data else {
         return
     }

@@ -1,6 +1,7 @@
 import UIKit
 import DataModel
 import Formatters
+import MMPIUITableViewCells
 
 /// A base class for presenting and editing RecordProtocol record answers in a UITableView-driven UI.
 ///

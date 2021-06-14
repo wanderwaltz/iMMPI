@@ -1,14 +1,14 @@
 import UIKit
 
-final class AnalysisScaleCollectionViewCell: UICollectionViewCell, AnalyserCellProtocol {
-    @objc @IBOutlet fileprivate(set) var indexLabel: UILabel?
-    @objc @IBOutlet fileprivate(set) var titleLabel: UILabel?
+public final class AnalysisScaleCollectionViewCell: UICollectionViewCell, AnalyserCellProtocol {
+    @objc @IBOutlet public private(set) var indexLabel: UILabel?
+    @objc @IBOutlet public private(set) var titleLabel: UILabel?
 
-    var scoreLabel: UILabel? {
+    public var scoreLabel: UILabel? {
         return nil
     }
 
-    var titleOffset: CGFloat = 0 {
+    public var titleOffset: CGFloat = 0 {
         didSet {
             setNeedsUpdateConstraints()
         }
@@ -38,7 +38,7 @@ final class AnalysisScaleCollectionViewCell: UICollectionViewCell, AnalyserCellP
 
 
 extension AnalysisScaleCollectionViewCell {
-    override func updateConstraints() {
+    public override func updateConstraints() {
         titleLabelLeft?.constant = titleOffset + 20.0
         super.updateConstraints()
     }

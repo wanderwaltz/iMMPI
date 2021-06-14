@@ -2,6 +2,7 @@ import UIKit
 import DataModel
 import Localization
 import Formatters
+import MMPIUITableViewCells
 
 protocol EditRecordViewControllerDelegate: AnyObject {
     func editRecordViewController(_ controller: EditRecordViewController,

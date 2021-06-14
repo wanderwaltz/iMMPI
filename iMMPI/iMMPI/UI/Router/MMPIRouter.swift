@@ -5,6 +5,7 @@ import HTMLComposing
 import DataModel
 import Localization
 import MMPIUI
+import MMPIUITableViewCells
 
 final class MMPIRouter {
     let storage: RecordStorage

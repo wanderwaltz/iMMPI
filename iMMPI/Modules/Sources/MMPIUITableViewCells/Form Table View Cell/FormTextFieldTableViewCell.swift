@@ -1,19 +1,17 @@
 import UIKit
 
-final class FormTextFieldTableViewCell: FormTableViewCell {
-    private(set) var textField: UITextField!
+public final class FormTextFieldTableViewCell: FormTableViewCell {
+    public private(set) var textField: UITextField!
 
-    override init(reuseIdentifier: String) {
+    public override init(reuseIdentifier: String) {
         super.init(reuseIdentifier: reuseIdentifier)
         setup()
     }
 
-
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-
 
     private func setup() {
         textField = UITextField()

@@ -26,10 +26,7 @@ extension ReusableViewSource where
             bundle: Bundle(for: Cell.self)
         ),
         identifier: String = String(describing: Cell.self),
-        update: @escaping (
-            _ cell: Cell,
-            _ data: Data?
-        ) -> ()
+        update: @escaping (_ cell: Cell, _ data: Data?) -> ()
     ) -> ReusableViewSource<Container, View, Data> {
         return ReusableViewSource(
             register: { $0.register(nib(), forCellReuseIdentifier: identifier) },
@@ -37,7 +34,22 @@ extension ReusableViewSource where
                 let cell = container.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! Cell
                 update(cell, data)
                 return cell as! View
-            }
+        })
+    }
+
+    public static func nib<Cell: UIView>(
+        name: String = String(describing: Cell.self),
+        bundle: Bundle,
+        identifier: String = String(describing: Cell.self),
+        update: @escaping (_ cell: Cell, _ data: Data?) -> ()
+    ) -> ReusableViewSource<Container, View, Data> {
+        .nib(
+            UINib(
+                nibName: name,
+                bundle: bundle
+            ),
+            identifier: identifier,
+            update: update
         )
     }
 }
