@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnswersInputViewController" customModule="iMMPI" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnswersInputViewController" customModule="MMPITestAnswersUI">
             <connections>
                 <outlet property="answersInputView" destination="lLo-rD-Eek" id="fRw-Bu-tZX"/>
                 <outlet property="tableView" destination="FJk-VQ-SYY" id="xQE-Tb-dLW"/>
@@ -154,7 +153,7 @@
         </view>
     </objects>
     <resources>
-        <image name="AnswersInputButton" width="10" height="20"/>
+        <image name="AnswersInputButton" width="10.5" height="20.5"/>
         <image name="AnswersInputButtonPressed" width="11" height="21"/>
         <image name="AnswersInputViewBackground" width="1" height="44"/>
     </resources>

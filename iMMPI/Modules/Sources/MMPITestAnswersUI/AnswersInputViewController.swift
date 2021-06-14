@@ -13,6 +13,17 @@ import MMPIUITableViewCells
 public final class AnswersInputViewController: AnswersViewController {
     @objc @IBOutlet fileprivate var answersInputView: UIView?
     fileprivate var statementIndex: Int = 0
+
+    public init() {
+        super.init(
+            nibName: "AnswersInputViewController",
+            bundle: .module
+        )
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }
 
 

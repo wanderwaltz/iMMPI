@@ -66,10 +66,7 @@ public struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
     public func makeAnswersInputViewController() -> AnswersInputViewController {
-        return AnswersInputViewController(
-            nibName: "AnswersInputViewController",
-            bundle: Bundle(for: AnswersInputViewController.self)
-        )
+        return AnswersInputViewController()
     }
 
     public func makeAnalysisReportsListViewController() -> AnalysisReportsListViewController {
