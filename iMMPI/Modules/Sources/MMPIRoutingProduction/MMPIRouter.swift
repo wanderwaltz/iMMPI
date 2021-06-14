@@ -205,7 +205,6 @@ extension MMPIRouter {
         controller.style = .nested(basedOn: group.record)
         controller.grouping = .flat
 
-
         let compareButton = Views.makeSolidButton(title: Strings.Button.compare)
 
         compareButton.addTarget(
@@ -215,7 +214,6 @@ extension MMPIRouter {
         )
 
         controller.tableView.tableHeaderView = compareButton
-
 
         attachAddRecordButton(to: controller)
 

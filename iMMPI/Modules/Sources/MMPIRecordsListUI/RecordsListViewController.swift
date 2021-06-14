@@ -80,6 +80,7 @@ public final class RecordsListViewController: UITableViewController, UsingRoutin
         )
 
         searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
     }
 
     deinit {
