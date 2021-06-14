@@ -19,12 +19,30 @@ let package = Package(
                 "UIReusableViews",
                 "MMPIUI",
                 "MMPIUITableViewCells",
+                "MMPIRouting",
+                "MMPIRecordEditorUI",
+                "MMPIRecordsListUI",
+                "MMPITestAnswersUI",
+                "MMPIAnalysisUI",
+                "MMPIViewControllersFactoryProduction",
+                "MMPIRoutingProduction",
             ]
         ),
     ],
     dependencies: [],
     targets: [
+        .target(
+            name: "UnitTestingSupport"
+        ),
+
         .target(name: "Utils"),
+        .testTarget(
+            name: "UtilsTests",
+            dependencies: [
+                "Utils",
+                "HTMLComposing",
+            ]
+        ),
 
         .target(name: "Formatters"),
         .testTarget(
@@ -124,6 +142,7 @@ let package = Package(
                 "EmailComposing",
                 "HTMLComposing",
                 "Localization",
+                "Formatters",
             ],
             resources: [
                 .copy("Resources/html.report.css"),
@@ -154,7 +173,10 @@ let package = Package(
         ),
 
         .target(
-            name: "UIReusableViews"
+            name: "UIReusableViews",
+            dependencies: [
+                "Utils",
+            ]
         ),
         .testTarget(
             name: "UIReusableViewsTests",
@@ -185,6 +207,138 @@ let package = Package(
                 "MMPIUI",
                 "Formatters",
                 "UIReusableViews",
+            ]
+        ),
+
+        .target(
+            name: "MMPIRouting",
+            dependencies: [
+                "DataModel",
+                "Analysis",
+                "AnalysisReports",
+                "HTMLComposing",
+                "EmailComposing",
+                "UITableViewModels",
+            ]
+        ),
+        .target(
+            name: "MMPIRoutingMocks",
+            dependencies: [
+                "MMPIRouting",
+            ]
+        ),
+        .testTarget(
+            name: "MMPIRoutingTests",
+            dependencies: [
+                "MMPIRouting",
+                "MMPIRoutingMocks",
+                "MMPIRoutingProduction",
+            ]
+        ),
+
+        .target(
+            name: "MMPIDatePickerUI"
+        ),
+
+        .target(
+            name: "MMPIRecordEditorUI",
+            dependencies: [
+                "DataModel",
+                "Localization",
+                "Formatters",
+                "MMPIUITableViewCells",
+                "MMPIRouting",
+                "MMPIDatePickerUI",
+            ]
+        ),
+
+        .target(
+            name: "MMPIRecordsListUI",
+            dependencies: [
+                "Utils",
+                "UITableViewModels",
+                "UIReusableViews",
+                "DataModel",
+                "Localization",
+                "Formatters",
+                "MMPIUI",
+                "MMPIRouting",
+            ]
+        ),
+        .testTarget(
+            name: "MMPIRecordsListUITests",
+            dependencies: [
+                "MMPIRecordsListUI",
+            ]
+        ),
+
+        .target(
+            name: "MMPITestAnswersUI",
+            dependencies: [
+                "DataModel",
+                "Localization",
+                "MMPIUITableViewCells",
+                "MMPIRouting",
+            ]
+        ),
+
+        .target(
+            name: "MMPIAnalysisUI",
+            dependencies: [
+                "Utils",
+                "UITableViewModels",
+                "UIReusableViews",
+                "Localization",
+                "HTMLComposing",
+                "DataModel",
+                "Analysis",
+                "AnalysisReports",
+                "MMPIRouting",
+                "MMPIUITableViewCells",
+            ]
+        ),
+        .testTarget(
+            name: "MMPIAnalysisUITests",
+            dependencies: [
+                "MMPIAnalysisUI",
+                "UnitTestingSupport",
+                "MMPIRoutingMocks",
+            ]
+        ),
+
+        .target(
+            name: "MMPIViewControllersFactory",
+            dependencies: [
+                "EmailComposing",
+                "MMPIRouting",
+                "MMPIRecordEditorUI",
+                "MMPIRecordsListUI",
+                "MMPITestAnswersUI",
+                "MMPIAnalysisUI",
+            ]
+        ),
+
+        .target(
+            name: "MMPIViewControllersFactoryProduction",
+            dependencies: [
+                "MMPIViewControllersFactory",
+            ]
+        ),
+
+        .target(
+            name: "MMPISoundPlayer",
+            resources: [
+                .copy("Resources/button_tap1.wav"),
+                .copy("Resources/button_tap2.wav"),
+            ]
+        ),
+
+        .target(
+            name: "MMPIRoutingProduction",
+            dependencies: [
+                "MMPIRouting",
+                "MMPIViewControllersFactory",
+                "MMPISoundPlayer",
             ]
         ),
     ]

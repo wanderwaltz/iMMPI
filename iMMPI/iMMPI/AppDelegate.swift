@@ -1,5 +1,8 @@
 import UIKit
 import Serialization
+import MMPIRouting
+import MMPIViewControllersFactoryProduction
+import MMPIRoutingProduction
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -69,13 +72,8 @@ extension AppDelegate: UISplitViewControllerDelegate {
     }
 }
 
-
-extension AppDelegate {
-    @IBAction func trashButtonAction(_ sender: Any?) {
-        guard let root = (window?.rootViewController as? UISplitViewController)?.viewControllers.first else {
-            return
-        }
-
-        router?.displayTrash(sender: root)
+private extension UIViewController {
+    var mmpiSelfOrFirstChild: UIViewController {
+        return (self as? UINavigationController)?.viewControllers.first ?? self
     }
 }

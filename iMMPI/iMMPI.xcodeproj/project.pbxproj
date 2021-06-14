@@ -7,60 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4422BC141E25350B00355D71 /* AnswersInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4422BC131E25350B00355D71 /* AnswersInputViewController.swift */; };
-		4422BC161E253CE000355D71 /* AnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4422BC151E253CE000355D71 /* AnswersViewController.swift */; };
-		442CE1B31E2357AA006C34A6 /* EditRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1B21E2357AA006C34A6 /* EditRecordViewController.swift */; };
-		442CE1C41E236EEC006C34A6 /* RecordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1C31E236EEC006C34A6 /* RecordsListViewController.swift */; };
-		442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1D81E238379006C34A6 /* UtilityFunctions.swift */; };
-		442CE1DB1E238581006C34A6 /* UtilityFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */; };
-		442CE1E31E238BBB006C34A6 /* RecordsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1E21E238BBB006C34A6 /* RecordsGroup.swift */; };
-		442CE1E51E238C75006C34A6 /* RecordsGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1E41E238C75006C34A6 /* RecordsGroupTests.swift */; };
-		442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1F01E23A939006C34A6 /* AsyncProvider.swift */; };
-		442CE1F51E23A957006C34A6 /* RecordsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */; };
 		442DBAFD2674E465005B87B3 /* Modules in Frameworks */ = {isa = PBXBuildFile; productRef = 442DBAFC2674E465005B87B3 /* Modules */; };
-		442DBB022674EB8B005B87B3 /* RecordsListViewModel+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442DBB012674EB8B005B87B3 /* RecordsListViewModel+Storage.swift */; };
 		4430C7871E15FB950024C001 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430C7861E15FB950024C001 /* Media.xcassets */; };
-		444F23771E2E28E000BB8003 /* AnswersInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 444F23761E2E28E000BB8003 /* AnswersInputViewController.xib */; };
-		444F241B1E31E1B300BB8003 /* MenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F241A1E31E1B300BB8003 /* MenuAction.swift */; };
-		444F241D1E31E62000BB8003 /* MenuAction+Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F241C1E31E62000BB8003 /* MenuAction+Print.swift */; };
-		444F241F1E31EA3900BB8003 /* AnalysisMenuActionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F241E1E31EA3900BB8003 /* AnalysisMenuActionContext.swift */; };
 		444F24231E32037900BB8003 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24221E32037900BB8003 /* Application.swift */; };
-		444F24251E3204F700BB8003 /* PopoverPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24241E3204F700BB8003 /* PopoverPresenting.swift */; };
-		444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */; };
-		444F24371E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */; };
-		444F244B1E3366C600BB8003 /* MenuAction+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F244A1E3366C600BB8003 /* MenuAction+Email.swift */; };
-		444F245D1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F245C1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift */; };
-		444F245F1E34990B00BB8003 /* MenuAction+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F245E1E34990A00BB8003 /* MenuAction+UITableView.swift */; };
 		44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C0C1E23ADA0001758C0 /* AppDelegate.swift */; };
-		44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */; };
-		44673C1C1E23C9CA001758C0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C1B1E23C9CA001758C0 /* Router.swift */; };
-		44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */; };
-		44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */; };
-		44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */; };
-		44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */; };
-		44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */; };
-		44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */; };
-		448C31021E28735C003D355D /* AsyncProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31011E28735C003D355D /* AsyncProviderTests.swift */; };
-		448C31061E287719003D355D /* UsingRouting+NSObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31051E287719003D355D /* UsingRouting+NSObjectTests.swift */; };
-		448C310B1E2877BA003D355D /* StubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C310A1E2877BA003D355D /* StubRouter.swift */; };
-		448C31101E289328003D355D /* AnalysisViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C310F1E289328003D355D /* AnalysisViewControllerTests.swift */; };
-		448C31121E289454003D355D /* UITestFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31111E289454003D355D /* UITestFunctions.swift */; };
-		448C31141E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */; };
-		448C31171E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */; };
-		448C318A1E29F3C9003D355D /* AnalysisOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31891E29F3C9003D355D /* AnalysisOptionsViewController.swift */; };
-		448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */; };
-		449A523F1E4B686B00D23C13 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A523E1E4B686B00D23C13 /* AnalysisViewController.swift */; };
-		44A904321E4DCDCC003CB6C6 /* AnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904311E4DCDCC003CB6C6 /* AnalysisViewModel.swift */; };
-		44A904491E4DCE14003CB6C6 /* AnalysisCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A904481E4DCE14003CB6C6 /* AnalysisCollectionViewLayout.swift */; };
-		44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */; };
-		44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B61E3A66F800DD4E5E /* String+Utility.swift */; };
-		44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */; };
 		44B193BD1E3A722100DD4E5E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B193BC1E3A722100DD4E5E /* main.swift */; };
-		44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A281E261943004F4E14 /* SoundPlayer.swift */; };
-		44F97A2B1E261B63004F4E14 /* AnswersInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */; };
-		44F97A2F1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */; };
-		44F97A3D1E26348A004F4E14 /* AnswersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F97A3C1E26348A004F4E14 /* AnswersViewModel.swift */; };
-		5876FDC71E2BE4C600255227 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5876FDC61E2BE4C600255227 /* DatePickerController.swift */; };
 		5D5E05A31646452F00A5A704 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5E05A21646452F00A5A704 /* libxml2.dylib */; };
 		5D81F94A1841BD97008E3B0A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D81F9491841BD97008E3B0A /* AVFoundation.framework */; };
 		5DA5C9E5163B018D00CF1601 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5C9E4163B018D00CF1601 /* UIKit.framework */; };
@@ -69,77 +20,14 @@
 		5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */; };
 		5DC0C88916E27C0F006ED854 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC0C88816E27C0F006ED854 /* MessageUI.framework */; };
 		5DC3044F17ED83EB00FCE5D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */; };
-		5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780318ACF81D009896FB /* button_tap1.wav */; };
-		5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3780418ACF81D009896FB /* button_tap2.wav */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4430C7941E160DDD0024C001 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5DA5C9D7163B018D00CF1601 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5DA5C9DF163B018D00CF1601;
-			remoteInfo = iMMPI;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		4422BC131E25350B00355D71 /* AnswersInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersInputViewController.swift; sourceTree = "<group>"; };
-		4422BC151E253CE000355D71 /* AnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersViewController.swift; sourceTree = "<group>"; };
-		442CE1B21E2357AA006C34A6 /* EditRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRecordViewController.swift; sourceTree = "<group>"; };
-		442CE1C31E236EEC006C34A6 /* RecordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewController.swift; sourceTree = "<group>"; };
-		442CE1D81E238379006C34A6 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
-		442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctionsTests.swift; sourceTree = "<group>"; };
-		442CE1E21E238BBB006C34A6 /* RecordsGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsGroup.swift; sourceTree = "<group>"; };
-		442CE1E41E238C75006C34A6 /* RecordsGroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsGroupTests.swift; sourceTree = "<group>"; };
-		442CE1F01E23A939006C34A6 /* AsyncProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncProvider.swift; sourceTree = "<group>"; };
-		442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewModel.swift; sourceTree = "<group>"; };
 		442DBAFB2674E43E005B87B3 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Modules; sourceTree = "<group>"; };
-		442DBB012674EB8B005B87B3 /* RecordsListViewModel+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordsListViewModel+Storage.swift"; sourceTree = "<group>"; };
 		4430C7861E15FB950024C001 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		4430C78F1E160DDC0024C001 /* iMMPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMMPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4430C7931E160DDD0024C001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		444F23761E2E28E000BB8003 /* AnswersInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswersInputViewController.xib; sourceTree = "<group>"; };
-		444F241A1E31E1B300BB8003 /* MenuAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuAction.swift; sourceTree = "<group>"; };
-		444F241C1E31E62000BB8003 /* MenuAction+Print.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuAction+Print.swift"; sourceTree = "<group>"; };
-		444F241E1E31EA3900BB8003 /* AnalysisMenuActionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisMenuActionContext.swift; sourceTree = "<group>"; };
 		444F24221E32037900BB8003 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		444F24241E3204F700BB8003 /* PopoverPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresenting.swift; sourceTree = "<group>"; };
-		444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisReportsListViewController.swift; sourceTree = "<group>"; };
-		444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+ReportPrintingDelegate.swift"; sourceTree = "<group>"; };
-		444F244A1E3366C600BB8003 /* MenuAction+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuAction+Email.swift"; sourceTree = "<group>"; };
-		444F245C1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+MailComposerDelegate.swift"; sourceTree = "<group>"; };
-		444F245E1E34990A00BB8003 /* MenuAction+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuAction+UITableView.swift"; sourceTree = "<group>"; };
 		44673C0C1E23ADA0001758C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerStyle.swift; sourceTree = "<group>"; };
-		44673C1B1E23C9CA001758C0 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMPIRouter.swift; sourceTree = "<group>"; };
-		44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+EditingDelegate.swift"; sourceTree = "<group>"; };
-		44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsListViewControllerGrouping.swift; sourceTree = "<group>"; };
-		44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
-		44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMPIViewControllersFactory.swift; sourceTree = "<group>"; };
-		44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutedViewControllersFactory.swift; sourceTree = "<group>"; };
-		448C31011E28735C003D355D /* AsyncProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncProviderTests.swift; sourceTree = "<group>"; };
-		448C31051E287719003D355D /* UsingRouting+NSObjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UsingRouting+NSObjectTests.swift"; sourceTree = "<group>"; };
-		448C310A1E2877BA003D355D /* StubRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubRouter.swift; sourceTree = "<group>"; };
-		448C310F1E289328003D355D /* AnalysisViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewControllerTests.swift; sourceTree = "<group>"; };
-		448C31111E289454003D355D /* UITestFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestFunctions.swift; sourceTree = "<group>"; };
-		448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+AnalysisOptionsDelegate.swift"; sourceTree = "<group>"; };
-		448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MMPIRouter+AnalysisOptionsDelegateTests.swift"; sourceTree = "<group>"; };
-		448C31891E29F3C9003D355D /* AnalysisOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisOptionsViewController.swift; sourceTree = "<group>"; };
-		448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisOptionsViewModel.swift; sourceTree = "<group>"; };
-		449A523E1E4B686B00D23C13 /* AnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
-		44A904311E4DCDCC003CB6C6 /* AnalysisViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewModel.swift; sourceTree = "<group>"; };
-		44A904481E4DCE14003CB6C6 /* AnalysisCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisCollectionViewLayout.swift; sourceTree = "<group>"; };
-		44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
-		44B193B61E3A66F800DD4E5E /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
-		44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+UtilityTests.swift"; sourceTree = "<group>"; };
 		44B193BC1E3A722100DD4E5E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		44F97A281E261943004F4E14 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersInputDelegate.swift; sourceTree = "<group>"; };
-		44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+AnswersInput.swift"; sourceTree = "<group>"; };
-		44F97A3C1E26348A004F4E14 /* AnswersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersViewModel.swift; sourceTree = "<group>"; };
-		5876FDC61E2BE4C600255227 /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		5D5E05A21646452F00A5A704 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D81F9491841BD97008E3B0A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5DA5C9E0163B018D00CF1601 /* iMMPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMMPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,18 +40,9 @@
 		5DC076DC1648124100897C17 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5DC0C88816E27C0F006ED854 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5DC3044E17ED83EB00FCE5D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		5DD3780318ACF81D009896FB /* button_tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap1.wav; sourceTree = "<group>"; };
-		5DD3780418ACF81D009896FB /* button_tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_tap2.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4430C78C1E160DDC0024C001 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DA5C9DD163B018D00CF1601 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,120 +61,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4430C7851E15FA170024C001 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5DD3780318ACF81D009896FB /* button_tap1.wav */,
-				5DD3780418ACF81D009896FB /* button_tap2.wav */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		4430C7901E160DDD0024C001 /* iMMPITests */ = {
-			isa = PBXGroup;
-			children = (
-				448C31091E2877AD003D355D /* Test Objects */,
-				448C31151E289808003D355D /* Router */,
-				448C310E1E289313003D355D /* View Controllers */,
-				448C31011E28735C003D355D /* AsyncProviderTests.swift */,
-				442CE1E41E238C75006C34A6 /* RecordsGroupTests.swift */,
-				44B193B81E3A68B200DD4E5E /* String+UtilityTests.swift */,
-				448C31051E287719003D355D /* UsingRouting+NSObjectTests.swift */,
-				442CE1DA1E238581006C34A6 /* UtilityFunctionsTests.swift */,
-				4430C7931E160DDD0024C001 /* Info.plist */,
-			);
-			path = iMMPITests;
-			sourceTree = "<group>";
-		};
-		444F24191E31E1A300BB8003 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				444F241E1E31EA3900BB8003 /* AnalysisMenuActionContext.swift */,
-				444F241A1E31E1B300BB8003 /* MenuAction.swift */,
-				444F241C1E31E62000BB8003 /* MenuAction+Print.swift */,
-				444F244A1E3366C600BB8003 /* MenuAction+Email.swift */,
-				444F245E1E34990A00BB8003 /* MenuAction+UITableView.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
-		44673C1A1E23C9BD001758C0 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				44673C321E24CF91001758C0 /* View Controllers Factory */,
-				44673C1B1E23C9CA001758C0 /* Router.swift */,
-				44673C1D1E23CA0E001758C0 /* MMPIRouter.swift */,
-				44673C211E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift */,
-				448C31131E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift */,
-				444F24361E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift */,
-				444F245C1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		44673C321E24CF91001758C0 /* View Controllers Factory */ = {
-			isa = PBXGroup;
-			children = (
-				44673C331E24CF9D001758C0 /* ViewControllersFactory.swift */,
-				44673C351E24CFBA001758C0 /* MMPIViewControllersFactory.swift */,
-				44673C371E24D6FF001758C0 /* RoutedViewControllersFactory.swift */,
-			);
-			path = "View Controllers Factory";
-			sourceTree = "<group>";
-		};
-		448C31091E2877AD003D355D /* Test Objects */ = {
-			isa = PBXGroup;
-			children = (
-				448C310A1E2877BA003D355D /* StubRouter.swift */,
-				448C31111E289454003D355D /* UITestFunctions.swift */,
-			);
-			name = "Test Objects";
-			sourceTree = "<group>";
-		};
-		448C310E1E289313003D355D /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				448C310F1E289328003D355D /* AnalysisViewControllerTests.swift */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		448C31151E289808003D355D /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				448C31161E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift */,
-			);
-			name = Router;
-			sourceTree = "<group>";
-		};
-		449A523D1E4B683100D23C13 /* Analysis View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */,
-				44A904481E4DCE14003CB6C6 /* AnalysisCollectionViewLayout.swift */,
-				449A523E1E4B686B00D23C13 /* AnalysisViewController.swift */,
-				44A904311E4DCDCC003CB6C6 /* AnalysisViewModel.swift */,
-			);
-			path = "Analysis View Controller";
-			sourceTree = "<group>";
-		};
-		5D74CEF8169B085000BAA202 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				44673C1A1E23C9BD001758C0 /* Router */,
-				5DA5CA0C163B04D200CF1601 /* View Controllers */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		5DA5C9D5163B018D00CF1601 = {
 			isa = PBXGroup;
 			children = (
 				442DBAFB2674E43E005B87B3 /* Modules */,
 				4430C7861E15FB950024C001 /* Media.xcassets */,
 				5DA5C9EA163B018D00CF1601 /* iMMPI */,
-				4430C7901E160DDD0024C001 /* iMMPITests */,
-				4430C7851E15FA170024C001 /* Resources */,
 				5DA5C9E3163B018D00CF1601 /* Frameworks */,
 				5DA5C9E1163B018D00CF1601 /* Products */,
 			);
@@ -305,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				5DA5C9E0163B018D00CF1601 /* iMMPI.app */,
-				4430C78F1E160DDC0024C001 /* iMMPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -329,8 +99,6 @@
 		5DA5C9EA163B018D00CF1601 /* iMMPI */ = {
 			isa = PBXGroup;
 			children = (
-				5DCC9642168DC12B004F8D4E /* Utils */,
-				5D74CEF8169B085000BAA202 /* UI */,
 				44673C0C1E23ADA0001758C0 /* AppDelegate.swift */,
 				444F24221E32037900BB8003 /* Application.swift */,
 				44B193BC1E3A722100DD4E5E /* main.swift */,
@@ -348,91 +116,9 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5DA5CA0C163B04D200CF1601 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				5DBD56891697272000728BB4 /* Test Answers */,
-				449A523D1E4B683100D23C13 /* Analysis View Controller */,
-				5DBE76D7169356D40018C728 /* Records List View Controller */,
-				5876FDC61E2BE4C600255227 /* DatePickerController.swift */,
-				442CE1B21E2357AA006C34A6 /* EditRecordViewController.swift */,
-			);
-			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		5DBD56891697272000728BB4 /* Test Answers */ = {
-			isa = PBXGroup;
-			children = (
-				44F97A2A1E261B63004F4E14 /* AnswersInputDelegate.swift */,
-				44F97A3C1E26348A004F4E14 /* AnswersViewModel.swift */,
-				4422BC151E253CE000355D71 /* AnswersViewController.swift */,
-				4422BC131E25350B00355D71 /* AnswersInputViewController.swift */,
-				444F23761E2E28E000BB8003 /* AnswersInputViewController.xib */,
-				44F97A2E1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift */,
-			);
-			path = "Test Answers";
-			sourceTree = "<group>";
-		};
-		5DBE76D7169356D40018C728 /* Records List View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				442CE1C31E236EEC006C34A6 /* RecordsListViewController.swift */,
-				44673C121E23B9D7001758C0 /* RecordsListViewControllerStyle.swift */,
-				44673C301E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift */,
-				442CE1F41E23A957006C34A6 /* RecordsListViewModel.swift */,
-				442DBB012674EB8B005B87B3 /* RecordsListViewModel+Storage.swift */,
-				442CE1E21E238BBB006C34A6 /* RecordsGroup.swift */,
-			);
-			path = "Records List View Controller";
-			sourceTree = "<group>";
-		};
-		5DC0C87C16E2607F006ED854 /* Analysis Options View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				444F24191E31E1A300BB8003 /* Actions */,
-				448C31891E29F3C9003D355D /* AnalysisOptionsViewController.swift */,
-				448C31911E2B5C50003D355D /* AnalysisOptionsViewModel.swift */,
-				444F24341E3211DE00BB8003 /* AnalysisReportsListViewController.swift */,
-			);
-			path = "Analysis Options View Controller";
-			sourceTree = "<group>";
-		};
-		5DCC9642168DC12B004F8D4E /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				442CE1F01E23A939006C34A6 /* AsyncProvider.swift */,
-				444F24241E3204F700BB8003 /* PopoverPresenting.swift */,
-				44B193B61E3A66F800DD4E5E /* String+Utility.swift */,
-				44B193B41E3A666600DD4E5E /* UIViewController+Utility.swift */,
-				442CE1D81E238379006C34A6 /* UtilityFunctions.swift */,
-				44F97A281E261943004F4E14 /* SoundPlayer.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4430C78E1E160DDC0024C001 /* iMMPITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4430C7961E160DDD0024C001 /* Build configuration list for PBXNativeTarget "iMMPITests" */;
-			buildPhases = (
-				4430C78B1E160DDC0024C001 /* Sources */,
-				4430C78C1E160DDC0024C001 /* Frameworks */,
-				4430C78D1E160DDC0024C001 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4430C7951E160DDD0024C001 /* PBXTargetDependency */,
-			);
-			name = iMMPITests;
-			packageProductDependencies = (
-			);
-			productName = iMMPITests;
-			productReference = 4430C78F1E160DDC0024C001 /* iMMPITests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		5DA5C9DF163B018D00CF1601 /* iMMPI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DA5CA04163B018D00CF1601 /* Build configuration list for PBXNativeTarget "iMMPI" */;
@@ -464,12 +150,6 @@
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Egor Chiglintsev";
 				TargetAttributes = {
-					4430C78E1E160DDC0024C001 = {
-						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = B87M5YBQ84;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 5DA5C9DF163B018D00CF1601;
-					};
 					5DA5C9DF163B018D00CF1601 = {
 						DevelopmentTeam = B87M5YBQ84;
 						LastSwiftMigration = 0820;
@@ -490,28 +170,17 @@
 			projectRoot = "";
 			targets = (
 				5DA5C9DF163B018D00CF1601 /* iMMPI */,
-				4430C78E1E160DDC0024C001 /* iMMPITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4430C78D1E160DDC0024C001 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DA5C9DE163B018D00CF1601 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DD3780618ACF81D009896FB /* button_tap2.wav in Resources */,
 				5DA5C9FE163B018D00CF1601 /* MainStoryboard.storyboard in Resources */,
-				444F23771E2E28E000BB8003 /* AnswersInputViewController.xib in Resources */,
 				4430C7871E15FB950024C001 /* Media.xcassets in Resources */,
-				5DD3780518ACF81D009896FB /* button_tap1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,80 +204,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4430C78B1E160DDC0024C001 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				448C31171E28981A003D355D /* MMPIRouter+AnalysisOptionsDelegateTests.swift in Sources */,
-				442CE1E51E238C75006C34A6 /* RecordsGroupTests.swift in Sources */,
-				44B193B91E3A68B200DD4E5E /* String+UtilityTests.swift in Sources */,
-				448C31061E287719003D355D /* UsingRouting+NSObjectTests.swift in Sources */,
-				448C310B1E2877BA003D355D /* StubRouter.swift in Sources */,
-				448C31101E289328003D355D /* AnalysisViewControllerTests.swift in Sources */,
-				442CE1DB1E238581006C34A6 /* UtilityFunctionsTests.swift in Sources */,
-				448C31121E289454003D355D /* UITestFunctions.swift in Sources */,
-				448C31021E28735C003D355D /* AsyncProviderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DA5C9DC163B018D00CF1601 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				442CE1B31E2357AA006C34A6 /* EditRecordViewController.swift in Sources */,
-				44673C1E1E23CA0E001758C0 /* MMPIRouter.swift in Sources */,
-				5876FDC71E2BE4C600255227 /* DatePickerController.swift in Sources */,
-				44673C221E249A8E001758C0 /* MMPIRouter+EditingDelegate.swift in Sources */,
-				444F245F1E34990B00BB8003 /* MenuAction+UITableView.swift in Sources */,
-				44673C311E24C1F5001758C0 /* RecordsListViewControllerGrouping.swift in Sources */,
-				44673C381E24D6FF001758C0 /* RoutedViewControllersFactory.swift in Sources */,
-				442DBB022674EB8B005B87B3 /* RecordsListViewModel+Storage.swift in Sources */,
-				444F241B1E31E1B300BB8003 /* MenuAction.swift in Sources */,
-				44A904321E4DCDCC003CB6C6 /* AnalysisViewModel.swift in Sources */,
-				44F97A291E261943004F4E14 /* SoundPlayer.swift in Sources */,
-				442CE1D91E238379006C34A6 /* UtilityFunctions.swift in Sources */,
-				444F24351E3211DE00BB8003 /* AnalysisReportsListViewController.swift in Sources */,
 				444F24231E32037900BB8003 /* Application.swift in Sources */,
-				448C31921E2B5C50003D355D /* AnalysisOptionsViewModel.swift in Sources */,
-				448C31141E289738003D355D /* MMPIRouter+AnalysisOptionsDelegate.swift in Sources */,
-				44B193B71E3A66F800DD4E5E /* String+Utility.swift in Sources */,
-				4422BC141E25350B00355D71 /* AnswersInputViewController.swift in Sources */,
-				444F24251E3204F700BB8003 /* PopoverPresenting.swift in Sources */,
-				444F241D1E31E62000BB8003 /* MenuAction+Print.swift in Sources */,
-				44F97A2F1E261DAE004F4E14 /* SoundPlayer+AnswersInput.swift in Sources */,
-				449A523F1E4B686B00D23C13 /* AnalysisViewController.swift in Sources */,
-				442CE1C41E236EEC006C34A6 /* RecordsListViewController.swift in Sources */,
-				442CE1E31E238BBB006C34A6 /* RecordsGroup.swift in Sources */,
-				444F241F1E31EA3900BB8003 /* AnalysisMenuActionContext.swift in Sources */,
-				44A904491E4DCE14003CB6C6 /* AnalysisCollectionViewLayout.swift in Sources */,
-				442CE1F51E23A957006C34A6 /* RecordsListViewModel.swift in Sources */,
-				44673C1C1E23C9CA001758C0 /* Router.swift in Sources */,
-				44673C131E23B9D7001758C0 /* RecordsListViewControllerStyle.swift in Sources */,
 				44673C0D1E23ADA0001758C0 /* AppDelegate.swift in Sources */,
-				4422BC161E253CE000355D71 /* AnswersViewController.swift in Sources */,
-				444F24371E3216D800BB8003 /* MMPIRouter+ReportPrintingDelegate.swift in Sources */,
 				44B193BD1E3A722100DD4E5E /* main.swift in Sources */,
-				44673C361E24CFBA001758C0 /* MMPIViewControllersFactory.swift in Sources */,
-				444F245D1E3372FD00BB8003 /* MMPIRouter+MailComposerDelegate.swift in Sources */,
-				44B193B51E3A666600DD4E5E /* UIViewController+Utility.swift in Sources */,
-				444F244B1E3366C600BB8003 /* MenuAction+Email.swift in Sources */,
-				44F97A2B1E261B63004F4E14 /* AnswersInputDelegate.swift in Sources */,
-				448C318A1E29F3C9003D355D /* AnalysisOptionsViewController.swift in Sources */,
-				442CE1F21E23A939006C34A6 /* AsyncProvider.swift in Sources */,
-				44F97A3D1E26348A004F4E14 /* AnswersViewModel.swift in Sources */,
-				44673C341E24CF9D001758C0 /* ViewControllersFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4430C7951E160DDD0024C001 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5DA5C9DF163B018D00CF1601 /* iMMPI */;
-			targetProxy = 4430C7941E160DDD0024C001 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5DA5C9FC163B018D00CF1601 /* MainStoryboard.storyboard */ = {
@@ -622,69 +228,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4430C7971E160DDD0024C001 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = iMMPITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMMPI.app/iMMPI";
-			};
-			name = Debug;
-		};
-		4430C7981E160DDD0024C001 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = iMMPITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oliveinspace.iMMPITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMMPI.app/iMMPI";
-			};
-			name = Release;
-		};
 		5DA5CA02163B018D00CF1601 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -880,15 +423,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4430C7961E160DDD0024C001 /* Build configuration list for PBXNativeTarget "iMMPITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4430C7971E160DDD0024C001 /* Debug */,
-				4430C7981E160DDD0024C001 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		5DA5C9DA163B018D00CF1601 /* Build configuration list for PBXProject "iMMPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

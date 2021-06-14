@@ -1,6 +1,7 @@
 import UIKit
+import MMPIRoutingProduction
 
-final class Application: UIApplication {
+final class Application: UIApplication, LastTouchedViewProviding {
     private(set) var lastTouchedView: UIView?
 
     override func sendEvent(_ event: UIEvent) {
