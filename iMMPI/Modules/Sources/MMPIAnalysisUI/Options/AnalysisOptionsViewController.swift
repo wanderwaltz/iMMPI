@@ -162,13 +162,16 @@ extension AnalysisOptionsViewController {
 
     public override func tableView(
         _ tableView: UITableView,
-        editActionsForRowAt indexPath: IndexPath
-    ) -> [UITableViewRowAction]? {
+        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
         switch indexPath.section {
         case 1: // action cells
-            return actionRows.items[indexPath.row].relatedActions.map({ menuAction in
-                UITableViewRowAction(menuAction, sender: self)
-            })
+            return .init(
+                actions: actionRows.items[indexPath.row]
+                    .relatedActions.map({ menuAction in
+                        UIContextualAction(menuAction, sender: self)
+                    })
+            )
 
         default:
             return nil
