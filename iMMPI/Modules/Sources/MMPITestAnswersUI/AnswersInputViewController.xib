@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +16,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="q4m-76-Vb5">
+        <view contentMode="scaleToFill" interfaceStyle="dark" id="q4m-76-Vb5">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -30,86 +31,89 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLo-rD-Eek" userLabel="Input View">
                     <rect key="frame" x="0.0" y="824" width="768" height="200"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="AnswersInputViewBackground" translatesAutoresizingMaskIntoConstraints="NO" id="WDE-pe-vfO">
-                            <rect key="frame" x="0.0" y="0.0" width="768" height="200"/>
-                            <rect key="contentStretch" x="0.0" y="0.050000000000000003" width="1" height="0.89999999999999991"/>
-                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uct-Jl-MSH">
-                            <rect key="frame" x="20" y="78" width="73" height="44"/>
+                            <rect key="frame" x="20" y="79" width="73" height="41.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="73" id="c1d-iN-Mey"/>
                                 <constraint firstAttribute="height" constant="44" id="oPB-M8-DGZ"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="tintColor" systemColor="secondarySystemFillColor"/>
                             <inset key="titleEdgeInsets" minX="-3" minY="-4" maxX="0.0" maxY="0.0"/>
                             <size key="titleShadowOffset" width="0.0" height="1"/>
-                            <state key="normal" title="◄" backgroundImage="AnswersInputButton">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="titleShadowColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="◄" backgroundImage="rectangle.fill" catalog="system">
+                                <color key="titleColor" systemColor="secondaryLabelColor"/>
                             </state>
-                            <state key="selected" backgroundImage="AnswersInputButtonPressed"/>
+                            <state key="selected" backgroundImage="rectangle" catalog="system">
+                                <color key="titleColor" systemColor="secondaryLabelColor"/>
+                            </state>
                             <state key="highlighted">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" systemColor="tertiaryLabelColor"/>
                             </state>
                             <connections>
                                 <action selector="prevButtonAction:" destination="-1" eventType="touchUpInside" id="BW3-fK-NzV"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGw-08-BAE">
-                            <rect key="frame" x="675" y="78" width="73" height="44"/>
-                            <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="675" y="79" width="73" height="41.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="73" id="KaG-GV-QVa"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="tintColor" systemColor="secondarySystemFillColor"/>
                             <inset key="titleEdgeInsets" minX="3" minY="-4" maxX="0.0" maxY="0.0"/>
                             <size key="titleShadowOffset" width="0.0" height="1"/>
-                            <state key="normal" title="►" backgroundImage="AnswersInputButton">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="titleShadowColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="►" backgroundImage="rectangle.fill" catalog="system">
+                                <color key="titleColor" systemColor="secondaryLabelColor"/>
                             </state>
-                            <state key="selected" backgroundImage="AnswersInputButtonPressed"/>
+                            <state key="selected" backgroundImage="rectangle" catalog="system">
+                                <color key="titleColor" systemColor="secondaryLabelColor"/>
+                            </state>
                             <state key="highlighted">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" systemColor="tertiaryLabelColor"/>
                             </state>
                             <connections>
                                 <action selector="nextButtonAction:" destination="-1" eventType="touchUpInside" id="UQr-JU-aCd"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSp-cd-JYa">
-                            <rect key="frame" x="101" y="20" width="279" height="160"/>
+                            <rect key="frame" x="101" y="21" width="279" height="157.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <color key="tintColor" systemColor="secondarySystemFillColor"/>
                             <size key="titleShadowOffset" width="0.0" height="1"/>
-                            <state key="normal" title="ДА" backgroundImage="AnswersInputButton">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="titleShadowColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="ДА" backgroundImage="rectangle.fill" catalog="system">
+                                <color key="titleColor" systemColor="secondaryLabelColor"/>
                             </state>
-                            <state key="selected" backgroundImage="AnswersInputButtonPressed"/>
+                            <state key="selected" backgroundImage="rectangle" catalog="system">
+                                <color key="titleColor" systemColor="secondaryLabelColor"/>
+                            </state>
                             <state key="highlighted">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" systemColor="tertiaryLabelColor"/>
                             </state>
                             <connections>
                                 <action selector="positiveAnswerButtonAction:" destination="-1" eventType="touchUpInside" id="q3S-dW-LgE"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjN-AX-aKE">
-                            <rect key="frame" x="388" y="20" width="279" height="160"/>
+                            <rect key="frame" x="388" y="21" width="279" height="157.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <color key="tintColor" systemColor="secondarySystemFillColor"/>
                             <size key="titleShadowOffset" width="0.0" height="1"/>
-                            <state key="normal" title="НЕТ" backgroundImage="AnswersInputButton">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="titleShadowColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="НЕТ" backgroundImage="rectangle.fill" catalog="system">
+                                <color key="titleColor" systemColor="secondaryLabelColor"/>
                             </state>
-                            <state key="selected" backgroundImage="AnswersInputButtonPressed"/>
+                            <state key="selected" backgroundImage="rectangle" catalog="system">
+                                <color key="titleColor" systemColor="secondaryLabelColor"/>
+                            </state>
                             <state key="highlighted">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" systemColor="tertiaryLabelColor"/>
                             </state>
                             <connections>
                                 <action selector="negativeAnswerButtonAction:" destination="-1" eventType="touchUpInside" id="jop-ge-uPN"/>
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="MjN-AX-aKE" firstAttribute="leading" secondItem="jSp-cd-JYa" secondAttribute="trailing" constant="8" symbolic="YES" id="0xC-6l-h8V"/>
                         <constraint firstAttribute="bottom" secondItem="MjN-AX-aKE" secondAttribute="bottom" constant="20" symbolic="YES" id="2Iz-k0-6yC"/>
@@ -119,18 +123,14 @@
                         <constraint firstAttribute="trailing" secondItem="iGw-08-BAE" secondAttribute="trailing" constant="20" symbolic="YES" id="IOY-4m-lRa"/>
                         <constraint firstItem="MjN-AX-aKE" firstAttribute="top" secondItem="lLo-rD-Eek" secondAttribute="top" constant="20" symbolic="YES" id="KAY-LU-08h"/>
                         <constraint firstItem="iGw-08-BAE" firstAttribute="leading" secondItem="MjN-AX-aKE" secondAttribute="trailing" constant="8" symbolic="YES" id="KC6-8m-Z9H"/>
-                        <constraint firstItem="WDE-pe-vfO" firstAttribute="leading" secondItem="lLo-rD-Eek" secondAttribute="leading" id="LNZ-cl-DXx"/>
                         <constraint firstItem="jSp-cd-JYa" firstAttribute="centerY" secondItem="uct-Jl-MSH" secondAttribute="centerY" id="Myb-IV-NDM"/>
                         <constraint firstItem="uct-Jl-MSH" firstAttribute="baseline" secondItem="iGw-08-BAE" secondAttribute="baseline" id="NAp-YV-7ay"/>
                         <constraint firstItem="uct-Jl-MSH" firstAttribute="top" secondItem="iGw-08-BAE" secondAttribute="top" id="Ndi-gI-vy3"/>
-                        <constraint firstAttribute="trailing" secondItem="WDE-pe-vfO" secondAttribute="trailing" id="Nt1-t4-u1g"/>
                         <constraint firstItem="MjN-AX-aKE" firstAttribute="width" secondItem="jSp-cd-JYa" secondAttribute="width" id="Zfx-cA-m9V"/>
                         <constraint firstItem="jSp-cd-JYa" firstAttribute="baseline" secondItem="uct-Jl-MSH" secondAttribute="baseline" id="bRe-Hd-1Qb"/>
                         <constraint firstItem="jSp-cd-JYa" firstAttribute="top" secondItem="lLo-rD-Eek" secondAttribute="top" constant="20" symbolic="YES" id="dGR-qk-Ito"/>
                         <constraint firstItem="uct-Jl-MSH" firstAttribute="leading" secondItem="lLo-rD-Eek" secondAttribute="leading" constant="20" symbolic="YES" id="lvQ-EK-DI8"/>
-                        <constraint firstItem="WDE-pe-vfO" firstAttribute="top" secondItem="lLo-rD-Eek" secondAttribute="top" id="mIR-Ee-nnH"/>
                         <constraint firstAttribute="bottom" secondItem="jSp-cd-JYa" secondAttribute="bottom" constant="20" symbolic="YES" id="vq1-NO-e51"/>
-                        <constraint firstItem="WDE-pe-vfO" firstAttribute="bottom" secondItem="lLo-rD-Eek" secondAttribute="bottom" id="wHV-jW-1mQ"/>
                     </constraints>
                 </view>
             </subviews>
@@ -153,8 +153,19 @@
         </view>
     </objects>
     <resources>
-        <image name="AnswersInputButton" width="10.5" height="20.5"/>
-        <image name="AnswersInputButtonPressed" width="11" height="21"/>
-        <image name="AnswersInputViewBackground" width="1" height="44"/>
+        <image name="rectangle" catalog="system" width="128" height="93"/>
+        <image name="rectangle.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
