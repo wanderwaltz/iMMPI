@@ -55,6 +55,7 @@ public final class EditRecordViewController: UITableViewController, UsingRouting
 
         nameCell.textLabel?.text = Strings.Form.personName
         nameCell.textField.placeholder = Strings.Form.personNamePlaceholder
+        nameCell.textField.autocapitalizationType = .words
         nameCell.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: [.editingChanged])
 
         genderCell.textLabel?.text = Strings.Form.gender
