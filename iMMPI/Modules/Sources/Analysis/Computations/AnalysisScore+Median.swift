@@ -11,12 +11,28 @@ extension AnalysisScore {
             formatter: .integer,
             filter: .median,
             value: .specific({ gender in { answers in
-                let raw = rawScore.value(for: gender, answers: answers)
-                let m = median.value(for: gender)
-                let d = dispersion.value(for: gender)
-                let sign = inverted.value(for: gender) ? -1.0 : 1.0
+                var computation = rawScore.value(for: gender, answers: answers)
+                let raw = computation.score
 
-                return round(50.0 + 10.0 * sign * (raw - m) / d)
+                let m = median.value(for: gender)
+                computation.log("Медиана m = \(m)")
+
+                let d = dispersion.value(for: gender)
+                computation.log("Дисперсия d = \(d)")
+
+                let sign = inverted.value(for: gender) ? -1.0 : 1.0
+                let signString = sign > 0 ? "+" : "-"
+                
+                let result = round(50.0 + 10.0 * sign * (raw - m) / d)
+
+                computation.log(
+                    """
+                    Финальный балл: \(result) = 50 \(signString) 10 * (\(raw) - \(m)) / \(d)
+                    """
+                )
+
+                computation.score = result
+                return computation
                 }
             })
         )

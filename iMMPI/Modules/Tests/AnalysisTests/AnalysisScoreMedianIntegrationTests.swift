@@ -21,11 +21,11 @@ final class AnalysisScoreMedianIntegrationTests: XCTestCase {
 
 
     func testThat__it_returns_expected_values() {
-        XCTAssertEqual(score.value(for: TestSamples.record(at: 0)), 74.0)
-        XCTAssertEqual(score.value(for: TestSamples.record(at: 1)), 54.0)
-        XCTAssertEqual(score.value(for: TestSamples.record(at: 2)), 81.0)
-        XCTAssertEqual(score.value(for: TestSamples.record(at: 3)), 38.0)
-        XCTAssertEqual(score.value(for: TestSamples.record(at: 4)), 31.0)
-        XCTAssertEqual(score.value(for: TestSamples.record(at: 5)), 28.0)
+        XCTAssertEqual(score.value(for: TestSamples.record(at: 0)).score, 74.0)
+        XCTAssertEqual(score.value(for: TestSamples.record(at: 1)).score, 54.0)
+        XCTAssertEqual(score.value(for: TestSamples.record(at: 2)).score, 81.0)
+        XCTAssertEqual(score.value(for: TestSamples.record(at: 3)).score, 38.0)
+        XCTAssertEqual(score.value(for: TestSamples.record(at: 4)).score, 31.0)
+        XCTAssertEqual(score.value(for: TestSamples.record(at: 5)).score, 28.0)
     }
 }

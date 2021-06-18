@@ -37,9 +37,21 @@ extension AnalysisScore {
     )
 
 
-    /// Сумма Тэра, использующаяся для расчета баллоп по шкалам группы "Интнллект"
-    static let taer: AnalysisScore = .rawPercentage_i95 + .rawPercentage_i96 + .rawPercentage_i97 + .rawPercentage_i98
+    /// Сумма Тэра, использующаяся для расчета баллов по шкалам группы "Интнллект"
+    static let taer = AnalysisScore(value: .specific({ gender in { answers in
+        var computation = AnalysisScoreComputation()
 
+        let i95 = AnalysisScore.rawPercentage_i95.value(for: gender, answers: answers).score
+        let i96 = AnalysisScore.rawPercentage_i96.value(for: gender, answers: answers).score
+        let i97 = AnalysisScore.rawPercentage_i97.value(for: gender, answers: answers).score
+        let i98 = AnalysisScore.rawPercentage_i98.value(for: gender, answers: answers).score
+        let sum = i95 + i96 + i97 + i98
+
+        computation.log("Сумма Тэра: \(sum) = \(i95) + \(i96) + \(i97) + \(i98)")
+        computation.score = sum
+
+        return computation
+    }}))
 
     /// Процент совпадений по шкале "Творческий склад"
     ///

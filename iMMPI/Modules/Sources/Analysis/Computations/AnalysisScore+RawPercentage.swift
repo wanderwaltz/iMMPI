@@ -32,13 +32,25 @@ extension AnalysisScore {
                 )
 
                 guard totalCount > 0 else {
-                    return { _ in 100.0 }
+                    return { _ in
+                        AnalysisScoreComputation(
+                            positiveKey: [],
+                            negativeKey: [],
+                            log: [
+                                "В шкале не задан ни один вопрос, считаем, что это 100% совпадение"
+                            ],
+                            score: 100
+                        )
+                    }
                 }
 
                 return { answers in
-                    let result = trunc(rawMatches.value(for: gender, answers: answers) * 100.0 / totalCount)
+                    var computation = rawMatches.value(for: gender, answers: answers)
+                    let result = trunc(computation.score * 100.0 / totalCount)
+                    computation.log("Cовпадений: \(Int(result))% = \(computation.score) * 100 / \(totalCount)")
+                    computation.score = result
                     precondition(0.0...100.0 ~= result)
-                    return result
+                    return computation
                 }
             }))
     }

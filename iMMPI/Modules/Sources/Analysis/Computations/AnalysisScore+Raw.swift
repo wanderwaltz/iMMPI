@@ -50,7 +50,19 @@ extension AnalysisScore {
                         return answers.answer(for: identifier) == .negative ? matches + 1 : matches
                     })
 
-                return Double(positiveMatches + negativeMatches)
+                let result = positiveMatches + negativeMatches
+
+                return AnalysisScoreComputation(
+                    positiveKey: selectedStatements.positive,
+                    negativeKey: selectedStatements.negative,
+                    log: [
+                        "Задано вопросов: \(selectedStatements.positive.count + selectedStatements.negative.count)",
+                        "Положительных совпадений: \(positiveMatches)",
+                        "Отрицательных совпадений: \(negativeMatches)",
+                        "Всего совпадений: \(result) = \(positiveMatches) + \(negativeMatches)",
+                    ],
+                    score: Double(result)
+                    )
                 }
             })
         )

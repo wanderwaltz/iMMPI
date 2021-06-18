@@ -8,7 +8,7 @@ final class AnalysisScoreTests: XCTestCase {
 
         let score = AnalysisScore(value: .specific({ gender in { _ in
             receivedGender = gender
-            return 0.0
+            return .init(score: 0.0)
             }}))
 
         let answers = Answers()
@@ -29,7 +29,7 @@ final class AnalysisScoreTests: XCTestCase {
 
         let score = AnalysisScore(value: .specific({ gender in { _ in
             receivedGender = gender
-            return 0.0
+            return .init(score: 0.0)
             }}))
 
         let maleRecord = Record(person: Person(gender: .male))
@@ -50,26 +50,26 @@ final class AnalysisScoreTests: XCTestCase {
     func testThat__it_returns_the_block_value__case_1() {
         let score = AnalysisScore(value: .specific({ gender in { _ in
             switch gender {
-            case .male: return 0.0
-            case .female: return 1.0
-            case .unknown: return 3.0
+            case .male: return .init(score: 0.0)
+            case .female: return .init(score: 1.0)
+            case .unknown: return .init(score: 3.0)
             }
             }}))
 
         let answers = Answers()
 
-        XCTAssertEqual(score.value(for: .male, answers: answers), 0.0)
-        XCTAssertEqual(score.value(for: .female, answers: answers), 1.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: answers), 0.0)
+        XCTAssertEqual(score.value(for: .male, answers: answers).score, 0.0)
+        XCTAssertEqual(score.value(for: .female, answers: answers).score, 1.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: answers).score, 0.0)
     }
 
 
     func testThat__it_returns_the_block_value__case_2() {
         let score = AnalysisScore(value: .specific({ gender in { _ in
             switch gender {
-            case .male: return 0.0
-            case .female: return 1.0
-            case .unknown: return 3.0
+            case .male: return .init(score: 0.0)
+            case .female: return .init(score: 1.0)
+            case .unknown: return .init(score: 3.0)
             }
             }}))
 
@@ -77,9 +77,9 @@ final class AnalysisScoreTests: XCTestCase {
         let femaleRecord = Record(person: Person(gender: .female))
         let unknownRecord = Record(person: Person(gender: .unknown))
 
-        XCTAssertEqual(score.value(for: maleRecord), 0.0)
-        XCTAssertEqual(score.value(for: femaleRecord), 1.0)
-        XCTAssertEqual(score.value(for: unknownRecord), 0.0)
+        XCTAssertEqual(score.value(for: maleRecord).score, 0.0)
+        XCTAssertEqual(score.value(for: femaleRecord).score, 1.0)
+        XCTAssertEqual(score.value(for: unknownRecord).score, 0.0)
     }
 
 
@@ -88,7 +88,7 @@ final class AnalysisScoreTests: XCTestCase {
 
         let score = AnalysisScore(value: .specific({ _ in {
             receivedAnswers = $0
-            return 0.0
+            return .init(score: 0.0)
             }}))
 
         let answers = Answers()
@@ -112,7 +112,7 @@ final class AnalysisScoreTests: XCTestCase {
 
         let score = AnalysisScore(value: .specific({ _ in {
             receivedAnswers = $0
-            return 0.0
+            return .init(score: 0.0)
             }}))
 
         let maleRecord = Record(person: Person(gender: .male))

@@ -4,6 +4,10 @@ import Analysis
 import Formatters
 
 public final class ScaleDetailsViewModel {
+    private(set) lazy var computation: AnalysisScoreComputation = {
+        scale.score.value(for: record)
+    }()
+
     private let record: RecordProtocol
     private let scale: AnalysisScale
 

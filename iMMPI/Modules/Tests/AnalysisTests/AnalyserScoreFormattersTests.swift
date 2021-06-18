@@ -30,7 +30,7 @@ final class AnalyserScoreFormattersTests: XCTestCase {
             // an indirect way to detect which score computation method is used for the scale;
             // AnalysisScore is closure-based and thus is not comparable, so we use the domain
             // knowledge that bracketed scores are in 0...5 range while all others are unconstrained.
-            if scale.score.value(for: record) <= 5 {
+            if scale.score.value(for: record).score <= 5 {
                 XCTAssertEqualFormatters(scale.formatter, .bracketed)
             }
             else if scale.identifier != .hypnability {

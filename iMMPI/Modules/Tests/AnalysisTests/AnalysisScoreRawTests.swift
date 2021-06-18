@@ -7,9 +7,9 @@ final class AnalysisScoreRawTests: XCTestCase {
         let score = AnalysisScore.raw(.common((positive: [1, 2, 5], negative: [3, 7, 8])))
         let answers = Answers(positive: [1, 2, 5], negative: [3, 7, 8])
 
-        XCTAssertEqual(score.value(for: .male, answers: answers), 6.0)
-        XCTAssertEqual(score.value(for: .female, answers: answers), 6.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: answers), 6.0)
+        XCTAssertEqual(score.value(for: .male, answers: answers).score, 6.0)
+        XCTAssertEqual(score.value(for: .female, answers: answers).score, 6.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: answers).score, 6.0)
     }
 
 
@@ -17,9 +17,9 @@ final class AnalysisScoreRawTests: XCTestCase {
         let score = AnalysisScore.raw(.common((positive: [1, 2, 5], negative: [3, 7, 8])))
         let answers = Answers(positive: [1], negative: [2, 3, 5, 7, 8])
 
-        XCTAssertEqual(score.value(for: .male, answers: answers), 4.0)
-        XCTAssertEqual(score.value(for: .female, answers: answers), 4.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: answers), 4.0)
+        XCTAssertEqual(score.value(for: .male, answers: answers).score, 4.0)
+        XCTAssertEqual(score.value(for: .female, answers: answers).score, 4.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: answers).score, 4.0)
     }
 
 
@@ -27,9 +27,9 @@ final class AnalysisScoreRawTests: XCTestCase {
         let score = AnalysisScore.raw(.common((positive: [1, 2, 5], negative: [3, 7, 8])))
         let answers = Answers()
 
-        XCTAssertEqual(score.value(for: .male, answers: answers), 0.0)
-        XCTAssertEqual(score.value(for: .female, answers: answers), 0.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: answers), 0.0)
+        XCTAssertEqual(score.value(for: .male, answers: answers).score, 0.0)
+        XCTAssertEqual(score.value(for: .female, answers: answers).score, 0.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: answers).score, 0.0)
     }
 
 
@@ -41,8 +41,8 @@ final class AnalysisScoreRawTests: XCTestCase {
 
         let answers = Answers(positive: [1, 2, 5], negative: [3, 7, 8])
         
-        XCTAssertEqual(score.value(for: .male, answers: answers), 6.0)
-        XCTAssertEqual(score.value(for: .female, answers: answers), 1.0)
-        XCTAssertEqual(score.value(for: .unknown, answers: answers), 6.0)
+        XCTAssertEqual(score.value(for: .male, answers: answers).score, 6.0)
+        XCTAssertEqual(score.value(for: .female, answers: answers).score, 1.0)
+        XCTAssertEqual(score.value(for: .unknown, answers: answers).score, 6.0)
     }
 }

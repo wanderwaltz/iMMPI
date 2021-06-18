@@ -26,6 +26,6 @@ extension EmailTextGenerator {
     static let `default` = EmailTextGenerator({ result in
         // TODO: include full profile (base scales)
         let scale = AnalysisScale.f
-        return "\(scale.title): \(scale.formatter.format(scale.score.value(for: result.record)))"
+        return "\(scale.title): \(scale.formatter.format(scale.score.value(for: result.record).score))"
     })
 }

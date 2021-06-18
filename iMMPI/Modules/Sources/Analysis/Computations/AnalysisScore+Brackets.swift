@@ -60,12 +60,15 @@ extension AnalysisScore {
             formatter: .bracketed,
             filter: .bracketed,
             value: .specific({ gender in { answers in
-                let raw = rawScore.value(for: gender, answers: answers)
+                var computation = rawScore.value(for: gender, answers: answers)
+                let raw = computation.score
 
                 // FIXME: returning -1.0 for legacy reasons; update tests to allow more sane value
                 // .nan here originates from the possible division by zero in intellectual scales,
                 if raw.isNaN {
-                    return -1.0
+                    computation.log("Получили NaN, останавливаем вычисление")
+                    computation.score = -1
+                    return computation
                 }
 
                 let selectedBrackets = brackets.value(for: gender)
@@ -75,34 +78,50 @@ extension AnalysisScore {
                 let c = selectedBrackets.C
                 let d = selectedBrackets.D
 
+                computation.log("a = \(a), b = \(b), c = \(c), d = \(d)")
+
                 var score: Double = 0.0
 
                 if raw <= a {
                     score = round(10.0 * 1.5 * raw / a)
+                    computation.log("\(raw) <= \(a) – меньше a")
+                    computation.log("Подсчет: \(score) = 10 * 1.5 * \(raw) / \(a)")
                 }
                 else if raw <= b {
                     score = round(10.0 * (1.5 + (raw - a) / (b - a)))
+                    computation.log("\(a) < \(raw) <= \(b) – между a и b")
+                    computation.log("Подсчет: \(score) = 10 * (1.5 + (\(raw) - \(a)) / (\(b) - \(a)))")
                 }
                 else if raw <= c {
                     score = round(10.0 * (2.5 + (raw - b) / (c - b)))
+                    computation.log("\(b) < \(raw) <= \(c) – между b и c")
+                    computation.log("Подсчет: \(score) = 10 * (2.5 + (\(raw) - \(b)) / (\(c) - \(b)))")
                 }
                 else if raw <= d {
                     score = round(10.0 * (3.5 + (raw - c) / (d - c)))
+                    computation.log("\(c) < \(raw) <= \(d) – между c и d")
+                    computation.log("Подсчет: \(score) = 10 * (3.5 + (\(raw) - \(c)) / (\(d) - \(c)))")
                 }
                 else {
+                    computation.log("\(d) < \(raw) – больше d")
                     switch upperBracketMode {
                     case .linear:
                         precondition(d < 100.0)
                         score = round(10.0 * (4.5 + 0.5 * (raw - d) / (100.0 - d)))
+                        computation.log("Подсчет: \(score) = 10 * (0.5 + (\(raw) - \(d)) / (100 - \(d)))")
 
-                    case .saturate: score = 50.0
+                    case .saturate:
+                        score = 50.0
+                        computation.log("Подсчет: используем значение 50")
                     }
                 }
                 
                 score /= 10.0
+                computation.log("Финальный балл: \(score) = \(score * 10) / 10")
                 
                 precondition(0.0...5.0 ~= score)
-                return score
+                computation.score = score
+                return computation
                 }
             })
         )

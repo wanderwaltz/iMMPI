@@ -6,12 +6,12 @@ public struct AnalysisScore {
     let suggestedFormatter: AnalysisScoreFormatter
     let suggestedFilter: AnalysisScoreFilter
 
-    private let _value: GenderBasedValue<(Answers) -> Double>
+    private let _value: GenderBasedValue<(Answers) -> AnalysisScoreComputation>
 
     init(
         formatter: AnalysisScoreFormatter = .ignore,
         filter: AnalysisScoreFilter = .never,
-        value: GenderBasedValue<(Answers) -> Double>
+        value: GenderBasedValue<(Answers) -> AnalysisScoreComputation>
     ) {
         self.suggestedFormatter = formatter
         self.suggestedFilter = filter
@@ -21,11 +21,11 @@ public struct AnalysisScore {
 
 
 extension AnalysisScore {
-    public func value(for record: RecordProtocol) -> Double {
+    public func value(for record: RecordProtocol) -> AnalysisScoreComputation {
         return value(for: record.person.gender, answers: record.answers)
     }
 
-    public func value(for gender: Gender, answers: Answers) -> Double {
+    public func value(for gender: Gender, answers: Answers) -> AnalysisScoreComputation {
         return _value.value(for: gender)(answers)
     }
 }
@@ -33,7 +33,18 @@ extension AnalysisScore {
 
 extension AnalysisScore {
     static func constant(_ value: Double) -> AnalysisScore {
-        return AnalysisScore(value: .common(Constant.value(value)))
+        return AnalysisScore(
+            value: .common(
+                Constant.value(
+                    AnalysisScoreComputation(
+                        positiveKey: [],
+                        negativeKey: [],
+                        log: [],
+                        score: value
+                    )
+                )
+            )
+        )
     }
 }
 
@@ -44,7 +55,7 @@ func + (left: AnalysisScore, right: AnalysisScore) -> AnalysisScore {
         filter: right.suggestedFilter,
         value: .specific({ gender in { answers in
             left.value(for: gender, answers: answers) + right.value(for: gender, answers: answers)
-            }})
+        }})
     )
 }
 
@@ -54,12 +65,9 @@ func / (left: AnalysisScore, right: AnalysisScore) -> AnalysisScore {
         formatter: right.suggestedFormatter,
         filter: right.suggestedFilter,
         value: .specific({ gender in { answers in
-            guard case let rv = right.value(for: gender, answers: answers), rv != 0.0 else {
-                return .nan
-            }
-
-            return left.value(for: gender, answers: answers) / rv
-            }})
+            left.value(for: gender, answers: answers)
+                / right.value(for: gender, answers: answers)
+        }})
     )
 }
 
@@ -69,8 +77,9 @@ func * (left: AnalysisScore, right: AnalysisScore) -> AnalysisScore {
         formatter: right.suggestedFormatter,
         filter: right.suggestedFilter,
         value: .specific({ gender in { answers in
-            return left.value(for: gender, answers: answers) * right.value(for: gender, answers: answers)
-            }})
+            left.value(for: gender, answers: answers)
+                * right.value(for: gender, answers: answers)
+        }})
     )
 }
 
@@ -82,7 +91,7 @@ func * (scalar: Double, score: AnalysisScore) -> AnalysisScore {
         filter: score.suggestedFilter,
         value: .specific({ gender in { answers in
             scalar * score.value(for: gender, answers: answers)
-            }})
+        }})
     )
 }
 

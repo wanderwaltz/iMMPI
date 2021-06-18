@@ -11,7 +11,7 @@ extension ComputedScore: CustomStringConvertible {}
 
 extension ComputedScore {
     init(scale: AnalysisScale, record: RecordProtocol) {
-        let rawValue = scale.score.value(for: record)
+        let rawValue = scale.score.value(for: record).score
         self.init(
             rawValue: rawValue,
             description: scale.formatter.format(rawValue),

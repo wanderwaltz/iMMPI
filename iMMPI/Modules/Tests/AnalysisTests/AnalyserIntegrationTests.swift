@@ -65,7 +65,7 @@ final class AnalyzerIntegrationTests: XCTestCase {
             let result = analyser.result(for: record)
 
             for i in 0..<analyser.scales.count {
-                let actual = analyser.scales[i].score.value(for: record)
+                let actual = analyser.scales[i].score.value(for: record).score
                 let expected = scores[i]
 
                 XCTAssertMatchingScores(actual, expected, "Score failed for: \(record.personName), scale: \(i), expected: \(expected), got: \(actual)")
