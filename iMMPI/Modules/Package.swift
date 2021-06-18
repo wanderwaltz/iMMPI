@@ -293,6 +293,14 @@ let package = Package(
         ),
 
         .target(
+            name: "MMPIScaleDetailsUI",
+            dependencies: [
+                "Analysis",
+                "MMPIRouting",
+            ]
+        ),
+
+        .target(
             name: "MMPIViewControllersFactory",
             dependencies: [
                 "EmailComposing",
@@ -301,6 +309,7 @@ let package = Package(
                 "MMPIRecordsListUI",
                 "MMPITestAnswersUI",
                 "MMPIAnalysisUI",
+                "MMPIScaleDetailsUI",
             ]
         ),
 

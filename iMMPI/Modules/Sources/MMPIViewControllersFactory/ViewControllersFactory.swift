@@ -6,6 +6,7 @@ import MMPIRecordEditorUI
 import MMPIRecordsListUI
 import MMPITestAnswersUI
 import MMPIAnalysisUI
+import MMPIScaleDetailsUI
 
 public protocol ViewControllersFactory {
     func makeRecordsListViewController() -> RecordsListViewController
@@ -13,6 +14,8 @@ public protocol ViewControllersFactory {
 
     func makeAnalysisViewController() -> AnalysisViewController
     func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController
+
+    func makeScaleDetailsViewController() -> ScaleDetailsViewController
 
     func makeAnswersReviewViewController() -> AnswersViewController
     func makeAnswersInputViewController() -> AnswersInputViewController

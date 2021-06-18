@@ -1,6 +1,7 @@
 import UIKit
 import EmailComposing
 import DataModel
+import Analysis
 import HTMLComposing
 
 public protocol Router: AnyObject {
@@ -15,6 +16,12 @@ public protocol Router: AnyObject {
 
     func displayAnalysis(for records: [RecordProtocol], sender: UIViewController)
     func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController)
+    
+    func displayDetails(
+        for record: RecordProtocol,
+        scale: AnalysisScale,
+        sender: UIViewController
+    )
 
     func displayAnswersReview(for record: RecordProtocol, sender: UIViewController)
 

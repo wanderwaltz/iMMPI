@@ -6,6 +6,7 @@ import MMPIRecordEditorUI
 import MMPIRecordsListUI
 import MMPITestAnswersUI
 import MMPIAnalysisUI
+import MMPIScaleDetailsUI
 
 public final class RoutedViewControllersFactory: ViewControllersFactory {
     public weak var router: Router?
@@ -36,6 +37,13 @@ public final class RoutedViewControllersFactory: ViewControllersFactory {
 
     public func makeAnalysisOptionsViewController(context: AnalysisMenuActionContext) -> AnalysisOptionsViewController {
         let controller = base.makeAnalysisOptionsViewController(context: context)
+
+        controller.router = router
+        return controller
+    }
+
+    public func makeScaleDetailsViewController() -> ScaleDetailsViewController {
+        let controller = base.makeScaleDetailsViewController()
 
         controller.router = router
         return controller

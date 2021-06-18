@@ -1,6 +1,7 @@
 import UIKit
 import EmailComposing
 import DataModel
+import Analysis
 import HTMLComposing
 import Utils
 import MMPIRouting
@@ -28,6 +29,12 @@ extension StubRouter: Router {
     public func displayAnalysisOptions(context: AnalysisMenuActionContext, sender: UIViewController) {
         _displayAnalysisOptions(context, sender)
     }
+
+    public func displayDetails(
+        for record: RecordProtocol,
+        scale: AnalysisScale,
+        sender: UIViewController
+    ) {}
 
     public func displayAnalysis(for records: [RecordProtocol], sender: UIViewController) {}
 

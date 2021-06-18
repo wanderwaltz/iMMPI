@@ -7,6 +7,7 @@ import MMPIRecordEditorUI
 import MMPIRecordsListUI
 import MMPITestAnswersUI
 import MMPIAnalysisUI
+import MMPIScaleDetailsUI
 import MMPIViewControllersFactory
 
 public struct MMPIViewControllersFactory: ViewControllersFactory {
@@ -49,6 +50,13 @@ public struct MMPIViewControllersFactory: ViewControllersFactory {
             settings: analysisSettings,
             actions: actions.compactMap({$0})
         )
+
+        return controller
+    }
+
+    public func makeScaleDetailsViewController() -> ScaleDetailsViewController {
+        let controller = ScaleDetailsViewController()
+        controller.modalPresentationStyle = .formSheet
 
         return controller
     }

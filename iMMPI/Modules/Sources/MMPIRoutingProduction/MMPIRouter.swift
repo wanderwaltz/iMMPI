@@ -3,6 +3,7 @@ import MessageUI
 import EmailComposing
 import HTMLComposing
 import DataModel
+import Analysis
 import Localization
 import MMPIRouting
 import MMPIUI
@@ -122,6 +123,14 @@ extension MMPIRouter: Router {
 
         let navigationController = UINavigationController(rootViewController: controller)
         sender.presentPopover(navigationController, animated: true, completion: nil)
+    }
+
+    public func displayDetails(
+        for record: RecordProtocol,
+        scale: AnalysisScale,
+        sender: UIViewController
+    ) {
+
     }
 
     public func displayAnswersReview(for record: RecordProtocol, sender: UIViewController) {
