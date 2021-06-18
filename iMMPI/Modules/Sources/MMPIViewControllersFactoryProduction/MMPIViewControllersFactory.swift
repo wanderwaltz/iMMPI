@@ -55,10 +55,7 @@ public struct MMPIViewControllersFactory: ViewControllersFactory {
     }
 
     public func makeScaleDetailsViewController() -> ScaleDetailsViewController {
-        let controller = ScaleDetailsViewController()
-        controller.modalPresentationStyle = .formSheet
-
-        return controller
+        return ScaleDetailsViewController()
     }
 
     public func makeAnswersReviewViewController() -> AnswersViewController {

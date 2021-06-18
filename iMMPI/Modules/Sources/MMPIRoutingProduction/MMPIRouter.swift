@@ -11,6 +11,7 @@ import MMPIUITableViewCells
 import MMPIRecordsListUI
 import MMPITestAnswersUI
 import MMPIAnalysisUI
+import MMPIScaleDetailsUI
 import MMPIViewControllersFactory
 import MMPISoundPlayer
 
@@ -130,7 +131,15 @@ extension MMPIRouter: Router {
         scale: AnalysisScale,
         sender: UIViewController
     ) {
+        let controller = viewControllersFactory.makeScaleDetailsViewController()
+        controller.viewModel = ScaleDetailsViewModel(
+            record: record,
+            scale: scale
+        )
 
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .formSheet
+        sender.present(navigationController, animated: true, completion: nil)
     }
 
     public func displayAnswersReview(for record: RecordProtocol, sender: UIViewController) {

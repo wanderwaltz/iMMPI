@@ -8,10 +8,12 @@ public final class AnalysisViewModel {
     }
 
     let person: Person
+    let records: [RecordProtocol]
+    var scales: [AnalysisScale] { analyser.scales }
+
     var results: [AnalysisResult] { _lazyResults() }
 
     private let analyser: Analyser
-    private let records: [RecordProtocol]
     private var _results: [AnalysisResult] = []
 
     public init(records: [RecordProtocol], analyser: Analyser = Analyser()) {

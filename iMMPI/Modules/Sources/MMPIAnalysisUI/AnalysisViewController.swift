@@ -92,6 +92,7 @@ extension AnalysisViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
+        collectionView.delegate = self
 
         reloadData()
     }
@@ -121,6 +122,29 @@ extension AnalysisViewController {
     }
 }
 
+extension AnalysisViewController: UICollectionViewDelegate {
+    public func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        guard indexPath.section > 0, indexPath.row > 0 else {
+            return
+        }
+
+        let scaleIndex = indexPath.row - 1
+        let recordIndex = indexPath.section - 1
+
+        guard let scale = viewModel?.scales[analyserGroupIndices[scaleIndex]] else {
+            return
+        }
+
+        guard let record = viewModel?.records[recordIndex] else {
+            return
+        }
+
+        router?.displayDetails(for: record, scale: scale, sender: self)
+    }
+}
 
 extension AnalysisViewController: UICollectionViewDataSource {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
