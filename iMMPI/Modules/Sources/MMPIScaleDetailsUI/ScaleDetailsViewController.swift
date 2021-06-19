@@ -243,9 +243,13 @@ extension ScaleDetailsViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int
     ) -> UIEdgeInsets {
-        isSectionEmpty(section)
-            ? .zero
-            : .init(top: 16, left: 16, bottom: 0, right: 16)
+        if isSectionEmpty(section) {
+            return .zero
+        }
+
+        let isLastSection = section == Section.allCases.last?.rawValue
+        let bottomOffset: CGFloat = isLastSection ? 16 : 0
+        return .init(top: 16, left: 16, bottom: bottomOffset, right: 16)
     }
 
     public func collectionView(
