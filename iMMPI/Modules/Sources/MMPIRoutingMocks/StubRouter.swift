@@ -46,4 +46,6 @@ extension StubRouter: Router {
     public func selectAnalysisReportForPrinting(context: AnalysisMenuActionContext, sender: UIViewController) {}
 
     public func displayMailComposer(for email: EmailMessage, sender: UIViewController) throws {}
+
+    public func displayShareSheet(for attachments: [Attachment], sender: UIViewController) throws {}
 }
