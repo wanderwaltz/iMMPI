@@ -86,12 +86,12 @@ public enum Strings {
         )
 
         public static let filterResults = NSLocalizedString(
-            "Фильтр значений",
+            "Скрыть баллы в пределах нормы",
             comment: "Опция анализа"
         )
 
         public static let hideNormalResults = NSLocalizedString(
-            "Скрыть норму",
+            "Скрыть шкалы с баллами в пределах нормы",
             comment: "Опция анализа"
         )
     }
@@ -181,7 +181,7 @@ public enum Strings {
             comment: "Негативный ответ"
         )
 
-        public static let normalScorePlaceholder = "-"
+        public static let normalScorePlaceholder = "–"
 
         public static let statementsPositiveKey = NSLocalizedString(
             "Позитивные ответы",
