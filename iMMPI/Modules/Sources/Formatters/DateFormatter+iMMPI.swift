@@ -5,6 +5,7 @@ extension DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "ru")
         return formatter
     }()
 
@@ -12,6 +13,7 @@ extension DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "ru")
         return formatter
     }()
 
