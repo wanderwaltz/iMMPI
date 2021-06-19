@@ -134,6 +134,11 @@ extension AnalysisViewController: UICollectionViewDelegate {
         let scaleIndex = indexPath.row - 1
         let recordIndex = max(0, indexPath.section - 1)
 
+        if viewModel?.results.first?.scales[analyserGroupIndices[scaleIndex]].score.rawValue.isNaN == true {
+            // score.rawValue is NaN for dummy scales which are added as section separators
+            return
+        }
+
         guard let scale = viewModel?.scales[analyserGroupIndices[scaleIndex]] else {
             return
         }
