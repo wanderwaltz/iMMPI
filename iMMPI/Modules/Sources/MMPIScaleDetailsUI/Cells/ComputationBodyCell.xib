@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TDh-ZE-rV1" customClass="ComputationBodyCell" customModule="MMPIScaleDetailsUI">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JxB-VT-zfb">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdy-Jr-fyX">
+                        <rect key="frame" x="20" y="0.0" width="246" height="50"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="kdy-Jr-fyX" secondAttribute="bottom" id="7gg-X9-LPg"/>
+                    <constraint firstItem="kdy-Jr-fyX" firstAttribute="leading" secondItem="JxB-VT-zfb" secondAttribute="leading" constant="20" symbolic="YES" id="HfJ-vZ-6cC"/>
+                    <constraint firstAttribute="trailing" secondItem="kdy-Jr-fyX" secondAttribute="trailing" constant="20" symbolic="YES" id="M2S-zt-dKG"/>
+                    <constraint firstItem="kdy-Jr-fyX" firstAttribute="top" secondItem="JxB-VT-zfb" secondAttribute="top" id="gmC-1U-Acx"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="286" height="50"/>
+            <connections>
+                <outlet property="textLabel" destination="kdy-Jr-fyX" id="4ol-wB-frs"/>
+            </connections>
+            <point key="canvasLocation" x="-270" y="-84"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

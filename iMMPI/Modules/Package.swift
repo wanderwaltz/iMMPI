@@ -296,6 +296,7 @@ let package = Package(
             name: "MMPIScaleDetailsUI",
             dependencies: [
                 "Analysis",
+                "Localization",
                 "MMPIRouting",
             ]
         ),

@@ -29,8 +29,8 @@ func + (left: AnalysisScoreComputation, right: AnalysisScoreComputation) -> Anal
     let sum = left.score + right.score
 
     return .init(
-        positiveKey: [],
-        negativeKey: [],
+        positiveKey: left.positiveKey,
+        negativeKey: left.negativeKey,
         log: left.log + right.log + ["\(sum) = \(left.score) + \(right.score)"],
         score: sum
     )
@@ -39,8 +39,8 @@ func + (left: AnalysisScoreComputation, right: AnalysisScoreComputation) -> Anal
 func / (left: AnalysisScoreComputation, right: AnalysisScoreComputation) -> AnalysisScoreComputation {
     guard right.score != 0 else {
         return .init(
-            positiveKey: [],
-            negativeKey: [],
+            positiveKey: left.positiveKey,
+            negativeKey: left.negativeKey,
             log: left.log + right.log + ["0 в делителе"],
             score: .nan
         )
@@ -49,9 +49,9 @@ func / (left: AnalysisScoreComputation, right: AnalysisScoreComputation) -> Anal
     let result = left.score / right.score
 
     return .init(
-        positiveKey: [],
-        negativeKey: [],
-        log: left.log + right.log + ["\(result) = \(left.score) / \(right.score)"],
+        positiveKey: left.positiveKey,
+        negativeKey: left.negativeKey,
+        log: left.log + right.log + ["\(String(format: "%.3f", result)) = \(left.score) / \(right.score)"],
         score: result
     )
 }
@@ -60,8 +60,8 @@ func * (left: AnalysisScoreComputation, right: AnalysisScoreComputation) -> Anal
     let result = left.score * right.score
 
     return .init(
-        positiveKey: [],
-        negativeKey: [],
+        positiveKey: left.positiveKey,
+        negativeKey: left.negativeKey,
         log: left.log + right.log + ["\(result) = \(left.score) * \(right.score)"],
         score: result
     )
@@ -71,8 +71,8 @@ func * (scalar: Double, right: AnalysisScoreComputation) -> AnalysisScoreComputa
     let result = scalar * right.score
 
     return .init(
-        positiveKey: [],
-        negativeKey: [],
+        positiveKey: right.positiveKey,
+        negativeKey: right.negativeKey,
         log: right.log + ["\(result) = \(scalar) * \(right.score)"],
         score: result
     )
@@ -84,7 +84,7 @@ func trunc(_ score: AnalysisScoreComputation) -> AnalysisScoreComputation {
     return .init(
         positiveKey: score.positiveKey,
         negativeKey: score.negativeKey,
-        log: score.log + ["\(result) = \(score.score) без дробной части"],
+        log: score.log + ["\(result) = \(String(format: "%.3f", score.score)) без дробной части"],
         score: result
     )
 }

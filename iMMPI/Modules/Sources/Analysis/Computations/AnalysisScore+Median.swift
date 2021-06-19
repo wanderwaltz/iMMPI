@@ -15,10 +15,10 @@ extension AnalysisScore {
                 let raw = computation.score
 
                 let m = median.value(for: gender)
-                computation.log("Медиана m = \(m)")
+                computation.log("Медиана m: \(m)")
 
                 let d = dispersion.value(for: gender)
-                computation.log("Дисперсия d = \(d)")
+                computation.log("Дисперсия d: \(d)")
 
                 let sign = inverted.value(for: gender) ? -1.0 : 1.0
                 let signString = sign > 0 ? "+" : "-"

@@ -182,6 +182,21 @@ public enum Strings {
         )
 
         public static let normalScorePlaceholder = "-"
+
+        public static let statementsPositiveKey = NSLocalizedString(
+            "Позитивные ответы",
+            comment: "Позитивные ответы на экране детализации по шкале"
+        )
+
+        public static let statementsNegativeKey = NSLocalizedString(
+            "Негативные ответы",
+            comment: "Негативные ответы на экране детализации по шкале"
+        )
+
+        public static let computation = NSLocalizedString(
+            "Расчет",
+            comment: "Расшифровка вычисления на экране детализации по шкале"
+        )
     }
 
 
