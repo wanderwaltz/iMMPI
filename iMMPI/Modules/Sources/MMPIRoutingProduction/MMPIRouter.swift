@@ -196,6 +196,29 @@ extension MMPIRouter: Router {
         mailComposer.mailComposeDelegate = mailComposerDelegate
         sender.present(mailComposer, animated: true, completion: nil)
     }
+
+    public func displayShareSheet(for attachments: [Attachment], sender: UIViewController) throws {
+        let tmp = URL(fileURLWithPath: NSTemporaryDirectory())
+        let fileManager = FileManager.default
+
+        let urls = try attachments.map { attachment -> URL in
+            let url = tmp.appendingPathComponent(attachment.fileName)
+
+            if fileManager.fileExists(atPath: url.path) {
+                try fileManager.removeItem(at: url)
+            }
+
+            try attachment.data.write(to: url)
+            return url
+        }
+
+        let shareSheet = UIActivityViewController(
+            activityItems: urls,
+            applicationActivities: nil
+        )
+
+        sender.presentPopover(shareSheet, animated: true, completion: nil)
+    }
 }
 
 extension MMPIRouter {

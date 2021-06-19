@@ -43,7 +43,8 @@ public struct MMPIViewControllersFactory: ViewControllersFactory {
 
         let actions: [MenuAction?] = [
             .print(context),
-            .email(context)
+            .email(context),
+            .share(context),
         ]
 
         controller.viewModel = AnalysisOptionsViewModel(

@@ -70,6 +70,11 @@ public enum Strings {
             comment: "Кнопка отправки письма"
         )
 
+        public static let share = NSLocalizedString(
+            "Поделиться",
+            comment: "Кнопка отправки отчета в системную шарилку"
+        )
+
         public static let emailSettings = NSLocalizedString(
             "Адрес по умолчанию",
             comment: "Кнопка настроек e-mail"

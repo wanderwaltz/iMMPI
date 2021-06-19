@@ -29,6 +29,8 @@ public protocol Router: AnyObject {
     func selectAnalysisReportForPrinting(context: AnalysisMenuActionContext, sender: UIViewController)
 
     func displayMailComposer(for email: EmailMessage, sender: UIViewController) throws
+
+    func displayShareSheet(for attachments: [Attachment], sender: UIViewController) throws
 }
 
 
