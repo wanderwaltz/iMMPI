@@ -127,12 +127,12 @@ extension AnalysisViewController: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        guard indexPath.section > 0, indexPath.row > 0 else {
+        guard indexPath.row > 0 else {
             return
         }
 
         let scaleIndex = indexPath.row - 1
-        let recordIndex = indexPath.section - 1
+        let recordIndex = max(0, indexPath.section - 1)
 
         guard let scale = viewModel?.scales[analyserGroupIndices[scaleIndex]] else {
             return
