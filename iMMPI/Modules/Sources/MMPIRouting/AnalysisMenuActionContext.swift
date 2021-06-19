@@ -22,11 +22,24 @@ public final class AnalysisMenuActionContext {
         .compactMap({ $0 })
     }()
 
+    public private(set) lazy var docxReportGenerators: [DocxReportGenerator] = {
+        let answers = self.questionnaire.flatMap({ DocxReportGenerator.answers(questionnaire: $0) })
+
+        return [
+            .overall,
+            answers,
+        ]
+        .compactMap({ $0 })
+    }()
+
     public private(set) lazy var emailMessageGenerator: EmailMessageGenerator = {
         var attachmentGenerators: [AttachmentReportGenerator] = []
 
-        attachmentGenerators.append(contentsOf: self.htmlReportGenerators.map({ htmlGenerator in
-            AttachmentReportGenerator(titleFormatter: { $0.transliterated }, htmlGenerator: htmlGenerator)
+        attachmentGenerators.append(contentsOf: self.docxReportGenerators.map({ generator in
+            AttachmentReportGenerator(
+                titleFormatter: { $0.transliterated },
+                docxGenerator: generator
+            )
         }))
 
         return EmailMessageGenerator(attachments: EmailAttachmentsGenerator(attachmentGenerators))

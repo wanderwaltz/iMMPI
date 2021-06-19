@@ -15,7 +15,9 @@ let package = Package(
             ]
         ),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/weichsel/ZIPFoundation.git", .upToNextMajor(from: "0.9.0")),
+    ],
     targets: [
         .target(
             name: "UnitTestingSupport"
@@ -127,11 +129,13 @@ let package = Package(
                 "Analysis",
                 "EmailComposing",
                 "HTMLComposing",
+                "DocxComposing",
                 "Localization",
                 "Formatters",
             ],
             resources: [
                 .copy("Resources/html.report.css"),
+                .copy("Resources/ReportTemplate.bundle"),
             ]
         ),
 
@@ -337,5 +341,12 @@ let package = Package(
                 "MMPISoundPlayer",
             ]
         ),
+
+        .target(
+            name: "DocxComposing",
+            dependencies: [
+                .product(name: "ZIPFoundation", package: "ZIPFoundation"),
+            ]
+        )
     ]
 )

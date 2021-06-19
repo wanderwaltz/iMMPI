@@ -71,11 +71,13 @@ extension Answers {
     public func enumerateAnswers(
         with block: (Statement.Identifier, AnswerType) -> Void
     ) {
-        answersByIdentifier.forEach { (identifier, entry) in
-            if entry.answer != .unknown {
-                block(identifier, entry.answer)
+        answersByIdentifier
+            .sorted(by: { $0.key < $1.key })
+            .forEach { (identifier, entry) in
+                if entry.answer != .unknown {
+                    block(identifier, entry.answer)
+                }
             }
-        }
     }
 }
 

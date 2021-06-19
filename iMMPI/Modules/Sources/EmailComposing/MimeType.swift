@@ -16,4 +16,7 @@ extension MimeType: CustomStringConvertible {
 extension MimeType {
     public static let json = MimeType("text/html; charset=utf-8")
     public static let html = MimeType("application/json; charset=utf-8")
+
+    public static let docx =
+        MimeType("application/vnd.openxmlformats-officedocument.wordprocessingml.document")
 }

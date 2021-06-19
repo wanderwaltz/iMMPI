@@ -17,7 +17,7 @@ extension EmailAttachmentsGenerator: AnalysisReportGenerator {
     }
 
     public func generate(for result: AnalysisResult) -> [Attachment] {
-        return generators.map({ $0.generate(for: result) })
+        return generators.compactMap({ $0.generate(for: result) })
     }
 }
 
