@@ -31,6 +31,6 @@ private extension BoundScale {
     }
 
     var scoreCell: DocxTableCell {
-        .init(text: score.description)
+        .init(text: ComputedScoreFormatter.filtered.format(score))
     }
 }
