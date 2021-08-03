@@ -37,7 +37,6 @@ public final class AnalysisMenuActionContext {
 
         attachmentGenerators.append(contentsOf: self.docxReportGenerators.map({ generator in
             AttachmentReportGenerator(
-                titleFormatter: { $0.transliterated },
                 docxGenerator: generator
             )
         }))
@@ -55,13 +54,5 @@ public final class AnalysisMenuActionContext {
 extension AnalysisMenuActionContext {
     public var record: RecordProtocol {
         return result.record
-    }
-}
-
-extension String {
-    var transliterated: String {
-        return applyingTransform(.toLatin, reverse: false)?
-            .applyingTransform(.stripCombiningMarks, reverse: false)?
-            .applyingTransform(.stripDiacritics, reverse: false) ?? self
     }
 }

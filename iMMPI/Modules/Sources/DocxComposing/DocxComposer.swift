@@ -62,7 +62,7 @@ public final class DocxComposer {
         try fileManager.removeItem(at: editableContentURL)
         try updatedEditableContentData.write(to: editableContentURL)
 
-        let documentURL = tmp.appendingPathComponent(fileName + ".docx")
+        let documentURL = tmp.appendingPathComponent(fileName)
 
         if fileManager.fileExists(atPath: documentURL.path) {
             try fileManager.removeItem(at: documentURL)
@@ -73,6 +73,8 @@ public final class DocxComposer {
             to: documentURL,
             shouldKeepParent: false
         )
+
+        try fileManager.removeItem(at: documentBundleURL)
 
         return documentURL
     }

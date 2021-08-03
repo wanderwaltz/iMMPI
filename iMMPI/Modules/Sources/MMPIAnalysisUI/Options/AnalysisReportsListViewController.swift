@@ -20,7 +20,7 @@ public final class AnalysisReportsListViewController: UITableViewController, Usi
         style: .default,
         identifier: "com.immpi.cells.default",
         update: { cell, generator in
-            cell.textLabel?.text = generator?.title ?? ""
+            cell.textLabel?.text = generator?.type ?? ""
             cell.accessoryType = .disclosureIndicator
     })
 }
