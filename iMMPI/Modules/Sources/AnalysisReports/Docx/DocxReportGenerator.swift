@@ -3,7 +3,7 @@ import Analysis
 import DocxComposing
 
 public struct DocxReportGenerator {
-    public let title: String
+    public let type: String
     private let dateFormatter: DateFormatter
     private let content: (AnalysisResult, DocxEditing) -> Void
 
@@ -12,7 +12,7 @@ public struct DocxReportGenerator {
         dateFormatter: DateFormatter = .medium,
         content: @escaping (AnalysisResult, DocxEditing) -> Void
     ) {
-        self.title = title
+        self.type = title
         self.dateFormatter = dateFormatter
         self.content = content
     }
@@ -26,7 +26,7 @@ extension DocxReportGenerator: AnalysisReportGenerator {
 
     public func generate(for result: AnalysisResult) -> Report? {
         let date = dateFormatter.string(from: result.date)
-        let fileName = "\(result.personName) — \(date) \(title).docx"
+        let fileName = "\(result.personName) — \(date) \(type).docx"
 
         let composer = DocxComposer(
             templateBundleName: "ReportTemplate",

@@ -9,12 +9,12 @@ extension AttachmentReportGenerator {
         htmlGenerator: HtmlReportGenerator
     ) {
         self.init(
-            title: htmlGenerator.title,
+            title: htmlGenerator.type,
             generate: { result in
                 let html = htmlGenerator.generate(for: result)
 
                 return Attachment(
-                    fileName: "\(titleFormatter(htmlGenerator.title)).html",
+                    fileName: "\(titleFormatter(htmlGenerator.type)).html",
                     mimeType: .html,
                     data: html.description.data(using: .utf8)!
                 )
@@ -27,7 +27,7 @@ extension AttachmentReportGenerator {
         docxGenerator: DocxReportGenerator
     ) {
         self.init(
-            title: docxGenerator.title,
+            title: docxGenerator.type,
             generate: { result in
                 guard let report = docxGenerator.generate(for: result) else {
                     return nil

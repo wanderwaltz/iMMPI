@@ -5,7 +5,7 @@ import HTMLComposing
 
 extension HtmlReportGenerator {
     public static func answers(questionnaire: Questionnaire) -> HtmlReportGenerator? {
-        return try? HtmlReportGenerator(title: Strings.Report.answers) { result in
+        return try? HtmlReportGenerator(type: Strings.Report.answers) { result in
             var elements: [Html] = []
 
             for i in 0..<questionnaire.statementsCount {

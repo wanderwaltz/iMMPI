@@ -5,7 +5,7 @@ import Analysis
 
 extension HtmlReportGenerator {
     public static let overall = try? HtmlReportGenerator(
-        title: Strings.Report.overall
+        type: Strings.Report.overall
     ) { result in
         return .ul(
             attributes: ["class": "analysis"],
@@ -19,7 +19,7 @@ extension HtmlReportGenerator {
     }
 
     public static let brief = try? HtmlReportGenerator(
-        title: Strings.Report.brief
+        type: Strings.Report.brief
     ) { result in
         return .ul(
             attributes: ["class": "analysis"],

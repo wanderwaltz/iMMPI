@@ -3,15 +3,15 @@ import HTMLComposing
 import Analysis
 
 public struct HtmlReportGenerator {
-    public let title: String
+    public let type: String
 
     init(
-        title: String,
+        type: String,
         dateFormatter: DateFormatter = .medium,
         css: String,
         content: @escaping (AnalysisResult) -> Html
     ) {
-        self.title = title
+        self.type = type
         self.dateFormatter = dateFormatter
         self.css = css
         self.content = content
@@ -49,7 +49,7 @@ extension HtmlReportGenerator {
     }
 
     init(
-        title: String,
+        type: String,
         resource: String = "html.report",
         bundle: Bundle = Bundle.module,
         _ content: @escaping (AnalysisResult) -> Html
@@ -64,6 +64,6 @@ extension HtmlReportGenerator {
             throw Error.failedReadingCSS
         }
 
-        self.init(title: title, css: string, content: content)
+        self.init(type: type, css: string, content: content)
     }
 }
