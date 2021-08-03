@@ -5,7 +5,6 @@ import DocxComposing
 
 extension AttachmentReportGenerator {
     public init(
-        titleFormatter: @escaping (String) -> String,
         htmlGenerator: HtmlReportGenerator
     ) {
         self.init(
@@ -14,7 +13,7 @@ extension AttachmentReportGenerator {
                 let html = htmlGenerator.generate(for: result)
 
                 return Attachment(
-                    fileName: "\(titleFormatter(htmlGenerator.type)).html",
+                    fileName: "\(htmlGenerator.type).html",
                     mimeType: .html,
                     data: html.description.data(using: .utf8)!
                 )
@@ -23,7 +22,6 @@ extension AttachmentReportGenerator {
     }
 
     public init(
-        titleFormatter: @escaping (String) -> String,
         docxGenerator: DocxReportGenerator
     ) {
         self.init(
@@ -36,7 +34,7 @@ extension AttachmentReportGenerator {
                 do {
                     let data = try Data(contentsOf: report.url)
                     return Attachment(
-                        fileName: titleFormatter(report.fileName),
+                        fileName: report.fileName,
                         mimeType: .docx,
                         data: data
                     )
