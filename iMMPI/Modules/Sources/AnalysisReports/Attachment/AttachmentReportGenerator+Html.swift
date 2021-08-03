@@ -29,14 +29,14 @@ extension AttachmentReportGenerator {
         self.init(
             title: docxGenerator.title,
             generate: { result in
-                guard let url = docxGenerator.generate(for: result) else {
+                guard let report = docxGenerator.generate(for: result) else {
                     return nil
                 }
 
                 do {
-                    let data = try Data(contentsOf: url)
+                    let data = try Data(contentsOf: report.url)
                     return Attachment(
-                        fileName: "\(titleFormatter(docxGenerator.title)).docx",
+                        fileName: titleFormatter(report.fileName),
                         mimeType: .docx,
                         data: data
                     )

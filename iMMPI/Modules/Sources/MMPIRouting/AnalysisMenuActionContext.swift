@@ -37,7 +37,7 @@ public final class AnalysisMenuActionContext {
 
         attachmentGenerators.append(contentsOf: self.docxReportGenerators.map({ generator in
             AttachmentReportGenerator(
-                titleFormatter: { $0.transliterated },
+                titleFormatter: { $0 },
                 docxGenerator: generator
             )
         }))
